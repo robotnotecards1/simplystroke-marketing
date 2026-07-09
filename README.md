@@ -124,3 +124,31 @@ Spacing: fluid `clamp()` throughout; section vertical padding ~`clamp(64px,8vw,1
 ## Files
 - `SimplyStroke Home.dc.html` — the full design (all sections). Authored in Design Component format; treat as reference, not shippable code.
 - `assets/` — logo PNGs, `photos/` (golf photography), and `icon-library/` (purchased golf SVG/PNG icon sets: golf-country-club, golf-and-sports-a/b, golf-line-set). Feature-card glyphs are inlined from the golf-country-club set (single-fill, currentColor-style).
+
+---
+
+# Site implementation (Next.js static export)
+
+Everything above is the original design/SEO handoff. The site itself is built in this repo as a **Next.js 16 static export** (`output: "export"` → plain HTML/CSS/JS in `out/`, no server, no hydration-dependent content). Custom CSS design system in `app/globals.css` (no Tailwind); Bebas Neue + DM Sans self-hosted via `next/font`.
+
+## Develop & build
+
+```bash
+npm install
+npm run dev     # dev server
+npm run build   # static export → out/
+```
+
+## Pages
+
+`/` · `/adhd-golf` · `/features` · `/download` (waitlist page pre-launch) · `/blog/adhd-and-golf-losing-count` — titles/metas per `SEO-HANDOFF.md` §4 (as corrected by `SEO-COPY-REVIEW.md`), plus OG/Twitter tags, `SoftwareApplication` JSON-LD (`/`, `/download`), FAQ JSON-LD (`/adhd-golf`), BlogPosting JSON-LD (blog), `sitemap.xml`, `robots.txt`.
+
+## Config to set before launch
+
+- **Domain** — `lib/site.ts` `SITE_URL` (or env `NEXT_PUBLIC_SITE_URL`) defaults to `https://simplystroke.com`; canonicals/sitemap/OG URLs derive from it.
+- **Waitlist endpoint** — set `NEXT_PUBLIC_WAITLIST_ENDPOINT` to an HTTP endpoint accepting `POST {email, source}`; until then the form shows a local confirmation and does not store emails.
+- **At launch** — do the find-and-replace pass described in `SEO-HANDOFF.md` §6 / `SEO-COPY-REVIEW.md` (flip "coming 2026 / join the waitlist" copy to live download CTAs, add real store links to `components/StoreBadges.tsx`).
+
+## Deploy (Vercel)
+
+Create a **new** Vercel project (separate from the existing `simplystroke` app project), import this repo, framework preset **Next.js** — the static export is detected automatically. No env vars required to deploy.
