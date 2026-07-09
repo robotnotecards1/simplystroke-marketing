@@ -197,8 +197,12 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
   align-items: center;
   justify-content: center;
 }
+.ph-ball { cursor: pointer; }
+.ph-ripple { position: absolute; top: 50%; left: 50%; width: 190px; height: 190px; border-radius: 50%; border: 5px solid rgba(150,196,30,0.9); transform: translate(-50%, -50%); animation: ssRipple 1.1s ease-out; pointer-events: none; z-index: 0; }
+.ph-tapdot { position: absolute; top: 50%; left: 50%; width: 60px; height: 60px; border-radius: 50%; background: rgba(27,67,50,0.16); transform: translate(-50%, -50%); animation: ssTapPress .55s ease-out; pointer-events: none; z-index: 1; }
 .ph-dimples { position: absolute; inset: 14px; border-radius: 50%; background-image: radial-gradient(circle, rgba(27,67,50,0.10) 1.4px, transparent 1.8px); background-size: 18px 18px; }
 .ph-strokes { position: relative; font-family: var(--font-display); font-size: 86px; line-height: 0.8; color: var(--green-deep); }
+.ph-strokes-pop { animation: ssCountPop .5s cubic-bezier(.2,.8,.2,1); }
 .ph-strokes-label { position: relative; font-size: 12px; letter-spacing: 0.22em; color: var(--green-mid); font-weight: 700; }
 .ph-hitting { position: relative; margin-top: 8px; display: inline-flex; align-items: center; gap: 6px; background: var(--green-deep); padding: 5px 14px; border-radius: 999px; font-size: 11px; letter-spacing: 0.08em; font-weight: 700; color: #fff; }
 .ph-hitting .num { color: var(--lime); }
