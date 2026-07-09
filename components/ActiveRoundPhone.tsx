@@ -13,7 +13,9 @@ export default function ActiveRoundPhone() {
   const [tapKey, setTapKey] = useState(0);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    // Runs under prefers-reduced-motion too: the count itself is content
+    // (the demo), while the decorative ripple/pop/float effects are already
+    // suppressed by the reduced-motion rule in globals.css.
     const timer = setInterval(() => {
       setStrokes((s) => (s >= 5 ? 0 : s + 1));
       setTapKey((k) => k + 1);
