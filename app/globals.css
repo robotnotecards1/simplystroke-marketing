@@ -517,7 +517,17 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
   .ss-hero-phonewrap { transform: scale(0.88); transform-origin: top center; }
 }
 
+/* Reduced motion: disable only large/continuous movement (bobbing phones,
+   the traveling flight-path ball, step lift). Brief demo feedback — ripple,
+   press dot, count pop, pulse ring — is small and purposeful, so it stays;
+   without it the product demo reads as broken. */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .ss-hero-float,
+  .ss-watch-float,
+  .mini-wrap,
+  .ss-screen-item > img,
+  .ss-step-num,
+  .ss-step-num span { animation: none; }
+  .ss-flightpath .travel-ball { display: none; }
 }
