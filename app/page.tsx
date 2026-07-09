@@ -16,13 +16,13 @@ import {
 import { og, softwareApplicationJsonLd } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "SimplyStroke: The Golf Stroke Counter App for ADHD Golfers",
+  title: "SimplyStroke — The One-Tap Golf Scorecard App",
   description:
-    "One tap counts your strokes — no math, no menus, no losing count mid-hole. The golf scorecard app built for ADHD golfers and anyone who forgets. Coming 2026 — join the waitlist.",
+    "One tap counts your strokes — no math, no menus, no losing count mid-hole. Built for ADHD golfers and anyone who forgets. Coming 2026 — join the waitlist.",
   alternates: { canonical: "/" },
   openGraph: og(
-    "SimplyStroke: The Golf Stroke Counter App for ADHD Golfers",
-    "One tap counts your strokes — no math, no menus, no losing count mid-hole. Coming 2026 — join the waitlist.",
+    "SimplyStroke — The One-Tap Golf Scorecard App",
+    "One tap counts your strokes — no math, no menus, no losing count mid-hole. Built for ADHD golfers and anyone who forgets. Coming 2026 — join the waitlist.",
     "/"
   ),
 };
@@ -54,9 +54,8 @@ export default function Home() {
             </h1>
             <p className="ss-hero-p">
               One giant button. Tap to count a stroke, get a clean scorecard
-              at the end. Built for ADHD and neurodivergent minds, so your
-              focus stays on the shot instead of trying to keep track in your
-              head.
+              at the end. No mental math between shots — just tap, walk,
+              repeat.
             </p>
             <StoreBadges />
             <div className="ss-hero-cta">
@@ -134,9 +133,10 @@ export default function Home() {
               about that one time in 2019 you almost made a hole-in-one,
               wondered whether you left the garage door open, and then arrived
               at the green with absolutely no idea what you&apos;re lying.
-              This app was built for your brain. SimplyStroke holds the number
-              so your head is free to wander. Tap, forget, move on. That&apos;s
-              the whole trick.
+              This app was built for ADHD brains, and for anyone else whose
+              head wanders mid-round. SimplyStroke holds the number so you
+              don&apos;t have to. Tap, forget, move on. That&apos;s the whole
+              trick.
             </p>
             <a href="#waitlist" className="btn btn-fold">
               Let the app remember →
@@ -148,7 +148,7 @@ export default function Home() {
           </div>
           <div>
             <div className="eyebrow ss-fold-eyebrow">
-              For golfers with ADHD (and the gloriously forgetful)
+              For anyone who forgets the count by the next tee
             </div>
             <h3 className="ss-fold-sub">Sound familiar?</h3>
             <div className="ss-fold-cards">

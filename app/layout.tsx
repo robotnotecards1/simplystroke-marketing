@@ -18,9 +18,9 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: `${SITE_NAME}: The Golf Stroke Counter App for ADHD Golfers`,
+  title: `${SITE_NAME} — The One-Tap Golf Scorecard App`,
   description:
-    "One tap counts your strokes — no math, no menus, no losing count mid-hole. The golf scorecard app built for ADHD golfers and anyone who forgets. Coming 2026 — join the waitlist.",
+    "One tap counts your strokes — no math, no menus, no losing count mid-hole. Built for ADHD golfers and anyone who forgets. Coming 2026 — join the waitlist.",
   openGraph: {
     siteName: SITE_NAME,
     type: "website",
