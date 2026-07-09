@@ -45,7 +45,7 @@ Sub-cluster C — shot/score tracking (adjacent, high competition — long-tail 
 
 **Homepage `/`**
 - Title (58 chars): `SimplyStroke: The Golf Stroke Counter App for ADHD Golfers`
-- Meta (157 chars): `One tap counts your strokes — no math, no menus, no losing count mid-hole. The golf scorecard app built for ADHD golfers and anyone who forgets. Free to try.`
+- Meta: `One tap counts your strokes — no math, no menus, no losing count mid-hole. The golf scorecard app built for ADHD golfers and anyone who forgets. Coming 2026 — join the waitlist.`
 
 **`/adhd-golf`** (dedicated page — see note below)
 - Title (54 chars): `ADHD and Golf: Why You Keep Losing Count (and the Fix)`
@@ -55,13 +55,13 @@ Sub-cluster C — shot/score tracking (adjacent, high competition — long-tail 
 - Title (58 chars): `SimplyStroke Features: One-Tap Scoring, Undo, Offline Golf`
 - Meta (155 chars): `Every SimplyStroke feature, from the one-tap stroke counter to instant shareable scorecards. No subscriptions, no GPS clutter — just simple score tracking.`
 
-**`/download`**
-- Title (52 chars): `Download SimplyStroke — Free Golf Stroke Counter App`
-- Meta (141 chars): `Get SimplyStroke free on iOS and Android. Tap to count strokes, undo mistakes instantly, and get a clean scorecard at the end of every round.`
+**`/download`** (pre-launch: waitlist/notify page, not a live download — reframe copy to real store-link language on launch day)
+- Title: `Get SimplyStroke — Free Golf Stroke Counter App (2026)`
+- Meta: `SimplyStroke is a free, one-tap golf stroke counter for iPhone, Android and Apple Watch, launching 2026. Join the waitlist and we'll tell you the moment it's live.`
 
 **`/blog/adhd-and-golf-losing-count`**
 - Title (49 chars): `ADHD and Golf: How to Stop Losing Count Mid-Round`
-- Meta (157 chars): `Losing track of your score isn't a focus problem, it's a golf design problem. Here's why ADHD brains struggle with stroke counting — and what actually helps.`
+- Meta: `Losing track of your score isn't a focus problem, it's a golf design problem. Here's why ADHD brains lose the count mid-round — and what actually helps.`
 
 **Note on `/adhd-golf` as a standalone page:** the ADHD content fold already written for the homepage should stay on the homepage — it's doing brand/conversion work there. But "ADHD golf app" has real, uncontested search demand, and a fold buried mid-homepage won't rank as well as a dedicated page can. Recommend Claude Code scaffold a real `/adhd-golf` page that expands on the fold copy (more detail, maybe an FAQ block), with the homepage fold linking to it via a "Read more" CTA. Cheap to build, meaningfully better for organic reach.
 
@@ -87,6 +87,7 @@ Sub-cluster C — shot/score tracking (adjacent, high competition — long-tail 
 - [ ] Generate sitemap.xml + robots.txt
 - [ ] Run Lighthouse/PageSpeed check, confirm no unused app JS is shipping to the marketing pages
 - [ ] Write the `/blog/adhd-and-golf-losing-count` post (quick win, near-zero competition)
+- [ ] At launch: find-and-replace every "coming 2026 / join the waitlist" phrase (titles, metas, OG copy) with live download CTAs, and add real App Store/Play Store URLs — see `SEO-COPY-REVIEW.md` for full context on the pre-launch fixes applied here
 
 Sources referenced for competitive/keyword research:
 - [Best Golf Shot Tracking Apps And Devices 2026 – Golf Monthly](https://www.golfmonthly.com/best-golf-deals/best-golf-shot-tracking-apps-and-devices-213502)

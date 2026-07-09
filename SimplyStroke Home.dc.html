@@ -32,6 +32,20 @@
   @keyframes ssRipple { 0% { transform:translate(-50%,-50%) scale(.35); opacity:.6; } 100% { transform:translate(-50%,-50%) scale(2.2); opacity:0; } }
   @keyframes ssTapPress { 0% { transform:translate(-50%,-50%) scale(1.15); opacity:0; } 18% { opacity:.5; } 45% { transform:translate(-50%,-50%) scale(.82); opacity:.4; } 100% { transform:translate(-50%,-50%) scale(1.1); opacity:0; } }
   @keyframes ssCountPop { 0% { transform:scale(.5); opacity:0; } 55% { transform:scale(1.18); opacity:1; } 100% { transform:scale(1); opacity:1; } }
+  /* --- mobile: responsive overrides (can't be expressed inline) --- */
+  @media (max-width: 760px) {
+    .ss-navlinks { display: none !important; }
+    .ss-logo { height: 52px !important; }
+    .ss-hero-copy { text-align: center !important; }
+    .ss-hero-copy p { margin-left: auto !important; margin-right: auto !important; }
+    .ss-hero-badges { justify-content: center !important; }
+    .ss-hero-cta { justify-content: center !important; }
+    .ss-steps { grid-template-columns: 1fr !important; gap: 30px !important; max-width: 320px; margin-left: auto; margin-right: auto; }
+    .ss-flightpath { display: none !important; }
+  }
+  @media (max-width: 400px) {
+    .ss-hero-phonewrap { transform: scale(0.88); transform-origin: top center; }
+  }
 </style>
 </helmet>
 
@@ -41,12 +55,14 @@
   <nav style="position:sticky; top:0; z-index:50; padding:14px 0; background:rgba(250,250,248,0.85); backdrop-filter:blur(14px); border-bottom:1px solid rgba(27,67,50,0.1);">
    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(20px,5vw,64px); display:flex; align-items:center; justify-content:space-between; gap:24px;">
     <a href="#top" style="display:flex; align-items:center;">
-      <img src="assets/logo-color.png" alt="SimplyStroke" style="height:70px; width:auto; display:block;">
+      <img src="assets/logo-color.png" alt="SimplyStroke" class="ss-logo" style="height:70px; width:auto; display:block;">
     </a>
     <div style="display:flex; align-items:center; gap:clamp(12px,2.4vw,34px);">
-      <a href="#how-it-works" style="font-size:15px; font-weight:600; color:#1A1A1A;">How it works</a>
-      <a href="#features" style="font-size:15px; font-weight:600; color:#1A1A1A;">Features</a>
-      <a href="#screens" style="font-size:15px; font-weight:600; color:#1A1A1A;">Screenshots</a>
+      <span class="ss-navlinks" style="display:flex; align-items:center; gap:clamp(12px,2.4vw,34px);">
+        <a href="#how-it-works" style="font-size:15px; font-weight:600; color:#1A1A1A;">How it works</a>
+        <a href="#features" style="font-size:15px; font-weight:600; color:#1A1A1A;">Features</a>
+        <a href="#screens" style="font-size:15px; font-weight:600; color:#1A1A1A;">Screenshots</a>
+      </span>
       <a href="#waitlist" style="display:inline-flex; align-items:center; gap:8px; background:#96C41E; color:#1B4332; font-weight:700; font-size:15px; padding:11px 22px; box-shadow:0 6px 16px rgba(150,196,30,0.32);">Join the waitlist</a>
     </div>
    </div>
@@ -58,7 +74,7 @@
     <div style="position:absolute; bottom:-160px; left:-120px; width:380px; height:380px; border-radius:50%; background:radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%); pointer-events:none;"></div>
 
     <div style="max-width:1200px; margin:0 auto; padding:clamp(44px,6vw,80px) clamp(20px,5vw,64px) clamp(40px,5vw,72px); display:flex; flex-wrap:wrap; align-items:center; gap:clamp(32px,5vw,64px);">
-      <div style="flex:1 1 420px; min-width:300px;">
+      <div class="ss-hero-copy" style="flex:1 1 420px; min-width:300px;">
         <h1 style="font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(52px,7vw,102px); line-height:0.9; letter-spacing:0.01em; margin:0;">
           No counting.<br>No math.<br>No stress.<br><span style="color:#96C41E;">Just Stroke.</span>
         </h1>
@@ -67,7 +83,7 @@
         </p>
 
         <!-- store badges (coming soon) -->
-        <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:34px;">
+        <div class="ss-hero-badges" style="display:flex; flex-wrap:wrap; gap:14px; margin-top:34px;">
           <div style="position:relative; display:inline-flex; align-items:center; gap:12px; background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.4); color:#FAFAF8; padding:13px 22px 13px 20px;">
             <svg viewBox="0 0 24 24" width="26" height="26" fill="#FAFAF8" aria-hidden="true"><path d="M16.5 12.3c0-2.2 1.8-3.3 1.9-3.3-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8-.7 0-1.7-.8-2.8-.8-1.5 0-2.8.8-3.6 2.2-1.5 2.6-.4 6.5 1.1 8.6.7 1 1.6 2.2 2.7 2.2 1.1 0 1.5-.7 2.8-.7 1.3 0 1.6.7 2.8.7 1.2 0 1.9-1 2.6-2 .8-1.2 1.2-2.3 1.2-2.4-.1 0-2.3-.9-2.3-3.6zM14.4 5.6c.6-.7 1-1.7.9-2.7-.9 0-1.9.6-2.5 1.3-.6.6-1 1.6-.9 2.6 1 .1 1.9-.5 2.5-1.2z"/></svg>
             <span style="text-align:left; line-height:1.1;"><span style="display:block; font-size:11px; letter-spacing:0.04em; color:rgba(255,255,255,0.8);">Coming soon to the</span><span style="display:block; font-size:19px; font-weight:700; letter-spacing:-0.01em;">App Store</span></span>
@@ -78,14 +94,14 @@
           </div>
         </div>
 
-        <div style="display:flex; align-items:center; gap:20px; margin-top:30px; flex-wrap:wrap;">
+        <div class="ss-hero-cta" style="display:flex; align-items:center; gap:20px; margin-top:30px; flex-wrap:wrap;">
           <a href="#waitlist" style="display:inline-flex; align-items:center; gap:10px; background:#96C41E; color:#1B4332; font-size:18px; font-weight:700; padding:17px 34px; box-shadow:0 14px 32px rgba(150,196,30,0.32);">Join the waitlist →</a>
           <span style="font-family:'Bebas Neue',sans-serif; font-size:34px; letter-spacing:0.02em; font-weight:400; color:rgba(255,255,255,0.9);">Launching 2026</span>
         </div>
       </div>
 
       <!-- phone: active round -->
-      <div style="flex:0 1 360px; min-width:300px; display:flex; justify-content:center;">
+      <div class="ss-hero-phonewrap" style="flex:0 1 360px; min-width:300px; display:flex; justify-content:center;">
         <div style="animation:ssFloat 6s ease-in-out infinite;">
           <div style="width:340px; background:#0d0d0d; border-radius:46px; padding:11px; box-shadow:0 40px 80px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(255,255,255,0.06);">
             <div style="width:100%; background:#F0F4F1; border-radius:36px; overflow:hidden; display:flex; flex-direction:column;">
@@ -145,14 +161,14 @@
 
     <div style="position:relative; margin-top:56px;">
       <!-- tee-to-green flight path -->
-      <div style="position:absolute; top:33px; left:0; right:0; z-index:0; display:flex; align-items:center; gap:12px; padding:0 5%;">
+      <div class="ss-flightpath" style="position:absolute; top:33px; left:0; right:0; z-index:0; display:flex; align-items:center; gap:12px; padding:0 5%;">
         <span style="width:17px; height:17px; border-radius:50%; background:#fff; border:1px solid rgba(27,67,50,0.18); box-shadow:0 1px 3px rgba(27,67,50,0.14); background-image:radial-gradient(circle, rgba(27,67,50,0.14) 1px, transparent 1.4px); background-size:5px 5px; flex-shrink:0;"></span>
         <span style="flex:1; border-top:2px dashed rgba(45,106,79,0.4);"></span>
         <svg viewBox="0 0 24 24" width="26" height="26" fill="none" style="flex-shrink:0;" aria-hidden="true"><path d="M6 22V3" stroke="#1B4332" stroke-width="2.2" stroke-linecap="round"/><path d="M6 3.5 18.5 7 6 10.5Z" fill="#96C41E" stroke="#96C41E" stroke-width="1.4" stroke-linejoin="round"/><circle cx="6" cy="22" r="1.8" fill="#1B4332"/></svg>
         <span style="position:absolute; top:50%; margin-top:-6px; width:13px; height:13px; border-radius:50%; background:#96C41E; box-shadow:0 0 0 5px rgba(150,196,30,0.22); animation:ssTravel 4.8s ease-in-out infinite;"></span>
       </div>
 
-      <div style="position:relative; z-index:1; display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(14px,3vw,44px);">
+      <div class="ss-steps" style="position:relative; z-index:1; display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(14px,3vw,44px);">
         <div style="text-align:center;">
           <div style="width:66px; height:66px; border-radius:50%; background:#1B4332; box-shadow:0 10px 24px rgba(27,67,50,0.22); display:flex; align-items:center; justify-content:center; margin:0 auto; animation:ssStepLift 3.2s ease-in-out infinite, ssFlashBg1 4.8s ease-in-out infinite;">
             <span style="font-family:'Bebas Neue',sans-serif; font-size:40px; line-height:1; color:#96C41E; animation:ssFlashTx1 4.8s ease-in-out infinite;">1</span>

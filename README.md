@@ -1,7 +1,5 @@
 # Handoff: SimplyStroke Marketing Home Page
 
-> **Also see `SEO-HANDOFF.md`** in this repo for title tags, meta descriptions, keyword strategy, and technical SEO notes (schema, sitemap, OG tags) to implement alongside this design.
-
 ## Overview
 Marketing / pre-launch landing page for **SimplyStroke**, a one-tap golf scoring app ("No counting. No math. No stress. Just Stroke."). The page introduces the product, shows the app UI in a phone mockup, explains the value prop, includes an ADHD-focused section, and drives users to a waitlist. App is "Coming soon" (launching 2026).
 
@@ -82,7 +80,17 @@ Apple Watch, final CTA / waitlist, and footer (footer uses white logo `assets/lo
 - **Hero** golf-ball tap target: continuous pulsing ring (`@keyframes ssPulse`, ~2.4s ease-out infinite). Static at 3 / HITTING 4 in the mock.
 - **Screens strip → Active round phone**: autonomous tap-loop animation (see §6.3). Ripple ring `@keyframes ssRipple` behind ball, number pop `@keyframes ssPop`, driven by a `setInterval` in the logic class that increments strokes and updates total + scorecard chip. In production this is user tap-driven.
 - Nav is sticky. Anchor links jump to `#features`, `#watch`, `#screens`, `#waitlist`, `#top`.
-- Responsive: hero and ADHD fold collapse from two columns to one on narrow viewports (flex-wrap / auto-fit grid).
+
+## Responsive / Mobile
+Base layout is fluid (`clamp()` type, `flex-wrap`, `auto-fit` grids). A mobile pass added a small set of breakpoint overrides that a class-based CSS build can express directly (in the reference HTML they live in a `<style>` media block keyed to class hooks, since the DC format is inline-only):
+- **Nav (`@media max-width:760px`)**: the three text links (`.ss-navlinks` — How it works / Features / Screenshots) are hidden; only the logo + "Join the waitlist" CTA remain. Logo shrinks from 70px to 52px. In a real build, replace the hidden links with a hamburger/drawer if full nav is wanted on mobile.
+- **Hero (`≤760px`)**: copy column centers (headline, paragraph, store badges, CTA row all center-aligned); phone stacks below via `flex-wrap`.
+- **Hero phone (`≤400px`)**: the fixed-width 340px phone mockup is `transform: scale(0.88)` (origin top-center) so it never overflows small viewports. Its internal elements are fixed px, so scale the whole frame rather than resizing it.
+- **"How it works" steps (`≤760px`)**: the `repeat(3,1fr)` grid becomes a single centered column (max-width 320px), and the decorative horizontal tee-to-green flight-path line (`.ss-flightpath`, only meaningful across a horizontal row) is hidden.
+- Everything else (features grid, ADHD fold, watch, screens strip, footer) already reflows via `auto-fit`/`flex-wrap`.
+
+## Reference screenshots
+`screenshots/` holds desktop section renders for pixel reference: `01-hero`, `02-how-it-works`, `03-adhd-fold`, `04-features`, `05-apple-watch`, `06-screens`, `07-waitlist-footer`. (A single stitched full-page PNG is unreliable to auto-generate in the design tool because the page re-renders on scroll — capture one from the browser print/PDF view if needed.)
 
 ## Design Tokens
 Colors:
