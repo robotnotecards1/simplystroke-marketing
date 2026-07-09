@@ -11,6 +11,9 @@ export const SITE_NAME = "SimplyStroke";
 export const WAITLIST_ENDPOINT =
   process.env.NEXT_PUBLIC_WAITLIST_ENDPOINT ?? "";
 
+// Google Analytics 4 measurement ID (gtag.js, loaded in app/layout.tsx).
+export const GA_ID = "G-M00J122TYL";
+
 // Per-page OpenGraph block. Next.js replaces (not merges) the layout's
 // `openGraph` when a page defines its own, so every page builds the full
 // set here to keep og:image/siteName intact.

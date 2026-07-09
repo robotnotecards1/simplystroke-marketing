@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, DM_Sans } from "next/font/google";
+import Script from "next/script";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { GA_ID, SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const bebas = Bebas_Neue({
@@ -39,6 +40,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bebas.variable} ${dmSans.variable}`}>
       <body>
+        {/* Google tag (gtag.js) */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');`}
+        </Script>
         <Nav />
         {children}
         <Footer />
