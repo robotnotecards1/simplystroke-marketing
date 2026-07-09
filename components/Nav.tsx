@@ -14,11 +14,13 @@ export default function Nav() {
           />
         </Link>
         <div className="ss-nav-right">
+          {/* Nav links archived per client request (2026-07-08) — restore by
+              uncommenting when the site should expose section navigation.
           <span className="ss-navlinks">
             <Link href="/#how-it-works">How it works</Link>
             <Link href="/features/">Features</Link>
             <Link href="/#screens">Screenshots</Link>
-          </span>
+          </span> */}
           <Link href="/download/" className="btn btn-nav">
             Join the waitlist
           </Link>
