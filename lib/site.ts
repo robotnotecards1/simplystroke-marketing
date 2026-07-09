@@ -2,7 +2,7 @@
 // NEXT_PUBLIC_SITE_URL at build time) when the real domain is attached —
 // canonicals, OG URLs, sitemap.xml and JSON-LD all derive from it.
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://simplystroke.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.simplystroke.app";
 
 export const SITE_NAME = "SimplyStroke";
 
