@@ -344,17 +344,18 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .ss-screens-head h2 { margin-top: 14px; }
 .ss-screens-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: clamp(24px, 4vw, 48px); margin-top: 56px; }
 .ss-screen-item { flex: 0 0 auto; text-align: center; }
-.ss-screen-item > img { width: 264px; height: auto; margin: 0 auto; filter: drop-shadow(0 28px 60px rgba(27,67,50,0.28)); animation: ssFloatSm 7.6s ease-in-out infinite; }
-.ss-screen-item:nth-child(1) > img { animation-delay: 1.2s; }
-.ss-screen-item:nth-child(2) > img { animation-duration: 7s; }
-.ss-screen-item:nth-child(4) > img { animation-duration: 8.2s; animation-delay: 2.4s; }
-.ss-screen-caption { font-weight: 700; font-size: 18px; color: var(--green-deep); margin-top: 24px; }
+.ss-screen-item:nth-child(1) .mini-wrap { animation-duration: 7.6s; animation-delay: 1.2s; }
+.ss-screen-item:nth-child(2) .mini-wrap { animation-duration: 7s; animation-delay: 0s; }
+.ss-screen-item:nth-child(4) .mini-wrap { animation-duration: 8.2s; animation-delay: 2.4s; }
+.ss-screen-caption { display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: 700; font-size: 18px; color: var(--green-deep); margin-top: 24px; }
+.ss-screen-stepnum { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--green-deep); color: var(--lime); font-family: var(--font-display); font-size: 17px; line-height: 1; flex-shrink: 0; }
 .ss-screen-sub { font-size: 15px; color: var(--gray-body); margin-top: 4px; }
 
 /* ---------- mini live phone (screens strip, animated) ---------- */
 .mini-wrap { width: 264px; margin: 0 auto; animation: ssFloatSm 8s ease-in-out infinite; animation-delay: 0.6s; filter: drop-shadow(0 28px 60px rgba(27,67,50,0.28)); }
 .mini-frame { background: #0b0b0d; border-radius: 38px; padding: 8px; }
 .mini-screen { position: relative; border-radius: 31px; overflow: hidden; background: var(--offwhite); text-align: left; }
+.mini-screen > img { width: 100%; height: auto; display: block; }
 .mini-notch { position: absolute; top: 7px; left: 50%; transform: translateX(-50%); width: 64px; height: 17px; background: #000; border-radius: 12px; z-index: 5; }
 .mini-header { background: var(--green-deep); padding: 26px 14px 0; }
 .mini-toprow { display: flex; justify-content: space-between; align-items: center; }

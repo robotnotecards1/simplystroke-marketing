@@ -310,41 +310,67 @@ export default function Home() {
 
         <div className="ss-screens-row">
           <div className="ss-screen-item">
-            <img
-              src="/images/app-screens/home.png"
-              alt="SimplyStroke golf stroke counter app home screen with start new round button"
-              width={264}
-              height={528}
-            />
-            <div className="ss-screen-caption">Start Your Round</div>
+            <div className="mini-wrap">
+              <div className="mini-frame">
+                <div className="mini-screen">
+                  <img
+                    src="/images/app-screens/home.png"
+                    alt="SimplyStroke golf stroke counter app home screen with start new round button"
+                    width={270}
+                    height={540}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="ss-screen-caption">
+              <span className="ss-screen-stepnum">1</span>Start Your Round
+            </div>
             <div className="ss-screen-sub">Start a round in one tap</div>
           </div>
 
           <div className="ss-screen-item">
-            <img
-              src="/images/app-screens/course.png"
-              alt="SimplyStroke course select screen listing nearby golf courses"
-              width={264}
-              height={528}
-            />
-            <div className="ss-screen-caption">Pick a course</div>
+            <div className="mini-wrap">
+              <div className="mini-frame">
+                <div className="mini-screen">
+                  <img
+                    src="/images/app-screens/course.png"
+                    alt="SimplyStroke course select screen listing nearby golf courses"
+                    width={270}
+                    height={540}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="ss-screen-caption">
+              <span className="ss-screen-stepnum">2</span>Pick a course
+            </div>
             <div className="ss-screen-sub">Or skip it and just count</div>
           </div>
 
           <div className="ss-screen-item">
             <ActiveRoundPhone />
-            <div className="ss-screen-caption">Active round</div>
+            <div className="ss-screen-caption">
+              <span className="ss-screen-stepnum">3</span>Active round
+            </div>
             <div className="ss-screen-sub">The only screen that matters</div>
           </div>
 
           <div className="ss-screen-item">
-            <img
-              src="/images/app-screens/scorecard.png"
-              alt="SimplyStroke golf scorecard screen with per-hole scores and round total"
-              width={264}
-              height={528}
-            />
-            <div className="ss-screen-caption">Scorecard</div>
+            <div className="mini-wrap">
+              <div className="mini-frame">
+                <div className="mini-screen">
+                  <img
+                    src="/images/app-screens/scorecard.png"
+                    alt="SimplyStroke golf scorecard screen with per-hole scores and round total"
+                    width={270}
+                    height={540}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="ss-screen-caption">
+              <span className="ss-screen-stepnum">4</span>Scorecard
+            </div>
             <div className="ss-screen-sub">Every hole, math done for you</div>
           </div>
         </div>
