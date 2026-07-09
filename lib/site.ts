@@ -6,10 +6,13 @@ export const SITE_URL =
 
 export const SITE_NAME = "SimplyStroke";
 
-// Optional endpoint that receives waitlist signups as POST { email, source }.
-// Unset pre-launch: the form falls back to a local confirmation.
+// Waitlist signups POST here as { email, source, website (honeypot) }.
+// Backed by the `waitlist` edge function on the simplystroke Supabase
+// project (source in supabase/ in this repo); env var overrides for
+// local/testing setups.
 export const WAITLIST_ENDPOINT =
-  process.env.NEXT_PUBLIC_WAITLIST_ENDPOINT ?? "";
+  process.env.NEXT_PUBLIC_WAITLIST_ENDPOINT ??
+  "https://uqlrfzzszfsnjepuppdk.supabase.co/functions/v1/waitlist";
 
 // Google Analytics 4 measurement ID (gtag.js, loaded in app/layout.tsx).
 export const GA_ID = "G-M00J122TYL";

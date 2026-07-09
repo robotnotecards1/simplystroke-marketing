@@ -146,7 +146,7 @@ npm run build   # static export → out/
 ## Config to set before launch
 
 - **Domain** — `lib/site.ts` `SITE_URL` (or env `NEXT_PUBLIC_SITE_URL`) defaults to `https://www.simplystroke.app` (the production domain on Vercel); canonicals/sitemap/OG URLs derive from it.
-- **Waitlist endpoint** — set `NEXT_PUBLIC_WAITLIST_ENDPOINT` to an HTTP endpoint accepting `POST {email, source}`; until then the form shows a local confirmation and does not store emails.
+- **Waitlist backend (wired)** — the form POSTs to the `waitlist` edge function on the `simplystroke` Supabase project (source + migration in `supabase/`); signups land in the `public.waitlist` table (service-role-only access, honeypot + dedupe). `NEXT_PUBLIC_WAITLIST_ENDPOINT` overrides the endpoint if ever needed.
 - **At launch** — do the find-and-replace pass described in `SEO-HANDOFF.md` §6 / `SEO-COPY-REVIEW.md` (flip "coming 2026 / join the waitlist" copy to live download CTAs, add real store links to `components/StoreBadges.tsx`).
 
 ## Deploy (Vercel)
