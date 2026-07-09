@@ -312,7 +312,7 @@ export default function Home() {
           <div className="ss-screen-item">
             <div className="mini-wrap">
               <div className="mini-frame">
-                <div className="mini-screen">
+                <div className="mini-screen scrolling">
                   <img
                     src="/images/app-screens/home.png"
                     alt="SimplyStroke golf stroke counter app home screen with start new round button"
@@ -331,7 +331,7 @@ export default function Home() {
           <div className="ss-screen-item">
             <div className="mini-wrap">
               <div className="mini-frame">
-                <div className="mini-screen">
+                <div className="mini-screen scrolling">
                   <img
                     src="/images/app-screens/course.png"
                     alt="SimplyStroke course select screen listing nearby golf courses"
@@ -358,7 +358,7 @@ export default function Home() {
           <div className="ss-screen-item">
             <div className="mini-wrap">
               <div className="mini-frame">
-                <div className="mini-screen">
+                <div className="mini-screen scrolling">
                   <img
                     src="/images/app-screens/scorecard.png"
                     alt="SimplyStroke golf scorecard screen with per-hole scores and round total"

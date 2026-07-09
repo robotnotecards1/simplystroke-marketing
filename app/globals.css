@@ -137,6 +137,7 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center; /* keeps the phone centered when columns wrap on mobile */
   gap: clamp(32px, 5vw, 64px);
 }
 .ss-hero-copy { flex: 1 1 420px; min-width: 300px; }
@@ -180,6 +181,7 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .ph-dot.upcoming { background: rgba(255,255,255,0.2); }
 .ph-scorebanner { background: var(--green-deep); padding: 8px 0 18px; text-align: center; }
 .ph-overpar { font-family: var(--font-display); font-size: 58px; line-height: 0.9; color: var(--coral); }
+.ph-overpar.even { color: #fff; }
 .ph-overpar-label { font-size: 11px; letter-spacing: 0.16em; color: rgba(255,255,255,0.5); text-transform: uppercase; }
 .ph-main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px 20px 16px; gap: 15px; }
 .ph-ballwrap { position: relative; width: 190px; height: 190px; }
@@ -348,7 +350,7 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .ss-screen-item:nth-child(2) .mini-wrap { animation-duration: 7s; animation-delay: 0s; }
 .ss-screen-item:nth-child(4) .mini-wrap { animation-duration: 8.2s; animation-delay: 2.4s; }
 .ss-screen-caption { display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: 700; font-size: 18px; color: var(--green-deep); margin-top: 24px; }
-.ss-screen-stepnum { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--green-deep); color: var(--lime); font-family: var(--font-display); font-size: 17px; line-height: 1; flex-shrink: 0; }
+.ss-screen-stepnum { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--green-deep); color: var(--lime); font-family: var(--font-display); font-size: 17px; line-height: 1; padding-top: 2px; flex-shrink: 0; } /* padding-top optically centers Bebas digits, which sit high */
 .ss-screen-sub { font-size: 15px; color: var(--gray-body); margin-top: 4px; }
 
 /* ---------- mini live phone (screens strip, animated) ---------- */
@@ -356,6 +358,19 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .mini-frame { background: #0b0b0d; border-radius: 38px; padding: 8px; }
 .mini-screen { position: relative; border-radius: 31px; overflow: hidden; background: var(--offwhite); text-align: left; }
 .mini-screen > img { width: 100%; height: auto; display: block; }
+
+/* Static app screenshots slowly scroll inside their frame (peek strip).
+   Screens are 248x496 in-frame; the 460px crop leaves 36px of travel. */
+@keyframes ssScreenScroll {
+  0%, 22% { transform: translateY(0); }
+  45%, 62% { transform: translateY(-36px); }
+  85%, 100% { transform: translateY(0); }
+}
+.mini-screen.scrolling { height: 460px; }
+.mini-screen.scrolling > img { animation: ssScreenScroll 9s ease-in-out infinite; }
+.ss-screen-item:nth-child(1) .mini-screen.scrolling > img { animation-delay: 0.8s; }
+.ss-screen-item:nth-child(2) .mini-screen.scrolling > img { animation-delay: 2.6s; }
+.ss-screen-item:nth-child(4) .mini-screen.scrolling > img { animation-delay: 4.4s; }
 .mini-notch { position: absolute; top: 7px; left: 50%; transform: translateX(-50%); width: 64px; height: 17px; background: #000; border-radius: 12px; z-index: 5; }
 .mini-header { background: var(--green-deep); padding: 26px 14px 0; }
 .mini-toprow { display: flex; justify-content: space-between; align-items: center; }
@@ -507,6 +522,15 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 @media (max-width: 760px) {
   .ss-navlinks { display: none; }
   .ss-logo { height: 42px; } /* was 52px; −20% per client request */
+  /* Lighter overlay on mobile so the golfer photo actually reads; the
+     desktop 165deg gradient at full strength buries it in flat green. */
+  .ss-hero {
+    background:
+      linear-gradient(180deg, rgba(27,67,50,0.86) 0%, rgba(27,67,50,0.60) 48%, rgba(20,50,37,0.74) 100%),
+      url("/images/hero-bg.webp");
+    background-size: cover;
+    background-position: 62% center;
+  }
   .ss-hero-copy { text-align: center; }
   .ss-hero-copy .ss-hero-p { margin-left: auto; margin-right: auto; }
   .ss-hero-badges { justify-content: center; }
@@ -527,7 +551,7 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
   .ss-hero-float,
   .ss-watch-float,
   .mini-wrap,
-  .ss-screen-item > img,
+  .mini-screen.scrolling > img,
   .ss-step-num,
   .ss-step-num span { animation: none; }
   .ss-flightpath .travel-ball { display: none; }
