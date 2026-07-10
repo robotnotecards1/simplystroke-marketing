@@ -51,6 +51,12 @@ export default function RootLayout({
             gtag('js', new Date());
             gtag('config', '${GA_ID}');`}
         </Script>
+        {/* Umami — privacy-first, self-hosted web analytics (you own the data) */}
+        <Script
+          src="https://simplystroke-umami.vercel.app/script.js"
+          data-website-id="20c6bcc0-8be5-429f-be45-51d4f57600cf"
+          strategy="afterInteractive"
+        />
         <Nav />
         {children}
         <Footer />
