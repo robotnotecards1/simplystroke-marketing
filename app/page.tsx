@@ -44,17 +44,15 @@ export default function Home() {
         <div className="container ss-hero-inner">
           <div className="ss-hero-copy">
             <h1 className="ss-hero-h1">
-              No counting.
+              Master your round,
               <br />
-              No math.
-              <br />
-              No stress.
-              <br />
-              <span className="accent">Just Stroke.</span>
+              <span className="accent">effortlessly.</span>
             </h1>
             <p className="ss-hero-p">
-              One giant button. Tap to count a stroke, get a clean scorecard
-              at the end. No mental math between shots — just tap, walk,
+              <strong>No counting. No math. No stress. Just Stroke.</strong>{" "}
+              One giant button logs each stroke, and at the end you get a
+              scorecard so clean your partners will wonder if you&apos;ve got a
+              secret caddy. No mid-fairway brain freezes — just tap, walk,
               repeat.
             </p>
             <StoreBadges />
@@ -71,15 +69,14 @@ export default function Home() {
 
       {/* ===================== PROBLEM / HOW IT WORKS ===================== */}
       <section id="how-it-works" className="ss-problem">
-        <div className="eyebrow">The problem with golf apps</div>
-        <h2 className="h2-display">
-          Most scoring apps make you do the one thing you came here to escape:
-          keep track.
-        </h2>
+        <div className="eyebrow">The problem with most golf apps</div>
+        <h2 className="h2-display">They&apos;re a distraction.</h2>
         <p className="ss-problem-p">
-          Menus, handicaps, GPS overlays, ads, sign-ups. By the third hole
-          you&apos;ve lost count and put the phone away. SimplyStroke throws it
-          all out and keeps the single job:{" "}
+          We&apos;ve all been there. Other scoring apps can be more distracting
+          than a rogue cart on the fairway — menus, handicaps, GPS overlays,
+          ads, sign-ups. By the third hole you&apos;re wrestling with your phone
+          instead of your next shot. SimplyStroke cuts through the noise and
+          keeps the single job:{" "}
           <strong>count this stroke.</strong>
         </p>
 
@@ -96,27 +93,30 @@ export default function Home() {
               <div className="ss-step-num">
                 <span>1</span>
               </div>
-              <div className="ss-step-title">Tap the ball</div>
+              <div className="ss-step-title">Tap with confidence</div>
               <p className="ss-step-p">
-                Every swing is one tap on a button you can hit without looking.
+                Every swing is one no-look tap on a button built for the course.
+                You&apos;ll wonder how you played without it.
               </p>
             </div>
             <div className="ss-step">
               <div className="ss-step-num">
                 <span>2</span>
               </div>
-              <div className="ss-step-title">Next hole</div>
+              <div className="ss-step-title">Seamless progression</div>
               <p className="ss-step-p">
-                The app carries your running total. No adding, no remembering.
+                The app carries your running total. No adding, no remembering —
+                your head stays on the next shot.
               </p>
             </div>
             <div className="ss-step">
               <div className="ss-step-num">
                 <span>3</span>
               </div>
-              <div className="ss-step-title">Get your card</div>
+              <div className="ss-step-title">Instant scorecard</div>
               <p className="ss-step-p">
-                A clean scorecard with the math already done, ready to share.
+                A clean, accurate scorecard with the math already done — ready
+                to share, ready to settle the debate on 18.
               </p>
             </div>
           </div>
@@ -127,16 +127,17 @@ export default function Home() {
       <section className="ss-fold">
         <div className="ss-fold-grid">
           <div>
-            <h2 className="ss-fold-h2">Wait… was that four shots or five?</h2>
+            <h2 className="ss-fold-h2">
+              Ever wondered: &ldquo;was that my third or fourth?&rdquo;
+            </h2>
             <p className="ss-fold-p">
-              If you&apos;ve ever striped a lovely approach, started thinking
-              about that one time in 2019 you almost made a hole-in-one,
-              wondered whether you left the garage door open, and then arrived
-              at the green with absolutely no idea what you&apos;re lying.
-              This app was built for ADHD brains, and for anyone else whose
-              head wanders mid-round. SimplyStroke holds the number so you
-              don&apos;t have to. Tap, forget, move on. That&apos;s the whole
-              trick.
+              You stripe a beautiful approach, your mind wanders to that
+              almost-ace from 2019 or whether you locked the back door, and you
+              arrive at the green with no idea what you&apos;re lying. This app
+              is for you. Built for ADHD brains and anyone whose head wanders
+              mid-round, SimplyStroke holds the number so you don&apos;t have
+              to. Tap, forget, move on — your focus stays where it belongs: the
+              next shot.
             </p>
             <a href="#waitlist" className="btn btn-fold">
               Let the app remember →
@@ -157,8 +158,8 @@ export default function Home() {
                   <BallOnGreenIcon />
                 </div>
                 <span>
-                  You get to the green and genuinely cannot remember if this
-                  is your third or fourth stroke. Every. Single. Time.
+                  You reach the green genuinely unsure if it&apos;s your third
+                  or fourth stroke. Every. Single. Time.
                 </span>
               </div>
               <div className="ss-fold-card">
@@ -166,8 +167,9 @@ export default function Home() {
                   <ScorecardIcon />
                 </div>
                 <span>
-                  The scorecard pencil is a tiny, boring commitment device.
-                  You will not use it. Be honest.
+                  That tiny scorecard pencil is a noble effort — but be honest,
+                  it never makes it past the first few holes. This one actually
+                  works.
                 </span>
               </div>
               <div className="ss-fold-card">
@@ -175,8 +177,8 @@ export default function Home() {
                   <BallPinIcon />
                 </div>
                 <span>
-                  One giant button on the screen means there&apos;s nothing
-                  else to poke, tweak, or wander off into mid-round.
+                  One giant button means zero distractions. No accidental taps,
+                  no getting lost in menus mid-round.
                 </span>
               </div>
             </div>
@@ -209,7 +211,7 @@ export default function Home() {
               <h3>One giant tap target</h3>
               <p>
                 A stroke button that fills the screen. No fumbling, no
-                squinting, no mis-taps mid-swing.
+                squinting, no mis-taps — even with a glove on.
               </p>
             </div>
             <div className="ss-feature">
@@ -219,7 +221,7 @@ export default function Home() {
               <h3>Scorecard, done for you</h3>
               <p>
                 Every hole totals automatically with vs-par at a glance.
-                Birdies, pars and bogeys colour-coded.
+                Birdies, pars and bogeys colour-coded for instant review.
               </p>
             </div>
             <div className="ss-feature">
@@ -228,8 +230,8 @@ export default function Home() {
               </div>
               <h3>Fits every round</h3>
               <p>
-                Nine holes or a full eighteen, match play or just messing
-                about. One tap counts them all.
+                Nine holes or a full eighteen, match play or a casual round.
+                One tap counts them all, seamlessly.
               </p>
             </div>
             <div className="ss-feature">
@@ -278,8 +280,9 @@ export default function Home() {
             <h2>Leave the phone in the bag.</h2>
             <p className="ss-watch-p">
               Count every stroke from your wrist. A tap on the watch face logs
-              the shot, the Digital Crown fixes mistakes, and your round syncs
-              straight to your phone&apos;s scorecard.
+              the shot, the Digital Crown makes corrections a breeze, and your
+              round syncs straight to your phone&apos;s scorecard. Keep the phone
+              tucked away and focus on the follow-through.
             </p>
             <ul className="ss-checklist">
               <li>
@@ -323,9 +326,9 @@ export default function Home() {
               </div>
             </div>
             <div className="ss-screen-caption">
-              <span className="ss-screen-stepnum">1</span>Start Your Round
+              <span className="ss-screen-stepnum">1</span>Start your round
             </div>
-            <div className="ss-screen-sub">Start a round in one tap</div>
+            <div className="ss-screen-sub">Get going in one tap</div>
           </div>
 
           <div className="ss-screen-item">
@@ -344,7 +347,7 @@ export default function Home() {
             <div className="ss-screen-caption">
               <span className="ss-screen-stepnum">2</span>Pick a course
             </div>
-            <div className="ss-screen-sub">Or skip it and just count</div>
+            <div className="ss-screen-sub">Or skip it and just count — your call</div>
           </div>
 
           <div className="ss-screen-item">
@@ -352,7 +355,7 @@ export default function Home() {
             <div className="ss-screen-caption">
               <span className="ss-screen-stepnum">3</span>Active round
             </div>
-            <div className="ss-screen-sub">The only screen that matters</div>
+            <div className="ss-screen-sub">The only screen that truly matters</div>
           </div>
 
           <div className="ss-screen-item">
@@ -371,7 +374,7 @@ export default function Home() {
             <div className="ss-screen-caption">
               <span className="ss-screen-stepnum">4</span>Scorecard
             </div>
-            <div className="ss-screen-sub">Every hole, math done for you</div>
+            <div className="ss-screen-sub">Every hole, math done — pure and simple</div>
           </div>
         </div>
       </section>

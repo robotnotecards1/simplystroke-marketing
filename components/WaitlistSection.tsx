@@ -16,8 +16,8 @@ export default function WaitlistSection({
         <h2>{heading}</h2>
         <p className="ss-waitlist-p">
           SimplyStroke launches on iPhone, Android and Apple Watch soon. Drop
-          your email and we&apos;ll tell you the moment it&apos;s live. No
-          spam, one message.
+          your email and we&apos;ll notify you the moment it&apos;s live. No
+          spam, just one message — we respect your inbox as much as your swing.
         </p>
         <WaitlistForm source={source} />
         <div className="ss-wait-note">
