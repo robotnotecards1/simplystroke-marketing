@@ -1,0 +1,179 @@
+// Structured data for the whole site.
+//
+// Everything hangs off a small set of stable @id values. The rule: every page
+// that mentions the app, the company or the author points at the SAME @id
+// rather than re-describing them. Search engines and LLMs then resolve all of
+// it to one entity instead of a dozen unrelated look-alikes, which is one of
+// the strongest citation signals available and costs us nothing but a string.
+//
+// Do NOT add `offers`, `price`, `aggregateRating` or `review` to any node that
+// isn't SimplyStroke. Publishing machine-readable pricing or ratings claims
+// about other companies' products, on our domain, is a claim we can't stand
+// behind and don't need to make. See COMPARISON-PAGE-SPEC.md §6.
+
+import { SITE_NAME, SITE_URL } from "./site";
+
+export const ORG_ID = `${SITE_URL}/#organization`;
+export const WEBSITE_ID = `${SITE_URL}/#website`;
+export const APP_ID = `${SITE_URL}/#app`;
+export const PERSON_ID = `${SITE_URL}/about/#jared`;
+
+/* -------------------------------------------------------------------------- */
+/* Core entities                                                              */
+/* -------------------------------------------------------------------------- */
+
+export const organizationNode = {
+  "@type": "Organization",
+  "@id": ORG_ID,
+  name: SITE_NAME,
+  url: `${SITE_URL}/`,
+  logo: `${SITE_URL}/images/logo-color.png`,
+  email: "hello@simplystroke.app",
+  founder: { "@id": PERSON_ID },
+  description:
+    "SimplyStroke makes a one-tap golf stroke counter and scorecard for golfers who lose count, including ADHD and neurodivergent golfers.",
+};
+
+export const websiteNode = {
+  "@type": "WebSite",
+  "@id": WEBSITE_ID,
+  url: `${SITE_URL}/`,
+  name: SITE_NAME,
+  publisher: { "@id": ORG_ID },
+  inLanguage: "en-US",
+};
+
+export const personNode = {
+  "@type": "Person",
+  "@id": PERSON_ID,
+  name: "Jared Moore",
+  url: `${SITE_URL}/about/`,
+  jobTitle: "Founder",
+  worksFor: { "@id": ORG_ID },
+  description:
+    "Founder of SimplyStroke. Built a one-tap golf stroke counter after one too many rounds spent reconstructing his own score on the walk to the next tee.",
+  knowsAbout: [
+    "golf scoring",
+    "golf scorecard apps",
+    "ADHD",
+    "working memory",
+    "app design",
+  ],
+};
+
+// The product. The one node allowed to carry an Offer.
+export const appNode = {
+  "@type": "SoftwareApplication",
+  "@id": APP_ID,
+  name: SITE_NAME,
+  applicationCategory: "SportsApplication",
+  applicationSubCategory: "Golf scorecard and stroke counter",
+  operatingSystem: "iOS, Android, watchOS",
+  url: `${SITE_URL}/`,
+  image: `${SITE_URL}/og-image.jpg`,
+  publisher: { "@id": ORG_ID },
+  description:
+    "A free, one-tap golf stroke counter and scorecard for iPhone, Android and Apple Watch. Counts your strokes so working memory doesn't have to. Launching 2026.",
+  featureList: [
+    "One tap per stroke",
+    "Undo a mis-tap",
+    "Works fully offline",
+    "No account required to start a round",
+    "No ads",
+    "Apple Watch support",
+    "Finished scorecard with the math already done",
+  ],
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  // No aggregateRating / review until the app has shipped and earned real
+  // ones. Inventing them is the one thing here that could earn a penalty.
+};
+
+/* -------------------------------------------------------------------------- */
+/* Builders                                                                   */
+/* -------------------------------------------------------------------------- */
+
+export type Faq = { q: string; a: string };
+
+export function faqNode(faqs: Faq[]) {
+  return {
+    "@type": "FAQPage",
+    mainEntity: faqs.map(({ q, a }) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a },
+    })),
+  };
+}
+
+export type Crumb = { name: string; path: string };
+
+/** Pass the trail WITHOUT "Home" — it's prepended for you. */
+export function breadcrumbNode(crumbs: Crumb[]) {
+  const items = [{ name: "Home", path: "/" }, ...crumbs];
+  return {
+    "@type": "BreadcrumbList",
+    itemListElement: items.map(({ name, path }, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name,
+      item: `${SITE_URL}${path}`,
+    })),
+  };
+}
+
+export type Citation = { name: string; url: string; doi?: string };
+
+export function articleNode({
+  type = "Article",
+  headline,
+  description,
+  path,
+  datePublished,
+  dateModified,
+  citations,
+  about,
+}: {
+  type?: "Article" | "BlogPosting";
+  headline: string;
+  description: string;
+  path: string;
+  datePublished: string;
+  dateModified: string;
+  citations?: Citation[];
+  about?: string;
+}) {
+  return {
+    "@type": type,
+    "@id": `${SITE_URL}${path}#article`,
+    headline,
+    description,
+    datePublished,
+    dateModified,
+    inLanguage: "en-US",
+    author: { "@id": PERSON_ID },
+    publisher: { "@id": ORG_ID },
+    isPartOf: { "@id": WEBSITE_ID },
+    image: `${SITE_URL}/og-image.jpg`,
+    mainEntityOfPage: `${SITE_URL}${path}`,
+    ...(about ? { about: { "@id": about } } : {}),
+    ...(citations?.length
+      ? {
+          citation: citations.map(({ name, url, doi }) => ({
+            "@type": "ScholarlyArticle",
+            name,
+            url,
+            ...(doi ? { identifier: doi } : {}),
+          })),
+        }
+      : {}),
+  };
+}
+
+/** Wrap a set of nodes into a single @graph document. */
+export function graph(...nodes: object[]) {
+  return { "@context": "https://schema.org", "@graph": nodes };
+}
