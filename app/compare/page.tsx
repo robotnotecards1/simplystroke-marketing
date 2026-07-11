@@ -12,7 +12,6 @@ import {
   faqNode,
   graph,
   organizationNode,
-  personNode,
   websiteNode,
   type Faq,
 } from "@/lib/schema";
@@ -161,7 +160,6 @@ const itemListNode = {
 const jsonLd = graph(
   organizationNode,
   websiteNode,
-  personNode,
   appNode,
   articleNode({
     headline: TITLE,
@@ -189,7 +187,7 @@ export default function ComparePage() {
           <div className="pill">Comparison</div>
           <h1>Golf app comparison: SimplyStroke vs. everything else</h1>
           <div className="post-meta">
-            <span>Jared Moore</span>
+            <span>SimplyStroke</span>
             <span>·</span>
             <span>July 2026</span>
             <span>·</span>
@@ -445,6 +443,25 @@ export default function ComparePage() {
           .
         </p>
 
+        <h2>Head-to-head</h2>
+        <p>
+          The two comparisons people actually search for, in full:
+        </p>
+        <ul>
+          <li>
+            <Link href="/compare/simplystroke-vs-18birdies/">
+              SimplyStroke vs 18Birdies
+            </Link>{" "}
+            — the app that was the default, and is now described as bloated.
+          </li>
+          <li>
+            <Link href="/compare/simplystroke-vs-arccos/">
+              SimplyStroke vs Arccos
+            </Link>{" "}
+            — the best analytics in golf, and the loudest subscription in golf.
+          </li>
+        </ul>
+
         <h2>Common questions</h2>
         <div className="faq-list">
           {faqs.map(({ q, a }) => (
@@ -455,19 +472,6 @@ export default function ComparePage() {
           ))}
         </div>
 
-        <div className="author-box">
-          <div>
-            <div className="author-box-name">Jared Moore</div>
-            <p>
-              Built SimplyStroke after one too many rounds spent reconstructing
-              his own score on the walk to the next tee.{" "}
-              <Link href="/about/">More about the app and why it exists</Link>.
-              Spot something wrong in the table above?{" "}
-              <a href="mailto:hello@simplystroke.app">Tell us</a> and we will
-              fix it.
-            </p>
-          </div>
-        </div>
 
         <p style={{ fontSize: 14, color: "var(--gray-body)", marginTop: 28 }}>
           SimplyStroke has not launched yet, so this page carries no user

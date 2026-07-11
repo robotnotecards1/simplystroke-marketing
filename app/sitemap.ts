@@ -11,6 +11,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/golf-stroke-counter/`, lastModified, priority: 0.9 },
     { url: `${SITE_URL}/adhd-golf/`, lastModified, priority: 0.9 },
     { url: `${SITE_URL}/compare/`, lastModified, priority: 0.85 },
+    {
+      url: `${SITE_URL}/compare/simplystroke-vs-18birdies/`,
+      lastModified,
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/compare/simplystroke-vs-arccos/`,
+      lastModified,
+      priority: 0.8,
+    },
     // Product
     { url: `${SITE_URL}/features/`, lastModified, priority: 0.8 },
     { url: `${SITE_URL}/download/`, lastModified, priority: 0.8 },

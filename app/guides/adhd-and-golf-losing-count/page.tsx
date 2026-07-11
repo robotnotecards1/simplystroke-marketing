@@ -10,7 +10,6 @@ import {
   faqNode,
   graph,
   organizationNode,
-  personNode,
   websiteNode,
   type Faq,
 } from "@/lib/schema";
@@ -60,7 +59,6 @@ const faqs: Faq[] = [
 const jsonLd = graph(
   organizationNode,
   websiteNode,
-  personNode,
   articleNode({
     type: "BlogPosting",
     headline: TITLE,
@@ -89,7 +87,7 @@ export default function Post() {
           <div className="pill">ADHD &amp; golf</div>
           <h1>How to stop losing count mid-round when you have ADHD</h1>
           <div className="post-meta">
-            <span>Jared Moore</span>
+            <span>SimplyStroke</span>
             <span>·</span>
             <span>July 2026</span>
             <span>·</span>
@@ -331,17 +329,6 @@ export default function Post() {
           </li>
         </ul>
 
-        <div className="author-box">
-          <div>
-            <div className="author-box-name">Jared Moore</div>
-            <p>
-              Built <Link href="/">SimplyStroke</Link>, a one-tap golf stroke
-              counter, after one too many rounds spent reconstructing his own
-              score on the walk to the next tee.{" "}
-              <Link href="/about/">More about why it exists</Link>.
-            </p>
-          </div>
-        </div>
       </article>
 
       <WaitlistSection

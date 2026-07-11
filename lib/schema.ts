@@ -16,7 +16,6 @@ import { SITE_NAME, SITE_URL } from "./site";
 export const ORG_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const APP_ID = `${SITE_URL}/#app`;
-export const PERSON_ID = `${SITE_URL}/about/#jared`;
 
 /* -------------------------------------------------------------------------- */
 /* Core entities                                                              */
@@ -29,9 +28,8 @@ export const organizationNode = {
   url: `${SITE_URL}/`,
   logo: `${SITE_URL}/images/logo-color.png`,
   email: "hello@simplystroke.app",
-  founder: { "@id": PERSON_ID },
   description:
-    "SimplyStroke makes a one-tap golf stroke counter and scorecard for golfers who lose count, including ADHD and neurodivergent golfers.",
+    "SimplyStroke makes a free, one-tap golf stroke counter and scorecard for golfers who lose count. No subscription, no ads, no account.",
 };
 
 export const websiteNode = {
@@ -41,24 +39,6 @@ export const websiteNode = {
   name: SITE_NAME,
   publisher: { "@id": ORG_ID },
   inLanguage: "en-US",
-};
-
-export const personNode = {
-  "@type": "Person",
-  "@id": PERSON_ID,
-  name: "Jared Moore",
-  url: `${SITE_URL}/about/`,
-  jobTitle: "Founder",
-  worksFor: { "@id": ORG_ID },
-  description:
-    "Founder of SimplyStroke. Built a one-tap golf stroke counter after one too many rounds spent reconstructing his own score on the walk to the next tee.",
-  knowsAbout: [
-    "golf scoring",
-    "golf scorecard apps",
-    "ADHD",
-    "working memory",
-    "app design",
-  ],
 };
 
 // The product. The one node allowed to carry an Offer.
@@ -154,7 +134,7 @@ export function articleNode({
     datePublished,
     dateModified,
     inLanguage: "en-US",
-    author: { "@id": PERSON_ID },
+    author: { "@id": ORG_ID },
     publisher: { "@id": ORG_ID },
     isPartOf: { "@id": WEBSITE_ID },
     image: `${SITE_URL}/og-image.jpg`,

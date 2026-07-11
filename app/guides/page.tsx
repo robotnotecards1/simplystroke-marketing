@@ -37,7 +37,7 @@ const guides = [
 export default function GuidesIndex() {
   return (
     <main>
-      <header className="page-hero">
+      <header className="page-hero with-photo-guides">
         <div className="page-hero-inner">
           <div className="pill">Guides</div>
           <h1>

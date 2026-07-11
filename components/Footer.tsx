@@ -17,6 +17,10 @@ export default function Footer() {
             <nav>
               <Link href="/features/">Features</Link>
               <Link href="/compare/">Compare golf apps</Link>
+              <Link href="/compare/simplystroke-vs-18birdies/">
+                vs 18Birdies
+              </Link>
+              <Link href="/compare/simplystroke-vs-arccos/">vs Arccos</Link>
               <Link href="/#watch">Apple Watch</Link>
               <Link href="/download/">Join waitlist</Link>
             </nav>

@@ -12,7 +12,6 @@ import {
   faqNode,
   graph,
   organizationNode,
-  personNode,
   websiteNode,
   type Faq,
 } from "@/lib/schema";
@@ -63,7 +62,6 @@ const faqs: Faq[] = [
 const jsonLd = graph(
   organizationNode,
   websiteNode,
-  personNode,
   appNode,
   articleNode({
     headline: TITLE,
@@ -90,7 +88,7 @@ export default function GolfStrokeCounterPage() {
           <div className="pill">The category, explained</div>
           <h1>Golf stroke counter apps: how they work and which to use</h1>
           <div className="post-meta">
-            <span>Jared Moore</span>
+            <span>SimplyStroke</span>
             <span>·</span>
             <span>July 2026</span>
             <span>·</span>
@@ -388,16 +386,6 @@ export default function GolfStrokeCounterPage() {
           ))}
         </div>
 
-        <div className="author-box">
-          <div>
-            <div className="author-box-name">Jared Moore</div>
-            <p>
-              Built SimplyStroke after one too many rounds spent reconstructing
-              his own score on the walk to the next tee.{" "}
-              <Link href="/about/">More about the app and why it exists</Link>.
-            </p>
-          </div>
-        </div>
       </article>
 
       <WaitlistSection

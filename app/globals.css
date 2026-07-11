@@ -477,7 +477,7 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
   padding: clamp(64px, 8vw, 120px) var(--container-pad);
 }
 .ss-waitlist-blob { position: absolute; top: -120px; right: -80px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(150,196,30,0.14) 0%, transparent 70%); pointer-events: none; }
-.ss-waitlist-inner { max-width: 720px; margin: 0 auto; text-align: center; position: relative; }
+.ss-waitlist-inner { max-width: 1200px; margin: 0 auto; text-align: center; position: relative; }
 .ss-waitlist h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(44px, 6vw, 88px); line-height: 0.93; margin-top: 18px; }
 .ss-waitlist-p { font-size: clamp(16px, 1.4vw, 19px); line-height: 1.6; font-weight: 600; color: rgba(255,255,255,0.92); max-width: 520px; margin: 18px auto 0; }
 .ss-waitform { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 520px; margin: 34px auto 0; }
@@ -524,6 +524,13 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
   background-size: cover;
   background-position: center;
 }
+.page-hero.with-photo-guides {
+  background:
+    linear-gradient(165deg, rgba(27,67,50,0.92) 0%, rgba(45,106,79,0.86) 62%, rgba(64,145,108,0.74) 130%),
+    url("/images/features-bg.webp");
+  background-size: cover;
+  background-position: center;
+}
 .page-hero-inner { max-width: 1200px; margin: 0 auto; }
 .page-hero h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(44px, 6.4vw, 92px); line-height: 0.92; margin-top: 18px; max-width: 900px; }
 .page-hero h1 .accent { color: var(--lime); }
@@ -532,7 +539,7 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 
 .section { padding: var(--section-pad-y) var(--container-pad); }
 .section-inner { max-width: 1200px; margin: 0 auto; }
-.section-narrow { max-width: 760px; margin: 0 auto; }
+.section-narrow { max-width: 1200px; margin: 0 auto; }
 .section h2.h2-display { margin-top: 14px; }
 .section-lede { font-size: clamp(16px, 1.4vw, 19px); line-height: 1.6; font-weight: 500; color: var(--gray-dark); margin-top: 20px; max-width: 640px; }
 
@@ -546,10 +553,10 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 
 /* ---------- blog ---------- */
 .post-header { background: linear-gradient(165deg, #1B4332 0%, #2D6A4F 80%); color: var(--offwhite); padding: clamp(56px, 7vw, 90px) var(--container-pad); }
-.post-header-inner { max-width: 760px; margin: 0 auto; }
+.post-header-inner { max-width: 1200px; margin: 0 auto; }
 .post-header h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 5.6vw, 76px); line-height: 0.95; margin-top: 18px; }
 .post-meta { display: flex; gap: 14px; align-items: center; font-size: 14px; color: rgba(255,255,255,0.7); margin-top: 20px; }
-.prose { max-width: 720px; margin: 0 auto; padding: clamp(44px, 6vw, 72px) var(--container-pad) var(--section-pad-y); }
+.prose { max-width: 1200px; margin: 0 auto; padding: clamp(44px, 6vw, 72px) var(--container-pad) var(--section-pad-y); }
 .prose p { font-size: 18px; line-height: 1.75; color: #374151; margin-top: 22px; }
 .prose h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 3.4vw, 44px); line-height: 1; color: var(--green-deep); margin-top: 48px; }
 .prose ul { margin: 22px 0 0 22px; padding: 0; }
@@ -692,13 +699,12 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 
 /* breadcrumbs */
 .breadcrumbs { padding: 18px var(--container-pad) 0; }
-.breadcrumbs ol { max-width: 760px; margin: 0 auto; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; font-size: 14px; color: var(--gray-body); }
+.breadcrumbs ol { max-width: 1200px; margin: 0 auto; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; font-size: 14px; color: var(--gray-body); }
 .breadcrumbs li { display: flex; gap: 8px; align-items: center; }
 .breadcrumbs a { color: var(--green-mid); font-weight: 600; text-decoration: none; }
 .breadcrumbs a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .breadcrumbs-sep { color: rgba(27,67,50,0.3); }
 .breadcrumbs [aria-current="page"] { color: var(--gray-dark); }
-.breadcrumbs.on-wide ol { max-width: 1080px; }
 
 /* the answer block — the passage LLMs lift. Make it obvious to humans too. */
 .answer-block { background: var(--cream); border-left: 5px solid var(--lime); padding: 28px 30px; margin: 0 0 8px; }
@@ -756,3 +762,26 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .refs ol { margin: 20px 0 0 20px; padding: 0; }
 .refs li { font-size: 15px; line-height: 1.6; color: var(--gray-dark); margin-top: 12px; }
 .refs a { font-weight: 600; }
+
+
+/* ---------- full-width content zones ----------
+   The container is 1200px and the content zones now fill it. Running text
+   still gets a measure, because a 150-character line is a line nobody
+   finishes. Tables, answer blocks, FAQ cards and callouts take the full
+   width — they're the elements that were actually being squeezed. */
+.prose > p,
+.prose > ul,
+.prose > ol,
+.prose > h2,
+.prose > h3 { max-width: 860px; }
+.prose .callout,
+.prose .verdict,
+.prose .cmp-wrap,
+.prose .answer-block,
+.prose .faq-list,
+.prose .author-box,
+.prose .refs { max-width: none; }
+.section-narrow > p,
+.section-narrow > .section-lede,
+.section-narrow > h2 { max-width: 860px; }
+.post-list { max-width: 900px; }

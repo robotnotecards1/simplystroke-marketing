@@ -18,7 +18,6 @@ import {
   appNode,
   graph,
   organizationNode,
-  personNode,
   websiteNode,
 } from "@/lib/schema";
 
@@ -27,7 +26,6 @@ import {
 const entityJsonLd = graph(
   organizationNode,
   websiteNode,
-  personNode,
   appNode
 );
 
@@ -260,49 +258,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===================== CINEMATIC BAND ===================== */}
-      <section className="ss-band">
-        <div className="ss-band-inner">
-          <h2>
-            One tap.
-            <br />
-            That&apos;s the whole <span className="accent">scorecard.</span>
-          </h2>
-        </div>
-      </section>
-
-      {/* ===================== PRICE =====================
-          The loudest, most-upvoted grievance in r/golf is not features, it's
-          the renewal notice: people are buying $150-$300 of hardware and
-          accepting worse software purely to escape a recurring charge. "No
-          subscription" is not a feature in this market. It's the feature. */}
-      <section id="price" className="section alt-section">
-        <div className="section-narrow">
-          <div className="eyebrow">The price</div>
-          <h2 className="h2-display">Free. That&apos;s the whole pricing page.</h2>
-          <p className="section-lede">
-            No subscription. No annual renewal that creeps up every year. No
-            sensors to buy, no hardware bundle, no premium tier holding your own
-            scorecard hostage. You are not going to open your email one morning
-            and discover that counting to five now costs $99.
-          </p>
-          <p className="section-lede">
-            Counting strokes doesn&apos;t cost us anything to run, so it
-            doesn&apos;t cost you anything to use. That&apos;s the entire
-            business model, and it&apos;s the reason SimplyStroke can afford to
-            stay finished instead of bolting on a new feature every year to
-            justify the next invoice.
-          </p>
-          <p className="section-lede">
-            Weighing it against what you&apos;re paying now?{" "}
-            <Link href="/compare/">
-              See how SimplyStroke compares to 18Birdies, Arccos and the rest
-            </Link>
-            .
-          </p>
-        </div>
-      </section>
-
       {/* ===================== FEATURES ===================== */}
       <section id="features" className="ss-features">
         <div className="ss-features-inner">
@@ -489,7 +444,7 @@ export default function Home() {
       <section id="faq" className="section">
         <div className="section-narrow">
           <div className="eyebrow">Fair questions</div>
-          <h2 className="h2-display">Before you hand over your email.</h2>
+          <h2 className="h2-display">The stuff you&apos;d ask on the first tee.</h2>
           <div className="faq-list">
             {faqs.map(({ q, a }) => (
               <div className="faq-item" key={q}>

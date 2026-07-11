@@ -17,7 +17,6 @@ import {
   faqNode,
   graph,
   organizationNode,
-  personNode,
   websiteNode,
   type Citation,
   type Faq,
@@ -119,7 +118,6 @@ const faqs: Faq[] = [
 const jsonLd = graph(
   organizationNode,
   websiteNode,
-  personNode,
   appNode,
   articleNode({
     headline: TITLE,
@@ -540,16 +538,6 @@ export default function AdhdGolfPage() {
           </p>
         </div>
 
-        <div className="author-box">
-          <div>
-            <div className="author-box-name">Jared Moore</div>
-            <p>
-              Built SimplyStroke after one too many rounds spent reconstructing
-              his own score on the walk to the next tee.{" "}
-              <Link href="/about/">More about the app and why it exists</Link>.
-            </p>
-          </div>
-        </div>
       </article>
 
       <WaitlistSection
