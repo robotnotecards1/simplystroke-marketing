@@ -17,7 +17,7 @@ export default function WaitlistSection({
         <p className="ss-waitlist-p">
           SimplyStroke launches on iPhone, Android and Apple Watch soon. Drop
           your email and we&apos;ll notify you the moment it&apos;s live. No
-          spam, just one message — we respect your inbox as much as your swing.
+          spam, just one message. We respect your inbox as much as your swing.
         </p>
         <WaitlistForm source={source} />
         <div className="ss-wait-note">

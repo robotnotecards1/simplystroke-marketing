@@ -106,10 +106,14 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
   top: 0;
   z-index: 50;
   padding: 14px 0;
-  background: rgba(250,250,248,0.85);
+  /* Opaque, not rgba(...,0.85). At 85% the dark sections scrolling underneath
+     ghosted straight through the bar: headline text bled behind the logo and
+     the dark wordmark lost contrast. The blur stays for the frosted edge. */
+  background: var(--offwhite);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(27,67,50,0.1);
+  box-shadow: 0 1px 12px rgba(27,67,50,0.05);
 }
 .ss-nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .ss-logo { height: 56px; width: auto; } /* was 70px; −20% per client request */
@@ -141,10 +145,17 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
   gap: clamp(32px, 5vw, 64px);
 }
 .ss-hero-copy { flex: 1 1 420px; min-width: 300px; }
-.ss-hero-h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(52px, 7vw, 102px); line-height: 0.9; letter-spacing: 0.01em; }
+/* Hero eyebrow: carries the category ("the one-tap golf scorecard") so the H1
+   is free to carry the hook. Smaller + lighter than the section .eyebrow, which
+   is sized for dark-on-light section heads. */
+.ss-hero-eyebrow { font-size: 15px; letter-spacing: 0.2em; color: var(--lime-text); margin-bottom: 20px; }
+.ss-hero-h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(48px, 6.2vw, 92px); line-height: 0.92; letter-spacing: 0.01em; }
 .ss-hero-h1 .accent { color: var(--lime); }
 .ss-hero-p { font-size: clamp(17px, 1.5vw, 20px); line-height: 1.55; font-weight: 500; color: rgba(255,255,255,0.9); max-width: 520px; margin-top: 24px; }
-.ss-hero-badges { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+/* Store badges now sit BELOW the CTA. They're not links (pre-launch), so
+   above the CTA they were two dead targets between the eye and the one thing
+   on this page we want clicked. Toned down to match their supporting role. */
+.ss-hero-badges { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; opacity: 0.9; }
 .ss-store-badge {
   position: relative;
   display: inline-flex;
@@ -274,7 +285,9 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 /* ---------- cinematic band ---------- */
 .ss-band {
   position: relative;
-  min-height: clamp(320px, 42vw, 520px);
+  /* Was clamp(320px, 42vw, 520px). Two lines of type were floating in a lot of
+     dead air; tightened ~35% so the band reads as a beat, not an intermission. */
+  min-height: clamp(240px, 26vw, 340px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -285,7 +298,7 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
     radial-gradient(circle at 78% 26%, rgba(150,196,30,0.16), transparent 55%),
     linear-gradient(160deg, #17191B 0%, #26292C 100%);
 }
-.ss-band-inner { padding: clamp(48px, 7vw, 90px) var(--container-pad); }
+.ss-band-inner { padding: clamp(40px, 5vw, 64px) var(--container-pad); }
 .ss-band h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 6vw, 92px); line-height: 0.95; color: var(--offwhite); text-shadow: 0 2px 30px rgba(0,0,0,0.4); }
 .ss-band .accent { color: var(--lime); }
 
@@ -344,8 +357,37 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .ss-screens { max-width: 1200px; margin: 0 auto; padding: var(--section-pad-y) var(--container-pad); }
 .ss-screens-head { text-align: center; max-width: 640px; margin: 0 auto; }
 .ss-screens-head h2 { margin-top: 14px; }
-.ss-screens-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: clamp(24px, 4vw, 48px); margin-top: 56px; }
-.ss-screen-item { flex: 0 0 auto; text-align: center; }
+/* Explicit column counts, not flex-wrap. With 4 items, `flex-wrap: wrap` broke
+   3-and-1 at ~1200-1400px (the whole laptop range), orphaning the scorecard
+   phone alone on a second row. Grid keeps the breaks intentional: 4 / 2 / 1. */
+.ss-screens-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: stretch; /* equal row height, so captions share a baseline */
+  gap: clamp(24px, 3vw, 44px);
+  margin-top: 56px;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 1180px) {
+  .ss-screens-row { grid-template-columns: repeat(2, 1fr); gap: clamp(32px, 5vw, 56px); max-width: 720px; }
+}
+@media (max-width: 620px) {
+  .ss-screens-row { grid-template-columns: 1fr; max-width: 340px; }
+}
+/* Item 3 is a live component (ActiveRoundPhone), items 1/2/4 are <img> frames.
+   They render at different heights, so the captions never lined up across the
+   row. Pin the frame height and push captions to a common baseline. */
+.ss-screen-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.ss-screen-item > .mini-wrap { flex: 1 0 auto; display: flex; align-items: flex-start; justify-content: center; }
 .ss-screen-item:nth-child(1) .mini-wrap { animation-duration: 7.6s; animation-delay: 1.2s; }
 .ss-screen-item:nth-child(2) .mini-wrap { animation-duration: 7s; animation-delay: 0s; }
 .ss-screen-item:nth-child(4) .mini-wrap { animation-duration: 8.2s; animation-delay: 2.4s; }
@@ -556,3 +598,89 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
   .ss-step-num span { animation: none; }
   .ss-flightpath .travel-ball { display: none; }
 }
+
+/* ---------- blog index ---------- */
+.post-list { display: flex; flex-direction: column; gap: 28px; margin-top: 8px; }
+.post-card { background: #fff; border: 1px solid rgba(27,67,50,0.1); box-shadow: 0 2px 14px rgba(27,67,50,0.06); padding: 32px 34px; }
+.post-card-meta { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gray-body); }
+.post-card h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(28px, 3vw, 40px); line-height: 1.02; margin-top: 12px; }
+.post-card h2 a { color: var(--green-deep); }
+.post-card h2 a:hover { color: var(--green-mid); }
+.post-card p { font-size: 17px; line-height: 1.6; color: var(--gray-dark); margin-top: 14px; }
+.post-card-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; font-size: 15px; font-weight: 700; color: var(--green-mid); }
+.post-card-link:hover { color: var(--green-deep); }
+
+/* ============================================================
+   STYLEGUIDE (/styleguide) — internal, noindex.
+   Scoped under .sg so nothing here can leak into the real site.
+   ============================================================ */
+.sg-section { padding: var(--section-pad-y) var(--container-pad); }
+.sg-alt { background: var(--cream); }
+.sg-inner { max-width: 1100px; margin: 0 auto; }
+.sg-inner > .eyebrow { color: var(--green-light); font-size: 15px; }
+.sg-inner > .h2-display { margin-top: 8px; }
+.sg-lede { font-size: 19px; line-height: 1.6; color: var(--gray-dark); max-width: 720px; margin-top: 20px; }
+.sg-lede strong { color: var(--green-deep); }
+.sg-h3 { font-family: var(--font-body); font-weight: 700; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-mid); margin-top: 56px; padding-bottom: 12px; border-bottom: 2px solid rgba(27,67,50,0.12); }
+.sg-note { font-size: 16px; line-height: 1.6; color: var(--gray-dark); max-width: 640px; margin-top: 18px; }
+.sg-drift { color: #B0441F; font-weight: 600; }
+
+/* swatches */
+.sg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 24px; }
+.sg-swatch { display: flex; flex-direction: column; background: #fff; border: 1px solid rgba(27,67,50,0.12); }
+.sg-chip { height: 90px; display: flex; align-items: flex-end; padding: 12px 14px; font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: 0.06em; }
+.sg-swatch-body { padding: 16px 18px 18px; }
+.sg-swatch-name { font-weight: 700; font-size: 17px; color: var(--green-deep); }
+.sg-swatch-body code { display: inline-block; font-size: 12.5px; background: rgba(27,67,50,0.07); color: var(--green-mid); padding: 3px 7px; margin-top: 8px; margin-right: 6px; }
+.sg-swatch-body code.sg-app { background: rgba(74,144,217,0.1); color: #2C6094; }
+.sg-swatch-body p { font-size: 14.5px; line-height: 1.55; color: var(--gray-body); margin-top: 10px; }
+.sg-swatch-body p.sg-drift { font-size: 14px; }
+
+/* tables */
+.sg-table { margin-top: 28px; border: 1px solid rgba(27,67,50,0.14); background: #fff; }
+.sg-tr { display: grid; grid-template-columns: 0.8fr 1.1fr 1.1fr 1.4fr; gap: 20px; padding: 18px 22px; border-bottom: 1px solid rgba(27,67,50,0.1); font-size: 14.5px; line-height: 1.55; color: var(--gray-dark); }
+.sg-tr:last-child { border-bottom: none; }
+.sg-table-2 .sg-tr { grid-template-columns: 0.5fr 2fr; }
+.sg-th { background: var(--green-deep); color: var(--offwhite); font-weight: 700; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; }
+.sg-tr > span:first-child { font-weight: 700; color: var(--green-deep); }
+.sg-th > span:first-child { color: var(--offwhite); }
+.sg-tr code { font-size: 12.5px; background: rgba(27,67,50,0.07); color: var(--green-mid); padding: 2px 6px; }
+.sg-verdict { color: var(--green-deep); font-weight: 600; }
+@media (max-width: 900px) {
+  .sg-tr, .sg-table-2 .sg-tr { grid-template-columns: 1fr; gap: 8px; }
+  .sg-th { display: none; }
+}
+
+/* type specimens */
+.sg-typerow { padding: 28px 0; border-bottom: 1px dashed rgba(27,67,50,0.16); }
+.sg-typemeta { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-body); margin-bottom: 14px; }
+.sg-spec-display { font-family: var(--font-display); font-weight: 400; color: var(--green-deep); }
+.sg-spec-h1 { font-size: clamp(48px, 6.2vw, 92px); line-height: 0.92; }
+.sg-spec-h2 { font-size: clamp(38px, 5vw, 68px); line-height: 0.98; }
+.sg-spec-lede { font-size: clamp(17px, 1.5vw, 20px); line-height: 1.55; font-weight: 500; color: var(--gray-dark); max-width: 560px; }
+.sg-spec-body { font-size: 17px; line-height: 1.6; color: var(--gray-dark); max-width: 660px; }
+.sg-numerals { display: flex; align-items: baseline; gap: 40px; font-family: var(--font-display); font-size: 84px; line-height: 1; color: var(--green-deep); }
+.sg-numerals span:nth-child(2) { color: var(--coral); }
+
+/* component demos */
+.sg-row { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 24px; }
+.sg-ondark { background: var(--green-deep); padding: 24px; }
+.sg-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 24px; align-items: start; }
+.sg-feature-demo { background: #fff; border: 1px solid rgba(27,67,50,0.12); }
+
+/* voice */
+.sg-rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 36px; }
+.sg-rule { background: #fff; border: 1px solid rgba(27,67,50,0.12); padding: 26px 28px; }
+.sg-rule-head { font-family: var(--font-display); font-size: 34px; line-height: 1; }
+.sg-yes { border-top: 5px solid var(--lime); }
+.sg-yes .sg-rule-head { color: var(--green-deep); }
+.sg-no { border-top: 5px solid var(--coral); }
+.sg-no .sg-rule-head { color: #B0441F; }
+.sg-rule ul { list-style: none; margin-top: 18px; display: flex; flex-direction: column; gap: 12px; }
+.sg-rule li { font-size: 15.5px; line-height: 1.55; color: var(--gray-dark); padding-left: 20px; position: relative; }
+.sg-rule li::before { content: ""; position: absolute; left: 0; top: 9px; width: 7px; height: 7px; border-radius: 50%; }
+.sg-yes li::before { background: var(--lime); }
+.sg-no li::before { background: var(--coral); }
+.sg-rule li strong { color: var(--green-deep); }
+.sg-quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 24px; }
+.sg-quotes blockquote { background: var(--green-deep); color: var(--offwhite); font-family: var(--font-display); font-size: 30px; line-height: 1.05; padding: 26px 28px; }

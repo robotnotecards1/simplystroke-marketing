@@ -5,11 +5,11 @@ import { og, SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "ADHD and Golf: How to Stop Losing Count Mid-Round",
   description:
-    "Losing track of your score isn't a focus problem, it's a golf design problem. Here's why ADHD brains lose the count mid-round — and what actually helps.",
+    "Losing track of your score isn't a focus problem, it's a golf design problem. Here's why ADHD brains lose the count mid-round, and what actually helps.",
   alternates: { canonical: "/blog/adhd-and-golf-losing-count/" },
   openGraph: og(
     "ADHD and Golf: How to Stop Losing Count Mid-Round",
-    "Losing track of your score isn't a focus problem, it's a golf design problem. Here's why ADHD brains lose the count mid-round — and what actually helps.",
+    "Losing track of your score isn't a focus problem, it's a golf design problem. Here's why ADHD brains lose the count mid-round, and what actually helps.",
     "/blog/adhd-and-golf-losing-count/",
     "article"
   ),
@@ -20,7 +20,7 @@ const articleJsonLd = {
   "@type": "BlogPosting",
   headline: "ADHD and Golf: How to Stop Losing Count Mid-Round",
   description:
-    "Losing track of your score isn't a focus problem, it's a golf design problem. Here's why ADHD brains lose the count mid-round — and what actually helps.",
+    "Losing track of your score isn't a focus problem, it's a golf design problem. Here's why ADHD brains lose the count mid-round, and what actually helps.",
   datePublished: "2026-07-08",
   dateModified: "2026-07-08",
   author: { "@type": "Organization", name: "SimplyStroke" },
@@ -56,8 +56,8 @@ export default function Post() {
           You hit a genuinely good drive. You spend the walk to your ball
           replaying it, then wondering if your playing partner saw it, then
           wondering whether you closed the garage door this morning. You chip
-          on, two-putt, pick the ball out of the cup — and realize you have
-          absolutely no idea what you just shot.
+          on, two-putt, pick the ball out of the cup, and realize you have
+          no idea what you just shot.
         </p>
         <p>
           Four? Five? You do the forensic reconstruction. Driver, the chip…
@@ -80,15 +80,15 @@ export default function Post() {
           strange assignment. Over ten to fifteen minutes you are asked to:
           judge distance and wind, pick a club, execute a swing, track a small
           ball across a large sky, walk several hundred yards while holding a
-          conversation, find the ball, replan, and swing again — several times
+          conversation, find the ball, replan, and swing again, several times
           over. And underneath all of it, golf adds one quiet background task:{" "}
           <strong>hold a number in your head and increment it, without ever
           being reminded to.</strong>
         </p>
         <p>
-          That background task lives in working memory — the mental
+          That background task lives in working memory, the mental
           sticky-note where you hold &ldquo;current stroke: 4&rdquo; while
-          doing everything else. Working memory is famously limited in
+          doing everything else. Working memory is limited in
           everyone. In ADHD brains, it&apos;s the first thing to get evicted
           the moment something more interesting shows up. And a golf course
           is an all-you-can-eat buffet of more interesting things: hawks,
@@ -109,7 +109,7 @@ export default function Post() {
           <li>
             <strong>&ldquo;Just use the scorecard and pencil.&rdquo;</strong>{" "}
             The scorecard records the hole <em>after</em>{" "}
-            it&apos;s over — it
+            it&apos;s over. It
             does nothing for the count during the hole, which is where the
             number goes missing. And remembering to write things down is
             itself a working-memory task. A boring one.
@@ -119,7 +119,7 @@ export default function Post() {
             Closer! They move
             the count out of your head, which is the right idea. But
             they&apos;re one more thing to buy, carry, clip on and remember
-            to click — a tiny commitment device with all the failure modes of
+            to click. A tiny commitment device with all the failure modes of
             the pencil.
           </li>
           <li>
@@ -140,7 +140,7 @@ export default function Post() {
           The fix that works is the one ADHD-friendly design always lands on:{" "}
           <strong>move the task out of your head and make the capture
           effortless.</strong>{" "}
-          Don&apos;t hold the number — put it somewhere
+          Don&apos;t hold the number. Put it somewhere
           that can&apos;t get distracted, with a recording action so small it
           survives being uninteresting.
         </p>
@@ -164,14 +164,14 @@ export default function Post() {
         <div className="callout">
           <p>
             <strong>The short version:</strong> stop trying to remember the
-            number. You were never supposed to be the scorekeeper — your job
+            number. You were never supposed to be the scorekeeper. Your job
             is the shot. Let something else hold the count.
           </p>
         </div>
 
         <h2>Until launch day</h2>
         <p>
-          SimplyStroke launches in 2026 on iPhone, Android and Apple Watch —
+          SimplyStroke launches in 2026 on iPhone, Android and Apple Watch:
           free, offline-friendly, and ad-free. Until then, the honest interim
           advice: count out loud on every swing (externalizing beats
           rehearsing), settle the number with your playing partner{" "}

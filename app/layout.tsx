@@ -19,9 +19,9 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: `${SITE_NAME} — The One-Tap Golf Scorecard App`,
+  title: `Golf Stroke Counter & One-Tap Scorecard App | ${SITE_NAME}`,
   description:
-    "One tap counts your strokes — no math, no menus, no losing count mid-hole. Built for ADHD golfers and anyone who forgets. Coming 2026 — join the waitlist.",
+    "One tap counts your strokes. No math, no menus, no losing count mid-hole. The simple golf scorecard app built for ADHD golfers and anyone who forgets. Launching 2026.",
   openGraph: {
     siteName: SITE_NAME,
     type: "website",
@@ -39,6 +39,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${bebas.variable} ${dmSans.variable}`}>
+      <head>
+        {/* LCP image. It's a CSS background on .ss-hero, so the browser can't
+            discover it until the stylesheet parses. Preloading pulls it
+            forward and takes a visible bite out of Largest Contentful Paint. */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero-bg.webp"
+          type="image/webp"
+          fetchPriority="high"
+        />
+      </head>
       <body>
         {/* Google tag (gtag.js) */}
         <Script
@@ -51,7 +63,7 @@ export default function RootLayout({
             gtag('js', new Date());
             gtag('config', '${GA_ID}');`}
         </Script>
-        {/* Umami — privacy-first, self-hosted web analytics (you own the data) */}
+        {/* Umami: privacy-first, self-hosted web analytics (you own the data) */}
         <Script
           src="https://simplystroke-umami.vercel.app/script.js"
           data-website-id="20c6bcc0-8be5-429f-be45-51d4f57600cf"

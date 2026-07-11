@@ -25,6 +25,7 @@ export default function Footer() {
             <div className="ss-footer-head">For golfers</div>
             <nav>
               <Link href="/adhd-golf/">ADHD &amp; golf</Link>
+              <Link href="/blog/">Blog</Link>
               <Link href="/blog/adhd-and-golf-losing-count/">
                 Losing count mid-round?
               </Link>
@@ -33,9 +34,12 @@ export default function Footer() {
           <div className="ss-footer-col">
             <div className="ss-footer-head">Legal</div>
             <nav>
-              <a href="#">Terms of Service</a>
-              <a href="#">Privacy Policy</a>
-              <a href="#">Cookie Policy</a>
+              {/* Terms of Service and Cookie Policy links removed until the
+                  pages exist. They were href="#", which reads as an unfinished
+                  site on the exact page where we ask for an email address.
+                  Add them back here when the real pages ship. */}
+              <Link href="/privacy/">Privacy Policy</Link>
+              <a href="mailto:hello@simplystroke.app">Contact</a>
             </nav>
           </div>
         </div>

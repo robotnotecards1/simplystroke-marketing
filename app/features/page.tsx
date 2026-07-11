@@ -14,11 +14,11 @@ import { og } from "@/lib/site";
 export const metadata: Metadata = {
   title: "SimplyStroke Features: One-Tap Scoring, Undo, Offline Golf",
   description:
-    "Every SimplyStroke feature, from the one-tap stroke counter to instant shareable scorecards. No subscriptions, no GPS clutter — just simple score tracking.",
+    "Every SimplyStroke feature, from the one-tap stroke counter to instant shareable scorecards. No subscriptions and no GPS clutter. Just simple score tracking.",
   alternates: { canonical: "/features/" },
   openGraph: og(
     "SimplyStroke Features: One-Tap Scoring, Undo, Offline Golf",
-    "Every SimplyStroke feature, from the one-tap stroke counter to instant shareable scorecards. No subscriptions, no GPS clutter — just simple score tracking.",
+    "Every SimplyStroke feature, from the one-tap stroke counter to instant shareable scorecards. No subscriptions and no GPS clutter. Just simple score tracking.",
     "/features/"
   ),
 };
@@ -27,17 +27,17 @@ const features = [
   {
     icon: <HappyBallIcon />,
     title: "One giant tap target",
-    body: "A stroke button that fills the screen. No fumbling, no squinting, no mis-taps mid-swing — tap it with a glove on, tap it without looking.",
+    body: "A stroke button that fills the screen. No fumbling, no squinting, no mis-taps mid-swing. Tap it with a glove on, tap it without looking.",
   },
   {
     icon: <ScorecardIcon />,
     title: "Scorecard, done for you",
-    body: "Every hole totals automatically with vs-par at a glance. Birdies, pars and bogeys colour-coded, and the full card ready to share the second you hole out on 18.",
+    body: "Every hole totals automatically with vs-par at a glance. Birdies, pars and bogeys color-coded, and the full card ready to share the second you hole out on 18.",
   },
   {
     icon: <BallPinIcon />,
     title: "Undo, for honest mistakes",
-    body: "Tapped twice celebrating? One press of Undo fixes the count. Editing a hole after the fact is just as quick — no menu spelunking.",
+    body: "Tapped twice celebrating? One press of Undo fixes the count. Editing a hole after the fact is just as quick. No menu spelunking.",
   },
   {
     icon: <GolfBagIcon />,
@@ -47,7 +47,7 @@ const features = [
   {
     icon: <FlagIcon />,
     title: "Zero clutter, zero ads",
-    body: "No feeds, no upsells, no subscriptions, no distractions. Open it, count your round, close it. That's the whole app.",
+    body: "No feeds, no upsells, nothing to sign into. Open it, count your round, close it.",
   },
   {
     icon: <BallOnGreenIcon />,
@@ -68,10 +68,10 @@ export default function FeaturesPage() {
             <span className="accent">Emphasis on simple.</span>
           </h1>
           <p className="lede">
-            People find SimplyStroke searching for a golf shot tracking app —
-            but there&apos;s no GPS hardware or strokes-gained dashboards
-            here. Just the fastest way to track your golf score: tap the ball
-            once per swing, and the scorecard writes itself.
+            People find SimplyStroke searching for a golf shot tracking app,
+            but there&apos;s no GPS hardware or strokes-gained dashboards here.
+            Just the fastest way to track your golf score: tap the ball once
+            per swing, and the scorecard writes itself.
           </p>
           <div className="cta-row">
             <Link href="/download/" className="btn btn-hero">

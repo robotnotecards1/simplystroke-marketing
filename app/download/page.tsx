@@ -7,12 +7,12 @@ import { og, softwareApplicationJsonLd } from "@/lib/site";
 // Pre-launch: this is the waitlist/notify page. At launch, reframe to real
 // download copy and add store links (see SEO-COPY-REVIEW.md + SEO-HANDOFF.md §6).
 export const metadata: Metadata = {
-  title: "Get SimplyStroke — Free Golf Stroke Counter App (2026)",
+  title: "Get SimplyStroke: Free Golf Stroke Counter App (2026)",
   description:
     "SimplyStroke is a free, one-tap golf stroke counter for iPhone, Android and Apple Watch, launching 2026. Join the waitlist and we'll tell you the moment it's live.",
   alternates: { canonical: "/download/" },
   openGraph: og(
-    "Get SimplyStroke — Free Golf Stroke Counter App (2026)",
+    "Get SimplyStroke: Free Golf Stroke Counter App (2026)",
     "SimplyStroke is a free, one-tap golf stroke counter for iPhone, Android and Apple Watch, launching 2026. Join the waitlist and we'll tell you the moment it's live.",
     "/download/"
   ),

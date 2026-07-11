@@ -23,11 +23,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Is there a golf app made for ADHD?",
-    a: "Yes — SimplyStroke is a golf app built specifically for ADHD golfers. The whole app is one giant tap-the-ball button that counts your strokes, so working memory never has to hold the number. It launches in 2026 on iPhone, Android and Apple Watch; you can join the waitlist to be told the moment it's live.",
+    a: "Yes. SimplyStroke is a golf app built for ADHD golfers. The whole app is one giant tap-the-ball button that counts your strokes, so working memory never has to hold the number. It launches in 2026 on iPhone, Android and Apple Watch; you can join the waitlist to be told the moment it's live.",
   },
   {
     q: "Why do I keep losing count of my strokes?",
-    a: "Because golf quietly asks you to hold a running number in working memory for ten-plus minutes per hole while also planning shots, chatting, walking and looking for your ball. That's a hard task for anyone and a nearly impossible one for ADHD brains. It's a design problem, not a discipline problem — the fix is moving the count out of your head and into a single tap.",
+    a: "Because golf quietly asks you to hold a running number in working memory for ten-plus minutes per hole while also planning shots, chatting, walking and looking for your ball. That's a hard task for anyone and a nearly impossible one for ADHD brains. It's a design problem, not a discipline problem. The fix is moving the count out of your head and into a single tap.",
   },
   {
     q: "How is SimplyStroke different from other golf scorecard apps?",
@@ -71,8 +71,9 @@ export default function AdhdGolfPage() {
           </h1>
           <p className="lede">
             SimplyStroke is the golf app for ADHD: one giant button counts
-            every stroke, holds the number, and hands you a finished scorecard
-            — so your head is free to wander and your score still adds up.
+            every stroke, holds the number, and hands you a finished
+            scorecard, so your head is free to wander and your score still
+            adds up.
           </p>
           <div className="cta-row">
             <Link href="/download/" className="btn btn-hero">
@@ -92,7 +93,7 @@ export default function AdhdGolfPage() {
           <p className="section-lede">
             Think about what golf actually asks of you on a single par 4: pick
             a club, read the wind, hit, watch the ball, walk, chat, find the
-            ball, plan again, hit again — and the whole time, silently
+            ball, plan again, hit again. And the whole time, silently
             increment a number in your head and don&apos;t lose it. For ten
             minutes. While everything on a golf course is more interesting
             than that number.
@@ -104,7 +105,7 @@ export default function AdhdGolfPage() {
             reconstruction: <em>driver, chip, the one in the bunker… was the
             bunker one shot or two?</em>{" "}
             The pencil-and-scorecard fix fails
-            for the same reason — it&apos;s one more boring thing to remember.
+            for the same reason: it&apos;s one more boring thing to remember.
           </p>
           <p className="section-lede">
             The fix that actually works is embarrassingly simple: stop holding
@@ -119,7 +120,7 @@ export default function AdhdGolfPage() {
           <h2 className="h2-display">One tap. The app remembers.</h2>
           <p className="section-lede">
             SimplyStroke turns your whole phone screen into a golf ball. Swing,
-            tap, done — the app holds your stroke count, your running total
+            tap, done. The app holds your stroke count, your running total
             and your vs-par, and builds the scorecard as you play. Nothing to
             navigate, nothing to poke, nothing else to wander off into.
           </p>
@@ -129,7 +130,7 @@ export default function AdhdGolfPage() {
                 <BallOnGreenIcon />
               </div>
               <span>
-                One giant tap target you can hit without looking — or from
+                One giant tap target you can hit without looking, or from
                 your wrist on Apple Watch.
               </span>
             </div>
@@ -138,8 +139,8 @@ export default function AdhdGolfPage() {
                 <ScorecardIcon />
               </div>
               <span>
-                The scorecard fills itself in. Totals, vs-par, colour-coded
-                holes — math already done.
+                The scorecard fills itself in. Totals, vs-par, color-coded
+                holes, math already done.
               </span>
             </div>
             <div className="ss-fold-card">
@@ -178,7 +179,7 @@ export default function AdhdGolfPage() {
             Want the longer story on why ADHD brains and stroke counting
             don&apos;t mix?{" "}
             <Link href="/blog/adhd-and-golf-losing-count/">
-              Read: ADHD and golf — how to stop losing count mid-round
+              Read: ADHD and golf, and how to stop losing count mid-round
             </Link>
             .
           </p>

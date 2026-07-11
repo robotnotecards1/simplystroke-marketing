@@ -66,7 +66,7 @@ export default function WaitlistForm({ source = "site" }: { source?: string }) {
       )}
       {status === "error" && (
         <div className="ss-wait-success" role="status">
-          Hmm, that didn&apos;t go through — try again in a minute.
+          Hmm, that didn&apos;t go through. Try again in a minute.
         </div>
       )}
     </>
