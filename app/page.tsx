@@ -13,7 +13,23 @@ import {
   HappyBallIcon,
   ScorecardIcon,
 } from "@/components/icons";
-import { og, softwareApplicationJsonLd } from "@/lib/site";
+import { og } from "@/lib/site";
+import {
+  appNode,
+  graph,
+  organizationNode,
+  personNode,
+  websiteNode,
+} from "@/lib/schema";
+
+// One @graph: the site, the company, the founder and the app, all behind
+// stable @ids that every other page reuses. See lib/schema.ts.
+const entityJsonLd = graph(
+  organizationNode,
+  websiteNode,
+  personNode,
+  appNode
+);
 
 const TITLE = "Golf Stroke Counter & One-Tap Scorecard App | SimplyStroke";
 const DESCRIPTION =
@@ -73,7 +89,7 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(softwareApplicationJsonLd),
+          __html: JSON.stringify(entityJsonLd),
         }}
       />
       <script
@@ -91,14 +107,14 @@ export default function Home() {
               The one-tap golf scorecard
             </div>
             <h1 className="ss-hero-h1">
-              Keep your head in the round.
+              Golf&apos;s dumbest app.
               <br />
-              <span className="accent">We&apos;ll keep the count.</span>
+              <span className="accent">On purpose.</span>
             </h1>
             <p className="ss-hero-p">
-              One giant button counts every stroke. The scorecard does its own
-              math. No menus, no ads, and no wondering whether that was your
-              third or your fourth.
+              We left out the GPS, the handicap tracker and the feed. What&apos;s
+              left is one giant button that counts your strokes, and a scorecard
+              that does its own math.
             </p>
             <div className="ss-hero-cta">
               <a href="#waitlist" className="btn btn-hero">
@@ -440,6 +456,17 @@ export default function Home() {
             <Link href="/adhd-golf/">
               See why SimplyStroke is the golf app for ADHD brains →
             </Link>
+          </p>
+          <p className="section-lede">
+            New to the category? Start with{" "}
+            <Link href="/golf-stroke-counter/">
+              what a golf stroke counter is and how to pick one
+            </Link>
+            , or see{" "}
+            <Link href="/compare/">
+              how SimplyStroke compares to 18Birdies, Arccos and the rest
+            </Link>
+            .
           </p>
         </div>
       </section>
