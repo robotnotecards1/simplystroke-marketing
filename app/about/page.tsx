@@ -8,6 +8,7 @@ import {
   breadcrumbNode,
   graph,
   organizationNode,
+  teamNode,
 } from "@/lib/schema";
 
 const TITLE = "About SimplyStroke: Why It Exists, and What It Won't Do";
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
 
 const jsonLd = graph(
   organizationNode,
+  teamNode,
   appNode,
   breadcrumbNode([{ name: "About", path: "/about/" }])
 );
@@ -124,6 +126,28 @@ export default function AboutPage() {
             Every email gets read.
           </p>
         </div>
+
+        <h2 id="team">Who writes this stuff</h2>
+        <p>
+          Everything on this site is written by{" "}
+          <strong>the SimplyStroke team</strong> — the people who build the app.
+          We&apos;re golfers who got tired of reconstructing our own scores on
+          the walk to the next tee, and we keep our names off the site because
+          the app should be the interesting part, not us.
+        </p>
+        <p>
+          What that means in practice: when we make a claim about how ADHD and
+          working memory interact, we cite the research. When we compare
+          ourselves to another app, we link to their pricing page so you can
+          check us. When we don&apos;t know something, we say so. Being anonymous
+          is not a licence to be sloppy; if anything it raises the bar, because
+          the writing has to earn the trust that a byline would have borrowed.
+        </p>
+        <p>
+          Spot something wrong anywhere on this site?{" "}
+          <a href="mailto:hello@simplystroke.app">Tell us</a> and we&apos;ll fix
+          it.
+        </p>
 
         <h2>Start here</h2>
         <ul>

@@ -12,6 +12,7 @@ import {
   faqNode,
   graph,
   organizationNode,
+  teamNode,
   websiteNode,
   type Faq,
 } from "@/lib/schema";
@@ -159,6 +160,7 @@ const itemListNode = {
 
 const jsonLd = graph(
   organizationNode,
+  teamNode,
   websiteNode,
   appNode,
   articleNode({
@@ -187,7 +189,7 @@ export default function ComparePage() {
           <div className="pill">Comparison</div>
           <h1>Golf app comparison: SimplyStroke vs. everything else</h1>
           <div className="post-meta">
-            <span>SimplyStroke</span>
+            <span>The SimplyStroke Team</span>
             <span>·</span>
             <span>July 2026</span>
             <span>·</span>
@@ -480,6 +482,17 @@ export default function ComparePage() {
           2026 and are their trademarks, not ours. Canonical:{" "}
           <a href={`${SITE_URL}${PATH}`}>{`${SITE_URL}${PATH}`}</a>
         </p>
+
+        <div className="author-box">
+          <div>
+            <div className="author-box-name">The SimplyStroke Team</div>
+            <p>
+              We built SimplyStroke after one too many rounds spent
+              reconstructing our own scores on the walk to the next tee.{" "}
+              <Link href="/about/">More about why it exists</Link>.
+            </p>
+          </div>
+        </div>
       </article>
 
       <WaitlistSection

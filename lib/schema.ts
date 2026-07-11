@@ -16,6 +16,7 @@ import { SITE_NAME, SITE_URL } from "./site";
 export const ORG_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const APP_ID = `${SITE_URL}/#app`;
+export const TEAM_ID = `${SITE_URL}/about/#team`;
 
 /* -------------------------------------------------------------------------- */
 /* Core entities                                                              */
@@ -30,6 +31,27 @@ export const organizationNode = {
   email: "hello@simplystroke.app",
   description:
     "SimplyStroke makes a free, one-tap golf stroke counter and scorecard for golfers who lose count. No subscription, no ads, no account.",
+};
+
+// The byline. Deliberately not a named individual: authorship is the team's,
+// and the founder's name is kept off the site on purpose. This still gives
+// every article an `author` with an @id, a URL and a stated expertise, which
+// is most of what a named-author E-E-A-T signal was doing for us.
+export const teamNode = {
+  "@type": "Organization",
+  "@id": TEAM_ID,
+  name: "The SimplyStroke Team",
+  url: `${SITE_URL}/about/`,
+  parentOrganization: { "@id": ORG_ID },
+  description:
+    "The people who build SimplyStroke. Golfers who got tired of reconstructing their own score on the walk to the next tee, and built the boring app nobody else would.",
+  knowsAbout: [
+    "golf scoring",
+    "the Rules of Golf",
+    "golf scorecard apps",
+    "ADHD and working memory",
+    "app design",
+  ],
 };
 
 export const websiteNode = {
@@ -134,7 +156,7 @@ export function articleNode({
     datePublished,
     dateModified,
     inLanguage: "en-US",
-    author: { "@id": ORG_ID },
+    author: { "@id": TEAM_ID },
     publisher: { "@id": ORG_ID },
     isPartOf: { "@id": WEBSITE_ID },
     image: `${SITE_URL}/og-image.jpg`,

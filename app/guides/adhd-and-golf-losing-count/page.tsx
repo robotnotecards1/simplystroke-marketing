@@ -10,6 +10,7 @@ import {
   faqNode,
   graph,
   organizationNode,
+  teamNode,
   websiteNode,
   type Faq,
 } from "@/lib/schema";
@@ -58,6 +59,7 @@ const faqs: Faq[] = [
 
 const jsonLd = graph(
   organizationNode,
+  teamNode,
   websiteNode,
   articleNode({
     type: "BlogPosting",
@@ -87,7 +89,7 @@ export default function Post() {
           <div className="pill">ADHD &amp; golf</div>
           <h1>How to stop losing count mid-round when you have ADHD</h1>
           <div className="post-meta">
-            <span>SimplyStroke</span>
+            <span>The SimplyStroke Team</span>
             <span>·</span>
             <span>July 2026</span>
             <span>·</span>
@@ -329,6 +331,17 @@ export default function Post() {
           </li>
         </ul>
 
+
+        <div className="author-box">
+          <div>
+            <div className="author-box-name">The SimplyStroke Team</div>
+            <p>
+              We built SimplyStroke after one too many rounds spent
+              reconstructing our own scores on the walk to the next tee.{" "}
+              <Link href="/about/">More about why it exists</Link>.
+            </p>
+          </div>
+        </div>
       </article>
 
       <WaitlistSection
