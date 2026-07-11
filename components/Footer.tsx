@@ -16,24 +16,26 @@ export default function Footer() {
             <div className="ss-footer-head">Product</div>
             <nav>
               <Link href="/features/">Features</Link>
+              <Link href="/compare/">Compare golf apps</Link>
               <Link href="/#watch">Apple Watch</Link>
-              <Link href="/#screens">Screens</Link>
               <Link href="/download/">Join waitlist</Link>
             </nav>
           </div>
           <div className="ss-footer-col">
             <div className="ss-footer-head">For golfers</div>
             <nav>
+              <Link href="/golf-stroke-counter/">Golf stroke counters</Link>
               <Link href="/adhd-golf/">ADHD &amp; golf</Link>
-              <Link href="/blog/">Blog</Link>
-              <Link href="/blog/adhd-and-golf-losing-count/">
-                Losing count mid-round?
+              <Link href="/guides/lost-count-of-strokes-what-to-do/">
+                Lost count mid-hole?
               </Link>
+              <Link href="/guides/">All guides</Link>
             </nav>
           </div>
           <div className="ss-footer-col">
-            <div className="ss-footer-head">Legal</div>
+            <div className="ss-footer-head">Company</div>
             <nav>
+              <Link href="/about/">About</Link>
               {/* Terms of Service and Cookie Policy links removed until the
                   pages exist. They were href="#", which reads as an unfinished
                   site on the exact page where we ask for an email address.

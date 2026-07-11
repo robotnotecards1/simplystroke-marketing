@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import StoreBadges from "@/components/StoreBadges";
 import WaitlistForm from "@/components/WaitlistForm";
-import { og, softwareApplicationJsonLd } from "@/lib/site";
+import { og } from "@/lib/site";
+import { appNode, graph, organizationNode } from "@/lib/schema";
+
+const entityJsonLd = graph(organizationNode, appNode);
 
 // Pre-launch: this is the waitlist/notify page. At launch, reframe to real
 // download copy and add store links (see SEO-COPY-REVIEW.md + SEO-HANDOFF.md §6).
@@ -24,7 +27,7 @@ export default function DownloadPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(softwareApplicationJsonLd),
+          __html: JSON.stringify(entityJsonLd),
         }}
       />
 

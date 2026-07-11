@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AnswerBlock from "@/components/AnswerBlock";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import WaitlistSection from "@/components/WaitlistSection";
 import {
   BallOnGreenIcon,
@@ -7,58 +9,133 @@ import {
   ScorecardIcon,
 } from "@/components/icons";
 import { og } from "@/lib/site";
+import {
+  APP_ID,
+  appNode,
+  articleNode,
+  breadcrumbNode,
+  faqNode,
+  graph,
+  organizationNode,
+  personNode,
+  websiteNode,
+  type Citation,
+  type Faq,
+} from "@/lib/schema";
+
+const TITLE = "ADHD and Golf: Why the Count Disappears, and What Helps";
+const DESCRIPTION =
+  "Golf asks you to hold a number across ten minutes of distraction. That's a prospective memory task, and it's measurably harder with ADHD. What the research says, what actually helps on the course, and where the line is.";
+const PATH = "/adhd-golf/";
 
 export const metadata: Metadata = {
-  title: "ADHD and Golf: Why You Keep Losing Count (and the Fix)",
-  description:
-    "Golf asks you to remember a number while doing ten other things. ADHD brains have other plans. See how SimplyStroke counts strokes so you don't have to.",
-  alternates: { canonical: "/adhd-golf/" },
-  openGraph: og(
-    "ADHD and Golf: Why You Keep Losing Count (and the Fix)",
-    "Golf asks you to remember a number while doing ten other things. ADHD brains have other plans. See how SimplyStroke counts strokes so you don't have to.",
-    "/adhd-golf/"
-  ),
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: PATH },
+  openGraph: og(TITLE, DESCRIPTION, PATH),
 };
 
-const faqs = [
+/* Sources. Every clinical claim on this page traces to one of these, and any
+   claim that can't is cut. SimplyStroke is not a medical product and must
+   never read like one — see CONTENT-STRATEGY-2026-07.md §6. */
+const citations: Citation[] = [
   {
-    q: "Is there a golf app made for ADHD?",
-    a: "Yes. SimplyStroke is a golf app built for ADHD golfers. The whole app is one giant tap-the-ball button that counts your strokes, so working memory never has to hold the number. It launches in 2026 on iPhone, Android and Apple Watch; you can join the waitlist to be told the moment it's live.",
+    name: "Complex Prospective Memory in Adults with Attention Deficit Hyperactivity Disorder",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3590133/",
   },
   {
-    q: "Why do I keep losing count of my strokes?",
-    a: "Because golf quietly asks you to hold a running number in working memory for ten-plus minutes per hole while also planning shots, chatting, walking and looking for your ball. That's a hard task for anyone and a nearly impossible one for ADHD brains. It's a design problem, not a discipline problem. The fix is moving the count out of your head and into a single tap.",
+    name: "Prospective memory (partially) mediates the link between ADHD symptoms and procrastination",
+    url: "https://link.springer.com/article/10.1007/s12402-018-0273-x",
+    doi: "10.1007/s12402-018-0273-x",
   },
   {
-    q: "How is SimplyStroke different from other golf scorecard apps?",
-    a: "Most scoring apps bury the score behind menus, GPS overlays, handicaps and ads. SimplyStroke keeps exactly one job on screen: count this stroke. One tap per swing, an undo button for fat fingers, and a finished scorecard with the math already done.",
+    name: "Assessment of goal-directed behavior and prospective memory in adult ADHD with an online 3D videogame simulating everyday tasks",
+    url: "https://www.nature.com/articles/s41598-023-36351-6",
+    doi: "10.1038/s41598-023-36351-6",
   },
   {
-    q: "Does SimplyStroke work without signal on the course?",
-    a: "Yes. SimplyStroke works fully offline, so a dead zone on the back nine never costs you your round.",
+    name: "Effects of Physical Activity, Exercise and Sport on Executive Function in Young People with Attention Deficit Hyperactivity Disorder: A Systematic Review",
+    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8774533/",
   },
   {
-    q: "When does SimplyStroke launch?",
-    a: "SimplyStroke launches in 2026 on iPhone, Android and Apple Watch. Join the waitlist and we'll send exactly one message when it's live.",
+    name: "Effects of Physical Activity, Exercise and Sport on Executive Function in Adults Diagnosed with Attention Deficit Hyperactivity Disorder: A Systematic Review",
+    url: "https://www.mdpi.com/2673-5318/6/4/120",
+  },
+  {
+    name: "Comparative effects of open-skill and closed-skill sports on executive function in university students: a 16-week quasi-experimental study",
+    url: "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1457449/full",
+    doi: "10.3389/fpsyg.2024.1457449",
+  },
+  {
+    name: "The effect of quiet eye training on golf putting performance in pressure situations",
+    url: "https://www.nature.com/articles/s41598-024-55716-z",
+    doi: "10.1038/s41598-024-55716-z",
+  },
+  {
+    name: "ADHD Diagnosis, Treatment, and Telehealth Use in Adults, CDC MMWR (2024)",
+    url: "https://www.cdc.gov/mmwr/volumes/73/wr/mm7340a1.htm",
   },
 ];
 
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map(({ q, a }) => ({
-    "@type": "Question",
-    name: q,
-    acceptedAnswer: { "@type": "Answer", text: a },
-  })),
-};
+const faqs: Faq[] = [
+  {
+    q: "Why do I keep losing count of my strokes?",
+    a: "Because keeping count is a prospective memory task, not a simple memory task. Golf asks you to hold an intention (increment this number, every swing, without ever being reminded) across a ten to fifteen minute interval deliberately filled with competing demands: club selection, the swing itself, the walk, the conversation, the search for the ball. Prospective memory is measurably harder in adults with ADHD, which is why the count evaporates somewhere between the approach shot and the green. It is a design problem, not a discipline problem.",
+  },
+  {
+    q: "Is golf good for ADHD?",
+    a: "There is real evidence that exercise and sport improve executive function in people with ADHD, particularly inhibitory control. A 2024 study also found that 16 weeks of golf training significantly improved inhibitory control in university students, where football did not. But that study was not run on a diagnosed ADHD population and the effect size was small, so it cannot be read as evidence that golf treats ADHD. What can be said honestly: golf is exercise, exercise appears to help executive function in ADHD, and golf is a closed-skill sport that turned out to be better for inhibitory control than researchers expected.",
+  },
+  {
+    q: "Is there a golf app made for ADHD?",
+    a: "Yes. SimplyStroke is a golf stroke counter built for ADHD golfers. The whole app is one giant tap-the-ball button that counts your strokes, so working memory never has to hold the number. It is free, works fully offline, needs no account to start a round, and launches in 2026 on iPhone, Android and Apple Watch.",
+  },
+  {
+    q: "Are there neurodivergent-friendly golf apps?",
+    a: "Very few golf apps are designed with cognitive load in mind. Most are GPS or analytics platforms where the scorecard is one screen among fifty, competing with overlays, upsells and social feeds. A neurodivergent-friendly scoring app looks like the opposite: one action per swing, one enormous tap target, an undo, no account before your first round, no ads, and nothing else on screen. That is the design brief SimplyStroke was built to.",
+  },
+  {
+    q: "How is SimplyStroke different from other golf scorecard apps?",
+    a: "Most scoring apps bury the score behind menus, GPS overlays, handicaps and ads. SimplyStroke keeps exactly one job on screen: count this stroke. One tap per swing, an undo for fat fingers, and a finished scorecard with the math already done. No GPS, no handicap posting, no strokes gained, no subscription.",
+  },
+  {
+    q: "Does SimplyStroke work without signal on the course?",
+    a: "Yes. SimplyStroke works fully offline, so a dead zone on the back nine never costs you your round. A stroke counter needs no map data and no server, so there is no honest reason for one to fail.",
+  },
+  {
+    q: "Does SimplyStroke treat ADHD?",
+    a: "No. SimplyStroke is not a medical product, makes no therapeutic claims, and does nothing to ADHD itself. It removes one arbitrary memory task from a game that never needed it. That is the whole claim.",
+  },
+  {
+    q: "When does SimplyStroke launch?",
+    a: "SimplyStroke launches in 2026 on iPhone, Android and Apple Watch. Join the waitlist and we will send exactly one message when it is live.",
+  },
+];
+
+const jsonLd = graph(
+  organizationNode,
+  websiteNode,
+  personNode,
+  appNode,
+  articleNode({
+    headline: TITLE,
+    description: DESCRIPTION,
+    path: PATH,
+    datePublished: "2026-07-08",
+    dateModified: "2026-07-11",
+    about: APP_ID,
+    citations,
+  }),
+  faqNode(faqs),
+  breadcrumbNode([{ name: "ADHD & golf", path: PATH }])
+);
 
 export default function AdhdGolfPage() {
   return (
     <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       <header className="page-hero with-photo">
@@ -70,10 +147,9 @@ export default function AdhdGolfPage() {
             <span className="accent">Your brain has other plans.</span>
           </h1>
           <p className="lede">
-            SimplyStroke is the golf app for ADHD: one giant button counts
-            every stroke, holds the number, and hands you a finished
-            scorecard, so your head is free to wander and your score still
-            adds up.
+            SimplyStroke is the golf app for ADHD: one giant button counts every
+            stroke, holds the number, and hands you a finished scorecard, so
+            your head is free to wander and your score still adds up.
           </p>
           <div className="cta-row">
             <Link href="/download/" className="btn btn-hero">
@@ -84,35 +160,207 @@ export default function AdhdGolfPage() {
         </div>
       </header>
 
-      <section className="section">
-        <div className="section-narrow">
-          <div className="eyebrow">Why the count keeps vanishing</div>
-          <h2 className="h2-display">
-            It&apos;s not a focus problem. It&apos;s a golf design problem.
-          </h2>
-          <p className="section-lede">
-            Think about what golf actually asks of you on a single par 4: pick
-            a club, read the wind, hit, watch the ball, walk, chat, find the
-            ball, plan again, hit again. And the whole time, silently
-            increment a number in your head and don&apos;t lose it. For ten
-            minutes. While everything on a golf course is more interesting
-            than that number.
-          </p>
-          <p className="section-lede">
-            Working memory is exactly the thing ADHD brains don&apos;t hand
-            out for free. So the count evaporates somewhere between your
-            approach shot and the green, and you end up doing forensic
-            reconstruction: <em>driver, chip, the one in the bunker… was the
-            bunker one shot or two?</em>{" "}
-            The pencil-and-scorecard fix fails
-            for the same reason: it&apos;s one more boring thing to remember.
-          </p>
-          <p className="section-lede">
-            The fix that actually works is embarrassingly simple: stop holding
-            the number. Move it somewhere that can&apos;t get distracted.
+      <Breadcrumbs crumbs={[{ name: "ADHD & golf", path: PATH }]} />
+
+      <article className="prose">
+        <AnswerBlock
+          updated="July 2026"
+          answer={
+            <>
+              Golfers with ADHD lose count of their strokes because golf is a{" "}
+              <strong>prospective memory task</strong>: it asks you to hold a
+              running number across ten-plus minutes while planning shots,
+              walking, talking and searching for a ball. Prospective memory is
+              measurably harder with ADHD, which is why the count disappears.
+              The fix is not more discipline. It is moving the number out of
+              working memory.
+            </>
+          }
+          facts={[
+            <>
+              About <strong>15.5 million US adults (6.0%)</strong> have a
+              current ADHD diagnosis, and more than half were diagnosed as
+              adults (CDC, 2024)
+            </>,
+            <>
+              Prospective memory failures account for the{" "}
+              <strong>majority of everyday memory failures</strong>, and are
+              impaired in adult ADHD
+            </>,
+            <>
+              One 2024 trial found 16 weeks of golf improved inhibitory control,{" "}
+              <strong>though not in a diagnosed ADHD group</strong>
+            </>,
+          ]}
+        />
+
+        <p>
+          You hit a good drive. You spend the walk replaying it, then wondering
+          whether your partner saw it, then wondering whether you closed the
+          garage door. You chip on, two-putt, pick the ball out of the cup, and
+          realize you have no idea what you just shot.
+        </p>
+        <p>
+          If that is you occasionally, you are a golfer. If that is you on every
+          hole of every round, and you have spent years being told to
+          concentrate harder, then this page is about something that has a name.
+        </p>
+
+        <h2>Why the count vanishes</h2>
+        <p>
+          Strip a hole of golf down to its cognitive parts and it is a strange
+          assignment. Over ten to fifteen minutes you have to judge distance and
+          wind, pick a club, execute a swing, track a small ball across a large
+          sky, walk several hundred yards holding a conversation, find the ball,
+          replan and swing again. And underneath all of it, golf adds one quiet
+          background job:{" "}
+          <strong>
+            hold a number in your head and increment it, without ever being
+            reminded to.
+          </strong>
+        </p>
+        <p>
+          That background job is not really a memory task. It is a{" "}
+          <strong>prospective memory</strong> task: holding an intention across
+          a long, interrupted interval and acting on it at the right moment,
+          unprompted. Prospective memory is the thing that fails when you walk
+          into a room and forget why, and it accounts for the majority of
+          everyday memory failures in general.
+        </p>
+        <p>
+          It is also one of the things that is measurably harder if you have
+          ADHD. Adults with ADHD show impairment on complex prospective memory
+          tasks <a href="#refs">[1]</a>. Everyday prospective memory failures
+          are common enough in ADHD to partly explain the link between ADHD
+          symptoms and procrastination <a href="#refs">[2]</a>. And when
+          researchers built a naturalistic test — a 3D environment where adults
+          carry out ordinary household chores from memory — adult ADHD showed
+          clear deficits in exactly that kind of hold-it-while-you-do-other-things
+          behaviour <a href="#refs">[3]</a>.
+        </p>
+        <p>
+          A golf hole is that test, outdoors, with a hawk overhead and someone
+          telling you about their new driver.
+        </p>
+        <div className="callout">
+          <p>
+            <strong>So the number is not forgotten. It is overwritten.</strong>{" "}
+            It was never going to survive the walk to the green, and no amount of
+            resolving to pay more attention on the next tee is going to change
+            that. Which you already know, because you have tried it every round
+            for years.
           </p>
         </div>
-      </section>
+        <p>
+          Roughly 15.5 million American adults have a current ADHD diagnosis, and
+          more than half of them were diagnosed in adulthood{" "}
+          <a href="#refs">[8]</a>. A great many golfers have spent a long time
+          blaming their character for something that has a research literature.
+        </p>
+
+        <h2>Is golf good for ADHD?</h2>
+        <p>
+          This is the question people actually search for, so here is the honest
+          answer, including the parts that are inconvenient for us.
+        </p>
+        <p>
+          <strong>What the evidence supports:</strong> physical activity,
+          exercise and sport improve executive function in people with ADHD. A
+          systematic review of young people with ADHD found that even a single
+          twenty-minute bout of activity improves executive function{" "}
+          <a href="#refs">[4]</a>. A systematic review of adults with diagnosed
+          ADHD found that across ten studies, nine reported improved inhibitory
+          control, six improved selective attention, and three improved
+          cognitive flexibility <a href="#refs">[5]</a>. That is a reasonably
+          consistent picture.
+        </p>
+        <p>
+          <strong>What the evidence says about golf specifically:</strong> a 2024
+          study in <em>Frontiers in Psychology</em> put 63 university students
+          into three groups — golf, football, and a sedentary control — and
+          trained the first two for sixteen weeks. The golf group significantly
+          improved inhibitory control (p = 0.02). The football group did not. The
+          control group did not <a href="#refs">[6]</a>. That was a surprise,
+          because golf is a <em>closed-skill</em> sport, and closed-skill sports
+          were assumed to be worse for executive function than open-skill ones.
+          The assumption did not hold.
+        </p>
+
+        <div className="verdict">
+          <div className="verdict-head">Where the line is</div>
+          <p>
+            <strong>That golf study was not run on people with ADHD.</strong> It
+            was university students, the effect was small (d = 0.26), and a
+            single 63-person quasi-experiment is a starting point, not something
+            you build a health claim on.
+          </p>
+          <p>
+            So: <strong>golf does not treat ADHD.</strong> SimplyStroke does not
+            treat ADHD. Anyone selling you either of those is selling you
+            something. What can be said honestly is that golf is exercise,
+            exercise appears to help executive function in ADHD, and golf turned
+            out to be better for inhibitory control than the researchers
+            expected. That is a smaller claim. It is also a true one.
+          </p>
+        </div>
+
+        <h2>What actually helps on the course</h2>
+        <p>
+          None of this is treatment. It is just what works when the thing going
+          wrong is a golf course, not a brain.
+        </p>
+        <ul>
+          <li>
+            <strong>Count out loud, on the swing, not after it.</strong>{" "}
+            Externalizing beats rehearsing. Saying &ldquo;three&rdquo; as you hit
+            is a physical act. Holding &ldquo;three&rdquo; in your head is a task
+            competing with a hawk.
+          </li>
+          <li>
+            <strong>Settle the number before anyone putts.</strong> Not on the
+            next tee, when the hole has already turned from a memory into a
+            story. Your playing partners are an underused external hard drive and
+            they do not mind being asked.
+          </li>
+          <li>
+            <strong>
+              Pick one pre-shot routine and never vary it.
+            </strong>{" "}
+            A fixed routine is a scaffold. It is the least interesting part of
+            golf, which is exactly why it works.
+          </li>
+          <li>
+            <strong>Look at the ball for longer than feels necessary.</strong>{" "}
+            This one has real evidence behind it. &ldquo;Quiet eye&rdquo; — a
+            prolonged, stable gaze on the ball before the stroke — improves
+            putting under pressure and lowers state anxiety{" "}
+            <a href="#refs">[7]</a>. It is concrete, trainable, and has nothing
+            to do with our app.
+          </li>
+          <li>
+            <strong>Stop being the scorekeeper.</strong> Not because you are bad
+            at it. Because it is a job nobody should have been handed in the
+            first place.
+          </li>
+        </ul>
+
+        <h2>Offloading the count</h2>
+        <p>
+          Every fix that reliably works has the same shape:{" "}
+          <strong>
+            move the task out of your head, and make the capture so small that it
+            survives being uninteresting.
+          </strong>{" "}
+          One action per swing, not per hole. A target you can hit without
+          looking. Instant feedback that it registered. An undo for honest
+          mistakes. And nothing else on screen competing for attention you were
+          already short of.
+        </p>
+        <p>
+          That is the design brief SimplyStroke was built to. The whole screen is
+          one golf ball. Swing, tap, forget, move on.
+        </p>
+      </article>
 
       <section className="section alt-section">
         <div className="section-narrow">
@@ -120,8 +368,8 @@ export default function AdhdGolfPage() {
           <h2 className="h2-display">One tap. The app remembers.</h2>
           <p className="section-lede">
             SimplyStroke turns your whole phone screen into a golf ball. Swing,
-            tap, done. The app holds your stroke count, your running total
-            and your vs-par, and builds the scorecard as you play. Nothing to
+            tap, done. The app holds your stroke count, your running total and
+            your vs-par, and builds the scorecard as you play. Nothing to
             navigate, nothing to poke, nothing else to wander off into.
           </p>
           <div className="ss-fold-cards" style={{ marginTop: 40 }}>
@@ -130,8 +378,8 @@ export default function AdhdGolfPage() {
                 <BallOnGreenIcon />
               </div>
               <span>
-                One giant tap target you can hit without looking, or from
-                your wrist on Apple Watch.
+                One giant tap target you can hit without looking, or from your
+                wrist on Apple Watch.
               </span>
             </div>
             <div className="ss-fold-card">
@@ -139,8 +387,8 @@ export default function AdhdGolfPage() {
                 <ScorecardIcon />
               </div>
               <span>
-                The scorecard fills itself in. Totals, vs-par, color-coded
-                holes, math already done.
+                The scorecard fills itself in. Totals, vs-par, color-coded holes,
+                math already done.
               </span>
             </div>
             <div className="ss-fold-card">
@@ -148,8 +396,8 @@ export default function AdhdGolfPage() {
                 <BallPinIcon />
               </div>
               <span>
-                Tapped twice by accident? Undo. Fully offline, no ads, no
-                feeds, no menus mid-round.
+                Tapped twice by accident? Undo. Fully offline, no ads, no feeds,
+                no menus mid-round.
               </span>
             </div>
           </div>
@@ -163,28 +411,70 @@ export default function AdhdGolfPage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="section-narrow">
-          <div className="eyebrow">Fair questions</div>
-          <h2 className="h2-display">ADHD golf app FAQ</h2>
-          <div className="faq-list">
-            {faqs.map(({ q, a }) => (
-              <div className="faq-item" key={q}>
-                <h3>{q}</h3>
-                <p>{a}</p>
-              </div>
+      <article className="prose">
+        <h2>Common questions</h2>
+        <div className="faq-list">
+          {faqs.map(({ q, a }) => (
+            <div className="faq-item" key={q}>
+              <h3>{q}</h3>
+              <p>{a}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2>Keep reading</h2>
+        <ul>
+          <li>
+            <Link href="/guides/adhd-and-golf-losing-count/">
+              How to stop losing count mid-round when you have ADHD
+            </Link>{" "}
+            — the practical version: why the pencil, the clicker and the big
+            golf apps all fail in the same place.
+          </li>
+          <li>
+            <Link href="/guides/lost-count-of-strokes-what-to-do/">
+              You lost count of your strokes. Now what?
+            </Link>{" "}
+            — what the Rules of Golf actually require, and the three fixes that
+            work.
+          </li>
+          <li>
+            <Link href="/golf-stroke-counter/">
+              What a golf stroke counter is, and how to pick one
+            </Link>{" "}
+            — the category explained, if you are shopping rather than reading.
+          </li>
+        </ul>
+
+        <div className="refs" id="refs">
+          <h2>References</h2>
+          <ol>
+            {citations.map(({ name, url }) => (
+              <li key={url}>
+                <a href={url} target="_blank" rel="noopener">
+                  {name}
+                </a>
+              </li>
             ))}
-          </div>
-          <p className="section-lede" style={{ marginTop: 36 }}>
-            Want the longer story on why ADHD brains and stroke counting
-            don&apos;t mix?{" "}
-            <Link href="/blog/adhd-and-golf-losing-count/">
-              Read: ADHD and golf, and how to stop losing count mid-round
-            </Link>
-            .
+          </ol>
+          <p style={{ fontSize: 14, marginTop: 20 }}>
+            SimplyStroke is not a medical product and makes no therapeutic
+            claims. Nothing on this page is medical advice. If you think you may
+            have ADHD, the person to talk to is a clinician, not a golf app.
           </p>
         </div>
-      </section>
+
+        <div className="author-box">
+          <div>
+            <div className="author-box-name">Jared Moore</div>
+            <p>
+              Built SimplyStroke after one too many rounds spent reconstructing
+              his own score on the walk to the next tee.{" "}
+              <Link href="/about/">More about the app and why it exists</Link>.
+            </p>
+          </div>
+        </div>
+      </article>
 
       <WaitlistSection
         source="adhd-golf"

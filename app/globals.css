@@ -500,7 +500,7 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .ss-footer { background: #0E140F; color: rgba(255,255,255,0.7); padding: clamp(48px, 6vw, 72px) var(--container-pad) 40px; }
 .ss-footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; justify-content: space-between; }
 .ss-footer-brand { flex: 1 1 280px; min-width: 240px; }
-.ss-footer-brand img { height: 44px; width: auto; }
+.ss-footer-brand img { height: 88px; width: auto; }
 .ss-footer-brand p { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.55); max-width: 340px; margin-top: 18px; }
 .ss-footer-cols { display: flex; flex-wrap: wrap; gap: clamp(40px, 6vw, 80px); }
 .ss-footer-head { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--lime); font-weight: 700; }
@@ -684,3 +684,75 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .sg-rule li strong { color: var(--green-deep); }
 .sg-quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 24px; }
 .sg-quotes blockquote { background: var(--green-deep); color: var(--offwhite); font-family: var(--font-display); font-size: 30px; line-height: 1.05; padding: 26px 28px; }
+
+/* ==========================================================================
+   Content system: breadcrumbs, answer block, comparison tables, author box
+   Added July 2026 alongside the pillar-page build.
+   ========================================================================== */
+
+/* breadcrumbs */
+.breadcrumbs { padding: 18px var(--container-pad) 0; }
+.breadcrumbs ol { max-width: 760px; margin: 0 auto; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; font-size: 14px; color: var(--gray-body); }
+.breadcrumbs li { display: flex; gap: 8px; align-items: center; }
+.breadcrumbs a { color: var(--green-mid); font-weight: 600; text-decoration: none; }
+.breadcrumbs a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.breadcrumbs-sep { color: rgba(27,67,50,0.3); }
+.breadcrumbs [aria-current="page"] { color: var(--gray-dark); }
+.breadcrumbs.on-wide ol { max-width: 1080px; }
+
+/* the answer block — the passage LLMs lift. Make it obvious to humans too. */
+.answer-block { background: var(--cream); border-left: 5px solid var(--lime); padding: 28px 30px; margin: 0 0 8px; }
+.answer-block-head { font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-mid); }
+.answer-block-body { font-size: 19px; line-height: 1.65; color: var(--ink); margin-top: 14px; font-weight: 500; }
+.answer-block-body strong { color: var(--green-deep); }
+.answer-block-facts { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(27,67,50,0.12); padding-top: 18px; }
+.answer-block-facts li { font-size: 16px; line-height: 1.6; color: var(--gray-dark); padding-left: 20px; position: relative; }
+.answer-block-facts li::before { content: ""; position: absolute; left: 0; top: 9px; width: 7px; height: 7px; border-radius: 50%; background: var(--lime); }
+.answer-block-facts strong { color: var(--green-deep); }
+.answer-block-updated { margin-top: 18px; font-size: 13px; color: var(--gray-body); }
+.prose > .answer-block { margin-top: 0; }
+
+/* comparison table.
+   Real <table> in the DOM so crawlers and LLMs can extract rows. Restyled
+   into stacked cards under 768px — the markup never changes, only the CSS,
+   because every golfer reading this is on a phone. */
+.cmp-wrap { margin-top: 30px; }
+.cmp { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid rgba(27,67,50,0.14); font-size: 15px; }
+.cmp caption { caption-side: bottom; margin-top: 12px; font-size: 13px; color: var(--gray-body); text-align: left; line-height: 1.5; }
+.cmp th, .cmp td { padding: 13px 14px; text-align: left; border-bottom: 1px solid rgba(27,67,50,0.1); vertical-align: top; line-height: 1.45; }
+.cmp thead th { background: var(--green-deep); color: var(--offwhite); font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; border-bottom: none; }
+.cmp tbody th { font-weight: 700; color: var(--green-deep); white-space: nowrap; }
+.cmp tbody tr:last-child th, .cmp tbody tr:last-child td { border-bottom: none; }
+.cmp .cmp-us { background: rgba(150,196,30,0.1); }
+.cmp .cmp-us th { color: var(--green-deep); }
+.cmp .cmp-us td { font-weight: 600; color: var(--green-deep); }
+
+@media (max-width: 768px) {
+  .cmp, .cmp tbody, .cmp tr, .cmp td, .cmp th { display: block; }
+  .cmp thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .cmp tbody tr { border: 1px solid rgba(27,67,50,0.14); border-top: 4px solid rgba(27,67,50,0.2); margin-bottom: 16px; padding: 4px 0; }
+  .cmp tbody tr.cmp-us { border-top-color: var(--lime); }
+  .cmp tbody th { font-size: 20px; font-family: var(--font-display); font-weight: 400; letter-spacing: 0.02em; padding-bottom: 4px; border-bottom: none; white-space: normal; }
+  .cmp tbody td { border-bottom: none; padding: 6px 14px; display: flex; gap: 12px; justify-content: space-between; align-items: baseline; }
+  .cmp tbody td::before { content: attr(data-label); flex: 0 0 45%; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-body); }
+}
+
+/* verdict block — the paragraph most likely to get quoted verbatim */
+.verdict { background: var(--green-deep); color: var(--offwhite); padding: 30px 32px; margin-top: 34px; }
+.verdict p { color: rgba(255,255,255,0.88); font-size: 17px; line-height: 1.7; margin-top: 14px; }
+.verdict p:first-of-type { margin-top: 0; }
+.verdict strong { color: var(--lime-text); }
+.verdict .verdict-head { font-family: var(--font-display); font-weight: 400; font-size: 30px; line-height: 1; color: #fff; }
+
+/* author box */
+.author-box { display: flex; gap: 20px; align-items: flex-start; background: var(--offwhite); border: 1px solid rgba(27,67,50,0.12); padding: 24px 26px; margin-top: 52px; }
+.author-box-name { font-weight: 700; color: var(--green-deep); font-size: 17px; }
+.author-box p { font-size: 15.5px; line-height: 1.6; color: var(--gray-dark); margin-top: 8px; }
+.author-box a { font-weight: 600; }
+
+/* references list for the research-backed pages */
+.refs { margin-top: 44px; border-top: 1px solid rgba(27,67,50,0.14); padding-top: 26px; }
+.refs h2 { font-size: 26px; margin-top: 0; }
+.refs ol { margin: 20px 0 0 20px; padding: 0; }
+.refs li { font-size: 15px; line-height: 1.6; color: var(--gray-dark); margin-top: 12px; }
+.refs a { font-weight: 600; }

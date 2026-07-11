@@ -115,6 +115,17 @@ export default function FeaturesPage() {
               See why SimplyStroke is the golf app for ADHD brains →
             </Link>
           </p>
+          <p className="section-lede">
+            Weighing it against something else? Read{" "}
+            <Link href="/golf-stroke-counter/">
+              what a golf stroke counter is and how to pick one
+            </Link>
+            , or see{" "}
+            <Link href="/compare/">
+              how SimplyStroke compares to the big golf apps
+            </Link>
+            , including the things they do that we don&apos;t.
+          </p>
         </div>
       </section>
 

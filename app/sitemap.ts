@@ -7,12 +7,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date("2026-07-11");
   return [
     { url: `${SITE_URL}/`, lastModified, priority: 1 },
+    // Pillars
+    { url: `${SITE_URL}/golf-stroke-counter/`, lastModified, priority: 0.9 },
     { url: `${SITE_URL}/adhd-golf/`, lastModified, priority: 0.9 },
+    { url: `${SITE_URL}/compare/`, lastModified, priority: 0.85 },
+    // Product
     { url: `${SITE_URL}/features/`, lastModified, priority: 0.8 },
     { url: `${SITE_URL}/download/`, lastModified, priority: 0.8 },
-    { url: `${SITE_URL}/blog/`, lastModified, priority: 0.6 },
+    { url: `${SITE_URL}/about/`, lastModified, priority: 0.6 },
+    // Guides
+    { url: `${SITE_URL}/guides/`, lastModified, priority: 0.6 },
     {
-      url: `${SITE_URL}/blog/adhd-and-golf-losing-count/`,
+      url: `${SITE_URL}/guides/lost-count-of-strokes-what-to-do/`,
+      lastModified,
+      priority: 0.75,
+    },
+    {
+      url: `${SITE_URL}/guides/adhd-and-golf-losing-count/`,
       lastModified,
       priority: 0.7,
     },

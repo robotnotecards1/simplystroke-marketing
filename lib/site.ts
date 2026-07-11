@@ -36,19 +36,7 @@ export function og(
   };
 }
 
-export const softwareApplicationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: SITE_NAME,
-  applicationCategory: "SportsApplication",
-  operatingSystem: "iOS, Android, watchOS",
-  description:
-    "One-tap golf stroke counter and scorecard app built for ADHD golfers and anyone who forgets. Launching 2026 on iPhone, Android and Apple Watch.",
-  url: SITE_URL,
-  image: `${SITE_URL}/og-image.jpg`,
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-};
+// The app / organization / person / website entities used to live here as a
+// single loose SoftwareApplication blob. They now live in lib/schema.ts behind
+// stable @id values, so every page points at the SAME entity rather than
+// re-declaring a new one each time. Import from "@/lib/schema" instead.
