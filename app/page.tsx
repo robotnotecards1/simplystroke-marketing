@@ -112,9 +112,10 @@ export default function Home() {
               <span className="accent">On purpose.</span>
             </h1>
             <p className="ss-hero-p">
-              We left out the GPS, the handicap tracker and the feed. What&apos;s
-              left is one giant button that counts your strokes, and a scorecard
-              that does its own math.
+              We left out the GPS and the feed. What&apos;s left is one giant
+              button: tap it once per swing and the scorecard fills itself in.
+              You never have to carry a number in your head from the tee to the
+              green.
             </p>
             <div className="ss-hero-cta">
               <a href="#waitlist" className="btn btn-hero">
@@ -299,8 +300,8 @@ export default function Home() {
               </div>
               <h3>Zero clutter, zero ads</h3>
               <p>
-                No feeds, no upsells, nothing to sign into. Open it, count your
-                round, close it.
+                No feeds and nothing to sign into. Open it, count your round,
+                close it.
               </p>
             </div>
           </div>
