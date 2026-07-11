@@ -19,7 +19,7 @@ import {
 
 const TITLE = "SimplyStroke vs 18Birdies, Arccos, Golfshot & More (2026)";
 const DESCRIPTION =
-  "An honest comparison of SimplyStroke against the big golf apps. Most of them do more than SimplyStroke does. That's the point. See which one you actually need.";
+  "An honest comparison of SimplyStroke against the big golf apps. They do more than we do and charge $30-$200 a year for it. We do one thing and charge nothing. See which you actually need.";
 const PATH = "/compare/";
 
 export const metadata: Metadata = {
@@ -299,6 +299,14 @@ export default function ComparePage() {
         <div className="verdict">
           <div className="verdict-head">The verdict</div>
           <p>
+            <strong>
+              If you are here because you just looked at a renewal notice:
+            </strong>{" "}
+            SimplyStroke is free, permanently, with no premium tier and no
+            hardware. If all you were getting for that money was a scorecard,
+            you were being overcharged by roughly the entire amount.
+          </p>
+          <p>
             <strong>If you want strokes gained analytics, buy Arccos.</strong>{" "}
             It is the best in the world at that and SimplyStroke does not try.
           </p>
@@ -318,6 +326,30 @@ export default function ComparePage() {
             busy solving something bigger.
           </p>
         </div>
+
+        <h2>The subscription problem</h2>
+        <p>
+          Look at what golfers are actually doing about app pricing. They are
+          buying <strong>$150 to $300 of hardware</strong> — sensors, watches,
+          the lot — and accepting software they like less, specifically so they
+          never have to see another renewal notice. That is not price
+          sensitivity. That is a grudge, and it is well earned: the going rate
+          for a golf app&apos;s useful tier has been climbing for years, and it
+          climbs again every time the app adds something you did not ask for.
+        </p>
+        <p>
+          SimplyStroke sidesteps the whole argument by not having one.
+          It&apos;s free. There is no premium tier, no annual renewal, no
+          hardware bundle and no upsell holding your own scorecard hostage.
+        </p>
+        <p>
+          That is not generosity, it is arithmetic:{" "}
+          <strong>counting to five costs nothing to run.</strong> There are no
+          course maps to license, no servers doing analytics, no sensors to
+          manufacture. An app that only counts can afford to be free, and an app
+          that&apos;s free is an app that never has to invent a reason for you
+          to pay again next year.
+        </p>
 
         <h2>Why golf apps get more complicated every year</h2>
         <p>

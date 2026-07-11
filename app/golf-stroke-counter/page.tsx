@@ -113,7 +113,10 @@ export default function GolfStrokeCounterPage() {
               analytics. Unlike shot-tracking platforms such as Arccos or Shot
               Scope, a stroke counter does not try to improve your golf. It just
               makes sure the number is right.{" "}
-              <strong>SimplyStroke</strong> is a free, one-tap stroke counter
+              <strong>
+                SimplyStroke is a free, one-tap stroke counter with no
+                subscription
+              </strong>{" "}
               for iPhone, Android and Apple Watch, launching in 2026.
             </>
           }

@@ -31,9 +31,9 @@ const entityJsonLd = graph(
   appNode
 );
 
-const TITLE = "Golf Stroke Counter & One-Tap Scorecard App | SimplyStroke";
+const TITLE = "Free Golf Scorecard App. One Tap, No Subscription | SimplyStroke";
 const DESCRIPTION =
-  "One tap counts your strokes. No math, no menus, no losing count mid-hole. The simple golf scorecard app built for ADHD golfers and anyone who forgets. Launching 2026.";
+  "One tap per shot. No subscription, no ads, no account, no GPS clutter. The simple golf stroke counter for anyone who's ever reached the green and had to guess. Free. Launching 2026.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -53,7 +53,15 @@ const faqs = [
   },
   {
     q: "Do I need a subscription or a sign-up?",
-    a: "No. SimplyStroke is free to download, has no ads, and does not make you create an account before you can count your first hole.",
+    a: "No. SimplyStroke is free, with no subscription, no annual renewal, no premium tier and no hardware to buy. It has no ads and does not make you create an account before you can count your first hole. Most golf apps charge $30 to $100 a year for their useful tier, and sensor-based trackers add $180 to $300 up front. Counting strokes costs nothing to run, so it costs nothing to use.",
+  },
+  {
+    q: "What's a simpler alternative to 18Birdies or Arccos?",
+    a: "SimplyStroke, if what you actually want is the score. 18Birdies, Arccos, Golfshot and SwingU are GPS and analytics platforms with a scorecard attached, and they charge accordingly. SimplyStroke is a scorecard with nothing attached: one tap per shot, free, offline, no account. You give up GPS yardages, handicap posting and strokes gained, which is a real trade and worth making only if you were never using them.",
+  },
+  {
+    q: "Do I have to get my phone out on every shot?",
+    a: "No, and this is the reason the Apple Watch version exists. A tap on the watch face logs the stroke and a haptic tick confirms it, so the phone can stay in the bag for the whole round. If you do use the phone, it is one tap on a button big enough to hit with a glove on without looking at it.",
   },
   {
     q: "Does it work without signal on the course?",
@@ -104,7 +112,7 @@ export default function Home() {
         <div className="container ss-hero-inner">
           <div className="ss-hero-copy">
             <div className="eyebrow ss-hero-eyebrow">
-              The one-tap golf scorecard
+              Free · One tap · No subscription
             </div>
             <h1 className="ss-hero-h1">
               Golf&apos;s dumbest app.
@@ -112,16 +120,18 @@ export default function Home() {
               <span className="accent">On purpose.</span>
             </h1>
             <p className="ss-hero-p">
-              We left out the GPS and the feed. What&apos;s left is one giant
-              button: tap it once per swing and the scorecard fills itself in.
-              You never have to carry a number in your head from the tee to the
-              green.
+              No GPS. No feed. No strokes gained. No $99 a year. What&apos;s
+              left is one giant button: tap it once per swing and the scorecard
+              fills itself in. You never carry a number in your head from the
+              tee to the green, and you never see a renewal notice.
             </p>
             <div className="ss-hero-cta">
               <a href="#waitlist" className="btn btn-hero">
                 Join the waitlist →
               </a>
-              <span className="ss-hero-launch">Launching 2026</span>
+              <span className="ss-hero-launch">
+                Free · Launching 2026
+              </span>
             </div>
             <StoreBadges />
           </div>
@@ -132,12 +142,16 @@ export default function Home() {
       {/* ===================== PROBLEM / HOW IT WORKS ===================== */}
       <section id="how-it-works" className="ss-problem">
         <div className="eyebrow">The problem with most golf apps</div>
-        <h2 className="h2-display">They&apos;re a distraction.</h2>
+        <h2 className="h2-display">
+          They want a dataset. You wanted a number.
+        </h2>
         <p className="ss-problem-p">
-          Menus, handicaps, GPS overlays, ads, sign-up screens. By the third
-          hole you&apos;re wrestling with your phone instead of your next shot,
-          and the one number you actually came for is buried three taps deep.
-          SimplyStroke keeps a single job on screen:{" "}
+          Menus, handicaps, GPS overlays, ads, sign-up screens, and a
+          subscription to keep the whole thing running. Miss a green and the app
+          wants to know whether you were long, short, left or right, and which
+          club you used. By the third hole you&apos;re wrestling with your phone
+          instead of your next shot, and the one number you actually came for is
+          buried three taps deep. SimplyStroke keeps a single job on screen:{" "}
           <strong>count this stroke.</strong>
         </p>
 
@@ -254,6 +268,38 @@ export default function Home() {
             <br />
             That&apos;s the whole <span className="accent">scorecard.</span>
           </h2>
+        </div>
+      </section>
+
+      {/* ===================== PRICE =====================
+          The loudest, most-upvoted grievance in r/golf is not features, it's
+          the renewal notice: people are buying $150-$300 of hardware and
+          accepting worse software purely to escape a recurring charge. "No
+          subscription" is not a feature in this market. It's the feature. */}
+      <section id="price" className="section alt-section">
+        <div className="section-narrow">
+          <div className="eyebrow">The price</div>
+          <h2 className="h2-display">Free. That&apos;s the whole pricing page.</h2>
+          <p className="section-lede">
+            No subscription. No annual renewal that creeps up every year. No
+            sensors to buy, no hardware bundle, no premium tier holding your own
+            scorecard hostage. You are not going to open your email one morning
+            and discover that counting to five now costs $99.
+          </p>
+          <p className="section-lede">
+            Counting strokes doesn&apos;t cost us anything to run, so it
+            doesn&apos;t cost you anything to use. That&apos;s the entire
+            business model, and it&apos;s the reason SimplyStroke can afford to
+            stay finished instead of bolting on a new feature every year to
+            justify the next invoice.
+          </p>
+          <p className="section-lede">
+            Weighing it against what you&apos;re paying now?{" "}
+            <Link href="/compare/">
+              See how SimplyStroke compares to 18Birdies, Arccos and the rest
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

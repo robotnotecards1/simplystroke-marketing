@@ -103,6 +103,10 @@ const faqs: Faq[] = [
     a: "Yes. SimplyStroke works fully offline, so a dead zone on the back nine never costs you your round. A stroke counter needs no map data and no server, so there is no honest reason for one to fail.",
   },
   {
+    q: "What is the hardest part of golf when you have ADHD?",
+    a: "Ask golfers with ADHD directly and they do not say the maths. They say losing the ball, especially after helping a playing partner find theirs; pace of play and the loss of focus during dead time when the course backs up; and losing clubs and rangefinders. Keeping count is a real and annoying problem, but it is a piece of admin golf handed you, not the defining difficulty. Most golfers with ADHD describe golf itself in glowing terms: for many it is the most calmly focused they feel all week.",
+  },
+  {
     q: "Does SimplyStroke treat ADHD?",
     a: "No. SimplyStroke is not a medical product, makes no therapeutic claims, and does nothing to ADHD itself. It removes one arbitrary memory task from a game that never needed it. That is the whole claim.",
   },
@@ -304,6 +308,55 @@ export default function AdhdGolfPage() {
           </p>
         </div>
 
+        <h2>What ADHD golfers actually say the hard part is</h2>
+        <p>
+          Here is a check worth doing on anything written about ADHD and golf,
+          including this page: go and read what ADHD golfers say when somebody
+          asks them directly.
+        </p>
+        <p>
+          The r/golf threads on this are large, honest and heavily upvoted, and
+          the answers are consistent. The hard part, as they describe it, is not
+          arithmetic. It&apos;s <strong>object permanence and dead time</strong>:
+        </p>
+        <ul>
+          <li>
+            <strong>&ldquo;Anyone see where that landed?&rdquo;</strong> Losing
+            the ball is the number one complaint, by a distance. One golfer put
+            it perfectly: they watch the ball land, think{" "}
+            <em>it&apos;s over there by the two trees</em>, help a partner find
+            theirs, and then have no idea where their own ball went.
+          </li>
+          <li>
+            <strong>Pace of play.</strong> Ready golf is the only rhythm that
+            works; anything slower falls apart.
+          </li>
+          <li>
+            <strong>Waiting.</strong> When the course backs up, focus goes, and
+            the tee shot that follows the wait is the one that gets ruined.
+          </li>
+          <li>
+            <strong>Losing clubs and rangefinders.</strong> Expensive, and
+            constant.
+          </li>
+        </ul>
+        <p>
+          And the other thing those threads are full of, which matters more than
+          any of it:{" "}
+          <strong>golfers with ADHD overwhelmingly love golf.</strong> The most
+          upvoted sentiment in the whole conversation is a man saying a round of
+          golf is often the most calmly focused he&apos;ll be all week. Golf is
+          described as the zen, not the affliction. Nobody in those threads wants
+          to be told their brain is a problem to be solved, and we&apos;re not
+          going to be the ones to tell them.
+        </p>
+        <p>
+          So take the count for what it is: a small, annoying, genuinely
+          solvable piece of admin that golf never needed to hand you. Not a
+          diagnosis, not a deficit, and not the most interesting thing about how
+          your brain plays this game.
+        </p>
+
         <h2>What actually helps on the course</h2>
         <p>
           None of this is treatment. It is just what works when the thing going
@@ -336,6 +389,29 @@ export default function AdhdGolfPage() {
             putting under pressure and lowers state anxiety{" "}
             <a href="#refs">[7]</a>. It is concrete, trainable, and has nothing
             to do with our app.
+          </li>
+          <li>
+            <strong>Say where the ball went, out loud, before you move.</strong>{" "}
+            The single most-cited ADHD golf problem is losing your own ball
+            after helping someone find theirs. Naming the landing spot out loud
+            — &ldquo;left of the second bunker, past the cart path&rdquo; —
+            makes it a spoken fact instead of a mental note, and spoken facts
+            survive a detour.
+          </li>
+          <li>
+            <strong>Pick a landmark, not a spot.</strong> &ldquo;Somewhere over
+            there&rdquo; evaporates. &ldquo;In line with the tallest tree&rdquo;
+            does not.
+          </li>
+          <li>
+            <strong>Play ready golf, and say so on the first tee.</strong> Dead
+            time is where the round comes apart. A group that knows you&apos;d
+            rather keep moving will usually just keep moving.
+          </li>
+          <li>
+            <strong>Count your clubs at every green. Every one.</strong> Make it
+            a ritual attached to an event you can&apos;t skip, rather than a
+            thing you intend to remember. Rangefinders are expensive.
           </li>
           <li>
             <strong>Stop being the scorekeeper.</strong> Not because you are bad

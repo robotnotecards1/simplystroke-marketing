@@ -10,13 +10,13 @@ const entityJsonLd = graph(organizationNode, appNode);
 // Pre-launch: this is the waitlist/notify page. At launch, reframe to real
 // download copy and add store links (see SEO-COPY-REVIEW.md + SEO-HANDOFF.md §6).
 export const metadata: Metadata = {
-  title: "Get SimplyStroke: Free Golf Stroke Counter App (2026)",
+  title: "Get SimplyStroke: Free Golf Scorecard App, No Subscription",
   description:
-    "SimplyStroke is a free, one-tap golf stroke counter for iPhone, Android and Apple Watch, launching 2026. Join the waitlist and we'll tell you the moment it's live.",
+    "SimplyStroke is a free, one-tap golf stroke counter for iPhone, Android and Apple Watch. No subscription, no ads, no account. Launching 2026 — join the waitlist and we'll tell you the moment it's live.",
   alternates: { canonical: "/download/" },
   openGraph: og(
-    "Get SimplyStroke: Free Golf Stroke Counter App (2026)",
-    "SimplyStroke is a free, one-tap golf stroke counter for iPhone, Android and Apple Watch, launching 2026. Join the waitlist and we'll tell you the moment it's live.",
+    "Get SimplyStroke: Free Golf Scorecard App, No Subscription",
+    "SimplyStroke is a free, one-tap golf stroke counter for iPhone, Android and Apple Watch. No subscription, no ads, no account. Launching 2026 — join the waitlist and we'll tell you the moment it's live.",
     "/download/"
   ),
 };
