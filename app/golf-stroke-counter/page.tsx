@@ -40,7 +40,7 @@ const faqs: Faq[] = [
   },
   {
     q: "What is the simplest golf scorecard app?",
-    a: "The simplest golf scorecard apps are one-tap stroke counters: you tap once per swing and the app keeps the running total and totals the card for you. SimplyStroke is built to be the simplest of these. One giant button, an undo, no account required to start a round, no ads, no GPS, and no subscription. It launches in 2026 on iPhone, Android and Apple Watch.",
+    a: "The simplest golf scorecard apps are one-tap stroke counters: you tap once per swing and the app keeps the running total and totals the card for you. SimplyStroke is built to be the simplest of these. One giant button, an undo, no account required to start a round, no ads, no GPS, and no subscription. It's live now, with dedicated iPhone, Android and Apple Watch apps coming soon.",
   },
   {
     q: "Is there a golf app without a subscription?",
@@ -55,8 +55,8 @@ const faqs: Faq[] = [
     a: "Not always. A pencil is free, needs no battery, and is accepted everywhere. But a pencil only records the number after the hole, which means you still have to hold the running count in your head while you play it. That is the exact moment most golfers lose it. A one-tap counter records the stroke as it happens, so nothing has to be remembered at all.",
   },
   {
-    q: "When does SimplyStroke launch?",
-    a: "SimplyStroke launches in 2026 on iPhone, Android and Apple Watch. Join the waitlist and we will send exactly one message when it is live.",
+    q: "Is SimplyStroke available yet?",
+    a: "Yes. SimplyStroke is live now — get started at app.simplystroke.app. Dedicated iPhone, Android and Apple Watch apps are on the way to the App Store and Google Play.",
   },
 ];
 
@@ -117,7 +117,8 @@ export default function GolfStrokeCounterPage() {
                 SimplyStroke is a free, one-tap stroke counter with no
                 subscription
               </strong>{" "}
-              for iPhone, Android and Apple Watch, launching in 2026.
+              for iPhone, Android and Apple Watch, live now on the web, with
+              dedicated apps coming soon.
             </>
           }
           facts={[
@@ -337,8 +338,9 @@ export default function GolfStrokeCounterPage() {
           it does not ask who you are before it will let you play golf.
         </p>
         <p>
-          It launches in 2026 on iPhone, Android and Apple Watch, and it is
-          free.
+          It&apos;s live now on the web, and it is free. Dedicated iPhone,
+          Android and Apple Watch apps are coming soon to the App Store and
+          Google Play.
         </p>
 
         <div className="verdict">

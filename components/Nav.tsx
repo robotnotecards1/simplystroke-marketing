@@ -21,9 +21,9 @@ export default function Nav() {
             <Link href="/features/">Features</Link>
             <Link href="/#screens">Screenshots</Link>
           </span> */}
-          <Link href="/download/" className="btn btn-nav">
-            Join the waitlist
-          </Link>
+          <a href="https://app.simplystroke.app" className="btn btn-nav">
+            Get Started
+          </a>
         </div>
       </div>
     </nav>

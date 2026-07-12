@@ -75,7 +75,7 @@ export const appNode = {
   image: `${SITE_URL}/og-image.jpg`,
   publisher: { "@id": ORG_ID },
   description:
-    "A free, one-tap golf stroke counter and scorecard for iPhone, Android and Apple Watch. Counts your strokes so working memory doesn't have to. Launching 2026.",
+    "A free, one-tap golf stroke counter and scorecard for iPhone, Android and Apple Watch. Counts your strokes so working memory doesn't have to.",
   featureList: [
     "One tap per stroke",
     "Undo a mis-tap",

@@ -12,11 +12,11 @@ const entityJsonLd = graph(organizationNode, appNode);
 export const metadata: Metadata = {
   title: "Get SimplyStroke: Free Golf Scorecard App, No Subscription",
   description:
-    "SimplyStroke is a free, one-tap golf stroke counter for iPhone, Android and Apple Watch. No subscription, no ads, no account. Launching 2026 — join the waitlist and we'll tell you the moment it's live.",
+    "SimplyStroke is a free, one-tap golf stroke counter for iPhone, Android and Apple Watch. No subscription, no ads, no account. Live now — dedicated App Store and Google Play apps are coming soon.",
   alternates: { canonical: "/download/" },
   openGraph: og(
     "Get SimplyStroke: Free Golf Scorecard App, No Subscription",
-    "SimplyStroke is a free, one-tap golf stroke counter for iPhone, Android and Apple Watch. No subscription, no ads, no account. Launching 2026 — join the waitlist and we'll tell you the moment it's live.",
+    "SimplyStroke is a free, one-tap golf stroke counter for iPhone, Android and Apple Watch. No subscription, no ads, no account. Live now — dedicated App Store and Google Play apps are coming soon.",
     "/download/"
   ),
 };
@@ -33,7 +33,7 @@ export default function DownloadPage() {
 
       <header className="page-hero">
         <div className="page-hero-inner" style={{ maxWidth: 820, textAlign: "center" }}>
-          <div className="pill">Coming soon</div>
+          <div className="pill">Live now</div>
           <h1 style={{ marginLeft: "auto", marginRight: "auto" }}>
             Be first on the tee.
           </h1>
@@ -41,14 +41,17 @@ export default function DownloadPage() {
             className="lede"
             style={{ marginLeft: "auto", marginRight: "auto" }}
           >
-            SimplyStroke is a free, one-tap golf stroke counter launching in
-            2026 on iPhone, Android and Apple Watch. Drop your email and
-            we&apos;ll tell you the moment it&apos;s live. No spam, one
-            message.
+            SimplyStroke is a free, one-tap golf stroke counter, live now.
+            Dedicated iPhone, Android and Apple Watch apps are coming soon to
+            the App Store and Google Play — drop your email and we&apos;ll
+            tell you the moment they land. No spam, one message.
           </p>
+          <a href="https://app.simplystroke.app" className="btn btn-hero">
+            Get Started →
+          </a>
           <WaitlistForm source="download" />
           <div className="ss-wait-note">
-            Launching 2026 · iPhone · Android · Apple Watch
+            Coming soon to the App Store &amp; Google Play
           </div>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <StoreBadges />

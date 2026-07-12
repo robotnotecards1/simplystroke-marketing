@@ -128,8 +128,8 @@ const faqs: Faq[] = [
     a: "Yes. SimplyStroke is free, with no subscription, no ads and no hardware to buy.",
   },
   {
-    q: "When does SimplyStroke launch?",
-    a: "SimplyStroke launches in 2026 on iPhone, Android and Apple Watch. Join the waitlist and we will send exactly one message when it is live.",
+    q: "Is SimplyStroke available yet?",
+    a: "Yes. SimplyStroke is live now — get started at app.simplystroke.app. Dedicated iPhone, Android and Apple Watch apps are on the way to the App Store and Google Play.",
   },
 ];
 
@@ -206,8 +206,9 @@ export default function ComparePage() {
           answer={
             <>
               <strong>SimplyStroke</strong> is a free, one-tap golf stroke
-              counter for iPhone, Android and Apple Watch, launching in 2026. It
-              does one thing: it holds your score so you don&apos;t have to.
+              counter for iPhone, Android and Apple Watch, live now on the web
+              with dedicated apps coming soon. It does one thing: it holds
+              your score so you don&apos;t have to.
               Apps like 18Birdies, Arccos, Golfshot and SwingU do far more —
               GPS, strokes gained, handicaps, side games — and cost $30 to $200
               a year to do it. Pick SimplyStroke if the only thing you keep
@@ -367,7 +368,7 @@ export default function ComparePage() {
         <h2>What &ldquo;simple&rdquo; costs you</h2>
         <p>
           Here is the honest list of what you give up by choosing SimplyStroke.
-          Read it before you join the waitlist, not after.
+          Read it before you get started, not after.
         </p>
         <ul>
           <li>
@@ -476,8 +477,8 @@ export default function ComparePage() {
 
 
         <p style={{ fontSize: 14, color: "var(--gray-body)", marginTop: 28 }}>
-          SimplyStroke has not launched yet, so this page carries no user
-          ratings and makes none up. Competitor pricing and features are
+          SimplyStroke is newly live, so this page carries no user ratings
+          and makes none up. Competitor pricing and features are
           summarised from each company&apos;s own published material as of July
           2026 and are their trademarks, not ours. Canonical:{" "}
           <a href={`${SITE_URL}${PATH}`}>{`${SITE_URL}${PATH}`}</a>

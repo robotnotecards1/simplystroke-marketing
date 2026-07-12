@@ -88,7 +88,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Is there a golf app made for ADHD?",
-    a: "Yes. SimplyStroke is a golf stroke counter built for ADHD golfers. The whole app is one giant tap-the-ball button that counts your strokes, so working memory never has to hold the number. It is free, works fully offline, needs no account to start a round, and launches in 2026 on iPhone, Android and Apple Watch.",
+    a: "Yes. SimplyStroke is a golf stroke counter built for ADHD golfers. The whole app is one giant tap-the-ball button that counts your strokes, so working memory never has to hold the number. It is free, works fully offline, needs no account to start a round, and is live now, with dedicated iPhone, Android and Apple Watch apps coming soon.",
   },
   {
     q: "Are there neurodivergent-friendly golf apps?",
@@ -111,8 +111,8 @@ const faqs: Faq[] = [
     a: "No. SimplyStroke is not a medical product, makes no therapeutic claims, and does nothing to ADHD itself. It removes one arbitrary memory task from a game that never needed it. That is the whole claim.",
   },
   {
-    q: "When does SimplyStroke launch?",
-    a: "SimplyStroke launches in 2026 on iPhone, Android and Apple Watch. Join the waitlist and we will send exactly one message when it is live.",
+    q: "Is SimplyStroke available yet?",
+    a: "Yes. SimplyStroke is live now — get started at app.simplystroke.app. Dedicated iPhone, Android and Apple Watch apps are on the way to the App Store and Google Play.",
   },
 ];
 
@@ -144,7 +144,7 @@ export default function AdhdGolfPage() {
 
       <header className="page-hero with-photo">
         <div className="page-hero-inner">
-          <div className="pill">The ADHD golf app · Coming 2026</div>
+          <div className="pill">The ADHD golf app · Live now</div>
           <h1>
             Golf asks you to remember one number.
             <br />
@@ -156,10 +156,10 @@ export default function AdhdGolfPage() {
             your head is free to wander and your score still adds up.
           </p>
           <div className="cta-row">
-            <Link href="/download/" className="btn btn-hero">
-              Join the waitlist →
-            </Link>
-            <span className="ss-hero-launch">Launching 2026</span>
+            <a href="https://app.simplystroke.app" className="btn btn-hero">
+              Get Started →
+            </a>
+            <span className="ss-hero-launch">Live now</span>
           </div>
         </div>
       </header>

@@ -61,7 +61,7 @@ export default function FeaturesPage() {
     <main>
       <header className="page-hero">
         <div className="page-hero-inner">
-          <div className="pill">What you get · Coming 2026</div>
+          <div className="pill">What you get · Live now</div>
           <h1>
             A simple golf scorecard app.
             <br />
@@ -74,10 +74,10 @@ export default function FeaturesPage() {
             per swing, and the scorecard writes itself.
           </p>
           <div className="cta-row">
-            <Link href="/download/" className="btn btn-hero">
-              Join the waitlist →
-            </Link>
-            <span className="ss-hero-launch">Launching 2026</span>
+            <a href="https://app.simplystroke.app" className="btn btn-hero">
+              Get Started →
+            </a>
+            <span className="ss-hero-launch">Live now</span>
           </div>
         </div>
       </header>

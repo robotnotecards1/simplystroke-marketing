@@ -31,7 +31,7 @@ const entityJsonLd = graph(
 
 const TITLE = "Free Golf Scorecard App. One Tap, No Subscription | SimplyStroke";
 const DESCRIPTION =
-  "One tap per shot. No subscription, no ads, no account, no GPS clutter. The simple golf stroke counter for anyone who's ever reached the green and had to guess. Free. Launching 2026.";
+  "One tap per shot. No subscription, no ads, no account, no GPS clutter. The simple golf stroke counter for anyone who's ever reached the green and had to guess. Free.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -74,8 +74,8 @@ const faqs = [
     a: "It was designed for them. Golf quietly asks you to hold a running number in working memory for ten-plus minutes per hole while doing nine other things, which is exactly the task ADHD brains drop first. SimplyStroke moves the number out of your head and into a single tap.",
   },
   {
-    q: "When does SimplyStroke launch?",
-    a: "SimplyStroke launches in 2026 on iPhone, Android and Apple Watch. Join the waitlist and we will send exactly one message when it is live.",
+    q: "Is SimplyStroke available yet?",
+    a: "Yes. SimplyStroke is live now — get started at app.simplystroke.app. Dedicated iPhone, Android and Apple Watch apps are on the way to the App Store and Google Play.",
   },
 ];
 
@@ -124,11 +124,11 @@ export default function Home() {
               tee to the green, and you never see a renewal notice.
             </p>
             <div className="ss-hero-cta">
-              <a href="#waitlist" className="btn btn-hero">
-                Join the waitlist →
+              <a href="https://app.simplystroke.app" className="btn btn-hero">
+                Get Started →
               </a>
               <span className="ss-hero-launch">
-                Free · Launching 2026
+                Free · Live now
               </span>
             </div>
             <StoreBadges />
@@ -212,7 +212,7 @@ export default function Home() {
               to. Tap it and forget it. Your focus stays where it belongs: the
               next shot.
             </p>
-            <a href="#waitlist" className="btn btn-fold">
+            <a href="https://app.simplystroke.app" className="btn btn-fold">
               Let the app remember →
             </a>
             <br />

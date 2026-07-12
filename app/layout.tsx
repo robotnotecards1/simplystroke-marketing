@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: `Golf Stroke Counter & One-Tap Scorecard App | ${SITE_NAME}`,
   description:
-    "One tap counts your strokes. No math, no menus, no losing count mid-hole. The simple golf scorecard app built for ADHD golfers and anyone who forgets. Launching 2026.",
+    "One tap counts your strokes. No math, no menus, no losing count mid-hole. The simple golf scorecard app built for ADHD golfers and anyone who forgets.",
   openGraph: {
     siteName: SITE_NAME,
     type: "website",
