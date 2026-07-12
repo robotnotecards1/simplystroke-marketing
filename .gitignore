@@ -35,3 +35,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# The full SQLite corpus is 174MB — kept out of git.
+# Lives at ../reddit-research/data/corpus.db
+research/data/corpus.db

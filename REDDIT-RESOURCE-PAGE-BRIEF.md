@@ -23,13 +23,31 @@ Then look at `app/golf-stroke-counter/page.tsx` as the pattern to copy: `AnswerB
 
 ## 🚨 The one rule that matters
 
-**Every quote, every number, every permalink on this page must come from `research/`.**
+**Every quote, every number, every permalink on this page must come from `research/data/`.**
 
-If you want to cite something that isn't in those three files — a quote, an upvote count, a thread link — **stop and ask Jared for the CSVs** (`data/competitor_quotes.csv`, `data/pain_quotes.csv`, `data/posts_index.csv`). Do not reconstruct it from memory. Do not paraphrase a quote and present it as verbatim. Do not invent a permalink.
+The raw CSVs are in the repo and they have **100% permalink coverage**:
 
-A fabricated Reddit quote on a page whose entire premise is *"we read the Reddit"* is unrecoverable. It is the only way this page can fail badly.
+| File | Rows | Use it for |
+|---|---:|---|
+| `research/data/competitor_quotes.csv` | 709 | the five complaints, and the competitor-praise section. Columns: `app, sentiment, upvotes, quote, permalink` |
+| `research/data/pain_quotes.csv` | 15,279 | losing count, the ADHD null result. Columns: `theme, subreddit, upvotes, quote, permalink` |
+| `research/data/seo_questions.csv` | 250 | thread titles + comment counts as a demand proxy |
+| `research/data/posts_index.csv` | 36,218 | share of voice, thread-level counts |
 
-Where a quote in `research/` has **no permalink** (a few don't), you may still use it — but present it as a paraphrase of the sentiment, not inside quotation marks with a fake link. Flag those to Jared in your summary.
+**Query the CSVs. Don't work from the summaries.** The three markdown files
+(`COMPETITOR-TEARDOWN.md` etc.) are digests and several of their quotes omit the
+permalink — the CSVs always have it. Sort by `upvotes` descending, filter by
+`app` and `sentiment`, take the top few per complaint, and cite them exactly as
+they appear.
+
+Never invent a quote, an upvote count or a permalink. A fabricated Reddit quote
+on a page whose entire premise is *"we read the Reddit"* is unrecoverable — and
+there is now **no excuse whatsoever**, because the data is sitting in the repo.
+
+`corpus.db` (the full 174MB SQLite corpus) is gitignored; it's at
+`../reddit-research/data/corpus.db` if you need to re-query anything the CSVs
+don't cover. The scrape scripts are in `research/scripts/` — use them to write
+the methodology section.
 
 ---
 
