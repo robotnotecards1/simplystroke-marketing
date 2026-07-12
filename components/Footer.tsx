@@ -42,11 +42,10 @@ export default function Footer() {
             <div className="ss-footer-head">Company</div>
             <nav>
               <Link href="/about/">About</Link>
-              {/* Terms of Service and Cookie Policy links removed until the
-                  pages exist. They were href="#", which reads as an unfinished
-                  site on the exact page where we ask for an email address.
-                  Add them back here when the real pages ship. */}
+              {/* Cookie Policy link still pending its page; add it here when
+                  that ships. */}
               <Link href="/privacy/">Privacy Policy</Link>
+              <Link href="/terms-of-service/">Terms of Service</Link>
               <a href="mailto:hello@simplystroke.app">Contact</a>
             </nav>
           </div>
