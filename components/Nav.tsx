@@ -22,7 +22,7 @@ export default function Nav() {
             <Link href="/#screens">Screenshots</Link>
           </span> */}
           <a href="https://app.simplystroke.app" className="btn btn-nav">
-            Get Started
+            Play Now →
           </a>
         </div>
       </div>
