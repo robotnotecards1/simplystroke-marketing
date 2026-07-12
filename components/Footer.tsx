@@ -8,7 +8,8 @@ export default function Footer() {
           <img src="/images/logo-white.png" alt="SimplyStroke" width={360} height={180} />
           <p>
             The one-tap golf scorer. No counting, no math, no stress, just
-            stroke. Coming soon to iPhone, Android and Apple Watch.
+            stroke. Live now, with iPhone, Android and Apple Watch apps
+            coming soon.
           </p>
         </div>
         <div className="ss-footer-cols">
@@ -22,7 +23,7 @@ export default function Footer() {
               </Link>
               <Link href="/compare/simplystroke-vs-arccos/">vs Arccos</Link>
               <Link href="/#watch">Apple Watch</Link>
-              <Link href="/download/">Join waitlist</Link>
+              <Link href="/download/">Get the app</Link>
             </nav>
           </div>
           <div className="ss-footer-col">
@@ -30,6 +31,7 @@ export default function Footer() {
             <nav>
               <Link href="/golf-stroke-counter/">Golf stroke counters</Link>
               <Link href="/adhd-golf/">ADHD &amp; golf</Link>
+              <Link href="/reddit/">What Reddit thinks</Link>
               <Link href="/guides/lost-count-of-strokes-what-to-do/">
                 Lost count mid-hole?
               </Link>
@@ -52,7 +54,7 @@ export default function Footer() {
       </div>
       <div className="ss-footer-bottom">
         <span>© 2026 SimplyStroke. All rights reserved.</span>
-        <span>Coming soon 🏌️</span>
+        <span>Live now 🏌️</span>
       </div>
     </footer>
   );

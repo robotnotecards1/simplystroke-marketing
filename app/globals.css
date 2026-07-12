@@ -763,6 +763,15 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .refs li { font-size: 15px; line-height: 1.6; color: var(--gray-dark); margin-top: 12px; }
 .refs a { font-weight: 600; }
 
+/* a single attributed, permalinked Reddit comment */
+.reddit-quote { background: var(--cream); border-left: 4px solid var(--lime); padding: 20px 24px; margin-top: 20px; max-width: 860px; }
+.reddit-quote blockquote { margin: 0; }
+.reddit-quote p { margin-top: 0 !important; font-size: 17px; line-height: 1.6; color: var(--ink); font-style: italic; }
+.reddit-quote figcaption { margin-top: 12px; font-size: 14px; color: var(--gray-body); display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.reddit-quote .rq-upvotes { font-weight: 700; color: var(--green-deep); font-style: normal; }
+.reddit-quote .rq-app { font-weight: 600; }
+.reddit-quote figcaption a { font-weight: 600; }
+
 
 /* ---------- full-width content zones ----------
    The container is 1200px and the content zones now fill it. Running text

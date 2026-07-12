@@ -37,5 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       priority: 0.7,
     },
+    // Reddit research
+    { url: `${SITE_URL}/reddit/`, lastModified, priority: 0.8 },
   ];
 }

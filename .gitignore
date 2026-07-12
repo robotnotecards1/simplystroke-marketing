@@ -35,3 +35,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw Reddit corpus data — summaries live in research/*.md and are
+# committed; the underlying CSVs are not (see research/README.md and
+# REDDIT-SEO-PLAY.md §2, Risk 3: no bulk republication of the corpus).
+/research/data/
