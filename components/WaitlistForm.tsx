@@ -26,6 +26,9 @@ export default function WaitlistForm({ source = "site" }: { source?: string }) {
         body: JSON.stringify({ email, source, website }),
       });
       setStatus(res.ok ? "done" : "error");
+      if (res.ok) {
+        window.umami?.track("waitlist_signup", { source });
+      }
     } catch {
       setStatus("error");
     }

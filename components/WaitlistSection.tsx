@@ -20,7 +20,12 @@ export default function WaitlistSection({
           Store and Google Play; drop your email and we&apos;ll notify you the
           moment they land. No spam, just one message.
         </p>
-        <a href="https://app.simplystroke.app" className="btn btn-hero">
+        <a
+          href="https://app.simplystroke.app"
+          className="btn btn-hero"
+          data-umami-event="open_app"
+          data-umami-event-location="waitlist_section"
+        >
           Get Started →
         </a>
         <WaitlistForm source={source} />

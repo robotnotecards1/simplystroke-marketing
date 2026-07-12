@@ -113,7 +113,7 @@ const faqs: Faq[] = [
   },
   {
     q: "What is a simpler alternative to 18Birdies?",
-    a: "If you use 18Birdies mainly to keep score and ignore the GPS, green maps and social feed, a one-tap stroke counter does that one job with far less friction. SimplyStroke records a stroke in a single tap, needs no account to start a round, works fully offline and shows no ads. You lose GPS yardages, handicap tracking and the social feed, which is the trade.",
+    a: "If you use 18Birdies mainly to keep score and ignore the GPS, green maps and social feed, a one-tap stroke counter does that one job with far less friction. SimplyStroke records a stroke in a single tap, needs no account to start a round, and shows no ads. You lose GPS yardages, handicap tracking and the social feed, which is the trade.",
   },
   {
     q: "Do I need a golf GPS app if I already have a rangefinder?",
@@ -226,8 +226,8 @@ export default function ComparePage() {
               hardware trackers add <strong>$180–$300</strong> up front
             </>,
             <>
-              SimplyStroke is <strong>free</strong>, works offline, and needs no
-              account to start a round
+              SimplyStroke is <strong>free</strong> and needs no account to
+              start a round
             </>,
           ]}
         />
@@ -272,7 +272,9 @@ export default function ComparePage() {
                 <td data-label="What it's for">Counting strokes. Nothing else</td>
                 <td data-label="Taps to log a stroke">1</td>
                 <td data-label="Account to start">No</td>
-                <td data-label="Works offline">Yes</td>
+                <td data-label="Works offline">
+                  Not yet — with the apps
+                </td>
                 <td data-label="Ads">None</td>
                 <td data-label="Typical annual cost">Free</td>
                 <td data-label="Hardware">None</td>

@@ -21,7 +21,12 @@ export default function Nav() {
             <Link href="/features/">Features</Link>
             <Link href="/#screens">Screenshots</Link>
           </span> */}
-          <a href="https://app.simplystroke.app" className="btn btn-nav">
+          <a
+            href="https://app.simplystroke.app"
+            className="btn btn-nav"
+            data-umami-event="open_app"
+            data-umami-event-location="nav"
+          >
             Play Now →
           </a>
         </div>

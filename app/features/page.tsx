@@ -12,12 +12,12 @@ import {
 import { og } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "SimplyStroke Features: One-Tap Scoring, Undo, Offline Golf",
+  title: "SimplyStroke Features: One-Tap Golf Scoring, Undo, No Subscription",
   description:
     "Every SimplyStroke feature, from the one-tap stroke counter to instant shareable scorecards. No subscriptions and no GPS clutter. Just simple score tracking.",
   alternates: { canonical: "/features/" },
   openGraph: og(
-    "SimplyStroke Features: One-Tap Scoring, Undo, Offline Golf",
+    "SimplyStroke Features: One-Tap Golf Scoring, Undo, No Subscription",
     "Every SimplyStroke feature, from the one-tap stroke counter to instant shareable scorecards. No subscriptions and no GPS clutter. Just simple score tracking.",
     "/features/"
   ),
@@ -51,8 +51,8 @@ const features = [
   },
   {
     icon: <BallOnGreenIcon />,
-    title: "Works fully offline",
-    body: "No signal on the back nine? Doesn't matter. Rounds are counted on your phone and sync when you're back in range.",
+    title: "Offline play, with the apps",
+    body: "SimplyStroke runs in your browser today, so it needs a connection. Offline rounds ship with the dedicated iPhone and Android apps. A counter needs no maps and no server, so there's no good reason for one to die in a dead zone.",
   },
 ];
 

@@ -64,22 +64,29 @@ export const websiteNode = {
 };
 
 // The product. The one node allowed to carry an Offer.
+//
+// Live as of July 2026 as a WEB app at app.simplystroke.app. Native iPhone,
+// Android and Apple Watch apps are in progress. The type and operatingSystem
+// below describe what actually ships TODAY — declaring native OSes we haven't
+// released tells Google and every LLM we have apps that don't exist. Update
+// this when the native apps land, not before.
 export const appNode = {
-  "@type": "SoftwareApplication",
+  "@type": ["SoftwareApplication", "WebApplication"],
   "@id": APP_ID,
   name: SITE_NAME,
   applicationCategory: "SportsApplication",
   applicationSubCategory: "Golf scorecard and stroke counter",
-  operatingSystem: "iOS, Android, watchOS",
-  url: `${SITE_URL}/`,
+  operatingSystem: "Web browser",
+  browserRequirements: "Requires JavaScript",
+  url: "https://app.simplystroke.app",
+  sameAs: `${SITE_URL}/`,
   image: `${SITE_URL}/og-image.jpg`,
   publisher: { "@id": ORG_ID },
   description:
-    "A free, one-tap golf stroke counter and scorecard for iPhone, Android and Apple Watch. Counts your strokes so working memory doesn't have to.",
+    "A free, one-tap golf stroke counter and scorecard. Counts your strokes so working memory doesn't have to. Live now in any browser; dedicated iPhone, Android and Apple Watch apps are on the way.",
   featureList: [
     "One tap per stroke",
     "Undo a mis-tap",
-    "Works fully offline",
     "No account required to start a round",
     "No ads",
     "Apple Watch support",
@@ -90,8 +97,12 @@ export const appNode = {
     price: "0",
     priceCurrency: "USD",
   },
-  // No aggregateRating / review until the app has shipped and earned real
-  // ones. Inventing them is the one thing here that could earn a penalty.
+  // The app is live (web) as of July 2026. Add aggregateRating ONLY when
+  // there are real, earned reviews to point at — inventing them is the one
+  // thing here that could earn a manual action.
+  // NOTE: offline play is deliberately NOT in featureList. The live web app
+  // needs a connection; offline ships with the native iPhone/Android apps.
+  // featureList is read as a claim of fact. Put it back when it's true.
 };
 
 /* -------------------------------------------------------------------------- */

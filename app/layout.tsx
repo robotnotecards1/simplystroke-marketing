@@ -69,6 +69,12 @@ export default function RootLayout({
           data-website-id="20c6bcc0-8be5-429f-be45-51d4f57600cf"
           strategy="afterInteractive"
         />
+        {/* Umami session replay + heatmaps (15% sample rate, configured in the Umami dashboard) */}
+        <Script
+          src="https://simplystroke-umami.vercel.app/recorder.js"
+          data-website-id="20c6bcc0-8be5-429f-be45-51d4f57600cf"
+          strategy="afterInteractive"
+        />
         <Nav />
         {children}
         <Footer />

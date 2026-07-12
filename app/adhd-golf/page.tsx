@@ -88,7 +88,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Is there a golf app made for ADHD?",
-    a: "Yes. SimplyStroke is a golf stroke counter built for ADHD golfers. The whole app is one giant tap-the-ball button that counts your strokes, so working memory never has to hold the number. It is free, works fully offline, needs no account to start a round, and is live now, with dedicated iPhone, Android and Apple Watch apps coming soon.",
+    a: "Yes. SimplyStroke is a golf stroke counter built for ADHD golfers. The whole app is one giant tap-the-ball button that counts your strokes, so working memory never has to hold the number. It is free, needs no account to start a round, and is live now in any browser, with dedicated iPhone, Android and Apple Watch apps — and offline play — coming soon.",
   },
   {
     q: "Are there neurodivergent-friendly golf apps?",
@@ -100,7 +100,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Does SimplyStroke work without signal on the course?",
-    a: "Yes. SimplyStroke works fully offline, so a dead zone on the back nine never costs you your round. A stroke counter needs no map data and no server, so there is no honest reason for one to fail.",
+    a: "Not yet. SimplyStroke is a web app today, so it needs a connection. Offline play ships with the dedicated iPhone and Android apps, which are on the way. A stroke counter needs no map data and no server, so there is no honest reason for one to fail in a dead zone."
   },
   {
     q: "What is the hardest part of golf when you have ADHD?",
@@ -472,8 +472,8 @@ export default function AdhdGolfPage() {
                 <BallPinIcon />
               </div>
               <span>
-                Tapped twice by accident? Undo. Fully offline, no ads, no feeds,
-                no menus mid-round.
+                Tapped twice by accident? Undo. No ads, no feeds, no menus
+                mid-round.
               </span>
             </div>
           </div>

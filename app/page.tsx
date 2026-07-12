@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     q: "What's a simpler alternative to 18Birdies or Arccos?",
-    a: "SimplyStroke, if what you actually want is the score. 18Birdies, Arccos, Golfshot and SwingU are GPS and analytics platforms with a scorecard attached, and they charge accordingly. SimplyStroke is a scorecard with nothing attached: one tap per shot, free, offline, no account. You give up GPS yardages, handicap posting and strokes gained, which is a real trade and worth making only if you were never using them.",
+    a: "SimplyStroke, if what you actually want is the score. 18Birdies, Arccos, Golfshot and SwingU are GPS and analytics platforms with a scorecard attached, and they charge accordingly. SimplyStroke is a scorecard with nothing attached: one tap per shot, free, no account. You give up GPS yardages, handicap posting and strokes gained, which is a real trade and worth making only if you were never using them.",
   },
   {
     q: "Do I have to get my phone out on every shot?",
@@ -63,7 +63,7 @@ const faqs = [
   },
   {
     q: "Does it work without signal on the course?",
-    a: "Yes. SimplyStroke works fully offline, so a dead zone on the back nine never costs you your round. Your card syncs when you are back in range.",
+    a: "Not yet. SimplyStroke is currently a web app, so it needs a connection. Offline play ships with the dedicated iPhone and Android apps, which are on the way. A stroke counter needs no map data and no server, so there is no good reason for one to fail in a dead zone, and we are not going to ship one that does."
   },
   {
     q: "What if I tap twice by accident?",
@@ -124,7 +124,12 @@ export default function Home() {
               tee to the green, and you never see a renewal notice.
             </p>
             <div className="ss-hero-cta">
-              <a href="https://app.simplystroke.app" className="btn btn-hero">
+              <a
+                href="https://app.simplystroke.app"
+                className="btn btn-hero"
+                data-umami-event="open_app"
+                data-umami-event-location="home_hero"
+              >
                 Get Started →
               </a>
               <span className="ss-hero-launch">
@@ -212,7 +217,12 @@ export default function Home() {
               to. Tap it and forget it. Your focus stays where it belongs: the
               next shot.
             </p>
-            <a href="https://app.simplystroke.app" className="btn btn-fold">
+            <a
+              href="https://app.simplystroke.app"
+              className="btn btn-fold"
+              data-umami-event="open_app"
+              data-umami-event-location="adhd_fold"
+            >
               Let the app remember →
             </a>
             <br />
@@ -358,7 +368,12 @@ export default function Home() {
                 card
               </li>
             </ul>
-            <a href="#waitlist" className="btn btn-watch">
+            <a
+              href="#waitlist"
+              className="btn btn-watch"
+              data-umami-event="waitlist_cta_click"
+              data-umami-event-location="watch"
+            >
               Notify me at launch →
             </a>
           </div>

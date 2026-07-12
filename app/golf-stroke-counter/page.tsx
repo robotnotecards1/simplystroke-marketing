@@ -48,7 +48,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Do golf stroke counter apps work without signal?",
-    a: "The good ones do. A stroke counter needs no map data and no server, so there is no reason for it to fail in a dead zone. SimplyStroke works fully offline. If an app that only counts to five stops working on the back nine, that is a design choice, not a technical limit.",
+    a: "The good ones do. A stroke counter needs no map data and no server, so there is no good reason for one to fail in a dead zone. SimplyStroke is currently a web app and does need a connection; offline play ships with the dedicated iPhone and Android apps. If an app that only counts to five stops working on the back nine, that is a design choice, not a technical limit, and it is one we intend to fix."
   },
   {
     q: "Is a stroke counter app better than a pencil scorecard?",
@@ -127,8 +127,8 @@ export default function GolfStrokeCounterPage() {
               <strong>counts</strong>
             </>,
             <>
-              The good ones need <strong>one tap per shot</strong>, work fully
-              offline, and need no account before your first round
+              The good ones need <strong>one tap per shot</strong>, an undo,
+              and no account before your first round
             </>,
             <>
               Premium golf apps run <strong>$30–$100 a year</strong>; hardware
@@ -280,7 +280,9 @@ export default function GolfStrokeCounterPage() {
           </li>
           <li>
             <strong>Fully offline.</strong> A counter needs no map data and no
-            server. There is no honest reason for one to fail in a dead zone.
+            server, so there is no honest reason for one to fail in a dead zone.
+            (SimplyStroke is web-only today and does need a connection. Offline
+            play ships with the iPhone and Android apps.)
           </li>
           <li>
             <strong>No account before your first round.</strong> Nobody wants to
@@ -334,7 +336,8 @@ export default function GolfStrokeCounterPage() {
         </p>
         <p>
           There is no GPS, no handicap posting, no strokes gained, no feed, no
-          ads, and no subscription. It works offline, it works on your wrist, and
+          ads, and no subscription. It runs in any browser today, with iPhone,
+          Android and Apple Watch apps on the way, and
           it does not ask who you are before it will let you play golf.
         </p>
         <p>

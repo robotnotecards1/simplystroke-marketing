@@ -231,8 +231,10 @@ export default function Page() {
                 <td data-label="Arccos">A known weak spot</td>
               </tr>
               <tr>
-                <th scope="row">Works fully offline</th>
-                <td data-label="SimplyStroke">Yes</td>
+                <th scope="row">Works offline</th>
+                <td data-label="SimplyStroke">
+                  Not yet — ships with the apps
+                </td>
                 <td data-label="Arccos">No, needs sync</td>
               </tr>
               <tr>

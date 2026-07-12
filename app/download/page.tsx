@@ -46,7 +46,12 @@ export default function DownloadPage() {
             the App Store and Google Play — drop your email and we&apos;ll
             tell you the moment they land. No spam, one message.
           </p>
-          <a href="https://app.simplystroke.app" className="btn btn-hero">
+          <a
+            href="https://app.simplystroke.app"
+            className="btn btn-hero"
+            data-umami-event="open_app"
+            data-umami-event-location="download_hero"
+          >
             Get Started →
           </a>
           <WaitlistForm source="download" />
@@ -65,7 +70,7 @@ export default function DownloadPage() {
           <h2 className="h2-display">What you&apos;re signing up for</h2>
           <p className="section-lede" style={{ marginLeft: "auto", marginRight: "auto" }}>
             One giant button that counts your strokes. A scorecard that does
-            its own math. Undo for fat fingers, offline for dead zones, zero
+            its own math. Undo for fat fingers, no account to start, zero
             ads forever. Free to download when it lands.
           </p>
           <p className="section-lede" style={{ marginLeft: "auto", marginRight: "auto" }}>

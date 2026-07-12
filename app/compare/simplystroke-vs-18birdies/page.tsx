@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 const faqs: Faq[] = [
   {
     q: "Is there a simpler alternative to 18Birdies?",
-    a: "Yes. If you use 18Birdies mainly to keep score and ignore the GPS, green maps and social feed, a one-tap stroke counter does that job with far less friction. SimplyStroke records a stroke in a single tap, needs no account to start a round, works fully offline and shows no ads. You give up GPS yardages, handicap tracking and the social feed, which is the trade.",
+    a: "Yes. If you use 18Birdies mainly to keep score and ignore the GPS, green maps and social feed, a one-tap stroke counter does that job with far less friction. SimplyStroke records a stroke in a single tap, needs no account to start a round, and shows no ads. You give up GPS yardages, handicap tracking and the social feed, which is the trade.",
   },
   {
     q: "Is 18Birdies free?",
@@ -132,7 +132,7 @@ export default function Page() {
               <strong>18Birdies</strong> is a social GPS platform with a
               scorecard attached: yardages, green maps, stats, a feed, and a
               premium tier. <strong>SimplyStroke</strong> is a scorecard with
-              nothing attached: one tap per shot, free, offline, no account.
+              nothing attached: one tap per shot, free, no account.
               Choose 18Birdies if you want the whole round instrumented. Choose
               SimplyStroke if the only thing you keep losing is the count.
             </>
@@ -222,8 +222,10 @@ export default function Page() {
                 <td data-label="18Birdies">Yes</td>
               </tr>
               <tr>
-                <th scope="row">Works fully offline</th>
-                <td data-label="SimplyStroke">Yes</td>
+                <th scope="row">Works offline</th>
+                <td data-label="SimplyStroke">
+                  Not yet — ships with the apps
+                </td>
                 <td data-label="18Birdies">Partial</td>
               </tr>
             </tbody>
