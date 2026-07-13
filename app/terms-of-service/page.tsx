@@ -17,10 +17,10 @@ import { og } from "@/lib/site";
  *   - the marketing site (this site) also runs a waitlist + analytics; see the
  *     Privacy Policy for data specifics
  *
- * It is NOT a substitute for a lawyer. Two things a lawyer must set before
- * this is relied on: (1) the GOVERNING LAW jurisdiction (bracketed below),
- * and (2) whether the payments/liability language fits the entity that will
- * actually operate SimplyStroke.
+ * It is NOT a substitute for a lawyer. Governing law is set to North
+ * Carolina with venue in Mecklenburg County; a lawyer should still confirm
+ * the payments/liability language fits the entity that will actually operate
+ * SimplyStroke before this is relied on at launch.
  */
 
 const TITLE = "Terms of Service | SimplyStroke";
@@ -232,11 +232,12 @@ export default function TermsPage() {
 
         <h2>14. Governing law</h2>
         <p>
-          These terms are governed by the laws of{" "}
-          <strong>[jurisdiction to be set — see note]</strong>, without regard to
-          conflict-of-laws rules, and any dispute will be handled by the courts
-          located there. Nothing here takes away consumer-protection rights you
-          have where you live that can&apos;t be waived.
+          These terms are governed by the laws of the State of North Carolina,
+          without regard to conflict-of-laws rules. Any dispute will be handled
+          by the state or federal courts located in Mecklenburg County, North
+          Carolina, and you agree to that venue. Nothing here takes away
+          consumer-protection rights you have where you live that can&apos;t be
+          waived.
         </p>
 
         <h2>15. Contact</h2>
