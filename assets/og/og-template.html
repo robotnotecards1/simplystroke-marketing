@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<!--
+  Source template for public/og-image.jpg (1200x630 social card).
+  Regenerate with ./regenerate.sh after editing copy here.
+  The phone recreates the app's Active Round screen (same .ph-* styles as
+  the site's HeroPhone) inside an iPhone frame, with a course backdrop behind
+  the ball. Image paths are absolute from the assets/ root, served by regenerate.sh.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root{
+    --font-display:'Bebas Neue', sans-serif;
+    --font-body:'DM Sans', system-ui, sans-serif;
+    --green-deep:#1B4332; --green-mid:#2D6A4F; --green-light:#40916C;
+    --lime:#96C41E; --cream:#F4EFE4; --coral:#FF6B6B; --gray-body:#6B7280;
+  }
+  html, body { width: 1200px; height: 630px; }
+  .card{
+    position: relative; width: 1200px; height: 630px; overflow: hidden;
+    display: flex; align-items: center;
+    font-family: var(--font-body);
+    background:
+      radial-gradient(115% 135% at 10% 6%, rgba(64,145,108,.55), rgba(64,145,108,0) 52%),
+      radial-gradient(85% 120% at 102% 104%, rgba(150,196,30,.20), rgba(150,196,30,0) 58%),
+      linear-gradient(135deg, #17402F 0%, #245741 46%, #2D6A4F 100%);
+  }
+  .card::after{ content:''; position:absolute; inset:0; pointer-events:none;
+    box-shadow: inset 0 0 220px rgba(0,0,0,.30); }
+
+  /* ---------- left column ---------- */
+  .left{ position: relative; z-index: 2; padding: 48px 0 48px 76px; width: 632px; }
+  .wordmark{ height: 194px; width:auto; display:block; margin: -26px 0 4px -6px; }
+  h1{ font-family:var(--font-display); font-weight:400; color:#fff;
+    font-size:74px; line-height:.9; letter-spacing:.012em; white-space:nowrap; }
+  h1 .accent{ color:var(--lime); }
+  .sub{ margin-top:20px; max-width:520px; font-size:22px; line-height:1.4;
+    font-weight:500; color:rgba(244,239,228,.92); }
+  .cta{ margin-top:26px; display:inline-flex; align-items:center; gap:11px;
+    background:var(--lime); color:var(--green-deep); font-weight:700;
+    font-size:26px; letter-spacing:.005em; padding:15px 30px; border-radius:14px;
+    box-shadow:0 14px 30px rgba(150,196,30,.34); }
+  .cta .arw{ font-size:24px; line-height:1; }
+
+  /* ---------- iPhone (Active Round screen), scaled to fit ---------- */
+  .right{ position:absolute; right:66px; top:50%;
+    transform: translateY(-50%) rotate(2.5deg) scale(.82); transform-origin:center; z-index:1; }
+  .ph-frame{ width:340px; background:#0d0d0d; border-radius:52px; padding:12px;
+    box-shadow:0 34px 70px rgba(0,0,0,.5), inset 0 0 0 2px rgba(255,255,255,.06); }
+  .ph-screen{ width:100%; background:#F0F4F1; border-radius:42px; overflow:hidden;
+    display:flex; flex-direction:column; }
+  .ph-notchbar{ height:38px; background:var(--green-deep); display:flex; align-items:center;
+    justify-content:center; position:relative; }
+  .ph-notch{ width:110px; height:20px; background:#0d0d0d; border-radius:0 0 16px 16px;
+    position:absolute; top:0; }
+  .ph-topbar{ background:var(--green-deep); padding:4px 22px 16px; display:flex;
+    align-items:center; justify-content:space-between; }
+  .ph-hole-label{ font-family:var(--font-display); font-size:13px; letter-spacing:.18em;
+    color:rgba(255,255,255,.55); }
+  .ph-hole-num{ font-family:var(--font-display); font-size:30px; color:#fff; line-height:1; }
+  .ph-edit{ font-size:12px; font-weight:600; color:var(--lime);
+    border:1px solid rgba(150,196,30,.4); padding:6px 14px; }
+  .ph-subbar{ background:var(--green-mid); padding:10px 22px; display:flex;
+    align-items:center; justify-content:space-between; }
+  .ph-subbar .sub-label{ font-size:9px; letter-spacing:.1em; color:rgba(255,255,255,.55);
+    text-transform:uppercase; }
+  .ph-subbar .sub-num{ font-family:var(--font-display); font-size:22px; color:#fff; line-height:1; }
+  .ph-dots{ display:flex; gap:5px; }
+  .ph-dot{ width:7px; height:7px; border-radius:50%; background:var(--lime); }
+  .ph-dot.current{ width:9px; height:9px; background:#fff; }
+  .ph-dot.upcoming{ background:rgba(255,255,255,.2); }
+  .ph-scorebanner{ background:var(--green-deep); padding:8px 0 18px; text-align:center; }
+  .ph-overpar{ font-family:var(--font-display); font-size:58px; line-height:.9; color:#fff; }
+  .ph-overpar-label{ font-size:11px; letter-spacing:.16em; color:rgba(255,255,255,.5);
+    text-transform:uppercase; }
+
+  /* main area — course backdrop behind the ball */
+  .ph-main{ position:relative; flex:1; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; padding:26px 20px 18px; gap:15px;
+    background:url('/og/ball-bg.jpg') center 42% / cover; }
+  .ph-main::before{ content:''; position:absolute; inset:0; background:
+    linear-gradient(180deg, rgba(240,244,241,.55) 0%, rgba(240,244,241,.14) 34%,
+      rgba(240,244,241,.22) 62%, rgba(240,244,241,.78) 100%); }
+  .ph-ballwrap{ position:relative; width:190px; height:190px; z-index:1; }
+  .ph-ball{ position:relative; width:190px; height:190px; border-radius:50%; border:none;
+    background:radial-gradient(circle at 36% 30%, #ffffff, #E9ECE4);
+    box-shadow:0 16px 40px rgba(27,67,50,.34), inset 0 -10px 22px rgba(0,0,0,.06);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; }
+  .ph-dimples{ position:absolute; inset:14px; border-radius:50%;
+    background-image:radial-gradient(circle, rgba(27,67,50,.10) 1.4px, transparent 1.8px);
+    background-size:18px 18px; }
+  .ph-strokes{ position:relative; font-family:var(--font-display); font-size:86px;
+    line-height:.8; color:var(--green-deep); }
+  .ph-strokes-label{ position:relative; font-size:12px; letter-spacing:.22em;
+    color:var(--green-mid); font-weight:700; }
+  .ph-hitting{ position:relative; margin-top:8px; display:inline-flex; align-items:center;
+    gap:6px; background:var(--green-deep); padding:5px 14px; border-radius:999px;
+    font-size:11px; letter-spacing:.08em; font-weight:700; color:#fff; }
+  .ph-hitting .num{ color:var(--lime); }
+  .ph-caption{ position:relative; z-index:1; font-size:12px; color:var(--green-deep);
+    font-weight:700; text-shadow:0 1px 6px rgba(240,244,241,.9); }
+  .ph-actions{ display:flex; gap:12px; padding:14px 20px 22px; background:#F0F4F1; }
+  .ph-btn-undo{ flex:1; background:#fff; border:2px solid #E0E0E0; padding:14px;
+    font-size:14px; font-weight:600; color:var(--gray-body); display:flex;
+    align-items:center; justify-content:center; gap:6px; border-radius:2px; }
+  .ph-btn-next{ flex:2; background:linear-gradient(135deg, var(--green-mid), var(--green-light));
+    border:none; padding:14px; font-size:14px; font-weight:700; color:#fff; display:flex;
+    align-items:center; justify-content:center; gap:6px; border-radius:2px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="left">
+      <img class="wordmark" src="/logo-white.png" alt="SimplyStroke" />
+      <h1>Golf&rsquo;s simplest app.<br /><span class="accent">On purpose.</span></h1>
+      <p class="sub">No GPS, no cluttered screen&mdash;just a simple stroke counter and scorecard. One giant button: tap it once per swing and the scorecard fills itself in.</p>
+      <div class="cta">simplystroke.app <span class="arw">&rarr;</span></div>
+    </div>
+
+    <div class="right">
+      <div class="ph-frame">
+        <div class="ph-screen">
+          <div class="ph-notchbar"><div class="ph-notch"></div></div>
+          <div class="ph-topbar">
+            <div>
+              <div class="ph-hole-label">HOLE</div>
+              <div class="ph-hole-num">1 / 18</div>
+            </div>
+            <div class="ph-edit">Edit</div>
+          </div>
+          <div class="ph-subbar">
+            <div><div class="sub-label">Par</div><div class="sub-num">4</div></div>
+            <div class="ph-dots">
+              <span class="ph-dot current"></span>
+              <span class="ph-dot upcoming"></span>
+              <span class="ph-dot upcoming"></span>
+              <span class="ph-dot upcoming"></span>
+              <span class="ph-dot upcoming"></span>
+              <span class="ph-dot upcoming"></span>
+              <span class="ph-dot upcoming"></span>
+              <span class="ph-dot upcoming"></span>
+            </div>
+            <div style="text-align:right"><div class="sub-label">Total</div><div class="sub-num">0</div></div>
+          </div>
+          <div class="ph-scorebanner">
+            <div class="ph-overpar">E</div>
+            <div class="ph-overpar-label">Even</div>
+          </div>
+          <div class="ph-main">
+            <div class="ph-ballwrap">
+              <button class="ph-ball" type="button">
+                <span class="ph-dimples"></span>
+                <span class="ph-strokes">0</span>
+                <span class="ph-strokes-label">STROKES</span>
+                <span class="ph-hitting">HITTING <span class="num">1</span></span>
+              </button>
+            </div>
+            <div class="ph-caption">Tap the ball to count a stroke</div>
+          </div>
+          <div class="ph-actions">
+            <div class="ph-btn-undo">&#8630; Undo</div>
+            <div class="ph-btn-next">Next hole &rarr;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

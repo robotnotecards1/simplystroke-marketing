@@ -110,18 +110,18 @@ export default function Home() {
         <div className="container ss-hero-inner">
           <div className="ss-hero-copy">
             <div className="eyebrow ss-hero-eyebrow">
-              Free · One tap · No subscription
+              Free · One tap Scorecard · No subscription
             </div>
             <h1 className="ss-hero-h1">
-              Golf&apos;s dumbest app.
+              Golf&apos;s simplest app.
               <br />
               <span className="accent">On purpose.</span>
             </h1>
             <p className="ss-hero-p">
-              No GPS. No feed. No strokes gained. No $99 a year. What&apos;s
-              left is one giant button: tap it once per swing and the scorecard
-              fills itself in. You never carry a number in your head from the
-              tee to the green, and you never see a renewal notice.
+              No GPS, no cluttered screen — just a simple stroke counter and
+              scorecard. One giant button: tap it once per swing and the
+              scorecard fills itself in. Forget about your strokes and focus on
+              the ball.
             </p>
             <div className="ss-hero-cta">
               <a href="https://app.simplystroke.app" className="btn btn-hero">
