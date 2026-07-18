@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AppClip from "@/components/AppClip";
 import HeroPhone from "@/components/HeroPhone";
-import ActiveRoundPhone from "@/components/ActiveRoundPhone";
 import StoreBadges from "@/components/StoreBadges";
 import WaitlistSection from "@/components/WaitlistSection";
 import {
@@ -316,24 +316,16 @@ export default function Home() {
           <div className="ss-watch-mock">
             <div className="ss-watch-float">
               <div className="ss-watch-body">
-                <div className="ss-watch-screen">
-                  <div className="ss-watch-top">
-                    <span className="hole">HOLE 7</span>
-                    <span className="over">+2</span>
-                  </div>
-                  <div className="ss-watch-ballwrap">
-                    <span className="ss-watch-pulse" />
-                    <div className="ss-watch-ball">
-                      <span className="dimples" />
-                      <span className="num">5</span>
-                      <span className="label">STROKES</span>
-                    </div>
-                  </div>
-                  <div className="ss-watch-hint">
-                    Tap · Digital Crown to edit
-                  </div>
+                <div className="ss-watch-screen video">
+                  {/* Real capture: four taps on the wrist count strokes, then
+                      Next advances the hole — synced live from the phone. */}
+                  <AppClip
+                    src="/videos/watch-live-round.mp4"
+                    label="SimplyStroke on Apple Watch: tapping the ball counts strokes, Next advances the hole"
+                  />
                 </div>
               </div>
+              <div className="ss-watch-realtag">Actual app footage</div>
             </div>
           </div>
           <div className="ss-watch-copy">
@@ -341,8 +333,8 @@ export default function Home() {
             <h2>Leave the phone in the bag.</h2>
             <p className="ss-watch-p">
               Count every stroke from your wrist. A tap on the watch face logs
-              the shot, the Digital Crown fixes it if you double-tapped, and
-              your round syncs straight to your phone&apos;s scorecard. The
+              the shot with a haptic tick, Undo fixes it if you double-tapped,
+              and your round syncs straight to your phone&apos;s scorecard. The
               phone stays in the bag.
             </p>
             <ul className="ss-checklist">
@@ -412,11 +404,20 @@ export default function Home() {
           </div>
 
           <div className="ss-screen-item">
-            <ActiveRoundPhone />
+            <div className="mini-wrap">
+              <div className="mini-frame">
+                <div className="mini-screen video">
+                  <AppClip
+                    src="/videos/phone-active-round.mp4"
+                    label="SimplyStroke active round screen: tapping the giant golf ball counts a stroke"
+                  />
+                </div>
+              </div>
+            </div>
             <div className="ss-screen-caption">
               <span className="ss-screen-stepnum">3</span>Active round
             </div>
-            <div className="ss-screen-sub">The only screen that matters</div>
+            <div className="ss-screen-sub">Actual footage — not a mockup</div>
           </div>
 
           <div className="ss-screen-item">

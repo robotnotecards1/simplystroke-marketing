@@ -345,6 +345,10 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .ss-watch-ball .num { position: relative; font-family: var(--font-display); font-size: 58px; line-height: 0.8; color: var(--green-deep); }
 .ss-watch-ball .label { position: relative; font-size: 9px; letter-spacing: 0.18em; color: var(--green-mid); font-weight: 700; }
 .ss-watch-hint { font-size: 11px; color: rgba(255,255,255,0.5); font-weight: 600; }
+/* Real-footage variant: the capture fills the whole watch screen. */
+.ss-watch-screen.video { padding: 0; }
+.ss-watch-screen.video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ss-watch-realtag { margin-top: 14px; text-align: center; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: rgba(255,255,255,0.45); }
 .ss-watch-copy { flex: 1 1 380px; min-width: 280px; }
 .ss-watch-copy h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 5.4vw, 76px); line-height: 0.95; margin-top: 18px; }
 .ss-watch-p { font-size: clamp(16px, 1.4vw, 19px); line-height: 1.6; font-weight: 600; color: rgba(255,255,255,0.9); max-width: 480px; margin-top: 20px; }
@@ -410,6 +414,9 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 }
 .mini-screen.scrolling { height: 460px; }
 .mini-screen.scrolling > img { animation: ssScreenScroll 9s ease-in-out infinite; }
+/* Real-footage variant: same frame, the clip fills it. */
+.mini-screen.video { height: 460px; }
+.mini-screen.video video { width: 100%; height: 100%; object-fit: cover; display: block; }
 .ss-screen-item:nth-child(1) .mini-screen.scrolling > img { animation-delay: 0.8s; }
 .ss-screen-item:nth-child(2) .mini-screen.scrolling > img { animation-delay: 2.6s; }
 .ss-screen-item:nth-child(4) .mini-screen.scrolling > img { animation-delay: 4.4s; }
