@@ -229,7 +229,7 @@ export async function getCourseStats(course: Course): Promise<CourseStats | null
 }
 
 /** Baked-in leaderboard (top gross). Refreshed client-side from public_rounds. */
-export async function getLeaderboard(course: Course, limit = 8): Promise<LeaderRow[]> {
+export async function getLeaderboard(course: Course, limit = 12): Promise<LeaderRow[]> {
   if (DEMO) return readDemoLeaders(course.slug, limit);
   const sb = supabase();
   if (!sb) return [];

@@ -1,108 +1,116 @@
 {
   "stats": {
-    "rounds_count": 230,
-    "avg_score": 90,
-    "avg_to_par": 18,
-    "low_round": 74,
-    "low_round_label": "Wes Moore, Eugene, OR",
+    "rounds_count": 9,
+    "avg_score": 88.1,
+    "avg_to_par": 16.1,
+    "low_round": 84,
+    "low_round_label": "Greg Tanaka, San Jose, CA",
     "hardest_holes": [
       {
         "hole": 5,
         "par": 4,
-        "over_par": 0.94
+        "over_par": 0.87
       },
       {
         "hole": 11,
         "par": 4,
-        "over_par": 0.82
+        "over_par": 0.75
       },
       {
         "hole": 3,
         "par": 5,
-        "over_par": 0.72
+        "over_par": 0.65
       },
       {
         "hole": 18,
         "par": 5,
-        "over_par": 0.63
+        "over_par": 0.56
       }
     ],
     "distribution": [
-      2,
-      7,
-      16,
-      24,
-      25,
-      17,
-      8,
-      1
+      0,
+      0,
+      11,
+      67,
+      11,
+      11,
+      0,
+      0
     ],
     "updated_at": "2026-07-18"
   },
   "leaders": [
     {
-      "display_name": "Wes Moore",
-      "home_city": "Eugene, OR",
-      "tees": "Green",
-      "gross_score": 74,
-      "score_to_par": 2,
-      "verified": false
-    },
-    {
-      "display_name": "Grace O'Neil",
-      "home_city": "Bandon, OR",
-      "tees": "Green",
-      "gross_score": 76,
-      "score_to_par": 4,
-      "verified": false
-    },
-    {
-      "display_name": "Alex Nguyen",
-      "home_city": "Coos Bay, OR",
+      "display_name": "Greg Tanaka",
+      "home_city": "San Jose, CA",
       "tees": "Black",
-      "gross_score": 77,
-      "score_to_par": 5,
+      "gross_score": 84,
+      "score_to_par": 12,
       "verified": false
     },
     {
-      "display_name": "Ivy R.",
-      "home_city": "Portland, OR",
-      "tees": "Green",
-      "gross_score": 80,
-      "score_to_par": 8,
+      "display_name": "Jack Sutton",
+      "home_city": "Raleigh, NC",
+      "tees": "Black",
+      "gross_score": 85,
+      "score_to_par": 13,
       "verified": false
     },
     {
-      "display_name": "Nia K.",
-      "home_city": "Coos Bay, OR",
-      "tees": "Green",
-      "gross_score": 83,
-      "score_to_par": 11,
-      "verified": false
-    },
-    {
-      "display_name": "Diego Nguyen",
-      "home_city": "Bend, OR",
+      "display_name": "Brett Cole",
+      "home_city": "St. Louis, MO",
       "tees": "Green",
       "gross_score": 86,
       "score_to_par": 14,
+      "verified": true
+    },
+    {
+      "display_name": "Diego Alvarez",
+      "home_city": "Scottsdale, AZ",
+      "tees": "Black",
+      "gross_score": 87,
+      "score_to_par": 15,
+      "verified": true
+    },
+    {
+      "display_name": "Carl Nguyen",
+      "home_city": "Atlanta, GA",
+      "tees": "Black",
+      "gross_score": 87,
+      "score_to_par": 15,
       "verified": false
     },
     {
-      "display_name": "Ben H.",
-      "home_city": "Eugene, OR",
-      "tees": "Black",
+      "display_name": "Paul Kim",
+      "home_city": "Portland, OR",
+      "tees": "Green",
       "gross_score": 88,
       "score_to_par": 16,
-      "verified": false
+      "verified": true
     },
     {
-      "display_name": "Kevin K.",
-      "home_city": "Eugene, OR",
-      "tees": "Black",
+      "display_name": "Kevin T.",
+      "home_city": "Charlotte, NC",
+      "tees": "Green",
       "gross_score": 89,
       "score_to_par": 17,
       "verified": false
+    },
+    {
+      "display_name": "Doug Hayes",
+      "home_city": "Carlsbad, CA",
+      "tees": "Green",
+      "gross_score": 92,
+      "score_to_par": 20,
+      "verified": false
+    },
+    {
+      "display_name": "Mike Frye",
+      "home_city": "Tampa, FL",
+      "tees": "Black",
+      "gross_score": 95,
+      "score_to_par": 23,
+      "verified": true
     }
   ]
 }

@@ -1,104 +1,104 @@
 {
   "stats": {
-    "rounds_count": 390,
-    "avg_score": 90.9,
-    "avg_to_par": 18.9,
-    "low_round": 77,
-    "low_round_label": "Marcus O'Neil, Irvine, CA",
+    "rounds_count": 8,
+    "avg_score": 92,
+    "avg_to_par": 20,
+    "low_round": 87,
+    "low_round_label": "Diego Alvarez, Scottsdale, AZ",
     "hardest_holes": [
       {
         "hole": 7,
         "par": 4,
-        "over_par": 0.91
+        "over_par": 0.87
       },
       {
         "hole": 12,
         "par": 4,
-        "over_par": 0.81
+        "over_par": 0.75
       },
       {
         "hole": 4,
         "par": 4,
-        "over_par": 0.74
+        "over_par": 0.66
       },
       {
         "hole": 17,
         "par": 4,
-        "over_par": 0.64
+        "over_par": 0.52
       }
     ],
     "distribution": [
-      2,
-      6,
-      14,
-      23,
+      0,
+      0,
+      0,
       25,
-      19,
-      10,
-      1
+      50,
+      25,
+      0,
+      0
     ],
     "updated_at": "2026-07-18"
   },
   "leaders": [
     {
-      "display_name": "Marcus O'Neil",
-      "home_city": "Irvine, CA",
+      "display_name": "Diego Alvarez",
+      "home_city": "Scottsdale, AZ",
       "tees": "Brown",
-      "gross_score": 77,
-      "score_to_par": 5,
+      "gross_score": 87,
+      "score_to_par": 15,
+      "verified": false
+    },
+    {
+      "display_name": "Ben Walsh",
+      "home_city": "Chicago, IL",
+      "tees": "Black",
+      "gross_score": 89,
+      "score_to_par": 17,
       "verified": true
     },
     {
-      "display_name": "Grace L.",
-      "home_city": "Irvine, CA",
-      "tees": "Black",
-      "gross_score": 80,
-      "score_to_par": 8,
-      "verified": false
-    },
-    {
-      "display_name": "Sara H.",
-      "home_city": "San Diego, CA",
-      "tees": "Black",
-      "gross_score": 83,
-      "score_to_par": 11,
-      "verified": false
-    },
-    {
-      "display_name": "Ivy W.",
-      "home_city": "Carlsbad, CA",
-      "tees": "Black",
-      "gross_score": 86,
-      "score_to_par": 14,
-      "verified": false
-    },
-    {
-      "display_name": "Sara P.",
-      "home_city": "Carlsbad, CA",
-      "tees": "Brown",
-      "gross_score": 88,
-      "score_to_par": 16,
-      "verified": false
-    },
-    {
-      "display_name": "Tom T.",
-      "home_city": "Los Angeles, CA",
+      "display_name": "Tom Sullivan",
+      "home_city": "Boston, MA",
       "tees": "Black",
       "gross_score": 91,
       "score_to_par": 19,
       "verified": false
     },
     {
-      "display_name": "Kevin K.",
-      "home_city": "San Diego, CA",
-      "tees": "Brown",
-      "gross_score": 94,
-      "score_to_par": 22,
+      "display_name": "Wes Parker",
+      "home_city": "Austin, TX",
+      "tees": "Black",
+      "gross_score": 92,
+      "score_to_par": 20,
       "verified": true
     },
     {
-      "display_name": "Alex H.",
-      "home_city": "Encinitas, CA",
+      "display_name": "Luke Diaz",
+      "home_city": "Dallas, TX",
+      "tees": "Brown",
+      "gross_score": 92,
+      "score_to_par": 20,
+      "verified": false
+    },
+    {
+      "display_name": "Nate Brooks",
+      "home_city": "Nashville, TN",
+      "tees": "Brown",
+      "gross_score": 94,
+      "score_to_par": 22,
+      "verified": false
+    },
+    {
+      "display_name": "Owen Cho",
+      "home_city": "Minneapolis, MN",
+      "tees": "Black",
+      "gross_score": 95,
+      "score_to_par": 23,
+      "verified": false
+    },
+    {
+      "display_name": "Kevin T.",
+      "home_city": "Charlotte, NC",
       "tees": "Black",
       "gross_score": 96,
       "score_to_par": 24,

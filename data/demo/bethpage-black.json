@@ -1,108 +1,68 @@
 {
   "stats": {
-    "rounds_count": 357,
-    "avg_score": 90.6,
-    "avg_to_par": 19.6,
-    "low_round": 75,
-    "low_round_label": "Grace H., Bethpage, NY",
+    "rounds_count": 3,
+    "avg_score": 94.7,
+    "avg_to_par": 23.7,
+    "low_round": 92,
+    "low_round_label": "Diego Alvarez, Scottsdale, AZ",
     "hardest_holes": [
       {
         "hole": 15,
         "par": 4,
-        "over_par": 0.9
+        "over_par": 0.89
       },
       {
         "hole": 4,
         "par": 5,
-        "over_par": 0.82
+        "over_par": 0.75
       },
       {
         "hole": 13,
         "par": 5,
-        "over_par": 0.77
+        "over_par": 0.63
       },
       {
         "hole": 5,
         "par": 4,
-        "over_par": 0.68
+        "over_par": 0.57
       }
     ],
     "distribution": [
-      2,
-      6,
-      14,
-      24,
-      25,
-      19,
-      9,
-      1
+      0,
+      0,
+      0,
+      0,
+      33,
+      67,
+      0,
+      0
     ],
     "updated_at": "2026-07-18"
   },
   "leaders": [
     {
-      "display_name": "Grace H.",
-      "home_city": "Bethpage, NY",
+      "display_name": "Diego Alvarez",
+      "home_city": "Scottsdale, AZ",
       "tees": "White",
-      "gross_score": 75,
-      "score_to_par": 4,
-      "verified": false
-    },
-    {
-      "display_name": "Jordan Alvarez",
-      "home_city": "Farmingdale, NY",
-      "tees": "Blue",
-      "gross_score": 76,
-      "score_to_par": 5,
-      "verified": false
-    },
-    {
-      "display_name": "Alex Park",
-      "home_city": "Massapequa, NY",
-      "tees": "White",
-      "gross_score": 79,
-      "score_to_par": 8,
+      "gross_score": 92,
+      "score_to_par": 21,
       "verified": true
     },
     {
-      "display_name": "Sara L.",
-      "home_city": "Huntington, NY",
-      "tees": "White",
-      "gross_score": 81,
-      "score_to_par": 10,
-      "verified": false
-    },
-    {
-      "display_name": "Cole R.",
-      "home_city": "Huntington, NY",
+      "display_name": "Nate Brooks",
+      "home_city": "Nashville, TN",
       "tees": "Blue",
-      "gross_score": 84,
-      "score_to_par": 13,
+      "gross_score": 96,
+      "score_to_par": 25,
       "verified": true
     },
     {
-      "display_name": "Danielle Park",
-      "home_city": "Huntington, NY",
+      "display_name": "Wes Parker",
+      "home_city": "Austin, TX",
       "tees": "White",
-      "gross_score": 87,
-      "score_to_par": 16,
+      "gross_score": 96,
+      "score_to_par": 25,
       "verified": false
-    },
-    {
-      "display_name": "Tom T.",
-      "home_city": "Massapequa, NY",
-      "tees": "White",
-      "gross_score": 89,
-      "score_to_par": 18,
-      "verified": false
-    },
-    {
-      "display_name": "Priya T.",
-      "home_city": "Brooklyn, NY",
-      "tees": "Blue",
-      "gross_score": 90,
-      "score_to_par": 19,
-      "verified": true
     }
   ]
 }

@@ -28,7 +28,7 @@ export default function CourseLeaderboard({
       .select("display_name, gross_score, score_to_par")
       .eq("course_id", courseId)
       .order("gross_score", { ascending: true })
-      .limit(8)
+      .limit(12)
       .then(({ data, error }) => {
         // Only replace the baked rows if the live query actually returns some;
         // a transient error or empty result must not blank a populated board.
