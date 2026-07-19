@@ -1,0 +1,53 @@
+{
+  "slug": "tpc-sawgrass-stadium",
+  "name": "TPC Sawgrass (Stadium)",
+  "club_name": "TPC Sawgrass",
+  "city": "Ponte Vedra Beach",
+  "state": "FL",
+  "zip": "32082",
+  "country": "USA",
+  "address": "110 Championship Way, Ponte Vedra Beach, FL 32082",
+  "lat": 30.196,
+  "lng": -81.3938,
+  "phone": "(904) 273-3235",
+  "website": "https://tpc.com/sawgrass/",
+  "designer": "Pete Dye (with Alice Dye)",
+  "year_opened": 1980,
+  "access_type": "resort",
+  "green_fee_tier": "$$$$",
+  "green_fee_notes": "2026 rack rates run $550 (June to August) and $750 in peak season, with dynamic pricing approaching $1,000 in the weeks after THE PLAYERS; the fee includes cart, group forecaddie, and range balls.",
+  "holes_count": 18,
+  "par_total": 72,
+  "par_per_hole": [4, 5, 3, 4, 4, 4, 4, 3, 5, 4, 5, 4, 3, 4, 4, 5, 3, 4],
+  "handicap_per_hole": [11, 15, 17, 9, 3, 13, 1, 7, 5, 12, 8, 16, 18, 4, 6, 10, 14, 2],
+  "course_rating": 76.8,
+  "slope_rating": 155,
+  "rating_tee": "THE PLAYERS",
+  "tees": [
+    { "name": "THE PLAYERS", "color": "#1a2f57", "rating": 76.8, "slope": 155, "yardage": 7352, "holes": [424, 555, 182, 387, 469, 413, 450, 236, 601, 419, 573, 365, 183, 485, 470, 537, 141, 462] },
+    { "name": "Blue", "color": "#2f6fb0", "rating": 73.9, "slope": 148, "yardage": 6670, "holes": [394, 507, 160, 359, 446, 360, 407, 195, 546, 392, 519, 332, 156, 436, 421, 486, 128, 426] },
+    { "name": "White", "color": "#e8e8e8", "rating": 70.8, "slope": 138, "yardage": 6086, "holes": [360, 469, 134, 324, 422, 333, 382, 168, 522, 351, 469, 296, 141, 377, 366, 470, 115, 387] },
+    { "name": "Green", "color": "#2d6a4f", "rating": 65.8, "slope": 116, "yardage": 5019, "holes": [292, 381, 97, 263, 360, 269, 329, 121, 453, 247, 395, 243, 109, 334, 288, 410, 92, 336] }
+  ],
+  "amenities": ["Clubhouse", "Golf shop", "Caddie program", "Driving range", "TOUR Performance Center", "Dining", "Second 18-hole course (Dye's Valley)"],
+  "walkable": true,
+  "notable": [
+    "Home of THE PLAYERS Championship since 1982",
+    "Island-green par-3 17th, one of the most famous holes in golf (141 yards from THE PLAYERS tees)",
+    "Pete Dye design that pioneered the stadium-golf spectator concept",
+    "The land was famously sold to the PGA TOUR for $1"
+  ],
+  "walkable_note": "Walking permitted only with a walking caddie; riding groups get a forecaddie and the course is cart-path only.",
+  "confidence": {
+    "tees": "All ratings/slopes verified identical between the official TPC scorecard PDF and USGA NCRDB (CourseID 10804). Blended and ladies' tee sets omitted from the directory card for space; see sources.",
+    "green_fee_notes": "2026 rack rates via Golf News Net (March 2026); TPC uses dynamic pricing so daily rates vary.",
+    "lat_lng": "OpenStreetMap Nominatim geocode of 110 Championship Way."
+  },
+  "sources": [
+    "https://tpc.com/sawgrass/",
+    "https://tpc.com/sawgrass/wp-content/uploads/sites/51/2025/01/TPC_Sawgrass-Scorecard.pdf",
+    "https://ncrdb.usga.org/courseTeeInfo?CourseID=10804",
+    "https://thegolfnewsnet.com/golfnewsnetteam/2026/03/14/how-much-does-it-cost-to-play-golf-at-tpc-sawgrass-stadium-course-in-2026-green-fee-141217/",
+    "https://en.wikipedia.org/wiki/TPC_at_Sawgrass"
+  ]
+}

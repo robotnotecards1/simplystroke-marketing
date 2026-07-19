@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "rounds_count": 194,
+    "avg_score": 91,
+    "avg_to_par": 19,
+    "low_round": 74,
+    "low_round_label": "Wes W., Pinehurst, NC",
+    "hardest_holes": [
+      {
+        "hole": 4,
+        "par": 4,
+        "over_par": 0.93
+      },
+      {
+        "hole": 14,
+        "par": 4,
+        "over_par": 0.83
+      },
+      {
+        "hole": 2,
+        "par": 4,
+        "over_par": 0.75
+      },
+      {
+        "hole": 18,
+        "par": 4,
+        "over_par": 0.68
+      }
+    ],
+    "distribution": [
+      2,
+      6,
+      14,
+      21,
+      26,
+      19,
+      10,
+      2
+    ],
+    "updated_at": "2026-07-18"
+  },
+  "leaders": [
+    {
+      "display_name": "Wes W.",
+      "home_city": "Pinehurst, NC",
+      "tees": "U.S. Open",
+      "gross_score": 74,
+      "score_to_par": 2,
+      "verified": false
+    },
+    {
+      "display_name": "Ben R.",
+      "home_city": "Pinehurst, NC",
+      "tees": "U.S. Open",
+      "gross_score": 77,
+      "score_to_par": 5,
+      "verified": true
+    },
+    {
+      "display_name": "Marcus K.",
+      "home_city": "Aberdeen, NC",
+      "tees": "Blue",
+      "gross_score": 78,
+      "score_to_par": 6,
+      "verified": false
+    },
+    {
+      "display_name": "Cole Nguyen",
+      "home_city": "Aberdeen, NC",
+      "tees": "U.S. Open",
+      "gross_score": 79,
+      "score_to_par": 7,
+      "verified": true
+    },
+    {
+      "display_name": "Cole Park",
+      "home_city": "Raleigh, NC",
+      "tees": "Blue",
+      "gross_score": 82,
+      "score_to_par": 10,
+      "verified": false
+    },
+    {
+      "display_name": "Jordan Diaz",
+      "home_city": "Aberdeen, NC",
+      "tees": "Blue",
+      "gross_score": 83,
+      "score_to_par": 11,
+      "verified": true
+    },
+    {
+      "display_name": "Wes L.",
+      "home_city": "Raleigh, NC",
+      "tees": "U.S. Open",
+      "gross_score": 86,
+      "score_to_par": 14,
+      "verified": true
+    },
+    {
+      "display_name": "Marcus T.",
+      "home_city": "Charlotte, NC",
+      "tees": "Blue",
+      "gross_score": 88,
+      "score_to_par": 16,
+      "verified": false
+    }
+  ]
+}

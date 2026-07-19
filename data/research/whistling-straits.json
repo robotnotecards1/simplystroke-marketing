@@ -1,0 +1,54 @@
+{
+  "slug": "whistling-straits",
+  "name": "Whistling Straits (Straits)",
+  "club_name": "Whistling Straits, Destination Kohler",
+  "city": "Sheboygan",
+  "state": "WI",
+  "zip": "53083",
+  "country": "USA",
+  "address": "N8501 Lakeshore Rd, Sheboygan, WI 53083",
+  "lat": 43.851,
+  "lng": -87.735,
+  "phone": "855-444-2838",
+  "website": "https://www.kohlerwisconsin.com/golf/whistling-straits/the-straits",
+  "designer": "Pete Dye",
+  "year_opened": 1998,
+  "access_type": "resort",
+  "green_fee_tier": "$$$$",
+  "green_fee_notes": "The resort does not publish rack rates; peak-season Straits green fees are reported around $645 per person for 2025-26, plus a $90 caddie fee, and advance tee times generally require Destination Kohler lodging.",
+  "holes_count": 18,
+  "par_total": 72,
+  "par_per_hole": [4, 5, 3, 4, 5, 4, 3, 4, 4, 4, 5, 3, 4, 4, 4, 5, 3, 4],
+  "handicap_per_hole": [15, 7, 17, 1, 5, 13, 9, 3, 11, 12, 6, 18, 14, 16, 4, 10, 8, 2],
+  "course_rating": 77.2,
+  "slope_rating": 152,
+  "rating_tee": "Black",
+  "tees": [
+    { "name": "Black", "color": "#26221f", "rating": 77.2, "slope": 152, "yardage": 7790, "holes": [493, 597, 188, 494, 603, 409, 221, 506, 442, 391, 645, 163, 402, 396, 503, 568, 249, 520] },
+    { "name": "Blue", "color": "#2f6fb0", "rating": 74.2, "slope": 145, "yardage": 7142, "holes": [405, 533, 180, 451, 563, 378, 205, 470, 412, 376, 563, 138, 389, 360, 464, 545, 223, 487] },
+    { "name": "Green", "color": "#2d6a4f", "rating": 71.9, "slope": 141, "yardage": 6663, "holes": [370, 521, 166, 414, 543, 360, 185, 429, 384, 334, 544, 118, 364, 346, 429, 535, 197, 424] },
+    { "name": "White", "color": "#e8e8e8", "rating": 70.4, "slope": 137, "yardage": 6360, "holes": [361, 508, 154, 404, 527, 352, 172, 405, 371, 320, 519, 99, 336, 332, 402, 513, 165, 420] },
+    { "name": "Red", "color": "#c0392b", "rating": 66.4, "slope": 129, "yardage": 5564, "holes": [325, 447, 111, 354, 459, 282, 132, 355, 347, 304, 479, 89, 319, 271, 367, 412, 131, 380] }
+  ],
+  "amenities": ["Caddie program", "Golf shop", "Whistling Straits Restaurant", "36-hole facility (Irish Course on site)", "Destination Kohler resort lodging"],
+  "walkable": true,
+  "notable": [
+    "Hosted the PGA Championship in 2004 (Vijay Singh), 2010 (Martin Kaymer), and 2015 (Jason Day)",
+    "Hosted the 2021 Ryder Cup, won by the USA 19-9",
+    "Walking-only course with caddies; carts are not allowed",
+    "Pete Dye links layout along two miles of Lake Michigan shoreline; also hosted the 2007 U.S. Senior Open"
+  ],
+  "confidence": {
+    "lat_lng": "Wikipedia clubhouse-area coordinate; the property spans about two miles of shoreline.",
+    "green_fee_notes": "Official rates page confirms the $90 caddie fee and walking-only policy but not the rack green fee; ~$645 peak figure is third-party reporting (Nov 2025).",
+    "ratings": "All ratings/slopes and per-hole data from the official Straits scorecard PDF, cross-verified against GolfPass (exact match for men's tees). USGA NCRDB unreachable (403).",
+    "address": "Course sits in Haven (Town of Mosel) with a Sheboygan mailing address."
+  },
+  "sources": [
+    "https://www.kohlerwisconsin.com/content/dam/kohler-destinations/pdf_resource/dk/golf/whistling-straits/scorecard-the-straits.pdf",
+    "https://www.kohlerwisconsin.com/golf/whistling-straits/the-straits",
+    "https://www.kohlerwisconsin.com/golf/golf-rates--safety-guidelines-and-policies",
+    "https://www.golfpass.com/travel-advisor/courses/14635-straits-golf-course-at-whistling-straits",
+    "https://en.wikipedia.org/wiki/Whistling_Straits"
+  ]
+}

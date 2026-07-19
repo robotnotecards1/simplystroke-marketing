@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "rounds_count": 347,
+    "avg_score": 87.9,
+    "avg_to_par": 15.9,
+    "low_round": 77,
+    "low_round_label": "Tom P., Carlsbad, CA",
+    "hardest_holes": [
+      {
+        "hole": 2,
+        "par": 4,
+        "over_par": 0.93
+      },
+      {
+        "hole": 18,
+        "par": 4,
+        "over_par": 0.83
+      },
+      {
+        "hole": 4,
+        "par": 4,
+        "over_par": 0.72
+      },
+      {
+        "hole": 13,
+        "par": 4,
+        "over_par": 0.63
+      }
+    ],
+    "distribution": [
+      4,
+      10,
+      19,
+      26,
+      22,
+      13,
+      5,
+      1
+    ],
+    "updated_at": "2026-07-18"
+  },
+  "leaders": [
+    {
+      "display_name": "Tom P.",
+      "home_city": "Carlsbad, CA",
+      "tees": "Black",
+      "gross_score": 77,
+      "score_to_par": 5,
+      "verified": false
+    },
+    {
+      "display_name": "Ivy H.",
+      "home_city": "Carlsbad, CA",
+      "tees": "Brown",
+      "gross_score": 78,
+      "score_to_par": 6,
+      "verified": false
+    },
+    {
+      "display_name": "Kevin Park",
+      "home_city": "Los Angeles, CA",
+      "tees": "Brown",
+      "gross_score": 81,
+      "score_to_par": 9,
+      "verified": false
+    },
+    {
+      "display_name": "Wes Diaz",
+      "home_city": "La Jolla, CA",
+      "tees": "Brown",
+      "gross_score": 84,
+      "score_to_par": 12,
+      "verified": true
+    },
+    {
+      "display_name": "Danielle Alvarez",
+      "home_city": "Los Angeles, CA",
+      "tees": "Brown",
+      "gross_score": 87,
+      "score_to_par": 15,
+      "verified": false
+    },
+    {
+      "display_name": "Cole Alvarez",
+      "home_city": "Carlsbad, CA",
+      "tees": "Brown",
+      "gross_score": 89,
+      "score_to_par": 17,
+      "verified": false
+    },
+    {
+      "display_name": "Ben H.",
+      "home_city": "San Diego, CA",
+      "tees": "Brown",
+      "gross_score": 90,
+      "score_to_par": 18,
+      "verified": false
+    },
+    {
+      "display_name": "Kevin H.",
+      "home_city": "San Diego, CA",
+      "tees": "Brown",
+      "gross_score": 93,
+      "score_to_par": 21,
+      "verified": true
+    }
+  ]
+}

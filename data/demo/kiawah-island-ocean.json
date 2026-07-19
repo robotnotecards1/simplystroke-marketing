@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "rounds_count": 378,
+    "avg_score": 91.7,
+    "avg_to_par": 19.7,
+    "low_round": 74,
+    "low_round_label": "Diego Alvarez, Charleston, SC",
+    "hardest_holes": [
+      {
+        "hole": 4,
+        "par": 4,
+        "over_par": 0.91
+      },
+      {
+        "hole": 13,
+        "par": 4,
+        "over_par": 0.81
+      },
+      {
+        "hole": 2,
+        "par": 5,
+        "over_par": 0.73
+      },
+      {
+        "hole": 16,
+        "par": 5,
+        "over_par": 0.66
+      }
+    ],
+    "distribution": [
+      1,
+      5,
+      12,
+      22,
+      26,
+      21,
+      11,
+      2
+    ],
+    "updated_at": "2026-07-18"
+  },
+  "leaders": [
+    {
+      "display_name": "Diego Alvarez",
+      "home_city": "Charleston, SC",
+      "tees": "Black",
+      "gross_score": 74,
+      "score_to_par": 2,
+      "verified": true
+    },
+    {
+      "display_name": "Ben Moore",
+      "home_city": "Charleston, SC",
+      "tees": "Gold",
+      "gross_score": 76,
+      "score_to_par": 4,
+      "verified": true
+    },
+    {
+      "display_name": "Sara T.",
+      "home_city": "Seabrook, SC",
+      "tees": "Gold",
+      "gross_score": 77,
+      "score_to_par": 5,
+      "verified": true
+    },
+    {
+      "display_name": "Tom Nguyen",
+      "home_city": "Mount Pleasant, SC",
+      "tees": "Gold",
+      "gross_score": 79,
+      "score_to_par": 7,
+      "verified": false
+    },
+    {
+      "display_name": "Tom L.",
+      "home_city": "Seabrook, SC",
+      "tees": "Gold",
+      "gross_score": 80,
+      "score_to_par": 8,
+      "verified": false
+    },
+    {
+      "display_name": "Priya Nguyen",
+      "home_city": "Kiawah Island, SC",
+      "tees": "Gold",
+      "gross_score": 81,
+      "score_to_par": 9,
+      "verified": false
+    },
+    {
+      "display_name": "Wes Diaz",
+      "home_city": "Johns Island, SC",
+      "tees": "Black",
+      "gross_score": 82,
+      "score_to_par": 10,
+      "verified": true
+    },
+    {
+      "display_name": "Grace Nguyen",
+      "home_city": "Kiawah Island, SC",
+      "tees": "Black",
+      "gross_score": 84,
+      "score_to_par": 12,
+      "verified": true
+    }
+  ]
+}

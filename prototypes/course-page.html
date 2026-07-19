@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Torrey Pines South, La Jolla CA — Average Score, Difficulty & Leaderboard | SimplyStroke</title>
+<meta name="description" content="The average golfer shoots 89.4 at Torrey Pines South. Real posted rounds, hole-by-hole difficulty, percentile calculator, full scorecard, and the SimplyStroke leaderboard for La Jolla, CA." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  /* ===== tokens transcribed from SimplyStroke globals.css ===== */
+  :root{
+    --green-deep:#1B4332;--green-mid:#2D6A4F;--green-light:#40916C;
+    --lime:#96C41E;--lime-text:#C7E77A;--cream:#F4EFE4;--offwhite:#FAFAF8;
+    --coral:#FF6B6B;--gray-body:#6B7280;--gray-dark:#4B5563;--ink:#1A1A1A;
+    --font-display:'Bebas Neue',sans-serif;
+    --font-body:'DM Sans',system-ui,sans-serif;
+    --container-pad:clamp(20px,5vw,64px);
+    --section-pad-y:clamp(48px,6vw,88px);
+  }
+  *,*::before,*::after{box-sizing:border-box}*{margin:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--offwhite);color:var(--ink);font-family:var(--font-body);line-height:1.5;-webkit-font-smoothing:antialiased}
+  img,svg{display:block;max-width:100%}
+  input,button{font:inherit}
+  a{color:var(--green-mid);text-decoration:none}a:hover{color:var(--green-deep)}
+  ::selection{background:var(--lime);color:var(--green-deep)}
+  .container{max-width:1200px;margin:0 auto;padding-left:var(--container-pad);padding-right:var(--container-pad)}
+  .section{padding:var(--section-pad-y) var(--container-pad)}
+  .section-inner{max-width:1200px;margin:0 auto}
+  .alt-section{background:var(--cream)}
+  .eyebrow{font-size:15px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--green-mid)}
+  .h2-display{font-family:var(--font-display);font-weight:400;font-size:clamp(34px,4.4vw,58px);line-height:0.98;color:var(--green-deep);letter-spacing:.01em}
+  .section-lede{font-size:clamp(16px,1.4vw,18px);line-height:1.6;font-weight:500;color:var(--gray-dark);margin-top:14px;max-width:660px}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--lime);color:var(--green-deep);font-weight:700;border:none;cursor:pointer}
+  a.btn:hover{color:var(--green-deep);filter:brightness(1.04)}
+  .btn-nav{font-size:15px;padding:11px 22px;box-shadow:0 6px 16px rgba(150,196,30,0.32)}
+  .btn-lg{font-size:16px;padding:15px 30px;box-shadow:0 8px 20px rgba(150,196,30,0.35)}
+  .btn-ghost{background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.4)}
+  a.btn-ghost:hover{color:#fff;background:rgba(255,255,255,0.2)}
+
+  .proto{background:#17191B;color:#e8e2d2;font-size:12.5px;text-align:center;padding:8px 16px}
+  .proto b{color:var(--lime)}
+
+  /* nav */
+  .ss-nav{position:sticky;top:0;z-index:50;padding:14px 0;background:var(--offwhite);backdrop-filter:blur(14px);border-bottom:1px solid rgba(27,67,50,0.1);box-shadow:0 1px 12px rgba(27,67,50,0.05)}
+  .ss-nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .wordmark{font-family:var(--font-display);font-size:30px;letter-spacing:.03em;color:var(--green-deep);display:flex;align-items:center;gap:8px;line-height:1}
+  .wordmark .dot{width:12px;height:12px;border-radius:50%;background:var(--lime)}
+
+  /* page hero */
+  .page-hero{position:relative;background:linear-gradient(165deg,#1B4332 0%,#2D6A4F 62%,#40916C 130%);color:var(--offwhite);overflow:hidden;padding:clamp(30px,4vw,52px) var(--container-pad) clamp(40px,5vw,64px)}
+  .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,56px);align-items:center}
+  .hero-eyebrow{font-size:14px;letter-spacing:0.2em;text-transform:uppercase;color:var(--lime-text);font-weight:700}
+  .page-hero h1{font-family:var(--font-display);font-weight:400;font-size:clamp(40px,5.6vw,80px);line-height:0.9;letter-spacing:.01em;margin-top:14px}
+  .page-hero h1 .accent{color:var(--lime)}
+  .hero-sub{font-size:clamp(16px,1.4vw,19px);line-height:1.5;font-weight:500;color:rgba(255,255,255,0.9);margin-top:16px;max-width:520px}
+  .hero-sub strong{color:#fff}
+  .hero-meta{display:flex;align-items:center;gap:16px;margin-top:20px;flex-wrap:wrap}
+  .ss-rating{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);padding:9px 14px}
+  .ss-rating .num{font-family:var(--font-display);font-size:30px;color:#fff;line-height:1}
+  .stars{color:var(--lime);font-size:14px;letter-spacing:1px}
+  .ss-rating small{display:block;color:rgba(255,255,255,0.7);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+  .fresh{font-size:12.5px;color:rgba(255,255,255,0.75)}.fresh b{color:var(--lime-text)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .chip{background:rgba(150,196,30,0.14);border:1px solid rgba(150,196,30,0.4);color:var(--lime-text);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:6px 11px}
+  .chip b{color:#fff;font-family:var(--font-display);font-weight:400;font-size:15px;letter-spacing:.03em}
+
+  /* hero media */
+  .hero-media{position:relative;min-height:300px;background:#0e2a20;box-shadow:0 30px 60px rgba(0,0,0,.35);overflow:hidden}
+  .hero-media svg{position:absolute;inset:0;width:100%;height:100%}
+  .media-badge{position:absolute;top:12px;left:12px;z-index:3;background:var(--offwhite);color:var(--green-deep);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:5px 10px}
+  .media-toggle{position:absolute;top:12px;right:12px;z-index:3;display:flex;background:rgba(14,20,15,.72);padding:3px;gap:2px}
+  .media-toggle button{font-family:var(--font-body);font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.75);background:transparent;border:0;padding:6px 11px;cursor:pointer;font-weight:700}
+  .media-toggle button.on{background:var(--lime);color:var(--green-deep)}
+  .media-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:12px 14px;font-size:12px;color:#eaf3ee;background:linear-gradient(0deg,rgba(8,24,17,.85),transparent)}
+
+  /* answer block (native component style) */
+  .answer-block{background:var(--cream);border-left:5px solid var(--lime);padding:26px 30px}
+  .answer-block-head{font-size:13px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--green-mid)}
+  .answer-block-body{font-size:19px;line-height:1.65;color:var(--ink);margin-top:14px;font-weight:500}
+  .answer-block-body strong{color:var(--green-deep)}
+  .answer-block-facts{list-style:none;margin:20px 0 0;padding:18px 0 0;display:flex;flex-direction:column;gap:10px;border-top:1px solid rgba(27,67,50,0.12)}
+  .answer-block-facts li{font-size:16px;line-height:1.6;color:var(--gray-dark);padding-left:20px;position:relative}
+  .answer-block-facts li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--lime)}
+  .answer-block-facts strong{color:var(--green-deep)}
+  .answer-block-updated{margin-top:18px;font-size:13px;color:var(--gray-body)}
+
+  /* quick-answers two-column: main answer block + stacked secondary Q&A */
+  .answers-layout{display:grid;grid-template-columns:1.4fr 1fr;gap:22px;align-items:start;margin-top:22px}
+  .qa-stack{display:flex;flex-direction:column;gap:16px}
+  .qa{background:#fff;border:1px solid rgba(27,67,50,0.1);border-top:4px solid var(--lime);box-shadow:0 2px 14px rgba(27,67,50,0.06);padding:22px 24px}
+  .qa h3{font-size:18px;font-weight:700;color:var(--green-deep)}
+  .qa p{font-size:15.5px;line-height:1.6;color:var(--gray-dark);margin-top:8px}
+  .qa .src{margin-top:12px;font-size:12px;color:var(--gray-body);display:flex;align-items:center;gap:7px}
+  .qa .src .ai{background:var(--green-deep);color:var(--lime);font-size:10px;font-weight:700;letter-spacing:.04em;padding:2px 7px;text-transform:uppercase}
+
+  /* scoreboard (dark) */
+  .board{background:var(--green-deep);color:var(--offwhite);padding:clamp(28px,4vw,44px) var(--container-pad)}
+  .board-inner{max-width:1200px;margin:0 auto}
+  .board .eyebrow{color:var(--lime)}
+  .board h2{font-family:var(--font-display);font-weight:400;font-size:clamp(32px,4vw,54px);line-height:1;color:#fff;margin-top:8px}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+  .stat{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);padding:20px}
+  .stat .k{font-family:var(--font-display);font-size:52px;color:#fff;line-height:.85}
+  .stat .k .u{font-size:24px;color:var(--lime)}
+  .stat .l{font-size:12px;color:rgba(255,255,255,0.62);margin-top:8px;text-transform:uppercase;letter-spacing:.05em}
+  .board-foot{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;margin-top:16px}
+  .mini{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);padding:18px}
+  .mini h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--lime);margin-bottom:14px}
+  .dist{display:flex;align-items:flex-end;gap:6px;height:80px}
+  .dist .bar{flex:1;background:var(--green-light);position:relative;min-height:5px}
+  .dist .bar span{position:absolute;top:-16px;left:0;right:0;text-align:center;font-size:10px;color:rgba(255,255,255,0.7)}
+  .dist-x{display:flex;gap:6px;margin-top:6px}
+  .dist-x span{flex:1;text-align:center;font-size:9.5px;color:rgba(255,255,255,0.45)}
+  .hard{display:flex;flex-direction:column;gap:10px}
+  .hard-row{display:flex;align-items:center;gap:10px;font-size:13px}
+  .hard-row .hn{font-family:var(--font-display);font-size:16px;letter-spacing:.03em;width:66px;color:#fff}
+  .hard-row .track{flex:1;height:9px;background:rgba(255,255,255,0.12)}
+  .hard-row .fill{height:100%;background:var(--lime)}
+  .hard-row .v{width:48px;text-align:right;color:var(--lime);font-family:var(--font-display);font-size:16px}
+
+  /* percentile tool */
+  .tool{background:#fff;border:1px solid rgba(27,67,50,0.12);border-top:4px solid var(--lime);box-shadow:0 2px 14px rgba(27,67,50,0.06);padding:28px;margin-top:22px}
+  .tool-grid{display:grid;grid-template-columns:280px 1fr;gap:28px;align-items:center}
+  .tool label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray-body);display:block;margin-bottom:8px}
+  .tool .inrow{display:flex;gap:10px}
+  .tool input{font-family:var(--font-display);font-size:40px;color:var(--green-deep);width:120px;text-align:center;border:1px solid rgba(27,67,50,0.2);padding:6px;background:var(--offwhite)}
+  .tool input:focus{outline:none;border-color:var(--lime)}
+  .tool button{background:var(--lime);color:var(--green-deep);border:0;font-weight:700;font-size:15px;padding:0 22px;cursor:pointer}
+  .tool .hint{font-size:12.5px;color:var(--gray-body);margin-top:9px}
+  .result .headline{font-family:var(--font-display);font-size:34px;color:var(--green-deep);line-height:1.02;margin-bottom:7px}
+  .result .headline .pct{color:var(--lime)}
+  .result .sub2{font-size:14px;color:var(--gray-dark);margin-bottom:14px}
+  .gauge{height:16px;background:linear-gradient(90deg,#e3ddcb,#bcd888);position:relative}
+  .gauge .you{position:absolute;top:-6px;width:4px;height:28px;background:var(--coral);transition:left .5s cubic-bezier(.2,.8,.2,1)}
+  .gauge .you::after{content:'YOU';position:absolute;top:-15px;left:50%;transform:translateX(-50%);font-family:var(--font-display);font-size:12px;color:var(--coral)}
+  .gauge-x{display:flex;justify-content:space-between;font-size:11px;color:var(--gray-body);margin-top:12px}
+  .result .cta-line{margin-top:16px;font-size:14px}
+  .result .cta-line a{color:var(--green-mid);font-weight:700}
+
+  /* tables (leaderboard, scorecard) share the site .cmp look */
+  .tbl-wrap{overflow-x:auto;border:1px solid rgba(27,67,50,0.14);background:#fff;margin-top:22px}
+  table.data{width:100%;border-collapse:collapse;font-size:14.5px}
+  table.data th,table.data td{padding:13px 16px;text-align:left;border-bottom:1px solid rgba(27,67,50,0.1)}
+  table.data thead th{background:var(--green-deep);color:var(--offwhite);font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-bottom:none}
+  table.data tr:last-child td{border-bottom:none}
+  .rank{font-family:var(--font-display);font-size:22px;color:var(--green-deep);width:38px}
+  .rank.first{color:var(--lime)}
+  .who{font-weight:700;color:var(--green-deep)}.who small{display:block;color:var(--gray-body);font-weight:400;font-size:12.5px}
+  .score{font-family:var(--font-display);font-size:26px;text-align:right;color:var(--green-deep)}
+  .topar{color:var(--coral);font-weight:700;text-align:right;font-size:13px}
+  .topar.under{color:var(--green-light)}
+  .verified{display:inline-block;font-size:10px;background:var(--green-deep);color:var(--lime);padding:2px 6px;letter-spacing:.05em;margin-left:6px;font-weight:700;text-transform:uppercase}
+  .lb-tabs{display:flex;border:1px solid rgba(27,67,50,0.14);border-bottom:none;margin-top:22px}
+  .lb-tabs+.tbl-wrap{margin-top:0}
+  .lb-tab{flex:1;text-align:center;padding:13px;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gray-body);background:var(--cream)}
+  .lb-tab.on{background:#fff;color:var(--green-deep);box-shadow:inset 0 -3px 0 var(--lime)}
+
+  /* prose + right rail (the "rundown" article layout) */
+  .rundown{display:grid;grid-template-columns:1fr 320px;gap:clamp(28px,4vw,56px);align-items:start;margin-top:22px}
+  .prose{max-width:none}
+  .prose p{font-size:18px;line-height:1.75;color:#374151;margin-top:22px}
+  .prose p:first-child{margin-top:0}
+  .prose strong{color:var(--green-deep)}
+  .rail{position:sticky;top:88px;display:flex;flex-direction:column;gap:16px}
+  .rail-card{background:#fff;border:1px solid rgba(27,67,50,0.12);border-top:4px solid var(--lime);padding:22px 24px}
+  .rail-card h3{font-family:var(--font-display);font-weight:400;font-size:22px;color:var(--green-deep);margin-bottom:12px;letter-spacing:.02em}
+  .rail-kv{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:8px 0;border-bottom:1px solid rgba(27,67,50,0.08);font-size:14px}
+  .rail-kv:last-of-type{border-bottom:none}
+  .rail-kv .rk{color:var(--gray-body)}
+  .rail-kv .rv{font-family:var(--font-display);font-size:19px;color:var(--green-deep);letter-spacing:.02em}
+  .rail-card p{font-size:14px;line-height:1.55;color:var(--gray-dark);margin-bottom:14px}
+
+  /* comparison .cmp */
+  .cmp-wrap{margin-top:22px;overflow-x:auto}
+  table.cmp{width:100%;border-collapse:collapse;background:#fff;border:1px solid rgba(27,67,50,0.14);font-size:15px}
+  table.cmp th,table.cmp td{padding:13px 16px;text-align:left;border-bottom:1px solid rgba(27,67,50,0.1)}
+  table.cmp thead th{background:var(--green-deep);color:var(--offwhite);font-size:13px;font-weight:700;text-transform:uppercase;border-bottom:none;font-family:var(--font-display);letter-spacing:.03em}
+  table.cmp tbody th{font-weight:700;color:var(--gray-dark);white-space:nowrap}
+  .cmp .win{background:rgba(150,196,30,0.1);color:var(--green-deep);font-weight:700}
+  table.cmp tr:last-child td,table.cmp tr:last-child th{border-bottom:none}
+
+  /* scorecard */
+  .card{width:100%;border-collapse:collapse;font-size:13px;min-width:720px}
+  .card th,.card td{padding:9px 8px;text-align:center;border-bottom:1px solid rgba(27,67,50,0.1);border-right:1px solid rgba(27,67,50,0.06)}
+  .card th:first-child,.card td:first-child{text-align:left;position:sticky;left:0;background:#fff;font-weight:700;padding-left:14px;min-width:92px;color:var(--green-deep)}
+  .card thead th{background:var(--green-deep);color:#fff;font-family:var(--font-display);font-weight:400;font-size:15px;letter-spacing:.02em;border-right-color:rgba(255,255,255,0.15)}
+  .card .par-row{background:var(--cream);font-weight:700}.card .par-row td:first-child{background:var(--cream)}
+  .card .tot{background:#eef0ea;font-family:var(--font-display);font-size:16px;color:var(--green-deep)}
+  .card .idx{color:var(--gray-body);font-size:11px}
+  .tee-dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:middle}
+
+  /* info cards */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}
+  .info-card{background:#fff;border:1px solid rgba(27,67,50,0.12);padding:24px}
+  .info-card h3{font-family:var(--font-display);font-weight:400;font-size:24px;color:var(--green-deep);margin-bottom:14px;letter-spacing:.02em}
+  .kv{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid rgba(27,67,50,0.08);font-size:14.5px}
+  .kv:last-child{border-bottom:none}
+  .kv .kk{width:92px;color:var(--gray-body);flex-shrink:0}
+  .kv a{color:var(--green-mid);font-weight:600}
+  .amenities{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .am{font-size:13px;background:var(--cream);border:1px solid rgba(27,67,50,0.1);padding:6px 10px;color:var(--gray-dark)}
+
+  /* nearby */
+  .near-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+  .near{background:#fff;border:1px solid rgba(27,67,50,0.12);padding:20px;display:block;transition:box-shadow .12s,transform .12s}
+  .near:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(27,67,50,0.1)}
+  .near .nm{font-family:var(--font-display);font-weight:400;font-size:22px;color:var(--green-deep);letter-spacing:.02em}
+  .near .meta{font-size:12.5px;color:var(--gray-body);margin-top:3px}
+  .near .rr{font-size:13px;margin-top:10px;color:var(--gray-dark)}.near .rr b{color:var(--green-mid);font-family:var(--font-display);font-size:16px}
+
+  /* CTA band */
+  .cta-band{position:relative;background:linear-gradient(160deg,rgba(45,106,79,0.94),rgba(27,67,50,0.96));color:var(--offwhite);text-align:center;padding:clamp(44px,6vw,80px) var(--container-pad)}
+  .cta-band h2{font-family:var(--font-display);font-weight:400;font-size:clamp(38px,5vw,72px);line-height:.93}
+  .cta-band p{max-width:540px;margin:16px auto 26px;color:rgba(255,255,255,0.9);font-size:17px;line-height:1.6}
+  .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  /* FAQ */
+  .faq-list{display:flex;flex-direction:column;gap:16px;margin-top:22px}
+  .faq-item{background:#fff;border:1px solid rgba(27,67,50,0.1);border-top:4px solid var(--lime);box-shadow:0 2px 14px rgba(27,67,50,0.06);padding:4px 28px}
+  .faq-item summary{font-size:19px;font-weight:700;color:var(--green-deep);padding:22px 0;cursor:pointer;list-style:none}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:'+';float:right;color:var(--green-light);font-size:24px;line-height:.9}
+  .faq-item[open] summary::after{content:'\2013'}
+  .faq-item p{font-size:16px;line-height:1.65;color:var(--gray-dark);padding:0 0 22px}
+
+  /* breadcrumbs */
+  .breadcrumbs{padding:16px var(--container-pad) 0;background:var(--offwhite)}
+  .breadcrumbs ol{max-width:1200px;margin:0 auto;list-style:none;display:flex;flex-wrap:wrap;gap:8px;padding:0;font-size:14px;color:var(--gray-body);align-items:center}
+  .breadcrumbs li{display:flex;gap:8px;align-items:center}
+  .breadcrumbs a{color:var(--green-mid);font-weight:600}
+  .breadcrumbs-sep{color:rgba(27,67,50,0.3)}
+  .breadcrumbs .feat{margin-left:auto;background:rgba(150,196,30,0.14);border:1px solid rgba(150,196,30,0.4);padding:4px 11px;color:var(--green-deep);font-weight:600;font-size:12.5px}
+
+  /* footer */
+  .ss-footer{background:#0E140F;color:rgba(255,255,255,0.7);padding:clamp(44px,6vw,64px) var(--container-pad) 36px}
+  .ss-footer-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start;justify-content:space-between}
+  .ss-footer-brand{flex:1 1 280px;min-width:240px}
+  .ss-footer-brand .wordmark{color:#fff;font-size:28px}
+  .ss-footer-brand p{font-size:14px;line-height:1.6;color:rgba(255,255,255,0.55);max-width:340px;margin-top:16px}
+  .ss-footer-cols{display:flex;flex-wrap:wrap;gap:clamp(40px,6vw,80px)}
+  .ss-footer-head{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--lime);font-weight:700}
+  .ss-footer-col nav{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+  .ss-footer-col a{font-size:14px;color:rgba(255,255,255,0.7)}
+  .ss-footer-col a:hover{color:#fff}
+  .ss-footer-bottom{max-width:1200px;margin:36px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,0.1);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:12.5px;color:rgba(255,255,255,0.45)}
+  .attrib{max-width:560px;line-height:1.55}
+
+  /* suggest an edit */
+  .suggest{background:#fff;border:1px solid rgba(27,67,50,0.12);padding:22px 26px;margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .suggest .st{max-width:660px}
+  .suggest .st b{font-family:var(--font-display);font-weight:400;font-size:24px;color:var(--green-deep);letter-spacing:.02em;display:block;margin-bottom:4px}
+  .suggest .st p{font-size:14.5px;color:var(--gray-dark);line-height:1.55}
+  .btn-outline{background:transparent;border:1.5px solid var(--green-mid);color:var(--green-deep);font-weight:700;padding:12px 22px;font-size:15px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+  .btn-outline:hover{background:var(--cream)}
+  /* modal */
+  .modal-overlay{position:fixed;inset:0;background:rgba(17,25,19,0.55);display:none;align-items:flex-start;justify-content:center;padding:40px 20px;z-index:100;overflow-y:auto}
+  .modal-overlay.open{display:flex}
+  .modal{background:var(--offwhite);width:100%;max-width:520px;border-top:5px solid var(--lime);box-shadow:0 30px 70px rgba(0,0,0,.4)}
+  .modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:24px 26px 0}
+  .modal-head h3{font-family:var(--font-display);font-weight:400;font-size:28px;color:var(--green-deep);letter-spacing:.02em;line-height:1}
+  .modal-head p{font-size:13.5px;color:var(--gray-body);margin-top:6px}
+  .modal-close{background:transparent;border:0;font-size:26px;line-height:1;color:var(--gray-body);cursor:pointer}
+  .modal-body{padding:18px 26px 26px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-body);margin-bottom:7px}
+  .field label .opt{color:var(--gray-body);font-weight:400;text-transform:none;letter-spacing:0}
+  .field select,.field input,.field textarea{width:100%;background:#fff;border:1px solid rgba(27,67,50,0.2);padding:11px 13px;font-size:15px;color:var(--ink);font-family:var(--font-body)}
+  .field select:focus,.field input:focus,.field textarea:focus{outline:none;border-color:var(--lime)}
+  .field textarea{resize:vertical;min-height:96px}
+  .modal .btn{width:100%;justify-content:center;padding:14px;font-size:15px}
+  .modal-note{font-size:12px;color:var(--gray-body);margin-top:12px;text-align:center;line-height:1.5}
+  .modal-success{padding:44px 30px;text-align:center;display:none}
+  .modal-success .chk{width:56px;height:56px;background:var(--lime);color:var(--green-deep);font-size:30px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+  .modal-success h3{font-family:var(--font-display);font-weight:400;font-size:28px;color:var(--green-deep);margin-bottom:8px;letter-spacing:.02em}
+  .modal-success p{font-size:14.5px;color:var(--gray-dark);line-height:1.55;max-width:340px;margin:0 auto}
+
+  @media(max-width:900px){
+    .hero-inner{grid-template-columns:1fr}
+    .stat-grid{grid-template-columns:repeat(2,1fr)}
+    .board-foot{grid-template-columns:1fr}
+    .answers-layout{grid-template-columns:1fr}
+    .rundown{grid-template-columns:1fr}
+    .rail{position:static}
+    .tool-grid{grid-template-columns:1fr;gap:20px}
+    .cols{grid-template-columns:1fr}
+    .near-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="proto">🔧 <b>PROTOTYPE</b> — course page in the live marketing-site design system. Course facts real; <b>round data, ratings, imagery & leaderboard are sample</b>.</div>
+
+<nav class="ss-nav">
+  <div class="container ss-nav-inner">
+    <a href="#" class="wordmark"><span class="dot"></span>SIMPLYSTROKE</a>
+    <a href="#cta" class="btn btn-nav">Play Now →</a>
+  </div>
+</nav>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="#">Home</a><span class="breadcrumbs-sep">/</span></li>
+    <li><a href="#">Golf Courses</a><span class="breadcrumbs-sep">/</span></li>
+    <li><a href="#">California</a><span class="breadcrumbs-sep">/</span></li>
+    <li><a href="#">La Jolla</a><span class="breadcrumbs-sep">/</span></li>
+    <li><span aria-current="page">Torrey Pines South</span></li>
+    <li class="feat">★ #3 in <a href="#" style="margin-left:4px">Hardest Courses in California</a></li>
+  </ol>
+</nav>
+
+<!-- HERO -->
+<header class="page-hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-eyebrow">La Jolla, California · Municipal / Public</div>
+      <h1>Torrey Pines <span class="accent">South</span></h1>
+      <p class="hero-sub">The muni that hosts a <strong>U.S. Open</strong>. Par 72 · 18 holes · Rees Jones redesign.</p>
+      <div class="hero-meta">
+        <div class="ss-rating">
+          <div class="num">4.6</div>
+          <div><div class="stars">★★★★★</div><small>SimplyStroke · 312 rounds</small></div>
+        </div>
+        <div class="fresh">Updated <b>daily</b><br>last refresh Jul 18, 2026</div>
+      </div>
+      <div class="chips">
+        <span class="chip">Designer <b>Rees Jones</b></span>
+        <span class="chip">Est. <b>1957</b></span>
+        <span class="chip">Tips <b>7,765 YDS</b></span>
+        <span class="chip">Rating <b>78.1 / 144</b></span>
+      </div>
+    </div>
+    <div class="hero-media">
+      <svg id="sat" viewBox="0 0 800 560" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Satellite view of Torrey Pines South generated from coordinates">
+        <defs>
+          <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c6b8c"/><stop offset="1" stop-color="#0d4666"/></linearGradient>
+          <linearGradient id="rough" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f7538"/><stop offset="1" stop-color="#3a5a2b"/></linearGradient>
+          <radialGradient id="fw" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#8fb85f"/><stop offset="1" stop-color="#6f9a45"/></radialGradient>
+        </defs>
+        <rect width="800" height="560" fill="url(#rough)"/>
+        <path d="M0,0 L150,0 C120,150 90,320 40,450 C25,500 10,540 0,560 Z" fill="url(#sea)"/>
+        <path d="M150,0 C120,150 90,320 40,450 C25,500 10,540 0,560" fill="none" stroke="#d9c9a3" stroke-width="7" opacity=".5"/>
+        <path d="M210,40 C260,130 250,210 300,270 C340,310 330,385 380,440" fill="none" stroke="url(#fw)" stroke-width="46" stroke-linecap="round"/>
+        <path d="M430,60 C470,150 520,160 540,255 C555,330 520,385 560,460" fill="none" stroke="url(#fw)" stroke-width="42" stroke-linecap="round"/>
+        <path d="M640,90 C610,180 660,245 650,340 C645,405 690,440 700,500" fill="none" stroke="url(#fw)" stroke-width="40" stroke-linecap="round"/>
+        <circle cx="300" cy="270" r="22" fill="#a7d06a"/><circle cx="380" cy="440" r="20" fill="#a7d06a"/>
+        <circle cx="540" cy="255" r="21" fill="#a7d06a"/><circle cx="560" cy="460" r="19" fill="#a7d06a"/>
+        <circle cx="650" cy="340" r="20" fill="#a7d06a"/><circle cx="210" cy="45" r="18" fill="#a7d06a"/>
+        <ellipse cx="330" cy="230" rx="16" ry="9" fill="#e4d3a4"/><ellipse cx="512" cy="290" rx="14" ry="8" fill="#e4d3a4"/>
+        <ellipse cx="618" cy="320" rx="15" ry="9" fill="#e4d3a4"/>
+        <ellipse cx="470" cy="385" rx="26" ry="16" fill="url(#sea)" opacity=".9"/>
+        <g fill="#2c4522" opacity=".85"><circle cx="250" cy="350" r="10"/><circle cx="600" cy="190" r="10"/><circle cx="700" cy="410" r="9"/></g>
+      </svg>
+      <svg id="map" viewBox="0 0 800 560" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="display:none" role="img" aria-label="Course routing map from OpenStreetMap data">
+        <rect width="800" height="560" fill="#f4f0e4"/>
+        <path d="M0,0 L150,0 C120,150 90,320 40,450 C25,500 10,540 0,560 Z" fill="#cfe4ec"/>
+        <g fill="none" stroke="#b9cfa0" stroke-width="30" stroke-linecap="round" opacity=".8">
+          <path d="M210,40 C260,130 250,210 300,270 C340,310 330,385 380,440"/>
+          <path d="M430,60 C470,150 520,160 540,255 C555,330 520,385 560,460"/>
+          <path d="M640,90 C610,180 660,245 650,340 C645,405 690,440 700,500"/>
+        </g>
+        <g fill="none" stroke="#2d6a4f" stroke-width="2.4" stroke-dasharray="7 5">
+          <path d="M210,45 L300,270"/><path d="M300,270 L380,440"/><path d="M430,60 L540,255"/><path d="M540,255 L560,460"/>
+        </g>
+        <g font-family="Bebas Neue" font-size="17" fill="#1b4332">
+          <g><circle cx="210" cy="45" r="13" fill="#fff" stroke="#1b4332" stroke-width="2"/><text x="210" y="51" text-anchor="middle">1</text></g>
+          <g><circle cx="300" cy="270" r="13" fill="#fff" stroke="#1b4332" stroke-width="2"/><text x="300" y="276" text-anchor="middle">4</text></g>
+          <g><circle cx="380" cy="440" r="13" fill="#96C41E" stroke="#1b4332" stroke-width="2"/><text x="380" y="446" text-anchor="middle">12</text></g>
+          <g><circle cx="540" cy="255" r="13" fill="#fff" stroke="#1b4332" stroke-width="2"/><text x="540" y="261" text-anchor="middle">7</text></g>
+          <g><circle cx="560" cy="460" r="13" fill="#fff" stroke="#1b4332" stroke-width="2"/><text x="560" y="466" text-anchor="middle">18</text></g>
+        </g>
+      </svg>
+      <span class="media-badge" id="mediaBadge">🛰️ Satellite · generated from coordinates</span>
+      <div class="media-toggle">
+        <button class="on" onclick="showMedia('sat',this)">Satellite</button>
+        <button onclick="showMedia('map',this)">Course map</button>
+      </div>
+      <div class="media-cap" id="mediaCap">Auto-generated for every course from its coordinates + OpenStreetMap boundary — no stock photos, unique to each page.</div>
+    </div>
+  </div>
+</header>
+
+<!-- THE SHORT ANSWER (native answer-block) + secondary Q&A -->
+<section class="section">
+  <div class="section-inner">
+    <span class="eyebrow">Quick answers</span>
+    <h2 class="h2-display" style="margin-top:8px">The questions golfers search</h2>
+    <p class="section-lede" style="margin-bottom:22px">Short, sourced, dated blocks — the format AI search engines lift into their answers. Every number comes from posted rounds, so these exist nowhere else.</p>
+
+    <div class="answers-layout">
+      <aside class="answer-block" aria-label="The short answer">
+        <div class="answer-block-head">The short answer</div>
+        <p class="answer-block-body">The average golfer shoots <strong>89.4</strong> at Torrey Pines South — about 17 over par. Roughly a quarter of rounds land in the 85–89 range, and only about 4% break 75. It plays tougher than its rating because of ocean wind and firm greens.</p>
+        <ul class="answer-block-facts">
+          <li><strong>Average score:</strong> 89.4 (18 holes), +17.4 to par</li>
+          <li><strong>Hardest hole:</strong> the par-4 12th, +0.94 over par as played</li>
+          <li><strong>Low round posted:</strong> 74, by a San Diego golfer off the blues</li>
+        </ul>
+        <div class="answer-block-updated">Last updated: July 18, 2026 · based on 312 rounds posted to SimplyStroke</div>
+      </aside>
+      <div class="qa-stack">
+        <div class="qa">
+          <h3>Is Torrey Pines South hard for the average player?</h3>
+          <p>Yes. It plays about <strong>17 strokes over par</strong> for a mid-handicap. Ocean wind and firm greens push it well past its rating, and the par-4 12th is the toughest hole as played.</p>
+          <div class="src">From 312 posted rounds · updated July 2026</div>
+        </div>
+        <div class="qa">
+          <h3>What's the hardest hole at Torrey Pines South?</h3>
+          <p>The par-4 <strong>12th</strong>, playing <strong>+0.94 over par</strong> across every posted round — harder in practice than the famous cliffside 4th. Par it and you beat most of the field.</p>
+          <div class="src">Hole-level average from 312 posted rounds · updated July 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCOREBOARD -->
+<section class="board">
+  <div class="board-inner">
+    <span class="eyebrow">What golfers actually shoot here</span>
+    <h2>The SimplyStroke Scoreboard</h2>
+    <div class="stat-grid">
+      <div class="stat"><div class="k">89.4</div><div class="l">Avg score (18)</div></div>
+      <div class="stat"><div class="k">+17<span class="u">.4</span></div><div class="l">Avg to par</div></div>
+      <div class="stat"><div class="k">74</div><div class="l">Low round posted</div></div>
+      <div class="stat"><div class="k">312</div><div class="l">Rounds logged</div></div>
+    </div>
+    <div class="board-foot">
+      <div class="mini">
+        <h4>Score distribution · all posted rounds</h4>
+        <div class="dist">
+          <div class="bar" style="height:22%"><span>4%</span></div><div class="bar" style="height:46%"><span>11%</span></div>
+          <div class="bar" style="height:78%"><span>19%</span></div><div class="bar" style="height:100%"><span>24%</span></div>
+          <div class="bar" style="height:72%"><span>18%</span></div><div class="bar" style="height:50%"><span>12%</span></div>
+          <div class="bar" style="height:34%"><span>8%</span></div><div class="bar" style="height:18%"><span>4%</span></div>
+        </div>
+        <div class="dist-x"><span>&lt;75</span><span>75-79</span><span>80-84</span><span>85-89</span><span>90-94</span><span>95-99</span><span>100+</span><span>105+</span></div>
+      </div>
+      <div class="mini">
+        <h4>Hardest holes · strokes over par as played</h4>
+        <div class="hard">
+          <div class="hard-row"><span class="hn">12 · P4</span><span class="track"><span class="fill" style="width:96%"></span></span><span class="v">+0.94</span></div>
+          <div class="hard-row"><span class="hn">18 · P5</span><span class="track"><span class="fill" style="width:83%"></span></span><span class="v">+0.81</span></div>
+          <div class="hard-row"><span class="hn">4 · P4</span><span class="track"><span class="fill" style="width:74%"></span></span><span class="v">+0.72</span></div>
+          <div class="hard-row"><span class="hn">6 · P4</span><span class="track"><span class="fill" style="width:69%"></span></span><span class="v">+0.67</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERCENTILE TOOL -->
+<section class="section">
+  <div class="section-inner">
+    <span class="eyebrow">Free tool</span>
+    <h2 class="h2-display" style="margin-top:8px">How does your score compare?</h2>
+    <p class="section-lede">Enter what you shot at Torrey Pines South and see where you land against everyone who's posted here.</p>
+    <div class="tool">
+      <div class="tool-grid">
+        <div>
+          <label for="scoreIn">Your 18-hole score</label>
+          <div class="inrow">
+            <input id="scoreIn" type="number" value="88" min="60" max="140" />
+            <button onclick="calcPct()">Rank me</button>
+          </div>
+          <div class="hint">Try 74 to top the leaderboard, or 100 for a rough day.</div>
+        </div>
+        <div class="result">
+          <div class="headline" id="pctHead">You'd beat <span class="pct">61%</span> of golfers here</div>
+          <div class="sub2" id="pctSub">An 88 is better than most rounds posted at Torrey Pines South — solid work on a hard course.</div>
+          <div class="gauge"><div class="you" id="gaugeYou" style="left:61%"></div></div>
+          <div class="gauge-x"><span>Toughest days</span><span>Better than the field →</span></div>
+          <div class="cta-line" id="pctCta">Beat your number here? <a href="#cta">Post it and claim your spot on the leaderboard →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERBOARD -->
+<section class="section alt-section">
+  <div class="section-inner">
+    <span class="eyebrow">Course leaderboard</span>
+    <h2 class="h2-display" style="margin-top:8px">Best rounds at Torrey Pines South</h2>
+    <p class="section-lede">Baked into the page for search engines, refreshed live in the browser so a visitor always sees the current board.</p>
+    <div class="lb-tabs"><div class="lb-tab on">Gross · All-time</div><div class="lb-tab">Net (handicap)</div><div class="lb-tab">This month</div></div>
+    <div class="tbl-wrap">
+      <table class="data">
+        <thead><tr><th>#</th><th>Golfer</th><th>Tees</th><th style="text-align:right">Score</th><th style="text-align:right">To par</th></tr></thead>
+        <tbody>
+          <tr><td class="rank first">1</td><td class="who">Marcus R. <span class="verified">Verified</span><small>San Diego, CA</small></td><td>Blue</td><td class="score">74</td><td class="topar under">+2</td></tr>
+          <tr><td class="rank">2</td><td class="who">Danielle P.<small>Carlsbad, CA</small></td><td>White</td><td class="score">76</td><td class="topar">+4</td></tr>
+          <tr><td class="rank">3</td><td class="who">Kev T. <span class="verified">Verified</span><small>Encinitas, CA</small></td><td>Blue</td><td class="score">78</td><td class="topar">+6</td></tr>
+          <tr><td class="rank">4</td><td class="who">A. Nguyen<small>Los Angeles, CA</small></td><td>White</td><td class="score">79</td><td class="topar">+7</td></tr>
+          <tr><td class="rank">5</td><td class="who">J. Moore<small>La Jolla, CA</small></td><td>Blue</td><td class="score">81</td><td class="topar">+9</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PROSE -->
+<section class="section">
+  <div class="section-inner">
+    <span class="eyebrow">The rundown</span>
+    <h2 class="h2-display" style="margin:8px 0 22px">Playing Torrey Pines South</h2>
+    <div class="rundown">
+      <div class="prose">
+        <p>Torrey Pines South is a city-owned muni, which still catches people off guard. You can play the same holes the pros play at the Farmers Insurance Open, on the same cliffs that hosted the 2008 and 2021 U.S. Opens, for a tee time and a booking window instead of a membership and an invitation. That is the whole appeal, and it is a real one.</p>
+        <p>It is also hard. Rees Jones stretched the South past 7,600 yards for the 2008 Open, and the wind off the Pacific handles the rest. The greens get firm by early afternoon, the rough is thick enough to cost you a shot, and the closing holes along the ocean take strokes you did not plan to give away. Most first-timers lose the round on club selection — the ocean makes everything look downhill when half of it is not. Bring more club than your eyes are telling you.</p>
+        <p>Here is the part you will not find on the course's own website: across the 312 rounds SimplyStroke golfers have posted here, the South plays about <strong>17 shots over par</strong> for a mid-handicap. The hole that does the most damage is not the famous cliffside 4th — it is the par-4 <strong>12th</strong>, playing nearly a full stroke over par across every round logged.</p>
+      </div>
+      <aside class="rail">
+        <div class="rail-card">
+          <h3>At a glance</h3>
+          <div class="rail-kv"><span class="rk">Par</span><span class="rv">72</span></div>
+          <div class="rail-kv"><span class="rk">Length (tips)</span><span class="rv">7,765</span></div>
+          <div class="rail-kv"><span class="rk">Rating / Slope</span><span class="rv">78.1 / 144</span></div>
+          <div class="rail-kv"><span class="rk">Avg posted score</span><span class="rv">89.4</span></div>
+          <div class="rail-kv"><span class="rk">Plays to</span><span class="rv">+17.4</span></div>
+          <div class="rail-kv"><span class="rk">Hardest hole</span><span class="rv">No. 12</span></div>
+        </div>
+        <div class="rail-card" style="border-top-color:var(--green-mid)">
+          <h3>Play it</h3>
+          <p>Book a tee time, or post your round and land on the leaderboard.</p>
+          <a class="btn btn-nav" href="#cta" style="width:100%;justify-content:center">Post your round →</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="section alt-section">
+  <div class="section-inner">
+    <span class="eyebrow">Head to head</span>
+    <h2 class="h2-display" style="margin-top:8px">Torrey Pines South vs North</h2>
+    <p class="section-lede">Both are munis on the same cliffs. Here's how they actually play, by the numbers golfers posted.</p>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead><tr><th>&nbsp;</th><th>South</th><th>North</th></tr></thead>
+        <tbody>
+          <tr><th>Average score</th><td>89.4</td><td class="win">85.2</td></tr>
+          <tr><th>Plays over par</th><td class="win">+17.4</td><td>+13.9</td></tr>
+          <tr><th>Low round posted</th><td class="win">74</td><td>76</td></tr>
+          <tr><th>Length (tips)</th><td class="win">7,765</td><td>7,258</td></tr>
+          <tr><th>SimplyStroke rating</th><td class="win">4.6</td><td>4.4</td></tr>
+          <tr><th>Best for</th><td>The bucket-list test</td><td>An easier, faster day</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SCORECARD -->
+<section class="section">
+  <div class="section-inner">
+    <span class="eyebrow">Full scorecard</span>
+    <h2 class="h2-display" style="margin:8px 0 22px">Tees, ratings & hole-by-hole</h2>
+    <div class="tbl-wrap">
+      <table class="card">
+        <thead><tr><th>Hole</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="tot">Out</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th class="tot">In</th><th class="tot">Tot</th></tr></thead>
+        <tbody>
+          <tr class="par-row"><td>Par</td><td>4</td><td>4</td><td>3</td><td>4</td><td>5</td><td>4</td><td>4</td><td>3</td><td>5</td><td class="tot">36</td><td>4</td><td>3</td><td>4</td><td>5</td><td>4</td><td>4</td><td>3</td><td>4</td><td>5</td><td class="tot">36</td><td class="tot">72</td></tr>
+          <tr><td><span class="tee-dot" style="background:#333"></span>Black</td><td>452</td><td>389</td><td>198</td><td>488</td><td>560</td><td>560</td><td>462</td><td>176</td><td>614</td><td class="tot">3899</td><td>416</td><td>221</td><td>504</td><td>541</td><td>437</td><td>478</td><td>227</td><td>442</td><td>600</td><td class="tot">3866</td><td class="tot">7765</td></tr>
+          <tr><td><span class="tee-dot" style="background:#2f6fb0"></span>Blue</td><td>428</td><td>369</td><td>176</td><td>453</td><td>538</td><td>514</td><td>431</td><td>163</td><td>547</td><td class="tot">3619</td><td>386</td><td>198</td><td>478</td><td>518</td><td>404</td><td>452</td><td>204</td><td>418</td><td>571</td><td class="tot">3629</td><td class="tot">7248</td></tr>
+          <tr><td><span class="tee-dot" style="background:#e8e8e8;border:1px solid #ccc"></span>White</td><td>402</td><td>341</td><td>158</td><td>424</td><td>512</td><td>487</td><td>404</td><td>147</td><td>514</td><td class="tot">3389</td><td>360</td><td>176</td><td>451</td><td>492</td><td>378</td><td>425</td><td>181</td><td>391</td><td>543</td><td class="tot">3397</td><td class="tot">6786</td></tr>
+          <tr class="idx"><td>Handicap</td><td>7</td><td>13</td><td>15</td><td>3</td><td>11</td><td>5</td><td>9</td><td>17</td><td>1</td><td class="tot"></td><td>12</td><td>16</td><td>2</td><td>10</td><td>8</td><td>4</td><td>14</td><td>6</td><td>18</td><td class="tot"></td><td class="tot"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12.5px;color:var(--gray-body);margin-top:10px">Scorecard and tee ratings imported from the course database. Yardages illustrative for this prototype. <a href="#">How we compute these stats →</a></p>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="section alt-section">
+  <div class="section-inner">
+    <span class="eyebrow">Practical</span>
+    <h2 class="h2-display" style="margin-top:8px">Contact, rates & amenities</h2>
+    <div class="cols">
+      <div class="info-card">
+        <h3>Contact & booking</h3>
+        <div class="kv"><span class="kk">Address</span><span>11480 N Torrey Pines Rd, La Jolla, CA 92037</span></div>
+        <div class="kv"><span class="kk">Phone</span><a href="tel:+18584523226">(858) 452-3226</a></div>
+        <div class="kv"><span class="kk">Website</span><a href="#">torreypines.com ↗</a></div>
+        <div class="kv"><span class="kk">Tee times</span><a href="#">Book (partner link) ↗</a></div>
+        <div class="kv"><span class="kk">Reviews</span><a href="#">See on Google Maps ↗</a></div>
+      </div>
+      <div class="info-card">
+        <h3>Course info</h3>
+        <div class="kv"><span class="kk">Type</span><span>Municipal · Public access</span></div>
+        <div class="kv"><span class="kk">Holes</span><span>18 · Par 72</span></div>
+        <div class="kv"><span class="kk">Green fee</span><span>$$$ · Non-resident premium</span></div>
+        <div style="margin-top:16px"><div class="answer-block-head" style="color:var(--green-mid)">Amenities</div>
+          <div class="amenities" style="margin-top:12px"><span class="am">Driving range</span><span class="am">Putting green</span><span class="am">Pro shop</span><span class="am">Cart rental</span><span class="am">Caddies</span><span class="am">Restaurant</span><span class="am">Lessons</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="suggest">
+      <div class="st">
+        <b>See something out of date?</b>
+        <p>Course details change: fees go up, phone numbers move, hours shift with the season. If anything on this page looks wrong, tell us and we will check it.</p>
+      </div>
+      <button class="btn-outline" onclick="openEditModal()">✎ Suggest an edit</button>
+    </div>
+  </div>
+</section>
+
+<!-- NEARBY -->
+<section class="section">
+  <div class="section-inner">
+    <span class="eyebrow">Keep exploring</span>
+    <h2 class="h2-display" style="margin-top:8px">Golf courses near La Jolla</h2>
+    <div class="near-grid">
+      <a class="near" href="#"><div class="nm">Torrey Pines — North</div><div class="meta">La Jolla, CA · Par 72 · Public</div><div class="rr">★ <b>4.4</b> · 261 rounds · avg 85.2</div></a>
+      <a class="near" href="#"><div class="nm">Riverwalk Golf Club</div><div class="meta">San Diego, CA · Par 72 · Public</div><div class="rr">★ <b>4.1</b> · 188 rounds · avg 91.2</div></a>
+      <a class="near" href="#"><div class="nm">Coronado Municipal</div><div class="meta">Coronado, CA · Par 72 · Muni</div><div class="rr">★ <b>4.3</b> · 204 rounds · avg 88.6</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band" id="cta">
+  <h2>Played Torrey Pines South?</h2>
+  <p>Post your scorecard from the SimplyStroke app and you land on this leaderboard. Beat 74 and you're top of the board — name on the page every golfer searching this course will see.</p>
+  <div class="cta-btns"><a class="btn btn-lg" href="#">Get SimplyStroke — free →</a><a class="btn btn-lg btn-ghost" href="#">How the leaderboard works</a></div>
+</section>
+
+<!-- FAQ -->
+<section class="section alt-section">
+  <div class="section-inner">
+    <span class="eyebrow">Common questions</span>
+    <h2 class="h2-display" style="margin-top:8px">Torrey Pines South FAQ</h2>
+    <div class="faq-list">
+      <details class="faq-item" open><summary>What does the average golfer shoot at Torrey Pines South?</summary><p>Across 312 rounds posted by SimplyStroke golfers, the average 18-hole score is 89.4, about 17 over par. Roughly a quarter of rounds land in the 85–89 range, and only about 4% break 75.</p></details>
+      <details class="faq-item"><summary>Is Torrey Pines South walkable?</summary><p>It's a hilly walk with real elevation between several holes, but walking is allowed and caddies are available. Most casual players take a cart; purists walk it for the full experience.</p></details>
+      <details class="faq-item"><summary>How much does it cost to play Torrey Pines South?</summary><p>Rates are tiered: San Diego residents with a card pay a reduced fee, while non-residents pay a premium weekend rate. Check the course site for current pricing, as munis adjust seasonally.</p></details>
+      <details class="faq-item"><summary>Do you need a handicap to play?</summary><p>No handicap is required to book a public tee time. It's a demanding course, so newer players should expect a long day, but anyone can play it.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer class="ss-footer">
+  <div class="ss-footer-inner">
+    <div class="ss-footer-brand">
+      <div class="wordmark"><span class="dot"></span>SIMPLYSTROKE</div>
+      <p>The one-tap golf scorer. No counting, no math, no stress, just stroke.</p>
+      <p style="margin-top:8px"><a href="#" style="color:var(--lime-text);font-weight:600">How we compute these stats (methodology) →</a></p>
+    </div>
+    <div class="ss-footer-cols">
+      <div class="ss-footer-col"><div class="ss-footer-head">Courses</div><nav><a href="#">Browse by state</a><a href="#">Hardest in California</a><a href="#">Leaderboards</a><a href="#">Near me</a></nav></div>
+      <div class="ss-footer-col"><div class="ss-footer-head">Product</div><nav><a href="#">Features</a><a href="#">Compare apps</a><a href="#">Get the app</a></nav></div>
+    </div>
+  </div>
+  <div class="ss-footer-bottom">
+    <span>© 2026 SimplyStroke. All rights reserved.</span>
+    <span class="attrib">Satellite &amp; map imagery generated from coordinates + OpenStreetMap (ODbL). Ratings &amp; round data © SimplyStroke golfers.</span>
+  </div>
+</footer>
+
+<!-- Suggest an edit modal -->
+<div class="modal-overlay" id="editModal" onclick="if(event.target===this)closeEditModal()">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="editTitle">
+    <div id="editForm">
+      <div class="modal-head">
+        <div>
+          <h3 id="editTitle">Suggest an edit</h3>
+          <p>Torrey Pines South, La Jolla CA. Thanks for helping keep this accurate.</p>
+        </div>
+        <button class="modal-close" onclick="closeEditModal()" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="field">
+          <label for="edField">What needs fixing?</label>
+          <select id="edField">
+            <option>Phone number</option>
+            <option>Address</option>
+            <option>Website</option>
+            <option>Green fees / pricing</option>
+            <option>Amenities</option>
+            <option>Hours / season</option>
+            <option>Scorecard or par</option>
+            <option>Course name</option>
+            <option>Permanently closed</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="edValue">The correct information</label>
+          <textarea id="edValue" placeholder="e.g. The weekend non-resident rate is now $265, not $220."></textarea>
+        </div>
+        <div class="field">
+          <label for="edEmail">Your email <span class="opt">(optional, so we can follow up)</span></label>
+          <input id="edEmail" type="email" placeholder="you@email.com" />
+        </div>
+        <button class="btn" onclick="submitEdit()">Submit suggestion</button>
+        <div class="modal-note">Suggestions are reviewed before anything on the page changes.</div>
+      </div>
+    </div>
+    <div class="modal-success" id="editSuccess">
+      <div class="chk">✓</div>
+      <h3>Thanks, got it</h3>
+      <p>Your suggestion is in. We review every edit before it goes live, usually within a day or two.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openEditModal(){document.getElementById('editModal').classList.add('open');document.body.style.overflow='hidden';}
+  function closeEditModal(){document.getElementById('editModal').classList.remove('open');document.body.style.overflow='';
+    document.getElementById('editForm').style.display='block';document.getElementById('editSuccess').style.display='none';}
+  function submitEdit(){
+    // DEMO: real build inserts into Supabase (course_edit_suggestions) via the anon key,
+    // which fires a webhook -> edge function -> Resend email to Jared, and shows in the admin.
+    document.getElementById('editForm').style.display='none';
+    document.getElementById('editSuccess').style.display='block';
+  }
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeEditModal();});
+
+  function showMedia(which, btn){
+    document.getElementById('sat').style.display = which==='sat'?'block':'none';
+    document.getElementById('map').style.display = which==='map'?'block':'none';
+    document.querySelectorAll('.media-toggle button').forEach(b=>b.classList.remove('on'));
+    btn.classList.add('on');
+    document.getElementById('mediaBadge').textContent = which==='sat' ? '🛰️ Satellite · generated from coordinates' : '🗺️ Course map · from OpenStreetMap';
+    document.getElementById('mediaCap').textContent = which==='sat'
+      ? 'Auto-generated for every course from its coordinates + OpenStreetMap boundary — no stock photos, unique to each page.'
+      : 'Hole routing drawn from OpenStreetMap golf data — a real course map on every page, in brand colors.';
+  }
+  var BUCKETS=[{lo:68,hi:74,pct:4},{lo:75,hi:79,pct:11},{lo:80,hi:84,pct:19},{lo:85,hi:89,pct:24},{lo:90,hi:94,pct:18},{lo:95,hi:99,pct:12},{lo:100,hi:104,pct:8},{lo:105,hi:115,pct:4}];
+  function pctBeaten(score){var beat=0;for(var i=0;i<BUCKETS.length;i++){var b=BUCKETS[i];if(score<b.lo){beat+=b.pct;}else if(score>=b.lo&&score<=b.hi){beat+=b.pct*((b.hi-score)/(b.hi-b.lo+1));}}return Math.max(1,Math.min(99,Math.round(beat)));}
+  function calcPct(){var s=parseInt(document.getElementById('scoreIn').value,10);if(isNaN(s))return;var p=pctBeaten(s);
+    document.getElementById('pctHead').innerHTML="You'd beat <span class='pct'>"+p+"%</span> of golfers here";
+    document.getElementById('gaugeYou').style.left=p+"%";var toPar=s-72,sub;
+    if(p>=85)sub="A "+s+" is a genuinely great score on this course — top of the pack.";
+    else if(p>=60)sub="A "+s+" ("+(toPar>=0?"+":"")+toPar+") beats most rounds posted at Torrey Pines South — solid work on a hard course.";
+    else if(p>=35)sub="A "+s+" is right around the middle of the pack here. This course humbles everyone.";
+    else sub="A "+s+" is a tough day — but the average golfer shoots 89.4 here, so you're in good company.";
+    document.getElementById('pctSub').textContent=sub;}
+  calcPct();
+</script>
+</body>
+</html>

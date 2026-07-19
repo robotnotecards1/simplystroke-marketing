@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "rounds_count": 256,
+    "avg_score": 89.6,
+    "avg_to_par": 17.6,
+    "low_round": 76,
+    "low_round_label": "Alex Nguyen, Carlsbad, CA",
+    "hardest_holes": [
+      {
+        "hole": 14,
+        "par": 5,
+        "over_par": 0.92
+      },
+      {
+        "hole": 6,
+        "par": 5,
+        "over_par": 0.82
+      },
+      {
+        "hole": 10,
+        "par": 4,
+        "over_par": 0.73
+      },
+      {
+        "hole": 8,
+        "par": 4,
+        "over_par": 0.66
+      }
+    ],
+    "distribution": [
+      2,
+      7,
+      16,
+      25,
+      24,
+      17,
+      8,
+      1
+    ],
+    "updated_at": "2026-07-18"
+  },
+  "leaders": [
+    {
+      "display_name": "Alex Nguyen",
+      "home_city": "Carlsbad, CA",
+      "tees": "Gold",
+      "gross_score": 76,
+      "score_to_par": 4,
+      "verified": true
+    },
+    {
+      "display_name": "Priya Park",
+      "home_city": "Irvine, CA",
+      "tees": "Blue",
+      "gross_score": 79,
+      "score_to_par": 7,
+      "verified": false
+    },
+    {
+      "display_name": "Cole H.",
+      "home_city": "Encinitas, CA",
+      "tees": "Blue",
+      "gross_score": 80,
+      "score_to_par": 8,
+      "verified": true
+    },
+    {
+      "display_name": "Tom Park",
+      "home_city": "Los Angeles, CA",
+      "tees": "Gold",
+      "gross_score": 81,
+      "score_to_par": 9,
+      "verified": true
+    },
+    {
+      "display_name": "Marcus H.",
+      "home_city": "San Diego, CA",
+      "tees": "Gold",
+      "gross_score": 82,
+      "score_to_par": 10,
+      "verified": false
+    },
+    {
+      "display_name": "Tom H.",
+      "home_city": "Carlsbad, CA",
+      "tees": "Blue",
+      "gross_score": 83,
+      "score_to_par": 11,
+      "verified": false
+    },
+    {
+      "display_name": "Nia W.",
+      "home_city": "Los Angeles, CA",
+      "tees": "Gold",
+      "gross_score": 84,
+      "score_to_par": 12,
+      "verified": false
+    },
+    {
+      "display_name": "Sara Moore",
+      "home_city": "La Jolla, CA",
+      "tees": "Blue",
+      "gross_score": 86,
+      "score_to_par": 14,
+      "verified": false
+    }
+  ]
+}

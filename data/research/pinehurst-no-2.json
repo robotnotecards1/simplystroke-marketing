@@ -1,0 +1,54 @@
+{
+  "slug": "pinehurst-no-2",
+  "name": "Pinehurst No. 2",
+  "club_name": "Pinehurst Resort & Country Club",
+  "city": "Pinehurst",
+  "state": "NC",
+  "zip": "28374",
+  "country": "USA",
+  "address": "80 Carolina Vista Dr, Pinehurst, NC 28374",
+  "lat": 35.1895,
+  "lng": -79.4678,
+  "phone": "855-235-8507",
+  "website": "https://www.pinehurst.com/golf/courses/no-2/",
+  "designer": "Donald Ross; restored by Coore & Crenshaw (2011)",
+  "year_opened": 1907,
+  "access_type": "resort",
+  "green_fee_tier": "$$$$",
+  "green_fee_notes": "No. 2 is sold through Pinehurst Resort stay-and-play packages (two-night minimum) rather than a rack rate; adding it to a package carries a $250 surcharge and peak rounds are generally reported at $500-650, caddie not included.",
+  "holes_count": 18,
+  "par_total": 72,
+  "par_per_hole": [4, 4, 4, 4, 5, 3, 4, 5, 3, 5, 4, 4, 4, 4, 3, 5, 3, 4],
+  "handicap_per_hole": [11, 3, 9, 1, 15, 5, 7, 17, 13, 18, 8, 10, 6, 2, 12, 16, 14, 4],
+  "course_rating": 77.9,
+  "slope_rating": 149,
+  "rating_tee": "U.S. Open",
+  "tees": [
+    { "name": "U.S. Open", "color": "#1a2f57", "rating": 77.9, "slope": 149, "yardage": 7588, "holes": [402, 507, 387, 529, 576, 242, 424, 502, 191, 617, 483, 484, 385, 473, 202, 528, 205, 451] },
+    { "name": "Blue", "color": "#2f6fb0", "rating": 75.4, "slope": 143, "yardage": 6961, "holes": [393, 439, 350, 474, 508, 203, 393, 469, 174, 580, 455, 419, 375, 433, 183, 513, 185, 415] },
+    { "name": "White", "color": "#e8e8e8", "rating": 72.0, "slope": 139, "yardage": 6307, "holes": [376, 411, 330, 434, 462, 178, 385, 440, 148, 455, 375, 360, 358, 419, 170, 478, 162, 366] },
+    { "name": "Green", "color": "#2d6a4f", "rating": 69.1, "slope": 135, "yardage": 5771, "holes": [366, 390, 309, 326, 432, 170, 313, 419, 140, 438, 358, 336, 327, 347, 153, 437, 152, 358] },
+    { "name": "Red", "color": "#c0392b", "rating": 66.8, "slope": 128, "yardage": 5302, "holes": [340, 342, 283, 316, 417, 116, 306, 400, 124, 421, 320, 293, 278, 337, 124, 411, 145, 329] }
+  ],
+  "amenities": ["Caddie program", "Clubhouse", "Pro shop", "Practice facility", "Resort lodging", "Restaurants", "Spa"],
+  "walkable": true,
+  "notable": [
+    "Donald Ross's masterpiece (opened 1907), restored by Coore & Crenshaw and famous for its turtleback greens",
+    "Has hosted U.S. Opens in 1999 (Payne Stewart), 2005, 2014 and 2024, and is the USGA's first U.S. Open anchor site",
+    "Hosted back-to-back U.S. Open and U.S. Women's Open championships in the same summer (2014)",
+    "Plays as par 70 for the U.S. Open (holes 8 and 16 convert from par 5 to par 4); resort par is 72"
+  ],
+  "confidence": {
+    "course_rating": "USGA NCRDB (CourseID 23725) rates all tees against par 72; U.S. Open tees 77.9/149. Ross and Tufts combo tees (73.6/141 and 70.3/136) omitted from the card, no per-hole breakdown printed.",
+    "green_fee_notes": "Pinehurst publishes no rack rate for No. 2; figures from golf.com reporting and greenfeetracker.com's 2026 range.",
+    "lat_lng": "Wikipedia's coordinates for the Pinehurst Resort clubhouse; the No. 2 routing spreads south of this point.",
+    "handicap_per_hole": "Men's (Blue/White) allocation from the official 2026 scorecard; the Green/Red row differs."
+  },
+  "sources": [
+    "https://www.pinehurst.com/golf/courses/no-2/",
+    "https://www.pinehurst.com/wp-content/uploads/2025/10/Scorecard_No2_yardage26-1.pdf",
+    "https://ncrdb.usga.org/courseTeeInfo?CourseID=23725",
+    "https://golf.com/travel/pinehurst-no-2-price-what-costs-us-open/",
+    "https://en.wikipedia.org/wiki/Pinehurst_Resort"
+  ]
+}

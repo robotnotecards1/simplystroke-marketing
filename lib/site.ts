@@ -6,6 +6,14 @@ export const SITE_URL =
 
 export const SITE_NAME = "SimplyStroke";
 
+// Keep every non-production build out of the index. Vercel sets VERCEL_ENV to
+// "preview" / "development" for those, so preview URLs are noindexed with zero
+// config, while the production deploy stays indexable. NEXT_PUBLIC_NOINDEX is
+// an explicit override for local staging builds.
+export const NOINDEX =
+  process.env.NEXT_PUBLIC_NOINDEX === "true" ||
+  (!!process.env.VERCEL_ENV && process.env.VERCEL_ENV !== "production");
+
 // Waitlist signups POST here as { email, source, website (honeypot) }.
 // Backed by the `waitlist` edge function on the simplystroke Supabase
 // project (source in supabase/ in this repo); env var overrides for

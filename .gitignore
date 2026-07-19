@@ -40,3 +40,7 @@ next-env.d.ts
 # committed; the underlying CSVs are not (see research/README.md and
 # REDDIT-SEO-PLAY.md §2, Risk 3: no bulk republication of the corpus).
 /research/data/
+
+# Raw OSM fetch cache (intermediate). Rebuild with scripts/fetch-course-osm.mjs;
+# the committed data/maps/*.json is what the build actually uses.
+/data/osm/

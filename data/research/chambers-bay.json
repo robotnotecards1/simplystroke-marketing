@@ -1,0 +1,53 @@
+{
+  "slug": "chambers-bay",
+  "name": "Chambers Bay",
+  "club_name": "Chambers Bay Golf Course",
+  "city": "University Place",
+  "state": "WA",
+  "zip": "98467",
+  "country": "USA",
+  "address": "6320 Grandview Drive West, University Place, WA 98467",
+  "lat": 47.2057,
+  "lng": -122.5751,
+  "phone": "(877) 295-4657",
+  "website": "https://chambersbaygolf.com",
+  "designer": "Robert Trent Jones Jr.",
+  "year_opened": 2007,
+  "access_type": "muni",
+  "green_fee_tier": "$$$$",
+  "green_fee_notes": "2026 dynamic starting rates run $109-$209 for Pierce County residents and $149-$325 for non-residents depending on month, with tax-inclusive advance-booking rates of $300-$425 from April through October.",
+  "holes_count": 18,
+  "par_total": 72,
+  "par_per_hole": [4, 4, 3, 5, 4, 4, 4, 5, 3, 4, 4, 4, 5, 4, 3, 4, 3, 5],
+  "handicap_per_hole": [3, 9, 15, 13, 5, 7, 1, 17, 11, 4, 8, 18, 14, 2, 16, 10, 6, 12],
+  "course_rating": 74.4,
+  "slope_rating": 138,
+  "rating_tee": "Black",
+  "tees": [
+    { "name": "Black", "color": "#26221f", "rating": 74.4, "slope": 138, "yardage": 7158, "holes": [494, 415, 167, 522, 457, 452, 467, 558, 197, 394, 460, 295, 519, 455, 171, 396, 200, 539] },
+    { "name": "Blue", "color": "#2f6fb0", "rating": 72.4, "slope": 134, "yardage": 6748, "holes": [487, 403, 160, 484, 429, 422, 437, 521, 194, 380, 424, 270, 500, 423, 159, 355, 186, 514] },
+    { "name": "Sand", "color": "#d5c398", "rating": 70.6, "slope": 130, "yardage": 6345, "holes": [460, 372, 141, 471, 415, 380, 423, 487, 164, 364, 402, 252, 482, 406, 143, 329, 168, 486] },
+    { "name": "White", "color": "#e8e8e8", "rating": 68.0, "slope": 122, "yardage": 5822, "holes": [432, 346, 128, 416, 383, 318, 406, 440, 138, 331, 383, 233, 451, 387, 116, 319, 133, 462] },
+    { "name": "Teal", "color": "#2a8f8f", "rating": 63.0, "slope": 109, "yardage": 4708, "holes": [340, 281, 89, 337, 313, 267, 345, 405, 72, 265, 326, 208, 348, 313, 102, 202, 89, 406] }
+  ],
+  "amenities": ["Caddie program", "Complimentary push carts", "Warm-up range", "Golf academy and practice center", "Club fitting", "Pro shop", "Chambers Bay Grill", "The Landing restaurant"],
+  "walkable": true,
+  "notable": [
+    "Hosted the 2015 U.S. Open (won by Jordan Spieth), the first U.S. Open in the Pacific Northwest",
+    "Walking-only links course built on a reclaimed sand-and-gravel mine on Puget Sound",
+    "Owned by Pierce County and operated by KemperSports; also hosted the 2010 U.S. Amateur and 2022 U.S. Women's Amateur",
+    "Future USGA host: 2027 U.S. Junior Amateur and 2033 U.S. Amateur"
+  ],
+  "confidence": {
+    "tees_ratings": "All ratings/slopes cross-verified identical between the official 10/2025 scorecard PDF and USGA NCRDB (CourseID 1456). The USGA-only Champ tee (7,867 yds, 77.6/145) and the combo tee sets are omitted from the directory card.",
+    "green_fee_notes": "From the 2026 rate table on chambersbaygolf.com as of July 2026; figures are dynamic starting prices.",
+    "lat_lng": "Centroid of the OSM course polygon (way 26787026)."
+  },
+  "sources": [
+    "https://chambersbaygolf.com/",
+    "https://chambersbaygolf.com/wp-content/uploads/2025/10/Chambers-Bay-Scorecard-10-2.pdf",
+    "https://ncrdb.usga.org/courseTeeInfo?CourseID=1456",
+    "https://en.wikipedia.org/wiki/Chambers_Bay",
+    "https://www.openstreetmap.org/way/26787026"
+  ]
+}

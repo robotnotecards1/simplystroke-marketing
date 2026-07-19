@@ -1,0 +1,54 @@
+{
+  "slug": "torrey-pines-north",
+  "name": "Torrey Pines North",
+  "club_name": "Torrey Pines Golf Course",
+  "city": "La Jolla",
+  "state": "CA",
+  "zip": "92037",
+  "country": "USA",
+  "address": "11480 N Torrey Pines Rd, La Jolla, CA 92037",
+  "lat": 32.9045,
+  "lng": -117.2454,
+  "phone": "(858) 452-3226",
+  "website": "https://www.sandiego.gov/torrey-pines",
+  "designer": "William F. Bell (original); Tom Weiskopf redesign (2016)",
+  "year_opened": 1957,
+  "access_type": "muni",
+  "green_fee_tier": "$$$",
+  "green_fee_notes": "City of San Diego rates effective Jan. 1, 2026: non-resident 18-hole green fee is $163 weekday / $204 weekend-holiday ($51 / $68 for San Diego residents), non-resident twilight $97 / $123, with carts $48 extra (fees do not include a cart).",
+  "holes_count": 18,
+  "par_total": 72,
+  "par_per_hole": [4, 4, 3, 4, 5, 4, 4, 3, 5, 5, 4, 3, 4, 4, 3, 4, 5, 4],
+  "handicap_per_hole": [5, 1, 13, 3, 11, 7, 17, 15, 9, 12, 18, 14, 4, 6, 16, 8, 10, 2],
+  "course_rating": 75.8,
+  "slope_rating": 134,
+  "rating_tee": "Black",
+  "tees": [
+    { "name": "Black", "color": "#26221f", "rating": 75.8, "slope": 134, "yardage": 7258, "holes": [421, 495, 241, 479, 525, 416, 322, 214, 556, 536, 339, 203, 459, 451, 202, 393, 520, 486] },
+    { "name": "Brown", "color": "#6b4a2f", "rating": 73.6, "slope": 129, "yardage": 6781, "holes": [410, 431, 183, 433, 503, 400, 322, 174, 512, 524, 337, 174, 430, 408, 177, 388, 520, 455] },
+    { "name": "Green", "color": "#2d6a4f", "rating": 71.5, "slope": 125, "yardage": 6343, "holes": [395, 412, 164, 416, 483, 389, 290, 167, 476, 506, 321, 155, 399, 352, 165, 345, 486, 422] },
+    { "name": "White", "color": "#e8e8e8", "rating": 69.3, "slope": 120, "yardage": 5847, "holes": [351, 355, 145, 357, 437, 380, 274, 161, 460, 460, 310, 108, 383, 340, 145, 336, 472, 373] },
+    { "name": "Yellow", "color": "#d8b93a", "rating": 66.0, "slope": 112, "yardage": 5190, "holes": [322, 344, 138, 317, 424, 309, 233, 128, 401, 422, 258, 101, 306, 292, 141, 308, 404, 342] }
+  ],
+  "amenities": ["Driving range", "Putting greens", "Golf shop", "Restaurant", "Golf lessons", "Cart rentals", "Club rentals", "Pull-cart rentals", "Caddies available"],
+  "walkable": true,
+  "notable": [
+    "Redesigned by Tom Weiskopf in 2016, a renovation that enlarged greens, reduced bunkering, and swapped the front and back nines",
+    "Co-hosts the opening rounds of the PGA Tour's Farmers Insurance Open alongside the South Course",
+    "City of San Diego municipal course on clifftops above the Pacific, adjacent to Torrey Pines State Natural Reserve, handling roughly 100,000 rounds per year",
+    "Course record is 61, shot by Mark Brooks (1990) and Brandt Snedeker (2007)"
+  ],
+  "confidence": {
+    "lat": "Coordinates are for the overall Torrey Pines facility, not the North first tee.",
+    "rating_tee": "Ratings/slopes from the official City of San Diego scorecard (04/2020 printing), cross-checked against GolfPass; USGA NCRDB unreachable (403).",
+    "tees": "Men's values from the official scorecard, dated 04/2020; no newer official card found as of July 2026.",
+    "year_opened": "1957 per Wikipedia and course databases; official city pages do not state it."
+  },
+  "sources": [
+    "https://www.sandiego.gov/sites/default/files/torreyscorecardnorth_0.pdf",
+    "https://www.sandiego.gov/torrey-pines/course-fees",
+    "https://www.sandiego.gov/park-and-recreation/golf/torreypines",
+    "https://www.golfpass.com/travel-advisor/courses/14528-north-at-torrey-pines-municipal-golf-course",
+    "https://en.wikipedia.org/wiki/Torrey_Pines_Golf_Course"
+  ]
+}

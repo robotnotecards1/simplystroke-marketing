@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "rounds_count": 230,
+    "avg_score": 90,
+    "avg_to_par": 18,
+    "low_round": 74,
+    "low_round_label": "Wes Moore, Eugene, OR",
+    "hardest_holes": [
+      {
+        "hole": 5,
+        "par": 4,
+        "over_par": 0.94
+      },
+      {
+        "hole": 11,
+        "par": 4,
+        "over_par": 0.82
+      },
+      {
+        "hole": 3,
+        "par": 5,
+        "over_par": 0.72
+      },
+      {
+        "hole": 18,
+        "par": 5,
+        "over_par": 0.63
+      }
+    ],
+    "distribution": [
+      2,
+      7,
+      16,
+      24,
+      25,
+      17,
+      8,
+      1
+    ],
+    "updated_at": "2026-07-18"
+  },
+  "leaders": [
+    {
+      "display_name": "Wes Moore",
+      "home_city": "Eugene, OR",
+      "tees": "Green",
+      "gross_score": 74,
+      "score_to_par": 2,
+      "verified": false
+    },
+    {
+      "display_name": "Grace O'Neil",
+      "home_city": "Bandon, OR",
+      "tees": "Green",
+      "gross_score": 76,
+      "score_to_par": 4,
+      "verified": false
+    },
+    {
+      "display_name": "Alex Nguyen",
+      "home_city": "Coos Bay, OR",
+      "tees": "Black",
+      "gross_score": 77,
+      "score_to_par": 5,
+      "verified": false
+    },
+    {
+      "display_name": "Ivy R.",
+      "home_city": "Portland, OR",
+      "tees": "Green",
+      "gross_score": 80,
+      "score_to_par": 8,
+      "verified": false
+    },
+    {
+      "display_name": "Nia K.",
+      "home_city": "Coos Bay, OR",
+      "tees": "Green",
+      "gross_score": 83,
+      "score_to_par": 11,
+      "verified": false
+    },
+    {
+      "display_name": "Diego Nguyen",
+      "home_city": "Bend, OR",
+      "tees": "Green",
+      "gross_score": 86,
+      "score_to_par": 14,
+      "verified": false
+    },
+    {
+      "display_name": "Ben H.",
+      "home_city": "Eugene, OR",
+      "tees": "Black",
+      "gross_score": 88,
+      "score_to_par": 16,
+      "verified": false
+    },
+    {
+      "display_name": "Kevin K.",
+      "home_city": "Eugene, OR",
+      "tees": "Black",
+      "gross_score": 89,
+      "score_to_par": 17,
+      "verified": false
+    }
+  ]
+}

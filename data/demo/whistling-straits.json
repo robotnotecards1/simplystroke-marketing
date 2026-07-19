@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "rounds_count": 363,
+    "avg_score": 91.5,
+    "avg_to_par": 19.5,
+    "low_round": 75,
+    "low_round_label": "Marcus Nguyen, Madison, WI",
+    "hardest_holes": [
+      {
+        "hole": 4,
+        "par": 4,
+        "over_par": 0.95
+      },
+      {
+        "hole": 18,
+        "par": 4,
+        "over_par": 0.82
+      },
+      {
+        "hole": 8,
+        "par": 4,
+        "over_par": 0.74
+      },
+      {
+        "hole": 15,
+        "par": 4,
+        "over_par": 0.64
+      }
+    ],
+    "distribution": [
+      1,
+      5,
+      13,
+      22,
+      26,
+      20,
+      11,
+      2
+    ],
+    "updated_at": "2026-07-18"
+  },
+  "leaders": [
+    {
+      "display_name": "Marcus Nguyen",
+      "home_city": "Madison, WI",
+      "tees": "Black",
+      "gross_score": 75,
+      "score_to_par": 3,
+      "verified": true
+    },
+    {
+      "display_name": "Alex Park",
+      "home_city": "Sheboygan, WI",
+      "tees": "Black",
+      "gross_score": 76,
+      "score_to_par": 4,
+      "verified": true
+    },
+    {
+      "display_name": "Kevin W.",
+      "home_city": "Milwaukee, WI",
+      "tees": "Black",
+      "gross_score": 79,
+      "score_to_par": 7,
+      "verified": true
+    },
+    {
+      "display_name": "Wes Alvarez",
+      "home_city": "Sheboygan, WI",
+      "tees": "Blue",
+      "gross_score": 81,
+      "score_to_par": 9,
+      "verified": false
+    },
+    {
+      "display_name": "Alex R.",
+      "home_city": "Kohler, WI",
+      "tees": "Blue",
+      "gross_score": 83,
+      "score_to_par": 11,
+      "verified": false
+    },
+    {
+      "display_name": "Grace P.",
+      "home_city": "Milwaukee, WI",
+      "tees": "Blue",
+      "gross_score": 85,
+      "score_to_par": 13,
+      "verified": true
+    },
+    {
+      "display_name": "Danielle K.",
+      "home_city": "Sheboygan, WI",
+      "tees": "Blue",
+      "gross_score": 86,
+      "score_to_par": 14,
+      "verified": true
+    },
+    {
+      "display_name": "Nia H.",
+      "home_city": "Sheboygan, WI",
+      "tees": "Blue",
+      "gross_score": 89,
+      "score_to_par": 17,
+      "verified": false
+    }
+  ]
+}

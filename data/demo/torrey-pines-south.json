@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "rounds_count": 390,
+    "avg_score": 90.9,
+    "avg_to_par": 18.9,
+    "low_round": 77,
+    "low_round_label": "Marcus O'Neil, Irvine, CA",
+    "hardest_holes": [
+      {
+        "hole": 7,
+        "par": 4,
+        "over_par": 0.91
+      },
+      {
+        "hole": 12,
+        "par": 4,
+        "over_par": 0.81
+      },
+      {
+        "hole": 4,
+        "par": 4,
+        "over_par": 0.74
+      },
+      {
+        "hole": 17,
+        "par": 4,
+        "over_par": 0.64
+      }
+    ],
+    "distribution": [
+      2,
+      6,
+      14,
+      23,
+      25,
+      19,
+      10,
+      1
+    ],
+    "updated_at": "2026-07-18"
+  },
+  "leaders": [
+    {
+      "display_name": "Marcus O'Neil",
+      "home_city": "Irvine, CA",
+      "tees": "Brown",
+      "gross_score": 77,
+      "score_to_par": 5,
+      "verified": true
+    },
+    {
+      "display_name": "Grace L.",
+      "home_city": "Irvine, CA",
+      "tees": "Black",
+      "gross_score": 80,
+      "score_to_par": 8,
+      "verified": false
+    },
+    {
+      "display_name": "Sara H.",
+      "home_city": "San Diego, CA",
+      "tees": "Black",
+      "gross_score": 83,
+      "score_to_par": 11,
+      "verified": false
+    },
+    {
+      "display_name": "Ivy W.",
+      "home_city": "Carlsbad, CA",
+      "tees": "Black",
+      "gross_score": 86,
+      "score_to_par": 14,
+      "verified": false
+    },
+    {
+      "display_name": "Sara P.",
+      "home_city": "Carlsbad, CA",
+      "tees": "Brown",
+      "gross_score": 88,
+      "score_to_par": 16,
+      "verified": false
+    },
+    {
+      "display_name": "Tom T.",
+      "home_city": "Los Angeles, CA",
+      "tees": "Black",
+      "gross_score": 91,
+      "score_to_par": 19,
+      "verified": false
+    },
+    {
+      "display_name": "Kevin K.",
+      "home_city": "San Diego, CA",
+      "tees": "Brown",
+      "gross_score": 94,
+      "score_to_par": 22,
+      "verified": true
+    },
+    {
+      "display_name": "Alex H.",
+      "home_city": "Encinitas, CA",
+      "tees": "Black",
+      "gross_score": 96,
+      "score_to_par": 24,
+      "verified": false
+    }
+  ]
+}
