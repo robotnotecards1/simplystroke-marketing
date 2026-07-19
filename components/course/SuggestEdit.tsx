@@ -10,7 +10,11 @@ import { useCallback, useEffect, useRef, useState } from "react";
 const ENDPOINT =
   process.env.NEXT_PUBLIC_SUBMIT_EDIT_ENDPOINT ??
   "https://uqlrfzzszfsnjepuppdk.supabase.co/functions/v1/submit-course-edit";
-const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
+// Defaults to Cloudflare's universal TEST site key (always passes) so the
+// widget renders on preview builds with no extra config. Set a real key via
+// NEXT_PUBLIC_TURNSTILE_SITE_KEY before the directory goes to production.
+const SITE_KEY =
+  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA";
 
 const FIELDS = [
   "Phone number",
