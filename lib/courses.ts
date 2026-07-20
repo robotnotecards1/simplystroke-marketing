@@ -183,7 +183,26 @@ function allResearch(): Course[] {
   return researchCache;
 }
 
-/** Every published course, directory order. Supabase first, research fallback. */
+// Merge a DB row (authoritative, live) OVER the research base (rich facts).
+// The `courses` table holds only a subset of columns, so handicap_per_hole,
+// notable, club_name, rating_tee, green_fee_notes and walkable_note live only
+// in research. Without this merge the DB-sourced production build drops them
+// (e.g. the scorecard stroke-index row disappears). Non-null DB values win, so
+// an admin edit (phone, website, fees) still takes effect.
+function mergeCourse(
+  research: Course | null,
+  db: Record<string, unknown> | undefined
+): Course | null {
+  if (!db) return research;
+  if (!research) return db as unknown as Course;
+  const overrides: Record<string, unknown> = {};
+  for (const [k, v] of Object.entries(db)) {
+    if (v !== null && v !== undefined) overrides[k] = v;
+  }
+  return { ...research, ...overrides } as Course;
+}
+
+/** Every published course, directory order. DB values merged over research. */
 export async function getPublishedCourses(): Promise<Course[]> {
   const sb = supabase();
   if (sb) {
@@ -192,11 +211,13 @@ export async function getPublishedCourses(): Promise<Course[]> {
       .select("*")
       .eq("status", "published");
     if (!error && data && data.length > 0) {
-      const bySlug = new Map(data.map((c) => [c.slug, c as Course]));
-      // Keep directory order; fill any gap from research so a partially-seeded
-      // DB never drops a page.
-      return PUBLISHED_SLUGS.map(
-        (slug) => bySlug.get(slug) ?? readResearch(slug)
+      const bySlug = new Map(
+        data.map((c) => [c.slug as string, c as Record<string, unknown>])
+      );
+      // Keep directory order; research is the base so rich fields survive, and
+      // a partially-seeded DB never drops a page.
+      return PUBLISHED_SLUGS.map((slug) =>
+        mergeCourse(readResearch(slug), bySlug.get(slug))
       ).filter(Boolean) as Course[];
     }
   }
