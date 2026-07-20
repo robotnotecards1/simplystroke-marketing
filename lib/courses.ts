@@ -15,6 +15,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { supabase } from "./supabase";
+import { supabaseAdmin, COURSE_RAMP } from "./supabaseAdmin";
 import { CONTENT } from "@/data/content";
 
 export type Tee = {
@@ -202,8 +203,28 @@ function mergeCourse(
   return { ...research, ...overrides } as Course;
 }
 
+// Ramp mode: the set of live courses is whatever has been released
+// (release_at <= now() AND eligible), highest priority first. Read with the
+// service role from `released_courses` so the unreleased queue never leaks.
+// Fails LOUD rather than falling back to research — an unreleased course must
+// genuinely not exist, and research (all 10) would defeat the ramp gate.
+async function getReleasedCourses(): Promise<Course[]> {
+  const admin = supabaseAdmin();
+  if (!admin) throw new Error("COURSE_RAMP=1 but SUPABASE_SERVICE_ROLE_KEY is not set");
+  const { data, error } = await admin
+    .from("released_courses")
+    .select("*")
+    .order("release_priority", { ascending: false })
+    .order("slug", { ascending: true });
+  if (error) throw new Error(`ramp: released_courses read failed: ${error.message}`);
+  return (data ?? [])
+    .map((db) => mergeCourse(readResearch(db.slug as string), db as Record<string, unknown>))
+    .filter(Boolean) as Course[];
+}
+
 /** Every published course, directory order. DB values merged over research. */
 export async function getPublishedCourses(): Promise<Course[]> {
+  if (COURSE_RAMP) return getReleasedCourses();
   const sb = supabase();
   if (sb) {
     const { data, error } = await sb
