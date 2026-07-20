@@ -8,7 +8,7 @@ import { AppleGlyph, PlayGlyph } from "./icons";
 export default function StoreBadges() {
   return (
     <div className="ss-hero-badges">
-      <div className="ss-store-badge">
+      <div className="ss-store-badge ss-store-badge--apple">
         <AppleGlyph />
         <span>
           <span className="badge-label">Coming soon to the</span>

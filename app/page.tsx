@@ -3,7 +3,6 @@ import Link from "next/link";
 import AppClip from "@/components/AppClip";
 import HeroPhone from "@/components/HeroPhone";
 import StoreBadges from "@/components/StoreBadges";
-import WaitlistSection from "@/components/WaitlistSection";
 import {
   BallOnGreenIcon,
   BallPinIcon,
@@ -123,14 +122,6 @@ export default function Home() {
               scorecard fills itself in. Forget about your strokes and focus on
               the ball.
             </p>
-            <div className="ss-hero-cta">
-              <a href="https://app.simplystroke.app" className="btn btn-hero">
-                Get Started →
-              </a>
-              <span className="ss-hero-launch">
-                Free · Live now
-              </span>
-            </div>
             <StoreBadges />
           </div>
           <HeroPhone />
@@ -329,7 +320,6 @@ export default function Home() {
             </div>
           </div>
           <div className="ss-watch-copy">
-            <div className="pill">Apple Watch · Coming soon</div>
             <h2>Leave the phone in the bag.</h2>
             <p className="ss-watch-p">
               Count every stroke from your wrist. A tap on the watch face logs
@@ -350,8 +340,8 @@ export default function Home() {
                 card
               </li>
             </ul>
-            <a href="#waitlist" className="btn btn-watch">
-              Notify me at launch →
+            <a href="https://app.simplystroke.app" className="btn btn-watch">
+              Count your next round free →
             </a>
           </div>
         </div>
@@ -474,8 +464,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===================== WAITLIST CTA ===================== */}
-      <WaitlistSection source="home" />
+      {/* Waitlist section removed from the flow for now — the component
+          (WaitlistSection, with its photo background) is kept on the shelf as
+          a future content zone. */}
     </main>
   );
 }

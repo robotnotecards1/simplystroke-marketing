@@ -169,6 +169,16 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 }
 .ss-store-badge .badge-label { display: block; font-size: 11px; letter-spacing: 0.04em; color: rgba(255,255,255,0.8); line-height: 1.1; }
 .ss-store-badge .badge-store { display: block; font-size: 19px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.1; }
+/* Apple badge: a green-glass tint (brand lime, not the neutral frost the
+   Google badge keeps) — same glassmorphism shape, blurred + lit from within. */
+.ss-store-badge--apple {
+  background: linear-gradient(160deg, rgba(150,196,30,0.28), rgba(45,106,79,0.22));
+  border-color: rgba(150,196,30,0.55);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset, 0 8px 24px rgba(27,67,50,0.18);
+}
+.ss-store-badge--apple .badge-label { color: var(--lime-text); }
 .ss-hero-cta { display: flex; align-items: center; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
 .ss-hero-launch { font-family: var(--font-display); font-size: 34px; letter-spacing: 0.02em; font-weight: 400; color: rgba(255,255,255,0.9); }
 .ss-hero-phonewrap { flex: 0 1 360px; min-width: 300px; display: flex; justify-content: center; }
@@ -401,7 +411,13 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 
 /* ---------- mini live phone (screens strip, animated) ---------- */
 .mini-wrap { width: 264px; margin: 0 auto; animation: ssFloatSm 8s ease-in-out infinite; animation-delay: 0.6s; filter: drop-shadow(0 28px 60px rgba(27,67,50,0.28)); }
-.mini-frame { background: #0b0b0d; border-radius: 38px; padding: 8px; }
+/* Explicit width (not auto) so the frame is 264px whether its content is an
+   <img> or a <video> — as a flex item (see .ss-screen-item > .mini-wrap
+   below), an unset width falls back to content-based sizing, and an img vs.
+   video resolve that differently, rendering item 3 visibly smaller/off-center
+   from 1/2/4. border-box keeps the outer size at 264px with the padding
+   included, so the inner screen is still the documented 248px. */
+.mini-frame { background: #0b0b0d; border-radius: 38px; padding: 8px; width: 100%; box-sizing: border-box; }
 .mini-screen { position: relative; border-radius: 31px; overflow: hidden; background: var(--offwhite); text-align: left; }
 .mini-screen > img { width: 100%; height: auto; display: block; }
 
