@@ -10,11 +10,16 @@ import { useCallback, useEffect, useRef, useState } from "react";
 const ENDPOINT =
   process.env.NEXT_PUBLIC_SUBMIT_EDIT_ENDPOINT ??
   "https://uqlrfzzszfsnjepuppdk.supabase.co/functions/v1/submit-course-edit";
-// Defaults to Cloudflare's universal TEST site key (always passes) so the
-// widget renders on preview builds with no extra config. Set a real key via
-// NEXT_PUBLIC_TURNSTILE_SITE_KEY before the directory goes to production.
+// The real Cloudflare Turnstile site key for simplystroke.app (public by
+// design; it appears in the rendered widget). NEXT_PUBLIC_TURNSTILE_SITE_KEY
+// can override it, e.g. with Cloudflare's test key for local runs.
+// `||` (not `??`) so an empty or unset env value still falls back to the real
+// key, rather than shipping a blank sitekey that renders no widget.
 const SITE_KEY =
-  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA";
+  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAAD5-aqL7sQBr8NYV";
+
+// Account-level analytics marker so Cloudflare can attribute this integration.
+const TURNSTILE_ACTION = "turnstile-spin-v2";
 
 const FIELDS = [
   "Phone number",
@@ -79,6 +84,7 @@ export default function SuggestEdit({
       if (!window.turnstile || !widgetHost.current || widgetId.current) return;
       widgetId.current = window.turnstile.render(widgetHost.current, {
         sitekey: SITE_KEY,
+        action: TURNSTILE_ACTION,
         callback: (t: string) => setToken(t),
         "error-callback": () => setToken(""),
         "expired-callback": () => setToken(""),
@@ -90,7 +96,10 @@ export default function SuggestEdit({
     } else if (!document.getElementById("cf-turnstile-script")) {
       const s = document.createElement("script");
       s.id = "cf-turnstile-script";
-      s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+      // render=explicit: we call turnstile.render() ourselves (for the token
+      // callback + action), so the auto-render must be off or the cf-turnstile
+      // div would render a second, duplicate widget.
+      s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
       s.async = true;
       s.defer = true;
       s.onload = render;
@@ -215,7 +224,13 @@ export default function SuggestEdit({
                     </label>
                     <input id="cd-email" name="email" type="email" placeholder="you@email.com" />
                   </div>
-                  {SITE_KEY ? <div className="cd-turnstile" ref={widgetHost} /> : null}
+                  {SITE_KEY ? (
+                    <div
+                      className="cf-turnstile cd-turnstile"
+                      ref={widgetHost}
+                      data-action={TURNSTILE_ACTION}
+                    />
+                  ) : null}
                   <button className="btn" type="submit" disabled={submitting}>
                     {submitting ? "Sending…" : "Submit suggestion"}
                   </button>
