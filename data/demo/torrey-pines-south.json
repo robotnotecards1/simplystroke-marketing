@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "rounds_count": 8,
+    "avg_score": 92,
+    "avg_to_par": 20,
+    "low_round": 87,
+    "low_round_label": "Diego Alvarez, Scottsdale, AZ",
+    "hardest_holes": [
+      {
+        "hole": 7,
+        "par": 4,
+        "over_par": 0.87
+      },
+      {
+        "hole": 12,
+        "par": 4,
+        "over_par": 0.75
+      },
+      {
+        "hole": 4,
+        "par": 4,
+        "over_par": 0.66
+      },
+      {
+        "hole": 17,
+        "par": 4,
+        "over_par": 0.52
+      }
+    ],
+    "distribution": [
+      0,
+      0,
+      0,
+      25,
+      50,
+      25,
+      0,
+      0
+    ],
+    "updated_at": "2026-07-18"
+  },
+  "leaders": [
+    {
+      "display_name": "Diego Alvarez",
+      "home_city": "Scottsdale, AZ",
+      "tees": "Brown",
+      "gross_score": 87,
+      "score_to_par": 15,
+      "verified": false
+    },
+    {
+      "display_name": "Ben Walsh",
+      "home_city": "Chicago, IL",
+      "tees": "Black",
+      "gross_score": 89,
+      "score_to_par": 17,
+      "verified": true
+    },
+    {
+      "display_name": "Tom Sullivan",
+      "home_city": "Boston, MA",
+      "tees": "Black",
+      "gross_score": 91,
+      "score_to_par": 19,
+      "verified": false
+    },
+    {
+      "display_name": "Wes Parker",
+      "home_city": "Austin, TX",
+      "tees": "Black",
+      "gross_score": 92,
+      "score_to_par": 20,
+      "verified": true
+    },
+    {
+      "display_name": "Luke Diaz",
+      "home_city": "Dallas, TX",
+      "tees": "Brown",
+      "gross_score": 92,
+      "score_to_par": 20,
+      "verified": false
+    },
+    {
+      "display_name": "Nate Brooks",
+      "home_city": "Nashville, TN",
+      "tees": "Brown",
+      "gross_score": 94,
+      "score_to_par": 22,
+      "verified": false
+    },
+    {
+      "display_name": "Owen Cho",
+      "home_city": "Minneapolis, MN",
+      "tees": "Black",
+      "gross_score": 95,
+      "score_to_par": 23,
+      "verified": false
+    },
+    {
+      "display_name": "Kevin T.",
+      "home_city": "Charlotte, NC",
+      "tees": "Black",
+      "gross_score": 96,
+      "score_to_par": 24,
+      "verified": false
+    }
+  ]
+}

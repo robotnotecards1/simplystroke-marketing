@@ -1,0 +1,54 @@
+{
+  "slug": "bandon-dunes",
+  "name": "Bandon Dunes",
+  "club_name": "Bandon Dunes Golf Resort",
+  "city": "Bandon",
+  "state": "OR",
+  "zip": "97411",
+  "country": "USA",
+  "address": "57744 Round Lake Road, Bandon, OR 97411",
+  "lat": 43.1879,
+  "lng": -124.3903,
+  "phone": "(888) 345-6008",
+  "website": "https://bandondunesgolf.com/golf/golf-courses/bandon-dunes/",
+  "designer": "David McLay Kidd",
+  "year_opened": 1999,
+  "access_type": "resort",
+  "green_fee_tier": "$$$",
+  "green_fee_notes": "2026 green fees range seasonally from $130 (January/December) to $375 peak (June to September) for resort guests and $180 to $425 for day guests, with same-day replay rounds at roughly half price.",
+  "holes_count": 18,
+  "par_total": 72,
+  "par_per_hole": [4, 3, 5, 4, 4, 3, 4, 4, 5, 4, 4, 3, 5, 4, 3, 4, 4, 5],
+  "handicap_per_hole": [13, 15, 3, 5, 1, 17, 7, 11, 9, 8, 2, 18, 6, 16, 14, 10, 12, 4],
+  "course_rating": 73.5,
+  "slope_rating": 143,
+  "rating_tee": "Black",
+  "tees": [
+    { "name": "Black", "color": "#26221f", "rating": 73.5, "slope": 143, "yardage": 6732, "holes": [386, 189, 543, 410, 428, 161, 383, 359, 558, 362, 384, 199, 553, 359, 163, 363, 389, 543] },
+    { "name": "Green", "color": "#2d6a4f", "rating": 71.1, "slope": 133, "yardage": 6221, "holes": [352, 155, 489, 362, 400, 153, 372, 342, 520, 339, 351, 153, 537, 332, 131, 345, 375, 513] },
+    { "name": "Gold", "color": "#c9a227", "rating": 69.1, "slope": 124, "yardage": 5716, "holes": [332, 136, 467, 340, 374, 126, 332, 321, 510, 302, 315, 129, 498, 320, 113, 301, 329, 471] },
+    { "name": "Orange", "color": "#d97e2f", "rating": 65.5, "slope": 114, "yardage": 5040, "holes": [293, 117, 351, 308, 321, 111, 317, 290, 464, 251, 284, 98, 447, 288, 102, 250, 324, 424] },
+    { "name": "Royal Blue", "color": "#2a4bb8", "rating": 61.6, "slope": 105, "yardage": 3986, "holes": [223, 117, 318, 228, 260, 111, 232, 220, 335, 200, 228, 98, 344, 205, 80, 210, 244, 333] }
+  ],
+  "amenities": ["Caddie program", "Practice center", "Punchbowl putting course", "Golf academy", "On-site lodging", "Multiple restaurants and pubs", "Golf shop", "Resort shuttle"],
+  "walkable": true,
+  "notable": [
+    "Walking only: golf carts are prohibited resort-wide except for medical need",
+    "Original course at Bandon Dunes Golf Resort (opened May 1999) and David McLay Kidd's breakthrough design",
+    "Authentic Scottish-style links routed over dunes on bluffs roughly 100 feet above the Pacific",
+    "Strong caddie culture; primary course for the 2020 U.S. Amateur"
+  ],
+  "confidence": {
+    "course_rating_slope": "Ratings verified against USGA NCRDB (CourseID 5776) and the official 2026 scorecard; the USGA-only Tournament tee (7,315 yds, 75.9/145) is omitted, no per-hole yardages published.",
+    "green_fee_tier": "Wide seasonal spread ($130 to $425); $$$ reflects the typical shoulder-season day-guest fee rather than peak.",
+    "lat_lng": "Resort's own map marker (lodge area, not a specific tee).",
+    "royal_blue_par": "USGA NCRDB lists Royal Blue at par 68; the printed scorecard shows a single par-72 row for all tees."
+  },
+  "sources": [
+    "https://bandondunesgolf.com/golf/golf-courses/bandon-dunes/",
+    "https://bandondunesgolf.com/wp-content/uploads/2026/03/Website-Bandon-Scorecard-2026.jpg",
+    "https://bandondunesgolf.com/golf/bandon-dunes-green-fees/",
+    "https://ncrdb.usga.org/courseTeeInfo?CourseID=5776",
+    "https://en.wikipedia.org/wiki/Bandon_Dunes_Golf_Resort"
+  ]
+}

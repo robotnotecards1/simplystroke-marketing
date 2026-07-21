@@ -1,0 +1,54 @@
+{
+  "slug": "torrey-pines-south",
+  "name": "Torrey Pines South",
+  "club_name": "Torrey Pines Golf Course",
+  "city": "La Jolla",
+  "state": "CA",
+  "zip": "92037",
+  "country": "USA",
+  "address": "11480 N Torrey Pines Rd, La Jolla, CA 92037",
+  "lat": 32.9045,
+  "lng": -117.2454,
+  "phone": "(858) 452-3226",
+  "website": "https://www.sandiego.gov/park-and-recreation/golf/torreypines",
+  "designer": "William F. Bell (1957); redesigned by Rees Jones (2001, 2019)",
+  "year_opened": 1957,
+  "access_type": "muni",
+  "green_fee_tier": "$$$$",
+  "green_fee_notes": "2026 city rates: San Diego residents $73 weekday / $90 weekend for 18 holes, non-residents $258 weekday / $322 weekend, plus a non-refundable advance booking fee of $32 (resident) or $50 (non-resident).",
+  "holes_count": 18,
+  "par_total": 72,
+  "par_per_hole": [4, 4, 3, 4, 4, 5, 4, 3, 5, 4, 3, 4, 5, 4, 4, 3, 4, 5],
+  "handicap_per_hole": [5, 15, 13, 3, 11, 9, 1, 17, 7, 16, 14, 2, 6, 8, 12, 18, 4, 10],
+  "course_rating": 78.8,
+  "slope_rating": 148,
+  "rating_tee": "Black",
+  "tees": [
+    { "name": "Black", "color": "#26221f", "rating": 78.8, "slope": 148, "yardage": 7802, "holes": [451, 389, 201, 490, 454, 564, 462, 177, 615, 454, 225, 505, 621, 437, 517, 227, 443, 570] },
+    { "name": "Brown", "color": "#6b4a2f", "rating": 75.0, "slope": 139, "yardage": 7015, "holes": [434, 361, 159, 462, 404, 530, 443, 161, 535, 371, 202, 458, 539, 414, 394, 204, 422, 522] },
+    { "name": "Green", "color": "#2d6a4f", "rating": 73.3, "slope": 134, "yardage": 6635, "holes": [419, 344, 146, 420, 393, 505, 424, 149, 514, 352, 190, 444, 514, 394, 355, 183, 398, 491] },
+    { "name": "White", "color": "#e8e8e8", "rating": 70.9, "slope": 128, "yardage": 6145, "holes": [409, 323, 142, 384, 382, 449, 387, 139, 457, 308, 171, 411, 486, 359, 339, 151, 375, 473] },
+    { "name": "Yellow", "color": "#d8b93a", "rating": 67.2, "slope": 119, "yardage": 5373, "holes": [350, 283, 106, 353, 320, 431, 378, 90, 432, 294, 104, 370, 407, 277, 276, 142, 346, 414] }
+  ],
+  "amenities": ["Driving range", "Practice greens", "Short game area", "Pro shop", "Club rentals", "Cart rentals", "Pull cart rentals", "Restaurant (The Grill at Torrey Pines)"],
+  "walkable": true,
+  "notable": [
+    "Hosted the 2008 U.S. Open (Tiger Woods beat Rocco Mediate in a 19-hole playoff) and the 2021 U.S. Open (Jon Rahm)",
+    "Annual host of the PGA Tour's Farmers Insurance Open",
+    "At 7,802 yards from the Black tees, the longest course played in a regular PGA Tour event",
+    "Hosted the 2025 Genesis Invitational after it was relocated due to the Los Angeles wildfires"
+  ],
+  "confidence": {
+    "tees": "Men's ratings confirmed by the official scorecard PDF (11-24-2020 printing) and SCGA WHS charts; Yellow men's rating from SCGA chart only.",
+    "holes": "Per-hole yardages, par, and handicap rows from the official scorecard; tournament setups vary slightly.",
+    "lat_lng": "Coordinates are for the overall facility, not a South-specific centroid.",
+    "year_opened": "1957 is the opening of the 36-hole facility; Rees Jones redesigned the South in 2001 with further work in 2019."
+  },
+  "sources": [
+    "https://www.torreypines.com/wp-content/uploads/2020/11/TPS_11-24-20.pdf",
+    "https://www.scga.org/images/uploads/pdfs/jobs/18753/torrey_pines_-_south.pdf",
+    "https://www.sandiego.gov/sites/default/files/2025-12/torrey-pines-golf-course-rates-cy26.pdf",
+    "https://www.sandiego.gov/park-and-recreation/golf/torreypines",
+    "https://en.wikipedia.org/wiki/Torrey_Pines_Golf_Course"
+  ]
+}

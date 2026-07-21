@@ -1,0 +1,76 @@
+{
+  "stats": {
+    "rounds_count": 4,
+    "avg_score": 89.8,
+    "avg_to_par": 17.8,
+    "low_round": 86,
+    "low_round_label": "Sean Murphy, Philadelphia, PA",
+    "hardest_holes": [
+      {
+        "hole": 14,
+        "par": 5,
+        "over_par": 0.86
+      },
+      {
+        "hole": 6,
+        "par": 5,
+        "over_par": 0.77
+      },
+      {
+        "hole": 10,
+        "par": 4,
+        "over_par": 0.68
+      },
+      {
+        "hole": 8,
+        "par": 4,
+        "over_par": 0.56
+      }
+    ],
+    "distribution": [
+      0,
+      0,
+      0,
+      50,
+      50,
+      0,
+      0,
+      0
+    ],
+    "updated_at": "2026-07-18"
+  },
+  "leaders": [
+    {
+      "display_name": "Sean Murphy",
+      "home_city": "Philadelphia, PA",
+      "tees": "Blue",
+      "gross_score": 86,
+      "score_to_par": 14,
+      "verified": true
+    },
+    {
+      "display_name": "Rob Bauer",
+      "home_city": "Kansas City, MO",
+      "tees": "Gold",
+      "gross_score": 89,
+      "score_to_par": 17,
+      "verified": false
+    },
+    {
+      "display_name": "Wes Parker",
+      "home_city": "Austin, TX",
+      "tees": "Gold",
+      "gross_score": 92,
+      "score_to_par": 20,
+      "verified": true
+    },
+    {
+      "display_name": "Greg Tanaka",
+      "home_city": "San Jose, CA",
+      "tees": "Blue",
+      "gross_score": 92,
+      "score_to_par": 20,
+      "verified": false
+    }
+  ]
+}

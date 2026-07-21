@@ -1,0 +1,52 @@
+{
+  "slug": "bethpage-black",
+  "name": "Bethpage Black",
+  "club_name": "Bethpage State Park Golf Course",
+  "city": "Farmingdale",
+  "state": "NY",
+  "zip": "11735",
+  "country": "USA",
+  "address": "99 Quaker Meetinghouse Road, Farmingdale, NY 11735",
+  "lat": 40.7487,
+  "lng": -73.4458,
+  "phone": "(516) 249-4040",
+  "website": "https://parks.ny.gov/golf-courses/11/details.aspx",
+  "designer": "A.W. Tillinghast (with Joseph H. Burbeck); restored by Rees Jones",
+  "year_opened": 1936,
+  "access_type": "muni",
+  "green_fee_tier": "$$",
+  "green_fee_notes": "Black Course 18-hole rates are $70 weekday / $80 weekend for NY State residents and $140 weekday / $160 weekend for non-residents, plus a $5 per-player reservation fee.",
+  "holes_count": 18,
+  "par_total": 71,
+  "par_per_hole": [4, 4, 3, 5, 4, 4, 5, 3, 4, 4, 4, 4, 5, 3, 4, 4, 3, 4],
+  "handicap_per_hole": [8, 16, 18, 2, 4, 10, 6, 14, 12, 9, 11, 7, 3, 17, 1, 5, 13, 15],
+  "course_rating": 78.0,
+  "slope_rating": 155,
+  "rating_tee": "Blue",
+  "tees": [
+    { "name": "Blue", "color": "#2f6fb0", "rating": 78.0, "slope": 155, "yardage": 7486, "holes": [430, 389, 230, 517, 478, 408, 553, 210, 460, 502, 435, 516, 608, 158, 484, 490, 207, 411] },
+    { "name": "White", "color": "#e8e8e8", "rating": 74.6, "slope": 149, "yardage": 6757, "holes": [429, 354, 158, 461, 423, 386, 525, 191, 385, 434, 421, 432, 559, 149, 430, 457, 195, 368] },
+    { "name": "Yellow", "color": "#d8b93a", "rating": 72.0, "slope": 144, "yardage": 6207, "holes": [426, 346, 128, 438, 401, 376, 489, 152, 293, 377, 412, 403, 472, 136, 417, 431, 178, 332] }
+  ],
+  "amenities": ["Driving range", "Pro shop", "Club rentals", "Golf lessons", "Pull cart rentals"],
+  "walkable": true,
+  "notable": [
+    "Hosted the U.S. Open in 2002 and 2009, the PGA Championship in 2019, and the 2025 Ryder Cup; the 2028 KPMG Women's PGA and 2033 PGA Championship are upcoming",
+    "Famous first-tee warning sign recommends the course only for highly skilled golfers",
+    "Walking only: golf carts are not permitted on the Black Course",
+    "One of five 18-hole courses at Bethpage State Park; Golf Digest has called it the best municipal course in America"
+  ],
+  "confidence": {
+    "designer": "Attribution is debated: NY State Parks credits A.W. Tillinghast; Wikipedia credits superintendent Joseph H. Burbeck as primary with Tillinghast consulting.",
+    "green_fee_tier": "Tier straddles $$ (resident $70-$80) and $$$ (non-resident $140-$160); $$ chosen on resident muni pricing. Fee schedule PDF dated 2/27/2025, still posted as current in July 2026.",
+    "tees": "Per-hole yardages from BlueGolf; totals for all three tees match USGA NCRDB exactly. Women's ratings exist for White (81.8/155) and Yellow (78.3/155).",
+    "handicap_per_hole": "From BlueGolf, corroborated by Golfify; not published on an official NY State Parks source."
+  },
+  "sources": [
+    "https://parks.ny.gov/golf-courses/11/details.aspx",
+    "https://parks.ny.gov/documents/golf/BethpageBethpageStateParkGolfFees.pdf",
+    "https://ncrdb.usga.org/courseTeeInfo?CourseID=14914",
+    "https://course.bluegolf.com/bluegolf/course/course/bethpageblack/detailedscorecard.htm",
+    "https://en.wikipedia.org/wiki/Bethpage_Black_Course"
+  ]
+}

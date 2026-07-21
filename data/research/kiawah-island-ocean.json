@@ -1,0 +1,55 @@
+{
+  "slug": "kiawah-island-ocean",
+  "name": "Kiawah Island (Ocean Course)",
+  "club_name": "Kiawah Island Golf Resort",
+  "city": "Kiawah Island",
+  "state": "SC",
+  "zip": "29455",
+  "country": "USA",
+  "address": "1000 Ocean Course Drive, Kiawah Island, SC 29455",
+  "lat": 32.6119,
+  "lng": -80.0231,
+  "phone": "(843) 266-4670",
+  "website": "https://kiawahresort.com/golf/the-ocean-course/",
+  "designer": "Pete Dye and Alice Dye",
+  "year_opened": 1991,
+  "access_type": "resort",
+  "green_fee_tier": "$$$$",
+  "green_fee_notes": "Peak-season green fees run roughly $600 per round with a walking caddie included in the rate but not gratuity; the resort does not publish exact rates online and quotes them by phone.",
+  "holes_count": 18,
+  "par_total": 72,
+  "par_per_hole": [4, 5, 4, 4, 3, 4, 5, 3, 4, 4, 5, 4, 4, 3, 4, 5, 3, 4],
+  "handicap_per_hole": [15, 3, 9, 1, 11, 13, 7, 17, 5, 16, 8, 10, 2, 14, 18, 4, 12, 6],
+  "course_rating": 77.4,
+  "slope_rating": 153,
+  "rating_tee": "Black",
+  "tees": [
+    { "name": "Black", "color": "#26221f", "rating": 77.4, "slope": 153, "yardage": 7385, "holes": [396, 543, 384, 451, 207, 455, 527, 198, 464, 439, 562, 466, 399, 194, 416, 577, 223, 484] },
+    { "name": "Gold", "color": "#c9a227", "rating": 74.7, "slope": 150, "yardage": 6793, "holes": [371, 520, 363, 430, 185, 382, 505, 180, 415, 388, 521, 420, 371, 171, 387, 548, 197, 439] },
+    { "name": "Silver", "color": "#b8bcc2", "rating": 72.1, "slope": 140, "yardage": 6356, "holes": [365, 495, 308, 396, 165, 342, 491, 166, 394, 368, 503, 408, 364, 161, 368, 479, 159, 424] },
+    { "name": "Blue", "color": "#2f6fb0", "rating": 70.5, "slope": 131, "yardage": 6005, "holes": [354, 480, 292, 384, 155, 331, 465, 140, 380, 341, 461, 393, 327, 151, 347, 472, 136, 396] },
+    { "name": "Red", "color": "#c0392b", "rating": 66.5, "slope": 120, "yardage": 5226, "holes": [303, 410, 254, 328, 117, 299, 437, 105, 344, 310, 407, 326, 312, 132, 306, 392, 122, 322] }
+  ],
+  "amenities": ["Clubhouse", "Golf shop", "The Atlantic Room restaurant", "Ryder Cup Bar", "Caddie program", "Driving range", "Practice greens", "Locker rooms", "Ocean Course Cottages lodging"],
+  "walkable": true,
+  "notable": [
+    "Pete and Alice Dye design, opened 1991; ten holes hug the Atlantic, billed as the most seaside holes in the Northern Hemisphere",
+    "Host of the 1991 Ryder Cup, the famous 'War by the Shore'",
+    "Host of the 2012 (Rory McIlroy) and 2021 (Phil Mickelson) PGA Championships",
+    "Named toughest course in America by Golf Digest (2010); the Championship tees carry a slope of 155, the maximum on record"
+  ],
+  "walkable_note": "Walking-only with a caddie most of the year; carts permitted only after 10 a.m. in June, July, and August.",
+  "confidence": {
+    "rating_tee": "Headline uses the Black tee (77.4/153), the top tee printed on the public scorecard with per-hole yardages. The USGA-only Championship tee is 79.1/155 at 7,876 yards (2021 PGA setup) and appears in NCRDB CourseID 8064 without per-hole data.",
+    "green_fee_notes": "Resort publishes no rates online; ~$600 peak figure from 2026 third-party guides.",
+    "tees": "Men's USGA values, identical on the official 2025 scorecard and NCRDB. Blue/Red combo omitted from the directory card.",
+    "lat_lng": "Course-site coordinates from Wikipedia's 2021 PGA Championship article."
+  },
+  "sources": [
+    "https://kiawahresort.com/golf/the-ocean-course/",
+    "https://kiawahresort.com/wp-content/uploads/2025/03/Ocean-Course-SC25.pdf",
+    "https://ncrdb.usga.org/courseTeeInfo?CourseID=8064",
+    "https://kiawahresort.com/golf/course-faq/",
+    "https://en.wikipedia.org/wiki/Kiawah_Island_Golf_Resort"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "pebble-beach",
+  "name": "Pebble Beach Golf Links",
+  "club_name": "Pebble Beach Resorts",
+  "city": "Pebble Beach",
+  "state": "CA",
+  "zip": "93953",
+  "country": "USA",
+  "address": "1700 17-Mile Drive, Pebble Beach, CA 93953",
+  "lat": 36.5686,
+  "lng": -121.9506,
+  "phone": "(800) 877-0597",
+  "website": "https://www.pebblebeach.com/golf/pebble-beach-golf-links/",
+  "designer": "Jack Neville & Douglas Grant (5th hole redesigned by Jack Nicklaus, 1998)",
+  "year_opened": 1919,
+  "access_type": "resort",
+  "green_fee_tier": "$$$$",
+  "green_fee_notes": "Green fee is $695 for April 2026 through March 2027, plus a $60 per-person cart fee for non-resort guests; single-bag caddie $175 and club rentals $120.",
+  "holes_count": 18,
+  "par_total": 72,
+  "par_per_hole": [4, 5, 4, 4, 3, 5, 3, 4, 4, 4, 4, 3, 4, 5, 4, 4, 3, 5],
+  "handicap_per_hole": [6, 10, 12, 16, 14, 2, 18, 4, 8, 3, 9, 17, 7, 1, 13, 11, 15, 5],
+  "course_rating": 74.9,
+  "slope_rating": 144,
+  "rating_tee": "Blue",
+  "tees": [
+    { "name": "Blue", "color": "#2f6fb0", "rating": 74.9, "slope": 144, "yardage": 6802, "holes": [378, 509, 397, 333, 189, 498, 107, 416, 483, 444, 370, 202, 401, 559, 393, 400, 182, 541] },
+    { "name": "Gold", "color": "#c9a227", "rating": 73.4, "slope": 137, "yardage": 6472, "holes": [349, 491, 381, 308, 145, 490, 98, 388, 463, 428, 349, 187, 390, 545, 375, 378, 176, 531] },
+    { "name": "White", "color": "#e8e8e8", "rating": 71.7, "slope": 135, "yardage": 6083, "holes": [337, 458, 340, 295, 134, 465, 94, 364, 436, 408, 338, 176, 370, 490, 338, 368, 166, 506] },
+    { "name": "Green", "color": "#2d6a4f", "rating": 68.7, "slope": 126, "yardage": 5547, "holes": [328, 428, 291, 251, 125, 457, 90, 354, 362, 344, 303, 167, 302, 452, 330, 324, 148, 491] },
+    { "name": "Red", "color": "#c0392b", "rating": 67.3, "slope": 124, "yardage": 5125, "holes": [310, 358, 285, 197, 111, 420, 87, 349, 350, 338, 298, 126, 295, 446, 247, 312, 142, 454] }
+  ],
+  "amenities": ["Caddie program", "Cart rental", "Pull carts", "Club rentals", "Pebble Beach Golf Academy", "Resort lodging (The Lodge)", "Dining", "Spa"],
+  "walkable": true,
+  "notable": [
+    "Hosted six U.S. Opens (1972, 1982, 1992, 2000, 2010, 2019); four more awarded for 2027, 2032, 2037 and 2044",
+    "Hosted the 2023 U.S. Women's Open and the 1977 PGA Championship",
+    "Home of the PGA TOUR's AT&T Pebble Beach Pro-Am every February, a tradition dating to 1947",
+    "The par-3 7th (107 yards), par-3 17th and par-5 18th along Carmel Bay are among golf's most famous holes"
+  ],
+  "confidence": {
+    "course_rating": "Men's Blue tee 74.9/144 per USGA NCRDB (CourseID 7817); the U.S. Open setup (~7,075 yds, 75.9/148) is not a daily-play tee and is excluded.",
+    "tees": "Combo tee sets (Gold/White, White/Green, Green/Red) omitted from the directory card for space. Red tees play par 71 for men.",
+    "green_fee_notes": "Rates read from pebblebeach.com's official rate table; tee times more than 2 days out require a resort stay.",
+    "handicap_per_hole": "Men's stroke index from BlueGolf detailed scorecard."
+  },
+  "sources": [
+    "https://www.pebblebeach.com/golf/pebble-beach-golf-links/",
+    "https://www.pebblebeach.com/ratesajax/rate_table/pb_links/",
+    "https://ncrdb.usga.org/courseTeeInfo?CourseID=7817",
+    "https://course.bluegolf.com/bluegolf/course/course/pebblebeach/detailedscorecard.htm",
+    "https://en.wikipedia.org/wiki/Pebble_Beach_Golf_Links"
+  ]
+}

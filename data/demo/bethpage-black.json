@@ -1,0 +1,68 @@
+{
+  "stats": {
+    "rounds_count": 3,
+    "avg_score": 94.7,
+    "avg_to_par": 23.7,
+    "low_round": 92,
+    "low_round_label": "Diego Alvarez, Scottsdale, AZ",
+    "hardest_holes": [
+      {
+        "hole": 15,
+        "par": 4,
+        "over_par": 0.89
+      },
+      {
+        "hole": 4,
+        "par": 5,
+        "over_par": 0.75
+      },
+      {
+        "hole": 13,
+        "par": 5,
+        "over_par": 0.63
+      },
+      {
+        "hole": 5,
+        "par": 4,
+        "over_par": 0.57
+      }
+    ],
+    "distribution": [
+      0,
+      0,
+      0,
+      0,
+      33,
+      67,
+      0,
+      0
+    ],
+    "updated_at": "2026-07-18"
+  },
+  "leaders": [
+    {
+      "display_name": "Diego Alvarez",
+      "home_city": "Scottsdale, AZ",
+      "tees": "White",
+      "gross_score": 92,
+      "score_to_par": 21,
+      "verified": true
+    },
+    {
+      "display_name": "Nate Brooks",
+      "home_city": "Nashville, TN",
+      "tees": "Blue",
+      "gross_score": 96,
+      "score_to_par": 25,
+      "verified": true
+    },
+    {
+      "display_name": "Wes Parker",
+      "home_city": "Austin, TX",
+      "tees": "White",
+      "gross_score": 96,
+      "score_to_par": 25,
+      "verified": false
+    }
+  ]
+}

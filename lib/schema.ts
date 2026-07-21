@@ -175,6 +175,74 @@ export function articleNode({
   };
 }
 
+// --- course directory nodes -------------------------------------------------
+
+export type GolfCourseInput = {
+  name: string;
+  url: string; // absolute
+  description: string;
+  street?: string;
+  city: string;
+  state: string;
+  zip?: string;
+  country?: string;
+  lat: number;
+  lng: number;
+  phone?: string;
+  website?: string;
+  image?: string;
+  // Only pass when rounds_count > 0. Inventing ratings is the one thing here
+  // that can earn a penalty (mirrors the appNode rule above).
+  rating?: { value: number; count: number };
+};
+
+export function golfCourseNode(c: GolfCourseInput) {
+  return {
+    "@type": "GolfCourse",
+    "@id": `${c.url}#course`,
+    name: c.name,
+    url: c.url,
+    description: c.description,
+    ...(c.image ? { image: c.image } : {}),
+    address: {
+      "@type": "PostalAddress",
+      ...(c.street ? { streetAddress: c.street } : {}),
+      addressLocality: c.city,
+      addressRegion: c.state,
+      ...(c.zip ? { postalCode: c.zip } : {}),
+      addressCountry: c.country ?? "US",
+    },
+    geo: { "@type": "GeoCoordinates", latitude: c.lat, longitude: c.lng },
+    ...(c.phone ? { telephone: c.phone } : {}),
+    ...(c.website ? { sameAs: c.website } : {}),
+    ...(c.rating
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: c.rating.value,
+            reviewCount: c.rating.count,
+            bestRating: 5,
+            worstRating: 1,
+          },
+        }
+      : {}),
+  };
+}
+
+export type LeaderItem = { name: string; score: number };
+
+export function leaderboardItemList(name: string, items: LeaderItem[]) {
+  return {
+    "@type": "ItemList",
+    name,
+    itemListElement: items.map((it, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: `${it.name}: ${it.score}`,
+    })),
+  };
+}
+
 /** Wrap a set of nodes into a single @graph document. */
 export function graph(...nodes: object[]) {
   return { "@context": "https://schema.org", "@graph": nodes };

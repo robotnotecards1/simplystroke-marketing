@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "rounds_count": 7,
+    "avg_score": 89.3,
+    "avg_to_par": 17.3,
+    "low_round": 86,
+    "low_round_label": "Rob Bauer, Kansas City, MO",
+    "hardest_holes": [
+      {
+        "hole": 4,
+        "par": 4,
+        "over_par": 0.89
+      },
+      {
+        "hole": 13,
+        "par": 4,
+        "over_par": 0.79
+      },
+      {
+        "hole": 2,
+        "par": 5,
+        "over_par": 0.67
+      },
+      {
+        "hole": 16,
+        "par": 5,
+        "over_par": 0.54
+      }
+    ],
+    "distribution": [
+      0,
+      0,
+      0,
+      71,
+      29,
+      0,
+      0,
+      0
+    ],
+    "updated_at": "2026-07-18"
+  },
+  "leaders": [
+    {
+      "display_name": "Rob Bauer",
+      "home_city": "Kansas City, MO",
+      "tees": "Black",
+      "gross_score": 86,
+      "score_to_par": 14,
+      "verified": true
+    },
+    {
+      "display_name": "Marcus R.",
+      "home_city": "San Diego, CA",
+      "tees": "Black",
+      "gross_score": 88,
+      "score_to_par": 16,
+      "verified": true
+    },
+    {
+      "display_name": "Vince Grant",
+      "home_city": "Phoenix, AZ",
+      "tees": "Gold",
+      "gross_score": 88,
+      "score_to_par": 16,
+      "verified": false
+    },
+    {
+      "display_name": "Paul Kim",
+      "home_city": "Portland, OR",
+      "tees": "Gold",
+      "gross_score": 89,
+      "score_to_par": 17,
+      "verified": true
+    },
+    {
+      "display_name": "Dave Ellis",
+      "home_city": "Columbus, OH",
+      "tees": "Gold",
+      "gross_score": 89,
+      "score_to_par": 17,
+      "verified": true
+    },
+    {
+      "display_name": "Jack Sutton",
+      "home_city": "Raleigh, NC",
+      "tees": "Black",
+      "gross_score": 92,
+      "score_to_par": 20,
+      "verified": false
+    },
+    {
+      "display_name": "Doug Hayes",
+      "home_city": "Carlsbad, CA",
+      "tees": "Gold",
+      "gross_score": 93,
+      "score_to_par": 21,
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "rounds_count": 7,
+    "avg_score": 90.3,
+    "avg_to_par": 18.3,
+    "low_round": 85,
+    "low_round_label": "Ben Walsh, Chicago, IL",
+    "hardest_holes": [
+      {
+        "hole": 4,
+        "par": 4,
+        "over_par": 0.86
+      },
+      {
+        "hole": 18,
+        "par": 4,
+        "over_par": 0.78
+      },
+      {
+        "hole": 8,
+        "par": 4,
+        "over_par": 0.64
+      },
+      {
+        "hole": 15,
+        "par": 4,
+        "over_par": 0.54
+      }
+    ],
+    "distribution": [
+      0,
+      0,
+      0,
+      42,
+      29,
+      29,
+      0,
+      0
+    ],
+    "updated_at": "2026-07-18"
+  },
+  "leaders": [
+    {
+      "display_name": "Ben Walsh",
+      "home_city": "Chicago, IL",
+      "tees": "Black",
+      "gross_score": 85,
+      "score_to_par": 13,
+      "verified": false
+    },
+    {
+      "display_name": "Carl Nguyen",
+      "home_city": "Atlanta, GA",
+      "tees": "Blue",
+      "gross_score": 87,
+      "score_to_par": 15,
+      "verified": true
+    },
+    {
+      "display_name": "Dave Ellis",
+      "home_city": "Columbus, OH",
+      "tees": "Blue",
+      "gross_score": 87,
+      "score_to_par": 15,
+      "verified": true
+    },
+    {
+      "display_name": "Greg Tanaka",
+      "home_city": "San Jose, CA",
+      "tees": "Black",
+      "gross_score": 90,
+      "score_to_par": 18,
+      "verified": false
+    },
+    {
+      "display_name": "Sean Murphy",
+      "home_city": "Philadelphia, PA",
+      "tees": "Black",
+      "gross_score": 92,
+      "score_to_par": 20,
+      "verified": true
+    },
+    {
+      "display_name": "Brett Cole",
+      "home_city": "St. Louis, MO",
+      "tees": "Black",
+      "gross_score": 95,
+      "score_to_par": 23,
+      "verified": false
+    },
+    {
+      "display_name": "Nate Brooks",
+      "home_city": "Nashville, TN",
+      "tees": "Blue",
+      "gross_score": 96,
+      "score_to_par": 24,
+      "verified": true
+    }
+  ]
+}

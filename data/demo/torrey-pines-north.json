@@ -1,0 +1,92 @@
+{
+  "stats": {
+    "rounds_count": 6,
+    "avg_score": 90.3,
+    "avg_to_par": 18.3,
+    "low_round": 84,
+    "low_round_label": "Mike Frye, Tampa, FL",
+    "hardest_holes": [
+      {
+        "hole": 2,
+        "par": 4,
+        "over_par": 0.85
+      },
+      {
+        "hole": 18,
+        "par": 4,
+        "over_par": 0.76
+      },
+      {
+        "hole": 4,
+        "par": 4,
+        "over_par": 0.64
+      },
+      {
+        "hole": 13,
+        "par": 4,
+        "over_par": 0.56
+      }
+    ],
+    "distribution": [
+      0,
+      0,
+      17,
+      17,
+      66,
+      0,
+      0,
+      0
+    ],
+    "updated_at": "2026-07-18"
+  },
+  "leaders": [
+    {
+      "display_name": "Mike Frye",
+      "home_city": "Tampa, FL",
+      "tees": "Brown",
+      "gross_score": 84,
+      "score_to_par": 12,
+      "verified": true
+    },
+    {
+      "display_name": "Nate Brooks",
+      "home_city": "Nashville, TN",
+      "tees": "Black",
+      "gross_score": 89,
+      "score_to_par": 17,
+      "verified": true
+    },
+    {
+      "display_name": "Rob Bauer",
+      "home_city": "Kansas City, MO",
+      "tees": "Black",
+      "gross_score": 92,
+      "score_to_par": 20,
+      "verified": true
+    },
+    {
+      "display_name": "Vince Grant",
+      "home_city": "Phoenix, AZ",
+      "tees": "Black",
+      "gross_score": 92,
+      "score_to_par": 20,
+      "verified": true
+    },
+    {
+      "display_name": "Greg Tanaka",
+      "home_city": "San Jose, CA",
+      "tees": "Black",
+      "gross_score": 92,
+      "score_to_par": 20,
+      "verified": false
+    },
+    {
+      "display_name": "Paul Kim",
+      "home_city": "Portland, OR",
+      "tees": "Black",
+      "gross_score": 93,
+      "score_to_par": 21,
+      "verified": false
+    }
+  ]
+}

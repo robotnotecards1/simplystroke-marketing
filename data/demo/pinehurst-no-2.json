@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "rounds_count": 8,
+    "avg_score": 91.3,
+    "avg_to_par": 19.3,
+    "low_round": 87,
+    "low_round_label": "Dave Ellis, Columbus, OH",
+    "hardest_holes": [
+      {
+        "hole": 4,
+        "par": 4,
+        "over_par": 0.86
+      },
+      {
+        "hole": 14,
+        "par": 4,
+        "over_par": 0.74
+      },
+      {
+        "hole": 2,
+        "par": 4,
+        "over_par": 0.67
+      },
+      {
+        "hole": 18,
+        "par": 4,
+        "over_par": 0.57
+      }
+    ],
+    "distribution": [
+      0,
+      0,
+      0,
+      37,
+      38,
+      25,
+      0,
+      0
+    ],
+    "updated_at": "2026-07-18"
+  },
+  "leaders": [
+    {
+      "display_name": "Dave Ellis",
+      "home_city": "Columbus, OH",
+      "tees": "Blue",
+      "gross_score": 87,
+      "score_to_par": 15,
+      "verified": false
+    },
+    {
+      "display_name": "Doug Hayes",
+      "home_city": "Carlsbad, CA",
+      "tees": "Blue",
+      "gross_score": 87,
+      "score_to_par": 15,
+      "verified": true
+    },
+    {
+      "display_name": "Mike Frye",
+      "home_city": "Tampa, FL",
+      "tees": "Blue",
+      "gross_score": 88,
+      "score_to_par": 16,
+      "verified": false
+    },
+    {
+      "display_name": "Ben Walsh",
+      "home_city": "Chicago, IL",
+      "tees": "U.S. Open",
+      "gross_score": 91,
+      "score_to_par": 19,
+      "verified": false
+    },
+    {
+      "display_name": "Wes Parker",
+      "home_city": "Austin, TX",
+      "tees": "U.S. Open",
+      "gross_score": 92,
+      "score_to_par": 20,
+      "verified": false
+    },
+    {
+      "display_name": "Vince Grant",
+      "home_city": "Phoenix, AZ",
+      "tees": "Blue",
+      "gross_score": 94,
+      "score_to_par": 22,
+      "verified": true
+    },
+    {
+      "display_name": "Carl Nguyen",
+      "home_city": "Atlanta, GA",
+      "tees": "Blue",
+      "gross_score": 95,
+      "score_to_par": 23,
+      "verified": true
+    },
+    {
+      "display_name": "Owen Cho",
+      "home_city": "Minneapolis, MN",
+      "tees": "Blue",
+      "gross_score": 96,
+      "score_to_par": 24,
+      "verified": true
+    }
+  ]
+}
