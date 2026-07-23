@@ -376,7 +376,7 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
    phone alone on a second row. Grid keeps the breaks intentional: 4 / 2 / 1. */
 .ss-screens-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   justify-items: center;
   align-items: stretch; /* equal row height, so captions share a baseline */
   gap: clamp(24px, 3vw, 44px);
@@ -386,7 +386,7 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
   margin-right: auto;
 }
 @media (max-width: 1180px) {
-  .ss-screens-row { grid-template-columns: repeat(2, 1fr); gap: clamp(32px, 5vw, 56px); max-width: 720px; }
+  .ss-screens-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(32px, 5vw, 56px); max-width: 720px; }
 }
 @media (max-width: 620px) {
   .ss-screens-row { grid-template-columns: 1fr; max-width: 340px; }
@@ -410,7 +410,7 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .ss-screen-sub { font-size: 15px; color: var(--gray-body); margin-top: 4px; }
 
 /* ---------- mini live phone (screens strip, animated) ---------- */
-.mini-wrap { width: 264px; margin: 0 auto; animation: ssFloatSm 8s ease-in-out infinite; animation-delay: 0.6s; filter: drop-shadow(0 28px 60px rgba(27,67,50,0.28)); }
+.mini-wrap { width: 100%; max-width: 264px; margin: 0 auto; animation: ssFloatSm 8s ease-in-out infinite; animation-delay: 0.6s; filter: drop-shadow(0 28px 60px rgba(27,67,50,0.28)); }
 /* Explicit width (not auto) so the frame is 264px whether its content is an
    <img> or a <video> — as a flex item (see .ss-screen-item > .mini-wrap
    below), an unset width falls back to content-based sizing, and an img vs.
