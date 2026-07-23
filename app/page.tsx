@@ -3,6 +3,7 @@ import Link from "next/link";
 import AppClip from "@/components/AppClip";
 import HeroPhone from "@/components/HeroPhone";
 import StoreBadges from "@/components/StoreBadges";
+import WaitlistSection from "@/components/WaitlistSection";
 import {
   BallOnGreenIcon,
   BallPinIcon,
@@ -28,9 +29,10 @@ const entityJsonLd = graph(
   appNode
 );
 
-const TITLE = "Free Golf Scorecard App. One Tap, No Subscription | SimplyStroke";
+const TITLE =
+  "Free Golf Scorecard App. Count Every Stroke in One Tap | SimplyStroke";
 const DESCRIPTION =
-  "One tap per shot. No subscription, no ads, no account, no GPS clutter. The simple golf stroke counter for anyone who's ever reached the green and had to guess. Free.";
+  "One tap per shot and SimplyStroke keeps your score, your par and your whole round. A simple golf stroke counter and scorecard, with live group scoring for your foursome. Works offline. Free to start.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -40,41 +42,36 @@ export const metadata: Metadata = {
 };
 
 // Homepage FAQ. These answer the questions people actually type into Google
-// and into AI assistants ("is there a golf app that just counts strokes?"),
-// which is the format answer engines quote from. Rendered on-page AND as
-// FAQPage schema below — keep the two in sync by deriving one from the other.
+// and into AI assistants, which is the format answer engines quote from.
+// Rendered on-page AND as FAQPage schema below — keep the two in sync.
 const faqs = [
   {
+    q: "Is SimplyStroke free?",
+    a: "Yes. Start counting your first round free, no account and no credit card to get going. If you just want the score, that is the whole app and it costs nothing to use.",
+  },
+  {
     q: "Is there a golf app that just counts strokes?",
-    a: "That is the entire point of SimplyStroke. The whole screen is one giant golf ball. Tap it once per swing and the app holds your stroke count, your running total and your vs-par, then hands you a finished scorecard at the end. There is no GPS overlay, no handicap tracker and no feed to scroll.",
+    a: "That is the whole point of SimplyStroke. The screen is one giant golf ball. Tap it once per swing and the app holds your stroke count, your running total and your vs-par, then hands you a finished scorecard at the end. No GPS overlay, no feed to scroll.",
   },
   {
-    q: "Do I need a subscription or a sign-up?",
-    a: "No. SimplyStroke is free, with no subscription, no annual renewal, no premium tier and no hardware to buy. It has no ads and does not make you create an account before you can count your first hole. Most golf apps charge $30 to $100 a year for their useful tier, and sensor-based trackers add $180 to $300 up front. Counting strokes costs nothing to run, so it costs nothing to use.",
-  },
-  {
-    q: "What's a simpler alternative to 18Birdies or Arccos?",
-    a: "SimplyStroke, if what you actually want is the score. 18Birdies, Arccos, Golfshot and SwingU are GPS and analytics platforms with a scorecard attached, and they charge accordingly. SimplyStroke is a scorecard with nothing attached: one tap per shot, free, offline, no account. You give up GPS yardages, handicap posting and strokes gained, which is a real trade and worth making only if you were never using them.",
-  },
-  {
-    q: "Do I have to get my phone out on every shot?",
-    a: "No, and this is the reason the Apple Watch version exists. A tap on the watch face logs the stroke and a haptic tick confirms it, so the phone can stay in the bag for the whole round. If you do use the phone, it is one tap on a button big enough to hit with a glove on without looking at it.",
+    q: "How do friends join my round?",
+    a: "Share a 6-character code or a link. Friends join as a guest with no account, everyone taps their own strokes, and every score lands on one live scorecard.",
   },
   {
     q: "Does it work without signal on the course?",
     a: "Yes. SimplyStroke works fully offline, so a dead zone on the back nine never costs you your round. Your card syncs when you are back in range.",
   },
   {
+    q: "Will I lose my round if my phone dies?",
+    a: "No. Every stroke is saved the instant you tap it, so a force-quit or a dead battery mid-round never costs you the card. You pick up right where you left off.",
+  },
+  {
     q: "What if I tap twice by accident?",
-    a: "Press Undo. It takes one tap and it is on the same screen, so you never have to go hunting through a menu mid-hole. You can also edit any hole after the fact.",
+    a: "Press undo. One tap, same screen, no hunting through a menu mid-hole. You can also edit any hole after the fact.",
   },
   {
     q: "Is SimplyStroke good for ADHD golfers?",
-    a: "It was designed for them. Golf quietly asks you to hold a running number in working memory for ten-plus minutes per hole while doing nine other things, which is exactly the task ADHD brains drop first. SimplyStroke moves the number out of your head and into a single tap.",
-  },
-  {
-    q: "Is SimplyStroke available yet?",
-    a: "Yes. SimplyStroke is live now — get started at app.simplystroke.app. Dedicated iPhone, Android and Apple Watch apps are on the way to the App Store and Google Play.",
+    a: "It was built with them in mind. Golf quietly asks you to hold a running number in working memory for ten-plus minutes a hole while doing nine other things, which is the exact task an ADHD brain drops first. SimplyStroke moves the number out of your head and into one tap.",
   },
 ];
 
@@ -109,7 +106,7 @@ export default function Home() {
         <div className="container ss-hero-inner">
           <div className="ss-hero-copy">
             <div className="eyebrow ss-hero-eyebrow">
-              Free · One tap Scorecard · No subscription
+              Free to start · One tap per shot
             </div>
             <h1 className="ss-hero-h1">
               Golf&apos;s simplest app.
@@ -117,11 +114,16 @@ export default function Home() {
               <span className="accent">On purpose.</span>
             </h1>
             <p className="ss-hero-p">
-              No GPS, no cluttered screen — just a simple stroke counter and
-              scorecard. One giant button: tap it once per swing and the
-              scorecard fills itself in. Forget about your strokes and focus on
-              the ball.
+              Just count. We&apos;ll do the math. Tap once per shot and
+              SimplyStroke keeps your score, your par and your whole round. Keep
+              your head in the game, not in a scorecard.
             </p>
+            <div className="ss-hero-cta">
+              <a href="https://app.simplystroke.app" className="btn btn-hero">
+                Start a round free →
+              </a>
+              <span className="ss-hero-launch">Free · Live now</span>
+            </div>
             <StoreBadges />
           </div>
           <HeroPhone />
@@ -130,18 +132,16 @@ export default function Home() {
 
       {/* ===================== PROBLEM / HOW IT WORKS ===================== */}
       <section id="how-it-works" className="ss-problem">
-        <div className="eyebrow">The problem with most golf apps</div>
+        <div className="eyebrow">How it works</div>
         <h2 className="h2-display">
-          They want a dataset. You wanted a number.
+          They built a spreadsheet. You wanted your score.
         </h2>
         <p className="ss-problem-p">
-          Menus, handicaps, GPS overlays, ads, sign-up screens, and a
-          subscription to keep the whole thing running. Miss a green and the app
-          wants to know whether you were long, short, left or right, and which
-          club you used. By the third hole you&apos;re wrestling with your phone
-          instead of your next shot, and the one number you actually came for is
-          buried three taps deep. SimplyStroke keeps a single job on screen:{" "}
-          <strong>count this stroke.</strong>
+          Most golf apps bury the one number you came for under menus, GPS
+          overlays and a setup wizard. Miss a green and they want to know: long
+          or short, left or right, which club. By the third hole you&apos;re
+          fighting your phone instead of your swing. SimplyStroke keeps a single
+          job on screen: <strong>count this stroke.</strong>
         </p>
 
         <div className="ss-stepswrap">
@@ -160,17 +160,17 @@ export default function Home() {
               <div className="ss-step-title">Tap the ball</div>
               <p className="ss-step-p">
                 One tap per swing, on a button big enough to hit without
-                looking. Glove on, eyes up.
+                looking. Chunk one into the trees? Hit +1 for a penalty.
               </p>
             </div>
             <div className="ss-step">
               <div className="ss-step-num">
                 <span>2</span>
               </div>
-              <div className="ss-step-title">Keep walking</div>
+              <div className="ss-step-title">Never do the math</div>
               <p className="ss-step-p">
-                The app carries your running total. Nothing to add, nothing to
-                remember.
+                Hole total, score to par, round total. All added up for you,
+                live. You never total a thing.
               </p>
             </div>
             <div className="ss-step">
@@ -187,114 +187,168 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===================== ADHD FOLD ===================== */}
-      <section className="ss-fold">
-        <div className="ss-fold-grid">
-          <div>
-            <h2 className="ss-fold-h2">
-              Ever wondered: &ldquo;was that my third or fourth?&rdquo;
-            </h2>
-            <p className="ss-fold-p">
-              You stripe a beautiful approach, your mind wanders to that
-              almost-ace from 2019 or whether you locked the back door, and you
-              arrive at the green with no idea what you&apos;re lying. This app
-              is for you. Built for ADHD brains and anyone whose head wanders
-              mid-round, SimplyStroke holds the number so you don&apos;t have
-              to. Tap it and forget it. Your focus stays where it belongs: the
-              next shot.
-            </p>
-            <a href="https://app.simplystroke.app" className="btn btn-fold">
-              Let the app remember →
-            </a>
-            <br />
-            <Link href="/adhd-golf/" className="ss-fold-morelink">
-              More on ADHD and golf →
-            </Link>
+      {/* ===================== SIMPLE ON PURPOSE ===================== */}
+      <section className="ss-simple">
+        <div className="ss-simple-inner">
+          <div className="eyebrow" style={{ color: "var(--lime-text)" }}>
+            Simple on purpose
           </div>
-          <div>
-            <div className="eyebrow ss-fold-eyebrow">
-              For anyone who forgets the count by the next tee
+          <h2 className="h2-display">Built to stay out of your way.</h2>
+          <p className="ss-simple-lede">
+            The whole app is a stroke counter and a scorecard. That is the
+            point, not a limitation.
+          </p>
+
+          <div className="ss-simple-grid">
+            <div className="ss-simple-cell">
+              <h3>No math, ever</h3>
+              <p>The running number lives on the screen, not in your head.</p>
             </div>
-            <h3 className="ss-fold-sub">Sound familiar?</h3>
-            <div className="ss-fold-cards">
-              <div className="ss-fold-card">
-                <div className="icon-tile">
-                  <BallOnGreenIcon />
-                </div>
-                <span>
-                  You reach the green with no idea whether it&apos;s your third
-                  or your fourth. Every. Single. Time.
-                </span>
-              </div>
-              <div className="ss-fold-card">
-                <div className="icon-tile">
-                  <ScorecardIcon />
-                </div>
-                <span>
-                  That tiny scorecard pencil is a noble effort. Be honest,
-                  though: it never makes it past the first few holes.
-                </span>
-              </div>
-              <div className="ss-fold-card">
-                <div className="icon-tile">
-                  <BallPinIcon />
-                </div>
-                <span>
-                  One giant button means nothing else to poke at. No mis-taps,
-                  no menus to get lost in mid-round.
-                </span>
-              </div>
+            <div className="ss-simple-cell">
+              <h3>Gloves on, one hand</h3>
+              <p>
+                Oversized buttons you can hit without looking or taking your
+                glove off.
+              </p>
+            </div>
+            <div className="ss-simple-cell">
+              <h3>Works with no signal</h3>
+              <p>
+                Fully offline. A dead zone on the back nine never costs you your
+                round.
+              </p>
+            </div>
+            <div className="ss-simple-cell">
+              <h3>Never lose a round</h3>
+              <p>
+                Every tap is saved the instant you make it. Dead battery
+                mid-round? You pick up right where you left off.
+              </p>
+            </div>
+            <div className="ss-simple-cell">
+              <h3>Undo anything</h3>
+              <p>
+                Fat-fingered a tap? One undo fixes it. Long-press to set an
+                exact number.
+              </p>
+            </div>
+            <div className="ss-simple-cell">
+              <h3>Set up in one tap</h3>
+              <p>
+                Near Me finds your course and fills in the pars, so you&apos;re
+                ready before the first tee.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===================== FEATURES ===================== */}
-      <section id="features" className="ss-features">
-        <div className="ss-features-inner">
-          <div className="eyebrow">What you get</div>
-          <h2 className="h2-display">Four things. That&apos;s the app.</h2>
+      {/* ===================== GROUP ROUNDS (flagship) ===================== */}
+      <section id="group" className="ss-group">
+        <div className="ss-group-inner">
+          <div className="ss-group-copy">
+            <div className="eyebrow" style={{ color: "var(--lime-text)" }}>
+              Play with your group
+            </div>
+            <h2 className="h2-display" style={{ color: "var(--offwhite)" }}>
+              One code. Everyone&apos;s scores. Live.
+            </h2>
+            <p className="ss-group-p">
+              Start a round, share a 6-character code, and everyone taps their
+              own strokes on their own phone. One scorecard, updating in real
+              time. The scorekeeper&apos;s job, gone.
+            </p>
+            <ul className="ss-group-list">
+              <li>Share a code or link. Friends join as guests, no account.</li>
+              <li>Every phone shows the same live leaderboard.</li>
+              <li>Nobody waits until 18 to find out how it went.</li>
+            </ul>
+            <a href="https://app.simplystroke.app" className="btn btn-fold">
+              Start a group round →
+            </a>
+          </div>
 
-          <div className="ss-features-grid">
-            <div className="ss-feature">
-              <div className="icon-tile">
-                <HappyBallIcon />
-              </div>
-              <h3>One giant tap target</h3>
-              <p>
-                A stroke button that fills the screen. No fumbling and no
-                squinting, even with a glove on.
-              </p>
+          <div className="ss-lb" aria-hidden="true">
+            <div className="ss-lb-top">
+              <span>Saturday · Front Nine</span>
+              <span className="ss-live">
+                <i />
+                Live
+              </span>
             </div>
-            <div className="ss-feature">
-              <div className="icon-tile">
-                <ScorecardIcon />
-              </div>
-              <h3>Scorecard, done for you</h3>
-              <p>
-                Every hole totals itself, with vs-par at a glance. Birdies, pars
-                and bogeys color-coded so you can read the round in a second.
-              </p>
+            <div className="ss-lb-row">
+              <span className="ss-lb-who">
+                <span className="ss-lb-dot" style={{ background: "#96C41E" }}>
+                  Y
+                </span>
+                You
+              </span>
+              <span className="ss-lb-score under">+2</span>
             </div>
-            <div className="ss-feature">
-              <div className="icon-tile">
-                <GolfBagIcon />
-              </div>
-              <h3>Fits every round</h3>
-              <p>
-                Nine holes or a full eighteen, match play or a casual round. One
-                tap counts them all.
-              </p>
+            <div className="ss-lb-row">
+              <span className="ss-lb-who">
+                <span className="ss-lb-dot" style={{ background: "#FF6B6B" }}>
+                  M
+                </span>
+                Marcus
+              </span>
+              <span className="ss-lb-score over">+5</span>
             </div>
-            <div className="ss-feature">
-              <div className="icon-tile">
-                <FlagIcon />
+            <div className="ss-lb-row">
+              <span className="ss-lb-who">
+                <span className="ss-lb-dot" style={{ background: "#4A90D9" }}>
+                  D
+                </span>
+                Dave
+              </span>
+              <span className="ss-lb-score over">+7</span>
+            </div>
+            <div className="ss-lb-row">
+              <span className="ss-lb-who">
+                <span className="ss-lb-dot" style={{ background: "#F5C451" }}>
+                  P
+                </span>
+                Priya
+              </span>
+              <span className="ss-lb-score under">E</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== STATS ===================== */}
+      <section className="ss-stats">
+        <div className="ss-stats-inner">
+          <div className="eyebrow">Stats that mean something</div>
+          <h2 className="h2-display">Improvement you can actually see.</h2>
+          <p className="section-lede">
+            No spreadsheet. Just the handful of numbers that tell you whether
+            your game is moving.
+          </p>
+
+          <div className="ss-stats-grid">
+            <div className="ss-stat">
+              <div className="ss-stat-num">87</div>
+              <div className="ss-stat-lbl">Average, last 10 rounds</div>
+            </div>
+            <div className="ss-stat">
+              <div className="ss-stat-num">82</div>
+              <div className="ss-stat-lbl">Best round</div>
+            </div>
+            <div className="ss-stat">
+              <div className="ss-spark">
+                <span style={{ height: "90%" }} />
+                <span style={{ height: "72%" }} />
+                <span style={{ height: "80%" }} />
+                <span style={{ height: "55%" }} />
+                <span style={{ height: "60%" }} />
+                <span style={{ height: "40%" }} />
               </div>
-              <h3>Zero clutter, zero ads</h3>
-              <p>
-                No feeds and nothing to sign into. Open it, count your round,
-                close it.
-              </p>
+              <div className="ss-stat-lbl">Score trend, heading down</div>
+            </div>
+            <div className="ss-stat">
+              <div className="ss-stat-num">+1.4</div>
+              <div className="ss-stat-lbl">Your hardest hole, vs par</div>
             </div>
           </div>
         </div>
@@ -320,12 +374,13 @@ export default function Home() {
             </div>
           </div>
           <div className="ss-watch-copy">
+            <div className="pill">Apple Watch · Coming soon</div>
             <h2>Leave the phone in the bag.</h2>
             <p className="ss-watch-p">
               Count every stroke from your wrist. A tap on the watch face logs
-              the shot with a haptic tick, Undo fixes it if you double-tapped,
+              the shot with a haptic tick, undo fixes it if you double-tapped,
               and your round syncs straight to your phone&apos;s scorecard. The
-              phone stays in the bag.
+              best free golf app for Apple Watch, once it lands.
             </p>
             <ul className="ss-checklist">
               <li>
@@ -340,8 +395,8 @@ export default function Home() {
                 card
               </li>
             </ul>
-            <a href="https://app.simplystroke.app" className="btn btn-watch">
-              Count your next round free →
+            <a href="#waitlist" className="btn btn-watch">
+              Notify me at launch →
             </a>
           </div>
         </div>
@@ -390,7 +445,9 @@ export default function Home() {
             <div className="ss-screen-caption">
               <span className="ss-screen-stepnum">2</span>Pick a course
             </div>
-            <div className="ss-screen-sub">Or skip it and just count. Your call.</div>
+            <div className="ss-screen-sub">
+              Or skip it and just count. Your call.
+            </div>
           </div>
 
           <div className="ss-screen-item">
@@ -407,7 +464,7 @@ export default function Home() {
             <div className="ss-screen-caption">
               <span className="ss-screen-stepnum">3</span>Active round
             </div>
-            <div className="ss-screen-sub">Actual footage — not a mockup</div>
+            <div className="ss-screen-sub">Actual footage, not a mockup</div>
           </div>
 
           <div className="ss-screen-item">
@@ -431,6 +488,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===================== TRUST STRIP ===================== */}
+      <section className="ss-trust">
+        <div className="ss-trust-grid">
+          <div className="ss-trust-cell">
+            <h3>Free to play</h3>
+            <p>No ads mid-round, no catch. Start counting today.</p>
+          </div>
+          <div className="ss-trust-cell">
+            <h3>Works offline</h3>
+            <p>No signal on the back nine? No problem.</p>
+          </div>
+          <div className="ss-trust-cell">
+            <h3>No account needed</h3>
+            <p>Play without signing in. Sign in only to back up and sync.</p>
+          </div>
+          <div className="ss-trust-cell">
+            <h3>Yours to delete</h3>
+            <p>One tap removes your account and every round, for good.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== ADHD SOFT NOD ===================== */}
+      <section className="ss-adhdnod">
+        <div className="ss-adhdnod-box">
+          <h2 className="h2-display">
+            Lose the count by the next tee? You&apos;re in good company.
+          </h2>
+          <p>
+            Golf asks you to hold a number in your head for twenty minutes while
+            nine other things pull at your attention. Some brains just
+            won&apos;t. SimplyStroke holds the number so you don&apos;t have to.
+          </p>
+          <Link href="/adhd-golf/" className="ss-adhdnod-link">
+            More on golf with ADHD →
+          </Link>
+        </div>
+      </section>
+
       {/* ===================== FAQ ===================== */}
       <section id="faq" className="section">
         <div className="section-narrow">
@@ -445,28 +541,28 @@ export default function Home() {
             ))}
           </div>
           <p className="section-lede" style={{ marginTop: 36 }}>
-            Built for the beautifully distractible?{" "}
-            <Link href="/adhd-golf/">
-              See why SimplyStroke is the golf app for ADHD brains →
-            </Link>
-          </p>
-          <p className="section-lede">
-            New to the category? Start with{" "}
+            Learning the ropes? Start with our{" "}
+            <Link href="/guides/">golf scoring and rules guides</Link>, see{" "}
             <Link href="/golf-stroke-counter/">
               what a golf stroke counter is and how to pick one
             </Link>
-            , or see{" "}
+            , or check{" "}
             <Link href="/compare/">
               how SimplyStroke compares to 18Birdies, Arccos and the rest
             </Link>
             .
           </p>
+          <p className="section-lede">
+            Built for the beautifully distractible?{" "}
+            <Link href="/adhd-golf/">
+              See why SimplyStroke is the golf app for ADHD brains →
+            </Link>
+          </p>
         </div>
       </section>
 
-      {/* Waitlist section removed from the flow for now — the component
-          (WaitlistSection, with its photo background) is kept on the shelf as
-          a future content zone. */}
+      {/* ===================== FINAL CTA / WAITLIST ===================== */}
+      <WaitlistSection source="home" heading="Play your next round with it." />
     </main>
   );
 }
