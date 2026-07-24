@@ -6,7 +6,8 @@ import { useEffect, useRef } from "react";
  * Hero device pair: the real iPhone screen recording (active round) with the
  * real Apple Watch recording tucked alongside. The two clips are separate
  * recordings of different lengths, so this keeps them coordinated: the watch
- * is pinned to the phone's timeline (they restart the round together), and a
+ * runs a beat AHEAD of the phone (LEAD seconds), so a stroke update reads as
+ * coming from the watch and reaching the phone a moment later, and a
  * soft fade across the loop seam hides the cut and the re-sync so the reset
  * does not read as a hard jump.
  */
@@ -19,6 +20,10 @@ export default function HeroDevices() {
     const p = phoneRef.current;
     const w = watchRef.current;
     if (!p || !w) return;
+
+    // The watch leads the phone by this many seconds, so the on-screen update
+    // appears on the watch first and lands on the phone a beat later.
+    const LEAD = 0.35;
 
     let raf = 0;
 
@@ -34,12 +39,19 @@ export default function HeroDevices() {
       if (p.paused) p.play().catch(() => {});
       if (w.paused) w.play().catch(() => {});
       const t = p.currentTime;
-      // Phone is the master clock; keep the watch pinned so both loop together.
-      if (Number.isFinite(t) && Math.abs(w.currentTime - t) > 0.15) {
-        try {
-          w.currentTime = t;
-        } catch {
-          /* seek can throw before metadata is ready; ignore */
+      // Phone is the master clock, but the watch runs LEAD seconds ahead of it,
+      // so the update reads as watch -> phone. Wrap by the watch's own duration
+      // so the target stays valid across the loop seam.
+      if (Number.isFinite(t)) {
+        const wd = w.duration;
+        let target = t + LEAD;
+        if (Number.isFinite(wd) && wd > 0) target = ((target % wd) + wd) % wd;
+        if (Math.abs(w.currentTime - target) > 0.15) {
+          try {
+            w.currentTime = target;
+          } catch {
+            /* seek can throw before metadata is ready; ignore */
+          }
         }
       }
       const d = p.duration;
