@@ -17,6 +17,7 @@ export default function Footer() {
             <div className="ss-footer-head">Product</div>
             <nav>
               <Link href="/features/">Features</Link>
+              <Link href="/tournament/">Tournament</Link>
               <Link href="/compare/">Compare golf apps</Link>
               <Link href="/compare/simplystroke-vs-18birdies/">
                 vs 18Birdies

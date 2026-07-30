@@ -914,3 +914,37 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .hd-wnum { font-family: var(--font-display); font-size: 54px; line-height: 0.8; color: var(--green-deep); animation: ssCountFade 0.34s ease-out; }
 .hd-wlbl { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.5); font-weight: 700; }
 @media (prefers-reduced-motion: reduce) { .hd-pulse { animation: none; } .hd-num, .hd-wnum { animation: none; } }
+
+/* ============================================================
+   TOURNAMENT — homepage section + dedicated page
+   A light (cream) band so the dark leaderboard card pops and the
+   two green group/tournament sections don't run together. Reuses
+   the group-round board primitives (.ss-lb*) with a few extras.
+   ============================================================ */
+.ss-tourney { background: var(--cream); padding: var(--section-pad-y) var(--container-pad); }
+.ss-tourney-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.02fr 0.98fr; gap: clamp(36px, 5vw, 72px); align-items: center; }
+.ss-tourney .h2-display { margin-top: 14px; max-width: 520px; }
+.ss-tourney-p { font-size: clamp(16px, 1.4vw, 19px); line-height: 1.6; font-weight: 500; color: var(--gray-dark); max-width: 520px; margin-top: 22px; }
+.ss-tourney-list { list-style: none; margin: 26px 0 0; display: flex; flex-direction: column; gap: 16px; max-width: 520px; }
+.ss-tourney-list li { position: relative; padding-left: 30px; font-size: 16px; line-height: 1.55; color: var(--gray-dark); }
+.ss-tourney-list li::before { content: ""; position: absolute; left: 0; top: 5px; width: 14px; height: 14px; background: var(--lime); }
+.ss-tourney-list strong { color: var(--green-deep); font-weight: 700; }
+.ss-tourney-note { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 12px; margin-top: 30px; font-size: 15px; line-height: 1.6; color: var(--gray-body); max-width: 520px; }
+.ss-tourney-badge { display: inline-flex; align-items: center; gap: 7px; background: rgba(150,196,30,0.16); border: 1px solid rgba(150,196,30,0.55); color: var(--green-deep); font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 11px; }
+.ss-tourney-badge::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); flex-shrink: 0; }
+.ss-tourney-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; font-size: 16px; font-weight: 700; color: var(--green-mid); }
+.ss-tourney-link:hover { color: var(--green-deep); }
+
+/* cross-group board extras, layered on top of .ss-lb */
+.ss-tboard .ss-lb-who { gap: 12px; }
+.ss-lb-rank { font-family: var(--font-display); font-size: 17px; color: var(--lime-text); min-width: 16px; text-align: center; flex-shrink: 0; }
+.ss-lb-name { display: flex; flex-direction: column; line-height: 1.12; color: #fff; }
+.ss-lb-sub { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.45); margin-top: 3px; }
+.ss-lb-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; border-top: 1px solid rgba(255,255,255,0.09); }
+.ss-lb-foot-url { font-size: 13px; font-weight: 600; letter-spacing: 0.01em; color: var(--lime-text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ss-lb-foot-tag { flex-shrink: 0; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-deep); background: var(--lime); padding: 5px 10px; }
+
+@media (max-width: 860px) {
+  .ss-tourney-inner { grid-template-columns: 1fr; }
+}
+
