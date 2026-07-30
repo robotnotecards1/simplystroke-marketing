@@ -18,6 +18,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/compare/simplystroke-vs-arccos/`, lastModified, priority: 0.8 },
     // Product
     { url: `${SITE_URL}/features/`, lastModified, priority: 0.8 },
+    { url: `${SITE_URL}/tournament/`, lastModified, priority: 0.8 },
     { url: `${SITE_URL}/download/`, lastModified, priority: 0.8 },
     { url: `${SITE_URL}/about/`, lastModified, priority: 0.6 },
     // Guides

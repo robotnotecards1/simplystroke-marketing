@@ -3,6 +3,7 @@ import Link from "next/link";
 import AppClip from "@/components/AppClip";
 import HeroDevices from "@/components/HeroDevices";
 import StoreBadges from "@/components/StoreBadges";
+import TournamentBoard from "@/components/TournamentBoard";
 import WaitlistSection from "@/components/WaitlistSection";
 import {
   BallOnGreenIcon,
@@ -313,6 +314,51 @@ export default function Home() {
               <span className="ss-lb-score under">E</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ===================== TOURNAMENT ===================== */}
+      <section id="tournament" className="ss-tourney">
+        <div className="ss-tourney-inner">
+          <div className="ss-tourney-copy">
+            <div className="eyebrow">Tournament</div>
+            <h2 className="h2-display">
+              Run the whole outing on one leaderboard.
+            </h2>
+            <p className="ss-tourney-p">
+              A scramble, a league night, a charity outing — Tournament pulls
+              every group onto one live, cross-group leaderboard, and players
+              join by code from their own phones.
+            </p>
+            <ul className="ss-tourney-list">
+              <li>
+                <strong>Live cross-group leaderboard.</strong>{" "}
+                Every group&apos;s scores roll up to one board, updating in real
+                time. No scorer&apos;s table, no spreadsheet.
+              </li>
+              <li>
+                <strong>Join by code.</strong>{" "}
+                Players tap in a 6-character code and they&apos;re playing. No
+                account, no setup, same big taps.
+              </li>
+              <li>
+                <strong>Spectator view on the web.</strong>{" "}
+                Share a link and anyone can follow the leaderboard in a browser,
+                no app needed. Made for the clubhouse screen.
+              </li>
+            </ul>
+            <p className="ss-tourney-note">
+              <span className="ss-tourney-badge">Now rolling out</span>
+              Tournament is switching on for hosts gradually — it appears in the
+              app once your account is enabled. Joining a tournament is always
+              free.
+            </p>
+            <Link href="/tournament/" className="ss-tourney-link">
+              See how Tournament works →
+            </Link>
+          </div>
+
+          <TournamentBoard />
         </div>
       </section>
 
