@@ -6,6 +6,14 @@ export const SITE_URL =
 
 export const SITE_NAME = "SimplyStroke";
 
+// The App Store listing — iPhone + Apple Watch, free, no in-app purchases.
+export const APP_STORE_URL =
+  "https://apps.apple.com/app/simplystroke-golf-scorecard/id6792327238";
+
+// The browser app: playable now, no download. The low-friction alternative to
+// the native app.
+export const APP_URL = "https://app.simplystroke.app";
+
 // Keep every non-production build out of the index. Vercel sets VERCEL_ENV to
 // "preview" / "development" for those, so preview URLs are noindexed with zero
 // config, while the production deploy stays indexable. NEXT_PUBLIC_NOINDEX is

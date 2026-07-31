@@ -1,9 +1,12 @@
-import WaitlistForm from "./WaitlistForm";
+import { APP_STORE_URL, APP_URL } from "@/lib/site";
 
-/** Final CTA band with the email capture form (homepage + /download). */
+/**
+ * Final CTA band. Now that the app is on the App Store this is the download CTA
+ * — it used to be the pre-launch email waitlist. `source` is accepted but unused
+ * (kept so the ~12 call sites don't need editing).
+ */
 export default function WaitlistSection({
-  source = "home",
-  heading = "Be first on the tee.",
+  heading = "Play your next round with it.",
 }: {
   source?: string;
   heading?: string;
@@ -12,21 +15,34 @@ export default function WaitlistSection({
     <section id="waitlist" className="ss-waitlist">
       <div className="ss-waitlist-blob" />
       <div className="ss-waitlist-inner">
-        <div className="pill">Live now</div>
+        <div className="pill">Now on the App Store</div>
         <h2>{heading}</h2>
         <p className="ss-waitlist-p">
-          SimplyStroke is live — start counting your strokes today. Dedicated
-          iPhone, Android and Apple Watch apps are coming soon to the App
-          Store and Google Play; drop your email and we&apos;ll notify you the
-          moment they land. No spam, just one message.
+          SimplyStroke is free on the App Store for iPhone and Apple Watch. No
+          subscription, no ads, no account. Prefer not to download? Play right
+          now in your browser.
         </p>
-        <a href="https://app.simplystroke.app" className="btn btn-hero">
-          Get Started →
-        </a>
-        <WaitlistForm source={source} />
-        <div className="ss-wait-note">
-          Coming soon to the App Store &amp; Google Play
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 18,
+            alignItems: "center",
+            justifyContent: "center",
+            marginTop: 34,
+          }}
+        >
+          <a href={APP_STORE_URL} className="btn btn-hero">
+            Download on the App Store →
+          </a>
+          <a
+            href={APP_URL}
+            style={{ color: "var(--lime-text)", fontWeight: 700, fontSize: 16 }}
+          >
+            or play free in your browser →
+          </a>
         </div>
+        <div className="ss-wait-note">Android coming soon to Google Play</div>
       </div>
     </section>
   );
