@@ -1,24 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import StoreBadges from "@/components/StoreBadges";
-import WaitlistForm from "@/components/WaitlistForm";
-import { og } from "@/lib/site";
+import { APP_STORE_URL, APP_URL, og } from "@/lib/site";
 import { appNode, graph, organizationNode } from "@/lib/schema";
 
 const entityJsonLd = graph(organizationNode, appNode);
 
-// Pre-launch: this is the waitlist/notify page. At launch, reframe to real
-// download copy and add store links (see SEO-COPY-REVIEW.md + SEO-HANDOFF.md §6).
+const TITLE = "Get SimplyStroke: Free Golf Scorecard App, No Subscription";
+const DESCRIPTION =
+  "SimplyStroke is free on the App Store for iPhone and Apple Watch: a one-tap golf stroke counter and scorecard. No subscription, no ads, no account. Or play right now in your browser. Android coming soon.";
+
 export const metadata: Metadata = {
-  title: "Get SimplyStroke: Free Golf Scorecard App, No Subscription",
-  description:
-    "SimplyStroke is a free, one-tap golf stroke counter for iPhone, Android and Apple Watch. No subscription, no ads, no account. Live now — dedicated App Store and Google Play apps are coming soon.",
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: { canonical: "/download/" },
-  openGraph: og(
-    "Get SimplyStroke: Free Golf Scorecard App, No Subscription",
-    "SimplyStroke is a free, one-tap golf stroke counter for iPhone, Android and Apple Watch. No subscription, no ads, no account. Live now — dedicated App Store and Google Play apps are coming soon.",
-    "/download/"
-  ),
+  openGraph: og(TITLE, DESCRIPTION, "/download/"),
 };
 
 export default function DownloadPage() {
@@ -26,34 +22,30 @@ export default function DownloadPage() {
     <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(entityJsonLd),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(entityJsonLd) }}
       />
 
       <header className="page-hero">
         <div className="page-hero-inner" style={{ maxWidth: 820, textAlign: "center" }}>
-          <div className="pill">Live now</div>
-          <h1 style={{ marginLeft: "auto", marginRight: "auto" }}>
-            Be first on the tee.
-          </h1>
-          <p
-            className="lede"
-            style={{ marginLeft: "auto", marginRight: "auto" }}
-          >
-            SimplyStroke is a free, one-tap golf stroke counter, live now.
-            Dedicated iPhone, Android and Apple Watch apps are coming soon to
-            the App Store and Google Play — drop your email and we&apos;ll
-            tell you the moment they land. No spam, one message.
+          <div className="pill">Now on the App Store</div>
+          <h1 style={{ marginLeft: "auto", marginRight: "auto" }}>Get SimplyStroke.</h1>
+          <p className="lede" style={{ marginLeft: "auto", marginRight: "auto" }}>
+            The one-tap golf stroke counter and scorecard, free on the App Store
+            for iPhone and Apple Watch. No subscription, no ads, no account to
+            start. Prefer not to download? Play right now in your browser.
           </p>
-          <a href="https://app.simplystroke.app" className="btn btn-hero">
-            Get Started →
-          </a>
-          <WaitlistForm source="download" />
-          <div className="ss-wait-note">
-            Coming soon to the App Store &amp; Google Play
+          <div className="cta-row" style={{ justifyContent: "center" }}>
+            <a href={APP_STORE_URL} className="btn btn-hero">
+              Download on the App Store →
+            </a>
+            <a
+              href={APP_URL}
+              style={{ color: "var(--lime-text)", fontWeight: 700, fontSize: 16 }}
+            >
+              or play free in your browser →
+            </a>
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{ display: "flex", justifyContent: "center", marginTop: 28 }}>
             <StoreBadges />
           </div>
         </div>
@@ -61,16 +53,15 @@ export default function DownloadPage() {
 
       <section className="section">
         <div className="section-narrow" style={{ textAlign: "center" }}>
-          <div className="eyebrow">While you wait</div>
-          <h2 className="h2-display">What you&apos;re signing up for</h2>
+          <div className="eyebrow">What you get</div>
+          <h2 className="h2-display">A stroke counter, and nothing to manage</h2>
           <p className="section-lede" style={{ marginLeft: "auto", marginRight: "auto" }}>
-            One giant button that counts your strokes. A scorecard that does
-            its own math. Undo for fat fingers, offline for dead zones, zero
-            ads forever. Free to download when it lands.
+            One giant button that counts your strokes. A scorecard that does its
+            own math. Undo for fat fingers, offline for dead zones, zero ads. On
+            iPhone, Apple Watch, and the web. Free.
           </p>
           <p className="section-lede" style={{ marginLeft: "auto", marginRight: "auto" }}>
-            Have a look at{" "}
-            <Link href="/features/">every feature</Link> or see{" "}
+            Have a look at <Link href="/features/">every feature</Link> or see{" "}
             <Link href="/adhd-golf/">
               why ADHD golfers are the whole reason this app exists
             </Link>

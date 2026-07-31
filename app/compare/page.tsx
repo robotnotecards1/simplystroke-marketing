@@ -129,7 +129,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Is SimplyStroke available yet?",
-    a: "Yes. SimplyStroke is live now — get started at app.simplystroke.app. Dedicated iPhone, Android and Apple Watch apps are on the way to the App Store and Google Play.",
+    a: "Yes. SimplyStroke is free on the App Store for iPhone and Apple Watch, and it also plays in your browser at app.simplystroke.app. Android is coming soon to Google Play.",
   },
 ];
 
@@ -206,9 +206,9 @@ export default function ComparePage() {
           answer={
             <>
               <strong>SimplyStroke</strong> is a free, one-tap golf stroke
-              counter for iPhone, Android and Apple Watch, live now on the web
-              with dedicated apps coming soon. It does one thing: it holds
-              your score so you don&apos;t have to.
+              counter, on the App Store for iPhone and Apple Watch and
+              playable in your browser, with Android coming soon. It does one
+              thing: it holds your score so you don&apos;t have to.
               Apps like 18Birdies, Arccos, Golfshot and SwingU do far more —
               GPS, strokes gained, handicaps, side games — and cost $30 to $200
               a year to do it. Pick SimplyStroke if the only thing you keep

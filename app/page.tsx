@@ -14,7 +14,7 @@ import {
   HappyBallIcon,
   ScorecardIcon,
 } from "@/components/icons";
-import { og } from "@/lib/site";
+import { APP_STORE_URL, APP_URL, og } from "@/lib/site";
 import {
   appNode,
   graph,
@@ -120,10 +120,15 @@ export default function Home() {
               your head in the game, not in a scorecard.
             </p>
             <div className="ss-hero-cta">
-              <a href="https://app.simplystroke.app" className="btn btn-hero">
-                Start a round free →
+              <a href={APP_STORE_URL} className="btn btn-hero">
+                Download on the App Store →
               </a>
-              <span className="ss-hero-launch">Free · Live now</span>
+              <a
+                href={APP_URL}
+                style={{ color: "var(--lime-text)", fontWeight: 700, fontSize: 16 }}
+              >
+                or play free in your browser →
+              </a>
             </div>
             <StoreBadges />
           </div>
@@ -348,10 +353,9 @@ export default function Home() {
               </li>
             </ul>
             <p className="ss-tourney-note">
-              <span className="ss-tourney-badge">Now rolling out</span>
-              Tournament is switching on for hosts gradually — it appears in the
-              app once your account is enabled. Joining a tournament is always
-              free.
+              <span className="ss-tourney-badge">Coming soon</span>
+              Tournament is coming soon. When it lands, hosting an outing and
+              joining one will always be free.
             </p>
             <Link href="/tournament/" className="ss-tourney-link">
               See how Tournament works →
@@ -420,13 +424,13 @@ export default function Home() {
             </div>
           </div>
           <div className="ss-watch-copy">
-            <div className="pill">Apple Watch · Coming soon</div>
+            <div className="pill">Apple Watch · Live</div>
             <h2>Leave the phone in the bag.</h2>
             <p className="ss-watch-p">
               Count every stroke from your wrist. A tap on the watch face logs
               the shot with a haptic tick, undo fixes it if you double-tapped,
               and your round syncs straight to your phone&apos;s scorecard. The
-              best free golf app for Apple Watch, once it lands.
+              best free golf app for Apple Watch, free on the App Store.
             </p>
             <ul className="ss-checklist">
               <li>
@@ -441,8 +445,8 @@ export default function Home() {
                 card
               </li>
             </ul>
-            <a href="#waitlist" className="btn btn-watch">
-              Notify me at launch →
+            <a href={APP_STORE_URL} className="btn btn-watch">
+              Download on the App Store →
             </a>
           </div>
         </div>
