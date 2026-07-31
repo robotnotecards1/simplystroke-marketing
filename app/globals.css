@@ -323,8 +323,10 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .ss-watch {
   position: relative;
   background:
-    repeating-linear-gradient(115deg, rgba(255,255,255,0.045) 0 2px, transparent 2px 30px),
-    linear-gradient(165deg, #1B4332 0%, #2D6A4F 62%, #40916C 130%);
+    linear-gradient(160deg, rgba(20,50,37,0.88) 0%, rgba(27,67,50,0.76) 55%, rgba(45,106,79,0.66) 130%),
+    url("/images/watch-course-bg.webp");
+  background-size: cover;
+  background-position: center;
   color: var(--offwhite);
   overflow: hidden;
   padding: var(--section-pad-y) var(--container-pad);
