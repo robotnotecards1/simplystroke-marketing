@@ -323,17 +323,26 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .ss-watch {
   position: relative;
   background:
-    repeating-linear-gradient(115deg, rgba(255,255,255,0.045) 0 2px, transparent 2px 30px),
-    linear-gradient(165deg, #1B4332 0%, #2D6A4F 62%, #40916C 130%);
+    linear-gradient(95deg, rgba(15,36,27,0.94) 0%, rgba(20,50,37,0.86) 42%, rgba(27,67,50,0.52) 72%, rgba(45,106,79,0.30) 100%),
+    url("/images/watch-course-bg.webp");
+  background-size: cover;
+  background-position: center;
   color: var(--offwhite);
   overflow: hidden;
   padding: var(--section-pad-y) var(--container-pad);
 }
+@media (max-width: 760px) {
+  .ss-watch {
+    background:
+      linear-gradient(180deg, rgba(15,36,27,0.90) 0%, rgba(20,50,37,0.88) 100%),
+      url("/images/watch-course-bg.webp");
+    background-size: cover;
+    background-position: center;
+  }
+}
 .ss-watch-blob { position: absolute; top: 50%; left: -140px; transform: translateY(-50%); width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(150,196,30,0.12) 0%, transparent 70%); pointer-events: none; }
 .ss-watch-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap-reverse; align-items: center; gap: clamp(36px, 6vw, 80px); }
 .ss-watch-mock { flex: 0 1 320px; min-width: 260px; display: flex; justify-content: center; }
-.ss-watch-photo { flex: 1 1 500px; min-width: 300px; }
-.ss-watch-photo img { width: 100%; height: auto; border-radius: 22px; box-shadow: 0 26px 60px rgba(0,0,0,0.42); display: block; }
 .ss-watch-float { animation: ssFloat 6.5s ease-in-out infinite; }
 .ss-watch-body { width: 232px; height: 280px; background: linear-gradient(160deg, #2b2b2e, #111113); border-radius: 64px; padding: 16px; box-shadow: 0 40px 80px rgba(0,0,0,0.55), inset 0 0 0 2px rgba(255,255,255,0.06); }
 .ss-watch-screen { width: 100%; height: 100%; background: #000; border-radius: 50px; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 20px 14px 16px; }
@@ -351,7 +360,7 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .ss-watch-screen.video { padding: 0; }
 .ss-watch-screen.video video { width: 100%; height: 100%; object-fit: cover; display: block; }
 .ss-watch-realtag { margin-top: 14px; text-align: center; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: rgba(255,255,255,0.45); }
-.ss-watch-copy { flex: 1 1 380px; min-width: 280px; }
+.ss-watch-copy { flex: 0 1 540px; max-width: 540px; min-width: 280px; }
 .ss-watch-copy h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 5.4vw, 76px); line-height: 0.95; margin-top: 18px; }
 .ss-watch-p { font-size: clamp(16px, 1.4vw, 19px); line-height: 1.6; font-weight: 600; color: rgba(255,255,255,0.9); max-width: 480px; margin-top: 20px; }
 .ss-checklist { list-style: none; margin: 26px 0 0; display: flex; flex-direction: column; gap: 12px; }

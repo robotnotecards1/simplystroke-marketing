@@ -259,15 +259,6 @@ export default function Home() {
       <section id="watch" className="ss-watch">
         <div className="ss-watch-blob" />
         <div className="ss-watch-inner">
-          <div className="ss-watch-photo">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/watch-course-bg.webp"
-              alt="SimplyStroke on an Apple Watch, worn with a golf glove on the course: hole 1, par 4, 3 strokes."
-              width={1536}
-              height={1024}
-            />
-          </div>
           <div className="ss-watch-copy">
             <div className="pill">Apple Watch · Live</div>
             <h2>Leave the phone in the bag.</h2>
