@@ -53,7 +53,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Is there a golf app made for ADHD?",
-    a: "Yes. SimplyStroke is a golf stroke counter built for ADHD golfers: one giant tap-the-ball button, an undo, no account before your first round, no ads, and nothing else on screen. It is free, works fully offline, and is live now, with dedicated iPhone, Android and Apple Watch apps coming soon.",
+    a: "Yes. SimplyStroke is a golf stroke counter built for ADHD golfers: one giant tap-the-ball button, an undo, no account before your first round, no ads, and nothing else on screen. It is free, works fully offline, and it is now on the App Store for iPhone and Apple Watch, and also plays in your browser. Android is coming soon.",
   },
 ];
 

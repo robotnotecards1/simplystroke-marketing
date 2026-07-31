@@ -330,7 +330,7 @@ export default function StyleguidePage() {
             <button className="btn btn-nav">Join the waitlist</button>
             <button className="btn btn-hero">Join the waitlist →</button>
             <button className="btn btn-fold">Let the app remember →</button>
-            <button className="btn btn-watch">Notify me at launch →</button>
+            <button className="btn btn-watch">Download on the App Store →</button>
           </div>
           <p className="sg-note sg-drift">
             ⚠ These are square. The app&apos;s buttons are 16px-rounded. See §2.
@@ -338,7 +338,7 @@ export default function StyleguidePage() {
 
           <h3 className="sg-h3">Pill</h3>
           <div className="sg-row sg-ondark">
-            <span className="pill">Apple Watch · Coming soon</span>
+            <span className="pill">Apple Watch · Live</span>
             <span className="pill">Coming 2026</span>
           </div>
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { APP_STORE_URL } from "@/lib/site";
 
 export default function Nav() {
   return (
@@ -21,8 +22,8 @@ export default function Nav() {
             <Link href="/features/">Features</Link>
             <Link href="/#screens">Screenshots</Link>
           </span> */}
-          <a href="https://app.simplystroke.app" className="btn btn-nav">
-            Play Now →
+          <a href={APP_STORE_URL} className="btn btn-nav">
+            Get the app →
           </a>
         </div>
       </div>

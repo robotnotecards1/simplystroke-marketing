@@ -8,7 +8,7 @@ export default function Footer() {
           <img src="/images/logo-white.png" alt="SimplyStroke" width={360} height={180} />
           <p>
             The one-tap golf scorer. No counting, no math, no stress, just
-            stroke. Live now, with iPhone, Android and Apple Watch apps
+            stroke. Free on the App Store for iPhone and Apple Watch. Android
             coming soon.
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function Footer() {
       </div>
       <div className="ss-footer-bottom">
         <span>© 2026 SimplyStroke. All rights reserved.</span>
-        <span>Live now 🏌️</span>
+        <span>On the App Store 🏌️</span>
       </div>
     </footer>
   );

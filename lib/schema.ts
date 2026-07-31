@@ -11,7 +11,7 @@
 // about other companies' products, on our domain, is a claim we can't stand
 // behind and don't need to make. See COMPARISON-PAGE-SPEC.md §6.
 
-import { SITE_NAME, SITE_URL } from "./site";
+import { APP_STORE_URL, SITE_NAME, SITE_URL } from "./site";
 
 export const ORG_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
@@ -70,12 +70,14 @@ export const appNode = {
   name: SITE_NAME,
   applicationCategory: "SportsApplication",
   applicationSubCategory: "Golf scorecard and stroke counter",
-  operatingSystem: "iOS, Android, watchOS",
+  operatingSystem: "iOS, watchOS",
   url: `${SITE_URL}/`,
   image: `${SITE_URL}/og-image.jpg`,
   publisher: { "@id": ORG_ID },
+  downloadUrl: APP_STORE_URL,
+  sameAs: [APP_STORE_URL],
   description:
-    "A free, one-tap golf stroke counter and scorecard for iPhone, Android and Apple Watch. Counts your strokes so working memory doesn't have to.",
+    "A free, one-tap golf stroke counter and scorecard for iPhone and Apple Watch, live on the App Store. Counts your strokes so working memory doesn't have to.",
   featureList: [
     "One tap per stroke",
     "Undo a mis-tap",

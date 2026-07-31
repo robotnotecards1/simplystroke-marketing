@@ -6,12 +6,12 @@ import {
   GolfBagIcon,
   ScorecardIcon,
 } from "@/components/icons";
-import { og } from "@/lib/site";
+import { APP_STORE_URL, APP_URL, og } from "@/lib/site";
 
 const TITLE =
   "Golf Tournament App: One Live Cross-Group Leaderboard | SimplyStroke";
 const DESCRIPTION =
-  "Run a scramble, best ball or stroke event across every group on one live leaderboard. Players join by code, and anyone can follow along on the web. Now rolling out.";
+  "Run a scramble, best ball or stroke event across every group on one live leaderboard. Players join by code, and anyone can follow along on the web. Coming soon.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -21,9 +21,8 @@ export const metadata: Metadata = {
 };
 
 // On-page FAQ, mirrored as FAQPage schema below — keep the two in sync.
-// Answers stay accurate to a feature that is gated on and rolling out, not
-// broadly available: no promised dates, hosting flagged as a planned Pro
-// feature, joining always free.
+// Answers stay accurate to a feature that is coming soon, not yet available:
+// no promised dates, hosting flagged as a planned Pro feature, joining free.
 const faqs = [
   {
     q: "What is a SimplyStroke tournament?",
@@ -43,7 +42,7 @@ const faqs = [
   },
   {
     q: "Can I host one right now?",
-    a: "Tournament is rolling out to hosts gradually, account by account, so it may not be switched on in your app yet. Joining a tournament that someone else hosts is free, and hosting your own is planned as a Pro feature.",
+    a: "Tournament is coming soon. Joining a tournament that someone else hosts will be free, and hosting your own is planned as a Pro feature.",
   },
 ];
 
@@ -68,7 +67,7 @@ export default function TournamentPage() {
       {/* ===================== HERO ===================== */}
       <header className="page-hero">
         <div className="page-hero-inner">
-          <div className="pill">Tournament · Now rolling out</div>
+          <div className="pill">Tournament · Coming soon</div>
           <h1>
             Every group.
             <br />
@@ -81,7 +80,7 @@ export default function TournamentPage() {
             can follow along on the web.
           </p>
           <div className="cta-row">
-            <span className="ss-hero-launch">Now rolling out · Joining is free</span>
+            <span className="ss-hero-launch">Coming soon · Joining will be free</span>
           </div>
         </div>
       </header>
@@ -182,18 +181,17 @@ export default function TournamentPage() {
       <section className="section alt-section">
         <div className="section-narrow">
           <div className="eyebrow">Availability</div>
-          <h2 className="h2-display">Rolling out, group by group.</h2>
+          <h2 className="h2-display">Coming soon.</h2>
           <p className="section-lede">
-            Tournament is switching on for hosts gradually, account by account,
-            so it may not be in your app yet. We&apos;d rather turn it on
-            carefully than promise a date we can&apos;t keep.
+            Tournament is coming soon. We&apos;d rather turn it on carefully
+            than promise a date we can&apos;t keep.
           </p>
           <p className="section-lede">
-            Joining a tournament someone else hosts is always free, and hosting
-            your own is planned as a Pro feature. Using SimplyStroke for an
-            everyday round is free today —{" "}
-            <a href="https://app.simplystroke.app">open the app</a> and start
-            counting.
+            Joining a tournament will always be free, and hosting your own is
+            planned as a Pro feature. Meanwhile, SimplyStroke for an everyday
+            round is free today: get it on the{" "}
+            <a href={APP_STORE_URL}>App Store</a> or{" "}
+            <a href={APP_URL}>play in your browser</a>.
           </p>
         </div>
       </section>
