@@ -225,9 +225,9 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .ph-btn-next { flex: 2; background: linear-gradient(135deg, var(--green-mid), var(--green-light)); border: none; padding: 14px; font-size: 14px; font-weight: 700; color: #fff; display: flex; align-items: center; justify-content: center; gap: 6px; }
 
 /* ---------- problem / how it works ---------- */
-.ss-problem { max-width: 1000px; margin: 0 auto; padding: var(--section-pad-y) var(--container-pad); text-align: center; }
-.ss-problem h2 { margin: 16px auto 0; max-width: 760px; }
-.ss-problem-p { font-size: clamp(16px, 1.4vw, 19px); line-height: 1.6; font-weight: 500; color: var(--gray-dark); max-width: 640px; margin: 22px auto 0; }
+.ss-problem { max-width: 1200px; margin: 0 auto; padding: var(--section-pad-y) var(--container-pad); text-align: center; }
+.ss-problem h2 { margin: 16px auto 0; max-width: 1000px; }
+.ss-problem-p { font-size: clamp(16px, 1.4vw, 19px); line-height: 1.6; font-weight: 500; color: var(--gray-dark); max-width: 820px; margin: 22px auto 0; }
 .ss-problem-p strong { color: var(--green-deep); }
 .ss-stepswrap { position: relative; margin-top: 56px; }
 .ss-flightpath { position: absolute; top: 33px; left: 0; right: 0; z-index: 0; display: flex; align-items: center; gap: 12px; padding: 0 5%; }

@@ -123,14 +123,20 @@ export default function Home() {
               <a href={APP_STORE_URL} className="btn btn-hero">
                 Download on the App Store →
               </a>
-              <a
-                href={APP_URL}
-                style={{ color: "var(--lime-text)", fontWeight: 700, fontSize: 16 }}
-              >
-                or play free in your browser →
-              </a>
             </div>
             <StoreBadges />
+            <a
+              href={APP_URL}
+              style={{
+                display: "inline-block",
+                marginTop: 18,
+                color: "var(--lime-text)",
+                fontWeight: 700,
+                fontSize: 16,
+              }}
+            >
+              or play free in your browser →
+            </a>
           </div>
           <HeroDevices />
         </div>
@@ -138,9 +144,9 @@ export default function Home() {
 
       {/* ===================== PROBLEM / HOW IT WORKS ===================== */}
       <section id="how-it-works" className="ss-problem">
-        <div className="eyebrow">How it works</div>
+        <div className="eyebrow">Never lose count again</div>
         <h2 className="h2-display">
-          They built a spreadsheet. You wanted your score.
+          One tap after every shot. That&apos;s it.
         </h2>
         <p className="ss-problem-p">
           Most golf apps bury the one number you came for under menus, GPS
@@ -245,6 +251,54 @@ export default function Home() {
                 ready before the first tee.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== APPLE WATCH ===================== */}
+      <section id="watch" className="ss-watch">
+        <div className="ss-watch-blob" />
+        <div className="ss-watch-inner">
+          <div className="ss-watch-mock">
+            <div className="ss-watch-float">
+              <div className="ss-watch-body">
+                <div className="ss-watch-screen video">
+                  {/* Real capture: four taps on the wrist count strokes, then
+                      Next advances the hole — synced live from the phone. */}
+                  <AppClip
+                    src="/videos/watch-live-round.mp4"
+                    label="SimplyStroke on Apple Watch: tapping the ball counts strokes, Next advances the hole"
+                  />
+                </div>
+              </div>
+              <div className="ss-watch-realtag">Actual app footage</div>
+            </div>
+          </div>
+          <div className="ss-watch-copy">
+            <div className="pill">Apple Watch · Live</div>
+            <h2>Leave the phone in the bag.</h2>
+            <p className="ss-watch-p">
+              Count every stroke from your wrist. A tap on the watch face logs
+              the shot with a haptic tick, undo fixes it if you double-tapped,
+              and your round syncs straight to your phone&apos;s scorecard. The
+              best free golf app for Apple Watch, free on the App Store.
+            </p>
+            <ul className="ss-checklist">
+              <li>
+                <span className="ss-check">✓</span> Full-face tap target,
+                glove-friendly
+              </li>
+              <li>
+                <span className="ss-check">✓</span> Haptic tick on every stroke
+              </li>
+              <li>
+                <span className="ss-check">✓</span> Auto-syncs to your iPhone
+                card
+              </li>
+            </ul>
+            <a href={APP_STORE_URL} className="btn btn-watch">
+              Download on the App Store →
+            </a>
           </div>
         </div>
       </section>
@@ -400,54 +454,6 @@ export default function Home() {
               <div className="ss-stat-num">+1.4</div>
               <div className="ss-stat-lbl">Your hardest hole, vs par</div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== APPLE WATCH ===================== */}
-      <section id="watch" className="ss-watch">
-        <div className="ss-watch-blob" />
-        <div className="ss-watch-inner">
-          <div className="ss-watch-mock">
-            <div className="ss-watch-float">
-              <div className="ss-watch-body">
-                <div className="ss-watch-screen video">
-                  {/* Real capture: four taps on the wrist count strokes, then
-                      Next advances the hole — synced live from the phone. */}
-                  <AppClip
-                    src="/videos/watch-live-round.mp4"
-                    label="SimplyStroke on Apple Watch: tapping the ball counts strokes, Next advances the hole"
-                  />
-                </div>
-              </div>
-              <div className="ss-watch-realtag">Actual app footage</div>
-            </div>
-          </div>
-          <div className="ss-watch-copy">
-            <div className="pill">Apple Watch · Live</div>
-            <h2>Leave the phone in the bag.</h2>
-            <p className="ss-watch-p">
-              Count every stroke from your wrist. A tap on the watch face logs
-              the shot with a haptic tick, undo fixes it if you double-tapped,
-              and your round syncs straight to your phone&apos;s scorecard. The
-              best free golf app for Apple Watch, free on the App Store.
-            </p>
-            <ul className="ss-checklist">
-              <li>
-                <span className="ss-check">✓</span> Full-face tap target,
-                glove-friendly
-              </li>
-              <li>
-                <span className="ss-check">✓</span> Haptic tick on every stroke
-              </li>
-              <li>
-                <span className="ss-check">✓</span> Auto-syncs to your iPhone
-                card
-              </li>
-            </ul>
-            <a href={APP_STORE_URL} className="btn btn-watch">
-              Download on the App Store →
-            </a>
           </div>
         </div>
       </section>
