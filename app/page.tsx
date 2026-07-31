@@ -259,20 +259,14 @@ export default function Home() {
       <section id="watch" className="ss-watch">
         <div className="ss-watch-blob" />
         <div className="ss-watch-inner">
-          <div className="ss-watch-mock">
-            <div className="ss-watch-float">
-              <div className="ss-watch-body">
-                <div className="ss-watch-screen video">
-                  {/* Real capture: four taps on the wrist count strokes, then
-                      Next advances the hole — synced live from the phone. */}
-                  <AppClip
-                    src="/videos/watch-live-round.mp4"
-                    label="SimplyStroke on Apple Watch: tapping the ball counts strokes, Next advances the hole"
-                  />
-                </div>
-              </div>
-              <div className="ss-watch-realtag">Actual app footage</div>
-            </div>
+          <div className="ss-watch-photo">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/watch-course-bg.webp"
+              alt="SimplyStroke on an Apple Watch, worn with a golf glove on the course: hole 1, par 4, 3 strokes."
+              width={1536}
+              height={1024}
+            />
           </div>
           <div className="ss-watch-copy">
             <div className="pill">Apple Watch · Live</div>

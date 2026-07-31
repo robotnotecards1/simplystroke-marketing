@@ -323,10 +323,8 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .ss-watch {
   position: relative;
   background:
-    linear-gradient(160deg, rgba(20,50,37,0.88) 0%, rgba(27,67,50,0.76) 55%, rgba(45,106,79,0.66) 130%),
-    url("/images/watch-course-bg.webp");
-  background-size: cover;
-  background-position: center;
+    repeating-linear-gradient(115deg, rgba(255,255,255,0.045) 0 2px, transparent 2px 30px),
+    linear-gradient(165deg, #1B4332 0%, #2D6A4F 62%, #40916C 130%);
   color: var(--offwhite);
   overflow: hidden;
   padding: var(--section-pad-y) var(--container-pad);
@@ -334,6 +332,8 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .ss-watch-blob { position: absolute; top: 50%; left: -140px; transform: translateY(-50%); width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(150,196,30,0.12) 0%, transparent 70%); pointer-events: none; }
 .ss-watch-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap-reverse; align-items: center; gap: clamp(36px, 6vw, 80px); }
 .ss-watch-mock { flex: 0 1 320px; min-width: 260px; display: flex; justify-content: center; }
+.ss-watch-photo { flex: 1 1 500px; min-width: 300px; }
+.ss-watch-photo img { width: 100%; height: auto; border-radius: 22px; box-shadow: 0 26px 60px rgba(0,0,0,0.42); display: block; }
 .ss-watch-float { animation: ssFloat 6.5s ease-in-out infinite; }
 .ss-watch-body { width: 232px; height: 280px; background: linear-gradient(160deg, #2b2b2e, #111113); border-radius: 64px; padding: 16px; box-shadow: 0 40px 80px rgba(0,0,0,0.55), inset 0 0 0 2px rgba(255,255,255,0.06); }
 .ss-watch-screen { width: 100%; height: 100%; background: #000; border-radius: 50px; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 20px 14px 16px; }
