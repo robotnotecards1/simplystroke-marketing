@@ -37,6 +37,7 @@ export default function Footer() {
                 Lost count mid-hole?
               </Link>
               <Link href="/guides/">All guides</Link>
+              <Link href="/courses/">Golf course directory</Link>
             </nav>
           </div>
           <div className="ss-footer-col">
