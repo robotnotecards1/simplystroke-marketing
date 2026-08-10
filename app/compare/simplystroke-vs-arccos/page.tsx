@@ -183,7 +183,7 @@ export default function Page() {
           renewal. Prices move; check Arccos for the current numbers before you
           quote us.
         </p>
-        <p>SimplyStroke is free. There is no tier, and no renewal.</p>
+        <p>SimplyStroke is free. No subscription, and no renewal to dodge.</p>
 
         <h2>Side by side</h2>
 

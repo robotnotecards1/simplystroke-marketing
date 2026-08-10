@@ -3,6 +3,7 @@ import Link from "next/link";
 import AppClip from "@/components/AppClip";
 import HeroDevices from "@/components/HeroDevices";
 import StoreBadges from "@/components/StoreBadges";
+import TrackedCta from "@/components/TrackedCta";
 import TournamentBoard from "@/components/TournamentBoard";
 import WaitlistSection from "@/components/WaitlistSection";
 import {
@@ -107,25 +108,32 @@ export default function Home() {
         <div className="container ss-hero-inner">
           <div className="ss-hero-copy">
             <div className="eyebrow ss-hero-eyebrow">
-              Free to start · One tap per shot
+              Free core scoring · One tap per shot
             </div>
             <h1 className="ss-hero-h1">
-              Golf&apos;s simplest app.
+              Golf&apos;s simplest
               <br />
-              <span className="accent">On purpose.</span>
+              <span className="accent">stroke counter.</span>
             </h1>
             <p className="ss-hero-p">
-              Just count. We&apos;ll do the math. Tap once per shot and
-              SimplyStroke keeps your score, your par and your whole round. Keep
-              your head in the game, not in a scorecard.
+              No math. No distraction. Just tap. Free core scoring, works
+              offline, and no account needed to start.
             </p>
             <div className="ss-hero-cta">
-              <a href={APP_STORE_URL} className="btn btn-hero">
+              <TrackedCta
+                event="app_store_click"
+                ctaLocation="home_hero_appstore"
+                href={APP_STORE_URL}
+                className="btn btn-hero"
+                aria-label="Download SimplyStroke on the App Store"
+              >
                 Download on the App Store →
-              </a>
+              </TrackedCta>
             </div>
-            <StoreBadges />
-            <a
+            <StoreBadges ctaLocation="home_hero_badge_appstore" />
+            <TrackedCta
+              event="web_app_click"
+              ctaLocation="home_hero_webapp"
               href={APP_URL}
               style={{
                 display: "inline-block",
@@ -136,7 +144,7 @@ export default function Home() {
               }}
             >
               or play free in your browser →
-            </a>
+            </TrackedCta>
           </div>
           <HeroDevices />
         </div>
@@ -260,13 +268,13 @@ export default function Home() {
         <div className="ss-watch-blob" />
         <div className="ss-watch-inner">
           <div className="ss-watch-copy">
-            <div className="pill">Apple Watch · Live</div>
-            <h2>Leave the phone in the bag.</h2>
+            <div className="pill">Apple Watch companion</div>
+            <h2>Score from your wrist.</h2>
             <p className="ss-watch-p">
               Count every stroke from your wrist. A tap on the watch face logs
               the shot with a haptic tick, undo fixes it if you double-tapped,
-              and your round syncs straight to your phone&apos;s scorecard. The
-              best free golf app for Apple Watch, free on the App Store.
+              and every stroke syncs straight to your iPhone scorecard. The
+              Apple Watch companion comes with the iPhone app.
             </p>
             <ul className="ss-checklist">
               <li>
@@ -281,9 +289,15 @@ export default function Home() {
                 card
               </li>
             </ul>
-            <a href={APP_STORE_URL} className="btn btn-watch">
+            <TrackedCta
+              event="app_store_click"
+              ctaLocation="home_watch_appstore"
+              href={APP_STORE_URL}
+              className="btn btn-watch"
+              aria-label="Download SimplyStroke on the App Store"
+            >
               Download on the App Store →
-            </a>
+            </TrackedCta>
           </div>
         </div>
       </section>
@@ -308,9 +322,14 @@ export default function Home() {
               <li>Every phone shows the same live leaderboard.</li>
               <li>Nobody waits until 18 to find out how it went.</li>
             </ul>
-            <a href="https://app.simplystroke.app" className="btn btn-fold">
+            <TrackedCta
+              event="web_app_click"
+              ctaLocation="home_fold_webapp"
+              href={APP_URL}
+              className="btn btn-fold"
+            >
               Start a group round →
-            </a>
+            </TrackedCta>
           </div>
 
           <div className="ss-lb" aria-hidden="true">

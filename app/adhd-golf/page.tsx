@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AnswerBlock from "@/components/AnswerBlock";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import GuideEngagement from "@/components/GuideEngagement";
+import TrackedCta from "@/components/TrackedCta";
 import WaitlistSection from "@/components/WaitlistSection";
 import {
   BallOnGreenIcon,
   BallPinIcon,
   ScorecardIcon,
 } from "@/components/icons";
-import { og } from "@/lib/site";
+import { APP_URL, og } from "@/lib/site";
 import {
   APP_ID,
   appNode,
@@ -88,7 +90,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Is there a golf app made for ADHD?",
-    a: "Yes. SimplyStroke is a golf stroke counter built for ADHD golfers. The whole app is one giant tap-the-ball button that counts your strokes, so working memory never has to hold the number. It is free, works fully offline, needs no account to start a round, and it is now on the App Store for iPhone and Apple Watch, and also plays in your browser. Android is coming soon.",
+    a: "Yes. SimplyStroke is a golf stroke counter built for ADHD golfers. The whole app is one giant tap-the-ball button that counts your strokes, so working memory never has to hold the number. It is free, works fully offline, needs no account to start a round, and it is now on the App Store for iPhone and Apple Watch, and also plays in your browser.",
   },
   {
     q: "Are there neurodivergent-friendly golf apps?",
@@ -112,7 +114,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Is SimplyStroke available yet?",
-    a: "Yes. SimplyStroke is free on the App Store for iPhone and Apple Watch, and it also plays in your browser at app.simplystroke.app. Android is coming soon to Google Play.",
+    a: "Yes. SimplyStroke is free on the App Store for iPhone and Apple Watch, and it also plays in your browser at app.simplystroke.app.",
   },
 ];
 
@@ -137,6 +139,7 @@ const jsonLd = graph(
 export default function AdhdGolfPage() {
   return (
     <main>
+      <GuideEngagement />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -156,9 +159,14 @@ export default function AdhdGolfPage() {
             your head is free to wander and your score still adds up.
           </p>
           <div className="cta-row">
-            <a href="https://app.simplystroke.app" className="btn btn-hero">
+            <TrackedCta
+              event="web_app_click"
+              ctaLocation="adhd_hero_webapp"
+              href={APP_URL}
+              className="btn btn-hero"
+            >
               Get Started →
-            </a>
+            </TrackedCta>
             <span className="ss-hero-launch">Live now</span>
           </div>
         </div>

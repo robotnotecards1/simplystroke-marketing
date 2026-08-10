@@ -129,7 +129,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Is SimplyStroke available yet?",
-    a: "Yes. SimplyStroke is free on the App Store for iPhone and Apple Watch, and it also plays in your browser at app.simplystroke.app. Android is coming soon to Google Play.",
+    a: "Yes. SimplyStroke is free on the App Store for iPhone and Apple Watch, and it also plays in your browser at app.simplystroke.app.",
   },
 ];
 
@@ -207,7 +207,7 @@ export default function ComparePage() {
             <>
               <strong>SimplyStroke</strong> is a free, one-tap golf stroke
               counter, on the App Store for iPhone and Apple Watch and
-              playable in your browser, with Android coming soon. It does one
+              playable in your browser. It does one
               thing: it holds your score so you don&apos;t have to.
               Apps like 18Birdies, Arccos, Golfshot and SwingU do far more —
               GPS, strokes gained, handicaps, side games — and cost $30 to $200
@@ -303,7 +303,7 @@ export default function ComparePage() {
             <strong>
               If you are here because you just looked at a renewal notice:
             </strong>{" "}
-            SimplyStroke is free, permanently, with no premium tier and no
+            SimplyStroke is free, with no subscription and no
             hardware. If all you were getting for that money was a scorecard,
             you were being overcharged by roughly the entire amount.
           </p>
@@ -340,16 +340,16 @@ export default function ComparePage() {
         </p>
         <p>
           SimplyStroke sidesteps the whole argument by not having one.
-          It&apos;s free. There is no premium tier, no annual renewal, no
-          hardware bundle and no upsell holding your own scorecard hostage.
+          It&apos;s free. No subscription, no ads, no hardware bundle and no
+          upsell holding your own scorecard hostage.
         </p>
         <p>
           That is not generosity, it is arithmetic:{" "}
           <strong>counting to five costs nothing to run.</strong> There are no
           course maps to license, no servers doing analytics, no sensors to
           manufacture. An app that only counts can afford to be free, and an app
-          that&apos;s free is an app that never has to invent a reason for you
-          to pay again next year.
+          that&apos;s free is an app that isn&apos;t under pressure to invent a
+          reason for you to pay again next year.
         </p>
 
         <h2>Why golf apps get more complicated every year</h2>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AnswerBlock from "@/components/AnswerBlock";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import GuideEngagement from "@/components/GuideEngagement";
 import WaitlistSection from "@/components/WaitlistSection";
 import { og } from "@/lib/site";
 import {
@@ -53,7 +54,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Is there a golf app made for ADHD?",
-    a: "Yes. SimplyStroke is a golf stroke counter built for ADHD golfers: one giant tap-the-ball button, an undo, no account before your first round, no ads, and nothing else on screen. It is free, works fully offline, and it is now on the App Store for iPhone and Apple Watch, and also plays in your browser. Android is coming soon.",
+    a: "Yes. SimplyStroke is a golf stroke counter built for ADHD golfers: one giant tap-the-ball button, an undo, no account before your first round, no ads, and nothing else on screen. It is free, works fully offline, and it is now on the App Store for iPhone and Apple Watch, and also plays in your browser.",
   },
 ];
 
@@ -79,6 +80,7 @@ const jsonLd = graph(
 export default function Post() {
   return (
     <main>
+      <GuideEngagement />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

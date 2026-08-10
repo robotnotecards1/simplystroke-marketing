@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AnswerBlock from "@/components/AnswerBlock";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import GuideEngagement from "@/components/GuideEngagement";
 import WaitlistSection from "@/components/WaitlistSection";
 import { og } from "@/lib/site";
 import {
@@ -72,6 +73,7 @@ const jsonLd = graph(
 export default function Post() {
   return (
     <main>
+      <GuideEngagement />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

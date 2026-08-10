@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AnswerBlock from "@/components/AnswerBlock";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import GuideEngagement from "@/components/GuideEngagement";
+import TrackedCta from "@/components/TrackedCta";
 import WaitlistSection from "@/components/WaitlistSection";
-import { og } from "@/lib/site";
+import { APP_STORE_URL, og } from "@/lib/site";
 import {
   APP_ID,
   appNode,
@@ -17,9 +19,10 @@ import {
   type Faq,
 } from "@/lib/schema";
 
-const TITLE = "Golf Stroke Counter Apps: How They Work and Which to Use";
+const TITLE =
+  "Golf Stroke Counter App — Free, One-Tap, No Subscription | SimplyStroke";
 const DESCRIPTION =
-  "A stroke counter does one job: it holds your score so you don't have to. How stroke counters differ from shot trackers, what separates a good one from a bad one, and where the pencil still wins.";
+  "A free, one-tap golf stroke counter for iPhone and Apple Watch: no math, no GPS, no subscription, works offline. See how stroke counters compare and where the pencil still wins.";
 const PATH = "/golf-stroke-counter/";
 
 export const metadata: Metadata = {
@@ -40,7 +43,7 @@ const faqs: Faq[] = [
   },
   {
     q: "What is the simplest golf scorecard app?",
-    a: "The simplest golf scorecard apps are one-tap stroke counters: you tap once per swing and the app keeps the running total and totals the card for you. SimplyStroke is built to be the simplest of these. One giant button, an undo, no account required to start a round, no ads, no GPS, and no subscription. It is free on the App Store for iPhone and Apple Watch, and also plays in your browser. Android is coming soon.",
+    a: "The simplest golf scorecard apps are one-tap stroke counters: you tap once per swing and the app keeps the running total and totals the card for you. SimplyStroke is built to be the simplest of these. One giant button, an undo, no account required to start a round, no ads, no GPS, and no subscription. It is free on the App Store for iPhone and Apple Watch, and also plays in your browser.",
   },
   {
     q: "Is there a golf app without a subscription?",
@@ -56,7 +59,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Is SimplyStroke available yet?",
-    a: "Yes. SimplyStroke is free on the App Store for iPhone and Apple Watch, and it also plays in your browser at app.simplystroke.app. Android is coming soon to Google Play.",
+    a: "Yes. SimplyStroke is free on the App Store for iPhone and Apple Watch, and it also plays in your browser at app.simplystroke.app.",
   },
 ];
 
@@ -80,6 +83,7 @@ const jsonLd = graph(
 export default function GolfStrokeCounterPage() {
   return (
     <main>
+      <GuideEngagement />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -118,7 +122,7 @@ export default function GolfStrokeCounterPage() {
                 subscription
               </strong>{" "}
               for iPhone and Apple Watch on the App Store, and playable in your
-              browser, with Android coming soon.
+              browser.
             </>
           }
           facts={[
@@ -137,6 +141,51 @@ export default function GolfStrokeCounterPage() {
             </>,
           ]}
         />
+
+        <div className="gsc-shots">
+          <figure className="gsc-shot">
+            <img
+              src="/images/app-screens/home.png"
+              alt="SimplyStroke start screen: one tap to start a new round, no account needed"
+              width={270}
+              height={540}
+              loading="lazy"
+            />
+            <figcaption>Start a round in a tap. No account to begin.</figcaption>
+          </figure>
+          <figure className="gsc-shot">
+            <img
+              src="/images/app-screens/round.png"
+              alt="SimplyStroke active round: a giant golf-ball button counts each stroke"
+              width={270}
+              height={540}
+              loading="lazy"
+            />
+            <figcaption>Tap the ball once per shot. Works fully offline.</figcaption>
+          </figure>
+          <figure className="gsc-shot">
+            <img
+              src="/images/app-screens/scorecard.png"
+              alt="SimplyStroke finished scorecard with per-hole scores and the round total"
+              width={270}
+              height={540}
+              loading="lazy"
+            />
+            <figcaption>A finished scorecard, math already done.</figcaption>
+          </figure>
+        </div>
+
+        <div className="post-cta">
+          <TrackedCta
+            event="app_store_click"
+            ctaLocation="stroke_top_appstore"
+            href={APP_STORE_URL}
+            className="btn btn-hero"
+            aria-label="Download SimplyStroke on the App Store"
+          >
+            Get SimplyStroke free →
+          </TrackedCta>
+        </div>
 
         <p>
           There is a specific moment this page is about. You reach the green,
@@ -338,9 +387,14 @@ export default function GolfStrokeCounterPage() {
           it does not ask who you are before it will let you play golf.
         </p>
         <p>
-          It is free on the App Store for iPhone and Apple Watch, and it
-          also plays in your browser. Android is coming soon to Google
-          Play.
+          Playing a foursome? Start a group round, share a six-character code,
+          and everyone taps their own strokes onto one live scorecard. Friends
+          join as guests with no sign-up.
+        </p>
+        <p>
+          It is free on the App Store for iPhone and Apple Watch, and it also
+          plays in your browser. <Link href="/download/">Get SimplyStroke</Link>{" "}
+          or see <Link href="/features/">everything it does</Link>.
         </p>
 
         <div className="verdict">

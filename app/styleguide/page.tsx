@@ -338,7 +338,7 @@ export default function StyleguidePage() {
 
           <h3 className="sg-h3">Pill</h3>
           <div className="sg-row sg-ondark">
-            <span className="pill">Apple Watch · Live</span>
+            <span className="pill">Apple Watch companion</span>
             <span className="pill">Coming 2026</span>
           </div>
 
@@ -479,7 +479,7 @@ export default function StyleguidePage() {
             <blockquote>
               It&apos;s not a focus problem. It&apos;s a golf design problem.
             </blockquote>
-            <blockquote>Leave the phone in the bag.</blockquote>
+            <blockquote>Score from your wrist.</blockquote>
           </div>
         </div>
       </section>

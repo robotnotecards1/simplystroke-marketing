@@ -584,6 +584,11 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .prose .callout { background: var(--cream); border-left: 4px solid var(--lime); padding: 22px 26px; margin-top: 32px; }
 .prose .callout p { margin-top: 0; }
 .prose .post-cta { margin-top: 40px; }
+/* Real-screenshot proof strip on /golf-stroke-counter/ (solo, offline, card). */
+.gsc-shots { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(16px, 3vw, 28px); margin: 40px 0 0; padding: 0; }
+.gsc-shot { flex: 0 1 200px; max-width: 210px; margin: 0; text-align: center; }
+.gsc-shot img { width: 100%; height: auto; border-radius: 22px; box-shadow: 0 18px 44px rgba(20,50,37,0.18); display: block; }
+.gsc-shot figcaption { margin-top: 12px; font-size: 14px; line-height: 1.45; font-weight: 600; color: var(--gray-dark); }
 
 /* ---------- responsive (per README mobile spec) ---------- */
 @media (max-width: 760px) {

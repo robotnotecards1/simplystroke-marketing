@@ -77,17 +77,17 @@ export default function AboutPage() {
 
         <h2>Free, and not as a trick</h2>
         <p>
-          SimplyStroke is free. There is no premium tier, no annual renewal, no
-          sensor bundle and no upsell holding your own scorecard hostage.
+          SimplyStroke is free. No subscription, no ads, no sensor bundle and no
+          upsell holding your own scorecard hostage.
         </p>
         <p>
           This isn&apos;t generosity, it&apos;s arithmetic.{" "}
           <strong>Counting to five costs nothing to run.</strong> There are no
           course maps to license, no analytics servers, no hardware to
           manufacture. An app that only counts can afford to be free — and an
-          app that&apos;s free never has to invent a reason for you to pay again
-          next year, which is the reason every other golf app gets more
-          cluttered every single year.
+          app that&apos;s free isn&apos;t under pressure to invent a reason for
+          you to pay again next year, which is the reason every other golf app
+          gets more cluttered every single year.
         </p>
 
         <h2>What we&apos;ll never do</h2>
