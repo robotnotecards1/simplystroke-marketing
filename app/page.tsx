@@ -61,7 +61,7 @@ const faqs = [
   },
   {
     q: "Does it work without signal on the course?",
-    a: "Yes. SimplyStroke works fully offline, so a dead zone on the back nine never costs you your round. Your card syncs when you are back in range.",
+    a: "Yes. Your solo round works fully offline, so a dead zone on the back nine never costs you your round. Your card syncs when you are back in range. (Live group scoring needs a connection.)",
   },
   {
     q: "Will I lose my round if my phone dies?",
