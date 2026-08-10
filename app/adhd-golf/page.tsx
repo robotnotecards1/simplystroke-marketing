@@ -27,7 +27,7 @@ import {
 
 const TITLE = "ADHD and Golf: Why the Count Disappears, and What Helps";
 const DESCRIPTION =
-  "Golf asks you to hold a number across ten minutes of distraction. That's a prospective memory task, and it's measurably harder with ADHD. What the research says, what actually helps on the course, and where the line is.";
+  "Golf asks you to hold a number through ten minutes of distraction. That's measurably harder with ADHD. What the research says, and what actually helps.";
 const PATH = "/adhd-golf/";
 
 export const metadata: Metadata = {

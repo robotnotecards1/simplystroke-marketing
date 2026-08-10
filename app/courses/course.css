@@ -125,7 +125,7 @@
 .course-page .stat .l { font-size: 12px; color: rgba(255,255,255,0.62); margin-top: 8px; text-transform: uppercase; letter-spacing: .05em; }
 .course-page .board-foot { display: grid; grid-template-columns: 1.1fr 1fr; gap: 16px; margin-top: 16px; }
 .course-page .mini { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); padding: 18px; }
-.course-page .mini h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--lime); margin-bottom: 14px; }
+.course-page .mini h3 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--lime); margin-bottom: 14px; }
 .course-page .dist { display: flex; align-items: flex-end; gap: 6px; height: 80px; }
 .course-page .dist .bar { flex: 1; background: var(--green-light); position: relative; min-height: 5px; }
 .course-page .dist .bar span { position: absolute; top: -16px; left: 0; right: 0; text-align: center; font-size: 10px; color: rgba(255,255,255,0.7); }

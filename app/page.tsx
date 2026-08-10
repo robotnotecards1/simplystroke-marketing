@@ -32,9 +32,9 @@ const entityJsonLd = graph(
 );
 
 const TITLE =
-  "Free Golf Scorecard App. Count Every Stroke in One Tap | SimplyStroke";
+  "Free Golf Scorecard App with One-Tap Scoring | SimplyStroke";
 const DESCRIPTION =
-  "One tap per shot and SimplyStroke keeps your score, your par and your whole round. A simple golf stroke counter and scorecard, with live group scoring for your foursome. Works offline. Free to start.";
+  "One tap per shot and SimplyStroke keeps your score, par and round. A simple golf stroke counter and scorecard with live group scoring. Free, works offline.";
 
 export const metadata: Metadata = {
   title: TITLE,

@@ -19,7 +19,7 @@ import {
 
 const TITLE = "SimplyStroke vs 18Birdies, Arccos, Golfshot & More (2026)";
 const DESCRIPTION =
-  "An honest comparison of SimplyStroke against the big golf apps. They do more than we do and charge $30-$200 a year for it. We do one thing and charge nothing. See which you actually need.";
+  "An honest comparison of SimplyStroke against the big golf apps. They do more and charge $30-$200 a year; we do one thing and charge nothing.";
 const PATH = "/compare/";
 
 export const metadata: Metadata = {

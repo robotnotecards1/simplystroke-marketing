@@ -13,7 +13,7 @@ import {
 
 const TITLE = "About SimplyStroke: Why It Exists, and What It Won't Do";
 const DESCRIPTION =
-  "SimplyStroke is a free, one-tap golf stroke counter with no subscription. Here's why it exists, what it deliberately leaves out, and what it will never do to you.";
+  "SimplyStroke is a free, one-tap golf stroke counter with no subscription. Why it exists, what it leaves out, and what it will never do to you.";
 
 export const metadata: Metadata = {
   title: TITLE,

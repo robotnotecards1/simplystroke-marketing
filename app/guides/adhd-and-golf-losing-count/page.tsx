@@ -25,7 +25,7 @@ import {
 
 const TITLE = "How to Stop Losing Count Mid-Round When You Have ADHD";
 const DESCRIPTION =
-  "Pencils, clickers, playing partners, big golf apps: every standard fix for losing count fails ADHD golfers in the same specific way. Here's why, and what a fix has to look like to survive an actual round.";
+  "Pencils, clickers, partners, big golf apps: every standard fix for losing count fails ADHD golfers the same way. Here's why, and what survives a real round.";
 const PATH = "/guides/adhd-and-golf-losing-count/";
 
 export const metadata: Metadata = {

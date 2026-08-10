@@ -9,7 +9,7 @@ const entityJsonLd = graph(organizationNode, appNode);
 
 const TITLE = "Get SimplyStroke: Free Golf Scorecard App, No Subscription";
 const DESCRIPTION =
-  "SimplyStroke is free on the App Store for iPhone and Apple Watch: a one-tap golf stroke counter and scorecard. No subscription, no ads, no account to start. Or play right now in your browser. Android coming soon.";
+  "SimplyStroke is free on the App Store for iPhone and Apple Watch: a one-tap golf stroke counter and scorecard. No subscription, no ads, no account to start.";
 
 export const metadata: Metadata = {
   title: TITLE,
