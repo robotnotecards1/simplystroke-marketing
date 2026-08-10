@@ -102,7 +102,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Does SimplyStroke work without signal on the course?",
-    a: "Yes. SimplyStroke works fully offline, so a dead zone on the back nine never costs you your round. A stroke counter needs no map data and no server, so there is no honest reason for one to fail.",
+    a: "Yes. Your solo round works fully offline, so a dead zone on the back nine never costs you your round. A stroke counter needs no map data and no server, so there is no honest reason for one to fail.",
   },
   {
     q: "What is the hardest part of golf when you have ADHD?",

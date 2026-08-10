@@ -49,7 +49,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Does it work without signal?",
-    a: "Yes. A stroke counter needs no map data and no server, so there is no reason for it to fail in a dead zone. SimplyStroke works fully offline — if an app that only counts to five stops working on the back nine, that is a design choice, not a technical limit.",
+    a: "Yes. A stroke counter needs no map data and no server, so there is no reason for it to fail in a dead zone. SimplyStroke's solo scoring works fully offline — if an app that only counts to five stops working on the back nine, that is a design choice, not a technical limit.",
   },
   {
     q: "Is it free?",
