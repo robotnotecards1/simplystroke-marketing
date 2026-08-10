@@ -43,7 +43,7 @@ const faqs: Faq[] = [
   },
   {
     q: "What is the simplest golf scorecard app?",
-    a: "The simplest golf scorecard apps are one-tap stroke counters: you tap once per swing and the app keeps the running total and totals the card for you. SimplyStroke is built to be the simplest of these. One giant button, an undo, no account required to start a round, no ads, no GPS, and no subscription. It is free on the App Store for iPhone and Apple Watch, and also plays in your browser.",
+    a: "The simplest golf scorecard apps are one-tap stroke counters: you tap once per swing and the app keeps the running total and totals the card for you. SimplyStroke is built to be the simplest of these. One giant button, an undo, no account required to start a round, no ads, no GPS, and no subscription. It is free on the App Store for iPhone and Apple Watch, and also plays in your browser. Android is coming soon.",
   },
   {
     q: "Is there a golf app without a subscription?",
@@ -59,7 +59,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Is SimplyStroke available yet?",
-    a: "Yes. SimplyStroke is free on the App Store for iPhone and Apple Watch, and it also plays in your browser at app.simplystroke.app.",
+    a: "Yes. SimplyStroke is free on the App Store for iPhone and Apple Watch, and it also plays in your browser at app.simplystroke.app. Android is coming soon to Google Play.",
   },
 ];
 
@@ -122,7 +122,7 @@ export default function GolfStrokeCounterPage() {
                 subscription
               </strong>{" "}
               for iPhone and Apple Watch on the App Store, and playable in your
-              browser.
+              browser, with Android coming soon.
             </>
           }
           facts={[
@@ -393,8 +393,9 @@ export default function GolfStrokeCounterPage() {
         </p>
         <p>
           It is free on the App Store for iPhone and Apple Watch, and it also
-          plays in your browser. <Link href="/download/">Get SimplyStroke</Link>{" "}
-          or see <Link href="/features/">everything it does</Link>.
+          plays in your browser. Android is coming soon to Google Play.{" "}
+          <Link href="/download/">Get SimplyStroke</Link> or see{" "}
+          <Link href="/features/">everything it does</Link>.
         </p>
 
         <div className="verdict">

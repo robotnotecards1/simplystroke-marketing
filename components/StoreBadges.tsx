@@ -1,12 +1,12 @@
-import { AppleGlyph } from "./icons";
+import { AppleGlyph, PlayGlyph } from "./icons";
 import TrackedCta from "@/components/TrackedCta";
 import { APP_STORE_URL } from "@/lib/site";
 
 /**
- * App Store download badge — a live, tracked link (iPhone + Apple Watch, free).
+ * Store badges. The App Store badge is a live, tracked link (iPhone + Apple
+ * Watch, free). Google Play stays a non-link "coming soon" — the Android app is
+ * confirmed coming (full app.json config) but not yet on Google Play.
  * `ctaLocation` distinguishes the homepage badge from the /download badge.
- * There is no Google Play badge: the Android app hasn't been started, so
- * teasing it would be an unsupported availability claim.
  */
 export default function StoreBadges({
   ctaLocation = "hero_badge_appstore",
@@ -29,6 +29,13 @@ export default function StoreBadges({
           <span className="badge-store">App Store</span>
         </span>
       </TrackedCta>
+      <div className="ss-store-badge" aria-hidden="true">
+        <PlayGlyph />
+        <span>
+          <span className="badge-label">Coming soon to</span>
+          <span className="badge-store">Google Play</span>
+        </span>
+      </div>
     </div>
   );
 }

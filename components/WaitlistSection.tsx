@@ -52,6 +52,7 @@ export default function WaitlistSection({
             or play free in your browser →
           </TrackedCta>
         </div>
+        <div className="ss-wait-note">Android coming soon to Google Play</div>
       </div>
     </section>
   );
