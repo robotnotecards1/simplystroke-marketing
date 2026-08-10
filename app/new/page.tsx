@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import NewHeroDevice from "@/components/NewHeroDevice";
+import HeroDevices from "@/components/HeroDevices";
 import StoreBadges from "@/components/StoreBadges";
 import TrackedCta from "@/components/TrackedCta";
 import { APP_STORE_URL, APP_URL } from "@/lib/site";
@@ -68,10 +68,10 @@ export default function NewHome() {
         .nh-head p { color:var(--gray-dark); font-size:clamp(16px,1.4vw,19px); font-weight:500; margin-top:18px; }
 
         /* ---------- HOW IT WORKS (phones) ---------- */
-        .nh-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(20px,3vw,40px); margin-top:56px; }
-        .nh-step { text-align:center; }
-        .nh-step-frame { border-radius:30px; padding:9px; background:linear-gradient(160deg,#20241f,#0c0f0b); box-shadow:0 26px 50px rgba(20,50,37,.18); }
-        .nh-step-frame img { width:100%; border-radius:22px; display:block; }
+        .nh-steps { display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(28px,5vw,72px) clamp(28px,6vw,96px); margin:56px auto 0; max-width:700px; }
+        .nh-step { text-align:center; max-width:300px; margin-inline:auto; }
+        .nh-step-frame { border-radius:34px; padding:10px; background:linear-gradient(160deg,#20241f,#0c0f0b); box-shadow:0 30px 56px rgba(20,50,37,.2); }
+        .nh-step-frame img { width:100%; height:auto; aspect-ratio:270/540; object-fit:cover; border-radius:24px; display:block; }
         .nh-step .num { display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:50%; background:var(--green-deep); color:#fff; font-size:13px; font-weight:800; margin-top:22px; }
         .nh-step h3 { font-size:24px; color:var(--green-deep); margin-top:12px; }
         .nh-step p { color:var(--gray-body); font-size:14.5px; margin-top:6px; }
@@ -161,9 +161,7 @@ export default function NewHome() {
               or play free in your browser →
             </TrackedCta>
           </div>
-          <div className="nh-phonewrap">
-            <NewHeroDevice />
-          </div>
+          <HeroDevices />
         </div>
       </header>
 
