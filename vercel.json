@@ -1,15 +1,17 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
+    { "source": "/blog", "destination": "/guides/", "statusCode": 301 },
+    { "source": "/blog/", "destination": "/guides/", "statusCode": 301 },
     {
-      "source": "/blog",
-      "destination": "/guides/",
-      "permanent": true
+      "source": "/blog/adhd-and-golf-losing-count",
+      "destination": "/guides/adhd-and-golf-losing-count/",
+      "statusCode": 301
     },
     {
-      "source": "/blog/:slug*",
-      "destination": "/guides/:slug*",
-      "permanent": true
+      "source": "/blog/adhd-and-golf-losing-count/",
+      "destination": "/guides/adhd-and-golf-losing-count/",
+      "statusCode": 301
     }
   ]
 }
