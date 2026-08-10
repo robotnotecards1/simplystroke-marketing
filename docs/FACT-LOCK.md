@@ -1,6 +1,6 @@
 # SimplyStroke Product Fact-Lock
 
-**Last verified:** 2026-08-09
+**Last verified:** 2026-08-10 (Tournament revised: held → keep "coming soon")
 **Purpose:** Single source of truth for product claims used in marketing copy, schema, and metadata. Update this file when the product changes; do not let page copy drift from it.
 **Sources this pass:** the mobile-app repo (`~/Documents/Claude/Projects/SimplyStroke`) — `app.json`, `package.json`, `src/lib/entitlements.ts`, `src/lib/purchases.ts`, `src/app/group/*`, `src/app/tournament/*`; the live marketing site copy; the master growth audit (2026-08-09). App Store Connect remains the ultimate authority for listing/price/IAP.
 
@@ -51,9 +51,9 @@
 | One-tap solo scoring | ✅ Live | core product |
 | Apple Watch scoring | ✅ Live | watch target exists; *watch sync* may become Pro-gated (`useWatchSync.ts` → `useIsPro`) |
 | **Group scoring** (host/join/live foursome, group chat, live leaderboard) | ✅ **Live** — a real differentiator | `src/app/group/host|join|lobby|live.tsx`, `GroupChat.tsx`, `GroupScorecardTable.tsx` |
-| **Tournament** (create/join/board/spectator/manage) | ✅ **LIVE** (Jared confirmed 2026-08-09) | `src/app/tournament/*`, `TournamentLeaderboard.tsx`. ⚠️ Marketing site still says "coming soon" (PR #4) — **update copy to market it as live.** Not Pro-gated (monetization off). |
+| **Tournament** (create/join/board/spectator/manage) | ⏸️ Built in the app, but **HELD** — market as "coming soon" (Jared, 2026-08-10) | `src/app/tournament/*`, `TournamentLeaderboard.tsx`. Code exists, but Jared is holding the public launch — **keep the "coming soon" copy; do NOT flip to live.** |
 
-🔒 Group scoring **and** Tournament are both live — market both confidently (audit Pillar 3). The site currently undersells Tournament as "coming soon"; fix that copy.
+🔒 **Group scoring** is live — market it confidently (audit Pillar 3). **Tournament** exists in the app but is **on hold** (Jared, 2026-08-10) — keep it "coming soon"; do not market it as available.
 
 ## 6. The "no GPS" positioning (handle carefully)
 
@@ -69,12 +69,12 @@ These current claims are fragile against the facts above — soften during the c
 3. "Works fully offline" → **"Your solo round works offline."**
 4. "No GPS" (if phrased absolutely) → **"No GPS clutter / no yardages."**
 5. FAQ answers repeat "Android is coming soon to Google Play" — ✅ confirmed correct; keep.
-6. **Tournament copy says "coming soon" but it's LIVE** — update `/tournament/` + the homepage Tournament band to market it as available (a live differentiator currently hidden).
+6. **Tournament stays "coming soon"** — Jared is holding the launch (2026-08-10). Current "coming soon" copy is correct; no change needed.
 
 ## 8. Confirmations — RESOLVED (Jared, 2026-08-09)
 
 1. **Android** — ✅ still "coming soon" (not on Google Play). Keep current copy.
-2. **Tournament** — ✅ **LIVE for users**, not Pro-gated → site copy must change from "coming soon" to live.
+2. **Tournament** — Jared decided (2026-08-10) to **hold** the launch; keep marketing it "coming soon" even though the app code exists. No copy change.
 3. **Solo, no account** — ✅ yes, a solo round finishes with no sign-in.
 4. **Free/Pro line** — ✅ monetization on the back burner; everything free for now (§2).
 5. **App Store listing** — ✅ min iOS **16.4**, **Free ($0)**, **no in-app purchases**, version **1.0.1** (2026-08-08). Source: iTunes lookup API.
