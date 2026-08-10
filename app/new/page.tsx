@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import NewHeroDevice from "@/components/NewHeroDevice";
 import StoreBadges from "@/components/StoreBadges";
 import TrackedCta from "@/components/TrackedCta";
 import { APP_STORE_URL, APP_URL } from "@/lib/site";
@@ -161,10 +162,7 @@ export default function NewHome() {
             </TrackedCta>
           </div>
           <div className="nh-phonewrap">
-            <div className="nh-phone">
-              <img src={`${SC}/round.png`} alt="SimplyStroke active round: a giant golf-ball button counts each stroke" width={270} height={540} />
-              <span className="nh-phonetag">Actual app footage</span>
-            </div>
+            <NewHeroDevice />
           </div>
         </div>
       </header>
@@ -268,6 +266,30 @@ export default function NewHome() {
             <div className="nh-lb-row"><span className="nh-lb-who"><span className="nh-lb-dot" style={{ background: "#FF6B6B", color: "#fff" }}>M</span>Marcus</span><span className="nh-lb-score over">+5</span></div>
             <div className="nh-lb-row"><span className="nh-lb-who"><span className="nh-lb-dot" style={{ background: "#4A90D9", color: "#fff" }}>D</span>Dave</span><span className="nh-lb-score over">+7</span></div>
             <div className="nh-lb-row"><span className="nh-lb-who"><span className="nh-lb-dot" style={{ background: "#F5C451" }}>P</span>Priya</span><span className="nh-lb-score under">E</span></div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== TOURNAMENT (coming soon) ===== */}
+      <section className="nh-sec cream">
+        <div className="nh-wrap nh-split">
+          <div className="nh-split-copy">
+            <span className="ey">Tournament · Coming soon</span>
+            <h2 style={{ color: "var(--green-deep)" }}>Run the whole outing on one board.</h2>
+            <p>A scramble, a league night, a charity day — Tournament pulls every group onto one live, cross-group leaderboard, and players join by code from their own phones. When it lands, joining an outing will always be free.</p>
+            <ul className="nh-list">
+              <li>Every group&apos;s scores roll up to one live board.</li>
+              <li>Join by code — no account, no setup.</li>
+              <li>Spectators can follow along on the web.</li>
+            </ul>
+            <Link href="/tournament/" className="nh-webcta" style={{ color: "var(--green-mid)" }}>See how Tournament works →</Link>
+          </div>
+          <div className="nh-lb" aria-hidden="true">
+            <div className="nh-lb-top"><span>Charity Scramble · 6 groups</span><span className="nh-live"><i />Live</span></div>
+            <div className="nh-lb-row"><span className="nh-lb-who"><span className="nh-lb-dot" style={{ background: "#96C41E" }}>1</span>Team Bogey Boys</span><span className="nh-lb-score under">-4</span></div>
+            <div className="nh-lb-row"><span className="nh-lb-who"><span className="nh-lb-dot" style={{ background: "#4A90D9", color: "#fff" }}>2</span>The Sandbaggers</span><span className="nh-lb-score under">-1</span></div>
+            <div className="nh-lb-row"><span className="nh-lb-who"><span className="nh-lb-dot" style={{ background: "#F5C451" }}>3</span>Fairway to Heaven</span><span className="nh-lb-score over">+2</span></div>
+            <div className="nh-lb-row"><span className="nh-lb-who"><span className="nh-lb-dot" style={{ background: "#FF6B6B", color: "#fff" }}>4</span>Grip It &amp; Sip It</span><span className="nh-lb-score over">+5</span></div>
           </div>
         </div>
       </section>
