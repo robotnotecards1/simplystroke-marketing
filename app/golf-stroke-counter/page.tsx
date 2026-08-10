@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AnswerBlock from "@/components/AnswerBlock";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import GuideEngagement from "@/components/GuideEngagement";
 import StoreBadges from "@/components/StoreBadges";
+import TrackedCta from "@/components/TrackedCta";
 import { og, APP_STORE_URL, APP_URL } from "@/lib/site";
 import {
   APP_ID,
@@ -17,10 +19,10 @@ import {
   type Faq,
 } from "@/lib/schema";
 
-// CTAs below are plain anchors marked with data-cta-location. Once Cowork's
-// analytics lands (components/TrackedCta.tsx — see docs/handoffs/tracked-cta-events.md),
-// wrap each in <TrackedCta event="app_store_click|web_app_click" ctaLocation="…">.
-// Slots on this page: stroke_hero, stroke_demo, stroke_comparison, stroke_final.
+// CTAs are TrackedCta (components/TrackedCta.tsx — see
+// docs/handoffs/tracked-cta-events.md). Slots on this page: stroke_hero (App
+// Store + web), stroke_comparison, stroke_final, plus stroke_badge_appstore on
+// the StoreBadges Apple badge. guide_engaged fires via <GuideEngagement/>.
 
 // Title carries the app/category intent; the H1 carries the user outcome — so
 // the two are no longer identical (was flagged as a duplicate title/H1 pair).
@@ -79,6 +81,7 @@ const jsonLd = graph(
 export default function GolfStrokeCounterPage() {
   return (
     <main>
+      <GuideEngagement />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
@@ -102,22 +105,22 @@ export default function GolfStrokeCounterPage() {
               no GPS, no math, no losing count on the walk to the green.
             </p>
             <div className="ss-hero-cta">
-              <a
+              <TrackedCta
+                event="app_store_click"
+                ctaLocation="stroke_hero"
                 href={APP_STORE_URL}
                 className="btn btn-hero"
-                data-cta-location="stroke_hero"
-                data-cta-event="app_store_click"
               >
                 Download free on the App Store
-              </a>
-              <a
+              </TrackedCta>
+              <TrackedCta
+                event="web_app_click"
+                ctaLocation="stroke_hero"
                 href={APP_URL}
                 className="btn btn-fold"
-                data-cta-location="stroke_hero"
-                data-cta-event="web_app_click"
               >
                 Try it in your browser
-              </a>
+              </TrackedCta>
             </div>
             <p className="ss-hero-p" style={{ fontSize: 15, marginTop: 18, opacity: 0.85 }}>
               No account to start · Undo mistakes · Works without course signal
@@ -310,14 +313,14 @@ export default function GolfStrokeCounterPage() {
             </table>
           </div>
           <div className="ss-hero-cta" style={{ marginTop: 28 }}>
-            <a
+            <TrackedCta
+              event="app_store_click"
+              ctaLocation="stroke_comparison"
               href={APP_STORE_URL}
               className="btn btn-hero"
-              data-cta-location="stroke_comparison"
-              data-cta-event="app_store_click"
             >
               Get SimplyStroke free
-            </a>
+            </TrackedCta>
           </div>
         </div>
       </section>
@@ -448,17 +451,17 @@ export default function GolfStrokeCounterPage() {
             Android coming soon.
           </p>
           <div className="ss-hero-cta" style={{ justifyContent: "center", marginTop: 24 }}>
-            <a
+            <TrackedCta
+              event="app_store_click"
+              ctaLocation="stroke_final"
               href={APP_STORE_URL}
               className="btn btn-hero"
-              data-cta-location="stroke_final"
-              data-cta-event="app_store_click"
             >
               Download SimplyStroke free
-            </a>
+            </TrackedCta>
           </div>
           <div style={{ display: "flex", justifyContent: "center", marginTop: 22 }}>
-            <StoreBadges />
+            <StoreBadges ctaLocation="stroke_badge_appstore" />
           </div>
         </div>
       </section>
