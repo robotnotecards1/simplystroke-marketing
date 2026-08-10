@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import StoreBadges from "@/components/StoreBadges";
+import TrackedCta from "@/components/TrackedCta";
 import { APP_STORE_URL, APP_URL, og } from "@/lib/site";
 import { appNode, graph, organizationNode } from "@/lib/schema";
 
@@ -8,7 +9,7 @@ const entityJsonLd = graph(organizationNode, appNode);
 
 const TITLE = "Get SimplyStroke: Free Golf Scorecard App, No Subscription";
 const DESCRIPTION =
-  "SimplyStroke is free on the App Store for iPhone and Apple Watch: a one-tap golf stroke counter and scorecard. No subscription, no ads, no account. Or play right now in your browser. Android coming soon.";
+  "SimplyStroke is free on the App Store for iPhone and Apple Watch: a one-tap golf stroke counter and scorecard. No subscription, no ads, no account to start. Or play right now in your browser. Android coming soon.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -35,18 +36,26 @@ export default function DownloadPage() {
             start. Prefer not to download? Play right now in your browser.
           </p>
           <div className="cta-row" style={{ justifyContent: "center" }}>
-            <a href={APP_STORE_URL} className="btn btn-hero">
+            <TrackedCta
+              event="app_store_click"
+              ctaLocation="download_hero_appstore"
+              href={APP_STORE_URL}
+              className="btn btn-hero"
+              aria-label="Download SimplyStroke on the App Store"
+            >
               Download on the App Store →
-            </a>
-            <a
+            </TrackedCta>
+            <TrackedCta
+              event="web_app_click"
+              ctaLocation="download_hero_webapp"
               href={APP_URL}
               style={{ color: "var(--lime-text)", fontWeight: 700, fontSize: 16 }}
             >
               or play free in your browser →
-            </a>
+            </TrackedCta>
           </div>
           <div style={{ display: "flex", justifyContent: "center", marginTop: 28 }}>
-            <StoreBadges />
+            <StoreBadges ctaLocation="download_badge_appstore" />
           </div>
         </div>
       </header>

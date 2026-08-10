@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AnswerBlock from "@/components/AnswerBlock";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import WaitlistSection from "@/components/WaitlistSection";
+import GuideEngagement from "@/components/GuideEngagement";
+import TrackedCta from "@/components/TrackedCta";
+import FinalCta from "@/components/FinalCta";
 import {
   BallOnGreenIcon,
   BallPinIcon,
   ScorecardIcon,
 } from "@/components/icons";
-import { og } from "@/lib/site";
+import { APP_URL, og } from "@/lib/site";
 import {
   APP_ID,
   appNode,
@@ -137,6 +139,7 @@ const jsonLd = graph(
 export default function AdhdGolfPage() {
   return (
     <main>
+      <GuideEngagement />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -156,9 +159,14 @@ export default function AdhdGolfPage() {
             your head is free to wander and your score still adds up.
           </p>
           <div className="cta-row">
-            <a href="https://app.simplystroke.app" className="btn btn-hero">
+            <TrackedCta
+              event="web_app_click"
+              ctaLocation="adhd_hero_webapp"
+              href={APP_URL}
+              className="btn btn-hero"
+            >
               Get Started →
-            </a>
+            </TrackedCta>
             <span className="ss-hero-launch">Live now</span>
           </div>
         </div>
@@ -553,7 +561,7 @@ export default function AdhdGolfPage() {
         </div>
       </article>
 
-      <WaitlistSection
+      <FinalCta
         source="adhd-golf"
         heading="Your brain has better things to hold."
       />

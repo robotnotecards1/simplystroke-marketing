@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import TournamentBoard from "@/components/TournamentBoard";
+import TrackedCta from "@/components/TrackedCta";
 import {
   BallOnGreenIcon,
   GolfBagIcon,
@@ -190,8 +191,22 @@ export default function TournamentPage() {
             Joining a tournament will always be free, and hosting your own is
             planned as a Pro feature. Meanwhile, SimplyStroke for an everyday
             round is free today: get it on the{" "}
-            <a href={APP_STORE_URL}>App Store</a> or{" "}
-            <a href={APP_URL}>play in your browser</a>.
+            <TrackedCta
+              event="app_store_click"
+              ctaLocation="tournament_appstore"
+              href={APP_STORE_URL}
+            >
+              App Store
+            </TrackedCta>{" "}
+            or{" "}
+            <TrackedCta
+              event="web_app_click"
+              ctaLocation="tournament_webapp"
+              href={APP_URL}
+            >
+              play in your browser
+            </TrackedCta>
+            .
           </p>
         </div>
       </section>

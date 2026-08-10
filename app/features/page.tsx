@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import WaitlistSection from "@/components/WaitlistSection";
+import TrackedCta from "@/components/TrackedCta";
+import FinalCta from "@/components/FinalCta";
 import {
   BallOnGreenIcon,
   BallPinIcon,
@@ -9,7 +10,7 @@ import {
   HappyBallIcon,
   ScorecardIcon,
 } from "@/components/icons";
-import { og } from "@/lib/site";
+import { APP_URL, og } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "SimplyStroke Features: One-Tap Scoring, Undo, Offline Golf",
@@ -74,9 +75,14 @@ export default function FeaturesPage() {
             per swing, and the scorecard writes itself.
           </p>
           <div className="cta-row">
-            <a href="https://app.simplystroke.app" className="btn btn-hero">
+            <TrackedCta
+              event="web_app_click"
+              ctaLocation="features_hero_webapp"
+              href={APP_URL}
+              className="btn btn-hero"
+            >
               Get Started →
-            </a>
+            </TrackedCta>
             <span className="ss-hero-launch">Live now</span>
           </div>
         </div>
@@ -102,7 +108,7 @@ export default function FeaturesPage() {
       <section className="section alt-section">
         <div className="section-narrow">
           <div className="eyebrow">Apple Watch</div>
-          <h2 className="h2-display">Leave the phone in the bag.</h2>
+          <h2 className="h2-display">Score from your wrist.</h2>
           <p className="section-lede">
             Count every stroke from your wrist. A tap on the watch face logs
             the shot, a haptic tick confirms it, the Digital Crown fixes
@@ -129,7 +135,7 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      <WaitlistSection source="features" />
+      <FinalCta source="features" />
     </main>
   );
 }

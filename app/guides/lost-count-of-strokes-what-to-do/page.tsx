@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AnswerBlock from "@/components/AnswerBlock";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import WaitlistSection from "@/components/WaitlistSection";
+import GuideEngagement from "@/components/GuideEngagement";
+import FinalCta from "@/components/FinalCta";
 import { og } from "@/lib/site";
 import {
   articleNode,
@@ -72,6 +73,7 @@ const jsonLd = graph(
 export default function Post() {
   return (
     <main>
+      <GuideEngagement />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -282,7 +284,7 @@ export default function Post() {
         </div>
       </article>
 
-      <WaitlistSection
+      <FinalCta
         source="guide-lost-count"
         heading="Never reconstruct a hole again."
       />

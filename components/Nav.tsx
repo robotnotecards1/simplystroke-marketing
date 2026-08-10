@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TrackedCta from "@/components/TrackedCta";
 import { APP_STORE_URL } from "@/lib/site";
 
 export default function Nav() {
@@ -15,16 +16,24 @@ export default function Nav() {
           />
         </Link>
         <div className="ss-nav-right">
-          {/* Nav links archived per client request (2026-07-08) — restore by
-              uncommenting when the site should expose section navigation.
+          {/* Desktop section nav. Hidden under 760px (see globals.css); the
+              footer carries the full link set on mobile. All targets are real,
+              existing pages. */}
           <span className="ss-navlinks">
             <Link href="/#how-it-works">How it works</Link>
             <Link href="/features/">Features</Link>
-            <Link href="/#screens">Screenshots</Link>
-          </span> */}
-          <a href={APP_STORE_URL} className="btn btn-nav">
+            <Link href="/compare/">Compare</Link>
+            <Link href="/guides/">Guides</Link>
+          </span>
+          <TrackedCta
+            event="app_store_click"
+            ctaLocation="nav_appstore"
+            href={APP_STORE_URL}
+            className="btn btn-nav"
+            aria-label="Download SimplyStroke on the App Store"
+          >
             Get the app →
-          </a>
+          </TrackedCta>
         </div>
       </div>
     </nav>

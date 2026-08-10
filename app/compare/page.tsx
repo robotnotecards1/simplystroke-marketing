@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AnswerBlock from "@/components/AnswerBlock";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import WaitlistSection from "@/components/WaitlistSection";
+import FinalCta from "@/components/FinalCta";
 import { og, SITE_URL } from "@/lib/site";
 import {
   APP_ID,
@@ -303,7 +303,7 @@ export default function ComparePage() {
             <strong>
               If you are here because you just looked at a renewal notice:
             </strong>{" "}
-            SimplyStroke is free, permanently, with no premium tier and no
+            SimplyStroke is free, with no subscription and no
             hardware. If all you were getting for that money was a scorecard,
             you were being overcharged by roughly the entire amount.
           </p>
@@ -340,16 +340,16 @@ export default function ComparePage() {
         </p>
         <p>
           SimplyStroke sidesteps the whole argument by not having one.
-          It&apos;s free. There is no premium tier, no annual renewal, no
-          hardware bundle and no upsell holding your own scorecard hostage.
+          It&apos;s free. No subscription, no ads, no hardware bundle and no
+          upsell holding your own scorecard hostage.
         </p>
         <p>
           That is not generosity, it is arithmetic:{" "}
           <strong>counting to five costs nothing to run.</strong> There are no
           course maps to license, no servers doing analytics, no sensors to
           manufacture. An app that only counts can afford to be free, and an app
-          that&apos;s free is an app that never has to invent a reason for you
-          to pay again next year.
+          that&apos;s free is an app that isn&apos;t under pressure to invent a
+          reason for you to pay again next year.
         </p>
 
         <h2>Why golf apps get more complicated every year</h2>
@@ -496,7 +496,7 @@ export default function ComparePage() {
         </div>
       </article>
 
-      <WaitlistSection
+      <FinalCta
         source="compare"
         heading="Only need the number held?"
       />

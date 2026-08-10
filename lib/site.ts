@@ -6,7 +6,8 @@ export const SITE_URL =
 
 export const SITE_NAME = "SimplyStroke";
 
-// The App Store listing — iPhone + Apple Watch, free, no in-app purchases.
+// The App Store listing — iPhone + Apple Watch, free to download; core scoring
+// is free (no subscription).
 export const APP_STORE_URL =
   "https://apps.apple.com/app/simplystroke-golf-scorecard/id6792327238";
 
@@ -21,14 +22,6 @@ export const APP_URL = "https://app.simplystroke.app";
 export const NOINDEX =
   process.env.NEXT_PUBLIC_NOINDEX === "true" ||
   (!!process.env.VERCEL_ENV && process.env.VERCEL_ENV !== "production");
-
-// Waitlist signups POST here as { email, source, website (honeypot) }.
-// Backed by the `waitlist` edge function on the simplystroke Supabase
-// project (source in supabase/ in this repo); env var overrides for
-// local/testing setups.
-export const WAITLIST_ENDPOINT =
-  process.env.NEXT_PUBLIC_WAITLIST_ENDPOINT ??
-  "https://uqlrfzzszfsnjepuppdk.supabase.co/functions/v1/waitlist";
 
 // Google Analytics 4 measurement ID (gtag.js, loaded in app/layout.tsx).
 export const GA_ID = "G-M00J122TYL";
