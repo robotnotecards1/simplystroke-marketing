@@ -430,7 +430,7 @@ export default function GolfStrokeCounterPage() {
         </div>
       </article>
 
-      {/* ---------- Final CTA (replaces the pre-launch WaitlistSection) ---------- */}
+      {/* ---------- Final CTA (replaces the pre-launch FinalCta) ---------- */}
       <section
         className="section"
         style={{

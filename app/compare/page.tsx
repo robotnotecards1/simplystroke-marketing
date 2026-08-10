@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AnswerBlock from "@/components/AnswerBlock";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import WaitlistSection from "@/components/WaitlistSection";
+import FinalCta from "@/components/FinalCta";
 import { og, SITE_URL } from "@/lib/site";
 import {
   APP_ID,
@@ -496,7 +496,7 @@ export default function ComparePage() {
         </div>
       </article>
 
-      <WaitlistSection
+      <FinalCta
         source="compare"
         heading="Only need the number held?"
       />

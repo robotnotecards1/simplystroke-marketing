@@ -4,7 +4,7 @@ import AnswerBlock from "@/components/AnswerBlock";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GuideEngagement from "@/components/GuideEngagement";
 import TrackedCta from "@/components/TrackedCta";
-import WaitlistSection from "@/components/WaitlistSection";
+import FinalCta from "@/components/FinalCta";
 import {
   BallOnGreenIcon,
   BallPinIcon,
@@ -561,7 +561,7 @@ export default function AdhdGolfPage() {
         </div>
       </article>
 
-      <WaitlistSection
+      <FinalCta
         source="adhd-golf"
         heading="Your brain has better things to hold."
       />

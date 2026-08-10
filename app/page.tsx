@@ -5,7 +5,7 @@ import HeroDevices from "@/components/HeroDevices";
 import StoreBadges from "@/components/StoreBadges";
 import TrackedCta from "@/components/TrackedCta";
 import TournamentBoard from "@/components/TournamentBoard";
-import WaitlistSection from "@/components/WaitlistSection";
+import FinalCta from "@/components/FinalCta";
 import {
   BallOnGreenIcon,
   BallPinIcon,
@@ -622,7 +622,7 @@ export default function Home() {
       </section>
 
       {/* ===================== FINAL CTA / WAITLIST ===================== */}
-      <WaitlistSection source="home" heading="Play your next round with it." />
+      <FinalCta source="home" heading="Play your next round with it." />
     </main>
   );
 }

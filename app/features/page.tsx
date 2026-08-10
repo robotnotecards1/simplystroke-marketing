@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import TrackedCta from "@/components/TrackedCta";
-import WaitlistSection from "@/components/WaitlistSection";
+import FinalCta from "@/components/FinalCta";
 import {
   BallOnGreenIcon,
   BallPinIcon,
@@ -135,7 +135,7 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      <WaitlistSection source="features" />
+      <FinalCta source="features" />
     </main>
   );
 }

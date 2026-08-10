@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import WaitlistSection from "@/components/WaitlistSection";
+import FinalCta from "@/components/FinalCta";
 import { og } from "@/lib/site";
 
 const TITLE = "Guides: Golf Scoring, Stroke Counting and ADHD";
@@ -75,7 +75,7 @@ export default function GuidesIndex() {
         </div>
       </section>
 
-      <WaitlistSection source="guides" />
+      <FinalCta source="guides" />
     </main>
   );
 }

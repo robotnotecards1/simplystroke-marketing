@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import WaitlistSection from "@/components/WaitlistSection";
+import FinalCta from "@/components/FinalCta";
 import { og } from "@/lib/site";
 import {
   appNode,
@@ -170,7 +170,7 @@ export default function AboutPage() {
         </ul>
       </article>
 
-      <WaitlistSection source="about" />
+      <FinalCta source="about" />
     </main>
   );
 }

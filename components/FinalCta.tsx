@@ -2,19 +2,20 @@ import TrackedCta from "@/components/TrackedCta";
 import { APP_STORE_URL, APP_URL } from "@/lib/site";
 
 /**
- * Final CTA band. The app is on the App Store, so this is a download CTA (it
- * used to be the pre-launch email waitlist). `source` is accepted but unused
- * (kept so the call sites don't need editing). Rendered on ~10 pages, so
- * `page_path` on each event distinguishes where it fired.
+ * Final download CTA band, rendered near the foot of most pages. `source` tags
+ * where it renders; `page_path` on each event also distinguishes that. (This is
+ * the former pre-launch waitlist band, now a pure App Store / web-app CTA — the
+ * email capture is gone.)
  */
-export default function WaitlistSection({
+export default function FinalCta({
+  source = "home",
   heading = "Play your next round with it.",
 }: {
   source?: string;
   heading?: string;
 }) {
   return (
-    <section id="waitlist" className="ss-waitlist">
+    <section id="get-app" className="ss-waitlist" data-source={source}>
       <div className="ss-waitlist-blob" />
       <div className="ss-waitlist-inner">
         <div className="pill">Now on the App Store</div>
@@ -36,7 +37,7 @@ export default function WaitlistSection({
         >
           <TrackedCta
             event="app_store_click"
-            ctaLocation="waitlist_appstore"
+            ctaLocation="final_appstore"
             href={APP_STORE_URL}
             className="btn btn-hero"
             aria-label="Download SimplyStroke on the App Store"
@@ -45,7 +46,7 @@ export default function WaitlistSection({
           </TrackedCta>
           <TrackedCta
             event="web_app_click"
-            ctaLocation="waitlist_webapp"
+            ctaLocation="final_webapp"
             href={APP_URL}
             style={{ color: "var(--lime-text)", fontWeight: 700, fontSize: 16 }}
           >

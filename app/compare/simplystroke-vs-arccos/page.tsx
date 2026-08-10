@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AnswerBlock from "@/components/AnswerBlock";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import WaitlistSection from "@/components/WaitlistSection";
+import FinalCta from "@/components/FinalCta";
 import { og } from "@/lib/site";
 import {
   APP_ID,
@@ -317,7 +317,7 @@ export default function Page() {
         </div>
       </article>
 
-      <WaitlistSection
+      <FinalCta
         source="vs-arccos"
         heading="Cancelled the subscription?"
       />

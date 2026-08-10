@@ -3,7 +3,7 @@ import Link from "next/link";
 import AnswerBlock from "@/components/AnswerBlock";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RedditQuote from "@/components/RedditQuote";
-import WaitlistSection from "@/components/WaitlistSection";
+import FinalCta from "@/components/FinalCta";
 import { og } from "@/lib/site";
 import {
   APP_ID,
@@ -746,7 +746,7 @@ export default function RedditPage() {
         </div>
       </article>
 
-      <WaitlistSection
+      <FinalCta
         source="reddit"
         heading="Free. One tap. No subscription."
       />

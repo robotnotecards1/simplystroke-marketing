@@ -3,7 +3,7 @@ import Link from "next/link";
 import AnswerBlock from "@/components/AnswerBlock";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GuideEngagement from "@/components/GuideEngagement";
-import WaitlistSection from "@/components/WaitlistSection";
+import FinalCta from "@/components/FinalCta";
 import { og } from "@/lib/site";
 import {
   articleNode,
@@ -346,7 +346,7 @@ export default function Post() {
         </div>
       </article>
 
-      <WaitlistSection
+      <FinalCta
         source="guide-adhd"
         heading="Your brain has better things to hold."
       />
