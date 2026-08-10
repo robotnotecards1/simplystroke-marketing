@@ -61,7 +61,7 @@ export default function CourseScoreboard({
         </div>
         <div className="board-foot">
           <div className="mini">
-            <h4>Score distribution · all posted rounds</h4>
+            <h3>Score distribution · all posted rounds</h3>
             <div className="dist">
               {stats.distribution.map((pct, i) => (
                 <div key={i} className="bar" style={{ height: `${Math.round((pct / maxDist) * 100)}%` }}>
@@ -76,7 +76,7 @@ export default function CourseScoreboard({
             </div>
           </div>
           <div className="mini">
-            <h4>Hardest holes · strokes over par as played</h4>
+            <h3>Hardest holes · strokes over par as played</h3>
             <div className="hard">
               {stats.hardest_holes.map((h) => (
                 <div key={h.hole} className="hard-row">

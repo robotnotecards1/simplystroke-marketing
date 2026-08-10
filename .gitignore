@@ -44,3 +44,6 @@ next-env.d.ts
 # Raw OSM fetch cache (intermediate). Rebuild with scripts/fetch-course-osm.mjs;
 # the committed data/maps/*.json is what the build actually uses.
 /data/osm/
+
+# SEO-GOD local state (secrets, run markers, scratch)
+.seo-god/

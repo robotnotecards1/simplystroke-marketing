@@ -18,9 +18,9 @@ import {
   type Faq,
 } from "@/lib/schema";
 
-const TITLE = "What Reddit Really Thinks About Golf Apps: 238,854 Comments Analysed";
+const TITLE = "What Reddit Really Thinks About Golf Apps: 238,854 Comments";
 const DESCRIPTION =
-  "We read 238,854 r/golf comments to find out what golfers really think about Arccos, 18Birdies, TheGrint, Garmin and the rest. The complaints, the praise, and the upvote counts.";
+  "We read 238,854 r/golf comments to see what golfers really think of Arccos, 18Birdies, TheGrint, Garmin and the rest. Complaints, praise, upvote counts.";
 const PATH = "/reddit/";
 
 export const metadata: Metadata = {

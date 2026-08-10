@@ -19,7 +19,7 @@ import {
 
 const TITLE = "SimplyStroke vs 18Birdies: Which Golf App Do You Need?";
 const DESCRIPTION =
-  "18Birdies is a social GPS platform with a scorecard attached. SimplyStroke is a scorecard with nothing attached. An honest side-by-side, including what 18Birdies does better.";
+  "18Birdies is a social GPS platform with a scorecard attached. SimplyStroke is a scorecard with nothing attached. An honest side-by-side.";
 const PATH = "/compare/simplystroke-vs-18birdies/";
 
 export const metadata: Metadata = {

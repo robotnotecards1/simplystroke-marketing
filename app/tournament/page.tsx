@@ -10,7 +10,7 @@ import {
 import { APP_STORE_URL, APP_URL, og } from "@/lib/site";
 
 const TITLE =
-  "Golf Tournament App: One Live Cross-Group Leaderboard | SimplyStroke";
+  "Golf Tournament App: One Live Leaderboard | SimplyStroke";
 const DESCRIPTION =
   "Run a scramble, best ball or stroke event across every group on one live leaderboard. Players join by code, and anyone can follow along on the web. Coming soon.";
 

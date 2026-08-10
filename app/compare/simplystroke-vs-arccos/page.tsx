@@ -17,9 +17,9 @@ import {
   type Faq,
 } from "@/lib/schema";
 
-const TITLE = "SimplyStroke vs Arccos: An Arccos Alternative With No Subscription";
+const TITLE = "SimplyStroke vs Arccos: A Free, No-Subscription Alternative";
 const DESCRIPTION =
-  "Arccos is the best shot-tracking system in golf, and it costs sensors plus a subscription. SimplyStroke counts strokes and costs nothing. An honest comparison of two apps that aren't really competing.";
+  "Arccos is the best shot-tracking system in golf, and it costs sensors plus a subscription. SimplyStroke counts strokes and costs nothing. An honest comparison.";
 const PATH = "/compare/simplystroke-vs-arccos/";
 
 export const metadata: Metadata = {

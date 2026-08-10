@@ -12,7 +12,7 @@ import {
 import "./course.css";
 
 export const metadata: Metadata = {
-  title: "Golf Course Directory: Scores, Difficulty & Leaderboards | SimplyStroke",
+  title: "Golf Course Directory: Scores & Difficulty | SimplyStroke",
   description:
     "Real amateur scoring data, hole-by-hole difficulty, full scorecards, and leaderboards for the courses golfers search. Built from rounds posted to SimplyStroke.",
   alternates: { canonical: `${SITE_URL}/courses/` },
