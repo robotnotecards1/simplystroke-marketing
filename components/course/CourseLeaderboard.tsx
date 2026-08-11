@@ -25,7 +25,7 @@ export default function CourseLeaderboard({
     if (!sb) return;
     let cancelled = false;
     sb.from("public_rounds")
-      .select("display_name, gross_score, score_to_par")
+      .select("display_name, home_city, gross_score, score_to_par, verified")
       .eq("course_id", courseId)
       .order("gross_score", { ascending: true })
       .limit(12)
