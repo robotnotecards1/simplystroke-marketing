@@ -30,7 +30,7 @@ export const organizationNode = {
   logo: `${SITE_URL}/images/logo-color.png`,
   email: "hello@simplystroke.app",
   description:
-    "SimplyStroke makes a free, one-tap golf stroke counter and scorecard for golfers who lose count. No subscription, no ads, no account.",
+    "SimplyStroke makes a one-tap golf stroke counter and scorecard for golfers who lose count. Core scorekeeping is free, with no account needed to start a solo round.",
 };
 
 // The byline. Deliberately not a named individual: authorship is the team's,
@@ -81,7 +81,7 @@ export const appNode = {
   featureList: [
     "One tap per stroke",
     "Undo a mis-tap",
-    "Works fully offline",
+    "Solo scoring works without course signal",
     "No account required to start a round",
     "No ads",
     "Apple Watch support",
@@ -92,8 +92,15 @@ export const appNode = {
     price: "0",
     priceCurrency: "USD",
   },
-  // No aggregateRating / review until the app has shipped and earned real
-  // ones. Inventing them is the one thing here that could earn a penalty.
+  // No aggregateRating / review yet — a deliberate choice, see
+  // docs/SCHEMA-DECISION.md. A real rating exists (App Store showed 5.0 from
+  // ~6 ratings on 2026-08-11, via the iTunes lookup API), but the base is tiny
+  // and volatile, and this is a static export: any value baked in here freezes
+  // at build time with no refresh — exactly the "stale rating with no
+  // maintenance plan" a review should flag. This node is therefore valid
+  // Schema.org entity markup that is intentionally NOT yet eligible for
+  // Google's SoftwareApplication rich result. Revisit when the rating base is
+  // larger (~50+) or a build-time fetch keeps it current.
 };
 
 /* -------------------------------------------------------------------------- */

@@ -21,9 +21,9 @@ export default function FinalCta({
         <div className="pill">Now on the App Store</div>
         <h2>{heading}</h2>
         <p className="ss-waitlist-p">
-          SimplyStroke is free on the App Store for iPhone and Apple Watch. No
-          subscription, no ads, and no account to start. Prefer not to download?
-          Play right now in your browser.
+          Core scoring is free on the App Store for iPhone and Apple Watch, with
+          no account needed to start. Prefer not to download? Play right now in
+          your browser.
         </p>
         <div
           style={{

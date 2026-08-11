@@ -6,8 +6,9 @@ export const SITE_URL =
 
 export const SITE_NAME = "SimplyStroke";
 
-// The App Store listing — iPhone + Apple Watch, free to download; core scoring
-// is free (no subscription).
+// The App Store listing — iPhone + Apple Watch, free to download. Core
+// scorekeeping is free today; keep copy off permanent "no subscription" / "no
+// in-app purchases" promises (see docs/FACT-LOCK.md §2).
 export const APP_STORE_URL =
   "https://apps.apple.com/app/simplystroke-golf-scorecard/id6792327238";
 

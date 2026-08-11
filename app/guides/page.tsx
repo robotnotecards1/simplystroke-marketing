@@ -41,7 +41,7 @@ export default function GuidesIndex() {
         <div className="page-hero-inner">
           <div className="pill">Guides</div>
           <h1>
-            Golf, ADHD, and the
+            Golf, ADHD, and the{" "}
             <br />
             <span className="accent">number you keep losing.</span>
           </h1>

@@ -89,7 +89,7 @@ export default function StyleguidePage() {
         <div className="page-hero-inner">
           <div className="pill">Internal · Not indexed</div>
           <h1>
-            The SimplyStroke
+            The SimplyStroke{" "}
             <br />
             <span className="accent">design system.</span>
           </h1>

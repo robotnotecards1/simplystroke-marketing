@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 const faqs: Faq[] = [
   {
     q: "Do golfers need a subscription for a golf scorecard app?",
-    a: "No. The loudest complaint across 238,854 r/golf comments is recurring subscription cost — golfers regularly abandon $150-$200/year tools for cheaper, one-time-purchase hardware or free apps just to escape the renewal. SimplyStroke is free, with no subscription.",
+    a: "No. The loudest complaint across 238,854 r/golf comments is recurring subscription cost — golfers regularly abandon $150-$200/year tools for cheaper, one-time-purchase hardware or free apps just to escape the renewal. SimplyStroke's core scoring is free.",
   },
   {
     q: "What do golfers on Reddit say is the biggest problem with golf apps?",
@@ -719,7 +719,7 @@ export default function RedditPage() {
         <h2>Where SimplyStroke fits</h2>
         <p>
           None of this changes what SimplyStroke actually is: a free,
-          one-tap stroke counter with no subscription, built to remove the
+          one-tap stroke counter built to remove the
           friction above rather than add to it. If you want the specifics,
           see{" "}
           <Link href="/golf-stroke-counter/">
@@ -748,7 +748,7 @@ export default function RedditPage() {
 
       <FinalCta
         source="reddit"
-        heading="Free. One tap. No subscription."
+        heading="Free core scoring. One tap."
       />
     </main>
   );

@@ -32,11 +32,11 @@ export const metadata: Metadata = {
 const faqs: Faq[] = [
   {
     q: "Is there a simpler alternative to 18Birdies?",
-    a: "Yes. If you use 18Birdies mainly to keep score and ignore the GPS, green maps and social feed, a one-tap stroke counter does that job with far less friction. SimplyStroke records a stroke in a single tap, needs no account to start a round, works fully offline and shows no ads. You give up GPS yardages, handicap tracking and the social feed, which is the trade.",
+    a: "Yes. If you use 18Birdies mainly to keep score and ignore the GPS, green maps and social feed, a one-tap stroke counter does that job with far less friction. SimplyStroke records a stroke in a single tap, needs no account to start a round, works offline for solo rounds and shows no ads. You give up GPS yardages, handicap tracking and the social feed, which is the trade.",
   },
   {
     q: "Is 18Birdies free?",
-    a: "18Birdies has a free tier that is genuinely well liked, and it includes GPS distances. The free tier carries ads, and green maps and the more advanced tools sit behind a premium subscription. SimplyStroke is free with no tiers, no ads and no subscription at all, but it also does far less.",
+    a: "18Birdies has a free tier that is genuinely well liked, and it includes GPS distances. The free tier carries ads, and green maps and the more advanced tools sit behind a premium subscription. SimplyStroke keeps its core scoring free and shows no ads, but it also does far less.",
   },
   {
     q: "Does 18Birdies post to GHIN?",
@@ -198,7 +198,7 @@ export default function Page() {
               </tr>
               <tr>
                 <th scope="row">Cost</th>
-                <td data-label="SimplyStroke">Free, no tiers</td>
+                <td data-label="SimplyStroke">Core scoring free</td>
                 <td data-label="18Birdies">Free tier + premium subscription</td>
               </tr>
               <tr>
@@ -222,7 +222,7 @@ export default function Page() {
                 <td data-label="18Birdies">Yes</td>
               </tr>
               <tr>
-                <th scope="row">Works fully offline</th>
+                <th scope="row">Solo rounds work offline</th>
                 <td data-label="SimplyStroke">Yes</td>
                 <td data-label="18Birdies">Partial</td>
               </tr>

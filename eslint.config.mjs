@@ -12,6 +12,14 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Local agent worktrees + generated tooling artifacts. `npm run lint` runs
+    // bare `eslint`, which recurses the whole tree; without these it lints the
+    // full checkouts under .claude/worktrees and reports thousands of phantom
+    // errors. None of these are reviewable source. (Mirror in .gitignore.)
+    ".claude/**",
+    ".seo-god/**",
+    "dist/**",
+    "seo-god.json",
   ]),
 ]);
 

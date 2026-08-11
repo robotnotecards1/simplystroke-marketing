@@ -15,11 +15,11 @@ import { APP_URL, og } from "@/lib/site";
 export const metadata: Metadata = {
   title: "SimplyStroke Features: One-Tap Scoring, Undo, Offline Golf",
   description:
-    "Every SimplyStroke feature, from the one-tap stroke counter to instant shareable scorecards. No subscriptions and no GPS clutter. Just simple score tracking.",
+    "Every SimplyStroke feature, from the one-tap stroke counter to instant shareable scorecards. Free core scoring and no GPS clutter. Just simple score tracking.",
   alternates: { canonical: "/features/" },
   openGraph: og(
     "SimplyStroke Features: One-Tap Scoring, Undo, Offline Golf",
-    "Every SimplyStroke feature, from the one-tap stroke counter to instant shareable scorecards. No subscriptions and no GPS clutter. Just simple score tracking.",
+    "Every SimplyStroke feature, from the one-tap stroke counter to instant shareable scorecards. Free core scoring and no GPS clutter. Just simple score tracking.",
     "/features/"
   ),
 };
@@ -52,8 +52,8 @@ const features = [
   },
   {
     icon: <BallOnGreenIcon />,
-    title: "Works fully offline",
-    body: "No signal on the back nine? Doesn't matter. Rounds are counted on your phone and sync when you're back in range.",
+    title: "Solo rounds work offline",
+    body: "No signal on the back nine? Doesn't matter. Solo rounds are counted on your phone and sync when you're back in range. (Live group scoring needs a connection.)",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function FeaturesPage() {
         <div className="page-hero-inner">
           <div className="pill">What you get · Live now</div>
           <h1>
-            A simple golf scorecard app.
+            A simple golf scorecard app.{" "}
             <br />
             <span className="accent">Emphasis on simple.</span>
           </h1>

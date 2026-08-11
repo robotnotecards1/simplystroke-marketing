@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import AnswerBlock from "@/components/AnswerBlock";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -49,7 +50,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Does it work without signal?",
-    a: "Yes. A stroke counter needs no map data and no server, so there is no reason for it to fail in a dead zone. SimplyStroke's solo scoring works fully offline — if an app that only counts to five stops working on the back nine, that is a design choice, not a technical limit.",
+    a: "Yes. SimplyStroke's solo scoring is saved on your device and needs no course signal, so a dead zone on the back nine never costs you your round. (Live group scoring does need a connection.) If an app that only counts to five stops working on the back nine, that is a design choice, not a technical limit.",
   },
   {
     q: "Is it free?",
@@ -127,10 +128,15 @@ export default function GolfStrokeCounterPage() {
             </p>
           </div>
           <div className="ss-hero-phonewrap">
-            <img
+            <Image
               src="/images/app-screens/round.png"
               alt="SimplyStroke active-round screen: one giant golf-ball button showing the current stroke count."
               className="ss-hero-float"
+              width={270}
+              height={540}
+              preload
+              fetchPriority="high"
+              sizes="(max-width: 640px) 80vw, 300px"
               style={{
                 width: 300,
                 maxWidth: "100%",
@@ -174,10 +180,13 @@ export default function GolfStrokeCounterPage() {
               },
             ].map((s) => (
               <figure className="demo-step" key={s.n}>
-                <img
+                <Image
                   src={`/images/app-screens/${s.img}`}
                   alt={`SimplyStroke step ${s.n}: ${s.cap}.`}
+                  width={270}
+                  height={540}
                   loading="lazy"
+                  sizes="(max-width: 640px) 90vw, 300px"
                   style={{ width: "100%", height: "auto", borderRadius: 22, display: "block" }}
                 />
                 <figcaption>
@@ -215,13 +224,14 @@ export default function GolfStrokeCounterPage() {
               <strong>counts</strong>
             </>,
             <>
-              The good ones need <strong>one tap per shot</strong>, work fully
-              offline, and need no account before your first round
+              The good ones need <strong>one tap per shot</strong>, work
+              offline for a solo round, and need no account before your first
+              round
             </>,
             <>
-              Premium golf apps run <strong>$30–$100 a year</strong>; hardware
-              trackers add <strong>$180–$300</strong> up front. A counter should
-              be free
+              Core stroke counting should not require a premium GPS
+              subscription — SimplyStroke lets you count and complete a solo
+              round for free
             </>,
           ]}
         />
@@ -362,9 +372,9 @@ export default function GolfStrokeCounterPage() {
             One enormous target, not a row of small ones.
           </li>
           <li>
-            <strong>Fully offline, and on your wrist.</strong> A counter needs no
-            server, and the best home for it is the watch you never have to reach
-            for.
+            <strong>Works offline, and on your wrist.</strong> Your solo round
+            is saved on your device and needs no course signal, and the best
+            home for it is the watch you never have to reach for.
           </li>
           <li>
             <strong>No account before your first round.</strong> Nobody wants to

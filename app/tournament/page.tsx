@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     q: "How do players join?",
-    a: "The host shares a join code. Players enter it on their phone and start tapping their scores, with no account and no setup. Joining a tournament is always free.",
+    a: "The host shares a join code. Players enter it on their phone and start tapping their scores, with no account and no setup.",
   },
   {
     q: "Can people watch without the app?",
@@ -70,7 +70,7 @@ export default function TournamentPage() {
         <div className="page-hero-inner">
           <div className="pill">Tournament · Coming soon</div>
           <h1>
-            Every group.
+            Every group.{" "}
             <br />
             <span className="accent">One live leaderboard.</span>
           </h1>

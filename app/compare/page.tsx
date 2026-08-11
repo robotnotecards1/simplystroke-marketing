@@ -19,7 +19,7 @@ import {
 
 const TITLE = "SimplyStroke vs 18Birdies, Arccos, Golfshot & More (2026)";
 const DESCRIPTION =
-  "An honest comparison of SimplyStroke against the big golf apps. They do more and charge $30-$200 a year; we do one thing and charge nothing.";
+  "An honest comparison of SimplyStroke against the big golf apps. They combine scoring with GPS, analytics and paid upgrades; SimplyStroke keeps core scorekeeping focused and free.";
 const PATH = "/compare/";
 
 export const metadata: Metadata = {
@@ -105,15 +105,15 @@ const apps = [
 const faqs: Faq[] = [
   {
     q: "What is the simplest golf scorecard app?",
-    a: "The simplest golf scorecard apps are one-tap stroke counters, where you tap once per swing and the app keeps the running total and totals the card for you. SimplyStroke is built to be the simplest of these: one giant button, an undo, no account required to start a round, no ads, no GPS and no subscription.",
+    a: "The simplest golf scorecard apps are one-tap stroke counters, where you tap once per swing and the app keeps the running total and totals the card for you. SimplyStroke is built to be the simplest of these: one giant button, an undo, no account required to start a round, no ads and no GPS clutter.",
   },
   {
     q: "Is there a golf app without a subscription?",
-    a: "Yes. SimplyStroke is free with no subscription. Most GPS and analytics golf apps charge roughly $30 to $100 a year for their useful tiers, and hardware trackers like Arccos add $180 to $300 up front for sensors.",
+    a: "Yes. Core scoring in SimplyStroke is free. Most GPS and analytics golf apps charge roughly $30 to $100 a year for their useful tiers, and hardware trackers like Arccos add $180 to $300 up front for sensors.",
   },
   {
     q: "What is a simpler alternative to 18Birdies?",
-    a: "If you use 18Birdies mainly to keep score and ignore the GPS, green maps and social feed, a one-tap stroke counter does that one job with far less friction. SimplyStroke records a stroke in a single tap, needs no account to start a round, works fully offline and shows no ads. You lose GPS yardages, handicap tracking and the social feed, which is the trade.",
+    a: "If you use 18Birdies mainly to keep score and ignore the GPS, green maps and social feed, a one-tap stroke counter does that one job with far less friction. SimplyStroke records a stroke in a single tap, needs no account to start a round, works offline for solo rounds and shows no ads. You lose GPS yardages, handicap tracking and the social feed, which is the trade.",
   },
   {
     q: "Do I need a golf GPS app if I already have a rangefinder?",
@@ -125,7 +125,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Is SimplyStroke free?",
-    a: "Yes. SimplyStroke is free, with no subscription, no ads and no hardware to buy.",
+    a: "Yes. Core scoring is free, with no ads and no hardware to buy.",
   },
   {
     q: "Is SimplyStroke available yet?",
@@ -303,8 +303,8 @@ export default function ComparePage() {
             <strong>
               If you are here because you just looked at a renewal notice:
             </strong>{" "}
-            SimplyStroke is free, with no subscription and no
-            hardware. If all you were getting for that money was a scorecard,
+            SimplyStroke&apos;s core scoring is free, with no hardware to buy.
+            If all you were getting for that money was a scorecard,
             you were being overcharged by roughly the entire amount.
           </p>
           <p>
@@ -339,17 +339,17 @@ export default function ComparePage() {
           climbs again every time the app adds something you did not ask for.
         </p>
         <p>
-          SimplyStroke sidesteps the whole argument by not having one.
-          It&apos;s free. No subscription, no ads, no hardware bundle and no
-          upsell holding your own scorecard hostage.
+          SimplyStroke sidesteps the whole argument by keeping core scoring
+          free — no ads, no hardware bundle and no upsell holding your own
+          scorecard hostage.
         </p>
         <p>
           That is not generosity, it is arithmetic:{" "}
-          <strong>counting to five costs nothing to run.</strong> There are no
-          course maps to license, no servers doing analytics, no sensors to
-          manufacture. An app that only counts can afford to be free, and an app
-          that&apos;s free is an app that isn&apos;t under pressure to invent a
-          reason for you to pay again next year.
+          <strong>counting to five is cheap to run.</strong> There are no
+          course maps to license, no analytics to crunch, no sensors to
+          manufacture. An app whose core job is just counting can afford to keep
+          that part free, without the pressure to invent a reason for you to pay
+          again next year.
         </p>
 
         <h2>Why golf apps get more complicated every year</h2>

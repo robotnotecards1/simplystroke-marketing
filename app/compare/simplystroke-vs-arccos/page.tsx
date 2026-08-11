@@ -36,7 +36,7 @@ const faqs: Faq[] = [
   },
   {
     q: "How much does Arccos cost?",
-    a: "Arccos combines a hardware purchase with an ongoing membership. Sensors and bundles typically run $180 to $300 up front, and the membership runs roughly $100 to $200 a year depending on plan and renewal terms. Check Arccos directly for current pricing. SimplyStroke is free with no hardware and no subscription.",
+    a: "Arccos combines a hardware purchase with an ongoing membership. Sensors and bundles typically run $180 to $300 up front, and the membership runs roughly $100 to $200 a year depending on plan and renewal terms. Check Arccos directly for current pricing. SimplyStroke's core scoring is free, with no hardware to buy.",
   },
   {
     q: "Is Arccos worth it?",
@@ -132,8 +132,8 @@ export default function Page() {
               <strong>Arccos</strong> is an automatic shot-tracking and strokes
               gained system: sensors in your grips, a subscription, and the best
               golf analytics money can buy. <strong>SimplyStroke</strong> is a
-              free one-tap stroke counter with no sensors, no subscription and no
-              analytics. These two apps are not really competing. The only
+              free one-tap stroke counter with no sensors and no analytics.
+              These two apps are not really competing. The only
               question worth asking is which output you actually use: the data,
               or the number.
             </>
@@ -183,7 +183,7 @@ export default function Page() {
           renewal. Prices move; check Arccos for the current numbers before you
           quote us.
         </p>
-        <p>SimplyStroke is free. No subscription, and no renewal to dodge.</p>
+        <p>SimplyStroke&apos;s core scoring is free, with no sensors to buy.</p>
 
         <h2>Side by side</h2>
 
@@ -231,7 +231,7 @@ export default function Page() {
                 <td data-label="Arccos">A known weak spot</td>
               </tr>
               <tr>
-                <th scope="row">Works fully offline</th>
+                <th scope="row">Solo rounds work offline</th>
                 <td data-label="SimplyStroke">Yes</td>
                 <td data-label="Arccos">No, needs sync</td>
               </tr>

@@ -70,8 +70,9 @@ export default function TermsPage() {
         <p>
           SimplyStroke is a golf stroke counter. You tap to count strokes, add
           penalties, and get a scorecard. The core counter is free and works
-          fully offline — no account, no subscription, no ads. Optional extras
-          need an account or a connection: backing rounds up to the cloud so they
+          offline for solo rounds — no account needed to start, and no ads
+          today. Optional extras need an account or a connection: backing rounds
+          up to the cloud so they
           follow you across devices; <strong>group rounds</strong>, where a shared
           join code puts everyone&apos;s scorecard in one live view; and looking
           up nearby courses to auto-fill par. Features may change, break, or be

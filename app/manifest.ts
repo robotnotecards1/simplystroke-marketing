@@ -16,7 +16,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: `${SITE_NAME} — Golf Stroke Counter`,
     short_name: SITE_NAME,
     description:
-      "The free, one-tap golf stroke counter and scorecard. No subscription, no account.",
+      "The one-tap golf stroke counter and scorecard. Core scoring is free, with no account needed to start.",
     start_url: "/",
     display: "standalone",
     background_color: "#1B4332",

@@ -90,7 +90,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Is there a golf app made for ADHD?",
-    a: "Yes. SimplyStroke is a golf stroke counter built for ADHD golfers. The whole app is one giant tap-the-ball button that counts your strokes, so working memory never has to hold the number. It is free, works fully offline, needs no account to start a round, and it is now on the App Store for iPhone and Apple Watch, and also plays in your browser. Android is coming soon.",
+    a: "Yes. SimplyStroke is a golf stroke counter built for ADHD golfers. The whole app is one giant tap-the-ball button that counts your strokes, so working memory never has to hold the number. Core scoring is free, your solo round works offline, no account is needed to start, and it is now on the App Store for iPhone and Apple Watch, and also plays in your browser. Android is coming soon.",
   },
   {
     q: "Are there neurodivergent-friendly golf apps?",
@@ -98,11 +98,11 @@ const faqs: Faq[] = [
   },
   {
     q: "How is SimplyStroke different from other golf scorecard apps?",
-    a: "Most scoring apps bury the score behind menus, GPS overlays, handicaps and ads. SimplyStroke keeps exactly one job on screen: count this stroke. One tap per swing, an undo for fat fingers, and a finished scorecard with the math already done. No GPS, no handicap posting, no strokes gained, no subscription.",
+    a: "Most scoring apps bury the score behind menus, GPS overlays, handicaps and ads. SimplyStroke keeps exactly one job on screen: count this stroke. One tap per swing, an undo for fat fingers, and a finished scorecard with the math already done. No GPS clutter, no handicap posting, no strokes gained.",
   },
   {
     q: "Does SimplyStroke work without signal on the course?",
-    a: "Yes. Your solo round works fully offline, so a dead zone on the back nine never costs you your round. A stroke counter needs no map data and no server, so there is no honest reason for one to fail.",
+    a: "Yes. Your solo round works offline and is saved on your device, so a dead zone on the back nine never costs you your round. (Live group scoring needs a connection.)",
   },
   {
     q: "What is the hardest part of golf when you have ADHD?",
@@ -149,7 +149,7 @@ export default function AdhdGolfPage() {
         <div className="page-hero-inner">
           <div className="pill">The ADHD golf app · Live now</div>
           <h1>
-            Golf asks you to remember one number.
+            Golf asks you to remember one number.{" "}
             <br />
             <span className="accent">Your brain has other plans.</span>
           </h1>
@@ -480,8 +480,8 @@ export default function AdhdGolfPage() {
                 <BallPinIcon />
               </div>
               <span>
-                Tapped twice by accident? Undo. Fully offline, no ads, no feeds,
-                no menus mid-round.
+                Tapped twice by accident? Undo. Solo rounds work offline, no
+                ads, no feeds, no menus mid-round.
               </span>
             </div>
           </div>
