@@ -92,15 +92,13 @@ export const appNode = {
     price: "0",
     priceCurrency: "USD",
   },
-  // No aggregateRating / review yet — a deliberate choice, see
-  // docs/SCHEMA-DECISION.md. A real rating exists (App Store showed 5.0 from
-  // ~6 ratings on 2026-08-11, via the iTunes lookup API), but the base is tiny
-  // and volatile, and this is a static export: any value baked in here freezes
-  // at build time with no refresh — exactly the "stale rating with no
-  // maintenance plan" a review should flag. This node is therefore valid
-  // Schema.org entity markup that is intentionally NOT yet eligible for
-  // Google's SoftwareApplication rich result. Revisit when the rating base is
-  // larger (~50+) or a build-time fetch keeps it current.
+  // `aggregateRating` is intentionally NOT hard-coded on this base node. The
+  // homepage injects a LIVE one at build time — lib/appStore.ts fetches the App
+  // Store rating and spreads it onto a copy of this node — so the value
+  // auto-refreshes per deploy and is never stale/invented. If that fetch fails,
+  // the homepage ships this node rating-less rather than showing a bad number.
+  // Other pages reuse this base node as-is (rating-less). See
+  // docs/SCHEMA-DECISION.md.
 };
 
 /* -------------------------------------------------------------------------- */

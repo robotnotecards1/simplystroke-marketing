@@ -5,6 +5,7 @@ import StoreBadges from "@/components/StoreBadges";
 import TrackedCta from "@/components/TrackedCta";
 import { APP_STORE_URL, APP_URL, og } from "@/lib/site";
 import { appNode, graph, organizationNode, websiteNode } from "@/lib/schema";
+import { getAppStoreData } from "@/lib/appStore";
 
 const PH = "/images/photos";
 const SC = "/images/app-screens";
@@ -33,10 +34,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: og(TITLE, DESCRIPTION, "/"),
 };
-
-// One @graph: the site, the company and the app, behind stable @ids every other
-// page reuses. See lib/schema.ts.
-const entityJsonLd = graph(organizationNode, websiteNode, appNode);
 
 // Homepage FAQ — the questions people type into Google and AI assistants, in the
 // format answer engines quote. Rendered on-page AND as FAQPage schema; keep synced.
@@ -81,40 +78,30 @@ const faqJsonLd = {
   })),
 };
 
-// Real App Store reviews, 5-star only. Snapshot fetched 2026-08-11 from the
-// public iTunes customer-reviews RSS feed (id 6792327238) — every written review
-// to date was 5 stars. Displayed verbatim with attribution; NOT altered. Refresh
-// by re-running the fetch, or wire a build-time fetch that filters im:rating==5
-// (same approach as the rating in docs/SCHEMA-DECISION.md).
-const reviews = [
-  {
-    author: "VIGNDOG",
-    title: "Great app!",
-    body: "It makes keeping score incredibly easy, especially with the watch app. I can stay focused on my game rather than trying to remember how many strokes I shot on a hole. The seamless experience and simple design make it a must-have!",
-  },
-  {
-    author: "Chris Devonshire",
-    title: "So easy!!",
-    body: "I've tried so many live scoring golf apps, but like the name says, it's super simple. I got enough crazy thoughts in my head on the course — this app is a total value add.",
-  },
-  {
-    author: "DJ CobraKai",
-    title: "Best golf scoring app",
-    body: "Has every course you can think of and makes keeping score so easy for yourself or even the entire group. I highly recommend for your next round!",
-  },
-  {
-    author: "ontj",
-    title: "Quick and easy",
-    body: "Made keeping score a breeze, easy to navigate and enter shots, including unfortunately a penalty. Quickly found the course I was playing so no set-up required. Will be in my bag from now on.",
-  },
-  {
-    author: "Nick..1827",
-    title: "Exactly what's needed",
-    body: "Super straightforward to use and has the golf courses that I play at. Makes tracking scores so much easier.",
-  },
-];
+export default async function Home() {
+  // App Store rating + 5-star reviews, fetched at build time (lib/appStore.ts).
+  const { rating, reviews } = await getAppStoreData();
 
-export default function Home() {
+  // One @graph: the site, the company and the app. The app node carries the
+  // real App Store rating when the build-time fetch succeeded; otherwise it
+  // ships without aggregateRating rather than a stale or invented one.
+  const entityJsonLd = graph(
+    organizationNode,
+    websiteNode,
+    rating
+      ? {
+          ...appNode,
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: rating.value,
+            ratingCount: rating.count,
+            bestRating: 5,
+            worstRating: 1,
+          },
+        }
+      : appNode
+  );
+
   return (
     <main id="top" className="nh">
       <script
@@ -147,6 +134,9 @@ export default function Home() {
         .nh-btn:hover { filter:brightness(1.04); }
         .nh-webcta { color:var(--lime-text); font-weight:700; font-size:16px; margin-top:16px; display:inline-block; }
         .nh-badges { margin-top:26px; }
+        .nh-rating { display:flex; align-items:center; gap:7px; margin-top:16px; color:rgba(255,255,255,.9); font-size:14px; font-weight:600; }
+        .nh-rating .nh-rating-star { color:var(--lime); font-size:16px; }
+        .nh-rating b { color:#fff; font-weight:800; }
 
         /* ---------- STAT STRIP ---------- */
         .nh-stats { background:var(--green-deep); }
@@ -283,6 +273,9 @@ export default function Home() {
             </div>
             <div className="nh-badges"><StoreBadges ctaLocation="home_hero_badge" /></div>
             <TrackedCta event="web_app_click" ctaLocation="home_hero" href={APP_URL} className="nh-webcta">or play free in your browser →</TrackedCta>
+            {rating ? (
+              <div className="nh-rating"><span className="nh-rating-star">★</span> <b>{rating.value.toFixed(1)}</b> · {rating.count} App Store ratings</div>
+            ) : null}
           </div>
           <HeroDevices />
         </div>
