@@ -4,8 +4,9 @@
 // research JSON, or the demo fixtures.
 //
 // Sources, in priority order:
-//   1. Supabase (published courses + course_stats) — the live path the
-//      handoff specifies. Read at build time with the anon key.
+//   1. Supabase (released_courses + course_stats) — the live path: the DB
+//      release ramp + rounds threshold decide what builds. Read at build
+//      time with the anon key.
 //   2. Committed research JSON (data/research/*.json) — the hand-curated
 //      source the courses were seeded FROM. Guarantees a clean checkout builds
 //      even with no Supabase env, and is the source of truth for facts.
@@ -86,9 +87,11 @@ const RESEARCH_DIR = path.join(process.cwd(), "data", "research");
 const DEMO_DIR = path.join(process.cwd(), "data", "demo");
 const MAPS_DIR = path.join(process.cwd(), "data", "maps");
 
-// The 10 courses published in phase 1, in directory order. Anything not here
-// stays out of generateStaticParams even if it exists in Supabase.
-export const PUBLISHED_SLUGS = [
+// The 10 hand-curated phase-1 courses, in directory order. No longer the
+// publish GATE — the DB release ramp is (see getPublishedCourses). Still used
+// for directory ordering, for the no-Supabase research fallback, and as the
+// editorial set that bypasses the rounds threshold.
+export const CURATED_SLUGS = [
   "torrey-pines-south",
   "torrey-pines-north",
   "bethpage-black",
@@ -179,8 +182,33 @@ function readResearch(slug: string): Course | null {
 let researchCache: Course[] | null = null;
 function allResearch(): Course[] {
   if (researchCache) return researchCache;
-  researchCache = PUBLISHED_SLUGS.map(readResearch).filter(Boolean) as Course[];
+  researchCache = CURATED_SLUGS.map(readResearch).filter(Boolean) as Course[];
   return researchCache;
+}
+
+// Phase 2 thin-content gate: a DB-released course only builds a page once
+// this many rounds are posted to its leaderboard (course_stats.rounds_count).
+// Curated courses (hand-written editorial) bypass it. Override per deploy
+// with COURSE_ROUNDS_THRESHOLD; never below 1 — a zero-round auto page is
+// exactly the thin-content bomb the plan forbids.
+export const ROUNDS_THRESHOLD = Math.max(
+  1,
+  Number(process.env.COURSE_ROUNDS_THRESHOLD ?? 3) || 3
+);
+
+// A ramp-released course may exist only in the DB (no research JSON). Fill
+// the array/label fields pages iterate so a null column can't crash a build.
+function withDefaults(c: Course): Course {
+  return {
+    ...c,
+    country: c.country ?? "USA",
+    address: c.address ?? "",
+    par_per_hole: c.par_per_hole ?? [],
+    tees: c.tees ?? [],
+    amenities: c.amenities ?? [],
+    access_type: c.access_type ?? "public",
+    green_fee_tier: c.green_fee_tier ?? "",
+  };
 }
 
 // Merge a DB row (authoritative, live) OVER the research base (rich facts).
@@ -194,7 +222,7 @@ function mergeCourse(
   db: Record<string, unknown> | undefined
 ): Course | null {
   if (!db) return research;
-  if (!research) return db as unknown as Course;
+  if (!research) return withDefaults(db as unknown as Course);
   const overrides: Record<string, unknown> = {};
   for (const [k, v] of Object.entries(db)) {
     if (v !== null && v !== undefined) overrides[k] = v;
@@ -202,23 +230,62 @@ function mergeCourse(
   return { ...research, ...overrides } as Course;
 }
 
-/** Every published course, directory order. DB values merged over research. */
+/** Every published course, directory order. DB values merged over research.
+ *
+ * Phase 2 gate (the DB release ramp, engine-spec §C): a page builds when the
+ * DB has RELEASED the course — `released_courses` already enforces
+ * release_at <= now() AND status = 'published' AND facts-complete — AND it
+ * clears the thin-content threshold: hand-written editorial (curated set) or
+ * >= ROUNDS_THRESHOLD posted rounds. Filtering here excludes sub-threshold
+ * courses from generateStaticParams AND sitemap.ts in one place, and
+ * `dynamicParams = false` makes that a hard 404, not a noindex fallback.
+ */
 export async function getPublishedCourses(): Promise<Course[]> {
   const sb = supabase();
   if (sb) {
-    const { data, error } = await sb
-      .from("courses")
-      .select("*")
-      .eq("status", "published");
-    if (!error && data && data.length > 0) {
-      const bySlug = new Map(
-        data.map((c) => [c.slug as string, c as Record<string, unknown>])
+    const [rel, stats] = await Promise.all([
+      sb.from("released_courses").select("*"),
+      sb.from("course_stats").select("course_id, rounds_count"),
+    ]);
+    if (!rel.error && rel.data && rel.data.length > 0) {
+      const rounds = new Map(
+        (stats.data ?? []).map((s) => [
+          s.course_id as string,
+          Number(s.rounds_count) || 0,
+        ])
       );
-      // Keep directory order; research is the base so rich fields survive, and
-      // a partially-seeded DB never drops a page.
-      return PUBLISHED_SLUGS.map((slug) =>
-        mergeCourse(readResearch(slug), bySlug.get(slug))
-      ).filter(Boolean) as Course[];
+      const releasable = (rel.data as Record<string, unknown>[]).filter(
+        (row) => {
+          const slug = row.slug as string;
+          const curated =
+            CURATED_SLUGS.includes(slug) || Boolean(CONTENT[slug]);
+          const posted = rounds.get(row.id as string) ?? 0;
+          return curated || posted >= ROUNDS_THRESHOLD;
+        }
+      );
+      // Research is the base so rich fields survive; non-null DB values win,
+      // and a partially-seeded DB never drops a curated page. Routability
+      // (coursePath needs name/city/state) is checked AFTER the merge so a
+      // sparse DB row can't drop a research-backed course.
+      const merged = (
+        releasable
+          .map((row) => mergeCourse(readResearch(row.slug as string), row))
+          .filter(Boolean) as Course[]
+      ).filter((c) => Boolean(c.name && c.city && c.state));
+      // Directory order: curated set first (in CURATED_SLUGS order), then
+      // ramp releases by state / city / name.
+      const order = new Map(CURATED_SLUGS.map((s, i) => [s, i]));
+      merged.sort((a, b) => {
+        const ai = order.get(a.slug) ?? Number.MAX_SAFE_INTEGER;
+        const bi = order.get(b.slug) ?? Number.MAX_SAFE_INTEGER;
+        if (ai !== bi) return ai - bi;
+        return (
+          a.state.localeCompare(b.state) ||
+          a.city.localeCompare(b.city) ||
+          a.name.localeCompare(b.name)
+        );
+      });
+      if (merged.length > 0) return merged;
     }
   }
   return allResearch();
