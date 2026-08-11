@@ -61,7 +61,7 @@ const faqs = [
   },
   {
     q: "Does it work without signal on the course?",
-    a: "Yes. Your solo round works fully offline, so a dead zone on the back nine never costs you your round. Your card syncs when you are back in range. (Live group scoring needs a connection.)",
+    a: "Yes. Your solo round works offline, so a dead zone on the back nine never costs you your round. Your card syncs when you are back in range. (Live group scoring needs a connection.)",
   },
   {
     q: "Will I lose my round if my phone dies?",
@@ -111,7 +111,7 @@ export default function Home() {
               Free core scoring · One tap per shot
             </div>
             <h1 className="ss-hero-h1">
-              Golf&apos;s simplest
+              Golf&apos;s simplest{" "}
               <br />
               <span className="accent">stroke counter.</span>
             </h1>
@@ -234,8 +234,8 @@ export default function Home() {
             <div className="ss-simple-cell">
               <h3>Works with no signal</h3>
               <p>
-                Fully offline. A dead zone on the back nine never costs you your
-                round.
+                Solo rounds work offline. A dead zone on the back nine never
+                costs you your round.
               </p>
             </div>
             <div className="ss-simple-cell">
@@ -553,7 +553,7 @@ export default function Home() {
         <div className="ss-trust-grid">
           <div className="ss-trust-cell">
             <h3>Free to play</h3>
-            <p>No ads mid-round, no catch. Start counting today.</p>
+            <p>No ads mid-round. Start counting today.</p>
           </div>
           <div className="ss-trust-cell">
             <h3>Works offline</h3>

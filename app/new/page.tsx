@@ -167,7 +167,7 @@ export default function NewHome() {
         <div className="nh-wrap nh-hero-inner">
           <div>
             <span className="nh-eyebrow">Free golf scorecard · One tap per shot</span>
-            <h1>Golf&apos;s simplest<br /><span className="li">stroke counter.</span></h1>
+            <h1>Golf&apos;s simplest{" "}<br /><span className="li">stroke counter.</span></h1>
             <p className="nh-hero-p">No math. No distraction. Just tap. Free core scoring, works offline, and no account needed to start.</p>
             <div className="nh-cta">
               <TrackedCta event="app_store_click" ctaLocation="new_hero" href={APP_STORE_URL} className="nh-btn" aria-label="Download SimplyStroke on the App Store">Download on the App Store →</TrackedCta>
@@ -183,7 +183,7 @@ export default function NewHome() {
       <section className="nh-stats">
         <div className="nh-wrap nh-stats-grid">
           <div className="nh-stat">{I.ball}<div className="n">One tap</div><div className="l">per shot — never do the math</div></div>
-          <div className="nh-stat">{I.free}<div className="n">Free</div><div className="l">core scoring, no subscription</div></div>
+          <div className="nh-stat">{I.free}<div className="n">Free</div><div className="l">core scoring, no account to start</div></div>
           <div className="nh-stat">{I.watch}<div className="n">On your wrist</div><div className="l">Apple Watch companion</div></div>
           <div className="nh-stat">{I.group}<div className="n">Play together</div><div className="l">live group scorecards</div></div>
         </div>
@@ -212,7 +212,7 @@ export default function NewHome() {
           <div className="disp">Count this stroke. That&apos;s it.</div>
           <p>No GPS overlay, no feed to scroll, no setup wizard. One giant button on screen, and the number lives there instead of in your head — so nothing has to be remembered on the walk to the next tee.</p>
           <div className="nh-nolist">
-            <span>No GPS maps</span><span>No social feed</span><span>No setup wizard</span><span>No subscription</span><span>No ads</span>
+            <span>No GPS maps</span><span>No social feed</span><span>No setup wizard</span><span>No account to start</span><span>No ads</span>
           </div>
         </div>
       </section>
@@ -310,7 +310,7 @@ export default function NewHome() {
         <div className="nh-wrap">
           <span className="nh-eyebrow" style={{ color: "var(--lime-text)", justifyContent: "center" }}>Now on the App Store</span>
           <h2>Play your next round with it.</h2>
-          <p>Free core scoring for iPhone and Apple Watch. No subscription, no ads, and no account to start. Android coming soon.</p>
+          <p>Free core scoring for iPhone and Apple Watch. No account needed to start, and no ads today. Android coming soon.</p>
           <div className="nh-cta"><TrackedCta event="app_store_click" ctaLocation="new_final" href={APP_STORE_URL} className="nh-btn" aria-label="Download SimplyStroke on the App Store">Download on the App Store →</TrackedCta></div>
           <div className="nh-note">Preview build · not indexed. Prefer the browser? <TrackedCta event="web_app_click" ctaLocation="new_final" href={APP_URL} style={{ color: "var(--lime-text)", fontWeight: 700 }}>Play free in your browser →</TrackedCta></div>
         </div>

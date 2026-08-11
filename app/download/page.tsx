@@ -7,9 +7,9 @@ import { appNode, graph, organizationNode } from "@/lib/schema";
 
 const entityJsonLd = graph(organizationNode, appNode);
 
-const TITLE = "Get SimplyStroke: Free Golf Scorecard App, No Subscription";
+const TITLE = "Get SimplyStroke: Free Golf Scorecard App for iPhone & Watch";
 const DESCRIPTION =
-  "SimplyStroke is free on the App Store for iPhone and Apple Watch: a one-tap golf stroke counter and scorecard. No subscription, no ads, no account to start.";
+  "SimplyStroke is free on the App Store for iPhone and Apple Watch: a one-tap golf stroke counter and scorecard. Core scoring is free, with no account needed to start.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -32,8 +32,9 @@ export default function DownloadPage() {
           <h1 style={{ marginLeft: "auto", marginRight: "auto" }}>Get SimplyStroke.</h1>
           <p className="lede" style={{ marginLeft: "auto", marginRight: "auto" }}>
             The one-tap golf stroke counter and scorecard, free on the App Store
-            for iPhone and Apple Watch. No subscription, no ads, no account to
-            start. Prefer not to download? Play right now in your browser.
+            for iPhone and Apple Watch. Core scoring is free, with no account
+            needed to start. Prefer not to download? Play right now in your
+            browser.
           </p>
           <div className="cta-row" style={{ justifyContent: "center" }}>
             <TrackedCta

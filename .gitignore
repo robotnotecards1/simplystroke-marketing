@@ -47,3 +47,13 @@ next-env.d.ts
 
 # SEO-GOD local state (secrets, run markers, scratch)
 .seo-god/
+# SEO-GOD generated output + config snapshot (rebuilt by the tool; not source)
+/dist/
+/seo-god.json
+
+# Local Claude Code agent worktrees (1GB+ of nested checkouts) — never commit
+/.claude/
+
+# Local Supabase advisor handoff — belongs to the app/infra work, not this
+# marketing site. Kept out of the tree on purpose.
+/SUPABASE-ADVISOR-HANDOFF.md

@@ -13,7 +13,7 @@ import {
 
 const TITLE = "About SimplyStroke: Why It Exists, and What It Won't Do";
 const DESCRIPTION =
-  "SimplyStroke is a free, one-tap golf stroke counter with no subscription. Why it exists, what it leaves out, and what it will never do to you.";
+  "SimplyStroke is a free, one-tap golf stroke counter. Why it exists, what it leaves out, and what it deliberately does not do.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -77,28 +77,29 @@ export default function AboutPage() {
 
         <h2>Free, and not as a trick</h2>
         <p>
-          SimplyStroke is free. No subscription, no ads, no sensor bundle and no
-          upsell holding your own scorecard hostage.
+          SimplyStroke&apos;s core scoring is free — no ads, no sensor bundle and
+          no upsell holding your own scorecard hostage.
         </p>
         <p>
           This isn&apos;t generosity, it&apos;s arithmetic.{" "}
           <strong>Counting to five costs nothing to run.</strong> There are no
-          course maps to license, no analytics servers, no hardware to
-          manufacture. An app that only counts can afford to be free — and an
-          app that&apos;s free isn&apos;t under pressure to invent a reason for
-          you to pay again next year, which is the reason every other golf app
-          gets more cluttered every single year.
+          course maps to license, no analytics to crunch, no hardware to
+          manufacture. An app whose core job is just counting can afford to keep
+          that part free — and an app that isn&apos;t forced to monetize the
+          count isn&apos;t under pressure to invent a reason for you to pay again
+          next year, which is the reason every other golf app gets more
+          cluttered every single year.
         </p>
 
-        <h2>What we&apos;ll never do</h2>
+        <h2>What SimplyStroke leaves out</h2>
         <ul>
-          <li>Sell your round data. There&apos;s nothing to sell it to.</li>
-          <li>Put an ad between you and your score.</li>
+          <li>Your round data isn&apos;t sold — there&apos;s nothing to sell it to.</li>
+          <li>No ad between you and your score.</li>
           <li>
-            Add a feature because a competitor has it. The whole product is the
-            things we left out.
+            We don&apos;t add a feature just because a competitor has it. The
+            whole product is the things we left out.
           </li>
-          <li>Charge you a subscription to count to five.</li>
+          <li>Core scorekeeping is free — counting your round costs nothing.</li>
         </ul>
 
         <h2>On the ADHD thing</h2>
