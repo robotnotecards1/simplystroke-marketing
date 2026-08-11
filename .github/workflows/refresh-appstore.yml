@@ -1,0 +1,42 @@
+name: Refresh App Store rating & reviews
+
+# The homepage rating badge, aggregateRating schema, and 5-star testimonials are
+# fetched at BUILD time (lib/appStore.ts). On a static export that means they are
+# only as fresh as the last deploy. This job triggers a daily production rebuild
+# so those numbers track the App Store without anyone pushing code.
+#
+# ONE-TIME SETUP (see docs/APPSTORE-REFRESH.md):
+#   1. Vercel → project → Settings → Git → Deploy Hooks → create a hook on
+#      branch `main`. Copy its URL.
+#   2. GitHub → repo → Settings → Secrets and variables → Actions → New
+#      repository secret named VERCEL_DEPLOY_HOOK_URL, paste the URL.
+# Until the secret exists the job runs and safely no-ops.
+
+on:
+  schedule:
+    - cron: "0 12 * * *" # daily at 12:00 UTC
+  workflow_dispatch: {} # allow manual runs from the Actions tab
+
+permissions:
+  contents: read
+
+concurrency:
+  group: appstore-refresh
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel production rebuild
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "VERCEL_DEPLOY_HOOK_URL secret is not set — skipping (no-op)."
+            echo "See docs/APPSTORE-REFRESH.md to enable the daily refresh."
+            exit 0
+          fi
+          echo "Triggering Vercel rebuild…"
+          curl -fsS -X POST "$HOOK" -o /dev/null -w "HTTP %{http_code}\n"
+          echo "Done — the new build re-runs the App Store fetch."
