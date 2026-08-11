@@ -81,6 +81,39 @@ const faqJsonLd = {
   })),
 };
 
+// Real App Store reviews, 5-star only. Snapshot fetched 2026-08-11 from the
+// public iTunes customer-reviews RSS feed (id 6792327238) — every written review
+// to date was 5 stars. Displayed verbatim with attribution; NOT altered. Refresh
+// by re-running the fetch, or wire a build-time fetch that filters im:rating==5
+// (same approach as the rating in docs/SCHEMA-DECISION.md).
+const reviews = [
+  {
+    author: "VIGNDOG",
+    title: "Great app!",
+    body: "It makes keeping score incredibly easy, especially with the watch app. I can stay focused on my game rather than trying to remember how many strokes I shot on a hole. The seamless experience and simple design make it a must-have!",
+  },
+  {
+    author: "Chris Devonshire",
+    title: "So easy!!",
+    body: "I've tried so many live scoring golf apps, but like the name says, it's super simple. I got enough crazy thoughts in my head on the course — this app is a total value add.",
+  },
+  {
+    author: "DJ CobraKai",
+    title: "Best golf scoring app",
+    body: "Has every course you can think of and makes keeping score so easy for yourself or even the entire group. I highly recommend for your next round!",
+  },
+  {
+    author: "ontj",
+    title: "Quick and easy",
+    body: "Made keeping score a breeze, easy to navigate and enter shots, including unfortunately a penalty. Quickly found the course I was playing so no set-up required. Will be in my bag from now on.",
+  },
+  {
+    author: "Nick..1827",
+    title: "Exactly what's needed",
+    body: "Super straightforward to use and has the golf courses that I play at. Makes tracking scores so much easier.",
+  },
+];
+
 export default function Home() {
   return (
     <main id="top" className="nh">
@@ -205,6 +238,15 @@ export default function Home() {
         .nh-faq-links { color:var(--gray-dark); font-size:16px; margin-top:34px; }
         .nh-faq-links + .nh-faq-links { margin-top:14px; }
         .nh-faq-links a { color:var(--green-mid); font-weight:700; }
+
+        /* ---------- TESTIMONIALS ---------- */
+        .nh-revs { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:52px; }
+        .nh-rev { background:#FBFAF6; padding:26px; display:flex; flex-direction:column; gap:12px; }
+        .nh-rev-stars { color:var(--lime); letter-spacing:4px; font-size:15px; line-height:1; }
+        .nh-rev-title { font-size:19px; color:var(--green-deep); }
+        .nh-rev-body { color:var(--gray-dark); font-size:15px; line-height:1.6; margin:0; font-weight:500; }
+        .nh-rev-author { color:var(--gray-body); font-size:12.5px; font-weight:700; margin-top:auto; letter-spacing:.03em; text-transform:uppercase; }
+        @media (max-width:900px){ .nh-revs{ grid-template-columns:1fr; max-width:460px; margin-inline:auto; } }
 
         /* ---------- FINAL ---------- */
         .nh-final { position:relative; text-align:center; color:#fff;
@@ -368,6 +410,26 @@ export default function Home() {
             <p>The big golf apps bury your score under GPS maps, strokes-gained charts, handicaps and a social feed — and charge $30 to $200 a year for it. If the only thing that keeps going wrong is the count, none of that helps.</p>
             <p>SimplyStroke does one thing and does it in a single tap, so the number is always right when you reach the green.</p>
             <Link href="/compare/" className="nh-webcta" style={{ color: "var(--green-mid)" }}>See how it compares to the big apps →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== TESTIMONIALS (5-star App Store reviews) ===== */}
+      <section className="nh-sec dark">
+        <div className="nh-wrap">
+          <div className="nh-head center">
+            <span className="ey" style={{ color: "var(--lime-text)" }}>★★★★★ on the App Store</span>
+            <h2>Golfers who stopped losing count.</h2>
+          </div>
+          <div className="nh-revs">
+            {reviews.map((r) => (
+              <figure className="nh-rev" key={r.author}>
+                <div className="nh-rev-stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+                <h3 className="nh-rev-title">{r.title}</h3>
+                <blockquote className="nh-rev-body">{r.body}</blockquote>
+                <figcaption className="nh-rev-author">{r.author} · App Store</figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
