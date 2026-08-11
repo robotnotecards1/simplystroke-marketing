@@ -7,6 +7,7 @@ export const dynamic = "force-static";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date("2026-07-11");
   const courseModified = new Date("2026-07-19");
+  const guideModified = new Date("2026-08-11");
 
   const core: MetadataRoute.Sitemap = [
     { url: `${SITE_URL}/`, lastModified, priority: 1 },
@@ -22,7 +23,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/download/`, lastModified, priority: 0.8 },
     { url: `${SITE_URL}/about/`, lastModified, priority: 0.6 },
     // Guides
-    { url: `${SITE_URL}/guides/`, lastModified, priority: 0.6 },
+    { url: `${SITE_URL}/guides/`, lastModified: guideModified, priority: 0.6 },
+    { url: `${SITE_URL}/guides/how-to-keep-score-in-golf/`, lastModified: guideModified, priority: 0.8 },
+    { url: `${SITE_URL}/guides/how-to-read-a-golf-scorecard/`, lastModified: guideModified, priority: 0.75 },
+    { url: `${SITE_URL}/guides/what-is-a-good-golf-score/`, lastModified: guideModified, priority: 0.75 },
+    { url: `${SITE_URL}/guides/golf-scorecard-symbols-and-terms/`, lastModified: guideModified, priority: 0.7 },
     { url: `${SITE_URL}/guides/lost-count-of-strokes-what-to-do/`, lastModified, priority: 0.75 },
     { url: `${SITE_URL}/guides/adhd-and-golf-losing-count/`, lastModified, priority: 0.7 },
     // Reddit research
