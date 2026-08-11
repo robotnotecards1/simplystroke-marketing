@@ -256,7 +256,7 @@ export async function getLeaderboard(course: Course, limit = 12): Promise<Leader
   if (!sb) return [];
   const { data, error } = await sb
     .from("public_rounds")
-    .select("display_name, gross_score, score_to_par")
+    .select("display_name, home_city, gross_score, score_to_par, verified")
     .eq("course_id", course.id)
     .order("gross_score", { ascending: true })
     .limit(limit);
