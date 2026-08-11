@@ -32,9 +32,9 @@ export default function DownloadPage() {
           <h1 style={{ marginLeft: "auto", marginRight: "auto" }}>Get SimplyStroke.</h1>
           <p className="lede" style={{ marginLeft: "auto", marginRight: "auto" }}>
             The one-tap golf stroke counter and scorecard, free on the App Store
-            for iPhone and Apple Watch. Core scoring is free, with no account
-            needed to start. Prefer not to download? Play right now in your
-            browser.
+            for iPhone and Apple Watch. No account needed to start — tap the
+            ball, count your round. Prefer not to download? Play right now in
+            your browser.
           </p>
           <div className="cta-row" style={{ justifyContent: "center" }}>
             <TrackedCta
