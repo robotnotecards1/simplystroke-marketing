@@ -70,8 +70,7 @@ export default function NewHome() {
         /* ---------- SECTION SHELL ---------- */
         .nh-sec { padding-block:var(--section-pad-y); }
         /* visible grass texture instead of a flat cream fill */
-        .nh-sec.tex { position:relative; background:#EEE9DB; isolation:isolate; }
-        .nh-sec.tex::before { content:""; position:absolute; inset:0; z-index:-1; background:url("${PH}/green.jpg") center/cover; opacity:.22; mix-blend-mode:multiply; }
+        .nh-sec.tex { background:linear-gradient(rgba(245,242,233,.62), rgba(241,238,229,.74)), url("${PH}/green.jpg"); background-size:cover; background-position:center; }
         .nh-sec.dark { background:linear-gradient(165deg,var(--green-deep),#123527); color:#fff; }
         .nh-sec.dark h2 { color:#fff; } .nh-sec.dark p, .nh-sec.dark .nh-split-copy p { color:rgba(255,255,255,.85); }
         .nh-sec.dark .nh-list li { color:rgba(255,255,255,.85); }
@@ -216,7 +215,22 @@ export default function NewHome() {
         </div>
       </section>
 
-      {/* ===== APPLE WATCH (wrist shot, moved up) ===== */}
+      {/* ===== SIMPLE ON PURPOSE (textured, icons) ===== */}
+      <section className="nh-sec tex">
+        <div className="nh-wrap">
+          <div className="nh-head"><span className="ey">Simple on purpose</span><h2>Built to stay out of your way.</h2><p>The whole app is a stroke counter and a scorecard. That is the point, not a limitation.</p></div>
+          <div className="nh-grid">
+            <div className="nh-cell">{I.card}<h3>No math, ever</h3><p>The running number lives on the screen, not in your head.</p></div>
+            <div className="nh-cell">{I.ball}<h3>Gloves on, one hand</h3><p>Oversized buttons you can hit without looking.</p></div>
+            <div className="nh-cell">{I.course}<h3>Works with no signal</h3><p>Your solo round keeps going in a back-nine dead zone.</p></div>
+            <div className="nh-cell">{I.bag}<h3>Never lose a round</h3><p>Every tap is saved the instant you make it.</p></div>
+            <div className="nh-cell">{I.undo}<h3>Undo anything</h3><p>Fat-fingered a tap? One undo fixes it.</p></div>
+            <div className="nh-cell">{I.tee}<h3>Set up in one tap</h3><p>Near Me finds your course and fills in the pars.</p></div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== APPLE WATCH (wrist shot) ===== */}
       <section className="nh-watch">
         <div className="nh-wrap">
           <div className="nh-watch-copy">
@@ -229,21 +243,6 @@ export default function NewHome() {
               <li style={{ color: "rgba(255,255,255,.88)" }}>Syncs straight to your iPhone card.</li>
             </ul>
             <div className="nh-cta"><TrackedCta event="app_store_click" ctaLocation="new_watch" href={APP_STORE_URL} className="nh-btn">Download on the App Store →</TrackedCta></div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== SIMPLE ON PURPOSE (textured, icons) ===== */}
-      <section className="nh-sec tex">
-        <div className="nh-wrap">
-          <div className="nh-head"><span className="ey">Simple on purpose</span><h2>Built to stay out of your way.</h2><p>The whole app is a stroke counter and a scorecard. That is the point, not a limitation.</p></div>
-          <div className="nh-grid">
-            <div className="nh-cell">{I.card}<h3>No math, ever</h3><p>The running number lives on the screen, not in your head.</p></div>
-            <div className="nh-cell">{I.ball}<h3>Gloves on, one hand</h3><p>Oversized buttons you can hit without looking.</p></div>
-            <div className="nh-cell">{I.course}<h3>Works with no signal</h3><p>Your solo round keeps going in a back-nine dead zone.</p></div>
-            <div className="nh-cell">{I.bag}<h3>Never lose a round</h3><p>Every tap is saved the instant you make it.</p></div>
-            <div className="nh-cell">{I.undo}<h3>Undo anything</h3><p>Fat-fingered a tap? One undo fixes it.</p></div>
-            <div className="nh-cell">{I.tee}<h3>Set up in one tap</h3><p>Near Me finds your course and fills in the pars.</p></div>
           </div>
         </div>
       </section>
