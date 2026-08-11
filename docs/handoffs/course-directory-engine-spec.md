@@ -1,6 +1,6 @@
 # Course Directory Data Engine — Spec ("turn the engine on")
 
-**Written:** 2026-08-09 · **Status:** spec, not yet built
+**Written:** 2026-08-09 · **Status:** Phases 1–2 BUILT (2026-08-11): engine + posting flow live (mobile 0023–0027), marketing gate swapped to `released_courses` + `ROUNDS_THRESHOLD` in `lib/courses.ts`. Still open: §E facts licensing (Phase 3).
 **Repos:** DB + app work → mobile monorepo `~/Documents/Claude/Projects/SimplyStroke`. Marketing gate → this repo (`marketing-site`).
 **Context:** `COURSE-DIRECTORY-PLAN.md` (the strategy) + `lib/courses.ts` (the marketing data layer).
 
