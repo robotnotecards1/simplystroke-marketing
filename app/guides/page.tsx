@@ -17,6 +17,38 @@ export const metadata: Metadata = {
 // Add new guides here. Keep newest first; app/sitemap.ts reads the same slugs.
 const guides = [
   {
+    slug: "/guides/how-to-keep-score-in-golf/",
+    title: "How to keep score in golf",
+    date: "August 2026",
+    readingTime: "7 min read",
+    excerpt:
+      "The whole task, once, cleanly: what counts as a stroke, how par works, filling in the card hole by hole, totalling the nines, and gross vs net — with a worked example scorecard.",
+  },
+  {
+    slug: "/guides/how-to-read-a-golf-scorecard/",
+    title: "How to read a golf scorecard",
+    date: "August 2026",
+    readingTime: "6 min read",
+    excerpt:
+      "Every row explained on a labelled card: par, the stroke-index (handicap) row, yardages per tee, the OUT/IN/TOT columns, and what course and slope rating actually mean.",
+  },
+  {
+    slug: "/guides/what-is-a-good-golf-score/",
+    title: "What is a good golf score?",
+    date: "August 2026",
+    readingTime: "6 min read",
+    excerpt:
+      "Breaking 100, 90 and 80 explained, what the average golfer really shoots, and good beginner and nine-hole scores — with a reference table by skill level.",
+  },
+  {
+    slug: "/guides/golf-scorecard-symbols-and-terms/",
+    title: "Golf scorecard symbols and terms",
+    date: "August 2026",
+    readingTime: "5 min read",
+    excerpt:
+      "What the circles and squares mean, and a plain-English glossary — birdie, bogey, eagle, par, gross, net, stroke index and the rest.",
+  },
+  {
     slug: "/guides/lost-count-of-strokes-what-to-do/",
     title: "You lost count of your strokes. Now what?",
     date: "July 2026",
