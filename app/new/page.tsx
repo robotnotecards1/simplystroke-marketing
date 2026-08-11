@@ -94,7 +94,7 @@ export default function NewHome() {
         .nh-divider::before { content:""; position:absolute; inset:0; z-index:-1; background:url("${PH}/green.jpg") center 55%/cover; }
         .nh-divider .q { position:relative; z-index:1; max-width:760px; }
         .nh-divider .q .ey { color:var(--lime-text); }
-        .nh-divider .q .disp { color:#fff; font-size:clamp(34px,4.6vw,66px); margin-top:14px; max-width:20ch; }
+        .nh-divider .q .disp { color:#fff; font-size:clamp(28px,3.8vw,54px); margin-top:14px; max-width:none; white-space:nowrap; }
         .nh-divider .q p { color:rgba(255,255,255,.85); font-size:18px; max-width:52ch; margin-top:18px; font-weight:500; }
         .nh-nolist { display:flex; flex-wrap:wrap; gap:10px 12px; margin-top:26px; }
         .nh-nolist span { display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:#fff; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); padding:8px 14px; }
@@ -103,7 +103,7 @@ export default function NewHome() {
         /* ---------- APPLE WATCH (wrist photo) ---------- */
         .nh-watch { position:relative; color:#fff; padding-block:clamp(72px,9vw,120px); min-height:clamp(440px,50vw,620px); display:flex; align-items:center;
           background:linear-gradient(90deg, rgba(12,28,20,.10) 0%, rgba(12,28,20,.30) 42%, rgba(12,28,20,.90) 100%), url("/images/watch-course-bg.webp"); background-size:cover; background-position:left center; }
-        .nh-watch-copy { max-width:480px; margin-left:auto; }
+        .nh-watch-copy { max-width:420px; margin-left:auto; margin-right:0; text-align:left; }
         .nh-watch-copy h2 { color:#fff; font-size:clamp(34px,4.4vw,62px); }
         .nh-watch-copy p { color:rgba(255,255,255,.88); font-size:17px; font-weight:500; margin-top:18px; max-width:44ch; }
 
@@ -154,6 +154,8 @@ export default function NewHome() {
           .nh-grid{ grid-template-columns:1fr; }
           .nh-split{ grid-template-columns:1fr; } .nh-split.rev .nh-media, .nh-split.rev .nh-devcol{ order:0; }
           .nh-media{ aspect-ratio:16/10; max-height:360px; }
+        }
+        @media (max-width:620px){
           .nh-watch{ background:linear-gradient(180deg, rgba(12,28,20,.55), rgba(12,28,20,.9)), url("/images/watch-course-bg.webp"); background-size:cover; background-position:center; }
           .nh-watch-copy{ margin-inline:auto; text-align:center; }
         }
