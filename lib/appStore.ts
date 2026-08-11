@@ -56,11 +56,16 @@ type RssEntry = {
   content?: { label?: string };
 };
 
+// A build-time external fetch MUST be bounded — an unbounded fetch to a slow or
+// unreachable Apple endpoint would stall `next build` (and the scheduled cron
+// rebuild). 6s per request, then abort and fall back.
+const TIMEOUT_MS = 6000;
+
 async function fetchRating(): Promise<Rating | null> {
   try {
     const res = await fetch(
       `https://itunes.apple.com/lookup?id=${APP_ID}&country=${COUNTRY}`,
-      { cache: "force-cache" }
+      { cache: "force-cache", signal: AbortSignal.timeout(TIMEOUT_MS) }
     );
     if (!res.ok) return null;
     const data = (await res.json()) as { results?: LookupResult[] };
@@ -82,7 +87,7 @@ async function fetchFiveStarReviews(): Promise<Review[]> {
     for (const page of [1, 2, 3]) {
       const res = await fetch(
         `https://itunes.apple.com/${COUNTRY}/rss/customerreviews/page=${page}/id=${APP_ID}/sortby=mostrecent/json`,
-        { cache: "force-cache" }
+        { cache: "force-cache", signal: AbortSignal.timeout(TIMEOUT_MS) }
       );
       if (!res.ok) break;
       const data = (await res.json()) as { feed?: { entry?: RssEntry | RssEntry[] } };
