@@ -2,6 +2,19 @@
 
 **Decided:** 2026-08-11 · **Owner:** marketing-site · **Node:** `appNode` in `lib/schema.ts`
 
+> **UPDATE 2026-08-11 (supersedes the "do not add" decision below):** Jared
+> approved showing the rating. We now inject `aggregateRating` at **build time**
+> via `lib/appStore.ts`, which fetches the live App Store rating (and the 5-star
+> reviews used as homepage testimonials). So the value **auto-refreshes on every
+> deploy** and is never the "stale, unmaintained" number the analysis below
+> warns about — the concern is resolved by the fetch, not by omitting the
+> rating. Fail-safe: if the build-time fetch errors, the homepage ships
+> **rating-less** (never an invented/stale value) and testimonials fall back to a
+> committed snapshot. Only the homepage's app node carries the rating; other
+> pages reuse the rating-less base node. **To refresh without a manual code
+> change, schedule a periodic Vercel rebuild** (deploy hook / cron) — the fetch
+> re-runs each build.
+
 ## The question
 
 Google's `SoftwareApplication` rich result requires **either** `aggregateRating`
