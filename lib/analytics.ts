@@ -5,6 +5,12 @@
 // behave exactly like the existing gtag/Umami pageview. If a consent banner is
 // added later, gate every call below behind it.
 export type CtaEvent = "app_store_click" | "web_app_click";
+export type HomepageEvent =
+  | "homepage_demo_started"
+  | "homepage_demo_stroke_logged"
+  | "homepage_demo_undo_used"
+  | "faq_opened"
+  | "web_companion_clicked";
 export type DeviceCategory = "mobile" | "tablet" | "desktop";
 
 type CtaParams = {
@@ -51,4 +57,19 @@ export function trackGuideEngaged(): void {
   const params = { page_path: window.location.pathname };
   window.gtag?.("event", "guide_engaged", params);
   window.umami?.track("guide_engaged", params);
+}
+
+/** Small, privacy-conscious interaction events used by the homepage. */
+export function trackHomepageEvent(
+  event: HomepageEvent,
+  data: Record<string, string | number | boolean> = {}
+): void {
+  if (typeof window === "undefined") return;
+  const params = {
+    page_path: window.location.pathname,
+    device_category: deviceCategory(),
+    ...data,
+  };
+  window.gtag?.("event", event, params);
+  window.umami?.track(event, params);
 }

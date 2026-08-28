@@ -1,7 +1,7 @@
 "use client";
 
 import type { AnchorHTMLAttributes, ReactNode } from "react";
-import { trackCta, type CtaEvent } from "@/lib/analytics";
+import { trackCta, trackHomepageEvent, type CtaEvent } from "@/lib/analytics";
 
 type TrackedCtaProps = {
   event: CtaEvent;
@@ -31,6 +31,9 @@ export default function TrackedCta({
       onClick={(e) => {
         const cta_copy = (e.currentTarget.textContent || "").trim().slice(0, 100);
         trackCta(event, { cta_location: ctaLocation, cta_copy, destination: href });
+        if (event === "web_app_click" && window.location.pathname === "/") {
+          trackHomepageEvent("web_companion_clicked", { location: ctaLocation });
+        }
         onClick?.(e);
       }}
     >
