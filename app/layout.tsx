@@ -69,12 +69,6 @@ export default function RootLayout({
           data-website-id="20c6bcc0-8be5-429f-be45-51d4f57600cf"
           strategy="afterInteractive"
         />
-        {/* StartupBar launch widget (third-party) */}
-        <Script
-          src="https://startupbar.co/widget/loader.js"
-          data-startup-id="5c9210df-ea1f-4eff-959f-6eda94bf86ae"
-          strategy="afterInteractive"
-        />
         <Nav />
         {children}
         <Footer />
