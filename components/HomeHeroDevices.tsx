@@ -1,45 +1,29 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import styles from "@/app/home.module.css";
 
-const PHONE_FRAMES = [0.2, 2.2, 3.25, 4.3];
-const WATCH_FRAMES = [0.2, 3.25, 5.25, 6.25];
+const DEVICE_STATES = [0, 1, 2, 3] as const;
 
 export default function HomeHeroDevices() {
   const [count, setCount] = useState(0);
-  const phoneRef = useRef<HTMLVideoElement>(null);
-  const watchRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const videos = [phoneRef.current, watchRef.current].filter(
-      (video): video is HTMLVideoElement => Boolean(video)
-    );
 
     let timer: number | undefined;
     let firstTick: number | undefined;
 
-    const seek = (next: number) => {
-      if (phoneRef.current?.readyState) phoneRef.current.currentTime = PHONE_FRAMES[next];
-      if (watchRef.current?.readyState) watchRef.current.currentTime = WATCH_FRAMES[next];
-    };
-
     const updatePlayback = () => {
       if (firstTick) window.clearTimeout(firstTick);
       if (timer) window.clearInterval(timer);
-      videos.forEach((video) => {
-        video.pause();
-      });
 
       setCount(0);
-      seek(0);
+      if (reduceMotion.matches) return;
+
       const advance = () => {
-        setCount((current) => {
-          const next = (current + 1) % PHONE_FRAMES.length;
-          seek(next);
-          return next;
-        });
+        setCount((current) => (current + 1) % DEVICE_STATES.length);
       };
 
       firstTick = window.setTimeout(() => {
@@ -62,34 +46,34 @@ export default function HomeHeroDevices() {
       <div className={styles.heroHalo} aria-hidden="true" />
       <div className={styles.heroPhone}>
         <div className={styles.heroPhoneScreen}>
-          <video
-            ref={phoneRef}
-            src="/videos/phone-active-round.mp4"
-            muted
-            playsInline
-            preload="auto"
-            onLoadedMetadata={(event) => {
-              event.currentTarget.pause();
-              event.currentTarget.currentTime = PHONE_FRAMES[count];
-            }}
-            aria-label="A real SimplyStroke round counting strokes on iPhone"
-          />
+          {DEVICE_STATES.map((state) => (
+            <Image
+              key={state}
+              src={`/images/hero-devices/phone-${state}.jpg`}
+              alt={state === count ? `SimplyStroke iPhone scoring screen showing ${state} ${state === 1 ? "stroke" : "strokes"}` : ""}
+              width={460}
+              height={1000}
+              loading="eager"
+              unoptimized
+              className={state === count ? styles.deviceFrameActive : styles.deviceFrame}
+            />
+          ))}
         </div>
       </div>
       <div className={styles.heroWatch}>
         <div className={styles.heroWatchFace}>
-          <video
-            ref={watchRef}
-            src="/videos/watch-live-round.mp4"
-            muted
-            playsInline
-            preload="metadata"
-            onLoadedMetadata={(event) => {
-              event.currentTarget.pause();
-              event.currentTarget.currentTime = WATCH_FRAMES[count];
-            }}
-            aria-label="A real SimplyStroke round counting strokes on Apple Watch"
-          />
+          {DEVICE_STATES.map((state) => (
+            <Image
+              key={state}
+              src={`/images/hero-devices/watch-${state}.jpg`}
+              alt={state === count ? `SimplyStroke Apple Watch scoring screen showing ${state} ${state === 1 ? "stroke" : "strokes"}` : ""}
+              width={416}
+              height={496}
+              loading="eager"
+              unoptimized
+              className={state === count ? styles.deviceFrameActive : styles.deviceFrame}
+            />
+          ))}
         </div>
       </div>
     </div>

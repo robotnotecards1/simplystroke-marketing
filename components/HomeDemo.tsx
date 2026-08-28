@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import TrackedCta from "@/components/TrackedCta";
 import { trackHomepageEvent } from "@/lib/analytics";
 import { APP_STORE_URL } from "@/lib/site";
@@ -13,8 +14,7 @@ function statusCopy(count: number): string {
   return `${count} strokes. The number stays here.`;
 }
 
-const PHONE_FRAMES = [0.2, 2.2, 3.25, 4.3];
-const WATCH_FRAMES = [0.2, 3.25, 5.25, 6.25];
+const DEVICE_STATES = [0, 1, 2, 3] as const;
 
 export default function HomeDemo() {
   const [count, setCount] = useState(0);
@@ -23,13 +23,6 @@ export default function HomeDemo() {
   const [pointerCycle, setPointerCycle] = useState(0);
   const started = useRef(false);
   const stageRef = useRef<HTMLDivElement>(null);
-  const phoneRef = useRef<HTMLVideoElement>(null);
-  const watchRef = useRef<HTMLVideoElement>(null);
-
-  const seekToCount = useCallback((next: number) => {
-    if (phoneRef.current?.readyState) phoneRef.current.currentTime = PHONE_FRAMES[next];
-    if (watchRef.current?.readyState) watchRef.current.currentTime = WATCH_FRAMES[next];
-  }, []);
 
   useEffect(() => {
     const stage = stageRef.current;
@@ -63,8 +56,7 @@ export default function HomeDemo() {
       trackHomepageEvent("homepage_demo_started");
     }
     setCount((current) => {
-      const next = Math.min(PHONE_FRAMES.length - 1, current + 1);
-      seekToCount(next);
+      const next = Math.min(DEVICE_STATES.length - 1, current + 1);
       trackHomepageEvent("homepage_demo_stroke_logged", { stroke_count: next });
       return next;
     });
@@ -78,7 +70,6 @@ export default function HomeDemo() {
     setAutoGuiding(false);
     setCount((current) => {
       const next = Math.max(0, current - 1);
-      seekToCount(next);
       trackHomepageEvent("homepage_demo_undo_used", { stroke_count: next });
       return next;
     });
@@ -110,18 +101,18 @@ export default function HomeDemo() {
       <div className={styles.demoDevices}>
         <div className={styles.demoPhone}>
           <div className={styles.demoPhoneScreen}>
-            <video
-              ref={phoneRef}
-              src="/videos/phone-active-round.mp4"
-              muted
-              playsInline
-              preload="auto"
-              onLoadedMetadata={(event) => {
-                event.currentTarget.pause();
-                event.currentTarget.currentTime = PHONE_FRAMES[count];
-              }}
-              aria-label={`Real SimplyStroke iPhone scoring screen showing ${count} ${count === 1 ? "stroke" : "strokes"}`}
-            />
+            {DEVICE_STATES.map((state) => (
+              <Image
+                key={state}
+                src={`/images/hero-devices/phone-${state}.jpg`}
+                alt={state === count ? `Real SimplyStroke iPhone scoring screen showing ${state} ${state === 1 ? "stroke" : "strokes"}` : ""}
+                width={460}
+                height={1000}
+                loading="eager"
+                unoptimized
+                className={state === count ? styles.deviceFrameActive : styles.deviceFrame}
+              />
+            ))}
             <button
               type="button"
               className={styles.demoBallTarget}
@@ -155,18 +146,18 @@ export default function HomeDemo() {
 
         <div className={styles.demoWatch}>
           <div className={styles.demoWatchScreen}>
-            <video
-              ref={watchRef}
-              src="/videos/watch-live-round.mp4"
-              muted
-              playsInline
-              preload="auto"
-              onLoadedMetadata={(event) => {
-                event.currentTarget.pause();
-                event.currentTarget.currentTime = WATCH_FRAMES[count];
-              }}
-              aria-label={`Real SimplyStroke Apple Watch scoring screen showing ${count} ${count === 1 ? "stroke" : "strokes"}`}
-            />
+            {DEVICE_STATES.map((state) => (
+              <Image
+                key={state}
+                src={`/images/hero-devices/watch-${state}.jpg`}
+                alt={state === count ? `Real SimplyStroke Apple Watch scoring screen showing ${state} ${state === 1 ? "stroke" : "strokes"}` : ""}
+                width={416}
+                height={496}
+                loading="eager"
+                unoptimized
+                className={state === count ? styles.deviceFrameActive : styles.deviceFrame}
+              />
+            ))}
           </div>
         </div>
       </div>
