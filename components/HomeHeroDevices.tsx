@@ -20,8 +20,6 @@ export default function HomeHeroDevices() {
       if (timer) window.clearInterval(timer);
 
       setCount(0);
-      if (reduceMotion.matches) return;
-
       const advance = () => {
         setCount((current) => (current + 1) % DEVICE_STATES.length);
       };
