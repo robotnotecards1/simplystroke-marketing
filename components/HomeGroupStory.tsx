@@ -5,11 +5,7 @@ const steps = [
   {
     title: "Start with friends",
     copy: "Choose With Friends when you start the round.",
-    kind: "image",
-    image: "/images/group-flow/mode-phone-current-2x.png",
-    width: 860,
-    height: 1440,
-    alt: "The SimplyStroke iPhone new-round screen with Just Me and With Friends choices",
+    kind: "mode",
   },
   {
     title: "Share one code",
@@ -18,14 +14,38 @@ const steps = [
   },
   {
     title: "Everyone taps",
-    copy: "Each golfer counts their own ball. The live card updates itself.",
+    copy: "Each golfer counts on the round screen while the live card updates itself.",
     kind: "image",
-    image: "/images/group-flow/live-phone-crisp.png",
-    width: 1012,
-    height: 2196,
-    alt: "The SimplyStroke iPhone live group scorecard showing every golfer",
+    image: "/images/app-screens/round.png",
+    width: 270,
+    height: 540,
+    alt: "The SimplyStroke active-round screen with the stroke counter and live scorecard strip",
   },
 ] as const;
+
+function GroupModeScreen() {
+  return (
+    <div className={`${styles.groupAppScreen} ${styles.groupModeScreen}`} aria-label="SimplyStroke iPhone new-round screen with With Friends selected">
+      <div className={styles.groupAppHeader}>
+        <span>←</span>
+        <strong>New round</strong>
+        <small>How are you playing today?</small>
+      </div>
+      <div className={styles.groupModeOptions}>
+        <div>
+          <i aria-hidden="true">●</i>
+          <p><strong>Just me</strong><span>Track your own strokes, solo.</span></p>
+          <b aria-hidden="true">›</b>
+        </div>
+        <div className={styles.groupChosen}>
+          <i aria-hidden="true">▤</i>
+          <p><strong>With friends</strong><span>Share a code—everyone&apos;s scores on one live card.</span></p>
+          <b aria-hidden="true">›</b>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function GroupLobbyScreen() {
   return (
@@ -78,7 +98,7 @@ export default function HomeGroupStory() {
                   className={styles.groupSequenceShot}
                   unoptimized
                 />
-              ) : <GroupLobbyScreen />}
+              ) : step.kind === "mode" ? <GroupModeScreen /> : <GroupLobbyScreen />}
             </div>
           </div>
         </li>

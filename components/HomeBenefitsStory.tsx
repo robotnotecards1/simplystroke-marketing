@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "@/app/home.module.css";
 
 const benefits = [
@@ -22,13 +22,33 @@ const benefits = [
 export default function HomeBenefitsStory() {
   const [active, setActive] = useState(0);
   const [cycle, setCycle] = useState(0);
+  const [inView, setInView] = useState(false);
+  const storyRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const story = storyRef.current;
+    if (!story) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setInView(true);
+        observer.disconnect();
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(story);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!inView) return;
     const timer = window.setInterval(() => {
       setActive((current) => (current + 1) % benefits.length);
     }, 1800);
     return () => window.clearInterval(timer);
-  }, [cycle]);
+  }, [cycle, inView]);
 
   const selectBenefit = (index: number) => {
     setActive(index);
@@ -36,7 +56,7 @@ export default function HomeBenefitsStory() {
   };
 
   return (
-    <div className={`${styles.wrap} ${styles.simpleLayout}`}>
+    <div ref={storyRef} className={`${styles.wrap} ${styles.simpleLayout}`}>
       <div className={styles.sectionHeading}>
         <p className={styles.eyebrow}>Simple on purpose</p>
         <h2>A scorecard, not a cockpit.</h2>

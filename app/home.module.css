@@ -5829,3 +5829,225 @@
     transition: none;
   }
 }
+
+/* Homepage feedback pass 10: viewport-timed motion and mobile-first product story. */
+.home [data-home-motion]:not([data-home-motion-active="true"]),
+.home [data-home-motion]:not([data-home-motion-active="true"]) *,
+.home [data-home-motion]:not([data-home-motion-active="true"])::before,
+.home [data-home-motion]:not([data-home-motion-active="true"])::after,
+.home [data-home-motion]:not([data-home-motion-active="true"]) *::before,
+.home [data-home-motion]:not([data-home-motion-active="true"]) *::after {
+  animation-play-state: paused !important;
+}
+
+.heroStoreCta {
+  min-width: 292px;
+  padding: 10px 18px;
+  justify-content: flex-start;
+  gap: 13px;
+}
+
+.heroStoreCta svg {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  fill: #16331f;
+}
+
+.heroStoreCta .heroStoreCtaCopy,
+.heroStoreCta:hover .heroStoreCtaCopy {
+  min-width: 0;
+  display: grid;
+  flex: 1 1 auto;
+  gap: 1px;
+  color: #16331f;
+  font-size: inherit;
+  line-height: 1;
+  text-align: left;
+  transform: none;
+}
+
+.heroStoreCtaCopy strong,
+.heroStoreCtaCopy small {
+  display: block;
+}
+
+.heroStoreCtaCopy strong {
+  font-size: 17px;
+  line-height: 1.05;
+}
+
+.heroStoreCtaCopy small {
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.heroStoreCta > span:last-child {
+  margin-left: auto;
+}
+
+.demoStage {
+  grid-template-areas:
+    "copy devices"
+    "cta devices";
+  grid-template-rows: auto auto;
+  row-gap: 0;
+}
+
+.demoCopy {
+  grid-area: copy;
+  align-self: end;
+}
+
+.demoDevices {
+  grid-area: devices;
+}
+
+.demoCta {
+  grid-area: cta;
+  align-self: start;
+  justify-self: start;
+  margin-top: 22px;
+}
+
+.demoPointerPersistent {
+  animation-name: guidedHandPersistent;
+}
+
+@keyframes guidedHandPersistent {
+  0% { opacity: 0; transform: translate(118px, 148px) rotate(-7deg) scale(0.96); }
+  16% { opacity: 1; }
+  64% { opacity: 1; transform: translate(5px, 10px) rotate(-2deg) scale(1); }
+  76% { opacity: 1; transform: translate(3px, 16px) rotate(-2deg) scale(0.93); }
+  88%, 100% { opacity: 1; transform: translate(3px, 10px) rotate(-2deg) scale(1); }
+}
+
+.groupHeadline span {
+  display: block;
+  white-space: nowrap;
+}
+
+.faqIntro {
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 0;
+}
+
+.faqIntro .sectionHeading {
+  width: 100%;
+  max-width: 900px;
+}
+
+.groupModeScreen .groupAppHeader {
+  min-height: 116px;
+  padding-top: 40px;
+}
+
+.groupModeScreen .groupModeOptions {
+  padding: 18px 13px;
+  gap: 10px;
+}
+
+.groupModeScreen .groupModeOptions > div {
+  min-height: 94px;
+  padding: 13px;
+  grid-template-columns: 46px 1fr 16px;
+  gap: 11px;
+}
+
+.groupModeScreen .groupModeOptions i {
+  width: 46px;
+  height: 46px;
+}
+
+.groupModeScreen .groupModeOptions p strong {
+  font-size: 22px;
+}
+
+.groupModeScreen .groupModeOptions p span {
+  font-size: 10px;
+}
+
+.groupSequenceStep:nth-child(3) .groupSequenceShot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+@media (max-width: 820px) {
+  .demoStage {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "copy"
+      "devices"
+      "cta";
+    grid-template-rows: auto;
+    row-gap: 0;
+  }
+
+  .demoDevices {
+    margin-top: 34px;
+  }
+
+  .demoCta {
+    margin-top: 28px;
+  }
+
+  .faqIntro {
+    display: block;
+  }
+}
+
+@media (max-width: 640px) {
+  .watchSection {
+    min-height: 0;
+    background:
+      linear-gradient(180deg, rgba(16, 45, 33, 0.01) 0%, rgba(16, 45, 33, 0.3) 23%, #102d21 45%, #102d21 100%),
+      url("/images/watch-course-bg.webp") 10% -64px / auto 62% no-repeat,
+      #102d21;
+  }
+
+  .watchImageSpace {
+    min-height: 280px;
+  }
+
+  .groupIntro .groupHeadline {
+    font-size: clamp(36px, 9.7vw, 43px);
+    line-height: 0.98;
+  }
+}
+
+@media (max-width: 520px) {
+  .heroStoreCta {
+    width: 100%;
+  }
+
+  .demoCta {
+    width: 100%;
+  }
+
+  .demoDevices {
+    margin-top: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home [data-home-motion],
+  .home [data-home-motion] *,
+  .home [data-home-motion]::before,
+  .home [data-home-motion]::after,
+  .home [data-home-motion] *::before,
+  .home [data-home-motion] *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .demoPointerPersistent {
+    animation: none;
+    opacity: 1;
+    transform: translate(3px, 10px) rotate(-2deg) scale(1);
+  }
+}
