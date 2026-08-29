@@ -5914,16 +5914,16 @@
 }
 
 .demoPointerPersistent {
-  animation: guidedHandTapLoop 1.45s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  animation: guidedHandTapLoop 1.05s cubic-bezier(0.25, 1, 0.5, 1) infinite;
   will-change: transform;
 }
 
 .demoPointerPersistent .demoHandRays {
-  animation: demoHandTapRays 1.45s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  animation: demoHandTapRays 1.05s cubic-bezier(0.25, 1, 0.5, 1) infinite;
 }
 
 .demoTryHint {
-  animation: demoTryHintTap 1.45s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  animation: demoTryHintTap 1.05s cubic-bezier(0.25, 1, 0.5, 1) infinite;
 }
 
 @keyframes guidedHandTapLoop {
@@ -6039,7 +6039,7 @@
   }
 
   .home .demoPointerPersistent {
-    animation: guidedHandTapReduced 2s ease-in-out infinite !important;
+    animation: guidedHandTapReduced 1.15s ease-in-out infinite !important;
     opacity: 1;
     transform: translate(3px, 10px) rotate(-2deg) scale(1);
   }
