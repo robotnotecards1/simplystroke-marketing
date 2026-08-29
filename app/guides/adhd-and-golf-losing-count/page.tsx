@@ -86,7 +86,7 @@ export default function Post() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <header className="post-header">
+      <header className="post-header guide-post-header">
         <div className="post-header-inner">
           <div className="pill">ADHD &amp; golf</div>
           <h1>How to stop losing count mid-round when you have ADHD</h1>
@@ -107,7 +107,7 @@ export default function Post() {
         ]}
       />
 
-      <article className="prose">
+      <article className="prose guide-prose">
         <AnswerBlock
           updated="July 2026"
           answer={

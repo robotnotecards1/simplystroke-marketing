@@ -159,7 +159,7 @@ export default function Post() {
         .anno b { color:var(--green-deep,#1B4332); }
       `}</style>
 
-      <header className="post-header">
+      <header className="post-header guide-post-header">
         <div className="post-header-inner">
           <div className="pill">Golf scoring</div>
           <h1>How to read a golf scorecard</h1>
@@ -180,7 +180,7 @@ export default function Post() {
         ]}
       />
 
-      <article className="prose">
+      <article className="prose guide-prose">
         <AnswerBlock
           updated="August 2026"
           answer={

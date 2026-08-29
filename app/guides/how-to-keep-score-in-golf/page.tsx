@@ -102,7 +102,7 @@ export default function Post() {
         .sc-cap { font-size:13px; color:var(--gray-body,#6B7280); margin:0 0 26px; }
       `}</style>
 
-      <header className="post-header">
+      <header className="post-header guide-post-header">
         <div className="post-header-inner">
           <div className="pill">Golf scoring</div>
           <h1>How to keep score in golf</h1>
@@ -123,7 +123,7 @@ export default function Post() {
         ]}
       />
 
-      <article className="prose">
+      <article className="prose guide-prose">
         <AnswerBlock
           updated="August 2026"
           answer={

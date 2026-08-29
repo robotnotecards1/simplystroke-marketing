@@ -129,7 +129,7 @@ export default function Post() {
         @media (max-width:560px){ .gloss div { grid-template-columns:1fr; gap:2px; } }
       `}</style>
 
-      <header className="post-header">
+      <header className="post-header guide-post-header">
         <div className="post-header-inner">
           <div className="pill">Golf scoring</div>
           <h1>Golf scorecard symbols and terms</h1>
@@ -150,7 +150,7 @@ export default function Post() {
         ]}
       />
 
-      <article className="prose">
+      <article className="prose guide-prose">
         <AnswerBlock
           updated="August 2026"
           answer={
