@@ -188,7 +188,7 @@ export default async function Home() {
         dangerouslySetInnerHTML={{ __html: safeJson(faqJsonLd) }}
       />
 
-      <header className={styles.hero} data-home-motion>
+      <header className={styles.hero} data-home-motion="load">
         <div className={`${styles.wrap} ${styles.heroInner}`}>
           <div className={styles.heroCopy}>
             <p className={styles.heroEyebrow}>Free golf scorecard · iPhone + Apple Watch</p>

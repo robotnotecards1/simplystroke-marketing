@@ -14,7 +14,7 @@ function statusCopy(count: number): string {
   return `${count} strokes. The number stays here.`;
 }
 
-const DEVICE_STATES = [0, 1, 2, 3] as const;
+const DEVICE_STATES = [0, 1, 2] as const;
 
 export default function HomeDemo() {
   const [count, setCount] = useState(0);

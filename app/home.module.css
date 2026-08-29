@@ -5914,15 +5914,36 @@
 }
 
 .demoPointerPersistent {
-  animation-name: guidedHandPersistent;
+  animation: guidedHandTapLoop 2.2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
 }
 
-@keyframes guidedHandPersistent {
-  0% { opacity: 0; transform: translate(118px, 148px) rotate(-7deg) scale(0.96); }
-  16% { opacity: 1; }
-  64% { opacity: 1; transform: translate(5px, 10px) rotate(-2deg) scale(1); }
-  76% { opacity: 1; transform: translate(3px, 16px) rotate(-2deg) scale(0.93); }
-  88%, 100% { opacity: 1; transform: translate(3px, 10px) rotate(-2deg) scale(1); }
+.demoPointerPersistent .demoHandRays {
+  animation: demoHandTapRays 2.2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+.demoTryHint {
+  animation: demoTryHintTap 2.2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+@keyframes guidedHandTapLoop {
+  0%, 32%, 58%, 100% { opacity: 1; transform: translate(3px, 10px) rotate(-2deg) scale(1); }
+  42% { opacity: 1; transform: translate(3px, 19px) rotate(-2deg) scale(0.92); }
+  49% { opacity: 1; transform: translate(3px, 8px) rotate(-2deg) scale(1.01); }
+}
+
+@keyframes demoHandTapRays {
+  0%, 39%, 54%, 100% { opacity: 0; transform: scale(0.74); }
+  45%, 50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes demoTryHintTap {
+  0%, 32%, 58%, 100% { transform: translateX(-50%) translateY(0); }
+  42% { transform: translateX(-50%) translateY(5px); }
+}
+
+@keyframes guidedHandTapReduced {
+  0%, 38%, 58%, 100% { transform: translate(3px, 10px) rotate(-2deg) scale(1); }
+  48% { transform: translate(3px, 15px) rotate(-2deg) scale(0.97); }
 }
 
 .groupHeadline span {
@@ -5940,40 +5961,10 @@
   max-width: 900px;
 }
 
-.groupModeScreen .groupAppHeader {
-  min-height: 116px;
-  padding-top: 40px;
-}
-
-.groupModeScreen .groupModeOptions {
-  padding: 18px 13px;
-  gap: 10px;
-}
-
-.groupModeScreen .groupModeOptions > div {
-  min-height: 94px;
-  padding: 13px;
-  grid-template-columns: 46px 1fr 16px;
-  gap: 11px;
-}
-
-.groupModeScreen .groupModeOptions i {
-  width: 46px;
-  height: 46px;
-}
-
-.groupModeScreen .groupModeOptions p strong {
-  font-size: 22px;
-}
-
-.groupModeScreen .groupModeOptions p span {
-  font-size: 10px;
-}
-
-.groupSequenceStep:nth-child(3) .groupSequenceShot {
+.groupSequenceShot {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center top;
 }
 
@@ -6006,7 +5997,7 @@
     min-height: 0;
     background:
       linear-gradient(180deg, rgba(16, 45, 33, 0.01) 0%, rgba(16, 45, 33, 0.3) 23%, #102d21 45%, #102d21 100%),
-      url("/images/watch-course-bg.webp") 10% -64px / auto 62% no-repeat,
+      url("/images/watch-course-bg.webp") 10% -174px / auto 62% no-repeat,
       #102d21;
   }
 
@@ -6045,9 +6036,14 @@
     scroll-behavior: auto !important;
   }
 
-  .demoPointerPersistent {
-    animation: none;
+  .home .demoPointerPersistent {
+    animation: guidedHandTapReduced 3.2s ease-in-out infinite !important;
     opacity: 1;
     transform: translate(3px, 10px) rotate(-2deg) scale(1);
+  }
+
+  .home .demoPointerPersistent .demoHandRays,
+  .home .demoTryHint {
+    animation: none !important;
   }
 }
