@@ -4,21 +4,19 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "@/app/home.module.css";
 
-const DEVICE_STATES = [0, 1, 2, 3] as const;
+const DEVICE_STATES = [0, 1, 2] as const;
 
 export default function HomeHeroDevices() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
     let timer: number | undefined;
     let firstTick: number | undefined;
+    let started = false;
 
-    const updatePlayback = () => {
-      if (firstTick) window.clearTimeout(firstTick);
-      if (timer) window.clearInterval(timer);
-
+    const startPlayback = () => {
+      if (started) return;
+      started = true;
       setCount(0);
       const advance = () => {
         setCount((current) => (current + 1) % DEVICE_STATES.length);
@@ -30,12 +28,16 @@ export default function HomeHeroDevices() {
       }, 700);
     };
 
-    updatePlayback();
-    reduceMotion.addEventListener("change", updatePlayback);
+    if (document.readyState === "complete") {
+      startPlayback();
+    } else {
+      window.addEventListener("load", startPlayback, { once: true });
+    }
+
     return () => {
       if (firstTick) window.clearTimeout(firstTick);
       if (timer) window.clearInterval(timer);
-      reduceMotion.removeEventListener("change", updatePlayback);
+      window.removeEventListener("load", startPlayback);
     };
   }, []);
 

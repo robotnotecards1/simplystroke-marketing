@@ -14,13 +14,12 @@ function statusCopy(count: number): string {
   return `${count} strokes. The number stays here.`;
 }
 
-const DEVICE_STATES = [0, 1, 2, 3] as const;
+const DEVICE_STATES = [0, 1, 2] as const;
 
 export default function HomeDemo() {
   const [count, setCount] = useState(0);
   const [autoGuiding, setAutoGuiding] = useState(true);
   const [inView, setInView] = useState(false);
-  const [pointerCycle, setPointerCycle] = useState(0);
   const started = useRef(false);
   const stageRef = useRef<HTMLDivElement>(null);
 
@@ -40,14 +39,6 @@ export default function HomeDemo() {
     observer.observe(stage);
     return () => observer.disconnect();
   }, []);
-
-  useEffect(() => {
-    if (!inView || !autoGuiding) return;
-
-    const point = window.setTimeout(() => setPointerCycle((cycle) => cycle + 1), 180);
-
-    return () => window.clearTimeout(point);
-  }, [autoGuiding, inView]);
 
   const countStroke = () => {
     setAutoGuiding(false);
@@ -88,14 +79,6 @@ export default function HomeDemo() {
           <span>{statusCopy(count)}</span>
           <small>The number stays here. Your head stays in the game.</small>
         </div>
-        <TrackedCta
-          event="app_store_click"
-          ctaLocation="home_demo"
-          href={APP_STORE_URL}
-          className={styles.primaryCta}
-        >
-          Get it on my iPhone →
-        </TrackedCta>
       </div>
 
       <div className={styles.demoDevices}>
@@ -127,10 +110,10 @@ export default function HomeDemo() {
               disabled={count === 0}
               aria-label="Undo the last stroke"
             ><span className={styles.srOnly}>Undo the last stroke</span></button>
-            {inView && pointerCycle > 0 && autoGuiding ? (
+            {inView && autoGuiding ? (
               <>
                 <span className={styles.demoTryHint} aria-hidden="true">Try it now ↓</span>
-                <span key={pointerCycle} className={styles.demoPointer} aria-hidden="true">
+                <span className={`${styles.demoPointer} ${styles.demoPointerPersistent}`} aria-hidden="true">
                   <svg viewBox="0 0 144 160">
                     <path
                       className={styles.demoHandBody}
@@ -161,6 +144,15 @@ export default function HomeDemo() {
           </div>
         </div>
       </div>
+
+      <TrackedCta
+        event="app_store_click"
+        ctaLocation="home_demo"
+        href={APP_STORE_URL}
+        className={`${styles.primaryCta} ${styles.demoCta}`}
+      >
+        Get it on my iPhone →
+      </TrackedCta>
     </div>
   );
 }

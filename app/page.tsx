@@ -6,8 +6,10 @@ import HomeDemo from "@/components/HomeDemo";
 import HomeFaq, { type HomeFaqItem } from "@/components/HomeFaq";
 import HomeGroupStory from "@/components/HomeGroupStory";
 import HomeHeroDevices from "@/components/HomeHeroDevices";
+import HomeMotionGate from "@/components/HomeMotionGate";
 import HomeReviews from "@/components/HomeReviews";
 import TrackedCta from "@/components/TrackedCta";
+import { AppleGlyph } from "@/components/icons";
 import { getAppStoreData, type Review } from "@/lib/appStore";
 import { appNode, faqNode, graph, organizationNode, websiteNode } from "@/lib/schema";
 import { APP_STORE_URL, APP_URL, og } from "@/lib/site";
@@ -176,6 +178,7 @@ export default async function Home() {
 
   return (
     <main id="top" className={styles.home}>
+      <HomeMotionGate />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJson(entityJsonLd) }}
@@ -185,7 +188,7 @@ export default async function Home() {
         dangerouslySetInnerHTML={{ __html: safeJson(faqJsonLd) }}
       />
 
-      <header className={styles.hero}>
+      <header className={styles.hero} data-home-motion="load">
         <div className={`${styles.wrap} ${styles.heroInner}`}>
           <div className={styles.heroCopy}>
             <p className={styles.heroEyebrow}>Free golf scorecard · iPhone + Apple Watch</p>
@@ -202,10 +205,15 @@ export default async function Home() {
               event="app_store_click"
               ctaLocation="home_hero"
               href={APP_STORE_URL}
-              className={styles.primaryCta}
+              className={`${styles.primaryCta} ${styles.heroStoreCta}`}
               aria-label="Download SimplyStroke free on the App Store"
             >
-              Download free on the App Store <Arrow />
+              <AppleGlyph />
+              <span className={styles.heroStoreCtaCopy}>
+                <strong>Free download</strong>
+                <small>Apple App Store</small>
+              </span>
+              <Arrow />
             </TrackedCta>
             <p className={styles.reassurance}>
               No account required to start <span aria-hidden="true">·</span> Solo rounds work offline
@@ -216,7 +224,7 @@ export default async function Home() {
         </div>
       </header>
 
-      <section className={styles.proofRail} aria-label="SimplyStroke highlights">
+      <section className={styles.proofRail} aria-label="SimplyStroke highlights" data-home-motion>
         <div className={`${styles.wrap} ${styles.proofGrid}`}>
           <div><span className={styles.proofIcon}><ProofIcon type="rating" /></span><p><strong>{appRating}</strong><span>{rating ? `${rating.count} verified ratings` : "From verified golfers"}</span></p></div>
           <div><span className={styles.proofIcon}><ProofIcon type="watch" /></span><p><strong>Apple Watch built in</strong><span>Score from your wrist</span></p></div>
@@ -225,18 +233,18 @@ export default async function Home() {
         </div>
       </section>
 
-      <section id="how-it-works" className={`${styles.section} ${styles.demoSection}`}>
+      <section id="how-it-works" className={`${styles.section} ${styles.demoSection}`} data-home-motion>
         <DemoFlightIllustration />
         <div className={styles.wrap}>
           <HomeDemo />
         </div>
       </section>
 
-      <section className={`${styles.section} ${styles.simpleSection}`}>
+      <section className={`${styles.section} ${styles.simpleSection}`} data-home-motion>
         <HomeBenefitsStory />
       </section>
 
-      <section id="apple-watch" className={`${styles.section} ${styles.watchSection}`}>
+      <section id="apple-watch" className={`${styles.section} ${styles.watchSection}`} data-home-motion>
         <div className={`${styles.wrap} ${styles.watchLayout}`}>
           <div className={styles.watchImageSpace} aria-hidden="true" />
           <div className={styles.watchCopy}>
@@ -265,7 +273,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className={`${styles.section} ${styles.focusSection}`}>
+      <section className={`${styles.section} ${styles.focusSection}`} data-home-motion>
         <div className={`${styles.wrap} ${styles.focusLayout}`}>
           <div className={styles.focusPhoto}>
             <Image
@@ -295,12 +303,15 @@ export default async function Home() {
         </div>
       </section>
 
-      <section id="play-together" className={`${styles.section} ${styles.groupSection}`}>
+      <section id="play-together" className={`${styles.section} ${styles.groupSection}`} data-home-motion>
         <div className={styles.wrap}>
           <div className={styles.groupIntro}>
             <div className={styles.sectionHeading}>
               <p className={styles.eyebrow}>Play together</p>
-              <h2>Invite your bros. Lose the scorekeeper.</h2>
+              <h2 className={styles.groupHeadline}>
+                <span>Invite your bros.</span>
+                <span>Lose the scorekeeper.</span>
+              </h2>
             </div>
             <div>
               <p className={styles.lede}>
@@ -328,7 +339,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className={`${styles.section} ${styles.reviewsSection}`}>
+      <section className={`${styles.section} ${styles.reviewsSection}`} data-home-motion>
         <div className={styles.wrap}>
           <div className={`${styles.sectionHeading} ${styles.centerHeading}`}>
             <p className={styles.eyebrow}>5 Stars on the App Store</p>
@@ -348,16 +359,13 @@ export default async function Home() {
         </div>
       </section>
 
-      <section id="faq" className={`${styles.section} ${styles.faqSection}`}>
+      <section id="faq" className={`${styles.section} ${styles.faqSection}`} data-home-motion>
         <div className={`${styles.wrap} ${styles.faqLayout}`}>
           <div className={styles.faqIntro}>
             <div className={styles.sectionHeading}>
               <p className={styles.eyebrow}>First-tee questions</p>
               <h2>Before you put it in the bag.</h2>
               <p className={styles.faqIntroCopy}>Six quick answers. About the same amount of reading as a short par three.</p>
-            </div>
-            <div className={styles.faqIllustrationRing} aria-hidden="true">
-              <span className={styles.faqFlag}><i /><b /></span>
             </div>
           </div>
           <HomeFaq items={faqs} />
@@ -371,7 +379,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className={`${styles.section} ${styles.finalSection}`}>
+      <section className={`${styles.section} ${styles.finalSection}`} data-home-motion>
         <div className={`${styles.wrap} ${styles.finalInner}`}>
           <p className={styles.heroEyebrow}>Play your next round with it</p>
           <h2>Your next round has enough to think about.</h2>
