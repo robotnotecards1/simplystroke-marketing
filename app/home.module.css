@@ -5914,36 +5914,38 @@
 }
 
 .demoPointerPersistent {
-  animation: guidedHandTapLoop 2.2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  animation: guidedHandTapLoop 1.45s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  will-change: transform;
 }
 
 .demoPointerPersistent .demoHandRays {
-  animation: demoHandTapRays 2.2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  animation: demoHandTapRays 1.45s cubic-bezier(0.25, 1, 0.5, 1) infinite;
 }
 
 .demoTryHint {
-  animation: demoTryHintTap 2.2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  animation: demoTryHintTap 1.45s cubic-bezier(0.25, 1, 0.5, 1) infinite;
 }
 
 @keyframes guidedHandTapLoop {
-  0%, 32%, 58%, 100% { opacity: 1; transform: translate(3px, 10px) rotate(-2deg) scale(1); }
-  42% { opacity: 1; transform: translate(3px, 19px) rotate(-2deg) scale(0.92); }
-  49% { opacity: 1; transform: translate(3px, 8px) rotate(-2deg) scale(1.01); }
+  0%, 100% { opacity: 1; transform: translate(3px, 7px) rotate(-2deg) scale(1); }
+  42% { opacity: 1; transform: translate(3px, 20px) rotate(-2deg) scale(0.9); }
+  58% { opacity: 1; transform: translate(3px, 5px) rotate(-2deg) scale(1.02); }
 }
 
 @keyframes demoHandTapRays {
-  0%, 39%, 54%, 100% { opacity: 0; transform: scale(0.74); }
-  45%, 50% { opacity: 1; transform: scale(1); }
+  0%, 32%, 62%, 100% { opacity: 0; transform: scale(0.72); }
+  43%, 52% { opacity: 1; transform: scale(1); }
 }
 
 @keyframes demoTryHintTap {
-  0%, 32%, 58%, 100% { transform: translateX(-50%) translateY(0); }
-  42% { transform: translateX(-50%) translateY(5px); }
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  42% { transform: translateX(-50%) translateY(6px); }
+  58% { transform: translateX(-50%) translateY(-1px); }
 }
 
 @keyframes guidedHandTapReduced {
-  0%, 38%, 58%, 100% { transform: translate(3px, 10px) rotate(-2deg) scale(1); }
-  48% { transform: translate(3px, 15px) rotate(-2deg) scale(0.97); }
+  0%, 100% { transform: translate(3px, 8px) rotate(-2deg) scale(1); }
+  50% { transform: translate(3px, 16px) rotate(-2deg) scale(0.96); }
 }
 
 .groupHeadline span {
@@ -6037,7 +6039,7 @@
   }
 
   .home .demoPointerPersistent {
-    animation: guidedHandTapReduced 3.2s ease-in-out infinite !important;
+    animation: guidedHandTapReduced 2s ease-in-out infinite !important;
     opacity: 1;
     transform: translate(3px, 10px) rotate(-2deg) scale(1);
   }
