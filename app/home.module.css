@@ -6620,3 +6620,18 @@
     transform: translate(1px, 10px) rotate(-2deg) scale(1.04);
   }
 }
+
+/* Homepage feedback pass 14: open up the mobile hero product view. */
+@media (max-width: 520px) {
+  .heroDevices {
+    margin-top: 24px;
+  }
+
+  .heroPhone {
+    transform: translateX(14px);
+  }
+
+  .heroWatch {
+    left: -22px;
+  }
+}
