@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import HomeDeviceScreen, { MAX_DEMO_STROKES } from "@/components/HomeDeviceScreen";
 import TrackedCta from "@/components/TrackedCta";
 import { trackHomepageEvent } from "@/lib/analytics";
 import { APP_STORE_URL } from "@/lib/site";
@@ -13,8 +13,6 @@ function statusCopy(count: number): string {
   if (count === 2) return "That’s pretty much the whole app—which is the point.";
   return `${count} strokes. The number stays here.`;
 }
-
-const DEVICE_STATES = [0, 1, 2] as const;
 
 export default function HomeDemo() {
   const [count, setCount] = useState(0);
@@ -42,12 +40,13 @@ export default function HomeDemo() {
 
   const countStroke = () => {
     setAutoGuiding(false);
+    if (count >= MAX_DEMO_STROKES) return;
     if (!started.current) {
       started.current = true;
       trackHomepageEvent("homepage_demo_started");
     }
     setCount((current) => {
-      const next = Math.min(DEVICE_STATES.length - 1, current + 1);
+      const next = Math.min(MAX_DEMO_STROKES, current + 1);
       trackHomepageEvent("homepage_demo_stroke_logged", { stroke_count: next });
       return next;
     });
@@ -82,18 +81,7 @@ export default function HomeDemo() {
       <div className={styles.demoDevices}>
         <div className={styles.demoPhone}>
           <div className={styles.demoPhoneScreen}>
-            {DEVICE_STATES.map((state) => (
-              <Image
-                key={state}
-                src={`/images/hero-devices/phone-${state}.jpg`}
-                alt={state === count ? `Real SimplyStroke iPhone scoring screen showing ${state} ${state === 1 ? "stroke" : "strokes"}` : ""}
-                width={460}
-                height={1000}
-                loading="eager"
-                unoptimized
-                className={state === count ? styles.deviceFrameActive : styles.deviceFrame}
-              />
-            ))}
+            <HomeDeviceScreen device="phone" count={count} />
             <button
               type="button"
               className={styles.demoBallTarget}
@@ -127,18 +115,7 @@ export default function HomeDemo() {
 
         <div className={styles.demoWatch}>
           <div className={styles.demoWatchScreen}>
-            {DEVICE_STATES.map((state) => (
-              <Image
-                key={state}
-                src={`/images/hero-devices/watch-${state}.jpg`}
-                alt={state === count ? `Real SimplyStroke Apple Watch scoring screen showing ${state} ${state === 1 ? "stroke" : "strokes"}` : ""}
-                width={416}
-                height={496}
-                loading="eager"
-                unoptimized
-                className={state === count ? styles.deviceFrameActive : styles.deviceFrame}
-              />
-            ))}
+            <HomeDeviceScreen device="watch" count={count} />
           </div>
         </div>
       </div>
