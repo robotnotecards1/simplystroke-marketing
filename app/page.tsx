@@ -348,7 +348,7 @@ export default async function Home() {
       <section className={`${styles.section} ${styles.reviewsSection}`} data-home-motion>
         <div className={styles.wrap}>
           <div className={`${styles.sectionHeading} ${styles.centerHeading}`}>
-            <h2>Reviews from the clubhouse</h2>
+            <h2 className={styles.reviewsHeadline}>Reviews from the clubhouse</h2>
             <div className={styles.reviewHeadingStars} aria-label="5 out of 5 stars">★★★★★</div>
             <p className={styles.reviewRatingCopy}>5 stars on the App Store</p>
           </div>
@@ -389,11 +389,8 @@ export default async function Home() {
       <section className={`${styles.section} ${styles.finalSection}`} data-home-motion>
         <div className={`${styles.wrap} ${styles.finalInner}`}>
           <p className={styles.heroEyebrow}>Play your next round with it</p>
-          <h2>Your next round has enough to think about.</h2>
-          <p>
-            The count doesn&apos;t have to be one of those things. Put SimplyStroke
-            on your iPhone and Apple Watch before the first tee.
-          </p>
+          <h2>ONE LESS THING TO THINK ABOUT.</h2>
+          <p>JUST PLAY. WE’LL KEEP COUNT.</p>
           <TrackedCta
             event="app_store_click"
             ctaLocation="home_final"
