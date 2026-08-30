@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import HomeDeviceScreen, { MAX_DEMO_STROKES } from "@/components/HomeDeviceScreen";
-import TrackedCta from "@/components/TrackedCta";
+import PrimaryCta from "@/components/PrimaryCta";
 import { trackHomepageEvent } from "@/lib/analytics";
 import { APP_STORE_URL } from "@/lib/site";
 import styles from "@/app/home.module.css";
@@ -120,14 +120,14 @@ export default function HomeDemo() {
         </div>
       </div>
 
-      <TrackedCta
+      <PrimaryCta
         event="app_store_click"
         ctaLocation="home_demo"
         href={APP_STORE_URL}
         className={`${styles.primaryCta} ${styles.demoCta}`}
       >
-        Start Stroking →
-      </TrackedCta>
+        Start Stroking
+      </PrimaryCta>
     </div>
   );
 }

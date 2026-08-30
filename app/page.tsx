@@ -8,8 +8,8 @@ import HomeGroupStory from "@/components/HomeGroupStory";
 import HomeHeroDevices from "@/components/HomeHeroDevices";
 import HomeMotionGate from "@/components/HomeMotionGate";
 import HomeReviews from "@/components/HomeReviews";
+import PrimaryCta from "@/components/PrimaryCta";
 import TrackedCta from "@/components/TrackedCta";
-import { AppleGlyph } from "@/components/icons";
 import { getAppStoreData, type Review } from "@/lib/appStore";
 import { appNode, faqNode, graph, organizationNode, websiteNode } from "@/lib/schema";
 import { APP_STORE_URL, APP_URL, og } from "@/lib/site";
@@ -103,10 +103,6 @@ function selectReviews(liveReviews: Review[]): Review[] {
 
 function safeJson(value: unknown): string {
   return JSON.stringify(value).replace(/</g, "\\u003c");
-}
-
-function Arrow() {
-  return <span aria-hidden="true">→</span>;
 }
 
 function ProofIcon({ type }: { type: "rating" | "watch" | "guest" | "course" }) {
@@ -206,20 +202,19 @@ export default async function Home() {
           <HomeHeroDevices />
 
           <div className={styles.heroAction}>
-            <TrackedCta
+            <PrimaryCta
               event="app_store_click"
               ctaLocation="home_hero"
+              tone="light"
               href={APP_STORE_URL}
               className={`${styles.primaryCta} ${styles.heroStoreCta}`}
               aria-label="Download SimplyStroke free on the App Store"
+              size="large"
+              apple
+              subtitle="on the App Store"
             >
-              <AppleGlyph />
-              <span className={styles.heroStoreCtaCopy}>
-                <strong>Free download</strong>
-                <small>Apple App Store</small>
-              </span>
-              <Arrow />
-            </TrackedCta>
+              Free download
+            </PrimaryCta>
             <p className={styles.reassurance}>
               No account required to start <span aria-hidden="true">·</span> Solo rounds work offline
             </p>
@@ -264,14 +259,15 @@ export default async function Home() {
               <li>Undo, penalties, and next hole from the Watch.</li>
               <li>The completed card syncs back to iPhone.</li>
             </ul>
-            <TrackedCta
+            <PrimaryCta
               event="app_store_click"
               ctaLocation="home_watch"
+              tone="light"
               href={APP_STORE_URL}
               className={styles.primaryCta}
             >
-              Download for iPhone + Apple Watch <Arrow />
-            </TrackedCta>
+              Download for iPhone + Apple Watch
+            </PrimaryCta>
           </div>
         </div>
       </section>
@@ -332,14 +328,15 @@ export default async function Home() {
           <HomeGroupStory />
 
           <div className={styles.groupAction}>
-            <TrackedCta
+            <PrimaryCta
               event="web_app_click"
               ctaLocation="home_group"
+              tone="light"
               href={`${APP_URL}/round/mode`}
               className={styles.primaryCta}
             >
-              Start a group round <Arrow />
-            </TrackedCta>
+              Start a group round
+            </PrimaryCta>
             <small>Hosting is free during launch. The host signs in; friends can join as guests.</small>
           </div>
         </div>
@@ -354,14 +351,14 @@ export default async function Home() {
           </div>
           <HomeReviews reviews={featuredReviews} />
           <div className={styles.centerAction}>
-            <TrackedCta
+            <PrimaryCta
               event="app_store_click"
               ctaLocation="home_reviews"
               href={APP_STORE_URL}
               className={styles.primaryCta}
             >
-              Download on the App Store <Arrow />
-            </TrackedCta>
+              Download on the App Store
+            </PrimaryCta>
           </div>
         </div>
       </section>
@@ -391,14 +388,19 @@ export default async function Home() {
           <p className={styles.heroEyebrow}>Play your next round with it</p>
           <h2>ONE LESS THING TO THINK ABOUT.</h2>
           <p>JUST PLAY. WE’LL KEEP COUNT.</p>
-          <TrackedCta
+          <PrimaryCta
             event="app_store_click"
             ctaLocation="home_final"
+            tone="light"
             href={APP_STORE_URL}
             className={styles.primaryCta}
+            aria-label="Download SimplyStroke free on the App Store"
+            size="large"
+            apple
+            subtitle="on the App Store"
           >
-            Download free on the App Store <Arrow />
-          </TrackedCta>
+            Free download
+          </PrimaryCta>
           <small>Start without an account · No ads today · Android coming later</small>
           <p className={styles.finalUtility}>
             Already use SimplyStroke?{" "}
