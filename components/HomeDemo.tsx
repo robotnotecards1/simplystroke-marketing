@@ -72,8 +72,7 @@ export default function HomeDemo() {
         <p className={styles.eyebrow}>Try the whole idea</p>
         <h2>Go ahead. Count a stroke.</h2>
         <p className={styles.lede}>
-          Tap the ball like you would after a shot. No form. No math. No tiny
-          scorecard boxes.
+          Tap the ball like you would after a shot. That&apos;s it, just tap.
         </p>
         <div className={styles.demoStatus} aria-live="polite" aria-atomic="true">
           <span>{statusCopy(count)}</span>

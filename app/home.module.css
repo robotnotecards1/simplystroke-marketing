@@ -6538,7 +6538,7 @@
 
 .focusCopy {
   background:
-    radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.042) 1px, transparent 1.5px) 0 0 / 24px 24px,
+    radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.0525) 1px, transparent 1.5px) 0 0 / 24px 24px,
     linear-gradient(145deg, #1d513b, #123626 68%);
 }
 
@@ -6562,6 +6562,14 @@
   line-height: 1;
   text-align: center;
   text-shadow: 0 3px 18px rgba(228, 184, 63, 0.18);
+}
+
+.reviewRatingCopy {
+  margin-top: 12px;
+  color: var(--green-mid);
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.4;
 }
 
 .faqIntro .sectionHeading .faqHeadline,
@@ -6590,6 +6598,19 @@
 
   .faqIntro .sectionHeading .faqHeadline {
     width: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .heroAction .heroStoreCta {
+    width: min(100%, 292px);
+    min-width: 0;
+    margin-inline: auto;
+  }
+
+  .demoCopy h2 {
+    font-size: clamp(28px, 8.7vw, 36px);
+    white-space: nowrap;
   }
 }
 
