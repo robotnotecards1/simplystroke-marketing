@@ -114,7 +114,7 @@ function ProofIcon({ type }: { type: "rating" | "watch" | "guest" | "course" }) 
     return <svg viewBox="0 0 72 72" aria-hidden="true"><path className={`${styles.proofAccent} ${styles.proofStars}`} d="m8 12 2.1 4.3 4.7.7-3.4 3.3.8 4.7L8 22.8 3.8 25l.8-4.7L1.2 17l4.7-.7L8 12Zm14 0 2.1 4.3 4.7.7-3.4 3.3.8 4.7-4.2-2.2-4.2 2.2.8-4.7-3.4-3.3 4.7-.7L22 12Zm14 0 2.1 4.3 4.7.7-3.4 3.3.8 4.7-4.2-2.2-4.2 2.2.8-4.7-3.4-3.3 4.7-.7L36 12Zm14 0 2.1 4.3 4.7.7-3.4 3.3.8 4.7-4.2-2.2-4.2 2.2.8-4.7-3.4-3.3 4.7-.7L50 12Zm14 0 2.1 4.3 4.7.7-3.4 3.3.8 4.7-4.2-2.2-4.2 2.2.8-4.7-3.4-3.3 4.7-.7L64 12Z" /><path d="M8 39h56M14 49h44M22 59h28" /></svg>;
   }
   if (type === "watch") {
-    return <svg viewBox="0 0 72 72" aria-hidden="true"><path d="M27 4h18l4 12v40l-4 12H27l-4-12V16L27 4Z" /><rect x="18" y="14" width="36" height="44" rx="12" /><circle cx="36" cy="36" r="13" /><path d="M26 33c6 3 14 3 20 0M27 42c6-2 12-2 18 0M31 24c-2 7-2 17 0 24M41 24c2 7 2 17 0 24" opacity=".3" /><path className={`${styles.proofAccent} ${styles.proofWatchCount}`} d="M34 31.5 37 29v15" /></svg>;
+    return <svg viewBox="0 0 72 72" aria-hidden="true"><path d="M28 5h16l2 10H26L28 5Zm-2 52h20l-2 10H28l-2-10Z" /><rect x="20" y="14" width="32" height="44" rx="10" /><path d="M52 25h4v9h-4" /><path className={`${styles.proofAccent} ${styles.proofWatchCount}`} d="M32 36h8m-4-4v8" /></svg>;
   }
   if (type === "guest") {
     return <svg viewBox="0 0 72 72" aria-hidden="true"><circle cx="19" cy="22" r="8" /><path d="M5 59c1-16 7-25 14-25s13 9 14 25M43 8h20v55H43" /><path className={`${styles.proofAccent} ${styles.proofGuestArrow}`} d="M31 36h26m-8-8 8 8-8 8" /></svg>;
@@ -201,6 +201,11 @@ export default async function Home() {
               iPhone or Apple Watch so you can stop doing math and keep your
               head in the game.
             </p>
+          </div>
+
+          <HomeHeroDevices />
+
+          <div className={styles.heroAction}>
             <TrackedCta
               event="app_store_click"
               ctaLocation="home_hero"
@@ -219,8 +224,6 @@ export default async function Home() {
               No account required to start <span aria-hidden="true">·</span> Solo rounds work offline
             </p>
           </div>
-
-          <HomeHeroDevices />
         </div>
       </header>
 
@@ -286,7 +289,10 @@ export default async function Home() {
           </div>
           <div className={styles.focusCopy}>
             <FocusIllustration />
-            <h2>Keep your head in the game.</h2>
+            <h2 className={styles.wrappedHeadline}>
+              <span>Keep your head</span>
+              <span>in the game.</span>
+            </h2>
             <p>
               Golf already gives you enough to think about. Your lie. Your club.
               The water you&apos;re pretending not to see. The last thing you need
@@ -310,7 +316,7 @@ export default async function Home() {
               <p className={styles.eyebrow}>Play together</p>
               <h2 className={styles.groupHeadline}>
                 <span>Invite your bros.</span>
-                <span>Lose the scorekeeper.</span>
+                <span className={styles.groupHeadlineLong}>Real time group scorecard.</span>
               </h2>
             </div>
             <div>
@@ -342,8 +348,9 @@ export default async function Home() {
       <section className={`${styles.section} ${styles.reviewsSection}`} data-home-motion>
         <div className={styles.wrap}>
           <div className={`${styles.sectionHeading} ${styles.centerHeading}`}>
-            <p className={styles.eyebrow}>5 Stars on the App Store</p>
-            <h2>Golfers who stopped losing count.</h2>
+            <h2 className={styles.reviewsHeadline}>Reviews from the clubhouse</h2>
+            <div className={styles.reviewHeadingStars} aria-label="5 out of 5 stars">★★★★★</div>
+            <p className={styles.reviewRatingCopy}>5 stars on the App Store</p>
           </div>
           <HomeReviews reviews={featuredReviews} />
           <div className={styles.centerAction}>
@@ -353,7 +360,7 @@ export default async function Home() {
               href={APP_STORE_URL}
               className={styles.primaryCta}
             >
-              Download the app golfers are describing <Arrow />
+              Download on the App Store <Arrow />
             </TrackedCta>
           </div>
         </div>
@@ -364,7 +371,7 @@ export default async function Home() {
           <div className={styles.faqIntro}>
             <div className={styles.sectionHeading}>
               <p className={styles.eyebrow}>First-tee questions</p>
-              <h2>Before you put it in the bag.</h2>
+              <h2 className={styles.faqHeadline}>Good questions, simple answer.</h2>
               <p className={styles.faqIntroCopy}>Six quick answers. About the same amount of reading as a short par three.</p>
             </div>
           </div>
@@ -382,11 +389,8 @@ export default async function Home() {
       <section className={`${styles.section} ${styles.finalSection}`} data-home-motion>
         <div className={`${styles.wrap} ${styles.finalInner}`}>
           <p className={styles.heroEyebrow}>Play your next round with it</p>
-          <h2>Your next round has enough to think about.</h2>
-          <p>
-            The count doesn&apos;t have to be one of those things. Put SimplyStroke
-            on your iPhone and Apple Watch before the first tee.
-          </p>
+          <h2>ONE LESS THING TO THINK ABOUT.</h2>
+          <p>JUST PLAY. WE’LL KEEP COUNT.</p>
           <TrackedCta
             event="app_store_click"
             ctaLocation="home_final"

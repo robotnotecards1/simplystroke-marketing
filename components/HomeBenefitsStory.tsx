@@ -59,7 +59,10 @@ export default function HomeBenefitsStory() {
     <div ref={storyRef} className={`${styles.wrap} ${styles.simpleLayout}`}>
       <div className={styles.sectionHeading}>
         <p className={styles.eyebrow}>Simple on purpose</p>
-        <h2>A scorecard, not a cockpit.</h2>
+        <h2 className={styles.wrappedHeadline}>
+          <span>A scorecard,</span>
+          <span>not a cockpit.</span>
+        </h2>
         <p className={styles.lede}>
           If you want GPS yardages, green maps, club recommendations, and
           swing analysis, there are excellent apps for that. SimplyStroke is
