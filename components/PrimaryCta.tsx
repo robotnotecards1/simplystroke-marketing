@@ -27,7 +27,7 @@ export default function PrimaryCta({
       className={[styles.cta, size !== "default" && styles[size], tone === "light" && styles.light, className].filter(Boolean).join(" ")}
     >
       <span className={styles.body}>
-        {apple && <span className={styles.apple}><AppleGlyph /></span>}
+        {apple && <span className={styles.apple}><AppleGlyph trim /></span>}
         <span className={styles.copy}>
           <span className={styles.label}>{children}</span>
           {subtitle && <> <span className={styles.subtitle}>{subtitle}</span></>}

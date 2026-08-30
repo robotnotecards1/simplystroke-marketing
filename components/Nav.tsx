@@ -37,6 +37,7 @@ export default function Nav() {
             ctaLocation="nav_appstore"
             href={APP_STORE_URL}
             size="compact"
+            apple
             aria-label="Download SimplyStroke on the App Store"
           >
             Download free

@@ -123,6 +123,7 @@ export default function HomeDemo() {
       <PrimaryCta
         event="app_store_click"
         ctaLocation="home_demo"
+        apple
         href={APP_STORE_URL}
         className={`${styles.primaryCta} ${styles.demoCta}`}
       >
