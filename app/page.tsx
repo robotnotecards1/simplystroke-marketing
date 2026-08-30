@@ -262,6 +262,7 @@ export default async function Home() {
             <PrimaryCta
               event="app_store_click"
               ctaLocation="home_watch"
+              apple
               tone="light"
               href={APP_STORE_URL}
               className={styles.primaryCta}
@@ -331,6 +332,7 @@ export default async function Home() {
             <PrimaryCta
               event="web_app_click"
               ctaLocation="home_group"
+              apple
               tone="light"
               href={`${APP_URL}/round/mode`}
               className={styles.primaryCta}
@@ -354,6 +356,7 @@ export default async function Home() {
             <PrimaryCta
               event="app_store_click"
               ctaLocation="home_reviews"
+              apple
               href={APP_STORE_URL}
               className={styles.primaryCta}
             >

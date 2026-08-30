@@ -625,7 +625,7 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .prose .post-cta { margin-top: 40px; }
 
 /* ---------- responsive (per README mobile spec) ---------- */
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .ss-navlinks { display: none; }
   .ss-mobile-menu { display: block; }
 }
@@ -652,9 +652,15 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
   .ss-steps { grid-template-columns: 1fr; gap: 30px; max-width: 320px; margin-left: auto; margin-right: auto; }
   .ss-flightpath { display: none; }
 }
+@media (max-width: 520px) {
+  .ss-nav-inner { gap: 12px; }
+}
 @media (max-width: 390px) {
   .ss-logo { height: 34px; }
   .btn-nav { font-size: 13px; padding-inline: 11px; }
+}
+@media (max-width: 360px) {
+  .ss-logo { height: 30px; }
 }
 @media (max-width: 400px) {
   .ss-hero-phonewrap { transform: scale(0.88); transform-origin: top center; }

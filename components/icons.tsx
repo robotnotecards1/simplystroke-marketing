@@ -4,9 +4,9 @@
 
 type IconProps = { size?: number };
 
-export function AppleGlyph() {
+export function AppleGlyph({ trim = false }: { trim?: boolean } = {}) {
   return (
-    <svg viewBox="0 0 24 24" width={26} height={26} fill="#FAFAF8" aria-hidden="true">
+    <svg viewBox={trim ? "4 2 16 20" : "0 0 24 24"} width={26} height={26} fill="#FAFAF8" aria-hidden="true">
       <path d="M16.5 12.3c0-2.2 1.8-3.3 1.9-3.3-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8-.7 0-1.7-.8-2.8-.8-1.5 0-2.8.8-3.6 2.2-1.5 2.6-.4 6.5 1.1 8.6.7 1 1.6 2.2 2.7 2.2 1.1 0 1.5-.7 2.8-.7 1.3 0 1.6.7 2.8.7 1.2 0 1.9-1 2.6-2 .8-1.2 1.2-2.3 1.2-2.4-.1 0-2.3-.9-2.3-3.6zM14.4 5.6c.6-.7 1-1.7.9-2.7-.9 0-1.9.6-2.5 1.3-.6.6-1 1.6-.9 2.6 1 .1 1.9-.5 2.5-1.2z" />
     </svg>
   );
