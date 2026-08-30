@@ -201,6 +201,11 @@ export default async function Home() {
               iPhone or Apple Watch so you can stop doing math and keep your
               head in the game.
             </p>
+          </div>
+
+          <HomeHeroDevices />
+
+          <div className={styles.heroAction}>
             <TrackedCta
               event="app_store_click"
               ctaLocation="home_hero"
@@ -219,8 +224,6 @@ export default async function Home() {
               No account required to start <span aria-hidden="true">·</span> Solo rounds work offline
             </p>
           </div>
-
-          <HomeHeroDevices />
         </div>
       </header>
 
@@ -286,7 +289,10 @@ export default async function Home() {
           </div>
           <div className={styles.focusCopy}>
             <FocusIllustration />
-            <h2>Keep your head in the game.</h2>
+            <h2 className={styles.wrappedHeadline}>
+              <span>Keep your head</span>
+              <span>in the game.</span>
+            </h2>
             <p>
               Golf already gives you enough to think about. Your lie. Your club.
               The water you&apos;re pretending not to see. The last thing you need
@@ -353,7 +359,7 @@ export default async function Home() {
               href={APP_STORE_URL}
               className={styles.primaryCta}
             >
-              Download the app golfers are describing <Arrow />
+              Download on the App Store <Arrow />
             </TrackedCta>
           </div>
         </div>
@@ -364,7 +370,10 @@ export default async function Home() {
           <div className={styles.faqIntro}>
             <div className={styles.sectionHeading}>
               <p className={styles.eyebrow}>First-tee questions</p>
-              <h2>Before you put it in the bag.</h2>
+              <h2 className={styles.wrappedHeadline}>
+                <span>Good questions.</span>
+                <span>Simple answers.</span>
+              </h2>
               <p className={styles.faqIntroCopy}>Six quick answers. About the same amount of reading as a short par three.</p>
             </div>
           </div>

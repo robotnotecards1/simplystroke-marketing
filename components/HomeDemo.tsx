@@ -77,7 +77,6 @@ export default function HomeDemo() {
         </p>
         <div className={styles.demoStatus} aria-live="polite" aria-atomic="true">
           <span>{statusCopy(count)}</span>
-          <small>The number stays here. Your head stays in the game.</small>
         </div>
       </div>
 
