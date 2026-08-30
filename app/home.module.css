@@ -73,36 +73,8 @@
 }
 
 .primaryCta {
-  min-height: 52px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 14px 24px;
-  background: var(--lime);
-  color: #16331f;
-  box-shadow: 0 14px 34px rgba(150, 196, 30, 0.24);
-  font-size: 16px;
-  font-weight: 800;
-  line-height: 1.2;
-  text-align: center;
-  transition: transform 180ms ease, filter 180ms ease, box-shadow 180ms ease;
-}
-
-.primaryCta:hover {
-  color: #16331f;
-  filter: brightness(1.04);
-  transform: translateY(-2px);
-  box-shadow: 0 18px 38px rgba(150, 196, 30, 0.3);
-}
-
-.primaryCta span {
-  font-size: 1.25em;
-  transition: transform 180ms ease;
-}
-
-.primaryCta:hover span {
-  transform: translateX(3px);
+  /* Page placement only; the shared PrimaryCta owns appearance and interaction. */
+  max-width: 100%;
 }
 
 .textLink {
@@ -5852,52 +5824,8 @@
 }
 
 .heroStoreCta {
-  min-width: 292px;
-  padding: 10px 18px;
-  justify-content: flex-start;
-  gap: 13px;
-}
-
-.heroStoreCta svg {
-  flex: 0 0 auto;
-  width: 30px;
-  height: 30px;
-  fill: #16331f;
-}
-
-.heroStoreCta .heroStoreCtaCopy,
-.heroStoreCta:hover .heroStoreCtaCopy {
   min-width: 0;
-  display: grid;
-  flex: 1 1 auto;
-  gap: 1px;
-  color: #16331f;
-  font-size: inherit;
-  line-height: 1;
-  text-align: left;
-  transform: none;
-}
-
-.heroStoreCtaCopy strong,
-.heroStoreCtaCopy small {
-  display: block;
-}
-
-.heroStoreCtaCopy strong {
-  font-size: 17px;
-  line-height: 1.05;
-}
-
-.heroStoreCtaCopy small {
-  font-size: 10px;
-  font-weight: 850;
-  letter-spacing: 0.1em;
-  line-height: 1.25;
-  text-transform: uppercase;
-}
-
-.heroStoreCta > span:last-child {
-  margin-left: auto;
+  width: 340px;
 }
 
 .demoStage {
@@ -6612,7 +6540,7 @@
 
 @media (max-width: 520px) {
   .heroAction .heroStoreCta {
-    width: min(100%, 292px);
+    width: min(100%, 320px);
     min-width: 0;
     margin-inline: auto;
   }

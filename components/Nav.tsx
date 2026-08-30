@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import TrackedCta from "@/components/TrackedCta";
+import PrimaryCta from "@/components/PrimaryCta";
 import { APP_STORE_URL, APP_URL } from "@/lib/site";
 
 export default function Nav() {
@@ -31,15 +32,15 @@ export default function Nav() {
               Sign in
             </TrackedCta>
           </span>
-          <TrackedCta
+          <PrimaryCta
             event="app_store_click"
             ctaLocation="nav_appstore"
             href={APP_STORE_URL}
-            className="btn btn-nav"
+            size="compact"
             aria-label="Download SimplyStroke on the App Store"
           >
             Download free
-          </TrackedCta>
+          </PrimaryCta>
           <details className="ss-mobile-menu">
             <summary aria-label="Open navigation menu">
               <span aria-hidden="true" />
