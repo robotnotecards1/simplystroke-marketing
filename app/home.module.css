@@ -2428,10 +2428,25 @@
   }
 
   .heroDevices {
-    height: 520px;
-    transform: scale(0.9);
-    transform-origin: top center;
-    margin-bottom: -42px;
+    /* The phone sets the row height; decorative motion must not size the row. */
+    width: min(100%, 360px);
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transform: none;
+    animation: none;
+  }
+
+  .heroPhone {
+    width: 74%;
+    margin-left: auto;
+    transform: none;
+  }
+
+  .heroWatch {
+    left: 0;
+    top: 41%;
+    width: 46%;
   }
 
   .proofGrid {
@@ -2708,11 +2723,7 @@
   }
 
   .heroDevices {
-    width: 360px;
-    height: 485px;
-    transform: scale(0.82);
-    margin-inline: calc((100% - 360px) / 2);
-    margin-bottom: -80px;
+    width: min(100%, 320px);
   }
 
   .proofGrid > div {
@@ -6445,17 +6456,19 @@
       "copy"
       "devices"
       "action";
+    grid-template-rows: auto auto auto;
+    row-gap: 24px;
   }
 
   .heroAction {
     width: 100%;
-    margin-top: 48px;
+    margin-top: 0;
     margin-inline: auto;
     text-align: center;
   }
 
   .heroAction .primaryCta {
-    margin-top: 24px;
+    margin-top: 0;
   }
 
   .heroAction .reassurance {
@@ -6466,10 +6479,6 @@
 @media (max-width: 520px) {
   .heroAction .primaryCta {
     width: 100%;
-  }
-
-  .heroAction {
-    margin-top: 72px;
   }
 
   .groupFlow {
@@ -6621,21 +6630,6 @@
   }
 }
 
-/* Homepage feedback pass 14: open up the mobile hero product view. */
-@media (max-width: 520px) {
-  .heroDevices {
-    margin-top: 24px;
-  }
-
-  .heroPhone {
-    transform: translateX(24px);
-  }
-
-  .heroWatch {
-    left: -34px;
-  }
-}
-
 /* Homepage feedback pass 15: persistent tap cue and tighter conversion copy. */
 .reviewsHeadline {
   white-space: nowrap;
@@ -6646,11 +6640,5 @@
   .centerHeading .reviewsHeadline {
     font-size: clamp(22px, 6.5vw, 34px);
     letter-spacing: 0.01em;
-  }
-}
-
-@media (max-width: 360px) {
-  .heroWatch {
-    left: -14px;
   }
 }
