@@ -150,7 +150,7 @@ export default function HomeDemo() {
         href={APP_STORE_URL}
         className={`${styles.primaryCta} ${styles.demoCta}`}
       >
-        Get it on my iPhone →
+        Start Stroking →
       </TrackedCta>
     </div>
   );

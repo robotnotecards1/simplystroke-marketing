@@ -316,7 +316,7 @@ export default async function Home() {
               <p className={styles.eyebrow}>Play together</p>
               <h2 className={styles.groupHeadline}>
                 <span>Invite your bros.</span>
-                <span>Lose the scorekeeper.</span>
+                <span className={styles.groupHeadlineLong}>Real time group scorecard.</span>
               </h2>
             </div>
             <div>
@@ -348,8 +348,8 @@ export default async function Home() {
       <section className={`${styles.section} ${styles.reviewsSection}`} data-home-motion>
         <div className={styles.wrap}>
           <div className={`${styles.sectionHeading} ${styles.centerHeading}`}>
-            <p className={styles.eyebrow}>5 Stars on the App Store</p>
-            <h2>Golfers who stopped losing count.</h2>
+            <h2>They tapped. They kept playing.</h2>
+            <div className={styles.reviewHeadingStars} aria-label="5 out of 5 stars">★★★★★</div>
           </div>
           <HomeReviews reviews={featuredReviews} />
           <div className={styles.centerAction}>
@@ -370,10 +370,7 @@ export default async function Home() {
           <div className={styles.faqIntro}>
             <div className={styles.sectionHeading}>
               <p className={styles.eyebrow}>First-tee questions</p>
-              <h2 className={styles.wrappedHeadline}>
-                <span>Good questions.</span>
-                <span>Simple answers.</span>
-              </h2>
+              <h2 className={styles.faqHeadline}>Good questions, simple answer.</h2>
               <p className={styles.faqIntroCopy}>Six quick answers. About the same amount of reading as a short par three.</p>
             </div>
           </div>

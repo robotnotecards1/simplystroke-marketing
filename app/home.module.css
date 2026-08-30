@@ -6488,3 +6488,114 @@
     font-size: clamp(40px, 12vw, 54px);
   }
 }
+
+/* Homepage feedback pass 12: stronger tap guidance, course texture, and natural type wrapping. */
+.demoPointer {
+  left: 39%;
+  top: 38.5%;
+  width: 116px;
+  height: 132px;
+  transform-origin: 48% 22%;
+}
+
+.demoPointerPersistent,
+.demoPointerPersistent .demoHandRays,
+.demoTryHint {
+  animation-duration: 0.78s;
+}
+
+@keyframes guidedHandTapLoop {
+  0%, 100% {
+    opacity: 1;
+    transform: translate(1px, 2px) rotate(-3deg) scale(1.04);
+  }
+  38% {
+    opacity: 1;
+    transform: translate(5px, 34px) rotate(-1deg) scale(0.84);
+  }
+  56% {
+    opacity: 1;
+    transform: translate(0, -5px) rotate(-3deg) scale(1.08);
+  }
+}
+
+@keyframes demoHandTapRays {
+  0%, 28%, 62%, 100% {
+    opacity: 0;
+    transform: scale(0.68);
+  }
+  39%, 52% {
+    opacity: 1;
+    transform: scale(1.28);
+  }
+}
+
+@keyframes demoTryHintTap {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  38% { transform: translateX(-50%) translateY(8px); }
+  56% { transform: translateX(-50%) translateY(-2px); }
+}
+
+.focusCopy {
+  background:
+    radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.042) 1px, transparent 1.5px) 0 0 / 24px 24px,
+    linear-gradient(145deg, #1d513b, #123626 68%);
+}
+
+.groupSection {
+  background:
+    linear-gradient(180deg, rgba(18, 54, 38, 0.93), rgba(18, 54, 38, 0.96)),
+    url("/images/photos/green.jpg") center 70% / cover no-repeat,
+    var(--green-deep);
+}
+
+.groupHeadline .groupHeadlineLong {
+  font-size: 0.68em;
+  white-space: normal;
+}
+
+.reviewHeadingStars {
+  margin-top: 20px;
+  color: var(--star-gold);
+  font-size: clamp(27px, 3vw, 38px);
+  letter-spacing: 0.2em;
+  line-height: 1;
+  text-align: center;
+  text-shadow: 0 3px 18px rgba(228, 184, 63, 0.18);
+}
+
+.faqIntro .sectionHeading .faqHeadline,
+.faqIntroCopy {
+  width: max-content;
+  max-width: 100%;
+  white-space: normal;
+}
+
+.faqIntroCopy {
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  .demoPointer {
+    left: 37%;
+    top: 38%;
+    width: 102px;
+    height: 116px;
+  }
+
+  .groupHeadline .groupHeadlineLong {
+    max-width: none;
+    font-size: 0.84em;
+  }
+
+  .faqIntro .sectionHeading .faqHeadline {
+    width: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home .demoPointerPersistent {
+    animation: none !important;
+    transform: translate(1px, 10px) rotate(-2deg) scale(1.04);
+  }
+}
