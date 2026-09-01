@@ -9,7 +9,7 @@ import { og } from "@/lib/site";
  * (North Carolina) — and verified against the codebase (free local-first
  * stroke counter; optional Supabase accounts via Google/Apple/email; cloud
  * sync + group rounds; expo-location + OSM Overpass + GolfCourseAPI for course
- * lookup; no charges today). Strong-form terms: indemnification, limitation of
+ * lookup; optional App Store Pro subscriptions). Strong-form terms: indemnification, limitation of
  * liability, "as is" disclaimers, binding individual arbitration + class-action
  * waiver with a 30-day opt-out, NC governing law, and Apple App Store terms.
  *
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: og(TITLE, DESCRIPTION, "/terms-of-service/"),
 };
 
-const UPDATED = "July 23, 2026";
+const UPDATED = "August 31, 2026";
 const CONTACT = "hello@simplystroke.app";
 
 export default function TermsPage() {
@@ -167,23 +167,28 @@ export default function TermsPage() {
 
         <h2>8. Payments</h2>
         <p>
-          Today the Service costs nothing and there is nothing to buy. If we later
-          add optional purchases — a tip, or a Pro tier — they will be clearly
-          optional, and any charge will run through the App Store, Google Play, or
-          a payment processor under <em>their</em> terms and refund rules. The
-          free stroke counter stays free, and we will update these Terms before
-          anything starts charging.
+          Core scorekeeping is free. SimplyStroke may also offer optional,
+          auto-renewing monthly and annual Pro subscriptions. The available plan,
+          billing period, current price, and included features are shown in the
+          app before you buy. Payment is charged to your Apple account when the
+          purchase is confirmed, and the subscription renews automatically unless
+          you cancel before renewal. Apple handles billing and refunds under its
+          terms. You can manage or cancel from your Apple account; deleting the
+          app or your SimplyStroke account does not cancel an App Store
+          subscription. Pro features and plan availability may change, but a
+          change does not shorten a subscription period you already paid for.
         </p>
 
         <h2>9. Other services we rely on</h2>
         <p>
           The Service is built on services other people run: Supabase (accounts,
-          cloud data, backend), Google (sign-in), Apple (Sign in with Apple, App
-          Store), GolfCourseAPI and OpenStreetMap&apos;s Overpass API (finding
-          courses and par), and Vercel (site hosting). Your use of those pieces is
-          also subject to their terms, and we are not responsible for their
-          outages, accuracy, or conduct. If you got the app from the Apple App
-          Store, Section 15 also applies.
+          cloud data, backend), Google (sign-in), Apple (Sign in with Apple and
+          App Store purchases), RevenueCat (subscription processing and Pro
+          access), Resend (email delivery), GolfCourseAPI and OpenStreetMap&apos;s
+          Overpass API (finding courses and par), and Vercel (site hosting). Your
+          use of those pieces is also subject to their terms, and we are not
+          responsible for their outages, accuracy, or conduct. If you got the app
+          from the Apple App Store, Section 15 also applies.
         </p>
 
         <h2>10. Disclaimer of warranties</h2>
@@ -280,9 +285,11 @@ export default function TermsPage() {
         <h2>13. Ending things</h2>
         <p>
           You can stop using the Service and delete your account any time from the
-          app. We may suspend or end your access at any time, with or without
-          cause or notice, including if you break these Terms. Sections that should
-          survive termination — including 5, 6, 10, 11, 12, and 16 — survive.
+          app. Account deletion does not cancel an App Store subscription; manage
+          or cancel it through your Apple account. We may suspend or end your
+          access at any time, with or without cause or notice, including if you
+          break these Terms. Sections that should survive termination — including
+          5, 6, 10, 11, 12, and 16 — survive.
         </p>
 
         <h2>14. Changes to these Terms</h2>

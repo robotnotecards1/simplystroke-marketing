@@ -226,8 +226,8 @@ export default function ComparePage() {
               hardware trackers add <strong>$180–$300</strong> up front
             </>,
             <>
-              SimplyStroke is <strong>free</strong>, works offline, and needs no
-              account to start a round
+              SimplyStroke&apos;s core scoring is <strong>free</strong>, works
+              offline, and needs no account to start a round
             </>,
           ]}
         />
