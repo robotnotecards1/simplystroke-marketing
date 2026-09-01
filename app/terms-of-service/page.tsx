@@ -9,8 +9,9 @@ import { og } from "@/lib/site";
  * (North Carolina) — and verified against the codebase (free local-first
  * stroke counter; optional Supabase accounts via Google/Apple/email; cloud
  * sync + group rounds; expo-location + OSM Overpass + GolfCourseAPI for course
- * lookup; no charges today). Strong-form terms: indemnification, limitation of
- * liability, "as is" disclaimers, binding individual arbitration + class-action
+ * lookup; free core plus optional Pro subscriptions). Strong-form terms:
+ * indemnification, limitation of liability, "as is" disclaimers, binding
+ * individual arbitration + class-action
  * waiver with a 30-day opt-out, NC governing law, and Apple App Store terms.
  *
  * Not a substitute for a lawyer. Arbitration clauses, class-action waivers, and
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: og(TITLE, DESCRIPTION, "/terms-of-service/"),
 };
 
-const UPDATED = "July 23, 2026";
+const UPDATED = "September 1, 2026";
 const CONTACT = "hello@simplystroke.app";
 
 export default function TermsPage() {
@@ -72,11 +73,15 @@ export default function TermsPage() {
           penalties, and get a scorecard. The core counter is free and works
           offline for solo rounds — no account needed to start, and no ads
           today. Optional extras need an account or a connection: backing rounds
-          up to the cloud so they
-          follow you across devices; <strong>group rounds</strong>, where a shared
-          join code puts everyone&apos;s scorecard in one live view; and looking
-          up nearby courses to auto-fill par. Features may change, break, or be
-          removed while we build.
+          up to the cloud so they follow you across devices;{" "}
+          <strong>group rounds</strong>, where a shared join code puts
+          everyone&apos;s scorecard in one live view; and looking up nearby
+          courses to auto-fill par. An optional SimplyStroke Pro subscription
+          adds the features identified as Pro in the app, such as full history,
+          expanded statistics, saved crews and trips, private journals, and
+          reviewed paper-scorecard imports. Features may change, break, or be
+          removed while we build, subject to your applicable cancellation and
+          consumer rights.
         </p>
 
         <h2>2. Who can use it</h2>
@@ -167,21 +172,40 @@ export default function TermsPage() {
 
         <h2>8. Payments</h2>
         <p>
-          Today the Service costs nothing and there is nothing to buy. If we later
-          add optional purchases — a tip, or a Pro tier — they will be clearly
-          optional, and any charge will run through the App Store, Google Play, or
-          a payment processor under <em>their</em> terms and refund rules. The
-          free stroke counter stays free, and we will update these Terms before
-          anything starts charging.
+          The core stroke counter remains available without a Pro subscription.
+          SimplyStroke Pro is an optional auto-renewing subscription offered in
+          monthly and annual periods. The price and billing period shown in the
+          App Store purchase sheet when you confirm are the controlling price and
+          period, including any applicable tax or localized currency.
+        </p>
+        <p>
+          Payment is charged to your Apple Account when you confirm the purchase.
+          The subscription renews automatically for the same period unless you
+          cancel it before renewal. You can manage or cancel it from your Apple
+          Account subscription settings. Deleting the app or your SimplyStroke
+          account does <strong>not</strong> cancel Apple billing. If you delete an
+          app account, cancel the Apple subscription separately first if you do
+          not want it to renew.
+        </p>
+        <p>
+          Apple handles billing, cancellation, and refund requests under its
+          terms. We do not receive your payment-card number. RevenueCat processes
+          purchase and entitlement status for us so Pro can be activated and
+          restored. Use &ldquo;Restore subscription&rdquo; in the app while signed
+          into the intended SimplyStroke account to recover an eligible App Store
+          purchase. Store processing, pending approval, billing grace, refunds,
+          or network delays can temporarily delay access; free scoring remains
+          available during that time.
         </p>
 
         <h2>9. Other services we rely on</h2>
         <p>
           The Service is built on services other people run: Supabase (accounts,
           cloud data, backend), Google (sign-in), Apple (Sign in with Apple, App
-          Store), GolfCourseAPI and OpenStreetMap&apos;s Overpass API (finding
-          courses and par), and Vercel (site hosting). Your use of those pieces is
-          also subject to their terms, and we are not responsible for their
+          Store), RevenueCat (subscription verification), Resend (customer
+          email), GolfCourseAPI and OpenStreetMap&apos;s Overpass API (finding
+          courses and par), and Vercel (site hosting). Your use of those pieces
+          is also subject to their terms, and we are not responsible for their
           outages, accuracy, or conduct. If you got the app from the Apple App
           Store, Section 15 also applies.
         </p>
