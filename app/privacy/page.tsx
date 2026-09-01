@@ -172,8 +172,9 @@ export default function PrivacyPage() {
           users, we store whether you want product updates or an optional Pro
           monthly recap, along with the information needed to send, suppress,
           unsubscribe, and measure delivery of those messages. We may also send a
-          one-time follow-up after your first completed round. You can change
-          available preferences in the app or unsubscribe from an email.
+          one-time follow-up after your first completed round. The product-update
+          preference starts on when a new preference record is created. You can
+          turn it off in the app or unsubscribe from an email.
         </p>
 
         <h2>What we do not collect</h2>

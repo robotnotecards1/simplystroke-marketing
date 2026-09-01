@@ -175,8 +175,9 @@ export default function TermsPage() {
           you cancel before renewal. Apple handles billing and refunds under its
           terms. You can manage or cancel from your Apple account; deleting the
           app or your SimplyStroke account does not cancel an App Store
-          subscription. Pro features and plan availability may change, but a
-          change does not shorten a subscription period you already paid for.
+          subscription. Pro features, plan availability, and prices may change
+          for future purchases or renewals, subject to Apple&apos;s rules and any
+          notice or consent they require.
         </p>
 
         <h2>9. Other services we rely on</h2>
