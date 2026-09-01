@@ -17,7 +17,8 @@ import { og } from "@/lib/site";
  *     Edge Function proxy) for par/tee data by name.
  *   - Crash/error reporting → report-error Edge Function → public.error_reports
  *     → admin.simplystroke.app.
- *   - No third-party analytics/ad/crash SDKs in the app; no IDFA; no tracking.
+ *   - RevenueCat handles App Store subscription state; Resend sends lifecycle
+ *     and preference-based email. No analytics/ad/crash SDKs, IDFA, or tracking.
  *   - Marketing site (this site) runs a waitlist + GA4 + self-hosted Umami.
  *
  * Not a substitute for a lawyer. Keep this in sync with the App Store privacy
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: og(TITLE, DESCRIPTION, "/privacy/"),
 };
 
-const UPDATED = "July 23, 2026";
+const UPDATED = "August 31, 2026";
 const CONTACT = "hello@simplystroke.app";
 
 export default function PrivacyPage() {
@@ -67,9 +68,11 @@ export default function PrivacyPage() {
           <strong>The short version:</strong> you can keep score without an
           account, in which case your rounds never leave your device. If you
           create an account, we store your email and your rounds so they sync
-          across devices and so you can play group rounds. We do not sell your
-          personal information, we do not run ads, and the app does not track you
-          across other companies&apos; apps or websites.
+          across devices and so you can play group rounds. If you subscribe to
+          SimplyStroke Pro, we also process the purchase and subscription status
+          needed to unlock Pro. We do not sell your personal information, we do
+          not run ads, and the app does not track you across other
+          companies&apos; apps or websites.
         </p>
 
         <h2>What we collect</h2>
@@ -98,6 +101,15 @@ export default function PrivacyPage() {
           are synced to our backend so they follow you across devices — course
           names, dates, hole counts, pars, strokes, and scores. If you never sign
           in, none of this leaves your device.
+        </p>
+
+        <p>
+          <strong>Purchases and subscriptions.</strong> If you buy or restore
+          SimplyStroke Pro through the App Store, Apple and RevenueCat process
+          the transaction. We receive a pseudonymous account identifier, the
+          product and store involved, and subscription events such as purchase,
+          renewal, expiration, cancellation, refund, or revocation. We do not
+          receive your full payment-card number.
         </p>
 
         <p>
@@ -155,6 +167,16 @@ export default function PrivacyPage() {
           whatever you put in the message.
         </p>
 
+        <p>
+          <strong>Email preferences and delivery activity.</strong> For signed-in
+          users, we store whether you want product updates or an optional Pro
+          monthly recap, along with the information needed to send, suppress,
+          unsubscribe, and measure delivery of those messages. We may also send a
+          one-time follow-up after your first completed round. The product-update
+          preference starts on when a new preference record is created. You can
+          turn it off in the app or unsubscribe from an email.
+        </p>
+
         <h2>What we do not collect</h2>
         <p>For clarity, the SimplyStroke app:</p>
         <ul>
@@ -193,6 +215,11 @@ export default function PrivacyPage() {
           </li>
           <li>find nearby courses and fill in par when you ask;</li>
           <li>diagnose crashes and fix bugs;</li>
+          <li>process purchases, restore Pro access, and prevent billing fraud;</li>
+          <li>
+            send service messages and the optional product-update or monthly-recap
+            emails you are eligible to receive;
+          </li>
           <li>respond to support requests;</li>
           <li>notify waitlist subscribers about launch and major changes; and</li>
           <li>comply with law and enforce our Terms.</li>
@@ -220,7 +247,15 @@ export default function PrivacyPage() {
             (website only);
           </li>
           <li>
-            <strong>Apple</strong> — Sign in with Apple (app);
+            <strong>Apple</strong> — Sign in with Apple and App Store purchases;
+          </li>
+          <li>
+            <strong>RevenueCat</strong> — App Store subscription processing and
+            Pro entitlement status;
+          </li>
+          <li>
+            <strong>Resend</strong> — sending SimplyStroke email and reporting
+            message delivery events;
           </li>
           <li>
             <strong>GolfCourseAPI</strong> — course and par lookups, via our
@@ -263,9 +298,13 @@ export default function PrivacyPage() {
           Guest (local) data stays on your device until you delete it or uninstall
           the app — we never receive it. Account and synced round data is kept
           while your account is active and is deleted when you delete your account,
-          except limited records we must keep by law. Crash reports are kept only
-          as long as needed to fix issues. Waitlist emails are kept until you
-          unsubscribe or ask us to remove them.
+          except limited records we must keep by law. Apple and RevenueCat retain
+          purchase records under their own policies, and we may retain limited
+          subscription and transaction records for accounting, fraud prevention,
+          support, and legal compliance. Crash reports are kept only as long as
+          needed to fix issues. Email preferences and delivery records are kept
+          while needed to honor your choices and operate the email program;
+          waitlist emails are kept until you unsubscribe or ask us to remove them.
         </p>
 
         <h2>Security</h2>
@@ -284,7 +323,10 @@ export default function PrivacyPage() {
           <a href={`mailto:${CONTACT}`}>{CONTACT}</a>. You can also{" "}
           <strong>delete your account and its data from within the app</strong>,
           which removes your account, synced rounds, and group-round participation
-          from our systems. Every waitlist email includes an unsubscribe link.
+          from our systems. Deleting your SimplyStroke account does not erase
+          Apple&apos;s purchase records or cancel an App Store subscription; manage
+          or cancel the subscription through your Apple account. Marketing and
+          recap emails include an unsubscribe link.
         </p>
         <p>
           <strong>California residents (CCPA/CPRA).</strong> You have the right to

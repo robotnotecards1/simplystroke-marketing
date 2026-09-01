@@ -1,6 +1,6 @@
 # SimplyStroke Product Fact-Lock
 
-**Last verified:** 2026-08-10 (Tournament revised: held → keep "coming soon")
+**Last verified:** 2026-08-31 (Pro catalog and RevenueCat release scope verified)
 **Purpose:** Single source of truth for product claims used in marketing copy, schema, and metadata. Update this file when the product changes; do not let page copy drift from it.
 **Sources this pass:** the mobile-app repo (`~/Documents/Claude/Projects/SimplyStroke`) — `app.json`, `package.json`, `src/lib/entitlements.ts`, `src/lib/purchases.ts`, `src/app/group/*`, `src/app/tournament/*`; the live marketing site copy; the master growth audit (2026-08-09). App Store Connect remains the ultimate authority for listing/price/IAP.
 
@@ -16,21 +16,22 @@
 | **Apple Watch** | ✅ Live | Watch app target `app.simplystroke.watch` / `SimplyStrokeWatch` (`app.json` appExtensions) |
 | **Web app** | ✅ Live | `app.simplystroke.app`; Expo web `output: "static"` (`app.json`) |
 | **Android** | ✅ Coming soon (confirmed — Jared 2026-08-09) | `app.json` has a **full Android config**, but it's **not yet on Google Play**. Keep the "Android coming soon" copy. |
-| **App Store listing** | ✅ Live | id `6792327238`: **min iOS 16.4**, **Free ($0)**, **no in-app purchases**, current version **1.0.1** (released 2026-08-08). Source: iTunes lookup API. |
+| **App Store listing** | ✅ Live | id `6792327238`: **min iOS 16.4**, **Free download**, current version **1.0.3** (released 2026-08-16). Pro subscriptions are configured for the upcoming 1.0.4 submission. Source: iTunes lookup API + App Store Connect. |
 
 🔒 Do not advertise Android as available until it's actually on the Play Store. Current site copy ("Android coming soon") is safe.
 
 ## 2. Price & monetization
 
-> **Jared's directive (2026-08-09): monetization stays OFF / on the back burner.** No paywall, price, Pro tier, or tips — in the app or on the marketing site — for now. The app is free today; keep every claim consistent with that. Revisit the durable-wording caution below only if/when monetization is actually planned.
+> **Jared's directive (2026-08-30): ship optional SimplyStroke Pro with the coordinated 1.0.4 UX/Watch release.** Core scorekeeping remains free. Pro adds expanded history, season analytics and other account-based features; do not describe the whole product as subscription-free.
 
-- **Today: free.** No working purchase backend exists. `src/lib/purchases.ts`: *"No purchase backend exists yet (RevenueCat …)"*; `openPaywall()` is a stub; `TODO(iap)` / `TODO(paywall)`.
-- **Planned:** a **"Pro" paid tier** (`src/lib/entitlements.ts` — *"the single source of truth for the future paid tier"*, `useIsPro()`) and **one-time tips** (`BeerDonationPrompt.tsx`, `TIP_PRODUCTS`). Watch sync (`useWatchSync.ts`) and tournament creation (`tournament/create.tsx`) already reference `useIsPro` — likely future Pro-gated.
+- **Current public build:** core scoring is free and no subscription is being charged yet.
+- **Approved 1.0.4 release:** optional **SimplyStroke Pro** auto-renewing subscriptions at **$2.99 monthly** and **$19.99 annual**. App Store products and RevenueCat offering/entitlement setup exist, but the app, products and feature flag remain unsubmitted/off until sandbox tests and App Store review.
+- **Free plan:** unlimited active scoring on iPhone and Watch, sync, standard group play, and access to the latest 10 completed rounds; older cards are retained and protected.
 
 🔒 **Messaging rules (from the audit — important):**
 - Say **"Core scorekeeping is free"** — NOT a permanent "no subscription" or "no in-app purchases" promise. Those become false the moment tips/Pro ship.
 - The live site currently says "free / no subscription" and `lib/site.ts` comments "no in-app purchases." **Soften these** to the durable "core is free" framing (Batch 2 copy work).
-- ⚠️ **Do not publish any price.** The `$19.99/year` figure in the research docs is a hypothesis, not approved pricing. No paywall/checkout on the marketing site.
+- Prices are approved in App Store Connect but should be presented from the storefront in-app so regional pricing stays accurate. The marketing site does not provide checkout.
 
 ## 3. Accounts & sign-in
 
@@ -76,9 +77,9 @@ These current claims are fragile against the facts above — soften during the c
 1. **Android** — ✅ still "coming soon" (not on Google Play). Keep current copy.
 2. **Tournament** — Jared decided (2026-08-10) to **hold** the launch; keep marketing it "coming soon" even though the app code exists. No copy change.
 3. **Solo, no account** — ✅ yes, a solo round finishes with no sign-in.
-4. **Free/Pro line** — ✅ monetization on the back burner; everything free for now (§2).
-5. **App Store listing** — ✅ min iOS **16.4**, **Free ($0)**, **no in-app purchases**, version **1.0.1** (2026-08-08). Source: iTunes lookup API.
-6. **Price** — nothing public until approved. (No action.)
+4. **Free/Pro line** — ✅ core scoring stays free; Pro is an optional subscription in the coordinated 1.0.4 release (§2).
+5. **App Store listing** — live installs still predate Pro; the 1.0.4 app and subscription products have not been submitted.
+6. **Price** — ✅ $2.99 monthly / $19.99 annual configured in App Store Connect; display live storefront prices in-app.
 
 **All product-fact blockers for Batch 2 copy are now cleared.**
 
