@@ -21,11 +21,12 @@ import { og } from "@/lib/site";
  *     Edge Function proxy) for par/tee data by name.
  *   - Crash/error reporting → report-error Edge Function → public.error_reports
  *     → admin.simplystroke.app.
+ *   - First-party product events → public.app_events; no persistent device ID.
  *   - No third-party analytics/ad/crash SDKs in the app; no IDFA; no tracking.
  *   - Marketing site (this site) runs a waitlist + GA4 + self-hosted Umami.
  *
  * Not a substitute for a lawyer. Keep this in sync with the App Store privacy
- * questionnaire (note: Location and Diagnostics must be declared there).
+ * questionnaire and the app's bundled PrivacyInfo.xcprivacy manifest.
  */
 
 const TITLE = "Privacy Policy | SimplyStroke";
@@ -175,6 +176,9 @@ export default function PrivacyPage() {
           by name, that search text is sent through our server to{" "}
           <strong>GolfCourseAPI</strong> to fill in par and tee data. The request
           goes through our own proxy so the provider key never ships in the app.
+          We cache the normalized search text and matching course list for up to
+          24 hours so repeated searches do not create duplicate paid requests.
+          That cache is not linked to an account.
         </p>
 
         <p>
@@ -187,6 +191,23 @@ export default function PrivacyPage() {
           These go to our database and our internal admin dashboard and are used
           only to diagnose and fix bugs — never for advertising, and we do not
           sell them.
+        </p>
+
+        <p>
+          <strong>First-party product analytics.</strong> We record events such
+          as app launches, rounds started and completed, scorecard imports, and
+          group or tournament use. Each cold launch gets a new random session
+          identifier; we do not create a persistent advertising or device ID. If
+          you are signed in, an event may also include your account user ID. We
+          use these events only to understand whether the app&apos;s features work
+          and are useful.
+        </p>
+
+        <p>
+          <strong>Abuse prevention.</strong> Our public course-search and error
+          reporting endpoints convert the request IP address into a one-way hash
+          for short-lived rate limiting. We do not store the raw IP address or
+          use the hash for advertising or cross-app tracking.
         </p>
 
         <p>
@@ -249,6 +270,7 @@ export default function PrivacyPage() {
             round;
           </li>
           <li>find nearby courses and fill in par when you ask;</li>
+          <li>understand whether app features are working and being used;</li>
           <li>diagnose crashes and fix bugs;</li>
           <li>respond to support requests;</li>
           <li>notify waitlist subscribers about launch and major changes; and</li>
