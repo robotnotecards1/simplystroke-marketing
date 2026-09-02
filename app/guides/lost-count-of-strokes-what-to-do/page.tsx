@@ -79,7 +79,7 @@ export default function Post() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <header className="post-header">
+      <header className="post-header guide-post-header">
         <div className="post-header-inner">
           <div className="pill">Scoring</div>
           <h1>You lost count of your strokes. Now what?</h1>
@@ -100,7 +100,7 @@ export default function Post() {
         ]}
       />
 
-      <article className="prose">
+      <article className="prose guide-prose">
         <AnswerBlock
           updated="July 2026"
           answer={
