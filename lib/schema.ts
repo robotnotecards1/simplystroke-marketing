@@ -28,7 +28,7 @@ export const organizationNode = {
   name: SITE_NAME,
   url: `${SITE_URL}/`,
   logo: `${SITE_URL}/images/logo-color.png`,
-  email: "hello@simplystroke.app",
+  email: "support@simplystroke.app",
   description:
     "SimplyStroke makes a one-tap golf stroke counter and scorecard for golfers who lose count. Core scorekeeping is free, with no account needed to start a solo round.",
 };

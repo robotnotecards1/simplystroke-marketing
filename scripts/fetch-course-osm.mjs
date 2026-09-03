@@ -27,7 +27,7 @@ const OVERPASS_ENDPOINTS = [
   "https://overpass.kumi.systems/api/interpreter",
 ];
 const USER_AGENT =
-  "SimplyStroke-CourseDirectory/1.0 (https://www.simplystroke.app; hello@simplystroke.app)";
+  "SimplyStroke-CourseDirectory/1.0 (https://www.simplystroke.app; support@simplystroke.app)";
 
 // Golf features within this radius (meters) of the course point. Wide enough
 // to cover a full routing from a clubhouse-ish coordinate; multi-course
