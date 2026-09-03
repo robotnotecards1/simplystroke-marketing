@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: og(TITLE, DESCRIPTION, "/terms-of-service/"),
 };
 
-const UPDATED = "September 1, 2026";
+const UPDATED = "September 3, 2026";
 const CONTACT = "hello@simplystroke.app";
 
 export default function TermsPage() {
@@ -78,10 +78,10 @@ export default function TermsPage() {
           everyone&apos;s scorecard in one live view; and looking up nearby
           courses to auto-fill par. An optional SimplyStroke Pro subscription
           adds the features identified as Pro in the app, such as full history,
-          expanded statistics, saved crews and trips, private journals, and
-          reviewed paper-scorecard imports. Features may change, break, or be
-          removed while we build, subject to your applicable cancellation and
-          consumer rights.
+          expanded statistics, saved crews and trips, private journals,
+          optional Apple Watch shot details, and reviewed paper-scorecard
+          imports. Features may change, break, or be removed while we build,
+          subject to your applicable cancellation and consumer rights.
         </p>
 
         <h2>2. Who can use it</h2>

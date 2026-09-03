@@ -12,8 +12,9 @@ import { og } from "@/lib/site";
  *   - Accounts (optional): email/password, Google, or Sign in with Apple, via
  *     Supabase Auth. Session stored encrypted at rest on-device.
  *   - Cloud sync + group rounds stored in Supabase.
- *   - Pro round-journal notes/photos stored privately in Supabase; scorecard
- *     scan source photos are processed on-device and are not uploaded.
+ *   - Pro round-journal notes/photos and optional Watch shot details stored
+ *     privately in Supabase; scorecard scan source photos are processed
+ *     on-device and are not uploaded. Watch Dictation returns text only.
  *   - Subscriptions are purchased through Apple and managed through RevenueCat.
  *   - Customer email is delivered through Resend with unsubscribe controls.
  *   - "Find courses near me": expo-location (foreground, low accuracy) → OSM
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: og(TITLE, DESCRIPTION, "/privacy/"),
 };
 
-const UPDATED = "September 1, 2026";
+const UPDATED = "September 3, 2026";
 const CONTACT = "hello@simplystroke.app";
 
 export default function PrivacyPage() {
@@ -116,6 +117,18 @@ export default function PrivacyPage() {
           not included in scorecard shares or shown to other golfers. Camera and
           Photos access occurs only when you choose to add or replace a journal
           photo.
+        </p>
+
+        <p>
+          <strong>Private Apple Watch shot details.</strong> If you turn on the
+          optional Pro shot-details setting, you can attach a club choice and
+          dictated text to an individual shot from Apple Watch. Apple&apos;s
+          watchOS system Dictation returns the resulting text to SimplyStroke;
+          the App does not record, receive, retain, or transfer the raw voice
+          audio. The club choice and text are stored privately in Supabase and
+          linked to your account, round, hole, and shot. They are not included
+          in scorecard shares, season recaps, group results, leaderboards, or
+          customer email.
         </p>
 
         <p>
@@ -244,9 +257,11 @@ export default function PrivacyPage() {
             course search above;
           </li>
           <li>
-            does <strong>not</strong> access your contacts or microphone, and
-            accesses the camera or Photos only when you choose a journal or
-            scorecard-scan action; and
+            does <strong>not</strong> directly access your contacts or
+            microphone. If you choose watchOS system Dictation, Apple provides
+            the resulting text to the App; SimplyStroke never receives or stores
+            the raw audio. The App accesses the camera or Photos only when you
+            choose a journal or scorecard-scan action; and
           </li>
           <li>
             does <strong>not</strong> sell your personal information.
@@ -259,7 +274,10 @@ export default function PrivacyPage() {
           <li>provide the scorekeeping features of the app;</li>
           <li>authenticate you and keep your account secure;</li>
           <li>sync your rounds across your devices when you are signed in;</li>
-          <li>store private Pro journals and the photos you choose;</li>
+          <li>
+            store private Pro journals, the photos you choose, and optional
+            shot-level club choices and dictated text;
+          </li>
           <li>verify, restore, and support your Pro subscription;</li>
           <li>
             deliver requested product updates, first-round follow-up, monthly
@@ -299,7 +317,8 @@ export default function PrivacyPage() {
             (website only);
           </li>
           <li>
-            <strong>Apple</strong> — Sign in with Apple (app);
+            <strong>Apple</strong> — Sign in with Apple and watchOS system
+            Dictation;
           </li>
           <li>
             <strong>Apple App Store</strong> — subscription purchase and billing;
@@ -353,10 +372,10 @@ export default function PrivacyPage() {
           Guest (local) data stays on your device until you delete it or uninstall
           the app — we never receive it. Account and synced round data is kept
           while your account is active and is deleted when you delete your
-          account, including private journal notes and photos, except limited
-          records we or our payment providers must keep by law. Temporary
-          scorecard-scan images are deleted from the app cache after the scan
-          flow. Crash reports are kept only as long as needed to fix issues.
+          account, including private journal notes, photos, and shot details,
+          except limited records we or our payment providers must keep by law.
+          Temporary scorecard-scan images are deleted from the app cache after
+          the scan flow. Crash reports are kept only as long as needed to fix issues.
           Email preferences and suppression records are kept as needed to honor
           your choices; waitlist emails are kept until you unsubscribe or ask us
           to remove them.
@@ -377,12 +396,12 @@ export default function PrivacyPage() {
           it, by emailing{" "}
           <a href={`mailto:${CONTACT}`}>{CONTACT}</a>. You can also{" "}
           <strong>delete your account and its data from within the app</strong>,
-          which removes your account, synced rounds, private journals and photos,
-          email preferences, RevenueCat customer record, and group-round
-          participation from our systems. Deleting a SimplyStroke account does
-          not cancel an App Store subscription; manage or cancel that subscription
-          in your Apple Account subscription settings. Every customer and
-          waitlist email includes an unsubscribe link.
+          which removes your account, synced rounds, private journals, photos,
+          shot details, email preferences, RevenueCat customer record, and
+          group-round participation from our systems. Deleting a SimplyStroke
+          account does not cancel an App Store subscription; manage or cancel
+          that subscription in your Apple Account subscription settings. Every
+          customer and waitlist email includes an unsubscribe link.
         </p>
         <p>
           <strong>California residents (CCPA/CPRA).</strong> You have the right to
