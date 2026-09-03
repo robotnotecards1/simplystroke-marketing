@@ -22,6 +22,7 @@ export default function Nav() {
             <Link href="/#how-it-works">How it works</Link>
             <Link href="/#apple-watch">Apple Watch</Link>
             <Link href="/#play-together">Play together</Link>
+            <Link href="/pro/">Pro</Link>
             <Link href="/guides/">Guides</Link>
             <TrackedCta
               event="web_app_click"
@@ -52,6 +53,7 @@ export default function Nav() {
               <Link href="/#how-it-works">How it works</Link>
               <Link href="/#apple-watch">Apple Watch</Link>
               <Link href="/#play-together">Play together</Link>
+              <Link href="/pro/">SimplyStroke Pro</Link>
               <Link href="/guides/">Guides</Link>
               <TrackedCta
                 event="web_app_click"

@@ -5,7 +5,7 @@ import { getPublishedCourses, coursePath } from "@/lib/courses";
 export const dynamic = "force-static";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const lastModified = new Date("2026-07-11");
+  const lastModified = new Date("2026-09-03");
   const courseModified = new Date("2026-07-19");
   const guideModified = new Date("2026-08-11");
 
@@ -19,6 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/compare/simplystroke-vs-arccos/`, lastModified, priority: 0.8 },
     // Product
     { url: `${SITE_URL}/features/`, lastModified, priority: 0.8 },
+    { url: `${SITE_URL}/pro/`, lastModified, priority: 0.85 },
     { url: `${SITE_URL}/tournament/`, lastModified, priority: 0.8 },
     { url: `${SITE_URL}/download/`, lastModified, priority: 0.8 },
     { url: `${SITE_URL}/about/`, lastModified, priority: 0.6 },

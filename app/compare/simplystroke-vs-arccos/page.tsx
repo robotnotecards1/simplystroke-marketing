@@ -17,9 +17,9 @@ import {
   type Faq,
 } from "@/lib/schema";
 
-const TITLE = "SimplyStroke vs Arccos: A Free, No-Subscription Alternative";
+const TITLE = "SimplyStroke vs Arccos: Simple Scoring or Shot Analytics?";
 const DESCRIPTION =
-  "Arccos is the best shot-tracking system in golf, and it costs sensors plus a subscription. SimplyStroke counts strokes and costs nothing. An honest comparison.";
+  "Arccos combines sensors with shot analytics. SimplyStroke keeps core stroke counting free and offers optional Pro tools around completed rounds. An honest comparison.";
 const PATH = "/compare/simplystroke-vs-arccos/";
 
 export const metadata: Metadata = {
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 const faqs: Faq[] = [
   {
     q: "Is there an Arccos alternative without a subscription?",
-    a: "It depends what you were using Arccos for. If you want strokes gained analytics without a recurring fee, the usual answer is Shot Scope, which is a one-time hardware purchase. If what you actually want is an accurate score without the sensors, the subscription or the analytics, a free one-tap stroke counter like SimplyStroke does that and costs nothing.",
+    a: "It depends what you were using Arccos for. If you want strokes gained analytics without a recurring fee, the usual answer is Shot Scope, which is a one-time hardware purchase. If what you actually want is an accurate score without sensors or analytics, SimplyStroke keeps that one-tap core free. SimplyStroke Pro is optional and focuses on history, courses, groups and private memories rather than swing analysis.",
   },
   {
     q: "How much does Arccos cost?",

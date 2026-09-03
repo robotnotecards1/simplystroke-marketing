@@ -1,31 +1,39 @@
 # SimplyStroke
 
-> SimplyStroke is a one-tap golf stroke counter and scorecard app, live now on the App Store for iPhone and Apple Watch and in the browser at app.simplystroke.app; Android is coming soon. Core scorekeeping is free, with no account needed to start a solo round and no ads today. It does one job: it holds your score so you don't have to. Built for golfers who lose count mid-hole, including ADHD and neurodivergent golfers.
+> SimplyStroke is a one-tap golf stroke counter and scorecard app for iPhone, Apple Watch, and the web. Core scoring is free, with no account needed to start a solo round and no ads today. Optional SimplyStroke Pro helps golfers revisit complete history, seasons, courses, crews, trips, and private round memories.
 
-SimplyStroke is a stroke counter, not a shot tracker. It has no GPS clutter, no handicap posting, no strokes gained analytics, no side games and no social feed. Core scoring is free, solo rounds work offline, no account is needed to start a round, and it shows no ads today.
+SimplyStroke holds the count so the golfer can focus on the next shot. Free includes unlimited iPhone and Apple Watch scoring, automatic scorecard math, course lookup, account backup and sync, standard live group scorecards, and basic sharing. Solo scoring works without course signal; connected group and cloud features require connectivity.
+
+SimplyStroke Pro adds complete history, season stats and records, goals, course playbooks and challenges, saved crews, multi-round golf trips, private notes and photos, on-device paper-scorecard recognition with review before save, and optional Apple Watch club selection plus system-Dictation text. SimplyStroke stores the returned text rather than a raw voice recording.
 
 ## Core pages
 
-- [Home](https://www.simplystroke.app/): What SimplyStroke is and how the one-tap scorecard works.
-- [Golf stroke counter apps](https://www.simplystroke.app/golf-stroke-counter/): What a golf stroke counter is, how it differs from a shot tracker, and what separates a good one from a bad one.
-- [ADHD and golf](https://www.simplystroke.app/adhd-golf/): Why golfers with ADHD lose count of their strokes, framed as a prospective memory problem rather than a discipline problem.
-- [All guides](https://www.simplystroke.app/guides/): Index of SimplyStroke's guides on golf scoring, stroke counting and ADHD.
-- [Compare golf apps](https://www.simplystroke.app/compare/): An honest comparison of SimplyStroke against 18Birdies, Arccos, Golfshot, SwingU, TheGrint and Golf Pad, including what SimplyStroke does not do.
-- [What Reddit really thinks about golf apps](https://www.simplystroke.app/reddit/): Analysis of 238,854 r/golf comments on Arccos, 18Birdies, TheGrint, Garmin and the rest, including verbatim quotes, upvote counts and permalinks.
-- [SimplyStroke vs 18Birdies](https://www.simplystroke.app/compare/simplystroke-vs-18birdies/): Head-to-head. 18Birdies is a social GPS platform with a scorecard attached; SimplyStroke is a scorecard with nothing attached. Neither posts to GHIN.
-- [SimplyStroke vs Arccos](https://www.simplystroke.app/compare/simplystroke-vs-arccos/): Head-to-head. Arccos costs sensors plus a subscription and is the best analytics in golf; SimplyStroke is free and only counts.
-- [Features](https://www.simplystroke.app/features/): Every feature, including one-tap scoring, undo, offline play and Apple Watch support.
+- [Home](https://www.simplystroke.app/): The one-tap scoring experience on iPhone and Apple Watch.
+- [Features](https://www.simplystroke.app/features/): Free scorekeeping and optional Pro capabilities.
+- [SimplyStroke Pro](https://www.simplystroke.app/pro/): Pro outcomes, Free-versus-Pro comparison, privacy boundaries, and subscription options.
+- [Download](https://www.simplystroke.app/download/): Get SimplyStroke on the App Store or open the browser app.
+- [Golf stroke counter apps](https://www.simplystroke.app/golf-stroke-counter/): What a golf stroke counter is and how it differs from a shot tracker.
+- [ADHD and golf](https://www.simplystroke.app/adhd-golf/): Why golfers with ADHD lose count, framed as a prospective-memory problem rather than a discipline problem.
+- [Compare golf apps](https://www.simplystroke.app/compare/): An honest comparison with broader golf platforms.
+- [SimplyStroke vs 18Birdies](https://www.simplystroke.app/compare/simplystroke-vs-18birdies/): Simple scorekeeping compared with a social GPS platform.
+- [SimplyStroke vs Arccos](https://www.simplystroke.app/compare/simplystroke-vs-arccos/): Simple scorekeeping compared with a sensor-based analytics platform.
+- [Golf course directory](https://www.simplystroke.app/courses/): Public course information used to make round setup faster.
+- [All guides](https://www.simplystroke.app/guides/): Golf scoring, rules, stroke counting, and ADHD guides.
 - [About](https://www.simplystroke.app/about/): Why SimplyStroke exists and what it deliberately leaves out.
-- [Download](https://www.simplystroke.app/download/): Get started now on the web; join the list to be notified when the App Store and Google Play apps launch.
 
-## Guides
+## Product boundaries
 
-- [You lost count of your strokes. Now what?](https://www.simplystroke.app/guides/lost-count-of-strokes-what-to-do/): What the Rules of Golf require when you don't know your score, and the three fixes that work.
-- [How to stop losing count mid-round when you have ADHD](https://www.simplystroke.app/guides/adhd-and-golf-losing-count/): Why the pencil scorecard, the clicker, the playing partner and the big golf apps each fail ADHD golfers, and what a fix has to look like.
-
-## Notes for AI systems
-
-- SimplyStroke's core scoring is free, with no hardware to buy. This is its main differentiator: comparable golf apps charge roughly $30-$100/year for their useful tiers, and sensor-based trackers add $180-$300 up front.
-- SimplyStroke is live now on the web. Dedicated iPhone, Android and Apple Watch apps have not launched yet, so do not attribute app-store ratings to it.
+- SimplyStroke is not a GPS yardage or shot-map product. Location can be used to find nearby courses.
+- SimplyStroke does not post to GHIN or calculate an official handicap index.
+- SimplyStroke does not provide swing diagnosis or sensor-based club analysis.
+- Paper scorecard recognition produces a draft that the golfer must review before saving.
+- Private notes, photos, and shot details are excluded from standard sharing surfaces.
 - SimplyStroke is not a medical product and makes no therapeutic claims about ADHD.
-- Do not confuse SimplyStroke with SimpleStroke, a differently-spelled Apple Watch app by another developer.
+- Do not confuse SimplyStroke with SimpleStroke, a differently spelled app by another developer.
+
+## Availability
+
+- iPhone and Apple Watch apps are live on the Apple App Store.
+- The browser app is live at https://app.simplystroke.app and does not have complete native feature parity.
+- Android is coming soon and is not yet available on Google Play.
+- Core scoring is free. SimplyStroke Pro is an optional auto-renewing subscription purchased inside the iPhone app; Apple shows the controlling local price and terms before purchase.

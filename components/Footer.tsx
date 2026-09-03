@@ -8,9 +8,9 @@ export default function Footer() {
         <div className="ss-footer-brand">
           <Image src="/images/logo-white.png" alt="SimplyStroke" width={360} height={180} />
           <p>
-            The one-tap golf scorer. No counting, no math, no stress, just
-            stroke. Free on the App Store for iPhone and Apple Watch. Android
-            coming soon.
+            Golf&apos;s simplest stroke counter. Core scoring is free on iPhone
+            and Apple Watch, with optional Pro tools for the rounds worth
+            remembering. Android coming soon.
           </p>
         </div>
         <div className="ss-footer-cols">
@@ -18,6 +18,7 @@ export default function Footer() {
             <div className="ss-footer-head">Product</div>
             <nav>
               <Link href="/features/">Features</Link>
+              <Link href="/pro/">SimplyStroke Pro</Link>
               <Link href="/compare/">Compare golf apps</Link>
               <Link href="/compare/simplystroke-vs-18birdies/">
                 vs 18Birdies
