@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 };
 
 const UPDATED = "September 3, 2026";
-const CONTACT = "hello@simplystroke.app";
+const CONTACT = "support@simplystroke.app";
 
 export default function PrivacyPage() {
   return (
