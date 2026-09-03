@@ -34,8 +34,8 @@ export default function SupportPage() {
         <h2>Contact SimplyStroke</h2>
         <p>
           Email{" "}
-          <a href="mailto:hello@simplystroke.app?subject=SimplyStroke%20support">
-            hello@simplystroke.app
+          <a href="mailto:support@simplystroke.app?subject=SimplyStroke%20support">
+            support@simplystroke.app
           </a>
           . Every message is read by the team that builds the app.
         </p>

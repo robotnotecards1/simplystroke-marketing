@@ -120,7 +120,7 @@ export default function AboutPage() {
           <p>
             Questions, bug reports, or a story about the worst count you ever
             lost:{" "}
-            <a href="mailto:hello@simplystroke.app">hello@simplystroke.app</a>.
+            <a href="mailto:support@simplystroke.app">support@simplystroke.app</a>.
             Every email gets read.
           </p>
         </div>
@@ -143,7 +143,7 @@ export default function AboutPage() {
         </p>
         <p>
           Spot something wrong anywhere on this site?{" "}
-          <a href="mailto:hello@simplystroke.app">Tell us</a> and we&apos;ll fix
+          <a href="mailto:support@simplystroke.app">Tell us</a> and we&apos;ll fix
           it.
         </p>
 
