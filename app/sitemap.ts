@@ -23,6 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/tournament/`, lastModified, priority: 0.8 },
     { url: `${SITE_URL}/download/`, lastModified, priority: 0.8 },
     { url: `${SITE_URL}/about/`, lastModified, priority: 0.6 },
+    { url: `${SITE_URL}/support/`, lastModified, priority: 0.6 },
     // Guides
     { url: `${SITE_URL}/guides/`, lastModified: guideModified, priority: 0.6 },
     { url: `${SITE_URL}/guides/how-to-keep-score-in-golf/`, lastModified: guideModified, priority: 0.8 },
