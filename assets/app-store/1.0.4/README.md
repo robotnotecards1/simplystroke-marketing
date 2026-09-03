@@ -4,6 +4,8 @@ Status: **design-complete draft; do not upload yet.**
 
 These eight 1290 × 2796 JPEGs use an accepted Apple 6.9-inch iPhone screenshot size. They contain no alpha channel. The source screens are real 1.0.4 app components captured from candidate a6553ee8cffce832e501289276551ec25c760910; the journal, season, crews, trips, and OCR data are fictional, write-free review fixtures.
 
+Each image is numbered against the eight-image set (`01 / 8` through `08 / 8`). `contact-sheet.jpg` was regenerated from these exact final draft files.
+
 ## Sequence
 
 1. 01-score.jpg — free one-tap scoring
