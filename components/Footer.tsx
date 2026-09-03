@@ -50,7 +50,7 @@ export default function Footer() {
               <Link href="/privacy/">Privacy Policy</Link>
               <Link href="/terms-of-service/">Terms of Service</Link>
               <Link href="/accessibility/">Accessibility</Link>
-              <a href="mailto:hello@simplystroke.app">Support</a>
+              <Link href="/support/">Support</Link>
             </nav>
           </div>
         </div>

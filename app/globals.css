@@ -1015,3 +1015,12 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 @media (max-width: 860px) {
   .ss-tourney-inner { grid-template-columns: 1fr; }
 }
+
+/* ---------- support ---------- */
+.prose .support-question {
+  color: var(--green-deep);
+  font-size: 22px;
+  line-height: 1.25;
+  margin-top: 36px;
+}
+.prose .support-question + p { margin-top: 10px; }
