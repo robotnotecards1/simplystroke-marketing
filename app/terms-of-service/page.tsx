@@ -79,7 +79,7 @@ export default function TermsPage() {
           courses to auto-fill par. An optional SimplyStroke Pro subscription
           adds the features identified as Pro in the app, such as full history,
           expanded statistics, saved crews and trips, private journals,
-          optional Apple Watch shot details, and reviewed paper-scorecard
+          optional iPhone and Apple Watch shot details, and reviewed paper-scorecard
           imports. Features may change, break, or be removed while we build,
           subject to your applicable cancellation and consumer rights.
         </p>

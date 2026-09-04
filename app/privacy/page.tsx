@@ -12,9 +12,9 @@ import { og } from "@/lib/site";
  *   - Accounts (optional): email/password, Google, or Sign in with Apple, via
  *     Supabase Auth. Session stored encrypted at rest on-device.
  *   - Cloud sync + group rounds stored in Supabase.
- *   - Pro round-journal notes/photos and optional Watch shot details stored
+ *   - Pro round-journal notes/photos and optional iPhone/Watch shot details stored
  *     privately in Supabase; scorecard scan source photos are processed
- *     on-device and are not uploaded. Watch Dictation returns text only.
+ *     on-device and are not uploaded. Apple Dictation returns text only.
  *   - Subscriptions are purchased through Apple and managed through RevenueCat.
  *   - Customer email is delivered through Resend with unsubscribe controls.
  *   - "Find courses near me": expo-location (foreground, low accuracy) → OSM
@@ -120,12 +120,12 @@ export default function PrivacyPage() {
         </p>
 
         <p>
-          <strong>Private Apple Watch shot details.</strong> If you turn on the
-          optional Pro shot-details setting, you can record a stroke, open the
-          Watch More menu, and attach a club choice or dictated text to that
-          latest stroke. Recording a stroke never opens the details flow
-          automatically. Apple&apos;s watchOS system Dictation returns the
-          resulting text to SimplyStroke;
+          <strong>Private iPhone and Apple Watch shot details.</strong> With Pro,
+          you can record a stroke, open More on iPhone or Apple Watch, and attach
+          a club choice or text to that latest stroke. The Watch action can be
+          enabled in Profile. Recording a stroke never opens the details flow
+          automatically. If you use iPhone keyboard Dictation or watchOS system
+          Dictation, Apple returns the resulting text to SimplyStroke;
           the App does not record, receive, retain, or transfer the raw voice
           audio. The club choice and text are stored privately in Supabase and
           linked to your account, round, hole, and shot. They are not included
@@ -260,9 +260,10 @@ export default function PrivacyPage() {
           </li>
           <li>
             does <strong>not</strong> directly access your contacts or
-            microphone. If you choose watchOS system Dictation, Apple provides
-            the resulting text to the App; SimplyStroke never receives or stores
-            the raw audio. The App accesses the camera or Photos only when you
+            microphone. If you choose iPhone keyboard Dictation or watchOS
+            system Dictation, Apple provides the resulting text to the App;
+            SimplyStroke never receives or stores the raw audio. The App accesses
+            the camera or Photos only when you
             choose a journal or scorecard-scan action; and
           </li>
           <li>
@@ -319,8 +320,8 @@ export default function PrivacyPage() {
             (website only);
           </li>
           <li>
-            <strong>Apple</strong> — Sign in with Apple and watchOS system
-            Dictation;
+            <strong>Apple</strong> — Sign in with Apple and system Dictation on
+            iPhone and Apple Watch;
           </li>
           <li>
             <strong>Apple App Store</strong> — subscription purchase and billing;
