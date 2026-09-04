@@ -2,9 +2,11 @@
 
 Status: **pre-release draft; do not upload yet.**
 
-These nine 1290 × 2796 JPEGs use an accepted Apple 6.9-inch iPhone screenshot size. They contain no alpha channel. Images 01 and 07 were refreshed from the exact PR #80 simulator stack at candidate d417bc2; image 09 was captured from its d55bd17 ancestor and is unchanged by the later journal-fixture-only commit. Images 03–06 and 08 use real 1.0.4 review components captured from candidate a6553ee8cffce832e501289276551ec25c760910; image 02 uses the user-invoked Watch UI at native candidate 6998ca8635bd852025a8ac81e32ff6d5ca4c812a. The journal, season, crews, trips, and OCR data are fictional, write-free review fixtures.
+These nine 1290 × 2796 JPEGs use an accepted Apple 6.9-inch iPhone screenshot size. They contain no alpha channel. Image 07 was refreshed from the exact PR #80 simulator stack at candidate `deebc63d7cf73f757f4add5dcab316d11c5084ad`. Image 01 was captured from its `d417bc2` ancestor and is unchanged by the generated-asset-only commit. Image 09 was captured from its `d55bd17` ancestor and is likewise UI-identical at the current candidate. Images 03–06 and 08 use real 1.0.4 review components captured from candidate `a6553ee8cffce832e501289276551ec25c760910`; image 02 uses the user-invoked Watch UI at native candidate `6998ca8635bd852025a8ac81e32ff6d5ca4c812a`. The journal, season, crews, trips, and OCR data are fictional, write-free review fixtures.
 
 The `watch/` directory contains three 416 × 496 RGB JPEGs captured directly from the Series 11 simulator at the same native candidate. This is an accepted Apple Watch screenshot size. The files show scoring, the user-opened More menu, and the full-size club list. They are a separate Watch listing set and are not part of the numbered iPhone sequence. Slide 02 reuses the same current scoring capture, so the iPhone and Watch listings cannot drift to different control layouts.
+
+The photo visible in image 07 is the project-owned `onboarding-hero-v2.jpg` asset generated from scratch for SimplyStroke with OpenAI ImageGen. No reference image was supplied. Its prompt, local source path, and source checksum are recorded in PR #80 at `docs/asset-provenance.md`; the shipped project JPEG has SHA-256 `6723d4c27d39cd2a7563ca42bcb2509891b927a32cc0473b5c922212144f0236`. The prior untraceable golf photo is not used in this package.
 
 Each image is numbered against the nine-image set (`01 / 9` through `09 / 9`). `contact-sheet.jpg` was regenerated from these exact final draft files.
 
