@@ -65,6 +65,18 @@ export default function SupportPage() {
           connection pauses and syncs again when the devices reconnect.
         </p>
 
+        <h3 className="support-question">How do I add a club or private shot note?</h3>
+        <p>
+          During an active round, count the stroke first, then open
+          <strong> More</strong> on iPhone or Apple Watch and choose
+          <strong> Shot details</strong>. SimplyStroke Pro attaches the club or
+          note to your latest stroke; it never interrupts scoring with an
+          automatic prompt. You can use Apple Dictation to enter the note.
+          SimplyStroke receives the resulting text and never records or stores
+          raw voice audio. Shot details stay private and out of standard shares,
+          group scoreboards, recaps, leaderboards, and email.
+        </p>
+
         <h3 className="support-question">A paper scorecard scan looks wrong</h3>
         <p>
           Recognition creates a draft. Review every score, par, player name,
