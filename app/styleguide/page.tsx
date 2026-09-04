@@ -379,8 +379,7 @@ export default function StyleguidePage() {
               </div>
               <h3>Zero clutter, zero ads</h3>
               <p>
-                No feeds, no upsells, nothing to sign into. Open it, count your
-                round, close it.
+                No feeds, no ads. Open it, count your round, close it.
               </p>
             </div>
           </div>
@@ -446,7 +445,7 @@ export default function StyleguidePage() {
                   a comma. The site is currently at zero and should stay there.
                 </li>
                 <li>
-                  <strong>Rule of three.</strong> &ldquo;No feeds, no upsells, no
+                  <strong>Rule of three.</strong> &ldquo;No feeds, no ads, no
                   distractions.&rdquo; It&apos;s a tic. Two items land harder.
                 </li>
                 <li>

@@ -245,7 +245,7 @@ export default function Page() {
             </strong>{" "}
             — the feed, the upsells, the grid you have to find the right cell in
             — then you are paying attention for features you never asked for.
-            SimplyStroke is a single tap and it costs nothing.
+            SimplyStroke is a single tap and core scoring costs nothing.
           </p>
         </div>
 

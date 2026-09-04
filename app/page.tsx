@@ -208,7 +208,6 @@ export default async function Home() {
               tone="light"
               href={APP_STORE_URL}
               className={`${styles.primaryCta} ${styles.heroStoreCta}`}
-              aria-label="Download SimplyStroke free on the App Store"
               size="large"
               apple
               subtitle="on the App Store"
@@ -344,6 +343,51 @@ export default async function Home() {
         </div>
       </section>
 
+      <section className={`${styles.section} ${styles.proPreviewSection}`} data-home-motion>
+        <div className={`${styles.wrap} ${styles.proPreviewLayout}`}>
+          <div className={styles.proPreviewCopy}>
+            <p className={styles.eyebrow}>SimplyStroke Pro</p>
+            <h2>
+              <span>Play more.</span>
+              <span>Remember more.</span>
+            </h2>
+            <p className={styles.lede}>
+              Core scoring stays free. Pro turns completed rounds into a season
+              you can revisit: full history, records, course playbooks, goals,
+              crews, trips, private journals, and paper scorecard scanning.
+            </p>
+            <ul className={styles.proPreviewPromises}>
+              <li>Older cards are retained, even outside the Free history window.</li>
+              <li>Private notes, photos, and iPhone or Watch shot details stay out of standard sharing.</li>
+              <li>One Pro organizer can bring a crew whose friends keep playing free.</li>
+            </ul>
+            <Link className={styles.proPreviewLink} href="/pro/">
+              Explore SimplyStroke Pro →
+            </Link>
+          </div>
+          <div className={styles.proPreviewBoard} aria-label="SimplyStroke Pro feature highlights">
+            <div className={styles.proPreviewBoardTop}>
+              <span>Your golf</span>
+              <strong>Season 2026</strong>
+            </div>
+            <div className={styles.proPreviewStat}>
+              <span>Rounds remembered</span>
+              <strong>42</strong>
+            </div>
+            <div className={styles.proPreviewTiles}>
+              <div><span>Best 18</span><strong>84</strong></div>
+              <div><span>Courses</span><strong>7</strong></div>
+              <div><span>Golf trips</span><strong>3</strong></div>
+            </div>
+            <div className={styles.proPreviewNote}>
+              <span>Latest note</span>
+              <strong>7 iron · pin high · smooth tempo</strong>
+              <small>Private to you</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className={`${styles.section} ${styles.reviewsSection}`} data-home-motion>
         <div className={styles.wrap}>
           <div className={`${styles.sectionHeading} ${styles.centerHeading}`}>
@@ -397,7 +441,6 @@ export default async function Home() {
             tone="light"
             href={APP_STORE_URL}
             className={styles.primaryCta}
-            aria-label="Download SimplyStroke free on the App Store"
             size="large"
             apple
             subtitle="on the App Store"

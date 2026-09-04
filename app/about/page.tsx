@@ -13,7 +13,7 @@ import {
 
 const TITLE = "About SimplyStroke: Why It Exists, and What It Won't Do";
 const DESCRIPTION =
-  "SimplyStroke is a free, one-tap golf stroke counter. Why it exists, what it leaves out, and what it deliberately does not do.";
+  "SimplyStroke is a one-tap golf stroke counter with free core scoring and optional Pro tools. Why it exists, what it leaves out, and what it deliberately does not do.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -66,7 +66,8 @@ export default function AboutPage() {
         <p>
           One giant button. One tap per swing. An undo, because fingers slip. A
           finished scorecard with the math already done. No account before your
-          first round, no ads, no signal required, and no monthly fee.
+          first round, no ads, no signal required for solo play, and no monthly
+          fee required to keep score.
         </p>
         <p>
           That&apos;s not minimalism as an aesthetic. It&apos;s minimalism as a
@@ -75,25 +76,21 @@ export default function AboutPage() {
           replace, which is a pencil.
         </p>
 
-        <h2>Free, and not as a trick</h2>
+        <h2>Free where it matters</h2>
         <p>
           SimplyStroke&apos;s core scoring is free — no ads, no sensor bundle and
-          no upsell holding your own scorecard hostage.
+          no subscription required to count the round in front of you.
         </p>
         <p>
-          This isn&apos;t generosity, it&apos;s arithmetic.{" "}
-          <strong>Counting to five costs nothing to run.</strong> There are no
-          course maps to license, no analytics to crunch, no hardware to
-          manufacture. An app whose core job is just counting can afford to keep
-          that part free — and an app that isn&apos;t forced to monetize the
-          count isn&apos;t under pressure to invent a reason for you to pay again
-          next year, which is the reason every other golf app gets more
-          cluttered every single year.
+          Optional Pro starts after the count is safe. It pays for complete
+          history, course playbooks, crews, trips, private journals, and the
+          tools that turn old cards into something useful. The stroke button
+          stays the same for everyone.
         </p>
 
         <h2>What SimplyStroke leaves out</h2>
         <ul>
-          <li>Your round data isn&apos;t sold — there&apos;s nothing to sell it to.</li>
+          <li>Your round data isn&apos;t sold.</li>
           <li>No ad between you and your score.</li>
           <li>
             We don&apos;t add a feature just because a competitor has it. The
@@ -123,7 +120,7 @@ export default function AboutPage() {
           <p>
             Questions, bug reports, or a story about the worst count you ever
             lost:{" "}
-            <a href="mailto:hello@simplystroke.app">hello@simplystroke.app</a>.
+            <a href="mailto:support@simplystroke.app">support@simplystroke.app</a>.
             Every email gets read.
           </p>
         </div>
@@ -146,7 +143,7 @@ export default function AboutPage() {
         </p>
         <p>
           Spot something wrong anywhere on this site?{" "}
-          <a href="mailto:hello@simplystroke.app">Tell us</a> and we&apos;ll fix
+          <a href="mailto:support@simplystroke.app">Tell us</a> and we&apos;ll fix
           it.
         </p>
 

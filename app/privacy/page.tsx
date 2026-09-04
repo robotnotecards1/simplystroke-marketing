@@ -12,16 +12,22 @@ import { og } from "@/lib/site";
  *   - Accounts (optional): email/password, Google, or Sign in with Apple, via
  *     Supabase Auth. Session stored encrypted at rest on-device.
  *   - Cloud sync + group rounds stored in Supabase.
+ *   - Pro round-journal notes/photos and optional iPhone/Watch shot details stored
+ *     privately in Supabase; scorecard scan source photos are processed
+ *     on-device and are not uploaded. Apple Dictation returns text only.
+ *   - Subscriptions are purchased through Apple and managed through RevenueCat.
+ *   - Customer email is delivered through Resend with unsubscribe controls.
  *   - "Find courses near me": expo-location (foreground, low accuracy) → OSM
  *     Overpass API for nearby courses; GolfCourseAPI (via the course-search
  *     Edge Function proxy) for par/tee data by name.
  *   - Crash/error reporting → report-error Edge Function → public.error_reports
  *     → admin.simplystroke.app.
+ *   - First-party product events → public.app_events; no persistent device ID.
  *   - No third-party analytics/ad/crash SDKs in the app; no IDFA; no tracking.
  *   - Marketing site (this site) runs a waitlist + GA4 + self-hosted Umami.
  *
  * Not a substitute for a lawyer. Keep this in sync with the App Store privacy
- * questionnaire (note: Location and Diagnostics must be declared there).
+ * questionnaire and the app's bundled PrivacyInfo.xcprivacy manifest.
  */
 
 const TITLE = "Privacy Policy | SimplyStroke";
@@ -36,8 +42,8 @@ export const metadata: Metadata = {
   openGraph: og(TITLE, DESCRIPTION, "/privacy/"),
 };
 
-const UPDATED = "July 23, 2026";
-const CONTACT = "hello@simplystroke.app";
+const UPDATED = "September 3, 2026";
+const CONTACT = "support@simplystroke.app";
 
 export default function PrivacyPage() {
   return (
@@ -64,22 +70,25 @@ export default function PrivacyPage() {
         </p>
 
         <p>
-          <strong>The short version:</strong> you can keep score without an
-          account, in which case your rounds never leave your device. If you
-          create an account, we store your email and your rounds so they sync
-          across devices and so you can play group rounds. We do not sell your
-          personal information, we do not run ads, and the app does not track you
-          across other companies&apos; apps or websites.
+          <strong>The short version:</strong> you can keep a solo score without
+          an account, in which case that round never leaves your device. If you
+          create an account, we store your email and the app data you choose to
+          sync, including rounds and private Pro content. Apple processes App
+          Store subscription payments, and RevenueCat helps us verify Pro access.
+          We do not sell your personal information, we do not run ads, and the
+          app does not track you across other companies&apos; apps or websites.
         </p>
 
         <h2>What we collect</h2>
 
         <p>
-          <strong>Nothing, if you play as a guest.</strong> The core stroke
-          counter works with no account. In guest mode, the rounds you record —
-          course names, dates, pars, strokes, and scores — are stored{" "}
-          <em>only on your device</em>. They are not sent to us and we cannot see
-          them. Delete the app and they are gone.
+          <strong>Your solo rounds stay local if you play as a guest.</strong>{" "}
+          The core stroke counter works with no account. In guest mode, the solo
+          rounds you record — course names, dates, pars, strokes, and scores —
+          are stored <em>only on your device</em>. They are not sent to us and we
+          cannot see them. Delete the app and they are gone. If you choose group
+          play, the shared-round data described below is sent so the group can
+          work; technical diagnostics may also be sent as described below.
         </p>
 
         <p>
@@ -96,8 +105,42 @@ export default function PrivacyPage() {
         <p>
           <strong>Your golf data (when signed in).</strong> The rounds you save
           are synced to our backend so they follow you across devices — course
-          names, dates, hole counts, pars, strokes, and scores. If you never sign
-          in, none of this leaves your device.
+          names, dates, hole counts, pars, strokes, scores, goals, records, saved
+          crews, and golf trips. If you never sign in, none of this leaves your
+          device.
+        </p>
+
+        <p>
+          <strong>Private round journals.</strong> If you use the Pro journal,
+          the note and up to three photos you choose are stored in a private area
+          of our Supabase backend and linked to your account and round. They are
+          not included in scorecard shares or shown to other golfers. Camera and
+          Photos access occurs only when you choose to add or replace a journal
+          photo.
+        </p>
+
+        <p>
+          <strong>Private iPhone and Apple Watch shot details.</strong> With Pro,
+          you can record a stroke, open More on iPhone or Apple Watch, and attach
+          a club choice or text to that latest stroke. The Watch action can be
+          enabled in Profile. Recording a stroke never opens the details flow
+          automatically. If you use iPhone keyboard Dictation or watchOS system
+          Dictation, Apple returns the resulting text to SimplyStroke;
+          the App does not record, receive, retain, or transfer the raw voice
+          audio. The club choice and text are stored privately in Supabase and
+          linked to your account, round, hole, and shot. They are not included
+          in scorecard shares, season recaps, group results, leaderboards, or
+          customer email.
+        </p>
+
+        <p>
+          <strong>Paper scorecard scanning.</strong> If you photograph or choose
+          a paper scorecard to import, Apple&apos;s Vision framework reads the
+          prepared image on your iPhone. The source image is kept temporarily in
+          the app&apos;s cache and deleted after you save, cancel, or leave the
+          scan flow. It is not uploaded to us or to an OCR provider. Only the
+          scores, pars, course, date, and player name you review and approve are
+          saved as round data.
         </p>
 
         <p>
@@ -106,6 +149,29 @@ export default function PrivacyPage() {
           scores for that round are stored on our backend and shown live to the
           other players in that same round. Only people with the join code can
           see it — so share codes only with people you want in your group.
+        </p>
+
+        <p>
+          <strong>Subscription information.</strong> Pro purchases are processed
+          by Apple through the App Store. We do not receive your payment-card
+          number. RevenueCat receives an account identifier and App Store
+          purchase and entitlement information so we can activate, restore, and
+          support Pro access. We store the verified entitlement status and
+          expiration date on our backend.
+        </p>
+
+        <p>
+          <strong>Customer email and preferences.</strong> For signed-in users,
+          we store whether you want product updates and a monthly golf digest,
+          plus the information needed to honor unsubscribe and suppression
+          requests. We may send a one-time follow-up after your first completed
+          round, product updates when that preference is enabled, and a monthly
+          recap when an eligible Pro user opts in. Resend processes the email
+          address and message for delivery. We record delivery events such as
+          sent, delivered, bounced, complained, failed, suppressed, and
+          unsubscribed; if email engagement measurement is enabled, we may also
+          record the first open and click for a message. Every customer email
+          includes an unsubscribe link.
         </p>
 
         <p>
@@ -125,6 +191,9 @@ export default function PrivacyPage() {
           by name, that search text is sent through our server to{" "}
           <strong>GolfCourseAPI</strong> to fill in par and tee data. The request
           goes through our own proxy so the provider key never ships in the app.
+          We cache the normalized search text and matching course list for up to
+          24 hours so repeated searches do not create duplicate paid requests.
+          That cache is not linked to an account.
         </p>
 
         <p>
@@ -137,6 +206,23 @@ export default function PrivacyPage() {
           These go to our database and our internal admin dashboard and are used
           only to diagnose and fix bugs — never for advertising, and we do not
           sell them.
+        </p>
+
+        <p>
+          <strong>First-party product analytics.</strong> We record events such
+          as app launches, rounds started and completed, scorecard imports, and
+          group or tournament use. Each cold launch gets a new random session
+          identifier; we do not create a persistent advertising or device ID. If
+          you are signed in, an event may also include your account user ID. We
+          use these events only to understand whether the app&apos;s features work
+          and are useful.
+        </p>
+
+        <p>
+          <strong>Abuse prevention.</strong> Our public course-search and error
+          reporting endpoints convert the request IP address into a one-way hash
+          for short-lived rate limiting. We do not store the raw IP address or
+          use the hash for advertising or cross-app tracking.
         </p>
 
         <p>
@@ -173,8 +259,12 @@ export default function PrivacyPage() {
             course search above;
           </li>
           <li>
-            does <strong>not</strong> access your contacts, photos, microphone, or
-            camera; and
+            does <strong>not</strong> directly access your contacts or
+            microphone. If you choose iPhone keyboard Dictation or watchOS
+            system Dictation, Apple provides the resulting text to the App;
+            SimplyStroke never receives or stores the raw audio. The App accesses
+            the camera or Photos only when you
+            choose a journal or scorecard-scan action; and
           </li>
           <li>
             does <strong>not</strong> sell your personal information.
@@ -188,10 +278,20 @@ export default function PrivacyPage() {
           <li>authenticate you and keep your account secure;</li>
           <li>sync your rounds across your devices when you are signed in;</li>
           <li>
+            store private Pro journals, the photos you choose, and optional
+            shot-level club choices and dictated text;
+          </li>
+          <li>verify, restore, and support your Pro subscription;</li>
+          <li>
+            deliver requested product updates, first-round follow-up, monthly
+            recaps, and required service messages, and honor email preferences;
+          </li>
+          <li>
             run group rounds and show a shared live scorecard to the players in a
             round;
           </li>
           <li>find nearby courses and fill in par when you ask;</li>
+          <li>understand whether app features are working and being used;</li>
           <li>diagnose crashes and fix bugs;</li>
           <li>respond to support requests;</li>
           <li>notify waitlist subscribers about launch and major changes; and</li>
@@ -220,7 +320,19 @@ export default function PrivacyPage() {
             (website only);
           </li>
           <li>
-            <strong>Apple</strong> — Sign in with Apple (app);
+            <strong>Apple</strong> — Sign in with Apple and system Dictation on
+            iPhone and Apple Watch;
+          </li>
+          <li>
+            <strong>Apple App Store</strong> — subscription purchase and billing;
+          </li>
+          <li>
+            <strong>RevenueCat</strong> — subscription and entitlement
+            verification;
+          </li>
+          <li>
+            <strong>Resend</strong> — customer email delivery and delivery-event
+            processing;
           </li>
           <li>
             <strong>GolfCourseAPI</strong> — course and par lookups, via our
@@ -262,10 +374,14 @@ export default function PrivacyPage() {
         <p>
           Guest (local) data stays on your device until you delete it or uninstall
           the app — we never receive it. Account and synced round data is kept
-          while your account is active and is deleted when you delete your account,
-          except limited records we must keep by law. Crash reports are kept only
-          as long as needed to fix issues. Waitlist emails are kept until you
-          unsubscribe or ask us to remove them.
+          while your account is active and is deleted when you delete your
+          account, including private journal notes, photos, and shot details,
+          except limited records we or our payment providers must keep by law.
+          Temporary scorecard-scan images are deleted from the app cache after
+          the scan flow. Crash reports are kept only as long as needed to fix issues.
+          Email preferences and suppression records are kept as needed to honor
+          your choices; waitlist emails are kept until you unsubscribe or ask us
+          to remove them.
         </p>
 
         <h2>Security</h2>
@@ -283,8 +399,12 @@ export default function PrivacyPage() {
           it, by emailing{" "}
           <a href={`mailto:${CONTACT}`}>{CONTACT}</a>. You can also{" "}
           <strong>delete your account and its data from within the app</strong>,
-          which removes your account, synced rounds, and group-round participation
-          from our systems. Every waitlist email includes an unsubscribe link.
+          which removes your account, synced rounds, private journals, photos,
+          shot details, email preferences, RevenueCat customer record, and
+          group-round participation from our systems. Deleting a SimplyStroke
+          account does not cancel an App Store subscription; manage or cancel
+          that subscription in your Apple Account subscription settings. Every
+          customer and waitlist email includes an unsubscribe link.
         </p>
         <p>
           <strong>California residents (CCPA/CPRA).</strong> You have the right to
@@ -297,9 +417,10 @@ export default function PrivacyPage() {
           <strong>EEA / UK residents (GDPR).</strong> You have rights to access,
           correct, delete, restrict, and port your data, and to object to certain
           processing. Our legal bases are performing our contract with you
-          (running the Service), your consent (waitlist and site analytics), and
-          our legitimate interests (keeping the Service secure and working). You
-          may complain to your local data-protection authority.
+          (running the Service), your consent or saved preferences (optional
+          customer email, waitlist, and site analytics), and our legitimate
+          interests (keeping the Service secure and working). You may complain
+          to your local data-protection authority.
         </p>
 
         <h2>Children</h2>

@@ -77,7 +77,7 @@ export const appNode = {
   downloadUrl: APP_STORE_URL,
   sameAs: [APP_STORE_URL],
   description:
-    "A free, one-tap golf stroke counter and scorecard for iPhone and Apple Watch, live on the App Store. Counts your strokes so working memory doesn't have to.",
+    "A one-tap golf stroke counter and scorecard for iPhone and Apple Watch. Core scoring is free; optional SimplyStroke Pro adds complete history, season records, course playbooks, crews, trips, private journals and paper scorecard scanning.",
   featureList: [
     "One tap per stroke",
     "Undo a mis-tap",
@@ -86,6 +86,10 @@ export const appNode = {
     "No ads",
     "Apple Watch support",
     "Finished scorecard with the math already done",
+    "Live group scorecards",
+    "Optional Pro complete history and season records",
+    "Optional Pro course playbooks, crews and golf trips",
+    "Optional Pro private journals and on-device scorecard scanning",
   ],
   offers: {
     "@type": "Offer",

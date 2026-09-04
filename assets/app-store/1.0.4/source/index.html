@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SimplyStroke 1.0.4 App Store Creative</title>
+  <style>
+    @font-face { font-family: Bebas; src: url('./fonts/bebas.woff2') format('woff2'); font-weight: 400; }
+    @font-face { font-family: DM; src: url('./fonts/dm-sans.woff2') format('woff2'); font-weight: 100 1000; }
+    :root { --deep:#1B4332; --mid:#2D6A4F; --light:#40916C; --pale:#E8F5C8; --lime:#96C41E; --ink:#102C21; --off:#FAFAF8; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 1290px; height: 2796px; overflow: hidden; }
+    body { font-family: DM, Arial, sans-serif; background: var(--deep); color: white; }
+    .slide { position: relative; width: 1290px; height: 2796px; overflow: hidden; background:
+      radial-gradient(circle at 2px 2px, rgba(255,255,255,.045) 1.5px, transparent 1.8px),
+      linear-gradient(150deg, #1B4332 0%, #235A40 62%, #123526 100%); background-size: 28px 28px, auto; }
+    .slide.light { color: var(--deep); background:
+      radial-gradient(circle at 2px 2px, rgba(27,67,50,.045) 1.5px, transparent 1.8px),
+      linear-gradient(155deg, #FAFAF8 0%, #F0F5E6 100%); background-size: 28px 28px, auto; }
+    .accent { position:absolute; right:-115px; top:330px; width:520px; height:520px; border:2px solid rgba(150,196,30,.3); border-radius:50%; }
+    .accent::before,.accent::after { content:""; position:absolute; border:2px solid rgba(150,196,30,.22); border-radius:50%; inset:70px; }
+    .accent::after { inset:150px; }
+    header { position:relative; z-index:4; padding:125px 112px 54px; }
+    .brand { display:flex; align-items:center; gap:20px; color:var(--lime); font-size:28px; font-weight:800; letter-spacing:.19em; text-transform:uppercase; }
+    .brand i { width:16px; height:16px; background:var(--lime); border-radius:50%; box-shadow:0 0 0 8px rgba(150,196,30,.15); }
+    h1 { font-family:Bebas, Impact, sans-serif; font-size:132px; line-height:.88; letter-spacing:.01em; text-transform:uppercase; margin:44px 0 30px; max-width:1040px; font-weight:400; }
+    h1 em { display:block; color:var(--lime); font-style:normal; }
+    .light h1 em { color:var(--mid); }
+    .sub { max-width:940px; font-size:37px; line-height:1.35; color:rgba(255,255,255,.78); margin:0; }
+    .light .sub { color:#53645D; }
+    .screenWrap { position:absolute; z-index:3; left:130px; top:690px; width:1030px; height:2106px; overflow:hidden; border:9px solid rgba(255,255,255,.92); border-bottom:0; border-radius:78px 78px 0 0; box-shadow:0 40px 100px rgba(4,22,14,.42); background:#fff; }
+    .screen { position:absolute; left:0; top:0; width:100%; height:auto; }
+    .screenWrap.score .screen { top:-100px; }
+    .screenWrap.pro .screen { width:auto; height:100%; left:30px; }
+    .screenWrap.recap .screen { top:-260px; }
+    .screenWrap.crew, .screenWrap.trip { top:760px; height:1570px; border-bottom-width:9px; border-radius:78px; }
+    .screenWrap.crew .screen, .screenWrap.trip .screen { top:0; }
+    .screenWrap.journal .screen { top:-100px; }
+    .screenWrap.scan .screen { top:-90px; }
+    .screenWrap.shot .screen { top:-125px; }
+    .light .screenWrap { border-color:var(--deep); box-shadow:0 38px 95px rgba(27,67,50,.22); }
+    .watchStage { position:absolute; inset:720px 0 0; display:flex; align-items:center; justify-content:center; flex-direction:column; }
+    .watchFrame { position:relative; width:1070px; height:1280px; display:flex; align-items:center; justify-content:center; border-radius:270px; background:#111; box-shadow:0 60px 120px rgba(0,0,0,.48); }
+    .watchFrame::before,.watchFrame::after { content:""; position:absolute; z-index:-1; left:315px; width:440px; height:280px; background:#151515; }
+    .watchFrame::before { top:-170px; border-radius:110px 110px 10px 10px; }
+    .watchFrame::after { bottom:-170px; border-radius:10px 10px 110px 110px; }
+    .watchFrame img { width:960px; height:auto; border-radius:210px; }
+    .watchNote { margin-top:245px; font-size:33px; line-height:1.35; text-align:center; max-width:900px; color:rgba(255,255,255,.8); }
+    .limeBand { position:absolute; left:0; right:0; bottom:0; height:105px; background:var(--lime); }
+    .number { position:absolute; right:20px; bottom:16px; font-family:Bebas,Impact,sans-serif; font-size:58px; line-height:1; color:var(--deep); z-index:5; }
+  </style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+const slides = {
+  score: {
+    eyebrow: 'SimplyStroke', title: 'Tap the shot.<em>We’ll keep count.</em>',
+    sub: 'One large target. Automatic totals. Less math between you and the next shot.',
+    image: '../raw/launch.png', light: false, crop: 'score', number: '01'
+  },
+  watch: {
+    eyebrow: 'iPhone + Apple Watch', title: 'Score from<em>your wrist.</em>',
+    sub: 'Tap, feel the haptic confirmation, and keep your phone nearby in the bag.',
+    image: '../watch/01-scoring.jpg', watch: true, number: '02'
+  },
+  pro: {
+    eyebrow: 'SimplyStroke Pro', title: 'Play more.<em>Remember more.</em>',
+    sub: 'Core scoring stays free. Pro keeps every completed card and turns the season into something useful.',
+    image: '../raw/pro.png', light: true, crop: 'pro', number: '03'
+  },
+  season: {
+    eyebrow: 'SimplyStroke Pro', title: 'See the season.<em>Share the story.</em>',
+    sub: 'Records, averages, courses, and a visual recap built from your completed scorecards.',
+    image: '../raw/season-recap.png', light: false, crop: 'recap', number: '04'
+  },
+  crews: {
+    eyebrow: 'SimplyStroke Pro', title: 'Save the crew.<em>Keep the history.</em>',
+    sub: 'One organizer saves the group. Everyone else joins and plays free.',
+    image: '../raw/crews.png', light: true, crop: 'crew', number: '05'
+  },
+  trips: {
+    eyebrow: 'SimplyStroke Pro', title: 'One trip.<em>Every round.</em>',
+    sub: 'Keep the golfers, stages, dates, and cumulative results together for the whole weekend.',
+    image: '../raw/trips.png', light: false, crop: 'trip', number: '06'
+  },
+  journal: {
+    eyebrow: 'SimplyStroke Pro', title: 'Remember more<em>than the number.</em>',
+    sub: 'Private notes and photos stay attached to the round that made them matter.',
+    image: '../raw/journal.png', light: true, crop: 'journal', number: '07'
+  },
+  ocr: {
+    eyebrow: 'SimplyStroke Pro', title: 'Paper card.<em>Meet your history.</em>',
+    sub: 'Recognition creates a draft on iPhone. You review every score and par before anything is saved.',
+    image: '../raw/ocr-fixture.png', light: false, crop: 'scan', number: '08'
+  },
+  shot: {
+    eyebrow: 'SimplyStroke Pro', title: 'Add the club.<em>Keep the lesson.</em>',
+    sub: 'Open Shot details when a stroke needs context. Choose a club or dictate a private note. SimplyStroke stores only the text.',
+    image: '../raw/shot-details.png', light: true, crop: 'shot', number: '09'
+  }
+};
+const key = new URLSearchParams(location.search).get('slide') || 'score';
+const s = slides[key] || slides.score;
+document.getElementById('root').innerHTML = `
+  <main class="slide ${s.light ? 'light' : ''}">
+    <div class="accent"></div>
+    <header>
+      <div class="brand"><i></i>${s.eyebrow}</div>
+      <h1>${s.title}</h1>
+      <p class="sub">${s.sub}</p>
+    </header>
+    ${s.watch ? `<div class="watchStage"><div class="watchFrame"><img src="${s.image}?v=20260904" alt=""></div><p class="watchNote">Scoring remains free. Pro adds optional club selection and dictated text after the stroke is already safe.</p></div>` : `<div class="screenWrap ${s.crop || ''}"><img class="screen" src="${s.image}?v=20260904" alt=""></div>`}
+    <div class="limeBand"></div><div class="number">${s.number} / 9</div>
+  </main>`;
+</script>
+</body>
+</html>

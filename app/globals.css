@@ -623,6 +623,8 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
 .prose .callout { background: var(--cream); border-left: 4px solid var(--lime); padding: 22px 26px; margin-top: 32px; }
 .prose .callout p { margin-top: 0; }
 .prose .post-cta { margin-top: 40px; }
+.prose .support-question { color: var(--green-deep); font-size: 22px; line-height: 1.25; margin-top: 36px; }
+.prose .support-question + p { margin-top: 10px; }
 
 /* ---------- responsive (per README mobile spec) ---------- */
 @media (max-width: 1100px) {
