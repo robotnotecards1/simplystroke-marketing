@@ -358,7 +358,7 @@ export default async function Home() {
             </p>
             <ul className={styles.proPreviewPromises}>
               <li>Older cards are retained, even outside the Free history window.</li>
-              <li>Private notes, photos, and Watch shot details stay out of standard sharing.</li>
+              <li>Private notes, photos, and iPhone or Watch shot details stay out of standard sharing.</li>
               <li>One Pro organizer can bring a crew whose friends keep playing free.</li>
             </ul>
             <Link className={styles.proPreviewLink} href="/pro/">

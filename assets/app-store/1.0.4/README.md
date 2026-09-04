@@ -34,7 +34,7 @@ Before upload:
 
 - capture against the exact final App Store build and replace any image whose UI differs;
 - keep every uploaded Watch image at the same accepted display size;
-- finish physical Watch and iPhone acceptance, including the optional club/dictation flow;
+- finish physical Watch and iPhone acceptance, including the manual Shot details club/dictation flow on both devices;
 - finish the OCR accuracy decision and 50-card study, or remove the OCR image and defer the feature;
 - verify a confirmed Pro account never sees an upgrade CTA on a gated-feature path;
 - verify all text and entitlements match the products attached to App Store Connect;

@@ -56,7 +56,7 @@ const proFeatures = [
   ["Golf trips", "Connect several rounds and follow cumulative gross results across the trip."],
   ["Private round journal", "Attach personal notes and photos to the scorecard you want to remember."],
   ["Paper scorecard scan", "Recognize a photographed card on iPhone, then review every value before saving."],
-  ["Watch shot details", "From the Watch More menu, optionally attach a club or dictated text to your latest stroke without storing raw audio."],
+  ["Private shot details", "From More on iPhone or Apple Watch, optionally attach a club or dictated text to your latest stroke without storing raw audio."],
 ];
 
 export default function FeaturesPage() {

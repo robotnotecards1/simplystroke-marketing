@@ -6,7 +6,7 @@ import styles from "./pro.module.css";
 
 const TITLE = "SimplyStroke Pro: Remember More From Every Round";
 const DESCRIPTION =
-  "SimplyStroke Pro adds complete history, season stats, course playbooks, goals, crews, trips, private journals, scorecard scanning, and optional Watch shot notes.";
+  "SimplyStroke Pro adds complete history, season stats, course playbooks, goals, crews, trips, private journals, scorecard scanning, and optional private shot details on iPhone and Apple Watch.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -52,7 +52,7 @@ const featureGroups = [
     number: "04",
     eyebrow: "Your memory",
     title: "Remember the shot, not just the number.",
-    body: "Add private round notes and photos. From the Apple Watch More menu, optionally attach a club or dictated text to your latest stroke. SimplyStroke stores the returned text, not a raw voice recording.",
+    body: "Add private round notes and photos. From More on iPhone or Apple Watch, optionally attach a club or dictated text to your latest stroke. SimplyStroke stores the returned text, not a raw voice recording.",
     accent: "7 iron · pulled left",
   },
   {
