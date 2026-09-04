@@ -39,7 +39,7 @@ Before upload:
 - capture against the exact final App Store build and replace any image whose UI differs;
 - keep every uploaded Watch image at the same accepted display size;
 - finish physical Watch acceptance of the final manual Shot details club/dictation flow; exact-build iPhone simulator acceptance passed at d55bd17;
-- finish the OCR accuracy decision and 50-card study, or remove the OCR image and defer the feature;
+- retain the existing committed scanner accepted for 1.0.4 and verify its editable review-before-save flow on the exact final build; the 50-card study now applies to the deferred replacement OCR work;
 - verify a confirmed Pro account never sees an upgrade CTA on a gated-feature path;
 - verify all text and entitlements match the products attached to App Store Connect;
 - approve the complete image order and copy;
