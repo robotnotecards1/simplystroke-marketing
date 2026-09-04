@@ -208,7 +208,6 @@ export default async function Home() {
               tone="light"
               href={APP_STORE_URL}
               className={`${styles.primaryCta} ${styles.heroStoreCta}`}
-              aria-label="Download SimplyStroke free on the App Store"
               size="large"
               apple
               subtitle="on the App Store"
@@ -442,7 +441,6 @@ export default async function Home() {
             tone="light"
             href={APP_STORE_URL}
             className={styles.primaryCta}
-            aria-label="Download SimplyStroke free on the App Store"
             size="large"
             apple
             subtitle="on the App Store"

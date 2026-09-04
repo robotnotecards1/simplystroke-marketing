@@ -1,15 +1,15 @@
 # SimplyStroke 1.0.4 App Store screenshots
 
-Status: **design-complete draft; do not upload yet.**
+Status: **pre-release draft; do not upload yet.**
 
-These eight 1290 × 2796 JPEGs use an accepted Apple 6.9-inch iPhone screenshot size. They contain no alpha channel. The source screens are real 1.0.4 app components captured from candidate a6553ee8cffce832e501289276551ec25c760910; the journal, season, crews, trips, and OCR data are fictional, write-free review fixtures.
+These eight 1290 × 2796 JPEGs use an accepted Apple 6.9-inch iPhone screenshot size. They contain no alpha channel. The source screens are real 1.0.4 app components captured from candidate a6553ee8cffce832e501289276551ec25c760910; image 02 was refreshed from the user-invoked Watch UI at native candidate 6998ca8635bd852025a8ac81e32ff6d5ca4c812a. The journal, season, crews, trips, and OCR data are fictional, write-free review fixtures.
 
 Each image is numbered against the eight-image set (`01 / 8` through `08 / 8`). `contact-sheet.jpg` was regenerated from these exact final draft files.
 
 ## Sequence
 
 1. 01-score.jpg — free one-tap scoring
-2. 02-watch.jpg — free Apple Watch scoring, with optional Pro shot detail described
+2. 02-watch.jpg — free Apple Watch scoring with the user-opened More control and optional Pro shot detail described
 3. 03-pro.jpg — Free versus Pro overview
 4. 04-season.jpg — season stats and visual recap
 5. 05-crews.jpg — saved crews

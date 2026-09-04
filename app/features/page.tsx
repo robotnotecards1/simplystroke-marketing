@@ -56,7 +56,7 @@ const proFeatures = [
   ["Golf trips", "Connect several rounds and follow cumulative gross results across the trip."],
   ["Private round journal", "Attach personal notes and photos to the scorecard you want to remember."],
   ["Paper scorecard scan", "Recognize a photographed card on iPhone, then review every value before saving."],
-  ["Watch shot details", "After scoring, optionally choose a club and add dictated text without storing raw audio."],
+  ["Watch shot details", "From the Watch More menu, optionally attach a club or dictated text to your latest stroke without storing raw audio."],
 ];
 
 export default function FeaturesPage() {
@@ -124,8 +124,8 @@ export default function FeaturesPage() {
           <p>
             Tap to add a stroke, feel the confirmation, undo a mistake, add a
             penalty, and advance holes from the Watch. Scoring remains free.
-            Pro adds optional club selection and dictated text after the stroke
-            is already safe.
+            With Pro, open More whenever you want to attach a club or dictated
+            text to the latest stroke. Nothing interrupts the next tap.
           </p>
         </div>
       </section>

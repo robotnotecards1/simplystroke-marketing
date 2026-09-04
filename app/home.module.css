@@ -6238,6 +6238,10 @@
   background: var(--lime);
 }
 
+.groupModeRowActive small {
+  color: var(--green-deep);
+}
+
 .groupModeRowActive b {
   background: var(--green-deep);
   color: #fff;

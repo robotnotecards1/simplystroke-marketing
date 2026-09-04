@@ -52,7 +52,7 @@ const featureGroups = [
     number: "04",
     eyebrow: "Your memory",
     title: "Remember the shot, not just the number.",
-    body: "Add private round notes and photos. From Apple Watch, optionally attach a club and dictated text after a stroke. SimplyStroke stores the returned text, not a raw voice recording.",
+    body: "Add private round notes and photos. From the Apple Watch More menu, optionally attach a club or dictated text to your latest stroke. SimplyStroke stores the returned text, not a raw voice recording.",
     accent: "7 iron · pulled left",
   },
   {

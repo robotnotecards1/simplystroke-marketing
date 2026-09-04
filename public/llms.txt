@@ -4,7 +4,7 @@
 
 SimplyStroke holds the count so the golfer can focus on the next shot. Free includes unlimited iPhone and Apple Watch scoring, automatic scorecard math, course lookup, account backup and sync, standard live group scorecards, and basic sharing. Solo scoring works without course signal; connected group and cloud features require connectivity.
 
-SimplyStroke Pro adds complete history, season stats and records, goals, course playbooks and challenges, saved crews, multi-round golf trips, private notes and photos, on-device paper-scorecard recognition with review before save, and optional Apple Watch club selection plus system-Dictation text. SimplyStroke stores the returned text rather than a raw voice recording.
+SimplyStroke Pro adds complete history, season stats and records, goals, course playbooks and challenges, saved crews, multi-round golf trips, private notes and photos, on-device paper-scorecard recognition with review before save, and optional Apple Watch club selection plus system-Dictation text. Golfers open More to add those details to the latest recorded stroke; stroke counting never opens the details flow automatically. SimplyStroke stores the returned text rather than a raw voice recording.
 
 ## Core pages
 

@@ -42,7 +42,7 @@ Verified candidate capabilities:
 - saved crews, comparable shared history, and multi-round golf trips with cumulative gross results;
 - private round notes and photos;
 - on-device Apple Vision paper-scorecard recognition with mandatory human review before save;
-- optional Apple Watch club selection and system-Dictation text after a stroke has already been recorded.
+- optional Apple Watch club selection and system-Dictation text attached to the latest recorded stroke from the user-opened More menu; recording a stroke never opens the details flow automatically.
 
 One Pro organizer can use the Pro crew/trip organization tools while invited friends play the standard group round for free.
 

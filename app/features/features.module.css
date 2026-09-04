@@ -96,7 +96,7 @@
   background: #fff;
 }
 
-.freeGrid article > span { color: var(--lime); font-family: var(--font-display); font-size: 28px; }
+.freeGrid article > span { color: var(--green-mid); font-family: var(--font-display); font-size: 28px; }
 .freeGrid h3 { max-width: 11ch; margin-top: 38px; color: var(--green-deep); font-size: 34px; }
 .freeGrid p { margin-top: 17px; color: var(--gray-body); font-size: 15px; line-height: 1.62; }
 
@@ -142,7 +142,7 @@
 .proSection > * { max-width: var(--wrap); margin-inline: auto; }
 .proList { margin-top: 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(27,67,50,.15); border: 1px solid rgba(27,67,50,.15); }
 .proList article { min-height: 190px; padding: 28px 32px; display: grid; grid-template-columns: 48px 1fr; gap: 22px; background: var(--offwhite); }
-.proList article > span { color: var(--lime); font-family: var(--font-display); font-size: 27px; }
+.proList article > span { color: var(--green-mid); font-family: var(--font-display); font-size: 27px; }
 .proList h3 { color: var(--green-deep); font-size: 31px; }
 .proList p { margin-top: 12px; color: var(--gray-body); font-size: 15px; line-height: 1.6; }
 .proAction { margin-top: 34px; text-align: center; }
