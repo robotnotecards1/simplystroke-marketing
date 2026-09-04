@@ -121,9 +121,11 @@ export default function PrivacyPage() {
 
         <p>
           <strong>Private Apple Watch shot details.</strong> If you turn on the
-          optional Pro shot-details setting, you can attach a club choice and
-          dictated text to an individual shot from Apple Watch. Apple&apos;s
-          watchOS system Dictation returns the resulting text to SimplyStroke;
+          optional Pro shot-details setting, you can record a stroke, open the
+          Watch More menu, and attach a club choice or dictated text to that
+          latest stroke. Recording a stroke never opens the details flow
+          automatically. Apple&apos;s watchOS system Dictation returns the
+          resulting text to SimplyStroke;
           the App does not record, receive, retain, or transfer the raw voice
           audio. The club choice and text are stored privately in Supabase and
           linked to your account, round, hole, and shot. They are not included
