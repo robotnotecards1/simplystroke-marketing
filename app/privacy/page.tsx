@@ -11,11 +11,14 @@ import { og } from "@/lib/site";
  *   - Guest mode: rounds stay on-device (MMKV), never sent to us.
  *   - Accounts (optional): email/password, Google, or Sign in with Apple, via
  *     Supabase Auth. Session stored encrypted at rest on-device.
- *   - Cloud sync + group rounds stored in Supabase.
+ *   - Cloud sync, group rounds/chat, opt-in public leaderboards, crews, trips,
+ *     and tournaments stored in Supabase.
  *   - Pro round-journal notes/photos and optional iPhone/Watch shot details stored
  *     privately in Supabase; scorecard scan source photos are processed
  *     on-device and are not uploaded. Apple Dictation returns text only.
  *   - Subscriptions are purchased through Apple and managed through RevenueCat.
+ *   - The Watch can write a Golf workout to Apple Health; the app does not read
+ *     HealthKit data or transmit workout data to SimplyStroke.
  *   - Customer email is delivered through Resend with unsubscribe controls.
  *   - "Find courses near me": expo-location (foreground, low accuracy) → OSM
  *     Overpass API for nearby courses; GolfCourseAPI (via the course-search
@@ -42,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: og(TITLE, DESCRIPTION, "/privacy/"),
 };
 
-const UPDATED = "September 3, 2026";
+const UPDATED = "September 5, 2026";
 const CONTACT = "support@simplystroke.app";
 
 export default function PrivacyPage() {
@@ -106,8 +109,9 @@ export default function PrivacyPage() {
           <strong>Your golf data (when signed in).</strong> The rounds you save
           are synced to our backend so they follow you across devices — course
           names, dates, hole counts, pars, strokes, scores, goals, records, saved
-          crews, and golf trips. If you never sign in, none of this leaves your
-          device.
+          crews, golf trips, and tournaments. If you never sign in, none of this
+          leaves your device except when you choose a shared group-round feature
+          as described below.
         </p>
 
         <p>
@@ -147,8 +151,32 @@ export default function PrivacyPage() {
           <strong>Group round data.</strong> When you host or join a group round
           using a join code, your display name and your per-hole strokes and
           scores for that round are stored on our backend and shown live to the
-          other players in that same round. Only people with the join code can
-          see it — so share codes only with people you want in your group.
+          other players in that same round. Messages and reactions you choose to
+          send are also stored and shown to that group. Reports and blocks are
+          stored so we can enforce the community rules. Only people with the
+          join code can see the group — so share codes only with people you want
+          in it.
+        </p>
+
+        <p>
+          <strong>Crews, trips, tournaments, and public leaderboards.</strong>{" "}
+          Information you add to a crew, golf trip, or tournament — such as its
+          name, location label, dates, roster display names, handicaps, teams,
+          and scores — is stored on our backend and shared with the invited
+          participants. If you separately choose to post a completed round to a
+          public course leaderboard, the display name and optional home city you
+          choose, course, score, and date played become public. Posting is off by
+          default, never includes your email or exact location, and can be undone
+          in the app.
+        </p>
+
+        <p>
+          <strong>Apple Health on Apple Watch.</strong> If you grant permission,
+          the Watch app starts and saves a Golf workout in Apple Health while a
+          round is active. This helps the counter stay available on your wrist
+          and lets the workout count toward your Activity. SimplyStroke does not
+          read your HealthKit data, and workout data is not sent to our backend
+          or another SimplyStroke provider.
         </p>
 
         <p>
@@ -267,6 +295,10 @@ export default function PrivacyPage() {
             choose a journal or scorecard-scan action; and
           </li>
           <li>
+            does <strong>not</strong> read HealthKit data or transmit your Apple
+            Health workout data to us; and
+          </li>
+          <li>
             does <strong>not</strong> sell your personal information.
           </li>
         </ul>
@@ -289,6 +321,10 @@ export default function PrivacyPage() {
           <li>
             run group rounds and show a shared live scorecard to the players in a
             round;
+          </li>
+          <li>
+            run crews, trips, tournaments, and the public leaderboards you choose
+            to join or post to;
           </li>
           <li>find nearby courses and fill in par when you ask;</li>
           <li>understand whether app features are working and being used;</li>
@@ -320,8 +356,8 @@ export default function PrivacyPage() {
             (website only);
           </li>
           <li>
-            <strong>Apple</strong> — Sign in with Apple and system Dictation on
-            iPhone and Apple Watch;
+            <strong>Apple</strong> — Sign in with Apple, Apple Health storage,
+            and system Dictation on iPhone and Apple Watch;
           </li>
           <li>
             <strong>Apple App Store</strong> — subscription purchase and billing;
@@ -378,7 +414,9 @@ export default function PrivacyPage() {
           account, including private journal notes, photos, and shot details,
           except limited records we or our payment providers must keep by law.
           Temporary scorecard-scan images are deleted from the app cache after
-          the scan flow. Crash reports are kept only as long as needed to fix issues.
+          the scan flow. A Golf workout saved to Apple Health remains under your
+          control in Apple&apos;s Health system and is not retained by us. Crash
+          reports are kept only as long as needed to fix issues.
           Email preferences and suppression records are kept as needed to honor
           your choices; waitlist emails are kept until you unsubscribe or ask us
           to remove them.
