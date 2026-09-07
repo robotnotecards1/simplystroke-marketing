@@ -8,6 +8,7 @@ import {
   breadcrumbNode,
   graph,
   organizationNode,
+  personNode,
   teamNode,
 } from "@/lib/schema";
 
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
 
 const jsonLd = graph(
   organizationNode,
+  personNode,
   teamNode,
   appNode,
   breadcrumbNode([{ name: "About", path: "/about/" }])
@@ -96,7 +98,7 @@ export default function AboutPage() {
             We don&apos;t add a feature just because a competitor has it. The
             whole product is the things we left out.
           </li>
-          <li>Core scorekeeping is free — counting your round costs nothing.</li>
+          <li>Core scorekeeping is free &mdash; counting your round costs nothing.</li>
         </ul>
 
         <h2>On the ADHD thing</h2>
@@ -127,19 +129,22 @@ export default function AboutPage() {
 
         <h2 id="team">Who writes this stuff</h2>
         <p>
-          Everything on this site is written by{" "}
-          <strong>the SimplyStroke team</strong> — the people who build the app.
-          We&apos;re golfers who got tired of reconstructing our own scores on
-          the walk to the next tee, and we keep our names off the site because
-          the app should be the interesting part, not us.
+          Everything on this site is written by people who build the app.{" "}
+          <strong>
+            <Link href="/about/mike-anderson/">Mike Anderson</Link>
+          </strong>{" "}
+          is the editor: he covers golf scoring, the Rules of Golf, and the
+          intersection of ADHD and sport, and he fact-checks every clinical
+          claim against the research it cites. The rest of the team stays behind
+          the scenes because the app should be the interesting part, not us.
         </p>
         <p>
           What that means in practice: when we make a claim about how ADHD and
           working memory interact, we cite the research. When we compare
           ourselves to another app, we link to their pricing page so you can
-          check us. When we don&apos;t know something, we say so. Being anonymous
-          is not a licence to be sloppy; if anything it raises the bar, because
-          the writing has to earn the trust that a byline would have borrowed.
+          check us. When we don&apos;t know something, we say so. Putting a name
+          on the work is not a licence to be sloppy; it raises the bar, because
+          the writing has to earn trust on every page.
         </p>
         <p>
           Spot something wrong anywhere on this site?{" "}
@@ -164,6 +169,11 @@ export default function AboutPage() {
           </li>
           <li>
             <Link href="/features/">Everything SimplyStroke does</Link>
+          </li>
+          <li>
+            <Link href="/guides/how-to-keep-score-in-golf/">
+              How to keep score in golf
+            </Link>
           </li>
         </ul>
       </article>

@@ -6,13 +6,16 @@ import GuideEngagement from "@/components/GuideEngagement";
 import FinalCta from "@/components/FinalCta";
 import { og } from "@/lib/site";
 import {
+  MIKE_ID,
   articleNode,
   breadcrumbNode,
   faqNode,
   graph,
   organizationNode,
+  personNode,
   teamNode,
   websiteNode,
+  type Citation,
   type Faq,
 } from "@/lib/schema";
 
@@ -34,6 +37,28 @@ export const metadata: Metadata = {
   alternates: { canonical: PATH },
   openGraph: og(TITLE, DESCRIPTION, PATH, "article"),
 };
+
+const citations: Citation[] = [
+  {
+    name: "Complex Prospective Memory in Adults with Attention Deficit Hyperactivity Disorder",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3590133/",
+  },
+  {
+    name: "Neurocognitive mechanisms underlying working memory encoding and retrieval in ADHD",
+    url: "https://www.nature.com/articles/s41598-020-64678-x",
+    doi: "10.1038/s41598-020-64678-x",
+  },
+  {
+    name: "Prospective memory (partially) mediates the link between ADHD symptoms and procrastination",
+    url: "https://link.springer.com/article/10.1007/s12402-018-0273-x",
+    doi: "10.1007/s12402-018-0273-x",
+  },
+  {
+    name: "Assessment of goal-directed behavior and prospective memory in adult ADHD with an online 3D videogame",
+    url: "https://www.nature.com/articles/s41598-023-36351-6",
+    doi: "10.1038/s41598-023-36351-6",
+  },
+];
 
 const faqs: Faq[] = [
   {
@@ -60,6 +85,7 @@ const faqs: Faq[] = [
 
 const jsonLd = graph(
   organizationNode,
+  personNode,
   teamNode,
   websiteNode,
   articleNode({
@@ -68,7 +94,9 @@ const jsonLd = graph(
     description: DESCRIPTION,
     path: PATH,
     datePublished: "2026-07-08",
-    dateModified: "2026-07-11",
+    dateModified: "2026-09-07",
+    citations,
+    author: MIKE_ID,
   }),
   faqNode(faqs),
   breadcrumbNode([
@@ -91,7 +119,7 @@ export default function Post() {
           <div className="pill">ADHD &amp; golf</div>
           <h1>How to stop losing count mid-round when you have ADHD</h1>
           <div className="post-meta">
-            <span>The SimplyStroke Team</span>
+            <Link href="/about/mike-anderson/">Mike Anderson</Link>
             <span>·</span>
             <span>July 2026</span>
             <span>·</span>
@@ -142,8 +170,8 @@ export default function Post() {
 
         <p>
           Every golfer who loses count has been handed the same four fixes.
-          Every one of them fails an ADHD golfer, and — this is the useful part
-          — they all fail in exactly the same place.
+          Every one of them fails an ADHD golfer, and they all fail in exactly
+          the same place.
         </p>
         <p>
           Finding that place tells you what a fix actually has to do. If you
@@ -164,9 +192,14 @@ export default function Post() {
           anything to write.
         </p>
         <p>
-          That something was your working memory. Across ten to fifteen minutes
-          of club selection, ball-watching, walking, conversation and searching
-          the fescue.
+          That something was your{" "}
+          <a href="https://www.nature.com/articles/s41598-020-64678-x" target="_blank" rel="noopener">working memory</a>.
+          Across ten to fifteen minutes of club selection, ball-watching,
+          walking, conversation and searching the fescue. Research using EEG
+          shows that adults with ADHD allocate fewer attentional resources
+          during encoding and struggle to separate relevant from irrelevant
+          information during retrieval. The deficit is not one of capacity but
+          of executive attention, which is exactly what a golf hole floods.
         </p>
         <div className="callout">
           <p>
@@ -182,19 +215,26 @@ export default function Post() {
           There is a second problem underneath the first: remembering to write
           it down is itself a thing to remember. And it is a{" "}
           <em>boring</em> thing, which is the category of thing that gets
-          dropped first.
+          dropped first. That pattern, where ADHD prospective memory failures{" "}
+          <a href="https://link.springer.com/article/10.1007/s12402-018-0273-x" target="_blank" rel="noopener">partly
+          mediate the link between ADHD and procrastination</a>, shows up across
+          everyday life, not just on the golf course.
         </p>
 
         <h2>Fix 2: A clicker or bead counter</h2>
         <p>
-          Closer, and worth trying, because the instinct is right — it moves the
+          Closer, and worth trying, because the instinct is right: it moves the
           count out of your head and into an object.
         </p>
         <p>
           But look at what it still asks. After every swing, unprompted, with no
-          reminder, you have to remember to advance it. That is the same
-          hold-an-intention-across-time task that was already failing. The task
-          has not been removed. A small metal object has been attached to it.
+          reminder, you have to remember to advance it. That is a{" "}
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3590133/" target="_blank" rel="noopener">complex
+          prospective memory task</a>: hold an intention across a long,
+          interrupted interval and act on it at the right moment. Adults with
+          ADHD show measurable impairment on exactly this class of task. The
+          task has not been removed. A small metal object has been attached to
+          it.
         </p>
         <p>
           Which is why clickers work beautifully for some golfers and quietly
@@ -206,8 +246,7 @@ export default function Post() {
         <h2>Fix 3: Let your playing partner keep score</h2>
         <p>
           This one genuinely works and it is badly underused. Your group watches
-          your ball — that is half of what playing partners are for — and they
-          usually know exactly how many times you swung.
+          your ball, and they usually know exactly how many times you swung.
         </p>
         <p>Two rules make it reliable:</p>
         <ul>
@@ -234,10 +273,15 @@ export default function Post() {
         </p>
         <p>
           In a GPS or analytics app, entering a stroke means opening a scorecard
-          grid, finding the right hole and incrementing a cell — several taps and
-          a decision — while yardage overlays, upsells, notifications and a
+          grid, finding the right hole and incrementing a cell, several taps and
+          a decision, while yardage overlays, upsells, notifications and a
           social feed compete for exactly the attention you were already short
-          of.
+          of. When researchers tested adults with ADHD in a{" "}
+          <a href="https://www.nature.com/articles/s41598-023-36351-6" target="_blank" rel="noopener">naturalistic
+          3D environment that required juggling everyday tasks from memory</a>,
+          the ADHD group showed clear deficits in exactly that kind of
+          multitasking. A forty-button golf app is the same test, on a phone, in
+          the sun.
         </p>
         <p>
           For a brain struggling to hold one number, an app with forty buttons
@@ -336,11 +380,15 @@ export default function Post() {
 
         <div className="author-box">
           <div>
-            <div className="author-box-name">The SimplyStroke Team</div>
+            <div className="author-box-name">
+              <Link href="/about/mike-anderson/">Mike Anderson</Link>
+            </div>
+            <div className="author-box-role">Editor, SimplyStroke</div>
             <p>
-              We built SimplyStroke after one too many rounds spent
-              reconstructing our own scores on the walk to the next tee.{" "}
-              <Link href="/about/">More about why it exists</Link>.
+              Mike covers golf scoring, the Rules of Golf, and the intersection
+              of ADHD and sport. He fact-checks every clinical claim on this
+              site against the research it cites.{" "}
+              <Link href="/about/mike-anderson/">More about Mike</Link>.
             </p>
           </div>
         </div>

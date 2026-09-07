@@ -6,14 +6,17 @@ import FinalCta from "@/components/FinalCta";
 import { og } from "@/lib/site";
 import {
   APP_ID,
+  MIKE_ID,
   appNode,
   articleNode,
   breadcrumbNode,
   faqNode,
   graph,
   organizationNode,
+  personNode,
   teamNode,
   websiteNode,
+  type Citation,
   type Faq,
 } from "@/lib/schema";
 
@@ -29,6 +32,17 @@ export const metadata: Metadata = {
   openGraph: og(TITLE, DESCRIPTION, PATH),
 };
 
+const citations: Citation[] = [
+  {
+    name: "18Birdies Premium Pricing",
+    url: "https://18birdies.com/premium/",
+  },
+  {
+    name: "Is the 18Birdies App Free? — 18Birdies Knowledge Base",
+    url: "https://help.18birdies.com/article/520-is-the-app-free",
+  },
+];
+
 const faqs: Faq[] = [
   {
     q: "Is there a simpler alternative to 18Birdies?",
@@ -36,7 +50,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Is 18Birdies free?",
-    a: "18Birdies has a free tier that is genuinely well liked, and it includes GPS distances. The free tier carries ads, and green maps and the more advanced tools sit behind a premium subscription. SimplyStroke keeps its core scoring free and shows no ads, but it also does far less.",
+    a: "18Birdies has a free tier that includes GPS at over 40,000 courses, shot tracking, scoring, stats tracking, multi-player scoring, side games, and a watch app. Premium features such as 3D green maps, strokes gained, plays-like distances and the AI coach sit behind a subscription at $99.99 per year, $19.99 per month, or $7.99 per week. SimplyStroke keeps its core scoring free and shows no ads, but it also does far less.",
   },
   {
     q: "Does 18Birdies post to GHIN?",
@@ -49,6 +63,10 @@ const faqs: Faq[] = [
   {
     q: "Which is better overall?",
     a: "It depends entirely on whether you want a golf platform or a scorecard. 18Birdies is more capable at almost everything: GPS, stats, social rounds, green maps. SimplyStroke is better at exactly one thing, which is recording a stroke without breaking your round. Pick based on which of those you actually open the app to do.",
+  },
+  {
+    q: "Does 18Birdies work on Apple Watch?",
+    a: "Yes, both apps have an Apple Watch version. The difference is what happens on the watch. 18Birdies shows GPS distances, hole layout and scoring on your wrist. SimplyStroke shows one giant button you tap after each swing. If you want yardages on your wrist, 18Birdies. If you want the count on your wrist, SimplyStroke.",
   },
 ];
 
@@ -76,6 +94,7 @@ const itemListNode = {
 
 const jsonLd = graph(
   organizationNode,
+  personNode,
   teamNode,
   websiteNode,
   appNode,
@@ -84,8 +103,10 @@ const jsonLd = graph(
     description: DESCRIPTION,
     path: PATH,
     datePublished: "2026-07-11",
-    dateModified: "2026-07-11",
+    dateModified: "2026-09-07",
     about: APP_ID,
+    citations,
+    author: MIKE_ID,
   }),
   itemListNode,
   faqNode(faqs),
@@ -108,10 +129,12 @@ export default function Page() {
           <div className="pill">Comparison</div>
           <h1>SimplyStroke vs 18Birdies</h1>
           <div className="post-meta">
-            <span>The SimplyStroke Team</span>
-            <span>·</span>
-            <span>July 2026</span>
-            <span>·</span>
+            <span>
+              <Link href="/about/mike-anderson/">Mike Anderson</Link>
+            </span>
+            <span>&middot;</span>
+            <span>September 2026</span>
+            <span>&middot;</span>
             <span>5 min read</span>
           </div>
         </div>
@@ -126,12 +149,16 @@ export default function Page() {
 
       <article className="prose">
         <AnswerBlock
-          updated="July 2026"
+          updated="September 2026"
           answer={
             <>
               <strong>18Birdies</strong> is a social GPS platform with a
-              scorecard attached: yardages, green maps, stats, a feed, and a
-              premium tier. <strong>SimplyStroke</strong> is a scorecard with
+              scorecard attached: yardages at 40,000+ courses, green maps, stats,
+              a feed, and a{" "}
+              <a href="https://18birdies.com/premium/" target="_blank" rel="noopener">
+                premium tier at $99.99/year
+              </a>
+              . <strong>SimplyStroke</strong> is a scorecard with
               nothing attached: one tap per shot, free, offline, no account.
               Choose 18Birdies if you want the whole round instrumented. Choose
               SimplyStroke if the only thing you keep losing is the count.
@@ -139,9 +166,10 @@ export default function Page() {
           }
           facts={[
             <>
-              18Birdies has a well-liked free tier{" "}
-              <strong>with ads</strong>; green maps and advanced tools sit behind
-              a premium subscription
+              18Birdies&apos; free tier includes GPS, shot tracking, scoring,
+              stats, side games and a watch app.{" "}
+              <strong>Premium adds 3D green maps, strokes gained and the AI coach</strong>{" "}
+              at $99.99/yr
             </>,
             <>
               <strong>Neither app posts to GHIN.</strong> The 18Birdies handicap
@@ -156,23 +184,27 @@ export default function Page() {
 
         <p>
           18Birdies was the default golf app for a long time, and the reason is
-          straightforward: the free tier is genuinely good and it gives you
-          distance to the green without asking for money. Any comparison that
-          pretends otherwise isn&apos;t worth reading.
+          straightforward: the{" "}
+          <a href="https://help.18birdies.com/article/520-is-the-app-free" target="_blank" rel="noopener">
+            free tier
+          </a>{" "}
+          is genuinely good and it gives you GPS distances at over 40,000
+          courses without asking for money. Any comparison that pretends
+          otherwise is not worth reading.
         </p>
         <p>
           The complaint that has caught up with it is equally straightforward.
-          Golfers describe it as <em>bloated</em> — &ldquo;too much going
-          on&rdquo; — and the scorecard, the thing most people actually opened it
-          for, is now one screen among many, competing with overlays, upsells and
-          a social feed.
+          Golfers describe it as <em>bloated</em> &mdash; &ldquo;too much going
+          on&rdquo; &mdash; and the scorecard, the thing most people actually
+          opened it for, is now one screen among many, competing with overlays,
+          upsells and a social feed.
         </p>
 
         <h2>Side by side</h2>
 
         <div className="cmp-wrap">
           <table className="cmp">
-            <caption>As of July 2026. Check 18Birdies&apos; own site for current pricing and features.</caption>
+            <caption>As of September 2026. Check 18Birdies&apos; own site for current pricing and features.</caption>
             <thead>
               <tr>
                 <th scope="col">&nbsp;</th>
@@ -199,7 +231,7 @@ export default function Page() {
               <tr>
                 <th scope="row">Cost</th>
                 <td data-label="SimplyStroke">Core scoring free</td>
-                <td data-label="18Birdies">Free tier + premium subscription</td>
+                <td data-label="18Birdies">Free tier + $99.99/yr premium</td>
               </tr>
               <tr>
                 <th scope="row">Ads</th>
@@ -209,7 +241,17 @@ export default function Page() {
               <tr>
                 <th scope="row">GPS yardages</th>
                 <td data-label="SimplyStroke">No</td>
-                <td data-label="18Birdies">Yes</td>
+                <td data-label="18Birdies">Yes (40,000+ courses)</td>
+              </tr>
+              <tr>
+                <th scope="row">3D green maps</th>
+                <td data-label="SimplyStroke">No</td>
+                <td data-label="18Birdies">Premium only (Strackaline)</td>
+              </tr>
+              <tr>
+                <th scope="row">Strokes gained stats</th>
+                <td data-label="SimplyStroke">No</td>
+                <td data-label="18Birdies">Premium only</td>
               </tr>
               <tr>
                 <th scope="row">GHIN handicap posting</th>
@@ -220,6 +262,11 @@ export default function Page() {
                 <th scope="row">Social feed</th>
                 <td data-label="SimplyStroke">No</td>
                 <td data-label="18Birdies">Yes</td>
+              </tr>
+              <tr>
+                <th scope="row">Apple Watch</th>
+                <td data-label="SimplyStroke">Yes (one-tap counter)</td>
+                <td data-label="18Birdies">Yes (GPS + scoring)</td>
               </tr>
               <tr>
                 <th scope="row">Solo rounds work offline</th>
@@ -252,25 +299,63 @@ export default function Page() {
         <h2>What you give up by switching</h2>
         <ul>
           <li>
-            <strong>GPS yardages.</strong> The big one. If you don&apos;t carry a
-            rangefinder, this matters.
+            <strong>GPS yardages.</strong> The big one. 18Birdies covers over
+            40,000 courses on the free tier. If you do not carry a rangefinder,
+            this matters.
           </li>
           <li>
-            <strong>Green maps and slope</strong> (18Birdies premium).
+            <strong>3D green maps and Strackaline data</strong> (premium).
           </li>
           <li>
-            <strong>The social feed and challenges.</strong>
+            <strong>Strokes gained and advanced stats</strong> (premium).
           </li>
           <li>
-            <strong>Stats and round history depth.</strong> SimplyStroke gives you
-            a scorecard, not a dashboard.
+            <strong>The social feed, side games and leagues.</strong>
+          </li>
+          <li>
+            <strong>AI swing analyzer and club recommendations</strong>{" "}
+            (premium).
           </li>
         </ul>
         <p>
           Note what is <em>not</em> on that list: an official handicap. Neither
-          app posts to GHIN, and the 18Birdies handicap isn&apos;t accepted for
-          USGA events, so if that&apos;s what you thought you were getting,
-          you&apos;re already doing it by hand.
+          app posts to GHIN, and the 18Birdies handicap is not accepted for
+          USGA events, so if that is what you thought you were getting,
+          you are already doing it by hand.
+        </p>
+
+        <h2>What you gain by switching</h2>
+        <ul>
+          <li>
+            <strong>One tap per stroke instead of a grid.</strong> The single
+            biggest difference in daily use. You tap after each swing instead of
+            opening a scorecard, finding the hole, and incrementing a cell.
+          </li>
+          <li>
+            <strong>No account to start.</strong> Pick up your phone on the
+            first tee and start a round. No email, no password, no profile.
+          </li>
+          <li>
+            <strong>No ads, no upsells.</strong> The screen shows your count and
+            nothing else.
+          </li>
+          <li>
+            <strong>Works offline for solo rounds.</strong> Your round is saved
+            on your device and needs no course signal.
+          </li>
+          <li>
+            <strong>A finished scorecard.</strong> SimplyStroke totals the round
+            and calculates your score to par. You never add it up yourself.
+          </li>
+        </ul>
+
+        <h2>When to use both</h2>
+        <p>
+          Some golfers keep both on their phone. 18Birdies for the GPS on
+          unfamiliar courses where distance matters, and SimplyStroke on
+          the home course where they already know every yardage and just want
+          the count to stick. They are not competing for the same job, and
+          installing one does not break the other.
         </p>
 
         <h2>Common questions</h2>
@@ -300,15 +385,24 @@ export default function Page() {
               What a golf stroke counter is, and how to pick one
             </Link>
           </li>
+          <li>
+            <Link href="/guides/how-to-keep-score-in-golf/">
+              How to keep score in golf: the complete beginner guide
+            </Link>
+          </li>
         </ul>
 
         <div className="author-box">
           <div>
-            <div className="author-box-name">The SimplyStroke Team</div>
+            <div className="author-box-name">
+              <Link href="/about/mike-anderson/">Mike Anderson</Link>
+            </div>
+            <div className="author-box-role">Editor, SimplyStroke</div>
             <p>
-              We built SimplyStroke after one too many rounds spent
-              reconstructing our own scores on the walk to the next tee.{" "}
-              <Link href="/about/">More about why it exists</Link>.
+              Mike covers golf scoring, the Rules of Golf, and the intersection
+              of ADHD and sport. He fact-checks every clinical claim on this
+              site against the research it cites.{" "}
+              <Link href="/about/mike-anderson/">More about Mike</Link>.
             </p>
           </div>
         </div>

@@ -6,13 +6,16 @@ import GuideEngagement from "@/components/GuideEngagement";
 import FinalCta from "@/components/FinalCta";
 import { og } from "@/lib/site";
 import {
+  MIKE_ID,
   articleNode,
   breadcrumbNode,
   faqNode,
   graph,
   organizationNode,
+  personNode,
   teamNode,
   websiteNode,
+  type Citation,
   type Faq,
 } from "@/lib/schema";
 
@@ -27,6 +30,18 @@ export const metadata: Metadata = {
   alternates: { canonical: PATH },
   openGraph: og(TITLE, DESCRIPTION, PATH, "article"),
 };
+
+const citations: Citation[] = [
+  {
+    name: "Complex Prospective Memory in Adults with Attention Deficit Hyperactivity Disorder",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3590133/",
+  },
+  {
+    name: "Prospective memory (partially) mediates the link between ADHD symptoms and procrastination",
+    url: "https://link.springer.com/article/10.1007/s12402-018-0273-x",
+    doi: "10.1007/s12402-018-0273-x",
+  },
+];
 
 const faqs: Faq[] = [
   {
@@ -53,6 +68,7 @@ const faqs: Faq[] = [
 
 const jsonLd = graph(
   organizationNode,
+  personNode,
   teamNode,
   websiteNode,
   articleNode({
@@ -61,7 +77,9 @@ const jsonLd = graph(
     description: DESCRIPTION,
     path: PATH,
     datePublished: "2026-07-11",
-    dateModified: "2026-07-11",
+    dateModified: "2026-09-07",
+    citations,
+    author: MIKE_ID,
   }),
   faqNode(faqs),
   breadcrumbNode([
@@ -84,7 +102,7 @@ export default function Post() {
           <div className="pill">Scoring</div>
           <h1>You lost count of your strokes. Now what?</h1>
           <div className="post-meta">
-            <span>The SimplyStroke Team</span>
+            <Link href="/about/mike-anderson/">Mike Anderson</Link>
             <span>·</span>
             <span>July 2026</span>
             <span>·</span>
@@ -203,16 +221,19 @@ export default function Post() {
         <p>
           The answer is that counting your strokes is not a memory task in the
           way it looks. It is a{" "}
-          <strong>prospective memory task</strong>: hold an intention (increment
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3590133/" target="_blank" rel="noopener">prospective
+          memory task</a>: hold an intention (increment
           this number, every time, without being reminded) across a ten to
           fifteen minute interval that is deliberately full of competing
           demands. Pick a club. Read the wind. Watch the ball. Walk. Talk. Find
           the ball. Plan again.
         </p>
         <p>
-          Prospective memory failures account for the majority of everyday
-          memory failures in general, and prospective memory is one of the
-          things that is measurably harder if you have ADHD. That is not a
+          Prospective memory failures{" "}
+          <a href="https://link.springer.com/article/10.1007/s12402-018-0273-x" target="_blank" rel="noopener">account
+          for the majority of everyday memory failures</a> in general, and
+          prospective memory is one of the things that is measurably harder if
+          you have ADHD. That is not a
           personality assessment, it is a research finding, and it means a
           meaningful number of golfers have spent years quietly blaming
           themselves for something that has a name. If the count vanishes every
@@ -274,11 +295,15 @@ export default function Post() {
 
         <div className="author-box">
           <div>
-            <div className="author-box-name">The SimplyStroke Team</div>
+            <div className="author-box-name">
+              <Link href="/about/mike-anderson/">Mike Anderson</Link>
+            </div>
+            <div className="author-box-role">Editor, SimplyStroke</div>
             <p>
-              We built SimplyStroke after one too many rounds spent
-              reconstructing our own scores on the walk to the next tee.{" "}
-              <Link href="/about/">More about why it exists</Link>.
+              Mike covers golf scoring, the Rules of Golf, and the intersection
+              of ADHD and sport. He fact-checks every clinical claim on this
+              site against the research it cites.{" "}
+              <Link href="/about/mike-anderson/">More about Mike</Link>.
             </p>
           </div>
         </div>

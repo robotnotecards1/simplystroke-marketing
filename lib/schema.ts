@@ -17,6 +17,7 @@ export const ORG_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const APP_ID = `${SITE_URL}/#app`;
 export const TEAM_ID = `${SITE_URL}/about/#team`;
+export const MIKE_ID = `${SITE_URL}/about/mike-anderson/#person`;
 
 /* -------------------------------------------------------------------------- */
 /* Core entities                                                              */
@@ -51,6 +52,27 @@ export const teamNode = {
     "golf scorecard apps",
     "ADHD and working memory",
     "app design",
+  ],
+};
+
+// Named editor. Gives every guide a Person-type author with expertise
+// signals, which is the strongest E-E-A-T byline available to us. The team
+// node stays as the fallback for non-guide pages.
+export const personNode = {
+  "@type": "Person",
+  "@id": MIKE_ID,
+  name: "Mike Anderson",
+  url: `${SITE_URL}/about/mike-anderson/`,
+  jobTitle: "Editor",
+  worksFor: { "@id": ORG_ID },
+  description:
+    "Golf writer and editor at SimplyStroke. Covers the Rules of Golf, scoring technology, and the intersection of ADHD and sport.",
+  knowsAbout: [
+    "golf scoring",
+    "the Rules of Golf",
+    "golf scorecard apps",
+    "ADHD and working memory",
+    "sports technology",
   ],
 };
 
@@ -149,6 +171,7 @@ export function articleNode({
   dateModified,
   citations,
   about,
+  author,
 }: {
   type?: "Article" | "BlogPosting";
   headline: string;
@@ -158,6 +181,7 @@ export function articleNode({
   dateModified: string;
   citations?: Citation[];
   about?: string;
+  author?: string;
 }) {
   return {
     "@type": type,
@@ -167,7 +191,7 @@ export function articleNode({
     datePublished,
     dateModified,
     inLanguage: "en-US",
-    author: { "@id": TEAM_ID },
+    author: { "@id": author ?? TEAM_ID },
     publisher: { "@id": ORG_ID },
     isPartOf: { "@id": WEBSITE_ID },
     image: `${SITE_URL}/og-image.jpg`,

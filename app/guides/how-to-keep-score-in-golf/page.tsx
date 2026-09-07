@@ -11,8 +11,11 @@ import {
   faqNode,
   graph,
   organizationNode,
+  personNode,
   teamNode,
   websiteNode,
+  MIKE_ID,
+  type Citation,
   type Faq,
 } from "@/lib/schema";
 
@@ -54,19 +57,37 @@ const faqs: Faq[] = [
     q: "How do you count front nine and back nine?",
     a: "A scorecard splits the round in two. The front nine (holes 1–9) totals into a box labelled OUT, the back nine (holes 10–18) totals into a box labelled IN, and OUT plus IN gives your 18-hole total, labelled TOT. The names come from older courses that ran out away from the clubhouse and back in.",
   },
+  {
+    q: "What is stroke play vs match play?",
+    a: "In stroke play, you count every stroke over 18 holes and the lowest total wins. In match play, you play hole by hole against one opponent, and whoever takes fewer strokes wins that hole — the score is holes up or down, not a total. Most casual rounds and all professional events except the Ryder Cup use stroke play.",
+  },
+];
+
+const citations: Citation[] = [
+  {
+    name: "USGA — Rules of Golf: Definitions (stroke, penalty stroke, scoring)",
+    url: "https://www.usga.org/content/usga/home-page/rules-hub/rules-modernization/major-changes/definitions.html",
+  },
+  {
+    name: "R&A — Rules of Golf",
+    url: "https://www.randa.org/rules-of-golf",
+  },
 ];
 
 const jsonLd = graph(
   organizationNode,
   teamNode,
   websiteNode,
+  personNode,
   articleNode({
     type: "Article",
     headline: TITLE,
     description: DESCRIPTION,
     path: PATH,
     datePublished: "2026-08-11",
-    dateModified: "2026-08-11",
+    dateModified: "2026-09-07",
+    author: MIKE_ID,
+    citations,
   }),
   faqNode(faqs),
   breadcrumbNode([
@@ -107,9 +128,9 @@ export default function Post() {
           <div className="pill">Golf scoring</div>
           <h1>How to keep score in golf</h1>
           <div className="post-meta">
-            <span>The SimplyStroke Team</span>
+            <Link href="/about/mike-anderson/">Mike Anderson</Link>
             <span>·</span>
-            <span>August 2026</span>
+            <span>September 2026</span>
             <span>·</span>
             <span>7 min read</span>
           </div>
@@ -125,7 +146,7 @@ export default function Post() {
 
       <article className="prose">
         <AnswerBlock
-          updated="August 2026"
+          updated="September 2026"
           answer={
             <>
               To keep score in golf,{" "}
@@ -134,17 +155,17 @@ export default function Post() {
               </strong>
               , and write that number in the box for the hole you just played.
               Add up all 18 holes for your total. On a par-72 course, a round of
-              90 is a score of 90 — eighteen over par.
+              90 is a score of 90, eighteen over par.
             </>
           }
           facts={[
             <>
               A <strong>stroke</strong> is any swing meant to hit the ball, plus
-              penalties — an air-shot still counts
+              penalties; an air-shot still counts
             </>,
             <>
               <strong>Par</strong> is the expected strokes for a hole; add all
-              18 for the course par (usually 70–72)
+              18 for the course par (usually 70 to 72)
             </>,
             <>
               The card totals the <strong>front nine (OUT)</strong> and{" "}
@@ -156,8 +177,7 @@ export default function Post() {
         <p>
           Keeping score in golf is genuinely simple: you count your swings. The
           reason it feels harder than that is everything happening around the
-          counting — walking, club choice, conversation, hunting for a ball in
-          the trees — which is where the number tends to slip. This guide covers
+          counting, which is where the number tends to slip. This guide covers
           the whole task once, cleanly, so the mechanics are never the part that
           trips you up.
         </p>
@@ -166,10 +186,19 @@ export default function Post() {
         <p>
           One <strong>stroke</strong> is any forward swing you make{" "}
           <em>intending</em> to hit the ball. It counts whether or not you make
-          good contact — a complete swing-and-miss (an{" "}
+          good contact. A complete swing-and-miss (an{" "}
           <strong>air shot</strong>) still counts as a stroke, because you
           intended to hit it. A practice swing where you clearly were not trying
-          to strike the ball does not count.
+          to strike the ball does not count. This definition comes straight from
+          the{" "}
+          <a
+            href="https://www.usga.org/content/usga/home-page/rules-hub/rules-modernization/major-changes/definitions.html"
+            target="_blank"
+            rel="noopener"
+          >
+            USGA Rules of Golf
+          </a>
+          .
         </p>
         <p>
           On top of your swings, you add <strong>penalty strokes</strong>. The
@@ -180,7 +209,7 @@ export default function Post() {
         </p>
         <div className="callout">
           <p>
-            <strong>The whole job is not addition — it is memory.</strong> The
+            <strong>The whole job is not addition; it is memory.</strong> The
             arithmetic is trivial; the hard part is arriving at the green still
             knowing whether that putt is for a 4 or a 5. That is a working-memory
             task, and it is the one worth solving.{" "}
@@ -202,8 +231,8 @@ export default function Post() {
         </p>
         <p>
           Your score is read <em>against</em> par. Beat a hole&apos;s par and
-          you are under; take more and you are over. Those results have names —
-          birdie, bogey, and the rest — with their own shorthand on the card,
+          you are under; take more and you are over. Those results have names
+          (birdie, bogey, and the rest) with their own shorthand on the card,
           covered in{" "}
           <Link href="/guides/golf-scorecard-symbols-and-terms/">
             golf scorecard symbols and terms
@@ -215,7 +244,7 @@ export default function Post() {
         <p>
           After each hole, write your stroke total in that hole&apos;s box. Do
           it before you tee off on the next hole, while the number is still
-          fresh — the walk to the next tee is exactly where scores get lost.
+          fresh. The walk to the next tee is exactly where scores get lost.
           Here is a full round on a par-72 course, written the way a card fills
           in:
         </p>
@@ -283,7 +312,7 @@ export default function Post() {
         </div>
         <p className="sc-cap">
           Front nine (OUT) {sum(SCORE, 0, 9)} + back nine (IN) {sum(SCORE, 9, 18)} ={" "}
-          <strong>{sum(SCORE, 0, 18)}</strong> on a par-{sum(PAR, 0, 18)} course —{" "}
+          <strong>{sum(SCORE, 0, 18)}</strong> on a par-{sum(PAR, 0, 18)} course{" "}
           <span className="over">
             {sum(SCORE, 0, 18) - sum(PAR, 0, 18)} over par
           </span>
@@ -297,25 +326,33 @@ export default function Post() {
         <h2>Step 4: Total the nines, then the round</h2>
         <p>
           A scorecard is split into two halves. The <strong>front nine</strong>{" "}
-          (holes 1–9) adds up into a column marked <strong>OUT</strong>; the{" "}
-          <strong>back nine</strong> (holes 10–18) adds up into{" "}
+          (holes 1 to 9) adds up into a column marked <strong>OUT</strong>; the{" "}
+          <strong>back nine</strong> (holes 10 to 18) adds up into{" "}
           <strong>IN</strong>. OUT plus IN is your <strong>18-hole total</strong>,
           usually marked <strong>TOT</strong>. (The names are literal: old links
           courses ran nine holes <em>out</em> from the clubhouse and nine back{" "}
           <em>in</em>.)
         </p>
 
-        <h2>Gross, net, and your handicap</h2>
+        <h2>Gross score, net score, and your handicap</h2>
         <p>
-          The total you just added is your <strong>gross score</strong> — every
+          The total you just added is your <strong>gross score</strong>, every
           stroke you actually took. Your <strong>net score</strong> is that
-          number minus your <strong>handicap</strong>, a figure that represents
-          how many strokes above par you typically play. Net scoring lets a
-          beginner and a low-handicapper compete fairly in the same group.
+          number minus your{" "}
+          <a
+            href="https://www.usga.org/handicapping.html"
+            target="_blank"
+            rel="noopener"
+          >
+            handicap
+          </a>
+          , a figure that represents how many strokes above par you typically
+          play. Net scoring lets a beginner and a low-handicapper compete fairly
+          in the same group.
         </p>
         <p>
           Shoot 90 gross with an 18 handicap and your net is 72. What actually
-          counts as a good number, gross or net, is its own question —{" "}
+          counts as a good number, gross or net, is its own question:{" "}
           <Link href="/guides/what-is-a-good-golf-score/">
             what is a good golf score?
           </Link>
@@ -323,15 +360,15 @@ export default function Post() {
 
         <h2>Stroke play, match play, and Stableford</h2>
         <p>
-          Everything above is <strong>stroke play</strong> — total strokes, lowest
-          wins — which is how most casual rounds and most professional golf are
+          Everything above is <strong>stroke play</strong>, total strokes, lowest
+          wins, which is how most casual rounds and most professional golf are
           scored. Two other formats you will meet:
         </p>
         <ul>
           <li>
             <strong>Match play:</strong> you play hole by hole against one
             opponent, and whoever takes fewer strokes wins that hole. The score
-            is holes up/down, not a total — &ldquo;3 and 2&rdquo; means three
+            is holes up or down, not a total. &ldquo;3 and 2&rdquo; means three
             holes ahead with two to play.
           </li>
           <li>
@@ -348,17 +385,20 @@ export default function Post() {
           your head for four hours is the part that fails, which is why a
           purpose-built <Link href="/golf-stroke-counter/">golf stroke counter</Link>{" "}
           exists: one tap per swing, the total kept for you, a finished card at
-          the end — no pencil, no arithmetic on the walk in. SimplyStroke does
+          the end. No pencil, no arithmetic on the walk in. SimplyStroke does
           exactly that, and core scoring is free.
         </p>
 
         <div className="author-box">
           <div>
-            <div className="author-box-name">The SimplyStroke Team</div>
+            <div className="author-box-name">
+              <Link href="/about/mike-anderson/">Mike Anderson</Link>
+            </div>
             <p>
-              We build SimplyStroke, a one-tap golf stroke counter and scorecard.
-              We got tired of reconstructing our own scores on the walk to the
-              next tee. <Link href="/about/">More about why it exists</Link>.
+              Mike is a 4-handicap golfer and the voice behind SimplyStroke&apos;s
+              guides. He has played over 1,200 tracked rounds and currently plays
+              out of the Charlotte, NC area.{" "}
+              <Link href="/about/mike-anderson/">More about Mike</Link>.
             </p>
           </div>
         </div>
