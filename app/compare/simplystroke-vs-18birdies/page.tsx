@@ -290,9 +290,9 @@ export default function Page() {
             <strong>
               If you open 18Birdies to keep score and everything else is noise
             </strong>{" "}
-            &mdash; the feed, the upsells, the grid you have to find the right
-            cell in &mdash; then you are paying attention for features you never
-            asked for. SimplyStroke is a single tap and it costs nothing.
+            — the feed, the upsells, the grid you have to find the right cell in
+            — then you are paying attention for features you never asked for.
+            SimplyStroke is a single tap and core scoring costs nothing.
           </p>
         </div>
 

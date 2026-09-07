@@ -121,7 +121,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Does SimplyStroke have GPS, handicap posting or strokes gained?",
-    a: "No, and it will not. SimplyStroke has no GPS, no GHIN handicap posting, no strokes gained analytics, no side games and no social feed. It counts strokes and produces a finished scorecard. If you want analytics, Arccos is genuinely excellent and does that far better than we ever would.",
+    a: "No. SimplyStroke does not currently provide GPS yardages, GHIN posting, strokes gained analytics, side games or a social feed. It counts strokes and produces a finished scorecard. If you want sensor-based analytics, Arccos is built for that job.",
   },
   {
     q: "Is SimplyStroke free?",
@@ -315,7 +315,7 @@ export default function ComparePage() {
             <strong>
               If you want yardages, get a GPS app or a rangefinder.
             </strong>{" "}
-            SimplyStroke will never tell you the distance to the pin.
+            SimplyStroke does not currently tell you the distance to the pin.
           </p>
           <p>
             <strong>
@@ -328,7 +328,7 @@ export default function ComparePage() {
           </p>
         </div>
 
-        <h2>The subscription problem</h2>
+        <h2>The price line</h2>
         <p>
           Look at what golfers are actually doing about app pricing. They are
           buying <strong>$150 to $300 of hardware</strong> — sensors, watches,
@@ -340,29 +340,26 @@ export default function ComparePage() {
         </p>
         <p>
           SimplyStroke sidesteps the whole argument by keeping core scoring
-          free — no ads, no hardware bundle and no upsell holding your own
-          scorecard hostage.
+          free — no ads, no hardware bundle and no subscription required to
+          keep counting.
         </p>
         <p>
-          That is not generosity, it is arithmetic:{" "}
-          <strong>counting to five is cheap to run.</strong> There are no
-          course maps to license, no analytics to crunch, no sensors to
-          manufacture. An app whose core job is just counting can afford to keep
-          that part free, without the pressure to invent a reason for you to pay
-          again next year.
+          Optional SimplyStroke Pro charges for the work around the round:
+          complete history, course playbooks, goals, crews, trips, private
+          journals and paper-card recognition. It does not change the stroke
+          button or interrupt a free round.
         </p>
 
-        <h2>Why golf apps get more complicated every year</h2>
+        <h2>How SimplyStroke keeps Pro from adding clutter</h2>
         <p>
-          A subscription app has to earn its renewal every twelve months, and
-          the easiest way to look like you have earned it is to ship features.
-          So every year the scorecard screen gets one more overlay, one more
-          upsell, one more thing to dismiss before you can write down a four.
+          Pro lives in history, planning and private memory. Those tools can be
+          useful before or after a round without adding another overlay between
+          a swing and the tap that records it.
         </p>
         <p>
-          Complexity is not a bug in that model. It is the model. And it is why
-          a free app that only counts can afford to do something none of them
-          can: stay finished.
+          That boundary matters more than a feature count. The scoring surface
+          stays small enough to feel finished, while Pro can grow around the
+          rounds a golfer chooses to revisit.
         </p>
 
         <h2>What &ldquo;simple&rdquo; costs you</h2>

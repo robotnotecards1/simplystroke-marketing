@@ -1,87 +1,77 @@
 # SimplyStroke Product Fact-Lock
 
-**Last verified:** 2026-08-10 (Tournament revised: held → keep "coming soon")
-**Purpose:** Single source of truth for product claims used in marketing copy, schema, and metadata. Update this file when the product changes; do not let page copy drift from it.
-**Sources this pass:** the mobile-app repo (`~/Documents/Claude/Projects/SimplyStroke`) — `app.json`, `package.json`, `src/lib/entitlements.ts`, `src/lib/purchases.ts`, `src/app/group/*`, `src/app/tournament/*`; the live marketing site copy; the master growth audit (2026-08-09). App Store Connect remains the ultimate authority for listing/price/IAP.
+**Last verified:** 2026-09-03
+**Purpose:** Single source of truth for website copy, metadata, schema, App Store creative, and release notes.
+**Sources:** public Apple lookup for app id `6792327238`; App Store Connect read-only review; the 1.0.4 app candidate at `a6553ee8cffce832e501289276551ec25c760910`; `docs/pro-feature-scope.md`; signed-device and simulator acceptance notes.
 
-**Status legend:** ✅ Verified in code/product · ⚠️ Needs Jared's confirmation · 🔒 Messaging rule
+This website branch is a **release preview** for 1.0.4. Do not deploy it to production before the corresponding app capabilities have passed final acceptance and the public App Store version is ready. Preview copy may describe the approved 1.0.4 product as it will appear at release; the public site must continue to describe the currently public app until cutover.
 
----
+## Platforms and public status
 
-## 1. Platforms & availability
+| Surface | Verified status |
+| --- | --- |
+| iPhone | Live on the App Store; bundle `app.simplystroke` |
+| Apple Watch | Live companion app; one-tap scoring and workout support |
+| Web app | Live at `app.simplystroke.app`; feature coverage differs from native |
+| Android | Coming soon; do not advertise as available |
+| Public App Store version | **1.0.3**, released 2026-08-16; minimum iOS 16.4; free download |
+| 1.0.4 | Prepared for submission; not submitted or public as of this verification |
 
-| Platform | Status | Evidence |
-|---|---|---|
-| **iPhone** | ✅ Live | App Store id `6792327238`; bundle `app.simplystroke` (`app.json`) |
-| **Apple Watch** | ✅ Live | Watch app target `app.simplystroke.watch` / `SimplyStrokeWatch` (`app.json` appExtensions) |
-| **Web app** | ✅ Live | `app.simplystroke.app`; Expo web `output: "static"` (`app.json`) |
-| **Android** | ✅ Coming soon (confirmed — Jared 2026-08-09) | `app.json` has a **full Android config**, but it's **not yet on Google Play**. Keep the "Android coming soon" copy. |
-| **App Store listing** | ✅ Live | id `6792327238`: **min iOS 16.4**, **Free ($0)**, **no in-app purchases**, current version **1.0.1** (released 2026-08-08). Source: iTunes lookup API. |
+## Free core
 
-🔒 Do not advertise Android as available until it's actually on the Play Store. Current site copy ("Android coming soon") is safe.
+- Unlimited iPhone and Apple Watch stroke counting, penalties, undo, haptics, and next-hole controls.
+- Solo play can start without an account and continues without course signal.
+- Course lookup and par, with the option to skip course setup.
+- Account backup and cross-device sync.
+- Standard live group hosting, joining, scorecards, and existing basic sharing.
+- Free history shows the latest 10 fully completed post-cutover rounds plus protected older cards. Older rounds are retained; starting another round never blocks scoring.
+- No ads today.
 
-## 2. Price & monetization
+Use **“Core scoring is free”** or **“Free to download, with optional Pro.”** Do not say “no subscription,” “no upsells,” “everything is free,” or “no in-app purchases.”
 
-> **Jared's directive (2026-08-09): monetization stays OFF / on the back burner.** No paywall, price, Pro tier, or tips — in the app or on the marketing site — for now. The app is free today; keep every claim consistent with that. Revisit the durable-wording caution below only if/when monetization is actually planned.
+## SimplyStroke Pro in 1.0.4
 
-- **Today: free.** No working purchase backend exists. `src/lib/purchases.ts`: *"No purchase backend exists yet (RevenueCat …)"*; `openPaywall()` is a stub; `TODO(iap)` / `TODO(paywall)`.
-- **Planned:** a **"Pro" paid tier** (`src/lib/entitlements.ts` — *"the single source of truth for the future paid tier"*, `useIsPro()`) and **one-time tips** (`BeerDonationPrompt.tsx`, `TIP_PRODUCTS`). Watch sync (`useWatchSync.ts`) and tournament creation (`tournament/create.tsx`) already reference `useIsPro` — likely future Pro-gated.
+Approved U.S. pricing is **$2.99/month** or **$19.99/year** for the same benefits, with annual selected by default in the app. Apple’s purchase sheet controls the actual local price, billing period, renewal, and storefront availability. There is no web checkout.
 
-🔒 **Messaging rules (from the audit — important):**
-- Say **"Core scorekeeping is free"** — NOT a permanent "no subscription" or "no in-app purchases" promise. Those become false the moment tips/Pro ship.
-- The live site currently says "free / no subscription" and `lib/site.ts` comments "no in-app purchases." **Soften these** to the durable "core is free" framing (Batch 2 copy work).
-- ⚠️ **Do not publish any price.** The `$19.99/year` figure in the research docs is a hypothesis, not approved pricing. No paywall/checkout on the marketing site.
+Verified candidate capabilities:
 
-## 3. Accounts & sign-in
+- complete round history;
+- calendar-season, month, and all-time summaries with separate 9-hole and 18-hole comparisons;
+- personal goals, records, and visual season recaps;
+- course playbooks, optional pre-round briefings, course challenges, and a clearly labeled best-ever composite scorecard;
+- saved crews, comparable shared history, and multi-round golf trips with cumulative gross results;
+- private round notes and photos;
+- on-device Apple Vision paper-scorecard recognition with mandatory human review before save;
+- optional Apple Watch club selection and system-Dictation text attached to the latest recorded stroke from the user-opened More menu; recording a stroke never opens the details flow automatically.
 
-- The app has **full auth**: Apple Sign-In (`expo-apple-authentication`) + Google Sign-In (`@react-native-google-signin`) + Supabase (`AuthForm.tsx`, `auth/reset-password.tsx`, `AccountSection.tsx`, profile tab).
-- Local/solo play uses on-device storage (`react-native-mmkv`).
-- ✅ **Confirmed (Jared 2026-08-09): a solo round finishes with no sign-in.** Group rounds, tournaments, and cross-device sync require an account. Use **"No account needed to start"** (not a blanket "no account").
+One Pro organizer can use the Pro crew/trip organization tools while invited friends play the standard group round for free.
 
-## 4. Offline behavior
+If Pro lapses, scoring continues and data is retained. Private notes, photos, and shot details remain available for read/delete behavior defined by the app; they are not placed in standard scorecard shares, visual recaps, group scoreboards, emails, or leaderboards.
 
-- Solo scoring is local-first (`react-native-mmkv`) → works offline. ✅
-- Group rounds and tournaments use **Supabase realtime** (`useGroupRealtime.ts`, group load tests) → **require connectivity**.
-- ⚠️ The site says "works fully offline." Accurate for **solo** scoring; **not** for live group/tournament features. Recommended phrasing: **"Your solo round works offline"** rather than a blanket "fully offline."
+## Accuracy and privacy boundaries
 
-## 5. Features & availability
+- Paper recognition is a **draft**. Say “scan, review, and save,” never “perfect scan,” “automatic import,” or “guaranteed accuracy.”
+- Recognition runs on the iPhone. The source photo stays in temporary device cache and is deleted after save or cancel; approved scorecard data may sync.
+- Watch notes use Apple system Dictation and save returned text. SimplyStroke does not store raw voice recordings.
+- Course playbooks summarize recorded total strokes. They do not infer swing faults, putting, club advice, or tee-adjusted ability.
+- The best-ever course card is a composite of lowest recorded hole scores, not a played round or handicap score.
+- Course challenges and records use eligible completed rounds and comparable course/hole identity.
+- Location may help find nearby golf courses. “No GPS” means no yardage/rangefinder or shot-map product, not that the app never requests location.
 
-| Feature | Status | Evidence |
-|---|---|---|
-| One-tap solo scoring | ✅ Live | core product |
-| Apple Watch scoring | ✅ Live | watch target exists; *watch sync* may become Pro-gated (`useWatchSync.ts` → `useIsPro`) |
-| **Group scoring** (host/join/live foursome, group chat, live leaderboard) | ✅ **Live** — a real differentiator | `src/app/group/host|join|lobby|live.tsx`, `GroupChat.tsx`, `GroupScorecardTable.tsx` |
-| **Tournament** (create/join/board/spectator/manage) | ⏸️ Built in the app, but **HELD** — market as "coming soon" (Jared, 2026-08-10) | `src/app/tournament/*`, `TournamentLeaderboard.tsx`. Code exists, but Jared is holding the public launch — **keep the "coming soon" copy; do NOT flip to live.** |
+## Accounts, offline behavior, and wording
 
-🔒 **Group scoring** is live — market it confidently (audit Pillar 3). **Tournament** exists in the app but is **on hold** (Jared, 2026-08-10) — keep it "coming soon"; do not market it as available.
+- Say **“No account needed to start a solo round.”** Sync, Pro verification, private cloud content, and some connected features require an account.
+- Say **“Solo scoring works offline.”** Live group play, cloud sync, billing verification, and uploads need connectivity.
+- “Apple Watch scoring” is free. Do not make core Watch reliability sound like a paid benefit.
+- “Private by default” applies to round journals and shot details; sharing remains an explicit user action.
 
-## 6. The "no GPS" positioning (handle carefully)
+## Deliberately deferred
 
-- The app **does request location** — `expo-location` with the prompt *"SimplyStroke uses your location to find golf courses near you,"* plus Android `ACCESS_FINE/COARSE_LOCATION`.
-- So "no GPS" is a **positioning claim** (no yardages, no rangefinder, no shot-tracking maps), **not** "never uses location."
-- 🔒 Frame as **"no GPS clutter / no yardages to fiddle with"**, not "SimplyStroke never uses your location." Otherwise the App Store's location prompt contradicts the copy.
+- GPS yardages and GPS shot tracking: V3 roadmap.
+- Swing analysis and sensor-based club analysis: not in 1.0.4.
+- GHIN or official handicap integration: back burner because authorized access is not a free public API.
+- Do not advertise handicap posting, an official index, GPS distances, swing diagnosis, raw voice recording, betting/settlement, or a public social feed.
 
-## 7. Live-site claims to reconcile (feed into Batch 2 copy)
+## Release cutover rule
 
-These current claims are fragile against the facts above — soften during the copy pass:
-1. "No subscription" / "no in-app purchases" → **"Core scorekeeping is free."**
-2. "No account needed" → **"No account needed to start."**
-3. "Works fully offline" → **"Your solo round works offline."**
-4. "No GPS" (if phrased absolutely) → **"No GPS clutter / no yardages."**
-5. FAQ answers repeat "Android is coming soon to Google Play" — ✅ confirmed correct; keep.
-6. **Tournament stays "coming soon"** — Jared is holding the launch (2026-08-10). Current "coming soon" copy is correct; no change needed.
-
-## 8. Confirmations — RESOLVED (Jared, 2026-08-09)
-
-1. **Android** — ✅ still "coming soon" (not on Google Play). Keep current copy.
-2. **Tournament** — Jared decided (2026-08-10) to **hold** the launch; keep marketing it "coming soon" even though the app code exists. No copy change.
-3. **Solo, no account** — ✅ yes, a solo round finishes with no sign-in.
-4. **Free/Pro line** — ✅ monetization on the back burner; everything free for now (§2).
-5. **App Store listing** — ✅ min iOS **16.4**, **Free ($0)**, **no in-app purchases**, version **1.0.1** (2026-08-08). Source: iTunes lookup API.
-6. **Price** — nothing public until approved. (No action.)
-
-**All product-fact blockers for Batch 2 copy are now cleared.**
-
----
-
-*Maintainer note: when any ⚠️ resolves or the product ships Pro/tips/Android, update the relevant section and the "Last verified" date, then grep the site for the affected claim.*
+The `/pro/` page, 1.0.4 feature copy, Pro pricing, and 1.0.4 App Store screenshots are prepared in preview only. Publish the website and upload creative only after the exact final candidate passes physical-device acceptance and Jared gives final approval. If a feature misses 1.0.4, remove its claim and screenshot before release rather than describing planned work as available.

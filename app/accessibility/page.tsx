@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 };
 
 const UPDATED = "July 31, 2026";
-const CONTACT = "hello@simplystroke.app";
+const CONTACT = "support@simplystroke.app";
 
 export default function AccessibilityPage() {
   return (

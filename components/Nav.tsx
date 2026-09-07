@@ -10,11 +10,11 @@ export default function Nav() {
       <div className="container ss-nav-inner">
         <Link href="/" aria-label="SimplyStroke home">
           <Image
-            src="/images/logo-color.png"
+            src="/images/logo-color.webp"
             alt="SimplyStroke"
             className="ss-logo"
-            width={560}
-            height={162}
+            width={280}
+            height={81}
           />
         </Link>
         <div className="ss-nav-right">
@@ -22,6 +22,7 @@ export default function Nav() {
             <Link href="/#how-it-works">How it works</Link>
             <Link href="/#apple-watch">Apple Watch</Link>
             <Link href="/#play-together">Play together</Link>
+            <Link href="/pro/">Pro</Link>
             <Link href="/guides/">Guides</Link>
             <TrackedCta
               event="web_app_click"
@@ -52,6 +53,7 @@ export default function Nav() {
               <Link href="/#how-it-works">How it works</Link>
               <Link href="/#apple-watch">Apple Watch</Link>
               <Link href="/#play-together">Play together</Link>
+              <Link href="/pro/">SimplyStroke Pro</Link>
               <Link href="/guides/">Guides</Link>
               <TrackedCta
                 event="web_app_click"
