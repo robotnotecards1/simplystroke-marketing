@@ -11,14 +11,17 @@ import {
   faqNode,
   graph,
   organizationNode,
+  personNode,
   teamNode,
   websiteNode,
+  MIKE_ID,
+  type Citation,
   type Faq,
 } from "@/lib/schema";
 
 const TITLE = "Golf Scorecard Symbols and Terms Explained";
 const DESCRIPTION =
-  "What the circles and squares on a golf scorecard mean, plus a plain-English glossary of scoring terms — birdie, bogey, eagle, par, gross, net, stroke index and more.";
+  "What the circles and squares on a golf scorecard mean, plus a plain-English glossary of scoring terms: birdie, bogey, eagle, par, gross, net, stroke index, and more.";
 const PATH = "/guides/golf-scorecard-symbols-and-terms/";
 
 export const metadata: Metadata = {
@@ -34,20 +37,39 @@ const faqs: Faq[] = [
     a: "They mark your score relative to par. A circle around the number means under par — a single circle is a birdie (one under), a double circle is an eagle (two under). A square means over par — a single square is a bogey (one over), a double square is a double bogey or worse. A score written with no shape is a par. The system is a convention, not a rule, so not every card or player uses it.",
   },
   {
-    q: "What is a birdie, bogey, and eagle?",
+    q: "What is a birdie, bogey, and eagle in golf?",
     a: "They are names for your score on a hole relative to par. A birdie is one under par, an eagle is two under, and an albatross (or double eagle) is three under. Going the other way, a bogey is one over par, a double bogey is two over, and a triple bogey is three over. On a par-4 hole, a 3 is a birdie, a 4 is par, and a 5 is a bogey.",
   },
   {
     q: "What is the difference between gross score and net score?",
-    a: "Gross score is the total number of strokes you actually took. Net score is your gross score minus your course handicap, which adjusts for skill so players of different abilities can compete fairly. A gross 92 with a handicap of 20 is a net 72.",
+    a: "Gross score is the total number of strokes you actually took. Net score is your gross score minus your course handicap, which levels the field so players of different abilities can compete fairly. A gross 92 with a handicap of 20 is a net 72.",
   },
   {
     q: "What is a stroke index on a golf scorecard?",
     a: "The stroke index (also called the handicap row) ranks the 18 holes by difficulty from 1, the hardest, to 18, the easiest. It determines which holes your handicap strokes are applied to in net and match play. It is not the same as your personal handicap.",
   },
   {
-    q: "What is a hole in one called?",
+    q: "What is a hole in one called in golf?",
     a: "A hole in one — putting the ball in the hole with your first stroke — is called an ace. On a par-3 it is also a birdie in scoring terms (two under is impossible to write another way), and on the rare par-4 ace it counts as an eagle. Aces are almost always on par-3 holes.",
+  },
+  {
+    q: "What does 'par' mean on a golf scorecard?",
+    a: "Par is the number of strokes an expert golfer is expected to need on a hole, and it is printed on the scorecard for every hole. Most holes are par 3, 4, or 5. The course par is the total of all 18 holes, usually 70 to 72.",
+  },
+  {
+    q: "What are common golf scorecard abbreviations?",
+    a: "Common abbreviations on a golf scorecard include HCP or S.I. (stroke index / handicap row, ranking holes 1–18 by difficulty), OUT (front-nine total), IN (back-nine total), TOT (18-hole total), GIR (greens in regulation), and FIR (fairways in regulation). Some cards also list CR (course rating) and SR or SL (slope rating) near the tee information.",
+  },
+];
+
+const citations: Citation[] = [
+  {
+    name: "USGA — Rules of Golf: Definitions (stroke, penalty stroke)",
+    url: "https://www.usga.org/content/usga/home-page/rules-hub/rules-modernization/major-changes/definitions.html",
+  },
+  {
+    name: "R&A — Rules of Golf",
+    url: "https://www.randa.org/rules-of-golf",
   },
 ];
 
@@ -55,13 +77,16 @@ const jsonLd = graph(
   organizationNode,
   teamNode,
   websiteNode,
+  personNode,
   articleNode({
     type: "Article",
     headline: TITLE,
     description: DESCRIPTION,
     path: PATH,
     datePublished: "2026-08-11",
-    dateModified: "2026-08-11",
+    dateModified: "2026-09-07",
+    author: MIKE_ID,
+    citations,
   }),
   faqNode(faqs),
   breadcrumbNode([
@@ -89,8 +114,10 @@ const GLOSSARY = [
   ["Handicap", "A number representing how many strokes over par you typically play, used to level the field."],
   ["Stroke index", "The row ranking holes 1–18 by difficulty; sets where handicap strokes fall."],
   ["Scratch golfer", "A player with a 0 handicap — shoots roughly par."],
-  ["Bogey golfer", "A player who averages about one over par per hole (~90 on a par 72)."],
+  ["Bogey golfer", "A player who averages about one over par per hole (roughly 90 on a par 72)."],
   ["OUT / IN / TOT", "Front-nine total, back-nine total, and full 18-hole total."],
+  ["GIR (green in regulation)", "Reaching the green in the expected number of strokes minus two putts (e.g. two shots on a par 4)."],
+  ["FIR (fairway in regulation)", "Landing your tee shot in the fairway on a par 4 or par 5."],
   ["Gimme", "A short putt conceded by playing partners so you don't have to hole it (casual play only)."],
   ["Mulligan", "An informal do-over shot, not allowed under the Rules of Golf."],
   ["Up and down", "Holing out in two shots from around the green — a chip (or bunker shot) and a putt."],
@@ -134,9 +161,9 @@ export default function Post() {
           <div className="pill">Golf scoring</div>
           <h1>Golf scorecard symbols and terms</h1>
           <div className="post-meta">
-            <span>The SimplyStroke Team</span>
+            <Link href="/about/mike-anderson/">Mike Anderson</Link>
             <span>·</span>
-            <span>August 2026</span>
+            <span>September 2026</span>
             <span>·</span>
             <span>5 min read</span>
           </div>
@@ -152,7 +179,7 @@ export default function Post() {
 
       <article className="prose">
         <AnswerBlock
-          updated="August 2026"
+          updated="September 2026"
           answer={
             <>
               On a golf scorecard,{" "}
@@ -170,8 +197,8 @@ export default function Post() {
               nothing = par
             </>,
             <>
-              Names go <strong>eagle · birdie · par · bogey · double bogey</strong>{" "}
-              (−2 to +2)
+              Names go <strong>eagle, birdie, par, bogey, double bogey</strong>{" "}
+              (two under to two over)
             </>,
             <>
               An <strong>ace</strong> is a hole in one; <strong>net</strong> score
@@ -187,47 +214,55 @@ export default function Post() {
           simple once mapped. Here they are.
         </p>
 
-        <h2>The shapes: circles and squares</h2>
+        <h2>What do the symbols on a golf scorecard mean?</h2>
         <p>
           The marking system encodes your score relative to par as a shape, so a
-          card can be read at a glance. Below, each mark is shown on a{" "}
-          <strong>par-4 hole</strong>:
+          card can be read at a glance. The shapes are a convention used by most
+          scorekeepers, TV broadcasts, and scoring apps, but they are not part of
+          the{" "}
+          <a
+            href="https://www.usga.org/content/usga/home-page/rules-hub/rules-modernization/major-changes/definitions.html"
+            target="_blank"
+            rel="noopener"
+          >
+            official Rules of Golf
+          </a>
+          . Below, each mark is shown on a <strong>par-4 hole</strong>:
         </p>
 
         <div className="leg" role="group" aria-label="Golf scorecard marking legend, examples on a par 4">
           <div className="leg-item">
             <span className="mark eagle" aria-hidden="true">2</span>
             <b>Eagle</b>
-            <small>2 under · double circle</small>
+            <small>2 under par / double circle</small>
           </div>
           <div className="leg-item">
             <span className="mark birdie" aria-hidden="true">3</span>
             <b>Birdie</b>
-            <small>1 under · circle</small>
+            <small>1 under par / circle</small>
           </div>
           <div className="leg-item">
             <span className="mark par" aria-hidden="true">4</span>
             <b>Par</b>
-            <small>even · no mark</small>
+            <small>even / no mark</small>
           </div>
           <div className="leg-item">
             <span className="mark bogey" aria-hidden="true">5</span>
             <b>Bogey</b>
-            <small>1 over · square</small>
+            <small>1 over par / square</small>
           </div>
           <div className="leg-item">
             <span className="mark dbogey" aria-hidden="true">6</span>
             <b>Double bogey</b>
-            <small>2 over · double square</small>
+            <small>2 over par / double square</small>
           </div>
         </div>
         <p>
           You will see this most on TV leaderboards and on the cards of players
-          who track their game closely. It is a <em>convention</em>, not a rule —
-          plenty of golfers just write the number.
+          who track their game closely. Plenty of golfers just write the number.
         </p>
 
-        <h2>The names for every score</h2>
+        <h2>What is a birdie, bogey, and eagle?</h2>
         <p>
           Each result relative to par has a name. Examples are shown against a
           par-4 hole (except the albatross, which needs a par 5):
@@ -260,6 +295,44 @@ export default function Post() {
           eagle.
         </p>
 
+        <h2>Golf scorecard abbreviations</h2>
+        <p>
+          Beyond the shapes, scorecards use abbreviations that are obvious once
+          you know them but opaque otherwise. Here are the ones you will see on
+          a printed card, a scoring app, or a{" "}
+          <Link href="/guides/how-to-read-a-golf-scorecard/">
+            scorecard layout
+          </Link>
+          :
+        </p>
+        <ul>
+          <li>
+            <strong>HCP / S.I.</strong> (handicap / stroke index) ranks holes
+            1 to 18 by difficulty. It is not your personal handicap.
+          </li>
+          <li>
+            <strong>OUT</strong> is the front-nine total (holes 1 to 9).
+          </li>
+          <li>
+            <strong>IN</strong> is the back-nine total (holes 10 to 18).
+          </li>
+          <li>
+            <strong>TOT</strong> is your 18-hole total (OUT + IN).
+          </li>
+          <li>
+            <strong>GIR</strong> (green in regulation) means reaching the green
+            in the expected number of strokes minus two putts.
+          </li>
+          <li>
+            <strong>FIR</strong> (fairway in regulation) means landing your tee
+            shot in the fairway on a par 4 or par 5.
+          </li>
+          <li>
+            <strong>CR / SR</strong> (course rating / slope rating) measure how
+            hard the course plays. They appear near the tee information.
+          </li>
+        </ul>
+
         <h2>Scorecard terms glossary</h2>
         <p>The words that show up on the card and around the group:</p>
         <dl className="gloss">
@@ -270,22 +343,27 @@ export default function Post() {
             </div>
           ))}
         </dl>
+
+        <h2>Keep reading</h2>
         <p>
           For where these rows physically sit on the card, see{" "}
           <Link href="/guides/how-to-read-a-golf-scorecard/">
             how to read a golf scorecard
           </Link>
-          , and for the whole scoring task start to finish,{" "}
+          . For the whole scoring task start to finish,{" "}
           <Link href="/guides/how-to-keep-score-in-golf/">
             how to keep score in golf
           </Link>
-          .
+          . And if you want to know whether your number is any good,{" "}
+          <Link href="/guides/what-is-a-good-golf-score/">
+            what is a good golf score?
+          </Link>
         </p>
 
         <h2>Reading the shapes vs. keeping the score</h2>
         <p>
           Knowing the symbols helps you <em>read</em> a finished card. The harder
-          job is producing an accurate one in the first place — remembering
+          job is producing an accurate one in the first place: remembering
           whether that hole was a bogey or a double while you walk to the next
           tee. A one-tap{" "}
           <Link href="/golf-stroke-counter/">golf stroke counter</Link> handles
@@ -295,10 +373,14 @@ export default function Post() {
 
         <div className="author-box">
           <div>
-            <div className="author-box-name">The SimplyStroke Team</div>
+            <div className="author-box-name">
+              <Link href="/about/mike-anderson/">Mike Anderson</Link>
+            </div>
             <p>
-              We build SimplyStroke, a one-tap golf stroke counter and scorecard.{" "}
-              <Link href="/about/">More about why it exists</Link>.
+              Mike is a 4-handicap golfer and the voice behind SimplyStroke&apos;s
+              guides. He has played over 1,200 tracked rounds and currently plays
+              out of the Charlotte, NC area.{" "}
+              <Link href="/about/mike-anderson/">More about Mike</Link>.
             </p>
           </div>
         </div>

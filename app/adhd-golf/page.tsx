@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import AnswerBlock from "@/components/AnswerBlock";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GuideEngagement from "@/components/GuideEngagement";
+import StoreBadges from "@/components/StoreBadges";
 import TrackedCta from "@/components/TrackedCta";
 import FinalCta from "@/components/FinalCta";
 import {
@@ -10,15 +12,17 @@ import {
   BallPinIcon,
   ScorecardIcon,
 } from "@/components/icons";
-import { APP_URL, og } from "@/lib/site";
+import { APP_STORE_URL, APP_URL, og } from "@/lib/site";
 import {
   APP_ID,
+  MIKE_ID,
   appNode,
   articleNode,
   breadcrumbNode,
   faqNode,
   graph,
   organizationNode,
+  personNode,
   teamNode,
   websiteNode,
   type Citation,
@@ -77,6 +81,21 @@ const citations: Citation[] = [
     name: "ADHD Diagnosis, Treatment, and Telehealth Use in Adults, CDC MMWR (2024)",
     url: "https://www.cdc.gov/mmwr/volumes/73/wr/mm7340a1.htm",
   },
+  {
+    name: "Neurocognitive mechanisms underlying working memory encoding and retrieval in Attention-Deficit/Hyperactivity Disorder",
+    url: "https://www.nature.com/articles/s41598-020-64678-x",
+    doi: "10.1038/s41598-020-64678-x",
+  },
+  {
+    name: "Meta-analysis of the effects of physical activity on executive function in children and adolescents with attention deficit hyperactivity disorder",
+    url: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0289732",
+    doi: "10.1371/journal.pone.0289732",
+  },
+  {
+    name: "Single Exercise for Core Symptoms and Executive Functions in ADHD: A Systematic Review and Meta-Analysis",
+    url: "https://journals.sagepub.com/doi/abs/10.1177/10870547231217321",
+    doi: "10.1177/10870547231217321",
+  },
 ];
 
 const faqs: Faq[] = [
@@ -120,6 +139,7 @@ const faqs: Faq[] = [
 
 const jsonLd = graph(
   organizationNode,
+  personNode,
   teamNode,
   websiteNode,
   appNode,
@@ -128,9 +148,10 @@ const jsonLd = graph(
     description: DESCRIPTION,
     path: PATH,
     datePublished: "2026-07-08",
-    dateModified: "2026-07-11",
+    dateModified: "2026-09-07",
     about: APP_ID,
     citations,
+    author: MIKE_ID,
   }),
   faqNode(faqs),
   breadcrumbNode([{ name: "ADHD & golf", path: PATH }])
@@ -147,10 +168,10 @@ export default function AdhdGolfPage() {
 
       <header className="page-hero with-photo">
         <div className="page-hero-inner">
+          <Breadcrumbs crumbs={[{ name: "ADHD & golf", path: PATH }]} />
           <div className="pill">The ADHD golf app · Live now</div>
           <h1>
             Golf asks you to remember one number.{" "}
-            <br />
             <span className="accent">Your brain has other plans.</span>
           </h1>
           <p className="lede">
@@ -172,11 +193,9 @@ export default function AdhdGolfPage() {
         </div>
       </header>
 
-      <Breadcrumbs crumbs={[{ name: "ADHD & golf", path: PATH }]} />
-
       <article className="prose">
         <AnswerBlock
-          updated="July 2026"
+          updated="September 2026"
           answer={
             <>
               Golfers with ADHD lose count of their strokes because golf is a{" "}
@@ -241,14 +260,28 @@ export default function AdhdGolfPage() {
         </p>
         <p>
           It is also one of the things that is measurably harder if you have
-          ADHD. Adults with ADHD show impairment on complex prospective memory
-          tasks <a href="#refs">[1]</a>. Everyday prospective memory failures
-          are common enough in ADHD to partly explain the link between ADHD
-          symptoms and procrastination <a href="#refs">[2]</a>. And when
-          researchers built a naturalistic test — a 3D environment where adults
-          carry out ordinary household chores from memory — adult ADHD showed
+          ADHD. Adults with ADHD{" "}
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3590133/" target="_blank" rel="noopener">show impairment on complex prospective memory
+          tasks</a>. Everyday prospective memory failures
+          are common enough in ADHD to{" "}
+          <a href="https://link.springer.com/article/10.1007/s12402-018-0273-x" target="_blank" rel="noopener">partly explain the link between ADHD
+          symptoms and procrastination</a>. And when
+          researchers built a naturalistic test, a 3D environment where adults
+          carry out ordinary household chores from memory, adult ADHD{" "}
+          <a href="https://www.nature.com/articles/s41598-023-36351-6" target="_blank" rel="noopener">showed
           clear deficits in exactly that kind of hold-it-while-you-do-other-things
-          behaviour <a href="#refs">[3]</a>.
+          behaviour</a>.
+        </p>
+        <p>
+          The problem goes deeper than prospective memory alone. Even the act of
+          encoding a number into working memory is compromised:{" "}
+          <a href="https://www.nature.com/articles/s41598-020-64678-x" target="_blank" rel="noopener">a study using
+          EEG</a> found that adults with ADHD allocate fewer attentional resources
+          during encoding, and fail to distinguish relevant from irrelevant
+          information during retrieval. The deficit is
+          not one of capacity — the hardware is fine — but of{" "}
+          <strong>executive attention</strong>, the part of the system that
+          decides what matters right now. On a golf course, everything competes.
         </p>
         <p>
           A golf hole is that test, outdoors, with a hawk overhead and someone
@@ -264,9 +297,9 @@ export default function AdhdGolfPage() {
           </p>
         </div>
         <p>
-          Roughly 15.5 million American adults have a current ADHD diagnosis, and
-          more than half of them were diagnosed in adulthood{" "}
-          <a href="#refs">[8]</a>. A great many golfers have spent a long time
+          Roughly{" "}
+          <a href="https://www.cdc.gov/mmwr/volumes/73/wr/mm7340a1.htm" target="_blank" rel="noopener">15.5 million American adults have a current ADHD diagnosis</a>, and
+          more than half of them were diagnosed in adulthood. A great many golfers have spent a long time
           blaming their character for something that has a research literature.
         </p>
 
@@ -277,22 +310,34 @@ export default function AdhdGolfPage() {
         </p>
         <p>
           <strong>What the evidence supports:</strong> physical activity,
-          exercise and sport improve executive function in people with ADHD. A
-          systematic review of young people with ADHD found that even a single
-          twenty-minute bout of activity improves executive function{" "}
-          <a href="#refs">[4]</a>. A systematic review of adults with diagnosed
-          ADHD found that across ten studies, nine reported improved inhibitory
+          exercise and sport improve executive function in people with ADHD. A{" "}
+          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8774533/" target="_blank" rel="noopener">systematic review of young people with ADHD</a> found that even a single
+          twenty-minute bout of activity improves executive function.{" "}
+          <a href="https://www.mdpi.com/2673-5318/6/4/120" target="_blank" rel="noopener">A systematic review of adults with diagnosed
+          ADHD</a> found that across ten studies, nine reported improved inhibitory
           control, six improved selective attention, and three improved
-          cognitive flexibility <a href="#refs">[5]</a>. That is a reasonably
+          cognitive flexibility. That is a reasonably
           consistent picture.
         </p>
         <p>
-          <strong>What the evidence says about golf specifically:</strong> a 2024
-          study in <em>Frontiers in Psychology</em> put 63 university students
-          into three groups — golf, football, and a sedentary control — and
+          A{" "}
+          <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0289732" target="_blank" rel="noopener">2023 meta-analysis of 24 studies</a> (914 participants) confirmed it
+          across three core executive functions: inhibitory control, working
+          memory and cognitive flexibility all improved with physical activity
+          interventions. And{" "}
+          <a href="https://journals.sagepub.com/doi/abs/10.1177/10870547231217321" target="_blank" rel="noopener">a separate meta-analysis</a>{" "}
+          found that even a single exercise session, one round, one walk, one
+          swim, yields measurable improvements in core ADHD symptoms and
+          executive function. You do not need a
+          sixteen-week programme.
+        </p>
+        <p>
+          <strong>What the evidence says about golf specifically:</strong> a 2024{" "}
+          <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1457449/full" target="_blank" rel="noopener">study in <em>Frontiers in Psychology</em></a> put 63 university students
+          into three groups, golf, football, and a sedentary control, and
           trained the first two for sixteen weeks. The golf group significantly
           improved inhibitory control (p = 0.02). The football group did not. The
-          control group did not <a href="#refs">[6]</a>. That was a surprise,
+          control group did not. That was a surprise,
           because golf is a <em>closed-skill</em> sport, and closed-skill sports
           were assumed to be worse for executive function than open-skill ones.
           The assumption did not hold.
@@ -370,6 +415,16 @@ export default function AdhdGolfPage() {
           None of this is treatment. It is just what works when the thing going
           wrong is a golf course, not a brain.
         </p>
+        <figure className="prose-app-shot">
+          <Image
+            src="/images/app-screens/round.png"
+            alt="SimplyStroke active round: one giant golf ball button showing the current stroke count"
+            width={270}
+            height={540}
+            sizes="(max-width: 640px) 80vw, 260px"
+          />
+          <StoreBadges ctaLocation="adhd_prose_appstore" />
+        </figure>
         <ul>
           <li>
             <strong>Count out loud, on the swing, not after it.</strong>{" "}
@@ -393,9 +448,9 @@ export default function AdhdGolfPage() {
           <li>
             <strong>Look at the ball for longer than feels necessary.</strong>{" "}
             This one has real evidence behind it. &ldquo;Quiet eye&rdquo; — a
-            prolonged, stable gaze on the ball before the stroke — improves
-            putting under pressure and lowers state anxiety{" "}
-            <a href="#refs">[7]</a>. It is concrete, trainable, and has nothing
+            prolonged, stable gaze on the ball before the stroke,{" "}
+            <a href="https://www.nature.com/articles/s41598-024-55716-z" target="_blank" rel="noopener">improves
+            putting under pressure and lowers state anxiety</a>. It is concrete, trainable, and has nothing
             to do with our app.
           </li>
           <li>
@@ -444,12 +499,22 @@ export default function AdhdGolfPage() {
           That is the design brief SimplyStroke was built to. The whole screen is
           one golf ball. Swing, tap, forget, move on.
         </p>
+        <div className="clear-float" />
       </article>
 
       <section className="section alt-section">
         <div className="section-narrow">
           <div className="eyebrow">The fix</div>
           <h2 className="h2-display">One tap. The app remembers.</h2>
+          <figure className="prose-app-shot prose-app-shot--left">
+            <Image
+              src="/images/app-screens/scorecard.png"
+              alt="SimplyStroke scorecard: completed round with totals, vs-par and color-coded holes"
+              width={270}
+              height={540}
+              sizes="(max-width: 640px) 80vw, 260px"
+            />
+          </figure>
           <p className="section-lede">
             SimplyStroke turns your whole phone screen into a golf ball. Swing,
             tap, done. The app holds your stroke count, your running total and
@@ -485,6 +550,7 @@ export default function AdhdGolfPage() {
               </span>
             </div>
           </div>
+          <div className="clear-float" />
           <Link
             href="/features/"
             className="btn btn-fold"
@@ -530,32 +596,23 @@ export default function AdhdGolfPage() {
           </li>
         </ul>
 
-        <div className="refs" id="refs">
-          <h2>References</h2>
-          <ol>
-            {citations.map(({ name, url }) => (
-              <li key={url}>
-                <a href={url} target="_blank" rel="noopener">
-                  {name}
-                </a>
-              </li>
-            ))}
-          </ol>
-          <p style={{ fontSize: 14, marginTop: 20 }}>
-            SimplyStroke is not a medical product and makes no therapeutic
-            claims. Nothing on this page is medical advice. If you think you may
-            have ADHD, the person to talk to is a clinician, not a golf app.
-          </p>
-        </div>
-
+        <p style={{ fontSize: 14, marginTop: 40, opacity: 0.7 }}>
+          SimplyStroke is not a medical product and makes no therapeutic
+          claims. Nothing on this page is medical advice. If you think you may
+          have ADHD, the person to talk to is a clinician, not a golf app.
+        </p>
 
         <div className="author-box">
           <div>
-            <div className="author-box-name">The SimplyStroke Team</div>
+            <div className="author-box-name">
+              <Link href="/about/mike-anderson/">Mike Anderson</Link>
+            </div>
+            <div className="author-box-role">Editor, SimplyStroke</div>
             <p>
-              We built SimplyStroke after one too many rounds spent
-              reconstructing our own scores on the walk to the next tee.{" "}
-              <Link href="/about/">More about why it exists</Link>.
+              Mike covers golf scoring, the Rules of Golf, and the intersection
+              of ADHD and sport. He fact-checks every clinical claim on this
+              site against the research it cites.{" "}
+              <Link href="/about/mike-anderson/">More about Mike</Link>.
             </p>
           </div>
         </div>

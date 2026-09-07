@@ -9,14 +9,17 @@ import TrackedCta from "@/components/TrackedCta";
 import { og, APP_STORE_URL, APP_URL } from "@/lib/site";
 import {
   APP_ID,
+  MIKE_ID,
   appNode,
   articleNode,
   breadcrumbNode,
   faqNode,
   graph,
   organizationNode,
+  personNode,
   teamNode,
   websiteNode,
+  type Citation,
   type Faq,
 } from "@/lib/schema";
 
@@ -39,6 +42,17 @@ export const metadata: Metadata = {
   openGraph: og(TITLE, DESCRIPTION, PATH),
 };
 
+const citations: Citation[] = [
+  {
+    name: "Complex Prospective Memory in Adults with Attention Deficit Hyperactivity Disorder",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3590133/",
+  },
+  {
+    name: "USGA Rules of Golf: Definitions — Stroke",
+    url: "https://www.usga.org/content/usga/home-page/rules-hub/rules-modernization/major-changes/definitions.html",
+  },
+];
+
 const faqs: Faq[] = [
   {
     q: "What counts as a stroke?",
@@ -60,10 +74,23 @@ const faqs: Faq[] = [
     q: "What is the difference between a stroke counter and a GPS or shot tracker?",
     a: "A shot tracker analyzes your golf; a stroke counter only counts it. Shot trackers such as Arccos and Shot Scope use club sensors and GPS to work out which club you hit and how far it went. A stroke counter has no opinion about your golf — it just makes sure the number is right when you reach the green.",
   },
+  {
+    q: "Is a golf shot counter the same as a stroke counter?",
+    a: "Yes. \"Golf shot counter,\" \"golf score counter,\" and \"golf stroke counter\" all describe the same thing: something that records how many swings you have taken. \"Stroke\" is the official USGA term, but most golfers search for whichever phrase feels natural. SimplyStroke works whichever name you found it under.",
+  },
+  {
+    q: "Are golf stroke counter beads worth it?",
+    a: "Bead counters and clicker rings are cheap and need no battery, which is a real advantage. The trade-off is that they count the hole but do not total the card — you still have to transfer numbers to paper and add them up yourself. If you want a finished scorecard at the end of the round without the mental math, an app does that part for you.",
+  },
+  {
+    q: "What is a golf clicker?",
+    a: "A golf clicker is a small mechanical counter you press after each stroke. Some clip to a bag, some wrap around a finger. They solve the mid-hole count problem the same way an app does — one click per swing — but they do not produce a scorecard, track par, or undo a miscount. SimplyStroke adds all three for free.",
+  },
 ];
 
 const jsonLd = graph(
   organizationNode,
+  personNode,
   teamNode,
   websiteNode,
   appNode,
@@ -72,8 +99,10 @@ const jsonLd = graph(
     description: DESCRIPTION,
     path: PATH,
     datePublished: "2026-07-11",
-    dateModified: "2026-08-09",
+    dateModified: "2026-09-07",
     about: APP_ID,
+    citations,
+    author: MIKE_ID,
   }),
   faqNode(faqs),
   breadcrumbNode([{ name: "Golf stroke counters", path: PATH }])
@@ -152,7 +181,7 @@ export default function GolfStrokeCounterPage() {
       <Breadcrumbs crumbs={[{ name: "Golf stroke counters", path: PATH }]} />
 
       {/* ---------- Three-step demonstration ---------- */}
-      <section className="section">
+      <section className="section" style={{ paddingTop: "clamp(28px, 3vw, 40px)", paddingBottom: "clamp(16px, 2vw, 24px)" }}>
         <div className="section-inner">
           <span className="eyebrow">How it works</span>
           <h2 className="h2-display" style={{ margin: "8px 0 28px" }}>
@@ -187,7 +216,7 @@ export default function GolfStrokeCounterPage() {
                   height={540}
                   loading="lazy"
                   sizes="(max-width: 640px) 90vw, 300px"
-                  style={{ width: "100%", height: "auto", borderRadius: 22, display: "block" }}
+                  style={{ width: "100%", height: "auto", borderRadius: 22, display: "block", maxWidth: 220, marginInline: "auto" }}
                 />
                 <figcaption>
                   <span className="demo-step-cap">
@@ -201,14 +230,15 @@ export default function GolfStrokeCounterPage() {
         </div>
       </section>
 
-      <article className="prose">
+      <article className="prose" style={{ paddingTop: "clamp(28px, 3vw, 40px)" }}>
         <AnswerBlock
-          updated="August 2026"
+          updated="September 2026"
           answer={
             <>
-              A golf stroke counter is an app or device whose only job is to
-              record how many shots you have taken, without GPS, handicaps or
-              analytics. Unlike shot-tracking platforms such as Arccos or Shot
+              A <strong>golf stroke counter</strong> (also called a golf shot
+              counter or golf score counter) is an app or device whose only job
+              is to record how many shots you have taken, without GPS, handicaps
+              or analytics. Unlike shot-tracking platforms such as Arccos or Shot
               Scope, a stroke counter does not try to improve your golf. It just
               makes sure the number is right.{" "}
               <strong>
@@ -230,8 +260,8 @@ export default function GolfStrokeCounterPage() {
             </>,
             <>
               Core stroke counting should not require a premium GPS
-              subscription — SimplyStroke lets you count and complete a solo
-              round for free
+              subscription &mdash; SimplyStroke lets you count and complete a
+              solo round for free
             </>,
           ]}
         />
@@ -248,12 +278,26 @@ export default function GolfStrokeCounterPage() {
           one-tap counter exists to make it stop.
         </p>
 
-        <h2>Stroke counter vs. shot tracker</h2>
+        <h2>What is a golf stroke counter?</h2>
         <p>
-          A stroke counter records how many shots you have taken. That is the
-          whole definition, and the definition is the point, because{" "}
+          Under the{" "}
+          <a href="https://www.usga.org/content/usga/home-page/rules-hub/rules-modernization/major-changes/definitions.html" target="_blank" rel="noopener">
+            USGA Rules of Golf
+          </a>
+          , a stroke is any forward motion of the club made with the intent to
+          hit the ball. Whiffs count. Penalty strokes count. A stroke counter
+          records each one as it happens so you do not have to hold the number
+          in your head.
+        </p>
+        <p>
+          If you searched for &ldquo;golf shot counter&rdquo; or
+          &ldquo;golf score counter,&rdquo; you are looking for the same thing.
+          The terms are interchangeable. &ldquo;Stroke&rdquo; is the Rules word;
+          &ldquo;shot&rdquo; is what most people say on the course.
+        </p>
+        <p>
           <strong>
-            almost every app that claims to &ldquo;track your strokes&rdquo; is
+            Almost every app that claims to &ldquo;track your strokes&rdquo; is
             doing something else entirely.
           </strong>
         </p>
@@ -279,7 +323,7 @@ export default function GolfStrokeCounterPage() {
       </article>
 
       {/* ---------- Clarify physical vs digital intent ---------- */}
-      <section className="section">
+      <section className="section" style={{ paddingTop: "clamp(28px, 3vw, 40px)", paddingBottom: "clamp(24px, 3vw, 36px)" }}>
         <div className="section-inner">
           <span className="eyebrow">Clicker vs. app</span>
           <h2 className="h2-display" style={{ margin: "8px 0 6px" }}>
@@ -287,7 +331,7 @@ export default function GolfStrokeCounterPage() {
           </h2>
           <div className="cmp-wrap" style={{ marginTop: 24 }}>
             <table className="cmp">
-              <caption>How the three methods compare. As of August 2026.</caption>
+              <caption>How the three methods compare. As of September 2026.</caption>
               <thead>
                 <tr>
                   <th scope="col">Method</th>
@@ -335,7 +379,7 @@ export default function GolfStrokeCounterPage() {
         </div>
       </section>
 
-      <article className="prose">
+      <article className="prose" style={{ paddingTop: "clamp(28px, 3vw, 40px)" }}>
         <p>
           Read that table honestly and the pencil is not embarrassed by it. A
           pencil is free, needs no charging and is accepted at every course on
@@ -351,7 +395,32 @@ export default function GolfStrokeCounterPage() {
           happens to careful, attentive people every weekend.
         </p>
 
-        <h2>What separates a good stroke counter from a bad one</h2>
+        <h2>Golf clicker, bead counter, or stroke counter app?</h2>
+        <p>
+          Golf clickers, bead counters and stroke-counter bracelets have been
+          around for decades. A mechanical clicker clips to your bag or wraps
+          around a finger; a bead counter is a string of beads you slide after
+          each swing. Both solve the mid-hole problem the same way an app does:
+          one physical action per stroke, so the number is never just in your
+          head.
+        </p>
+        <p>
+          The advantage is obvious: no battery, no screen, no technology to
+          learn. If all you need is a running count for the current hole and you
+          are happy transferring that number to paper at the green, a clicker or
+          bead counter does that job for a few dollars.
+        </p>
+        <p>
+          Where they fall short is everything after the count. A clicker does not
+          total the card, does not track par, does not give you a finished
+          scorecard you can review after the round, and cannot undo a misclick
+          except by carefully counting backwards. A stroke counter app adds all
+          of that without adding any extra taps during the hole. SimplyStroke
+          records the stroke in one tap on your Apple Watch, totals the round as
+          you go, and hands you a complete scorecard when you finish.
+        </p>
+
+        <h2>Best golf stroke counter: what to look for</h2>
         <p>
           There are a handful of one-tap counters in the app stores. Most were
           built in a weekend and abandoned. Here is the short list that predicts
@@ -412,9 +481,10 @@ export default function GolfStrokeCounterPage() {
           Some golfers lose the count occasionally. Some lose it every single
           hole and have spent years being told to concentrate harder. That is not
           carelessness — holding a running number across a ten-minute hole while
-          planning shots, walking and looking for a ball is a prospective-memory
-          task, and prospective memory is measurably harder if you have ADHD. We
-          wrote about that, with the research, here:{" "}
+          planning shots, walking and looking for a ball is a{" "}
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3590133/" target="_blank" rel="noopener">prospective-memory
+          task</a>, and prospective memory is measurably harder if you have ADHD.
+          We wrote about that, with the research, here:{" "}
           <Link href="/adhd-golf/">ADHD and golf: why the count vanishes</Link>.
         </p>
 
@@ -428,13 +498,46 @@ export default function GolfStrokeCounterPage() {
           ))}
         </div>
 
+        <h2>Keep reading</h2>
+        <ul>
+          <li>
+            <Link href="/guides/how-to-keep-score-in-golf/">
+              How to keep score in golf: the complete beginner guide
+            </Link>
+          </li>
+          <li>
+            <Link href="/guides/how-to-read-a-golf-scorecard/">
+              How to read a golf scorecard
+            </Link>
+          </li>
+          <li>
+            <Link href="/guides/golf-scorecard-symbols-and-terms/">
+              Golf scorecard symbols and terms explained
+            </Link>
+          </li>
+          <li>
+            <Link href="/guides/lost-count-of-strokes-what-to-do/">
+              Lost count of strokes: what to do
+            </Link>
+          </li>
+          <li>
+            <Link href="/compare/">
+              How SimplyStroke compares to the big golf apps
+            </Link>
+          </li>
+        </ul>
+
         <div className="author-box">
           <div>
-            <div className="author-box-name">The SimplyStroke Team</div>
+            <div className="author-box-name">
+              <Link href="/about/mike-anderson/">Mike Anderson</Link>
+            </div>
+            <div className="author-box-role">Editor, SimplyStroke</div>
             <p>
-              We built SimplyStroke after one too many rounds spent reconstructing
-              our own scores on the walk to the next tee.{" "}
-              <Link href="/about/">More about why it exists</Link>.
+              Mike covers golf scoring, the Rules of Golf, and the intersection
+              of ADHD and sport. He fact-checks every clinical claim on this
+              site against the research it cites.{" "}
+              <Link href="/about/mike-anderson/">More about Mike</Link>.
             </p>
           </div>
         </div>
@@ -456,7 +559,7 @@ export default function GolfStrokeCounterPage() {
           <h2 className="h2-display" style={{ color: "#fff" }}>
             Know the number before you reach the green.
           </h2>
-          <p className="section-lede" style={{ color: "rgba(255,255,255,0.9)", marginTop: 12 }}>
+          <p className="section-lede" style={{ color: "rgba(255,255,255,0.9)", marginTop: 12, marginInline: "auto" }}>
             Free on the App Store for iPhone and Apple Watch. No account to start.
             Android coming soon.
           </p>

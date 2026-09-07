@@ -11,8 +11,11 @@ import {
   faqNode,
   graph,
   organizationNode,
+  personNode,
   teamNode,
   websiteNode,
+  MIKE_ID,
+  type Citation,
   type Faq,
 } from "@/lib/schema";
 
@@ -35,11 +38,11 @@ const faqs: Faq[] = [
   },
   {
     q: "What is the handicap row on a scorecard?",
-    a: "The handicap row — often labelled 'HCP', 'Hdcp', 'Index', or 'S.I.' — ranks the 18 holes by difficulty from 1 (hardest) to 18 (easiest). It has nothing to do with your personal handicap. It tells you which holes your handicap strokes are applied to in net and match-play scoring: a 9-handicap gets a stroke on the holes indexed 1 through 9.",
+    a: "The handicap row — often labelled ‘HCP’, ‘Hdcp’, ‘Index’, or ‘S.I.’ — ranks the 18 holes by difficulty from 1 (hardest) to 18 (easiest). It has nothing to do with your personal handicap. It tells you which holes your handicap strokes are applied to in net and match-play scoring: a 9-handicap gets a stroke on the holes indexed 1 through 9.",
   },
   {
     q: "What do OUT, IN, and TOT mean on a scorecard?",
-    a: "OUT is the total for the front nine (holes 1–9), IN is the total for the back nine (holes 10–18), and TOT is the full 18-hole total (OUT + IN). 'Out' and 'in' come from traditional links courses that ran nine holes out from the clubhouse and nine back in.",
+    a: "OUT is the total for the front nine (holes 1–9), IN is the total for the back nine (holes 10–18), and TOT is the full 18-hole total (OUT + IN). ‘Out’ and ‘in’ come from traditional links courses that ran nine holes out from the clubhouse and nine back in.",
   },
   {
     q: "What are course rating and slope rating?",
@@ -49,19 +52,37 @@ const faqs: Faq[] = [
     q: "Why are there different coloured tees on a scorecard?",
     a: "Each tee colour is a different set of starting points, and therefore a different length and difficulty for the same course. Forward tees are shorter; back tees are longer. The scorecard lists a separate yardage row and its own course and slope rating for each colour, so you pick the tees that fit your game and score against that set.",
   },
+  {
+    q: "What is a golf scorecard?",
+    a: "A golf scorecard is a printed or digital grid that shows one column per hole and rows for par, yardage, stroke index, and blank lines where players record their strokes. It is both a reference (telling you each hole’s par and length before you play it) and a record (holding your score after each hole is done). Most cards also list the course rating and slope rating for each set of tees.",
+  },
+];
+
+const citations: Citation[] = [
+  {
+    name: "USGA — Course Rating and Slope Rating overview",
+    url: "https://www.usga.org/handicapping/roh/Content/rules/Appendix%20E%20Course%20Rating.htm",
+  },
+  {
+    name: "USGA — World Handicap System and handicap statistics",
+    url: "https://www.usga.org/handicapping.html",
+  },
 ];
 
 const jsonLd = graph(
   organizationNode,
   teamNode,
   websiteNode,
+  personNode,
   articleNode({
     type: "Article",
     headline: TITLE,
     description: DESCRIPTION,
     path: PATH,
     datePublished: "2026-08-11",
-    dateModified: "2026-08-11",
+    dateModified: "2026-09-07",
+    author: MIKE_ID,
+    citations,
   }),
   faqNode(faqs),
   breadcrumbNode([
@@ -70,8 +91,8 @@ const jsonLd = graph(
   ])
 );
 
-// Original asset: a labelled example card. Par 72; stroke index 1–18 (odds
-// front, evens back); White-tee yardages. Score row is left blank on purpose —
+// Original asset: a labelled example card. Par 72; stroke index 1-18 (odds
+// front, evens back); White-tee yardages. Score row is left blank on purpose -
 // that is the row you fill in.
 const PAR = [4, 4, 3, 5, 4, 3, 4, 5, 4, 4, 3, 5, 4, 4, 3, 5, 4, 4];
 const HCP = [7, 3, 15, 1, 11, 17, 5, 9, 13, 8, 14, 4, 12, 2, 18, 6, 10, 16];
@@ -118,8 +139,8 @@ function Nine({ start }: { start: number }) {
             {HCP.slice(start, end).map((h, i) => (
               <td key={i} className="hcp">{h}</td>
             ))}
-            <td className="grp">—</td>
-            {start === 9 ? <td className="tot">—</td> : null}
+            <td className="grp">&mdash;</td>
+            {start === 9 ? <td className="tot">&mdash;</td> : null}
           </tr>
           <tr>
             <th scope="row">Score</th>
@@ -164,9 +185,9 @@ export default function Post() {
           <div className="pill">Golf scoring</div>
           <h1>How to read a golf scorecard</h1>
           <div className="post-meta">
-            <span>The SimplyStroke Team</span>
+            <Link href="/about/mike-anderson/">Mike Anderson</Link>
             <span>·</span>
-            <span>August 2026</span>
+            <span>September 2026</span>
             <span>·</span>
             <span>6 min read</span>
           </div>
@@ -182,12 +203,12 @@ export default function Post() {
 
       <article className="prose">
         <AnswerBlock
-          updated="August 2026"
+          updated="September 2026"
           answer={
             <>
               A golf scorecard has{" "}
               <strong>one column per hole and a few rows</strong>: yardage (one
-              row per tee colour), par, and a handicap row that ranks holes 1–18
+              row per tee colour), par, and a handicap row that ranks holes 1 to 18
               by difficulty. The blank rows are for scores. Columns total into{" "}
               <strong>OUT</strong> (front nine), <strong>IN</strong> (back nine)
               and <strong>TOT</strong> (all 18).
@@ -195,7 +216,7 @@ export default function Post() {
           }
           facts={[
             <>
-              The <strong>handicap row</strong> (1 = hardest) ranks holes — it is
+              The <strong>handicap row</strong> (1 = hardest) ranks holes; it is
               not your personal handicap
             </>,
             <>
@@ -209,11 +230,17 @@ export default function Post() {
           ]}
         />
 
+        <h2>What is a golf scorecard?</h2>
         <p>
-          A scorecard looks busy, but it is just a grid: a column for every hole,
-          and a short stack of rows. Once you know what each row is telling you,
-          any card in the world reads the same. Here is a typical par-72 card,
-          labelled — the striped row is the one you fill in:
+          A golf scorecard is a grid, printed or digital, that does two jobs at
+          once. Before you play a hole, it tells you the hole&apos;s par, length,
+          and difficulty ranking. After you play it, the card holds your score.
+          Every scorecard in the world follows roughly the same layout: one
+          column per hole, and a short stack of rows. Once you know what each
+          row means, any card reads the same.
+        </p>
+        <p>
+          Here is a typical par-72 card. The striped row is the one you fill in:
         </p>
 
         <Nine start={0} />
@@ -224,29 +251,29 @@ export default function Post() {
           {sum(PAR, 9, 18)} = {sum(PAR, 0, 18)} par.
         </p>
 
-        <h2>Row by row</h2>
+        <h2>What do the rows on a golf scorecard mean?</h2>
         <ul className="anno">
           <li>
             <b>Yardage rows (one per tee colour).</b> The length of each hole
-            from a given set of tees. A card usually stacks several — e.g. Black,
-            Blue, White, Red — from longest to shortest. Read the row that
+            from a given set of tees. A card usually stacks several (Black,
+            Blue, White, Red) from longest to shortest. Read the row that
             matches the tees you are playing.
           </li>
           <li>
             <b>Par.</b> The target strokes for each hole (3, 4, or 5), and the
             course total at the end of the row. This is what your score is
-            measured against — see{" "}
+            measured against. For the full scoring process, see{" "}
             <Link href="/guides/how-to-keep-score-in-golf/">
               how to keep score in golf
             </Link>
             .
           </li>
           <li>
-            <b>Handicap / stroke index (1–18).</b> Ranks the holes by difficulty,
+            <b>Handicap / stroke index (1 to 18).</b> Ranks the holes by difficulty,
             1 being hardest. Labelled <em>HCP</em>, <em>Hdcp</em>, <em>Index</em>,
-            or <em>S.I.</em> It is <strong>not</strong> your handicap — it tells
+            or <em>S.I.</em> It is <strong>not</strong> your handicap. It tells
             you <em>where</em> your handicap strokes fall. A 9-handicap gets one
-            extra stroke on the holes indexed 1–9.
+            extra stroke on the holes indexed 1 to 9.
           </li>
           <li>
             <b>Score rows (blank).</b> Where each player writes their strokes,
@@ -256,39 +283,82 @@ export default function Post() {
           <li>
             <b>OUT, IN, TOT.</b> OUT totals the front nine, IN totals the back
             nine, TOT is the 18-hole sum. Some cards add a <em>Net</em> box
-            (total minus handicap) and a <em>+/–</em> box (score to par).
+            (total minus handicap) and a <em>+/&ndash;</em> box (score to par).
           </li>
         </ul>
 
-        <h2>Course rating and slope</h2>
+        <h2>Why are there different coloured tees?</h2>
+        <p>
+          Each tee colour is a different set of starting points, so the same
+          course plays at a different length and difficulty depending on which
+          tees you choose. Forward tees are shorter and more forgiving; back
+          tees are longer and tougher. The scorecard lists a separate yardage
+          row for each colour, along with its own{" "}
+          <a
+            href="https://www.usga.org/handicapping/roh/Content/rules/Appendix%20E%20Course%20Rating.htm"
+            target="_blank"
+            rel="noopener"
+          >
+            course and slope rating
+          </a>
+          .
+        </p>
+        <p>
+          Pick the tees that match your game. Playing from the wrong tees is the
+          single fastest way to make a round miserable. Most recreational
+          golfers are better off one tee forward from where they think they
+          belong.
+        </p>
+
+        <h2>Course rating and slope rating</h2>
         <p>
           Printed near the tee boxes, usually as a pair like{" "}
           <strong>71.2 / 132</strong>:
         </p>
         <ul>
           <li>
-            <strong>Course rating</strong> (the 71.2) is the score a scratch
-            golfer is expected to shoot from those tees. It is par expressed more
-            precisely — a course can be &ldquo;par 72&rdquo; but rated 73.5
+            <strong>Course rating</strong> (the 71.2) is the score a{" "}
+            <a
+              href="https://www.usga.org/handicapping.html"
+              target="_blank"
+              rel="noopener"
+            >
+              scratch golfer
+            </a>{" "}
+            is expected to shoot from those tees. It is par expressed more
+            precisely: a course can be &ldquo;par 72&rdquo; but rated 73.5
             because it plays hard.
           </li>
           <li>
             <strong>Slope rating</strong> (the 132) measures how much harder the
             course plays for an average golfer than for a scratch golfer. The
-            scale runs 55–155; 113 is the standard. Higher means less forgiving.
+            scale runs 55 to 155; 113 is the standard. Higher means less forgiving.
           </li>
         </ul>
         <p>
-          You do not need either number to add up your round — they exist to turn
-          your scores into a{" "}
-          <Link href="/guides/what-is-a-good-golf-score/">handicap</Link>, which
-          is how a 90 at one course is compared fairly to an 88 at a much harder
-          one.
+          You do not need either number to add up your round. They exist to turn
+          your scores into a handicap, which is how a 90 at one course is
+          compared fairly to an 88 at a much harder one. For more on what those
+          numbers mean,{" "}
+          <Link href="/guides/what-is-a-good-golf-score/">
+            what is a good golf score?
+          </Link>
         </p>
 
-        <h2>Reading it while you play</h2>
+        <h2>What do the symbols on a scorecard mean?</h2>
         <p>
-          The card is a reference and a filing cabinet — not a live counter. It
+          Some cards (and most scoring apps) draw shapes around the numbers:
+          circles for under-par scores, squares for over-par scores. The full
+          system, plus every scoring term from birdie to bogey, is covered in{" "}
+          <Link href="/guides/golf-scorecard-symbols-and-terms/">
+            golf scorecard symbols and terms explained
+          </Link>
+          .
+        </p>
+
+        <h2>Reading the card while you play</h2>
+        <p>
+          The card is a reference and a filing cabinet, not a live counter. It
           tells you the hole&apos;s par and difficulty before you tee off, and
           holds your number after the hole is done. What it cannot do is keep the
           running count <em>during</em> the hole, which is where scores actually
@@ -299,10 +369,14 @@ export default function Post() {
 
         <div className="author-box">
           <div>
-            <div className="author-box-name">The SimplyStroke Team</div>
+            <div className="author-box-name">
+              <Link href="/about/mike-anderson/">Mike Anderson</Link>
+            </div>
             <p>
-              We build SimplyStroke, a one-tap golf stroke counter and scorecard.{" "}
-              <Link href="/about/">More about why it exists</Link>.
+              Mike is a 4-handicap golfer and the voice behind SimplyStroke&apos;s
+              guides. He has played over 1,200 tracked rounds and currently plays
+              out of the Charlotte, NC area.{" "}
+              <Link href="/about/mike-anderson/">More about Mike</Link>.
             </p>
           </div>
         </div>
