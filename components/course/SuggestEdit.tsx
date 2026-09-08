@@ -16,7 +16,7 @@ const ENDPOINT =
 // `||` (not `??`) so an empty or unset env value still falls back to the real
 // key, rather than shipping a blank sitekey that renders no widget.
 const SITE_KEY =
-  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAAD5-aqL7sQBr8NYV";
+  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAAEtGVKhjzySduqn-";
 
 // Account-level analytics marker so Cloudflare can attribute this integration.
 const TURNSTILE_ACTION = "turnstile-spin-v2";
