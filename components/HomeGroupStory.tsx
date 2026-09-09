@@ -2,16 +2,16 @@ import styles from "@/app/home.module.css";
 
 const steps = [
   {
-    title: "Start with friends",
-    copy: "Choose With Friends when you start the round.",
+    title: "Open a group round",
+    copy: "Choose With Friends when you begin.",
   },
   {
-    title: "Share one code",
-    copy: "Send one link or six-character code to the group.",
+    title: "Send one simple code",
+    copy: "Send the link or code to the group.",
   },
   {
-    title: "Everyone taps",
-    copy: "Each golfer counts their shots. The live card does the group math.",
+    title: "Every golfer taps",
+    copy: "Each player records their own strokes.",
   },
 ] as const;
 
@@ -39,7 +39,7 @@ function CodeIllustration() {
   return (
     <div className={`${styles.groupDiagram} ${styles.groupCodeDiagram}`} aria-hidden="true">
       <span className={styles.groupDiagramLabel}>Join code</span>
-      <strong className={styles.groupDemoCode}>DEMO24</strong>
+      <strong className={styles.groupDemoCode}>GOLF24</strong>
       <div className={styles.groupShareLine}>
         <span>Copy link</span>
         <b>Shared</b>
