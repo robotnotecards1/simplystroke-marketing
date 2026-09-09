@@ -54,10 +54,10 @@
 .eyebrow,
 .heroEyebrow {
   color: var(--green-mid);
-  font-size: 14px;
+  font-size: 1.5625rem;
   font-weight: 800;
-  letter-spacing: 0.14em;
-  line-height: 1.35;
+  letter-spacing: 0.11em;
+  line-height: 1.2;
   text-transform: uppercase;
 }
 
@@ -90,9 +90,9 @@
 
 .proPreviewLayout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(380px, .9fr);
+  grid-template-columns: minmax(0, .9fr) minmax(430px, 1.1fr);
   align-items: center;
-  gap: clamp(50px, 8vw, 110px);
+  gap: clamp(44px, 7vw, 92px);
 }
 
 .proPreviewCopy .eyebrow { color: var(--lime-text); }
@@ -100,39 +100,218 @@
 .proPreviewCopy h2 span { display: block; }
 .proPreviewCopy h2 span:last-child { color: var(--lime); }
 .proPreviewCopy .lede { max-width: 650px; margin-top: 24px; color: rgba(255,255,255,.76); }
-.proPreviewPromises { max-width: 650px; margin-top: 28px; display: grid; gap: 14px; list-style: none; }
-.proPreviewPromises li { position: relative; padding-left: 28px; color: rgba(255,255,255,.73); font-size: 15px; line-height: 1.55; }
-.proPreviewPromises li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--lime); font-weight: 900; }
 .proPreviewLink { min-height: 48px; margin-top: 28px; display: inline-flex; align-items: center; color: var(--lime-text); font-size: 17px; font-weight: 850; text-decoration: underline; text-underline-offset: 5px; }
 
-.proPreviewBoard {
+.proPreviewScreens {
   position: relative;
-  padding: clamp(26px, 4vw, 40px);
-  border: 1px solid rgba(255,255,255,.21);
-  background: linear-gradient(145deg, #fdfdf8, #edf5dd);
-  color: var(--green-deep);
-  box-shadow: 0 34px 70px rgba(0,0,0,.28);
-  transform: rotate(1.25deg);
+  min-height: 640px;
+  isolation: isolate;
 }
 
-.proPreviewBoard::before { content: ""; position: absolute; inset: 12px; border: 1px solid rgba(27,67,50,.1); pointer-events: none; }
-.proPreviewBoardTop { display: flex; justify-content: space-between; gap: 20px; color: var(--green-mid); font-size: 11px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
-.proPreviewBoardTop strong { color: var(--green-deep); }
-.proPreviewStat { margin-top: 48px; display: flex; align-items: end; justify-content: space-between; border-bottom: 3px solid var(--lime); }
-.proPreviewStat span { padding-bottom: 16px; color: var(--gray-body); font-size: 13px; font-weight: 750; text-transform: uppercase; }
-.proPreviewStat strong { color: var(--lime); font-family: var(--font-display); font-size: 110px; font-weight: 400; line-height: .76; }
-.proPreviewTiles { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(27,67,50,.15); }
-.proPreviewTiles div { padding: 18px 12px; display: flex; flex-direction: column; background: rgba(255,255,255,.64); }
-.proPreviewTiles span { color: var(--gray-body); font-size: 9px; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
-.proPreviewTiles strong { margin-top: 8px; font-family: var(--font-display); font-size: 39px; font-weight: 400; }
-.proPreviewNote { margin-top: 28px; padding: 20px; display: flex; flex-direction: column; border-left: 4px solid var(--lime); background: rgba(45,106,79,.08); }
-.proPreviewNote span { color: var(--gray-body); font-size: 9px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
-.proPreviewNote strong { margin-top: 8px; font-size: 15px; }
-.proPreviewNote small { margin-top: 8px; color: var(--green-mid); font-size: 11px; font-weight: 750; }
+.proPreviewScreens::before {
+  content: "";
+  position: absolute;
+  inset: 10% 2% 8% 12%;
+  z-index: -1;
+  border: 1px solid rgba(150, 196, 30, 0.25);
+  background: rgba(150, 196, 30, 0.05);
+  transform: rotate(-2deg);
+}
+
+.proScreen {
+  position: absolute;
+  width: min(54%, 310px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  background: #f7f8f4;
+  box-shadow: 0 30px 64px rgba(0, 0, 0, 0.34);
+  color: var(--green-deep);
+}
+
+.proScreenPrimary {
+  left: 2%;
+  top: 54px;
+  z-index: 2;
+  transform: rotate(-2.5deg);
+}
+
+.proScreenSecondary {
+  right: 0;
+  top: 0;
+  z-index: 1;
+  transform: rotate(2.25deg);
+}
+
+.proScreenViewport {
+  height: 510px;
+  overflow: hidden;
+  background: #f4f5f1;
+}
+
+.proScreenViewport img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.proScreenPrimary .proScreenViewport img {
+  transform: translateY(-8%);
+}
+
+.proScreenSecondary .proScreenViewport img {
+  transform: translateY(-3%);
+}
+
+.proScreen figcaption {
+  min-height: 78px;
+  padding: 15px 18px 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 1px solid rgba(27, 67, 50, 0.14);
+}
+
+.proScreen figcaption span {
+  color: var(--green-mid);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.proScreen figcaption strong {
+  margin-top: 4px;
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.proFeatureIndex {
+  margin-top: clamp(62px, 8vw, 98px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.proFeatureIndex article {
+  padding: clamp(30px, 4vw, 48px);
+}
+
+.proFeatureIndex article:nth-child(even) {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.proFeatureIndex article:nth-child(n + 3) {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.proFeatureMeta {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.proFeatureMeta span {
+  color: var(--lime);
+  font-family: var(--font-display);
+  font-size: 32px;
+  line-height: 1;
+}
+
+.proFeatureMeta small {
+  color: var(--lime-text);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.proFeatureIndex h3 {
+  max-width: 15ch;
+  margin-top: 18px;
+  color: #fff;
+  font-size: clamp(34px, 3.8vw, 48px);
+}
+
+.proFeatureIndex p {
+  max-width: 58ch;
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.proHistoryPromise {
+  margin-top: clamp(44px, 6vw, 70px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 0.9fr) minmax(260px, 1.2fr);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.proHistoryPromise > * {
+  min-width: 0;
+  padding: 24px 26px;
+}
+
+.proHistoryPromise > * + * {
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.proHistoryPromise div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.proHistoryPromise span {
+  color: var(--lime-text);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.proHistoryPromise strong {
+  color: #fff;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.proHistoryPromise p {
+  align-self: center;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 15px;
+  line-height: 1.55;
+}
 
 @media (max-width: 860px) {
   .proPreviewLayout { grid-template-columns: 1fr; }
-  .proPreviewBoard { width: min(100%, 560px); margin-inline: auto; transform: none; }
+  .proPreviewScreens { width: min(100%, 620px); min-height: 650px; margin: 14px auto 0; }
+  .proScreen { width: min(54%, 310px); }
+  .proFeatureIndex { margin-top: 52px; }
+  .proHistoryPromise { grid-template-columns: 1fr 1fr; }
+  .proHistoryPromise > p { grid-column: 1 / -1; border-top: 1px solid rgba(255, 255, 255, 0.18); border-left: 0; }
+}
+
+@media (max-width: 640px) {
+  .proPreviewScreens { min-height: 540px; }
+  .proScreen { width: 62%; }
+  .proScreenPrimary { top: 54px; }
+  .proScreenViewport { height: 410px; }
+  .proScreen figcaption { min-height: 70px; padding: 13px 14px 15px; }
+  .proScreen figcaption strong { font-size: 21px; }
+  .proFeatureIndex { grid-template-columns: 1fr; }
+  .proFeatureIndex article:nth-child(even) { border-left: 0; }
+  .proFeatureIndex article + article { border-top: 1px solid rgba(255, 255, 255, 0.2); }
+  .proFeatureIndex h3 { max-width: 18ch; }
+  .proHistoryPromise { grid-template-columns: 1fr; }
+  .proHistoryPromise > * + * { border-top: 1px solid rgba(255, 255, 255, 0.18); border-left: 0; }
+  .proHistoryPromise > p { grid-column: auto; }
 }
 
 .textLink {

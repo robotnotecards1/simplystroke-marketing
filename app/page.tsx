@@ -10,6 +10,8 @@ import HomeMotionGate from "@/components/HomeMotionGate";
 import HomeReviews from "@/components/HomeReviews";
 import PrimaryCta from "@/components/PrimaryCta";
 import TrackedCta from "@/components/TrackedCta";
+import ocrReviewScreen from "@/assets/app-store/1.0.4/raw/ocr-fixture.png";
+import shotDetailsScreen from "@/assets/app-store/1.0.4/raw/shot-details.png";
 import { getAppStoreData, type Review } from "@/lib/appStore";
 import { appNode, faqNode, graph, organizationNode, websiteNode } from "@/lib/schema";
 import { APP_STORE_URL, APP_URL, og } from "@/lib/site";
@@ -68,6 +70,33 @@ const faqs: HomeFaqItem[] = [
     a: "Solo scoring works offline. Live group scoring needs a connection so every golfer sees the same card.",
   },
 ];
+
+const proFeatureGroups = [
+  {
+    number: "01",
+    label: "Shot details + private journal",
+    title: "Remember the shot, not just the number.",
+    body: "After a stroke, add the club and a private note from your iPhone or Apple Watch. Dictate on the Watch, or add notes and photos after the round. Private details never appear on shared scorecards.",
+  },
+  {
+    number: "02",
+    label: "Paper scorecard scanning",
+    title: "Take a photo. Check the numbers. Keep the round.",
+    body: "Photograph a paper scorecard on your iPhone. SimplyStroke reads the card on the device, highlights anything uncertain, and lets you review every score and par before saving it.",
+  },
+  {
+    number: "03",
+    label: "History + progress",
+    title: "See what your rounds add up to.",
+    body: "Open your complete history, follow separate 9-hole and 18-hole trends, set goals, see personal records, and share a season recap. Every course builds its own playbook from your past rounds.",
+  },
+  {
+    number: "04",
+    label: "Crews + trips",
+    title: "Keep the regular group together.",
+    body: "Save the people you play with, revisit group results and head-to-head records, and connect several rounds into one golf-trip scoreboard. One Pro organizer can bring the crew. Friends keep playing free.",
+  },
+] as const;
 
 const approvedReviews: Review[] = [
   {
@@ -354,45 +383,76 @@ export default async function Home() {
       </section>
 
       <section className={`${styles.section} ${styles.proPreviewSection}`} data-home-motion>
-        <div className={`${styles.wrap} ${styles.proPreviewLayout}`}>
-          <div className={styles.proPreviewCopy}>
-            <p className={styles.eyebrow}>SimplyStroke Pro</p>
-            <h2>
-              <span>Remember more</span>
-              <span>than the score.</span>
-            </h2>
-            <p className={styles.lede}>
-              Core scoring stays simple and free. Pro remembers the shots,
-              courses, people, and moments behind every completed round.
-            </p>
-            <ul className={styles.proPreviewPromises}>
-              <li>Free shows your 10 most recent completed rounds. Pro opens your complete archive; older scorecards stay safely saved.</li>
-              <li>Add private club and shot notes from iPhone or Apple Watch. Dictated notes store text only, never raw audio.</li>
-              <li>Scan a paper scorecard on iPhone, review every score and par, then save it alongside your crews, trips, course playbooks, and season stats.</li>
-            </ul>
-            <Link className={styles.proPreviewLink} href="/pro/">
-              Explore SimplyStroke Pro →
-            </Link>
+        <div className={styles.wrap}>
+          <div className={styles.proPreviewLayout}>
+            <div className={styles.proPreviewCopy}>
+              <p className={styles.eyebrow}>SimplyStroke Pro</p>
+              <h2>
+                <span>Remember more</span>
+                <span>than the score.</span>
+              </h2>
+              <p className={styles.lede}>
+                Core scoring stays simple and free. Pro remembers the shots,
+                courses, people, and moments behind every completed round.
+              </p>
+              <Link className={styles.proPreviewLink} href="/pro/">
+                Explore SimplyStroke Pro →
+              </Link>
+            </div>
+
+            <div className={styles.proPreviewScreens} aria-label="SimplyStroke Pro shown in the real iPhone app">
+              <figure className={`${styles.proScreen} ${styles.proScreenPrimary}`}>
+                <div className={styles.proScreenViewport}>
+                  <Image
+                    src={shotDetailsScreen}
+                    alt="SimplyStroke Shot Details screen with a selected club and private note"
+                    sizes="(max-width: 860px) 66vw, 310px"
+                  />
+                </div>
+                <figcaption>
+                  <span>Shot details</span>
+                  <strong>Club + private note</strong>
+                </figcaption>
+              </figure>
+              <figure className={`${styles.proScreen} ${styles.proScreenSecondary}`}>
+                <div className={styles.proScreenViewport}>
+                  <Image
+                    src={ocrReviewScreen}
+                    alt="SimplyStroke Review Scorecard screen after scanning a paper card"
+                    sizes="(max-width: 860px) 62vw, 285px"
+                  />
+                </div>
+                <figcaption>
+                  <span>Paper card scan</span>
+                  <strong>Review before saving</strong>
+                </figcaption>
+              </figure>
+            </div>
           </div>
-          <div className={styles.proPreviewBoard} aria-label="SimplyStroke Pro feature highlights">
-            <div className={styles.proPreviewBoardTop}>
-              <span>Your golf</span>
-              <strong>Season 2026</strong>
+
+          <div className={styles.proFeatureIndex}>
+            {proFeatureGroups.map((feature) => (
+              <article key={feature.number}>
+                <div className={styles.proFeatureMeta}>
+                  <span>{feature.number}</span>
+                  <small>{feature.label}</small>
+                </div>
+                <h3>{feature.title}</h3>
+                <p>{feature.body}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className={styles.proHistoryPromise}>
+            <div>
+              <span>Free</span>
+              <strong>Your 10 most recent completed rounds</strong>
             </div>
-            <div className={styles.proPreviewStat}>
-              <span>Rounds remembered</span>
-              <strong>42</strong>
+            <div>
+              <span>Pro</span>
+              <strong>Your complete scorecard archive</strong>
             </div>
-            <div className={styles.proPreviewTiles}>
-              <div><span>Best 18</span><strong>84</strong></div>
-              <div><span>Courses</span><strong>7</strong></div>
-              <div><span>Golf trips</span><strong>3</strong></div>
-            </div>
-            <div className={styles.proPreviewNote}>
-              <span>Latest note</span>
-              <strong>7 iron · pin high · smooth tempo</strong>
-              <small>Private to you</small>
-            </div>
+            <p>Older scorecards stay safely saved. They are never deleted when they leave the Free history window.</p>
           </div>
         </div>
       </section>
