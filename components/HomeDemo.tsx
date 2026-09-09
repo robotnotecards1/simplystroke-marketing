@@ -68,10 +68,11 @@ export default function HomeDemo() {
   return (
     <div ref={stageRef} className={styles.demoStage}>
       <div className={styles.demoCopy}>
-        <p className={styles.eyebrow}>Try the whole idea</p>
-        <h2>Go ahead. Count a stroke.</h2>
+        <p className={styles.eyebrow}>Live one-tap demo</p>
+        <h2>Tap the ball. See the count change.</h2>
         <p className={styles.lede}>
-          Tap the ball like you would after a shot. That&apos;s it, just tap.
+          This is the core of SimplyStroke. Tap the ball once as if you just
+          took a shot. Your score updates on both screens.
         </p>
         <div className={styles.demoStatus} aria-live="polite" aria-atomic="true">
           <span>{statusCopy(count)}</span>
@@ -98,7 +99,7 @@ export default function HomeDemo() {
             ><span className={styles.srOnly}>Undo the last stroke</span></button>
             {inView && autoGuiding ? (
               <>
-                <span className={styles.demoTryHint} aria-hidden="true">Try it now ↓</span>
+                <span className={styles.demoTryHint} aria-hidden="true">Live demo — tap the ball ↓</span>
                 <span className={`${styles.demoPointer} ${styles.demoPointerPersistent}`} aria-hidden="true">
                   <svg viewBox="0 0 144 160">
                     <path

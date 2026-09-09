@@ -17,7 +17,7 @@ import styles from "./home.module.css";
 
 const TITLE = "Free Golf Scorecard App with One-Tap Scoring | SimplyStroke";
 const DESCRIPTION =
-  "One tap per shot and SimplyStroke keeps your score, par and round. A simple golf stroke counter and scorecard with live group scoring. Free, works offline.";
+  "Tap once per shot on iPhone or Apple Watch. Keep score free, then add Pro tools for complete history, private shot details, scorecard scanning, crews, and trips.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -29,33 +29,43 @@ export const metadata: Metadata = {
 const faqs: HomeFaqItem[] = [
   {
     id: "free",
-    q: "Is SimplyStroke free?",
-    a: "Core scoring on iPhone and Apple Watch is free, and you can start a solo round without an account or credit card.",
+    q: "Is core scoring free?",
+    a: "Yes. Unlimited stroke counting on iPhone and Apple Watch stays free, including undo, penalties, finished scorecards, and standard group play.",
+  },
+  {
+    id: "pro",
+    q: "What does SimplyStroke Pro add?",
+    a: "Pro adds complete history, season stats and recaps, course playbooks, goals, private journals and shot details, paper scorecard scanning, saved crews, and multi-round trips.",
   },
   {
     id: "account",
     q: "Do I need an account?",
-    a: "Not to try a solo round. Create an account when you want your rounds connected to you across devices and future sessions.",
+    a: "Not for a solo round. Create an account when you want Pro, device sync, or to host a group round. Friends can join group rounds as guests.",
   },
   {
     id: "watch-phone",
-    q: "Does the Apple Watch work without holding my phone?",
+    q: "Can I score from my Apple Watch?",
     a: "Yes. Start the round, then score from your Watch while the paired phone stays nearby in your bag or cart.",
+  },
+  {
+    id: "privacy",
+    q: "Are shot notes and photos private?",
+    a: "Yes. Private details stay out of shared scorecards, group results, leaderboards, emails, and season recaps.",
+  },
+  {
+    id: "scorecard-scan",
+    q: "How does paper scorecard scanning work?",
+    a: "Photograph the card on iPhone, review the scores and pars SimplyStroke found, correct anything uncertain, and save only when everything looks right.",
   },
   {
     id: "group-join",
     q: "How do friends join a group round?",
-    a: "Send the link or six-character code. Friends can join as guests, count their own strokes, and follow the same live scorecard.",
+    a: "Send one link or six-character code. Each golfer records their own shots and follows the same live scorecard.",
   },
   {
     id: "offline",
-    q: "Does it work without signal?",
-    a: "Solo rounds keep working offline and sync when service returns. Live group scoring requires a connection.",
-  },
-  {
-    id: "gps-analysis",
-    q: "Does it include GPS yardages or swing analysis?",
-    a: "No. SimplyStroke deliberately focuses on stroke counting and scorecards. That simplicity is the product.",
+    q: "Does it work without a signal?",
+    a: "Solo scoring works offline. Live group scoring needs a connection so every golfer sees the same card.",
   },
 ];
 
@@ -193,9 +203,9 @@ export default async function Home() {
               <span className={styles.heroTitleBottom}>stroke counter.</span>
             </h1>
             <p className={styles.heroLede}>
-              Tap once after every shot. SimplyStroke keeps the count on your
-              iPhone or Apple Watch so you can stop doing math and keep your
-              head in the game.
+              Tap once after every shot. SimplyStroke keeps the count, does the
+              math, and builds your scorecard—so you can think about the next
+              shot, not the last one.
             </p>
           </div>
 
@@ -215,7 +225,7 @@ export default async function Home() {
               Free download
             </PrimaryCta>
             <p className={styles.reassurance}>
-              No account required to start <span aria-hidden="true">·</span> Solo rounds work offline
+              No account required <span aria-hidden="true">·</span> Core scoring stays free <span aria-hidden="true">·</span> Solo rounds work offline
             </p>
           </div>
         </div>
@@ -225,7 +235,7 @@ export default async function Home() {
         <div className={`${styles.wrap} ${styles.proofGrid}`}>
           <div><span className={styles.proofIcon}><ProofIcon type="rating" /></span><p><strong>{appRating}</strong><span>{rating ? `${rating.count} verified ratings` : "From verified golfers"}</span></p></div>
           <div><span className={styles.proofIcon}><ProofIcon type="watch" /></span><p><strong>Apple Watch built in</strong><span>Score from your wrist</span></p></div>
-          <div><span className={styles.proofIcon}><ProofIcon type="guest" /></span><p><strong>Start without an account</strong><span>Guest play is one tap away</span></p></div>
+          <div><span className={styles.proofIcon}><ProofIcon type="guest" /></span><p><strong>Start without an account</strong><span>Your first round comes first</span></p></div>
           <div><span className={styles.proofIcon}><ProofIcon type="course" /></span><p><strong>40,000+ courses ready</strong><span>Or skip the course and count</span></p></div>
         </div>
       </section>
@@ -245,18 +255,18 @@ export default async function Home() {
         <div className={`${styles.wrap} ${styles.watchLayout}`}>
           <div className={styles.watchImageSpace} aria-hidden="true" />
           <div className={styles.watchCopy}>
-            <p className={styles.eyebrow}>On your wrist</p>
+            <p className={styles.eyebrow}>Score from your wrist</p>
             <h2>Leave your phone in the bag.</h2>
             <p className={styles.lede}>
-              Tap the Watch after every shot and feel a haptic tick confirm the
-              count. The scoring screen stays ready through the round, while
-              the phone can stay nearby in your bag or cart.
+              Tap your Watch after every shot. A quick vibration tells you the
+              stroke was counted, and your round controls remain on screen until
+              you finish. Your iPhone can stay nearby in your bag or cart.
             </p>
             <ul className={styles.detailList}>
-              <li>Full-face, glove-friendly tap target.</li>
-              <li>A haptic tick confirms every logged stroke.</li>
+              <li>One large, glove-friendly tap target.</li>
+              <li>A quick vibration confirms each stroke.</li>
               <li>Undo, penalties, and next hole from the Watch.</li>
-              <li>The completed card syncs back to iPhone.</li>
+              <li>Your completed scorecard syncs back to iPhone.</li>
             </ul>
             <PrimaryCta
               event="app_store_click"
@@ -311,17 +321,17 @@ export default async function Home() {
             <div className={styles.sectionHeading}>
               <p className={styles.eyebrow}>Play together</p>
               <h2 className={styles.groupHeadline}>
-                <span>Invite your bros.</span>
-                <span className={styles.groupHeadlineLong}>Real time group scorecard.</span>
+                <span>Everyone counts.</span>
+                <span className={styles.groupHeadlineLong}>One card keeps up.</span>
               </h2>
             </div>
             <div>
               <p className={styles.lede}>
-                Start a group round, share the code, and let everyone count their
-                own shots. Every phone updates the same live scorecard, so nobody
+                Start a group round and share one code. Each golfer records their
+                own shots, and every phone follows the same live scorecard. Nobody
                 gets stuck doing the whole group&apos;s math.
               </p>
-              <p className={styles.groupTrust}>Live group scoring needs a connection. Solo scoring works offline.</p>
+              <p className={styles.groupTrust}>Friends can join as guests. Live group scoring requires a connection.</p>
             </div>
           </div>
 
@@ -348,18 +358,17 @@ export default async function Home() {
           <div className={styles.proPreviewCopy}>
             <p className={styles.eyebrow}>SimplyStroke Pro</p>
             <h2>
-              <span>Play more.</span>
-              <span>Remember more.</span>
+              <span>Remember more</span>
+              <span>than the score.</span>
             </h2>
             <p className={styles.lede}>
-              Core scoring stays free. Pro turns completed rounds into a season
-              you can revisit: full history, records, course playbooks, goals,
-              crews, trips, private journals, and paper scorecard scanning.
+              Core scoring stays simple and free. Pro remembers the shots,
+              courses, people, and moments behind every completed round.
             </p>
             <ul className={styles.proPreviewPromises}>
-              <li>Older cards are retained, even outside the Free history window.</li>
-              <li>Private notes, photos, and iPhone or Watch shot details stay out of standard sharing.</li>
-              <li>One Pro organizer can bring a crew whose friends keep playing free.</li>
+              <li>Free shows your 10 most recent completed rounds. Pro opens your complete archive; older scorecards stay safely saved.</li>
+              <li>Add private club and shot notes from iPhone or Apple Watch. Dictated notes store text only, never raw audio.</li>
+              <li>Scan a paper scorecard on iPhone, review every score and par, then save it alongside your crews, trips, course playbooks, and season stats.</li>
             </ul>
             <Link className={styles.proPreviewLink} href="/pro/">
               Explore SimplyStroke Pro →
@@ -414,9 +423,9 @@ export default async function Home() {
         <div className={`${styles.wrap} ${styles.faqLayout}`}>
           <div className={styles.faqIntro}>
             <div className={styles.sectionHeading}>
-              <p className={styles.eyebrow}>First-tee questions</p>
-              <h2 className={styles.faqHeadline}>Good questions, simple answer.</h2>
-              <p className={styles.faqIntroCopy}>Six quick answers. About the same amount of reading as a short par three.</p>
+              <p className={styles.eyebrow}>Before you tee off</p>
+              <h2 className={styles.faqHeadline}>Quick questions. Straight answers.</h2>
+              <p className={styles.faqIntroCopy}>Everything worth knowing before your first tap.</p>
             </div>
           </div>
           <HomeFaq items={faqs} />

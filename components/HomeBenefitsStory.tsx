@@ -6,16 +6,16 @@ import styles from "@/app/home.module.css";
 
 const benefits = [
   {
-    title: "Never lose the number",
-    copy: "One tap after each shot keeps the hole count in front of you—not bouncing around in your head.",
+    title: "Tap once after every shot",
+    copy: "Your current number stays large and visible, so you never have to reconstruct the hole in your head.",
   },
   {
-    title: "Fix a fat-finger fast",
-    copy: "Undo, penalties, and hole edits stay on the scoring screen. No menu hunt in the middle of a hole.",
+    title: "Fix a mistake without leaving the screen",
+    copy: "Undo a stroke, add a penalty, or correct the hole count in seconds.",
   },
   {
-    title: "Finish with the card",
-    copy: "SimplyStroke keeps the running total and hands you the completed scorecard when the round is done.",
+    title: "Get the complete scorecard",
+    copy: "SimplyStroke totals every hole and saves a clean scorecard when the round is done.",
   },
 ] as const;
 
@@ -60,13 +60,13 @@ export default function HomeBenefitsStory() {
       <div className={styles.sectionHeading}>
         <p className={styles.eyebrow}>Simple on purpose</p>
         <h2 className={styles.wrappedHeadline}>
-          <span>A scorecard,</span>
-          <span>not a cockpit.</span>
+          <span>The count, the card,</span>
+          <span>and nothing in the way.</span>
         </h2>
         <p className={styles.lede}>
-          If you want GPS yardages, green maps, club recommendations, and
-          swing analysis, there are excellent apps for that. SimplyStroke is
-          for the count and the card.
+          No yardage maps, club recommendations, swing analysis, or setup maze.
+          Just the controls you need to record the shot, correct the score, and
+          finish the round.
         </p>
         <Link href="/compare/" className={styles.textLink}>
           See how it compares to the big golf apps <span aria-hidden="true">→</span>
