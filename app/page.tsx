@@ -402,12 +402,14 @@ export default async function Home() {
 
             <div className={styles.proPreviewScreens} aria-label="SimplyStroke Pro shown in the real iPhone app">
               <figure className={`${styles.proScreen} ${styles.proScreenPrimary}`}>
-                <div className={styles.proScreenViewport}>
-                  <Image
-                    src={shotDetailsScreen}
-                    alt="SimplyStroke Shot Details screen with a selected club and private note"
-                    sizes="(max-width: 860px) 66vw, 310px"
-                  />
+                <div className={styles.proPhoneFrame}>
+                  <div className={styles.proScreenViewport}>
+                    <Image
+                      src={shotDetailsScreen}
+                      alt="SimplyStroke Shot Details screen with a selected club and private note"
+                      sizes="(max-width: 860px) 66vw, 280px"
+                    />
+                  </div>
                 </div>
                 <figcaption>
                   <span>Shot details</span>
@@ -415,12 +417,14 @@ export default async function Home() {
                 </figcaption>
               </figure>
               <figure className={`${styles.proScreen} ${styles.proScreenSecondary}`}>
-                <div className={styles.proScreenViewport}>
-                  <Image
-                    src={ocrReviewScreen}
-                    alt="SimplyStroke Review Scorecard screen after scanning a paper card"
-                    sizes="(max-width: 860px) 62vw, 285px"
-                  />
+                <div className={styles.proPhoneFrame}>
+                  <div className={styles.proScreenViewport}>
+                    <Image
+                      src={ocrReviewScreen}
+                      alt="SimplyStroke Review Scorecard screen after scanning a paper card"
+                      sizes="(max-width: 860px) 62vw, 280px"
+                    />
+                  </div>
                 </div>
                 <figcaption>
                   <span>Paper card scan</span>

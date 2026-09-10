@@ -69,7 +69,10 @@ export default function HomeDemo() {
     <div ref={stageRef} className={styles.demoStage}>
       <div className={styles.demoCopy}>
         <p className={styles.eyebrow}>Live one-tap demo</p>
-        <h2>Tap the ball. See the count change.</h2>
+        <h2 className={styles.demoHeadline}>
+          <span>Tap the ball.</span>
+          <span>See the count change.</span>
+        </h2>
         <p className={styles.lede}>
           This is the core of SimplyStroke. Tap the ball once as if you just
           took a shot. Your score updates on both screens.
