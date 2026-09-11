@@ -3,16 +3,15 @@ import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import PrimaryCta from "@/components/PrimaryCta";
 import { APP_STORE_URL, og } from "@/lib/site";
-import proScreen from "@/assets/app-store/1.0.4/raw/pro.png";
 import seasonRecapScreen from "@/assets/app-store/1.0.4/raw/season-recap.png";
 import crewsScreen from "@/assets/app-store/1.0.4/raw/crews.png";
 import tripsScreen from "@/assets/app-store/1.0.4/raw/trips.png";
 import journalScreen from "@/assets/app-store/1.0.4/raw/journal.png";
-import ocrScreen from "@/assets/app-store/1.0.4/raw/ocr-fixture.png";
 import shotDetailsScreen from "@/assets/app-store/1.0.4/raw/shot-details.png";
 import fullHistoryScreen from "@/assets/pro-features/full-history.png";
 import goalsRecordsScreen from "@/assets/pro-features/goals-records.png";
 import coursePlaybookScreen from "@/assets/pro-features/course-playbook.png";
+import ocrScanScreen from "@/assets/pro-features/ocr-scan.webp";
 import styles from "./pro.module.css";
 
 const TITLE = "SimplyStroke Pro: Remember More From Every Round";
@@ -115,8 +114,8 @@ const proFeatures: Array<{
     title: "Scan it. Check it. Keep it.",
     body: "Photograph a paper scorecard and review the recognized course, date, player, scores, and par before anything is saved. Recognition runs on the phone and the source photo stays temporary.",
     accent: "Draft first, then you approve every value",
-    image: ocrScreen,
-    alt: "SimplyStroke Review Scorecard screen showing recognized values from a photographed paper scorecard",
+    image: ocrScanScreen,
+    alt: "SimplyStroke Pro preview showing a real photographed paper scorecard and the recognized scores ready to review",
   },
   {
     number: "09",
@@ -194,14 +193,14 @@ export default function ProPage() {
               priority
             />
             <PhoneFrame
-              image={proScreen}
-              alt="SimplyStroke Pro feature and plan screen"
+              image={ocrScanScreen}
+              alt="SimplyStroke scanning a real photographed paper scorecard into recognized scores"
               className={styles.heroPhoneCenter}
               priority
             />
             <PhoneFrame
-              image={ocrScreen}
-              alt="SimplyStroke paper scorecard review screen"
+              image={shotDetailsScreen}
+              alt="SimplyStroke private shot details with club, lie, and note fields"
               className={styles.heroPhoneRight}
               priority
             />

@@ -10,8 +10,8 @@ import HomeMotionGate from "@/components/HomeMotionGate";
 import HomeReviews from "@/components/HomeReviews";
 import PrimaryCta from "@/components/PrimaryCta";
 import TrackedCta from "@/components/TrackedCta";
-import ocrReviewScreen from "@/assets/app-store/1.0.4/raw/ocr-fixture.png";
 import shotDetailsScreen from "@/assets/app-store/1.0.4/raw/shot-details.png";
+import ocrScanScreen from "@/assets/pro-features/ocr-scan.webp";
 import { getAppStoreData, type Review } from "@/lib/appStore";
 import { appNode, faqNode, graph, organizationNode, websiteNode } from "@/lib/schema";
 import { APP_STORE_URL, APP_URL, og } from "@/lib/site";
@@ -420,8 +420,8 @@ export default async function Home() {
                 <div className={styles.proPhoneFrame}>
                   <div className={styles.proScreenViewport}>
                     <Image
-                      src={ocrReviewScreen}
-                      alt="SimplyStroke Review Scorecard screen after scanning a paper card"
+                      src={ocrScanScreen}
+                      alt="SimplyStroke Pro preview showing a real photographed paper scorecard becoming recognized scores"
                       sizes="(max-width: 860px) 62vw, 280px"
                     />
                   </div>
