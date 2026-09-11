@@ -146,7 +146,6 @@
 }
 
 .comparisonArticle:global(.prose) {
-  max-width: none;
   padding-top: clamp(28px, 3vw, 40px);
   padding-bottom: 0;
 }
