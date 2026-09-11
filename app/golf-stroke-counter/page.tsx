@@ -551,9 +551,9 @@ export default function GolfStrokeCounterPage() {
         className="section"
         style={{
           background:
-            "linear-gradient(165deg, rgba(27,67,50,0.95), rgba(45,106,79,0.9)), url('/images/watch-course-bg.webp')",
+            "linear-gradient(165deg, rgba(27,67,50,0.95), rgba(45,106,79,0.9)), url('/images/photos/43342.jpg')",
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "center 62%",
           color: "var(--offwhite)",
           textAlign: "center",
         }}
