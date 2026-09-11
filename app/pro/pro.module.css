@@ -274,7 +274,16 @@
 .no { color: #c44838; }
 .comparisonNote { padding: 24px; border-top: 1px solid rgba(27,67,50,.11); color: var(--gray-body); font-size: 14px; line-height: 1.6; }
 
-.featuresSection { background: #f4efe4; }
+.featuresSection {
+  background:
+    radial-gradient(circle at 82% 8%, rgba(150, 196, 30, 0.16), transparent 28%),
+    radial-gradient(circle at 14px 14px, rgba(255, 255, 255, 0.04) 0 1px, transparent 1.5px) 0 0 / 28px 28px,
+    #123124;
+}
+
+.featuresSection .kicker { color: var(--lime-text); }
+.featuresSection .sectionIntro h2 { color: #fff; }
+.featuresSection .sectionIntro > p:last-child { color: rgba(255, 255, 255, 0.76); }
 .featureShowcases {
   max-width: var(--wrap);
   margin: 56px auto 0;
@@ -288,8 +297,9 @@
   grid-template-columns: minmax(0, 1fr) minmax(310px, .82fr);
   align-items: center;
   overflow: hidden;
-  border: 1px solid rgba(27,67,50,.14);
+  border: 1px solid rgba(255,255,255,.14);
   background: var(--offwhite);
+  box-shadow: 0 28px 70px rgba(4, 20, 12, 0.3);
 }
 
 .featureShowcaseReverse {
