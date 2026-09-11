@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import AnswerBlock from "@/components/AnswerBlock";
-import Breadcrumbs from "@/components/Breadcrumbs";
 import GuideEngagement from "@/components/GuideEngagement";
 import HomeDemo from "@/components/HomeDemo";
 import HomeHeroDevices from "@/components/HomeHeroDevices";
+import HomeMotionGate from "@/components/HomeMotionGate";
+import PrimaryCta from "@/components/PrimaryCta";
 import StoreBadges from "@/components/StoreBadges";
 import TrackedCta from "@/components/TrackedCta";
-import activeRoundScreen from "@/assets/app-store/1.0.4/raw/launch.png";
-import { og, APP_STORE_URL, APP_URL } from "@/lib/site";
+import { og, APP_STORE_URL } from "@/lib/site";
 import {
   APP_ID,
   MIKE_ID,
@@ -25,11 +25,12 @@ import {
   type Citation,
   type Faq,
 } from "@/lib/schema";
+import homeStyles from "../home.module.css";
 import styles from "./page.module.css";
 
 // CTAs are TrackedCta (components/TrackedCta.tsx — see
-// docs/handoffs/tracked-cta-events.md). Slots on this page: stroke_hero (App
-// Store + web), stroke_comparison, stroke_final, plus stroke_badge_appstore on
+// docs/handoffs/tracked-cta-events.md). Slots on this page: stroke_hero,
+// stroke_comparison, stroke_final, plus stroke_badge_appstore on
 // the StoreBadges Apple badge. guide_engaged fires via <GuideEngagement/>.
 
 // Title carries the app/category intent; the H1 carries the user outcome — so
@@ -114,7 +115,8 @@ const jsonLd = graph(
 
 export default function GolfStrokeCounterPage() {
   return (
-    <main>
+    <main className={homeStyles.home}>
+      <HomeMotionGate />
       <GuideEngagement />
       <script
         type="application/ld+json"
@@ -138,27 +140,23 @@ export default function GolfStrokeCounterPage() {
               total and your score to par, then finishes the scorecard for you —
               no GPS, no math, no losing count on the walk to the green.
             </p>
-            <div className="ss-hero-cta">
-              <TrackedCta
+            <div className={styles.heroAction}>
+              <PrimaryCta
                 event="app_store_click"
                 ctaLocation="stroke_hero"
+                tone="light"
                 href={APP_STORE_URL}
-                className="btn btn-hero"
+                className={`${homeStyles.primaryCta} ${styles.heroStoreCta}`}
+                size="large"
+                apple
+                subtitle="on the App Store"
               >
-                Download free on the App Store
-              </TrackedCta>
-              <TrackedCta
-                event="web_app_click"
-                ctaLocation="stroke_hero"
-                href={APP_URL}
-                className="btn btn-fold"
-              >
-                Try it in your browser
-              </TrackedCta>
+                Free download
+              </PrimaryCta>
+              <p className={styles.reassurance}>
+                No account required <span aria-hidden="true">·</span> Core scoring stays free <span aria-hidden="true">·</span> Solo rounds work offline
+              </p>
             </div>
-            <p className="ss-hero-p" style={{ fontSize: 15, marginTop: 18, opacity: 0.85 }}>
-              No account to start · Undo mistakes · Works without course signal
-            </p>
           </div>
           <div className={styles.heroDevices}>
             <HomeHeroDevices />
@@ -166,12 +164,10 @@ export default function GolfStrokeCounterPage() {
         </div>
       </section>
 
-      <Breadcrumbs crumbs={[{ name: "Golf stroke counters", path: PATH }]} />
-
       {/* ---------- The same real, interactive product view used on the homepage ---------- */}
-      <section className={styles.liveDemoSection}>
-        <div className={styles.liveDemoInner}>
-          <HomeDemo />
+      <section className={`${homeStyles.section} ${homeStyles.demoSection}`} data-home-motion>
+        <div className={homeStyles.wrap}>
+          <HomeDemo className={styles.compactDemo} />
           <ol className={styles.roundSteps} aria-label="A round in three steps">
             <li>
               <span>01</span>
@@ -369,33 +365,7 @@ export default function GolfStrokeCounterPage() {
         </div>
       </section>
 
-      <section className={styles.screenStory} aria-labelledby="real-screen-title">
-        <div className={styles.screenStoryInner}>
-          <div className={styles.screenStoryCopy}>
-            <span>Real app screen</span>
-            <h2 id="real-screen-title">One large target. Nothing to hunt for.</h2>
-            <p>
-              This is the scoring screen golfers actually use. The current hole,
-              count, round total, undo and next-hole control all stay visible in
-              one place.
-            </p>
-          </div>
-          <figure className={styles.realPhoneFigure}>
-            <div className={styles.realPhone}>
-              <div className={styles.realPhoneScreen}>
-                <Image
-                  src={activeRoundScreen}
-                  alt="The real SimplyStroke iPhone active-round screen showing four strokes on hole two"
-                  sizes="(max-width: 760px) 72vw, 330px"
-                />
-              </div>
-            </div>
-            <figcaption>Captured from the current SimplyStroke iPhone app.</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <article className="prose" style={{ paddingTop: "clamp(28px, 3vw, 40px)" }}>
+      <article className={`prose ${styles.comparisonArticle}`}>
         <p>
           Read that table honestly and the pencil is not embarrassed by it. A
           pencil is free, needs no charging and is accepted at every course on
@@ -491,22 +461,24 @@ export default function GolfStrokeCounterPage() {
             apps solve it, because they are all busy solving something bigger.
           </p>
         </div>
+      </article>
 
-        <figure className={styles.focusPhoto}>
-          <Image
-            src="/images/photos/66454.jpg"
-            alt="A golfer reading a putt while focusing on the next shot"
-            width={1600}
-            height={1046}
-            loading="lazy"
-            sizes="(max-width: 760px) 100vw, 1200px"
-          />
-          <figcaption>
-            <strong>Keep the number out of your head.</strong>
-            <span>Golf already gives you enough to think about.</span>
-          </figcaption>
-        </figure>
+      <figure className={styles.focusPhoto}>
+        <Image
+          src="/images/photos/66454.jpg"
+          alt="A golfer reading a putt while focusing on the next shot"
+          width={1600}
+          height={1046}
+          loading="lazy"
+          sizes="100vw"
+        />
+        <figcaption>
+          <strong>Keep the number out of your head.</strong>
+          <span>Golf already gives you enough to think about.</span>
+        </figcaption>
+      </figure>
 
+      <article className={`prose ${styles.followupArticle}`}>
         <h2>If you lose count more than most people do</h2>
         <p>
           Some golfers lose the count occasionally. Some lose it every single

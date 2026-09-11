@@ -14,7 +14,11 @@ function statusCopy(count: number): string {
   return `${count} strokes. The number stays here.`;
 }
 
-export default function HomeDemo() {
+type HomeDemoProps = {
+  className?: string;
+};
+
+export default function HomeDemo({ className }: HomeDemoProps = {}) {
   const [count, setCount] = useState(0);
   const [autoGuiding, setAutoGuiding] = useState(true);
   const [inView, setInView] = useState(false);
@@ -66,7 +70,7 @@ export default function HomeDemo() {
   };
 
   return (
-    <div ref={stageRef} className={styles.demoStage}>
+    <div ref={stageRef} className={[styles.demoStage, className].filter(Boolean).join(" ")}>
       <div className={styles.demoCopy}>
         <p className={styles.eyebrow}>Live one-tap demo</p>
         <h2 className={styles.demoHeadline}>
