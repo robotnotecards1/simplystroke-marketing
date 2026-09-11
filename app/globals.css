@@ -855,11 +855,11 @@ a.btn:hover { color: var(--green-deep); filter: brightness(1.04); }
    still gets a measure, because a 150-character line is a line nobody
    finishes. Tables, answer blocks, FAQ cards and callouts take the full
    width — they're the elements that were actually being squeezed. */
-.prose > p,
 .prose > ul,
 .prose > ol,
 .prose > h2,
 .prose > h3 { max-width: 860px; }
+.prose > p { max-width: none; }
 .prose .callout,
 .prose .verdict,
 .prose .cmp-wrap,

@@ -151,10 +151,6 @@
   padding-bottom: 0;
 }
 
-.comparisonArticle:global(.prose) > p:first-child {
-  max-width: none;
-}
-
 .followupArticle:global(.prose) {
   padding-top: clamp(44px, 6vw, 72px);
 }
