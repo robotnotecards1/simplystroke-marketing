@@ -186,7 +186,8 @@
 .focusPhoto figcaption {
   position: absolute;
   z-index: 1;
-  left: clamp(24px, 5vw, 64px);
+  left: max(var(--container-pad), calc((100% - var(--content-max)) / 2));
+  right: max(var(--container-pad), calc((100% - var(--content-max)) / 2));
   bottom: clamp(28px, 5vw, 58px);
   max-width: 500px;
   color: #fff;
