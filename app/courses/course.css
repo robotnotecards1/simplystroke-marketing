@@ -16,7 +16,7 @@
 }
 .course-page .cd-proto b { color: var(--lime); }
 .course-page .section { padding: var(--cd-section-pad-y) var(--container-pad); }
-.course-page .section-inner { max-width: 1200px; margin: 0 auto; }
+.course-page .section-inner { max-width: var(--content-max); margin: 0 auto; }
 .course-page .alt-section { background: var(--cream); }
 .course-page .eyebrow {
   font-size: 15px; font-weight: 700; letter-spacing: 0.16em;
