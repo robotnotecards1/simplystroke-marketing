@@ -10,11 +10,15 @@ import styles from "@/app/home.module.css";
 function statusCopy(count: number): string {
   if (count === 0) return "Your stroke count: 0";
   if (count === 1) return "1 stroke. Zero math.";
-  if (count === 2) return "That’s pretty much the whole app—which is the point.";
+  if (count === 2) return "That’s pretty much the whole app. That’s the point.";
   return `${count} strokes. The number stays here.`;
 }
 
-export default function HomeDemo() {
+type HomeDemoProps = {
+  className?: string;
+};
+
+export default function HomeDemo({ className }: HomeDemoProps = {}) {
   const [count, setCount] = useState(0);
   const [autoGuiding, setAutoGuiding] = useState(true);
   const [inView, setInView] = useState(false);
@@ -66,7 +70,7 @@ export default function HomeDemo() {
   };
 
   return (
-    <div ref={stageRef} className={styles.demoStage}>
+    <div ref={stageRef} className={[styles.demoStage, className].filter(Boolean).join(" ")}>
       <div className={styles.demoCopy}>
         <p className={styles.eyebrow}>Live one-tap demo</p>
         <h2 className={styles.demoHeadline}>
@@ -102,7 +106,7 @@ export default function HomeDemo() {
             ><span className={styles.srOnly}>Undo the last stroke</span></button>
             {inView && autoGuiding ? (
               <>
-                <span className={styles.demoTryHint} aria-hidden="true">Live demo — tap the ball ↓</span>
+                <span className={styles.demoTryHint} aria-hidden="true">Live demo: tap the ball ↓</span>
                 <span className={`${styles.demoPointer} ${styles.demoPointerPersistent}`} aria-hidden="true">
                   <svg viewBox="0 0 144 160">
                     <path

@@ -119,8 +119,8 @@ export const appNode = {
     priceCurrency: "USD",
   },
   // `aggregateRating` is intentionally NOT hard-coded on this base node. The
-  // homepage injects a LIVE one at build time — lib/appStore.ts fetches the App
-  // Store rating and spreads it onto a copy of this node — so the value
+  // homepage injects a LIVE one at build time; lib/appStore.ts fetches the App
+  // Store rating and spreads it onto a copy of this node, so the value
   // auto-refreshes per deploy and is never stale/invented. If that fetch fails,
   // the homepage ships this node rating-less rather than showing a bad number.
   // Other pages reuse this base node as-is (rating-less). See
@@ -146,7 +146,7 @@ export function faqNode(faqs: Faq[]) {
 
 export type Crumb = { name: string; path: string };
 
-/** Pass the trail WITHOUT "Home" — it's prepended for you. */
+/** Pass the trail WITHOUT "Home"; it's prepended for you. */
 export function breadcrumbNode(crumbs: Crumb[]) {
   const items = [{ name: "Home", path: "/" }, ...crumbs];
   return {

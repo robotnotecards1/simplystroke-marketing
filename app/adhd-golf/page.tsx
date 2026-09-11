@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
 /* Sources. Every clinical claim on this page traces to one of these, and any
    claim that can't is cut. SimplyStroke is not a medical product and must
-   never read like one — see CONTENT-STRATEGY-2026-07.md §6. */
+   never read like one; see CONTENT-STRATEGY-2026-07.md §6. */
 const citations: Citation[] = [
   {
     name: "Complex Prospective Memory in Adults with Attention Deficit Hyperactivity Disorder",
@@ -279,7 +279,7 @@ export default function AdhdGolfPage() {
           EEG</a> found that adults with ADHD allocate fewer attentional resources
           during encoding, and fail to distinguish relevant from irrelevant
           information during retrieval. The deficit is
-          not one of capacity — the hardware is fine — but of{" "}
+          not one of capacity. The hardware is fine. The problem is{" "}
           <strong>executive attention</strong>, the part of the system that
           decides what matters right now. On a golf course, everything competes.
         </p>
@@ -447,7 +447,7 @@ export default function AdhdGolfPage() {
           </li>
           <li>
             <strong>Look at the ball for longer than feels necessary.</strong>{" "}
-            This one has real evidence behind it. &ldquo;Quiet eye&rdquo; — a
+            This one has real evidence behind it. &ldquo;Quiet eye,&rdquo; a
             prolonged, stable gaze on the ball before the stroke,{" "}
             <a href="https://www.nature.com/articles/s41598-024-55716-z" target="_blank" rel="noopener">improves
             putting under pressure and lowers state anxiety</a>. It is concrete, trainable, and has nothing
@@ -457,7 +457,7 @@ export default function AdhdGolfPage() {
             <strong>Say where the ball went, out loud, before you move.</strong>{" "}
             The single most-cited ADHD golf problem is losing your own ball
             after helping someone find theirs. Naming the landing spot out loud
-            — &ldquo;left of the second bunker, past the cart path&rdquo; —
+            (&ldquo;left of the second bunker, past the cart path&rdquo;)
             makes it a spoken fact instead of a mental note, and spoken facts
             survive a detour.
           </li>
@@ -577,22 +577,19 @@ export default function AdhdGolfPage() {
           <li>
             <Link href="/guides/adhd-and-golf-losing-count/">
               How to stop losing count mid-round when you have ADHD
-            </Link>{" "}
-            — the practical version: why the pencil, the clicker and the big
+            </Link>. The practical version: why the pencil, the clicker and the big
             golf apps all fail in the same place.
           </li>
           <li>
             <Link href="/guides/lost-count-of-strokes-what-to-do/">
               You lost count of your strokes. Now what?
-            </Link>{" "}
-            — what the Rules of Golf actually require, and the three fixes that
+            </Link>. What the Rules of Golf actually require, and the three fixes that
             work.
           </li>
           <li>
             <Link href="/golf-stroke-counter/">
               What a golf stroke counter is, and how to pick one
-            </Link>{" "}
-            — the category explained, if you are shopping rather than reading.
+            </Link>. The category explained, if you are shopping rather than reading.
           </li>
         </ul>
 

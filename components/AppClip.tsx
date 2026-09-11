@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Autoplaying real-app footage. React sets `muted` as a DOM property only —
+ * Autoplaying real-app footage. React sets `muted` as a DOM property only;
  * the attribute is missing when the browser judges autoplay eligibility, so
  * `<video autoPlay muted>` stays paused. This sets the attribute for real and
  * nudges play() (a no-op when the browser already started it).

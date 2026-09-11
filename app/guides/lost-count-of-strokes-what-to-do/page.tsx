@@ -127,8 +127,8 @@ export default function Post() {
               from the tee, shot by shot, and count penalty strokes separately.
               Ask your playing partners, because someone almost always watched
               your ball. If you still are not certain,{" "}
-              <strong>the Rules of Golf require you to take the higher number</strong>{" "}
-              — returning a score lower than you actually took means
+              <strong>the Rules of Golf require you to take the higher number</strong>.
+              Returning a score lower than you actually took means
               disqualification in stroke play.
             </>
           }
@@ -204,8 +204,8 @@ export default function Post() {
         </div>
         <p>
           Two things people miss when counting back:{" "}
-          <strong>whiffs count</strong> — a stroke is the forward movement of
-          the club made to strike the ball, whether or not you touched it — and{" "}
+          <strong>whiffs count</strong>. A stroke is the forward movement of
+          the club made to strike the ball, whether or not you touched it. And{" "}
           <strong>practice swings don&apos;t</strong>, because there was no
           intent to strike. If you swung at it and meant it, write it down.
         </p>

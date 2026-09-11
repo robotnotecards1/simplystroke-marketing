@@ -87,7 +87,7 @@ export default function PrivacyPage() {
         <p>
           <strong>Your solo rounds stay local if you play as a guest.</strong>{" "}
           The core stroke counter works with no account. In guest mode, the solo
-          rounds you record — course names, dates, pars, strokes, and scores —
+          rounds you record (course names, dates, pars, strokes, and scores)
           are stored <em>only on your device</em>. They are not sent to us and we
           cannot see them. Delete the app and they are gone. If you choose group
           play, the shared-round data described below is sent so the group can
@@ -107,7 +107,7 @@ export default function PrivacyPage() {
 
         <p>
           <strong>Your golf data (when signed in).</strong> The rounds you save
-          are synced to our backend so they follow you across devices — course
+          are synced to our backend so they follow you across devices, including course
           names, dates, hole counts, pars, strokes, scores, goals, records, saved
           crews, golf trips, and tournaments. If you never sign in, none of this
           leaves your device except when you choose a shared group-round feature
@@ -154,15 +154,15 @@ export default function PrivacyPage() {
           other players in that same round. Messages and reactions you choose to
           send are also stored and shown to that group. Reports and blocks are
           stored so we can enforce the community rules. Only people with the
-          join code can see the group — so share codes only with people you want
+          join code can see the group, so share codes only with people you want
           in it.
         </p>
 
         <p>
           <strong>Crews, trips, tournaments, and public leaderboards.</strong>{" "}
-          Information you add to a crew, golf trip, or tournament — such as its
+          Information you add to a crew, golf trip, or tournament, such as its
           name, location label, dates, roster display names, handicaps, teams,
-          and scores — is stored on our backend and shared with the invited
+          and scores, is stored on our backend and shared with the invited
           participants. If you separately choose to post a completed round to a
           public course leaderboard, the display name and optional home city you
           choose, course, score, and date played become public. Posting is off by
@@ -232,7 +232,7 @@ export default function PrivacyPage() {
           were on, and limited non-sensitive context. If you are signed in, the
           report includes your account user ID so we can connect repeated issues.
           These go to our database and our internal admin dashboard and are used
-          only to diagnose and fix bugs — never for advertising, and we do not
+          only to diagnose and fix bugs, never for advertising, and we do not
           sell them.
         </p>
 
@@ -258,7 +258,7 @@ export default function PrivacyPage() {
           we store the email you submit, the page that referred you, and the
           signup date. Our website also uses{" "}
           <strong>Google Analytics 4</strong> and{" "}
-          <strong>Umami</strong> (self-hosted) to measure aggregate traffic —
+          <strong>Umami</strong> (self-hosted) to measure aggregate traffic,
           things like &ldquo;400 people read this page this week.&rdquo; That
           tells us how the site is used in aggregate; it does not tell us who you
           are.
@@ -282,7 +282,7 @@ export default function PrivacyPage() {
             or websites;
           </li>
           <li>
-            does <strong>not</strong> access your location in the background — the
+            does <strong>not</strong> access your location in the background. The
             only location use is the one-time, foreground &ldquo;near me&rdquo;
             course search above;
           </li>
@@ -345,41 +345,41 @@ export default function PrivacyPage() {
         </p>
         <ul>
           <li>
-            <strong>Supabase</strong> — database, authentication, and backend
+            <strong>Supabase:</strong> database, authentication, and backend
             functions;
           </li>
           <li>
-            <strong>Vercel</strong> — website hosting;
+            <strong>Vercel:</strong> website hosting;
           </li>
           <li>
-            <strong>Google</strong> — Google Sign-In (app) and Google Analytics 4
+            <strong>Google:</strong> Google Sign-In (app) and Google Analytics 4
             (website only);
           </li>
           <li>
-            <strong>Apple</strong> — Sign in with Apple, Apple Health storage,
+            <strong>Apple:</strong> Sign in with Apple, Apple Health storage,
             and system Dictation on iPhone and Apple Watch;
           </li>
           <li>
-            <strong>Apple App Store</strong> — subscription purchase and billing;
+            <strong>Apple App Store:</strong> subscription purchase and billing;
           </li>
           <li>
-            <strong>RevenueCat</strong> — subscription and entitlement
+            <strong>RevenueCat:</strong> subscription and entitlement
             verification;
           </li>
           <li>
-            <strong>Resend</strong> — customer email delivery and delivery-event
+            <strong>Resend:</strong> customer email delivery and delivery-event
             processing;
           </li>
           <li>
-            <strong>GolfCourseAPI</strong> — course and par lookups, via our
+            <strong>GolfCourseAPI:</strong> course and par lookups, via our
             server-side proxy;
           </li>
           <li>
-            <strong>OpenStreetMap / Overpass API</strong> — nearby-course search
+            <strong>OpenStreetMap / Overpass API:</strong> nearby-course search
             from your coordinates; and
           </li>
           <li>
-            <strong>Umami</strong> — website analytics (self-hosted).
+            <strong>Umami:</strong> website analytics (self-hosted).
           </li>
         </ul>
         <p>
@@ -409,7 +409,7 @@ export default function PrivacyPage() {
         <h2>How long we keep it</h2>
         <p>
           Guest (local) data stays on your device until you delete it or uninstall
-          the app — we never receive it. Account and synced round data is kept
+          the app. We never receive it. Account and synced round data is kept
           while your account is active and is deleted when you delete your
           account, including private journal notes, photos, and shot details,
           except limited records we or our payment providers must keep by law.
@@ -426,8 +426,8 @@ export default function PrivacyPage() {
         <p>
           We encrypt data in transit (HTTPS/TLS), store your authentication
           session encrypted at rest on your device, and use access controls at
-          our backend so your data is reachable only by you and — for group rounds
-          — by the players you share a code with. No method of transmission or
+          our backend so your data is reachable only by you and, for group rounds,
+          by the players you share a code with. No method of transmission or
           storage is perfectly secure, and we cannot guarantee absolute security.
         </p>
 
@@ -486,7 +486,7 @@ export default function PrivacyPage() {
         <h2>Contact</h2>
         <p>
           Questions or privacy requests go to{" "}
-          <a href={`mailto:${CONTACT}`}>{CONTACT}</a> — Seaport Systems LLC.
+          <a href={`mailto:${CONTACT}`}>{CONTACT}</a>, Seaport Systems LLC.
         </p>
 
         <p className="post-cta">

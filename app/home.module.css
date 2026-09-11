@@ -566,9 +566,9 @@
 
 .demoStage {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(var(--demo-device-column-min, 420px), 1.1fr);
   align-items: center;
-  gap: clamp(44px, 7vw, 104px);
+  gap: var(--demo-gap, clamp(44px, 7vw, 104px));
 }
 
 .demoCopy h2,
@@ -854,11 +854,11 @@
    Transparent hit targets preserve the one-tap interaction without redrawing
    a second, inevitably drifting version of the app UI. */
 .demoDevices {
-  min-height: 720px;
+  min-height: var(--demo-device-height, 720px);
 }
 
 .demoPhone {
-  width: 326px;
+  width: var(--demo-phone-width, 326px);
   padding: 9px;
   border-radius: 47px;
 }
@@ -924,7 +924,7 @@
   right: -8px;
   top: 49%;
   z-index: 3;
-  width: 176px;
+  width: var(--demo-watch-width, 176px);
   height: auto;
   padding: 8px;
   transform: translateY(-28%);

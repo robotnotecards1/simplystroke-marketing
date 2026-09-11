@@ -43,11 +43,11 @@ const faqs: Faq[] = [
   },
   {
     q: "What counts as a stroke in golf?",
-    a: "Any forward swing made with the intention of hitting the ball counts as one stroke, whether or not you make good contact — a complete air-shot still counts. Penalty strokes (for a lost ball, out of bounds, or a water hazard) are added on top. A practice swing where you clearly did not intend to hit the ball does not count.",
+    a: "Any forward swing made with the intention of hitting the ball counts as one stroke, whether or not you make good contact. A complete air-shot still counts. Penalty strokes (for a lost ball, out of bounds, or a water hazard) are added on top. A practice swing where you clearly did not intend to hit the ball does not count.",
   },
   {
     q: "What does 'par' mean in golf?",
-    a: "Par is the number of strokes an expert golfer is expected to need on a hole, and it is printed on the scorecard for every hole. Most holes are par 3, 4, or 5. Add up the par for all 18 holes and you get the course par, which is usually 70 to 72. Your score is compared to that number — for example, 85 on a par-72 course is 13 over par.",
+    a: "Par is the number of strokes an expert golfer is expected to need on a hole, and it is printed on the scorecard for every hole. Most holes are par 3, 4, or 5. Add up the par for all 18 holes and you get the course par, which is usually 70 to 72. Your score is compared to that number. For example, 85 on a par-72 course is 13 over par.",
   },
   {
     q: "What is the difference between gross and net score?",
@@ -59,17 +59,17 @@ const faqs: Faq[] = [
   },
   {
     q: "What is stroke play vs match play?",
-    a: "In stroke play, you count every stroke over 18 holes and the lowest total wins. In match play, you play hole by hole against one opponent, and whoever takes fewer strokes wins that hole — the score is holes up or down, not a total. Most casual rounds and all professional events except the Ryder Cup use stroke play.",
+    a: "In stroke play, you count every stroke over 18 holes and the lowest total wins. In match play, you play hole by hole against one opponent, and whoever takes fewer strokes wins that hole. The score is holes up or down, not a total. Most casual rounds and all professional events except the Ryder Cup use stroke play.",
   },
 ];
 
 const citations: Citation[] = [
   {
-    name: "USGA — Rules of Golf: Definitions (stroke, penalty stroke, scoring)",
+    name: "USGA: Rules of Golf definitions (stroke, penalty stroke, scoring)",
     url: "https://www.usga.org/content/usga/home-page/rules-hub/rules-modernization/major-changes/definitions.html",
   },
   {
-    name: "R&A — Rules of Golf",
+    name: "R&A: Rules of Golf",
     url: "https://www.randa.org/rules-of-golf",
   },
 ];

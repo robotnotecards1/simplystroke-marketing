@@ -80,7 +80,7 @@ export default function AboutPage() {
 
         <h2>Free where it matters</h2>
         <p>
-          SimplyStroke&apos;s core scoring is free — no ads, no sensor bundle and
+          SimplyStroke&apos;s core scoring is free: no ads, no sensor bundle and
           no subscription required to count the round in front of you.
         </p>
         <p>
@@ -98,7 +98,7 @@ export default function AboutPage() {
             We don&apos;t add a feature just because a competitor has it. The
             whole product is the things we left out.
           </li>
-          <li>Core scorekeeping is free &mdash; counting your round costs nothing.</li>
+          <li>Core scorekeeping is free. Counting your round costs nothing.</li>
         </ul>
 
         <h2>On the ADHD thing</h2>

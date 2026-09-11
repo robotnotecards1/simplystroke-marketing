@@ -1,7 +1,7 @@
 // Build-time App Store data: the aggregate rating + 5-star written reviews.
 //
 // This is a STATIC export, so these are fetched once at `next build` and baked
-// into the HTML/JSON-LD — current as of each deploy. To keep them fresh without
+// into the HTML/JSON-LD, current as of each deploy. To keep them fresh without
 // a manual deploy, schedule a periodic rebuild (Vercel deploy hook / cron).
 //
 // Fail-safe by design: any network/parse error falls back to a committed
@@ -26,7 +26,7 @@ const FALLBACK_REVIEWS: Review[] = [
   {
     author: "Chris Devonshire",
     title: "So easy!!",
-    body: "I've tried so many live scoring golf apps, but like the name says, it's super simple. I got enough crazy thoughts in my head on the course — this app is a total value add.",
+    body: "I've tried so many live scoring golf apps, but like the name says, it's super simple. I got enough crazy thoughts in my head on the course, and this app is a total value add.",
   },
   {
     author: "DJ CobraKai",
@@ -56,10 +56,14 @@ type RssEntry = {
   content?: { label?: string };
 };
 
-// A build-time external fetch MUST be bounded — an unbounded fetch to a slow or
+// A build-time external fetch MUST be bounded; an unbounded fetch to a slow or
 // unreachable Apple endpoint would stall `next build` (and the scheduled cron
 // rebuild). 6s per request, then abort and fall back.
 const TIMEOUT_MS = 6000;
+
+function withoutEmDashes(value: string): string {
+  return value.replace(/\s*\u2014\s*/g, ", ");
+}
 
 async function fetchRating(): Promise<Rating | null> {
   try {
@@ -94,14 +98,16 @@ async function fetchFiveStarReviews(): Promise<Review[]> {
       const raw = data.feed?.entry;
       const entries = Array.isArray(raw) ? raw : raw ? [raw] : [];
       for (const e of entries) {
-        // The first entry in the feed is app info (no im:rating) — skip it.
+        // The first entry in the feed is app info (no im:rating), so skip it.
         if (!e["im:rating"]?.label) continue;
         if (Number(e["im:rating"].label) !== 5) continue; // 5-star only
-        const body = (e.content?.label ?? "").replace(/\s+/g, " ").trim();
+        const body = withoutEmDashes(
+          (e.content?.label ?? "").replace(/\s+/g, " ").trim()
+        );
         if (!body) continue;
         out.push({
           author: e.author?.name?.label ?? "App Store",
-          title: (e.title?.label ?? "").trim(),
+          title: withoutEmDashes((e.title?.label ?? "").trim()),
           body,
         });
       }

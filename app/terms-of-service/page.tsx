@@ -5,8 +5,8 @@ import { og } from "@/lib/site";
 /**
  * NEEDS LEGAL REVIEW BEFORE RELYING ON IT.
  *
- * Rewritten for the entity that operates SimplyStroke — Seaport Systems LLC
- * (North Carolina) — and verified against the codebase (free local-first
+ * Rewritten for the entity that operates SimplyStroke, Seaport Systems LLC
+ * (North Carolina), and verified against the codebase (free local-first
  * stroke counter; optional Supabase accounts via Google/Apple/email; cloud
  * sync + group rounds; expo-location + OSM Overpass + GolfCourseAPI for course
  * lookup; free core plus optional Pro subscriptions). Strong-form terms:
@@ -15,14 +15,14 @@ import { og } from "@/lib/site";
  * waiver with a 30-day opt-out, NC governing law, and Apple App Store terms.
  *
  * Not a substitute for a lawyer. Arbitration clauses, class-action waivers, and
- * liability caps have state-specific enforceability rules — have a licensed NC
+ * liability caps have state-specific enforceability rules; have a licensed NC
  * attorney confirm before launch. Court venue is left as "North Carolina";
  * pin a specific county if desired.
  */
 
 const TITLE = "Terms of Service | SimplyStroke";
 const DESCRIPTION =
-  "The terms for using SimplyStroke — the free golf stroke counter from Seaport Systems LLC. What you can expect from us, and what we expect from you.";
+  "The terms for using SimplyStroke, the free golf stroke counter from Seaport Systems LLC. What you can expect from us, and what we expect from you.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -71,7 +71,7 @@ export default function TermsPage() {
         <p>
           SimplyStroke is a golf stroke counter. You tap to count strokes, add
           penalties, and get a scorecard. The core counter is free and works
-          offline for solo rounds — no account needed to start, and no ads
+          offline for solo rounds. No account is needed to start, and there are no ads
           today. Optional extras need an account or a connection: backing rounds
           up to the cloud so they follow you across devices;{" "}
           <strong>group rounds</strong>, where a shared join code puts
@@ -96,7 +96,7 @@ export default function TermsPage() {
         <h2>3. Your account</h2>
         <p>
           You can use the stroke counter without signing in. If you create an
-          account — with email and password, Google, or Sign in with Apple — keep
+          account with email and password, Google, or Sign in with Apple, keep
           your credentials to yourself. You are responsible for activity under
           your account. Tell us at{" "}
           <a href={`mailto:${CONTACT}`}>{CONTACT}</a> if you think someone else
@@ -117,7 +117,7 @@ export default function TermsPage() {
           your scores. In guest mode they stay on your device and never reach us.
           When you use an account or a group round, you grant us a limited,
           non-exclusive, royalty-free license to host, store, process, transmit,
-          and display your content <em>solely to run the Service for you</em> —
+          and display your content <em>solely to run the Service for you</em>,
           for example, to sync your rounds and to show a shared scorecard to the
           players in a group round. That license ends when you delete the content
           or your account, apart from routine backups or where the law requires
@@ -129,7 +129,7 @@ export default function TermsPage() {
           <Link href="/privacy/">Privacy Policy</Link>.
         </p>
 
-        <h2>6. It counts strokes — it is not an official scorer</h2>
+        <h2>6. It counts strokes, but it is not an official scorer</h2>
         <p>
           SimplyStroke records the numbers <em>you</em> enter. It does not watch
           you play, verify anything, or act as a system of record for handicaps or
@@ -138,7 +138,7 @@ export default function TermsPage() {
           Course and par data comes from third-party sources (including
           GolfCourseAPI and OpenStreetMap) and can be wrong or missing; you are
           responsible for confirming scores and course information. For anything
-          official — a tournament, a posted handicap — follow the process your
+          official, such as a tournament or a posted handicap, follow the process your
           club or association requires.
         </p>
 
@@ -147,7 +147,7 @@ export default function TermsPage() {
         <ul>
           <li>use the Service unlawfully or to help anyone else break the law;</li>
           <li>
-            access accounts, group rounds, or data that are not yours — including
+            access accounts, group rounds, or data that are not yours, including
             guessing or scraping other people&apos;s join codes;
           </li>
           <li>
@@ -229,9 +229,9 @@ export default function TermsPage() {
           managers, officers, employees, and agents (the &ldquo;Seaport
           Parties&rdquo;) will <strong>not</strong> be liable for any indirect,
           incidental, special, consequential, exemplary, or punitive damages, or
-          for lost profits, revenue, data, goodwill, or golf scores — for example
+          for lost profits, revenue, data, goodwill, or golf scores, for example
           a miscounted score, a round that did not sync, or a wrong par from a
-          course database — whether based in contract, tort (including
+          course database, whether based in contract, tort (including
           negligence), strict liability, or any other theory, even if advised of
           the possibility.
         </p>
@@ -305,8 +305,8 @@ export default function TermsPage() {
         <p>
           You can stop using the Service and delete your account any time from the
           app. We may suspend or end your access at any time, with or without
-          cause or notice, including if you break these Terms. Sections that should
-          survive termination — including 5, 6, 10, 11, 12, and 16 — survive.
+          cause or notice, including if you break these Terms. Sections 5, 6, 10,
+          11, 12, and 16 continue to apply after termination.
         </p>
 
         <h2>14. Changes to these Terms</h2>
@@ -346,7 +346,7 @@ export default function TermsPage() {
         <h2>17. Contact</h2>
         <p>
           Questions about these Terms go to{" "}
-          <a href={`mailto:${CONTACT}`}>{CONTACT}</a> — Seaport Systems LLC.
+          <a href={`mailto:${CONTACT}`}>{CONTACT}</a>, Seaport Systems LLC.
         </p>
 
         <p className="post-cta">

@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import AnswerBlock from "@/components/AnswerBlock";
-import Breadcrumbs from "@/components/Breadcrumbs";
 import GuideEngagement from "@/components/GuideEngagement";
+import HomeDemo from "@/components/HomeDemo";
+import HomeHeroDevices from "@/components/HomeHeroDevices";
+import HomeMotionGate from "@/components/HomeMotionGate";
+import PrimaryCta from "@/components/PrimaryCta";
 import StoreBadges from "@/components/StoreBadges";
 import TrackedCta from "@/components/TrackedCta";
-import { og, APP_STORE_URL, APP_URL } from "@/lib/site";
+import { og, APP_STORE_URL } from "@/lib/site";
 import {
   APP_ID,
   MIKE_ID,
@@ -22,13 +25,15 @@ import {
   type Citation,
   type Faq,
 } from "@/lib/schema";
+import homeStyles from "../home.module.css";
+import styles from "./page.module.css";
 
-// CTAs are TrackedCta (components/TrackedCta.tsx — see
-// docs/handoffs/tracked-cta-events.md). Slots on this page: stroke_hero (App
-// Store + web), stroke_comparison, stroke_final, plus stroke_badge_appstore on
+// CTAs are TrackedCta (components/TrackedCta.tsx; see
+// docs/handoffs/tracked-cta-events.md). Slots on this page: stroke_hero,
+// stroke_comparison, stroke_final, plus stroke_badge_appstore on
 // the StoreBadges Apple badge. guide_engaged fires via <GuideEngagement/>.
 
-// Title carries the app/category intent; the H1 carries the user outcome — so
+// Title carries the app/category intent; the H1 carries the user outcome, so
 // the two are no longer identical (was flagged as a duplicate title/H1 pair).
 const TITLE = "Golf Stroke Counter App for iPhone & Apple Watch";
 const DESCRIPTION =
@@ -48,7 +53,7 @@ const citations: Citation[] = [
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3590133/",
   },
   {
-    name: "USGA Rules of Golf: Definitions — Stroke",
+    name: "USGA Rules of Golf: Stroke definition",
     url: "https://www.usga.org/content/usga/home-page/rules-hub/rules-modernization/major-changes/definitions.html",
   },
 ];
@@ -56,11 +61,11 @@ const citations: Citation[] = [
 const faqs: Faq[] = [
   {
     q: "What counts as a stroke?",
-    a: "Every time you make a swing at the ball it counts as one stroke, and so does a penalty. With SimplyStroke you tap once per swing — whiffs and penalty strokes included — and the app keeps the running total so you never have to reconstruct it on the green.",
+    a: "Every time you make a swing at the ball it counts as one stroke, and so does a penalty. With SimplyStroke you tap once per swing, including whiffs and penalty strokes, and the app keeps the running total so you never have to reconstruct it on the green.",
   },
   {
     q: "Does it work on Apple Watch?",
-    a: "Yes. SimplyStroke runs on Apple Watch as well as iPhone, so you can tap the count on your wrist without taking your phone out of your pocket. The watch is the best home for a stroke counter — it is the only screen you never have to reach for.",
+    a: "Yes. SimplyStroke runs on Apple Watch as well as iPhone, so you can tap the count on your wrist without taking your phone out of your pocket. The watch is the best home for a stroke counter because it is the only screen you never have to reach for.",
   },
   {
     q: "Does it work without signal?",
@@ -72,7 +77,7 @@ const faqs: Faq[] = [
   },
   {
     q: "What is the difference between a stroke counter and a GPS or shot tracker?",
-    a: "A shot tracker analyzes your golf; a stroke counter only counts it. Shot trackers such as Arccos and Shot Scope use club sensors and GPS to work out which club you hit and how far it went. A stroke counter has no opinion about your golf — it just makes sure the number is right when you reach the green.",
+    a: "A shot tracker analyzes your golf; a stroke counter only counts it. Shot trackers such as Arccos and Shot Scope use club sensors and GPS to work out which club you hit and how far it went. A stroke counter has no opinion about your golf. It just makes sure the number is right when you reach the green.",
   },
   {
     q: "Is a golf shot counter the same as a stroke counter?",
@@ -80,11 +85,11 @@ const faqs: Faq[] = [
   },
   {
     q: "Are golf stroke counter beads worth it?",
-    a: "Bead counters and clicker rings are cheap and need no battery, which is a real advantage. The trade-off is that they count the hole but do not total the card — you still have to transfer numbers to paper and add them up yourself. If you want a finished scorecard at the end of the round without the mental math, an app does that part for you.",
+    a: "Bead counters and clicker rings are cheap and need no battery, which is a real advantage. The trade-off is that they count the hole but do not total the card. You still have to transfer numbers to paper and add them up yourself. If you want a finished scorecard at the end of the round without the mental math, an app does that part for you.",
   },
   {
     q: "What is a golf clicker?",
-    a: "A golf clicker is a small mechanical counter you press after each stroke. Some clip to a bag, some wrap around a finger. They solve the mid-hole count problem the same way an app does — one click per swing — but they do not produce a scorecard, track par, or undo a miscount. SimplyStroke adds all three for free.",
+    a: "A golf clicker is a small mechanical counter you press after each stroke. Some clip to a bag, some wrap around a finger. They solve the mid-hole count problem the same way an app does, with one click per swing, but they do not produce a scorecard, track par, or undo a miscount. SimplyStroke adds all three for free.",
   },
 ];
 
@@ -110,7 +115,8 @@ const jsonLd = graph(
 
 export default function GolfStrokeCounterPage() {
   return (
-    <main>
+    <main className={homeStyles.home}>
+      <HomeMotionGate />
       <GuideEngagement />
       <script
         type="application/ld+json"
@@ -131,102 +137,60 @@ export default function GolfStrokeCounterPage() {
             </h1>
             <p className="ss-hero-p">
               Tap after each shot. SimplyStroke keeps the hole total, the round
-              total and your score to par, then finishes the scorecard for you —
-              no GPS, no math, no losing count on the walk to the green.
+              total and your score to par, then finishes the scorecard for you.
+              No GPS, no math, no losing count on the walk to the green.
             </p>
-            <div className="ss-hero-cta">
-              <TrackedCta
+            <div className={styles.heroAction}>
+              <PrimaryCta
                 event="app_store_click"
                 ctaLocation="stroke_hero"
+                tone="light"
                 href={APP_STORE_URL}
-                className="btn btn-hero"
+                className={`${homeStyles.primaryCta} ${styles.heroStoreCta}`}
+                size="large"
+                apple
+                subtitle="on the App Store"
               >
-                Download free on the App Store
-              </TrackedCta>
-              <TrackedCta
-                event="web_app_click"
-                ctaLocation="stroke_hero"
-                href={APP_URL}
-                className="btn btn-fold"
-              >
-                Try it in your browser
-              </TrackedCta>
+                Free download
+              </PrimaryCta>
+              <p className={styles.reassurance}>
+                No account required <span aria-hidden="true">·</span> Core scoring stays free <span aria-hidden="true">·</span> Solo rounds work offline
+              </p>
             </div>
-            <p className="ss-hero-p" style={{ fontSize: 15, marginTop: 18, opacity: 0.85 }}>
-              No account to start · Undo mistakes · Works without course signal
-            </p>
           </div>
-          <div className="ss-hero-phonewrap">
-            <Image
-              src="/images/app-screens/round.png"
-              alt="SimplyStroke active-round screen: one giant golf-ball button showing the current stroke count."
-              className="ss-hero-float"
-              width={270}
-              height={540}
-              preload
-              fetchPriority="high"
-              sizes="(max-width: 640px) 80vw, 300px"
-              style={{
-                width: 300,
-                maxWidth: "100%",
-                height: "auto",
-                borderRadius: 40,
-                boxShadow: "0 40px 80px rgba(0,0,0,0.45)",
-              }}
-            />
+          <div className={styles.heroDevices}>
+            <HomeHeroDevices />
           </div>
         </div>
       </section>
 
-      <Breadcrumbs crumbs={[{ name: "Golf stroke counters", path: PATH }]} />
-
-      {/* ---------- Three-step demonstration ---------- */}
-      <section className="section" style={{ paddingTop: "clamp(28px, 3vw, 40px)", paddingBottom: "clamp(16px, 2vw, 24px)" }}>
-        <div className="section-inner">
-          <span className="eyebrow">How it works</span>
-          <h2 className="h2-display" style={{ margin: "8px 0 28px" }}>
-            A round in three taps.
-          </h2>
-          <div className="demo-steps">
-            {[
-              {
-                img: "home.png",
-                n: "1",
-                cap: "Start a round",
-                sub: "One tap on the tee. No setup, no account.",
-              },
-              {
-                img: "round.png",
-                n: "2",
-                cap: "Tap after each shot",
-                sub: "The count goes up. Mis-tap? One undo fixes it.",
-              },
-              {
-                img: "scorecard.png",
-                n: "3",
-                cap: "Finish with a scorecard",
-                sub: "The hole, the round and your score to par — added up for you.",
-              },
-            ].map((s) => (
-              <figure className="demo-step" key={s.n}>
-                <Image
-                  src={`/images/app-screens/${s.img}`}
-                  alt={`SimplyStroke step ${s.n}: ${s.cap}.`}
-                  width={270}
-                  height={540}
-                  loading="lazy"
-                  sizes="(max-width: 640px) 90vw, 300px"
-                  style={{ width: "100%", height: "auto", borderRadius: 22, display: "block", maxWidth: 220, marginInline: "auto" }}
-                />
-                <figcaption>
-                  <span className="demo-step-cap">
-                    <b>{s.n}.</b> {s.cap}
-                  </span>
-                  <span className="demo-step-sub">{s.sub}</span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+      {/* ---------- The same real, interactive product view used on the homepage ---------- */}
+      <section className={`${homeStyles.section} ${homeStyles.demoSection}`} data-home-motion>
+        <div className={homeStyles.wrap}>
+          <HomeDemo className={styles.compactDemo} />
+          <ol className={styles.roundSteps} aria-label="A round in three steps">
+            <li>
+              <span>01</span>
+              <div>
+                <strong>Start the round</strong>
+                <p>No account or setup before your first shot.</p>
+              </div>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <strong>Tap after each shot</strong>
+                <p>Your count updates on iPhone and Apple Watch.</p>
+              </div>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <strong>Finish the scorecard</strong>
+                <p>Every hole and total is already added up.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </section>
 
@@ -260,7 +224,7 @@ export default function GolfStrokeCounterPage() {
             </>,
             <>
               Core stroke counting should not require a premium GPS
-              subscription &mdash; SimplyStroke lets you count and complete a
+              subscription. SimplyStroke lets you count and complete a
               solo round for free
             </>,
           ]}
@@ -322,8 +286,30 @@ export default function GolfStrokeCounterPage() {
         </p>
       </article>
 
+      <section className={styles.watchStory} aria-labelledby="watch-story-title">
+        <div className={styles.watchStoryImage}>
+          <Image
+            src="/images/watch-course-bg.webp"
+            alt="A golfer wearing Apple Watch with the SimplyStroke stroke counter open on the course"
+            fill
+            loading="lazy"
+            sizes="(max-width: 800px) 100vw, 62vw"
+          />
+        </div>
+        <div className={styles.watchStoryCopy}>
+          <span>Apple Watch built in</span>
+          <h2 id="watch-story-title">The count stays on your wrist.</h2>
+          <p>
+            Log the shot where the number is easiest to reach. The same round
+            stays in sync on your nearby iPhone, and solo scoring keeps working
+            when the course signal disappears.
+          </p>
+          <Link href="/#apple-watch">See Apple Watch scoring →</Link>
+        </div>
+      </section>
+
       {/* ---------- Clarify physical vs digital intent ---------- */}
-      <section className="section" style={{ paddingTop: "clamp(28px, 3vw, 40px)", paddingBottom: "clamp(24px, 3vw, 36px)" }}>
+      <section className={`${styles.comparisonSection} section`} style={{ paddingTop: "clamp(28px, 3vw, 40px)", paddingBottom: "clamp(24px, 3vw, 36px)" }}>
         <div className="section-inner">
           <span className="eyebrow">Clicker vs. app</span>
           <h2 className="h2-display" style={{ margin: "8px 0 6px" }}>
@@ -379,7 +365,7 @@ export default function GolfStrokeCounterPage() {
         </div>
       </section>
 
-      <article className="prose" style={{ paddingTop: "clamp(28px, 3vw, 40px)" }}>
+      <article className={`prose ${styles.comparisonArticle}`}>
         <p>
           Read that table honestly and the pencil is not embarrassed by it. A
           pencil is free, needs no charging and is accepted at every course on
@@ -469,18 +455,35 @@ export default function GolfStrokeCounterPage() {
             and SimplyStroke does not compete with them.
           </p>
           <p>
-            <strong>But if the only thing that keeps going wrong is the count</strong>{" "}
-            — you reach the green and genuinely do not know whether that putt is
-            for four or five — that is a different problem, and none of the big
+            <strong>But if the only thing that keeps going wrong is the count.</strong>{" "}
+            You reach the green and genuinely do not know whether that putt is
+            for four or five. That is a different problem, and none of the big
             apps solve it, because they are all busy solving something bigger.
           </p>
         </div>
+      </article>
 
+      <figure className={styles.focusPhoto}>
+        <Image
+          src="/images/photos/66454.jpg"
+          alt="A golfer reading a putt while focusing on the next shot"
+          width={1600}
+          height={1046}
+          loading="lazy"
+          sizes="100vw"
+        />
+        <figcaption>
+          <strong>Keep the number out of your head.</strong>
+          <span>Golf already gives you enough to think about.</span>
+        </figcaption>
+      </figure>
+
+      <article className={`prose ${styles.followupArticle}`}>
         <h2>If you lose count more than most people do</h2>
         <p>
           Some golfers lose the count occasionally. Some lose it every single
           hole and have spent years being told to concentrate harder. That is not
-          carelessness — holding a running number across a ten-minute hole while
+          carelessness. Holding a running number across a ten-minute hole while
           planning shots, walking and looking for a ball is a{" "}
           <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3590133/" target="_blank" rel="noopener">prospective-memory
           task</a>, and prospective memory is measurably harder if you have ADHD.
@@ -548,9 +551,9 @@ export default function GolfStrokeCounterPage() {
         className="section"
         style={{
           background:
-            "linear-gradient(165deg, rgba(27,67,50,0.95), rgba(45,106,79,0.9)), url('/images/watch-course-bg.webp')",
+            "linear-gradient(165deg, rgba(27,67,50,0.95), rgba(45,106,79,0.9)), url('/images/photos/43342.jpg')",
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "center 62%",
           color: "var(--offwhite)",
           textAlign: "center",
         }}

@@ -2,7 +2,7 @@ import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
 // One anon-key client, shared by build-time Server Components and the
 // client-side leaderboard refresh. The anon key only ever sees public-SELECT
-// tables (courses, course_stats) and the public_rounds view — never a raw
+// tables (courses, course_stats) and the public_rounds view, never a raw
 // round, an email, or the service role. Missing env is not fatal: the course
 // loaders fall back to the committed research JSON so a clean checkout still
 // builds.

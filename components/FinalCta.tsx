@@ -4,7 +4,7 @@ import { APP_STORE_URL, APP_URL } from "@/lib/site";
 /**
  * Final download CTA band, rendered near the foot of most pages. `source` tags
  * where it renders; `page_path` on each event also distinguishes that. (This is
- * the former pre-launch waitlist band, now a pure App Store / web-app CTA — the
+ * the former pre-launch waitlist band, now a pure App Store / web-app CTA; the
  * email capture is gone.)
  */
 export default function FinalCta({

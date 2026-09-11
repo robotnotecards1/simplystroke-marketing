@@ -9,7 +9,7 @@ const HOLE_OUT = 5; // strokes per demo hole before auto-advancing
  * Hero phone mockup of the Active Round screen, running a two-hole demo
  * loop: counts to 5 on hole 1, advances to hole 2 and counts again, then
  * resets. TOTAL and the vs-par banner track the holes played (hole 1 = 5
- * on a par 4 → "+1 OVER PAR" during hole 2). The ball is really tappable —
+ * on a par 4 → "+1 OVER PAR" during hole 2). The ball is really tappable;
  * a visitor's click counts a stroke and restarts the auto loop.
  */
 export default function HeroPhone() {
