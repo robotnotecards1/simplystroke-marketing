@@ -1,0 +1,325 @@
+.heroDevices {
+  flex: 0 1 460px;
+  min-width: 320px;
+  display: grid;
+  place-items: center;
+}
+
+.liveDemoSection {
+  padding: clamp(72px, 8vw, 116px) 0 clamp(58px, 7vw, 96px);
+  background:
+    radial-gradient(circle at 14% 22%, rgba(150, 196, 30, 0.18), transparent 25%),
+    radial-gradient(circle at 2px 2px, rgba(27, 67, 50, 0.12) 1.35px, transparent 1.8px) 0 0 / 22px 22px,
+    #edf3ec;
+}
+
+.liveDemoInner {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.roundSteps {
+  margin: clamp(44px, 6vw, 72px) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  border-top: 1px solid rgba(27, 67, 50, 0.18);
+}
+
+.roundSteps li {
+  min-width: 0;
+  padding: 24px clamp(16px, 2.5vw, 30px) 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 16px;
+  border-left: 1px solid rgba(27, 67, 50, 0.18);
+}
+
+.roundSteps li:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.roundSteps li > span {
+  color: var(--green-mid);
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1;
+}
+
+.roundSteps strong {
+  display: block;
+  color: var(--green-deep);
+  font-size: 17px;
+  line-height: 1.2;
+}
+
+.roundSteps p {
+  margin-top: 7px;
+  color: var(--gray-body);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.watchStory {
+  min-height: 600px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(360px, 0.85fr);
+  background: var(--green-deep);
+  color: #fff;
+}
+
+.watchStoryImage {
+  position: relative;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.watchStoryImage img {
+  object-fit: cover;
+  object-position: 42% center;
+}
+
+.watchStoryCopy {
+  padding: clamp(64px, 8vw, 110px) clamp(28px, 5vw, 72px);
+  align-self: center;
+}
+
+.watchStoryCopy > span,
+.screenStoryCopy > span {
+  color: var(--lime-text);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.watchStoryCopy h2,
+.screenStoryCopy h2 {
+  margin-top: 14px;
+  font-family: var(--font-display);
+  font-size: clamp(46px, 5vw, 72px);
+  font-weight: 400;
+  line-height: 0.94;
+}
+
+.watchStoryCopy p,
+.screenStoryCopy p {
+  margin-top: 22px;
+  font-size: clamp(17px, 1.45vw, 20px);
+  line-height: 1.65;
+}
+
+.watchStoryCopy p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.watchStoryCopy a {
+  display: inline-flex;
+  margin-top: 24px;
+  color: var(--lime-text);
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.screenStory {
+  padding: clamp(72px, 8vw, 112px) var(--container-pad);
+  overflow: hidden;
+  background:
+    linear-gradient(118deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 46px),
+    var(--green-deep);
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .comparisonSection :global(.cmp caption) {
+    width: 100%;
+    display: block;
+    margin: 12px 0 0;
+  }
+}
+
+.screenStoryInner {
+  max-width: 1050px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+  align-items: center;
+  gap: clamp(56px, 9vw, 130px);
+}
+
+.screenStoryCopy > span {
+  color: var(--lime-text);
+}
+
+.screenStoryCopy p {
+  max-width: 48ch;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.realPhoneFigure {
+  margin: 0;
+  justify-self: center;
+  text-align: center;
+}
+
+.realPhone {
+  position: relative;
+  width: min(100%, 340px);
+  padding: 10px;
+  border-radius: 48px;
+  background: linear-gradient(145deg, #555a55, #080a08 68%);
+  box-shadow: 0 42px 92px rgba(0, 0, 0, 0.42), inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
+.realPhone::before,
+.realPhone::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  width: 4px;
+  border-radius: 3px 0 0 3px;
+  background: #171a17;
+}
+
+.realPhone::before {
+  top: 108px;
+  height: 50px;
+}
+
+.realPhone::after {
+  top: 174px;
+  height: 76px;
+}
+
+.realPhoneScreen {
+  overflow: hidden;
+  border-radius: 38px;
+  background: #153f30;
+}
+
+.realPhoneScreen img {
+  width: 100%;
+  height: auto;
+}
+
+.realPhoneFigure figcaption {
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.focusPhoto {
+  position: relative;
+  min-height: clamp(360px, 46vw, 560px);
+  margin: clamp(54px, 7vw, 84px) 0 0;
+  overflow: hidden;
+  background: var(--green-deep);
+}
+
+.focusPhoto img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 44%;
+}
+
+.focusPhoto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(16, 42, 30, 0.86), rgba(16, 42, 30, 0.08) 68%);
+}
+
+.focusPhoto figcaption {
+  position: absolute;
+  z-index: 1;
+  left: clamp(24px, 5vw, 64px);
+  bottom: clamp(28px, 5vw, 58px);
+  max-width: 500px;
+  color: #fff;
+}
+
+.focusPhoto figcaption strong,
+.focusPhoto figcaption span {
+  display: block;
+}
+
+.focusPhoto figcaption strong {
+  color: #fff !important;
+  font-family: var(--font-display);
+  font-size: clamp(42px, 5vw, 68px);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.focusPhoto figcaption span {
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(16px, 1.4vw, 20px);
+}
+
+@media (max-width: 820px) {
+  .heroDevices {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .roundSteps {
+    grid-template-columns: 1fr;
+  }
+
+  .roundSteps li,
+  .roundSteps li:first-child {
+    padding: 20px 0;
+    border-left: 0;
+    border-bottom: 1px solid rgba(27, 67, 50, 0.16);
+  }
+
+  .watchStory,
+  .screenStoryInner {
+    grid-template-columns: 1fr;
+  }
+
+  .watchStoryImage {
+    min-height: 420px;
+  }
+
+  .watchStoryCopy {
+    padding-inline: var(--container-pad);
+  }
+
+  .screenStoryInner {
+    gap: 54px;
+  }
+}
+
+@media (max-width: 520px) {
+  .watchStoryImage {
+    min-height: 320px;
+  }
+
+  .watchStoryImage img {
+    object-position: 28% center;
+  }
+
+  .realPhone {
+    width: min(100%, 300px);
+  }
+
+  .focusPhoto {
+    margin-inline: calc(var(--container-pad) * -1);
+  }
+
+  .focusPhoto::after {
+    background: linear-gradient(0deg, rgba(16, 42, 30, 0.9), rgba(16, 42, 30, 0.05) 80%);
+  }
+}

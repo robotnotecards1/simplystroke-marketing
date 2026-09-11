@@ -4,8 +4,11 @@ import Link from "next/link";
 import AnswerBlock from "@/components/AnswerBlock";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GuideEngagement from "@/components/GuideEngagement";
+import HomeDemo from "@/components/HomeDemo";
+import HomeHeroDevices from "@/components/HomeHeroDevices";
 import StoreBadges from "@/components/StoreBadges";
 import TrackedCta from "@/components/TrackedCta";
+import activeRoundScreen from "@/assets/app-store/1.0.4/raw/launch.png";
 import { og, APP_STORE_URL, APP_URL } from "@/lib/site";
 import {
   APP_ID,
@@ -22,6 +25,7 @@ import {
   type Citation,
   type Faq,
 } from "@/lib/schema";
+import styles from "./page.module.css";
 
 // CTAs are TrackedCta (components/TrackedCta.tsx — see
 // docs/handoffs/tracked-cta-events.md). Slots on this page: stroke_hero (App
@@ -156,77 +160,41 @@ export default function GolfStrokeCounterPage() {
               No account to start · Undo mistakes · Works without course signal
             </p>
           </div>
-          <div className="ss-hero-phonewrap">
-            <Image
-              src="/images/app-screens/round.png"
-              alt="SimplyStroke active-round screen: one giant golf-ball button showing the current stroke count."
-              className="ss-hero-float"
-              width={270}
-              height={540}
-              preload
-              fetchPriority="high"
-              sizes="(max-width: 640px) 80vw, 300px"
-              style={{
-                width: 300,
-                maxWidth: "100%",
-                height: "auto",
-                borderRadius: 40,
-                boxShadow: "0 40px 80px rgba(0,0,0,0.45)",
-              }}
-            />
+          <div className={styles.heroDevices}>
+            <HomeHeroDevices />
           </div>
         </div>
       </section>
 
       <Breadcrumbs crumbs={[{ name: "Golf stroke counters", path: PATH }]} />
 
-      {/* ---------- Three-step demonstration ---------- */}
-      <section className="section" style={{ paddingTop: "clamp(28px, 3vw, 40px)", paddingBottom: "clamp(16px, 2vw, 24px)" }}>
-        <div className="section-inner">
-          <span className="eyebrow">How it works</span>
-          <h2 className="h2-display" style={{ margin: "8px 0 28px" }}>
-            A round in three taps.
-          </h2>
-          <div className="demo-steps">
-            {[
-              {
-                img: "home.png",
-                n: "1",
-                cap: "Start a round",
-                sub: "One tap on the tee. No setup, no account.",
-              },
-              {
-                img: "round.png",
-                n: "2",
-                cap: "Tap after each shot",
-                sub: "The count goes up. Mis-tap? One undo fixes it.",
-              },
-              {
-                img: "scorecard.png",
-                n: "3",
-                cap: "Finish with a scorecard",
-                sub: "The hole, the round and your score to par — added up for you.",
-              },
-            ].map((s) => (
-              <figure className="demo-step" key={s.n}>
-                <Image
-                  src={`/images/app-screens/${s.img}`}
-                  alt={`SimplyStroke step ${s.n}: ${s.cap}.`}
-                  width={270}
-                  height={540}
-                  loading="lazy"
-                  sizes="(max-width: 640px) 90vw, 300px"
-                  style={{ width: "100%", height: "auto", borderRadius: 22, display: "block", maxWidth: 220, marginInline: "auto" }}
-                />
-                <figcaption>
-                  <span className="demo-step-cap">
-                    <b>{s.n}.</b> {s.cap}
-                  </span>
-                  <span className="demo-step-sub">{s.sub}</span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+      {/* ---------- The same real, interactive product view used on the homepage ---------- */}
+      <section className={styles.liveDemoSection}>
+        <div className={styles.liveDemoInner}>
+          <HomeDemo />
+          <ol className={styles.roundSteps} aria-label="A round in three steps">
+            <li>
+              <span>01</span>
+              <div>
+                <strong>Start the round</strong>
+                <p>No account or setup before your first shot.</p>
+              </div>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <strong>Tap after each shot</strong>
+                <p>Your count updates on iPhone and Apple Watch.</p>
+              </div>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <strong>Finish the scorecard</strong>
+                <p>Every hole and total is already added up.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </section>
 
@@ -322,8 +290,30 @@ export default function GolfStrokeCounterPage() {
         </p>
       </article>
 
+      <section className={styles.watchStory} aria-labelledby="watch-story-title">
+        <div className={styles.watchStoryImage}>
+          <Image
+            src="/images/watch-course-bg.webp"
+            alt="A golfer wearing Apple Watch with the SimplyStroke stroke counter open on the course"
+            fill
+            loading="lazy"
+            sizes="(max-width: 800px) 100vw, 62vw"
+          />
+        </div>
+        <div className={styles.watchStoryCopy}>
+          <span>Apple Watch built in</span>
+          <h2 id="watch-story-title">The count stays on your wrist.</h2>
+          <p>
+            Log the shot where the number is easiest to reach. The same round
+            stays in sync on your nearby iPhone, and solo scoring keeps working
+            when the course signal disappears.
+          </p>
+          <Link href="/#apple-watch">See Apple Watch scoring →</Link>
+        </div>
+      </section>
+
       {/* ---------- Clarify physical vs digital intent ---------- */}
-      <section className="section" style={{ paddingTop: "clamp(28px, 3vw, 40px)", paddingBottom: "clamp(24px, 3vw, 36px)" }}>
+      <section className={`${styles.comparisonSection} section`} style={{ paddingTop: "clamp(28px, 3vw, 40px)", paddingBottom: "clamp(24px, 3vw, 36px)" }}>
         <div className="section-inner">
           <span className="eyebrow">Clicker vs. app</span>
           <h2 className="h2-display" style={{ margin: "8px 0 6px" }}>
@@ -376,6 +366,32 @@ export default function GolfStrokeCounterPage() {
               Get SimplyStroke free
             </TrackedCta>
           </div>
+        </div>
+      </section>
+
+      <section className={styles.screenStory} aria-labelledby="real-screen-title">
+        <div className={styles.screenStoryInner}>
+          <div className={styles.screenStoryCopy}>
+            <span>Real app screen</span>
+            <h2 id="real-screen-title">One large target. Nothing to hunt for.</h2>
+            <p>
+              This is the scoring screen golfers actually use. The current hole,
+              count, round total, undo and next-hole control all stay visible in
+              one place.
+            </p>
+          </div>
+          <figure className={styles.realPhoneFigure}>
+            <div className={styles.realPhone}>
+              <div className={styles.realPhoneScreen}>
+                <Image
+                  src={activeRoundScreen}
+                  alt="The real SimplyStroke iPhone active-round screen showing four strokes on hole two"
+                  sizes="(max-width: 760px) 72vw, 330px"
+                />
+              </div>
+            </div>
+            <figcaption>Captured from the current SimplyStroke iPhone app.</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -475,6 +491,21 @@ export default function GolfStrokeCounterPage() {
             apps solve it, because they are all busy solving something bigger.
           </p>
         </div>
+
+        <figure className={styles.focusPhoto}>
+          <Image
+            src="/images/photos/66454.jpg"
+            alt="A golfer reading a putt while focusing on the next shot"
+            width={1600}
+            height={1046}
+            loading="lazy"
+            sizes="(max-width: 760px) 100vw, 1200px"
+          />
+          <figcaption>
+            <strong>Keep the number out of your head.</strong>
+            <span>Golf already gives you enough to think about.</span>
+          </figcaption>
+        </figure>
 
         <h2>If you lose count more than most people do</h2>
         <p>
