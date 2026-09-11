@@ -21,7 +21,7 @@ import {
 
 /* This guide is the PRACTICAL one: why each of the usual fixes fails an ADHD
    golfer, and what a fix has to look like to survive a round.
-   The WHY — prospective memory, the research, is-golf-good-for-ADHD — lives on
+   The WHY (prospective memory, the research, is-golf-good-for-ADHD) lives on
    /adhd-golf/. Keep it that way. When two pages argue the same case for the
    same query, Google picks one and buries the other, and it may not pick the
    one you want. This page links up; it does not re-argue. */
@@ -157,9 +157,9 @@ export default function Post() {
             <>
               A fix has to be{" "}
               <strong>
-                one action, taken immediately, with nothing to remember
+                one action, taken immediately, with nothing to remember.
               </strong>{" "}
-              — anything else fails at the same point
+              Anything else fails at the same point
             </>,
             <>
               Counting out loud on the swing costs nothing and works this
@@ -364,15 +364,13 @@ export default function Post() {
           <li>
             <Link href="/adhd-golf/">
               ADHD and golf: why the count disappears
-            </Link>{" "}
-            — the research behind all of this, and an honest account of what
+            </Link>. The research behind all of this, and an honest account of what
             golf can and can&apos;t do for you.
           </li>
           <li>
             <Link href="/guides/lost-count-of-strokes-what-to-do/">
               You lost count of your strokes. Now what?
-            </Link>{" "}
-            — the triage version, including what the Rules of Golf require when
+            </Link>. The triage version, including what the Rules of Golf require when
             you genuinely do not know.
           </li>
         </ul>

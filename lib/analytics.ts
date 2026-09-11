@@ -1,5 +1,5 @@
 // Client-only analytics helpers. Every function guards `window`, so these are
-// safe to import from server components — the bodies only run in the browser.
+// safe to import from server components; the bodies only run in the browser.
 //
 // PRIVACY: there is currently no consent gate on the site, so these events
 // behave exactly like the existing gtag/Umami pageview. If a consent banner is

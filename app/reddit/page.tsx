@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 const faqs: Faq[] = [
   {
     q: "Do golfers need a subscription for a golf scorecard app?",
-    a: "No. The loudest complaint across 238,854 r/golf comments is recurring subscription cost — golfers regularly abandon $150-$200/year tools for cheaper, one-time-purchase hardware or free apps just to escape the renewal. SimplyStroke's core scoring is free.",
+    a: "No. The loudest complaint across 238,854 r/golf comments is recurring subscription cost. Golfers regularly abandon $150-$200/year tools for cheaper, one-time-purchase hardware or free apps just to escape the renewal. SimplyStroke's core scoring is free.",
   },
   {
     q: "What do golfers on Reddit say is the biggest problem with golf apps?",
@@ -41,7 +41,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Is 18Birdies bloated?",
-    a: "That's the word Reddit uses for it. \"18 birdies is a bloated mess these days\" is a real, upvoted r/golf comment, and we found several similar ones independently. Its free tier is still genuinely well-liked, though — golfers say it covers everything they need.",
+    a: "That's the word Reddit uses for it. \"18 birdies is a bloated mess these days\" is a real, upvoted r/golf comment, and we found several similar ones independently. Its free tier is still genuinely well-liked, though. Golfers say it covers everything they need.",
   },
   {
     q: "Do golf apps drain your phone or watch battery?",
@@ -61,7 +61,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Do golfers actually keep an accurate score?",
-    a: "Not consistently. Some of the largest threads in the corpus are golfers discussing not keeping score, or reusing scorecards, at the same time as other huge threads argue heatedly over implausible or dishonest scorecards. Golfers care about the score being right and routinely fail to record it accurately — that gap is what a stroke counter exists to close.",
+    a: "Not consistently. Some of the largest threads in the corpus are golfers discussing not keeping score, or reusing scorecards, at the same time as other huge threads argue heatedly over implausible or dishonest scorecards. Golfers care about the score being right and routinely fail to record it accurately. That gap is what a stroke counter exists to close.",
   },
 ];
 
@@ -130,7 +130,7 @@ export default function RedditPage() {
             </>,
             <>
               Arccos is the most-discussed app by far (
-              <strong>2,126 mentions</strong>) — and the most-resented
+              <strong>2,126 mentions</strong>), and the most-resented
             </>,
           ]}
         />
@@ -267,7 +267,7 @@ export default function RedditPage() {
         <p>
           Two things stand out in that table before you even get to a single
           quote. First, the gap between Arccos and everything else isn&apos;t
-          close — it&apos;s the app people can&apos;t stop talking about,
+          close. It&apos;s the app people can&apos;t stop talking about,
           for better and worse. Second, GHIN sits at 1,765 mentions despite
           nobody in the corpus describing it with any affection at all; it
           survives on mandate, not merit, because the USGA requires it for
@@ -324,7 +324,7 @@ export default function RedditPage() {
           That&apos;s a grudge.
         </p>
 
-        <h3>2. Bloat — 18Birdies is the soft target</h3>
+        <h3>2. Bloat: 18Birdies is the soft target</h3>
         <p>
           18Birdies was the default golf app for years. Reddit now talks
           about it like a service that outgrew its own good idea:
@@ -490,7 +490,7 @@ export default function RedditPage() {
             >
               Does anyone else prefer to score this way?
             </a>{" "}
-            — 574 comments
+            · 574 comments
           </li>
           <li>
             <a
@@ -500,7 +500,7 @@ export default function RedditPage() {
             >
               How many of you don&apos;t keep score?
             </a>{" "}
-            — 314 comments
+            · 314 comments
           </li>
           <li>
             <a
@@ -510,7 +510,7 @@ export default function RedditPage() {
             >
               Anyone else reuse scorecards?
             </a>{" "}
-            — 306 comments
+            · 306 comments
           </li>
           <li>
             <a
@@ -520,7 +520,7 @@ export default function RedditPage() {
             >
               How I keep score
             </a>{" "}
-            — 271 comments
+            · 271 comments
           </li>
         </ul>
         <p>
@@ -539,7 +539,7 @@ export default function RedditPage() {
               According to their scorecard this group shot an Ace on a par
               4, 1 albatross, 4 eagles and the rest birdies
             </a>{" "}
-            — 1,013 comments
+            · 1,013 comments
           </li>
           <li>
             <a
@@ -550,7 +550,7 @@ export default function RedditPage() {
               The DQ rule for signing a wrong scorecard is the dumbest rule
               in sports
             </a>{" "}
-            — 554 comments
+            · 554 comments
           </li>
           <li>
             <a
@@ -560,7 +560,7 @@ export default function RedditPage() {
             >
               Guess who just got DQ&apos;d for an incorrect scorecard today
             </a>{" "}
-            — 302 comments
+            · 302 comments
           </li>
         </ul>
         <p>
@@ -582,7 +582,7 @@ export default function RedditPage() {
             >
               What&apos;s the most important features of a golf app?
             </a>{" "}
-            — 256 comments
+            · 256 comments
           </li>
           <li>
             <a
@@ -592,7 +592,7 @@ export default function RedditPage() {
             >
               Best App?
             </a>{" "}
-            — 214 comments
+            · 214 comments
           </li>
           <li>
             <a
@@ -602,7 +602,7 @@ export default function RedditPage() {
             >
               How many of you keep your score via an app?
             </a>{" "}
-            — 147 comments
+            · 147 comments
           </li>
           <li>
             <a
@@ -612,7 +612,7 @@ export default function RedditPage() {
             >
               What apps do you use for keeping track of score?
             </a>{" "}
-            — 114 comments
+            · 114 comments
           </li>
           <li>
             <a
@@ -622,7 +622,7 @@ export default function RedditPage() {
             >
               Which Golf App Is Actually Worth the Subscription?
             </a>{" "}
-            — 97 comments
+            · 97 comments
           </li>
         </ul>
 

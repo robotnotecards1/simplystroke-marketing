@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 const faqs: Faq[] = [
   {
     q: "What do circles and squares mean on a golf scorecard?",
-    a: "They mark your score relative to par. A circle around the number means under par — a single circle is a birdie (one under), a double circle is an eagle (two under). A square means over par — a single square is a bogey (one over), a double square is a double bogey or worse. A score written with no shape is a par. The system is a convention, not a rule, so not every card or player uses it.",
+    a: "They mark your score relative to par. A circle around the number means under par: a single circle is a birdie (one under), and a double circle is an eagle (two under). A square means over par: a single square is a bogey (one over), and a double square is a double bogey or worse. A score written with no shape is a par. The system is a convention, not a rule, so not every card or player uses it.",
   },
   {
     q: "What is a birdie, bogey, and eagle in golf?",
@@ -50,7 +50,7 @@ const faqs: Faq[] = [
   },
   {
     q: "What is a hole in one called in golf?",
-    a: "A hole in one — putting the ball in the hole with your first stroke — is called an ace. On a par-3 it is also a birdie in scoring terms (two under is impossible to write another way), and on the rare par-4 ace it counts as an eagle. Aces are almost always on par-3 holes.",
+    a: "A hole in one, which means putting the ball in the hole with your first stroke, is called an ace. On a par-3 it is also a birdie in scoring terms (two under is impossible to write another way), and on the rare par-4 ace it counts as an eagle. Aces are almost always on par-3 holes.",
   },
   {
     q: "What does 'par' mean on a golf scorecard?",
@@ -64,11 +64,11 @@ const faqs: Faq[] = [
 
 const citations: Citation[] = [
   {
-    name: "USGA — Rules of Golf: Definitions (stroke, penalty stroke)",
+    name: "USGA: Rules of Golf definitions (stroke, penalty stroke)",
     url: "https://www.usga.org/content/usga/home-page/rules-hub/rules-modernization/major-changes/definitions.html",
   },
   {
-    name: "R&A — Rules of Golf",
+    name: "R&A: Rules of Golf",
     url: "https://www.randa.org/rules-of-golf",
   },
 ];
@@ -97,7 +97,7 @@ const jsonLd = graph(
 
 // Score names, shown against a par-4 hole so the example number is concrete.
 const NAMES = [
-  { name: "Albatross (double eagle)", rel: "3 under", ex: "on a par 5, a 2", mark: "rare — circled" },
+  { name: "Albatross (double eagle)", rel: "3 under", ex: "on a par 5, a 2", mark: "rare; circled" },
   { name: "Eagle", rel: "2 under", ex: "a 2", mark: "double circle" },
   { name: "Birdie", rel: "1 under", ex: "a 3", mark: "circle" },
   { name: "Par", rel: "even", ex: "a 4", mark: "no mark" },
@@ -108,19 +108,19 @@ const NAMES = [
 
 const GLOSSARY = [
   ["Par", "The strokes an expert is expected to need on a hole (3, 4, or 5)."],
-  ["Ace", "A hole in one — the ball in the hole in a single stroke."],
+  ["Ace", "A hole in one: the ball in the hole in a single stroke."],
   ["Gross score", "The raw total of every stroke you took."],
   ["Net score", "Gross score minus your course handicap."],
   ["Handicap", "A number representing how many strokes over par you typically play, used to level the field."],
   ["Stroke index", "The row ranking holes 1–18 by difficulty; sets where handicap strokes fall."],
-  ["Scratch golfer", "A player with a 0 handicap — shoots roughly par."],
+  ["Scratch golfer", "A player with a 0 handicap who shoots roughly par."],
   ["Bogey golfer", "A player who averages about one over par per hole (roughly 90 on a par 72)."],
   ["OUT / IN / TOT", "Front-nine total, back-nine total, and full 18-hole total."],
   ["GIR (green in regulation)", "Reaching the green in the expected number of strokes minus two putts (e.g. two shots on a par 4)."],
   ["FIR (fairway in regulation)", "Landing your tee shot in the fairway on a par 4 or par 5."],
   ["Gimme", "A short putt conceded by playing partners so you don't have to hole it (casual play only)."],
   ["Mulligan", "An informal do-over shot, not allowed under the Rules of Golf."],
-  ["Up and down", "Holing out in two shots from around the green — a chip (or bunker shot) and a putt."],
+  ["Up and down", "Holing out in two shots from around the green: a chip (or bunker shot) and a putt."],
 ];
 
 export default function Post() {

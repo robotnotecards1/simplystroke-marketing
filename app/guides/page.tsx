@@ -22,7 +22,7 @@ const guides = [
     date: "August 2026",
     readingTime: "7 min read",
     excerpt:
-      "The whole task, once, cleanly: what counts as a stroke, how par works, filling in the card hole by hole, totalling the nines, and gross vs net — with a worked example scorecard.",
+      "The whole task, once, cleanly: what counts as a stroke, how par works, filling in the card hole by hole, totalling the nines, and gross vs net, with a worked example scorecard.",
   },
   {
     slug: "/guides/how-to-read-a-golf-scorecard/",
@@ -38,7 +38,7 @@ const guides = [
     date: "August 2026",
     readingTime: "6 min read",
     excerpt:
-      "Breaking 100, 90 and 80 explained, what the average golfer really shoots, and good beginner and nine-hole scores — with a reference table by skill level.",
+      "Breaking 100, 90 and 80 explained, what the average golfer really shoots, and good beginner and nine-hole scores, with a reference table by skill level.",
   },
   {
     slug: "/guides/golf-scorecard-symbols-and-terms/",
@@ -46,7 +46,7 @@ const guides = [
     date: "August 2026",
     readingTime: "5 min read",
     excerpt:
-      "What the circles and squares mean, and a plain-English glossary — birdie, bogey, eagle, par, gross, net, stroke index and the rest.",
+      "What the circles and squares mean, plus a plain-English glossary of birdie, bogey, eagle, par, gross, net, stroke index and the rest.",
   },
   {
     slug: "/guides/lost-count-of-strokes-what-to-do/",

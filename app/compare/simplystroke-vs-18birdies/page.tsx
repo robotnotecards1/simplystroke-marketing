@@ -38,7 +38,7 @@ const citations: Citation[] = [
     url: "https://18birdies.com/premium/",
   },
   {
-    name: "Is the 18Birdies App Free? — 18Birdies Knowledge Base",
+    name: "18Birdies Knowledge Base: Is the 18Birdies App Free?",
     url: "https://help.18birdies.com/article/520-is-the-app-free",
   },
 ];
@@ -194,8 +194,8 @@ export default function Page() {
         </p>
         <p>
           The complaint that has caught up with it is equally straightforward.
-          Golfers describe it as <em>bloated</em> &mdash; &ldquo;too much going
-          on&rdquo; &mdash; and the scorecard, the thing most people actually
+          Golfers describe it as <em>bloated</em>, or &ldquo;too much going
+          on,&rdquo; and the scorecard, the thing most people actually
           opened it for, is now one screen among many, competing with overlays,
           upsells and a social feed.
         </p>
@@ -288,10 +288,10 @@ export default function Page() {
           </p>
           <p>
             <strong>
-              If you open 18Birdies to keep score and everything else is noise
+              If you open 18Birdies to keep score and everything else is noise,
             </strong>{" "}
-            — the feed, the upsells, the grid you have to find the right cell in
-            — then you are paying attention for features you never asked for.
+            the feed, the upsells and the grid you have to find the right cell in
+            make you pay attention to features you never asked for.
             SimplyStroke is a single tap and core scoring costs nothing.
           </p>
         </div>

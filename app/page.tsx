@@ -102,7 +102,7 @@ const approvedReviews: Review[] = [
   {
     author: "Chris Devonshire",
     title: "So easy!!",
-    body: "I've tried so many live scoring golf apps, but like the name says, it's super simple. I got enough crazy thoughts in my head on the course—this app is a total value add.",
+    body: "I've tried so many live scoring golf apps, but like the name says, it's super simple. I got enough crazy thoughts in my head on the course, and this app is a total value add.",
   },
   {
     author: "ontj",
@@ -233,7 +233,7 @@ export default async function Home() {
             </h1>
             <p className={styles.heroLede}>
               Tap once after every shot. SimplyStroke keeps the count, does the
-              math, and builds your scorecard—so you can think about the next
+              math, and builds your scorecard, so you can think about the next
               shot, not the last one.
             </p>
           </div>
@@ -338,7 +338,7 @@ export default async function Home() {
               “It makes keeping score incredibly easy, especially with the watch
               app. I can stay focused on my game rather than trying to remember
               how many strokes I shot on a hole.”
-              <cite>— VIGNDOG, App Store</cite>
+              <cite>VIGNDOG, App Store</cite>
             </blockquote>
           </div>
         </div>

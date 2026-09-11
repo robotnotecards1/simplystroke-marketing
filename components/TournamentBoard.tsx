@@ -5,7 +5,7 @@
  * rows drawn from many groups, plus the shareable web spectator link.
  *
  * Names, scores and the /t/ URL are placeholders in the same spirit as the
- * homepage group board (You/Marcus/Dave/Priya) — swap for a real capture when
+ * homepage group board (You/Marcus/Dave/Priya); swap for a real capture when
  * one exists.
  */
 const rows = [

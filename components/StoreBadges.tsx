@@ -4,7 +4,7 @@ import { APP_STORE_URL } from "@/lib/site";
 
 /**
  * Store badges. The App Store badge is a live, tracked link (iPhone + Apple
- * Watch, free). Google Play stays a non-link "coming soon" — the Android app is
+ * Watch, free). Google Play stays a non-link "coming soon"; the Android app is
  * confirmed coming (full app.json config) but not yet on Google Play.
  * `ctaLocation` distinguishes the homepage badge from the /download badge.
  */

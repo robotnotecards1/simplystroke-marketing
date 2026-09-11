@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: og(TITLE, DESCRIPTION, PATH),
 };
 
-/* Competitors. Named, linked, and NOT priced in schema — see
+/* Competitors. Named, linked, and NOT priced in schema; see
    COMPARISON-PAGE-SPEC.md §6. Prices below are bands, not quotes, and every
    one links to that company's own pricing page so the reader can check us.
    Re-verify quarterly; if that stops happening, cut the cost column. */
@@ -49,7 +49,7 @@ const apps = [
     name: "Arccos Caddie",
     url: "https://www.arccosgolf.com/",
     forWhat: "Automatic shot tracking & strokes gained",
-    taps: "0 — sensors do it",
+    taps: "0 (sensors do it)",
     account: "Yes",
     offline: "No, needs sync",
     ads: "No",
@@ -133,7 +133,7 @@ const faqs: Faq[] = [
   },
 ];
 
-/* The compared apps as an ItemList. Name and url only — no offers, no price,
+/* The compared apps as an ItemList. Name and url only: no offers, no price,
    no aggregateRating. We do not publish machine-readable claims about other
    companies' products. */
 const itemListNode = {
@@ -209,8 +209,8 @@ export default function ComparePage() {
               counter, on the App Store for iPhone and Apple Watch and
               playable in your browser, with Android coming soon. It does one
               thing: it holds your score so you don&apos;t have to.
-              Apps like 18Birdies, Arccos, Golfshot and SwingU do far more —
-              GPS, strokes gained, handicaps, side games — and cost $30 to $200
+              Apps like 18Birdies, Arccos, Golfshot and SwingU do far more:
+              GPS, strokes gained, handicaps, and side games. They cost $30 to $200
               a year to do it. Pick SimplyStroke if the only thing you keep
               losing is the count.
             </>
@@ -251,8 +251,8 @@ export default function ComparePage() {
         <div className="cmp-wrap">
           <table className="cmp">
             <caption>
-              As of July 2026. Prices are bands, not quotes, and they change —
-              check each company&apos;s own pricing page, linked above.
+              As of July 2026. Prices are bands, not quotes, and they change.
+              Check each company&apos;s own pricing page, linked above.
             </caption>
             <thead>
               <tr>
@@ -319,10 +319,10 @@ export default function ComparePage() {
           </p>
           <p>
             <strong>
-              But if the only thing that keeps going wrong is the count
+              But if the only thing that keeps going wrong is the count.
             </strong>{" "}
-            — you get to the green and genuinely do not know whether that was
-            your fourth or your fifth — that is the problem SimplyStroke was
+            You get to the green and genuinely do not know whether that was
+            your fourth or your fifth. That is the problem SimplyStroke was
             built for, and none of the apps above solve it, because they are all
             busy solving something bigger.
           </p>
@@ -331,8 +331,8 @@ export default function ComparePage() {
         <h2>The price line</h2>
         <p>
           Look at what golfers are actually doing about app pricing. They are
-          buying <strong>$150 to $300 of hardware</strong> — sensors, watches,
-          the lot — and accepting software they like less, specifically so they
+          buying <strong>$150 to $300 of sensors and watches</strong>, then
+          accepting software they like less, specifically so they
           never have to see another renewal notice. That is not price
           sensitivity. That is a grudge, and it is well earned: the going rate
           for a golf app&apos;s useful tier has been climbing for years, and it
@@ -340,7 +340,7 @@ export default function ComparePage() {
         </p>
         <p>
           SimplyStroke sidesteps the whole argument by keeping core scoring
-          free — no ads, no hardware bundle and no subscription required to
+          free: no ads, no hardware bundle and no subscription required to
           keep counting.
         </p>
         <p>
@@ -429,7 +429,7 @@ export default function ComparePage() {
             Golfers who lose count for reasons that are not carelessness. If
             that is every round, every hole, and you have spent years being told
             to concentrate harder, read{" "}
-            <Link href="/adhd-golf/">ADHD and golf</Link> — the count is a{" "}
+            <Link href="/adhd-golf/">ADHD and golf</Link>. The count is a{" "}
             prospective memory task and it is measurably harder for some brains
             than others.
           </li>
@@ -451,14 +451,12 @@ export default function ComparePage() {
           <li>
             <Link href="/compare/simplystroke-vs-18birdies/">
               SimplyStroke vs 18Birdies
-            </Link>{" "}
-            — the app that was the default, and is now described as bloated.
+            </Link>: the app that was the default and is now described as bloated.
           </li>
           <li>
             <Link href="/compare/simplystroke-vs-arccos/">
               SimplyStroke vs Arccos
-            </Link>{" "}
-            — the best analytics in golf, and the loudest subscription in golf.
+            </Link>: the best analytics in golf and the loudest subscription in golf.
           </li>
         </ul>
 

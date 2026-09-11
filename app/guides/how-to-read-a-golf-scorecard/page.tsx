@@ -21,7 +21,7 @@ import {
 
 const TITLE = "How to Read a Golf Scorecard (With an Annotated Example)";
 const DESCRIPTION =
-  "Read a golf scorecard row by row: par, the stroke index (handicap) row, yardages per tee, OUT/IN/TOT columns, and course and slope rating — shown on a labelled example card.";
+  "Read a golf scorecard row by row: par, the stroke index (handicap) row, yardages per tee, OUT/IN/TOT columns, and course and slope rating, shown on a labelled example card.";
 const PATH = "/guides/how-to-read-a-golf-scorecard/";
 
 export const metadata: Metadata = {
@@ -38,7 +38,7 @@ const faqs: Faq[] = [
   },
   {
     q: "What is the handicap row on a scorecard?",
-    a: "The handicap row — often labelled ‘HCP’, ‘Hdcp’, ‘Index’, or ‘S.I.’ — ranks the 18 holes by difficulty from 1 (hardest) to 18 (easiest). It has nothing to do with your personal handicap. It tells you which holes your handicap strokes are applied to in net and match-play scoring: a 9-handicap gets a stroke on the holes indexed 1 through 9.",
+    a: "The handicap row (often labelled ‘HCP’, ‘Hdcp’, ‘Index’, or ‘S.I.’) ranks the 18 holes by difficulty from 1 (hardest) to 18 (easiest). It has nothing to do with your personal handicap. It tells you which holes your handicap strokes are applied to in net and match-play scoring: a 9-handicap gets a stroke on the holes indexed 1 through 9.",
   },
   {
     q: "What do OUT, IN, and TOT mean on a scorecard?",
@@ -46,7 +46,7 @@ const faqs: Faq[] = [
   },
   {
     q: "What are course rating and slope rating?",
-    a: "Course rating is the score a scratch (zero-handicap) golfer is expected to shoot from a given set of tees — a number like 71.2. Slope rating (55–155, with 113 average) measures how much harder the course plays for a bogey golfer than for a scratch golfer. Both are used to convert your scores into a handicap.",
+    a: "Course rating is the score a scratch (zero-handicap) golfer is expected to shoot from a given set of tees, such as 71.2. Slope rating (55–155, with 113 average) measures how much harder the course plays for a bogey golfer than for a scratch golfer. Both are used to convert your scores into a handicap.",
   },
   {
     q: "Why are there different coloured tees on a scorecard?",
@@ -60,11 +60,11 @@ const faqs: Faq[] = [
 
 const citations: Citation[] = [
   {
-    name: "USGA — Course Rating and Slope Rating overview",
+    name: "USGA: Course Rating and Slope Rating overview",
     url: "https://www.usga.org/handicapping/roh/Content/rules/Appendix%20E%20Course%20Rating.htm",
   },
   {
-    name: "USGA — World Handicap System and handicap statistics",
+    name: "USGA: World Handicap System and handicap statistics",
     url: "https://www.usga.org/handicapping.html",
   },
 ];
@@ -139,8 +139,8 @@ function Nine({ start }: { start: number }) {
             {HCP.slice(start, end).map((h, i) => (
               <td key={i} className="hcp">{h}</td>
             ))}
-            <td className="grp">&mdash;</td>
-            {start === 9 ? <td className="tot">&mdash;</td> : null}
+            <td className="grp">N/A</td>
+            {start === 9 ? <td className="tot">N/A</td> : null}
           </tr>
           <tr>
             <th scope="row">Score</th>

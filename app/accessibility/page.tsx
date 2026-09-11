@@ -9,7 +9,7 @@ import { og } from "@/lib/site";
  * operated by Seaport Systems LLC. It describes the target (WCAG 2.2 Level AA),
  * the measures we take, honest known limitations, and how to report a problem.
  *
- * It is written as a commitment and an ongoing effort, not a certification — do
+ * It is written as a commitment and an ongoing effort, not a certification; do
  * not add claims of full/audited conformance unless a real audit backs them. If
  * the site changes materially (new templates, the course directory, embedded
  * third-party widgets), revisit the "Known limitations" and "Assessment"
@@ -19,7 +19,7 @@ import { og } from "@/lib/site";
 
 const TITLE = "Accessibility Statement | SimplyStroke";
 const DESCRIPTION =
-  "How SimplyStroke works to keep its website usable for everyone — our WCAG 2.2 AA goal, what we've done, known gaps, and how to tell us about a barrier.";
+  "How SimplyStroke works to keep its website usable for everyone: our WCAG 2.2 AA goal, what we've done, known gaps, and how to tell us about a barrier.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -49,7 +49,7 @@ export default function AccessibilityPage() {
         <p>
           <strong>Seaport Systems LLC</strong>, the maker of SimplyStroke
           (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), wants
-          everyone to be able to use our website — including people who browse
+          everyone to be able to use our website, including people who browse
           with a keyboard, a screen reader, a magnifier, voice control, or other
           assistive technology. Accessibility is something we work at as we
           build, not a box we tick once.
@@ -65,8 +65,8 @@ export default function AccessibilityPage() {
 
         <h2>What this covers</h2>
         <p>
-          This statement is about the <strong>marketing website</strong> at
-          simplystroke.app — the pages you are reading now. The SimplyStroke app
+          This statement covers the <strong>marketing website</strong> at
+          simplystroke.app. The SimplyStroke app
           (on iPhone, and the web version at app.simplystroke.app) is a separate
           product with its own screens and its own accessibility work, and it is
           not covered here. If you have trouble with the app itself, email us at
@@ -96,8 +96,8 @@ export default function AccessibilityPage() {
         <p>We build the site so that:</p>
         <ul>
           <li>
-            pages use <strong>semantic HTML</strong> — real headings, lists,
-            landmarks, and buttons — so assistive technology can understand the
+            pages use <strong>semantic HTML</strong>, including real headings, lists,
+            landmarks, and buttons, so assistive technology can understand the
             structure;
           </li>
           <li>
@@ -132,7 +132,7 @@ export default function AccessibilityPage() {
         <p>
           The site is built to work with current versions of major browsers
           (Chrome, Safari, Firefox, and Edge) on desktop and mobile, together
-          with the assistive technologies commonly paired with them — such as
+          with the assistive technologies commonly paired with them, such as
           VoiceOver on Apple devices, TalkBack on Android, and NVDA or JAWS on
           Windows. It is not designed for browsers more than a couple of major
           versions out of date, where some things may not work as intended.
@@ -145,8 +145,8 @@ export default function AccessibilityPage() {
         </p>
         <ul>
           <li>
-            <strong>Third-party and data-driven content.</strong> Some pages —
-            for example course listings and comparison tables — are built from
+            <strong>Third-party and data-driven content.</strong> Some pages,
+            such as course listings and comparison tables, are built from
             outside data sources. Their structure or labeling may occasionally
             fall short, and we are working to improve how that content is
             presented.
@@ -163,7 +163,7 @@ export default function AccessibilityPage() {
           </li>
         </ul>
         <p>
-          If you run into something not listed here, please tell us — real
+          If you run into something not listed here, please tell us. Real
           reports from real people are the best way we find and fix these.
         </p>
 
@@ -192,8 +192,8 @@ export default function AccessibilityPage() {
         <p>
           We check accessibility with a mix of approaches: automated tooling as
           part of building the site, manual keyboard and screen-reader checks on
-          key pages, and the feedback you send us. This is an ongoing process —
-          we treat accessibility problems like any other bug and prioritize
+          key pages, and the feedback you send us. This is an ongoing process.
+          We treat accessibility problems like any other bug and prioritize
           fixing them. This statement reflects our current self-assessment; it is
           not a third-party certification.
         </p>
@@ -215,7 +215,7 @@ export default function AccessibilityPage() {
         <h2>Contact</h2>
         <p>
           Accessibility questions, feedback, and requests go to{" "}
-          <a href={`mailto:${CONTACT}`}>{CONTACT}</a> — Seaport Systems LLC. You
+          <a href={`mailto:${CONTACT}`}>{CONTACT}</a>, Seaport Systems LLC. You
           can also read our{" "}
           <Link href="/privacy/">Privacy Policy</Link> and{" "}
           <Link href="/terms-of-service/">Terms of Service</Link>.

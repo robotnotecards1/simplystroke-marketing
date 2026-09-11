@@ -24,7 +24,7 @@ import {
 export const metadata: Metadata = {
   title: "Design System | SimplyStroke",
   description: "Internal styleguide. Colors, type, components and voice.",
-  robots: { index: false, follow: false }, // internal — keep out of Google
+  robots: { index: false, follow: false }, // internal; keep out of Google
 };
 
 type Token = {

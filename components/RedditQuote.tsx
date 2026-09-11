@@ -1,6 +1,6 @@
 /**
  * A single verbatim, attributed Reddit comment. Every prop here must trace
- * to a real row in research/data/*.csv — see REDDIT-RESOURCE-PAGE-BRIEF.md.
+ * to a real row in research/data/*.csv; see REDDIT-RESOURCE-PAGE-BRIEF.md.
  * Permalinks are dofollow and open in a new tab: sending traffic back to
  * the source is the whole point.
  */

@@ -28,12 +28,12 @@ import {
 import homeStyles from "../home.module.css";
 import styles from "./page.module.css";
 
-// CTAs are TrackedCta (components/TrackedCta.tsx — see
+// CTAs are TrackedCta (components/TrackedCta.tsx; see
 // docs/handoffs/tracked-cta-events.md). Slots on this page: stroke_hero,
 // stroke_comparison, stroke_final, plus stroke_badge_appstore on
 // the StoreBadges Apple badge. guide_engaged fires via <GuideEngagement/>.
 
-// Title carries the app/category intent; the H1 carries the user outcome — so
+// Title carries the app/category intent; the H1 carries the user outcome, so
 // the two are no longer identical (was flagged as a duplicate title/H1 pair).
 const TITLE = "Golf Stroke Counter App for iPhone & Apple Watch";
 const DESCRIPTION =
@@ -53,7 +53,7 @@ const citations: Citation[] = [
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3590133/",
   },
   {
-    name: "USGA Rules of Golf: Definitions — Stroke",
+    name: "USGA Rules of Golf: Stroke definition",
     url: "https://www.usga.org/content/usga/home-page/rules-hub/rules-modernization/major-changes/definitions.html",
   },
 ];
@@ -61,11 +61,11 @@ const citations: Citation[] = [
 const faqs: Faq[] = [
   {
     q: "What counts as a stroke?",
-    a: "Every time you make a swing at the ball it counts as one stroke, and so does a penalty. With SimplyStroke you tap once per swing — whiffs and penalty strokes included — and the app keeps the running total so you never have to reconstruct it on the green.",
+    a: "Every time you make a swing at the ball it counts as one stroke, and so does a penalty. With SimplyStroke you tap once per swing, including whiffs and penalty strokes, and the app keeps the running total so you never have to reconstruct it on the green.",
   },
   {
     q: "Does it work on Apple Watch?",
-    a: "Yes. SimplyStroke runs on Apple Watch as well as iPhone, so you can tap the count on your wrist without taking your phone out of your pocket. The watch is the best home for a stroke counter — it is the only screen you never have to reach for.",
+    a: "Yes. SimplyStroke runs on Apple Watch as well as iPhone, so you can tap the count on your wrist without taking your phone out of your pocket. The watch is the best home for a stroke counter because it is the only screen you never have to reach for.",
   },
   {
     q: "Does it work without signal?",
@@ -77,7 +77,7 @@ const faqs: Faq[] = [
   },
   {
     q: "What is the difference between a stroke counter and a GPS or shot tracker?",
-    a: "A shot tracker analyzes your golf; a stroke counter only counts it. Shot trackers such as Arccos and Shot Scope use club sensors and GPS to work out which club you hit and how far it went. A stroke counter has no opinion about your golf — it just makes sure the number is right when you reach the green.",
+    a: "A shot tracker analyzes your golf; a stroke counter only counts it. Shot trackers such as Arccos and Shot Scope use club sensors and GPS to work out which club you hit and how far it went. A stroke counter has no opinion about your golf. It just makes sure the number is right when you reach the green.",
   },
   {
     q: "Is a golf shot counter the same as a stroke counter?",
@@ -85,11 +85,11 @@ const faqs: Faq[] = [
   },
   {
     q: "Are golf stroke counter beads worth it?",
-    a: "Bead counters and clicker rings are cheap and need no battery, which is a real advantage. The trade-off is that they count the hole but do not total the card — you still have to transfer numbers to paper and add them up yourself. If you want a finished scorecard at the end of the round without the mental math, an app does that part for you.",
+    a: "Bead counters and clicker rings are cheap and need no battery, which is a real advantage. The trade-off is that they count the hole but do not total the card. You still have to transfer numbers to paper and add them up yourself. If you want a finished scorecard at the end of the round without the mental math, an app does that part for you.",
   },
   {
     q: "What is a golf clicker?",
-    a: "A golf clicker is a small mechanical counter you press after each stroke. Some clip to a bag, some wrap around a finger. They solve the mid-hole count problem the same way an app does — one click per swing — but they do not produce a scorecard, track par, or undo a miscount. SimplyStroke adds all three for free.",
+    a: "A golf clicker is a small mechanical counter you press after each stroke. Some clip to a bag, some wrap around a finger. They solve the mid-hole count problem the same way an app does, with one click per swing, but they do not produce a scorecard, track par, or undo a miscount. SimplyStroke adds all three for free.",
   },
 ];
 
@@ -137,8 +137,8 @@ export default function GolfStrokeCounterPage() {
             </h1>
             <p className="ss-hero-p">
               Tap after each shot. SimplyStroke keeps the hole total, the round
-              total and your score to par, then finishes the scorecard for you —
-              no GPS, no math, no losing count on the walk to the green.
+              total and your score to par, then finishes the scorecard for you.
+              No GPS, no math, no losing count on the walk to the green.
             </p>
             <div className={styles.heroAction}>
               <PrimaryCta
@@ -224,7 +224,7 @@ export default function GolfStrokeCounterPage() {
             </>,
             <>
               Core stroke counting should not require a premium GPS
-              subscription &mdash; SimplyStroke lets you count and complete a
+              subscription. SimplyStroke lets you count and complete a
               solo round for free
             </>,
           ]}
@@ -455,9 +455,9 @@ export default function GolfStrokeCounterPage() {
             and SimplyStroke does not compete with them.
           </p>
           <p>
-            <strong>But if the only thing that keeps going wrong is the count</strong>{" "}
-            — you reach the green and genuinely do not know whether that putt is
-            for four or five — that is a different problem, and none of the big
+            <strong>But if the only thing that keeps going wrong is the count.</strong>{" "}
+            You reach the green and genuinely do not know whether that putt is
+            for four or five. That is a different problem, and none of the big
             apps solve it, because they are all busy solving something bigger.
           </p>
         </div>
@@ -483,7 +483,7 @@ export default function GolfStrokeCounterPage() {
         <p>
           Some golfers lose the count occasionally. Some lose it every single
           hole and have spent years being told to concentrate harder. That is not
-          carelessness — holding a running number across a ten-minute hole while
+          carelessness. Holding a running number across a ten-minute hole while
           planning shots, walking and looking for a ball is a{" "}
           <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3590133/" target="_blank" rel="noopener">prospective-memory
           task</a>, and prospective memory is measurably harder if you have ADHD.

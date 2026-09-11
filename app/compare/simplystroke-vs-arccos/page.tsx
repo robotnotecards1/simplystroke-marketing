@@ -150,7 +150,7 @@ export default function Page() {
             </>,
             <>
               Arccos users report it handles{" "}
-              <strong>lost balls and penalties worst</strong> — the shots that
+              <strong>lost balls and penalties worst</strong>: the shots that
               matter most to a score
             </>,
           ]}
@@ -174,7 +174,7 @@ export default function Page() {
           Arccos pricing is the loudest single grievance in amateur golf. Golfers
           talk openly about cancelling it and replacing the whole system with
           one-time-purchase hardware, and they do it knowing they&apos;re taking a
-          downgrade — that is how much the recurring charge grates.
+          downgrade. That is how much the recurring charge grates.
         </p>
         <p>
           Worth being precise about what you&apos;re weighing: sensors and bundles
@@ -190,7 +190,7 @@ export default function Page() {
         <div className="cmp-wrap">
           <table className="cmp">
             <caption>
-              As of July 2026. Arccos pricing changes — check their site.
+              As of July 2026. Arccos pricing changes. Check their site.
             </caption>
             <thead>
               <tr>
@@ -218,7 +218,7 @@ export default function Page() {
               <tr>
                 <th scope="row">Taps to log a stroke</th>
                 <td data-label="SimplyStroke">1</td>
-                <td data-label="Arccos">0 — the sensors do it</td>
+                <td data-label="Arccos">0 (the sensors do it)</td>
               </tr>
               <tr>
                 <th scope="row">Strokes gained analytics</th>
@@ -253,9 +253,9 @@ export default function Page() {
           </p>
           <p>
             <strong>
-              If you stopped reading the data and kept paying the invoice
+              If you stopped reading the data and kept paying the invoice,
             </strong>{" "}
-            — you&apos;re renting an analytics platform to do a job a free app
+            you&apos;re renting an analytics platform to do a job a free app
             does in one tap. That&apos;s the whole pitch, and it only applies to
             you if you already know it does.
           </p>

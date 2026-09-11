@@ -1,12 +1,12 @@
 // Single source of truth for the production origin. Update here (or set
-// NEXT_PUBLIC_SITE_URL at build time) when the real domain is attached —
+// NEXT_PUBLIC_SITE_URL at build time) when the real domain is attached;
 // canonicals, OG URLs, sitemap.xml and JSON-LD all derive from it.
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.simplystroke.app";
 
 export const SITE_NAME = "SimplyStroke";
 
-// The App Store listing — iPhone + Apple Watch, free to download. Core
+// The App Store listing: iPhone + Apple Watch, free to download. Core
 // scorekeeping is free; optional Pro is purchased in-app. Keep copy off
 // permanent "no subscription" / "no in-app purchases" promises.
 export const APP_STORE_URL =

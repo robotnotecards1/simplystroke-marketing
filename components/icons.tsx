@@ -23,7 +23,7 @@ export function PlayGlyph() {
   );
 }
 
-/** Golf ball resting above the hole/green — ADHD fold card 1. */
+/** Golf ball resting above the hole/green: ADHD fold card 1. */
 export function BallOnGreenIcon({ size = 30 }: IconProps) {
   return (
     <svg viewBox="0 0 512 512" width={size} height={size} aria-hidden="true">
@@ -41,7 +41,7 @@ export function BallOnGreenIcon({ size = 30 }: IconProps) {
   );
 }
 
-/** Scorecard on a clipboard — ADHD fold card 2 + "Scorecard, done for you" feature. */
+/** Scorecard on a clipboard: ADHD fold card 2 + "Scorecard, done for you" feature. */
 export function ScorecardIcon({ size = 30 }: IconProps) {
   return (
     <svg viewBox="0 0 512 512" width={size} height={size} aria-hidden="true">
@@ -53,7 +53,7 @@ export function ScorecardIcon({ size = 30 }: IconProps) {
   );
 }
 
-/** Golf ball inside a location pin — ADHD fold card 3. */
+/** Golf ball inside a location pin: ADHD fold card 3. */
 export function BallPinIcon({ size = 30 }: IconProps) {
   return (
     <svg viewBox="0 0 512 512" width={size} height={size} aria-hidden="true">
@@ -68,7 +68,7 @@ export function BallPinIcon({ size = 30 }: IconProps) {
   );
 }
 
-/** Dimpled ball with a smile — "One giant tap target" feature. */
+/** Dimpled ball with a smile: "One giant tap target" feature. */
 export function HappyBallIcon({ size = 30 }: IconProps) {
   return (
     <svg viewBox="0 0 512 512" width={size} height={size} aria-hidden="true">
@@ -83,7 +83,7 @@ export function HappyBallIcon({ size = 30 }: IconProps) {
   );
 }
 
-/** Golf bag — "Fits every round" feature. */
+/** Golf bag: "Fits every round" feature. */
 export function GolfBagIcon({ size = 30 }: IconProps) {
   return (
     <svg viewBox="0 0 512 512" width={size} height={size} aria-hidden="true">
@@ -95,7 +95,7 @@ export function GolfBagIcon({ size = 30 }: IconProps) {
   );
 }
 
-/** Course flag — "Zero clutter, zero ads" feature. */
+/** Course flag: "Zero clutter, zero ads" feature. */
 export function FlagIcon({ size = 30 }: IconProps) {
   return (
     <svg viewBox="0 0 512 512" width={size} height={size} aria-hidden="true">

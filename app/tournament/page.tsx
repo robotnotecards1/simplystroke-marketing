@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: og(TITLE, DESCRIPTION, "/tournament/"),
 };
 
-// On-page FAQ, mirrored as FAQPage schema below — keep the two in sync.
+// On-page FAQ, mirrored as FAQPage schema below; keep the two in sync.
 // Answers stay accurate to a feature that is coming soon, not yet available:
 // no promised dates, hosting flagged as a planned Pro feature, joining free.
 const faqs = [
@@ -75,8 +75,8 @@ export default function TournamentPage() {
             <span className="accent">One live leaderboard.</span>
           </h1>
           <p className="lede">
-            Run a golf event across as many groups as you like — a scramble, a
-            league, a charity day — with every score on one live, cross-group
+            Run a golf event across as many groups as you like, whether it is a
+            scramble, league or charity day, with every score on one live, cross-group
             leaderboard. Players join by code from their own phones, and anyone
             can follow along on the web.
           </p>
@@ -94,7 +94,7 @@ export default function TournamentPage() {
             <h2 className="h2-display">One code. Every group. One board.</h2>
             <p className="ss-tourney-p">
               The host creates a tournament and picks a format. Everyone else
-              joins with a short code and plays their own round — the same
+              joins with a short code and plays their own round using the same
               one-tap scoring as always. Every group&apos;s scores roll up to a
               single leaderboard that updates live, so the whole field can see
               where it stands without waiting on a scorer&apos;s table.
@@ -171,7 +171,7 @@ export default function TournamentPage() {
           <h2 className="h2-display">Put the leaderboard on the big screen.</h2>
           <p className="section-lede">
             Every tournament has a public leaderboard that lives on the web.
-            Share the link and anyone can watch the field move — no app, no
+            Share the link and anyone can watch the field move. No app, no
             account, no login. Drop it on the clubhouse TV, text it to the group
             chat, or hand it to the people who came to watch rather than play.
           </p>

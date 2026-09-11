@@ -11,7 +11,7 @@ import {
   websiteNode,
 } from "@/lib/schema";
 
-const TITLE = "Mike Anderson — Editor at SimplyStroke";
+const TITLE = "Mike Anderson, Editor at SimplyStroke";
 const DESCRIPTION =
   "Mike Anderson is SimplyStroke's editor. He covers the Rules of Golf, scoring technology, and the intersection of ADHD and sport.";
 const PATH = "/about/mike-anderson/";

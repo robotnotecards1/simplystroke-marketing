@@ -4,13 +4,13 @@
 // research JSON, or the demo fixtures.
 //
 // Sources, in priority order:
-//   1. Supabase (released_courses + course_stats) — the live path: the DB
+//   1. Supabase (released_courses + course_stats), the live path: the DB
 //      release ramp + rounds threshold decide what builds. Read at build
 //      time with the anon key.
-//   2. Committed research JSON (data/research/*.json) — the hand-curated
+//   2. Committed research JSON (data/research/*.json), the hand-curated
 //      source the courses were seeded FROM. Guarantees a clean checkout builds
 //      even with no Supabase env, and is the source of truth for facts.
-//   3. Demo fixtures (data/demo/*.json) — synthetic stats + leaderboard shown
+//   3. Demo fixtures (data/demo/*.json), synthetic stats + leaderboard shown
 //      only when NEXT_PUBLIC_DEMO_DATA=true, so reviewers can see the
 //      populated design WITHOUT writing fake rounds into the shared prod DB.
 import fs from "node:fs";
@@ -88,7 +88,7 @@ const DEMO_DIR = path.join(process.cwd(), "data", "demo");
 const MAPS_DIR = path.join(process.cwd(), "data", "maps");
 
 // The 10 hand-curated phase-1 courses, in directory order. No longer the
-// publish GATE — the DB release ramp is (see getPublishedCourses). Still used
+// publish GATE; the DB release ramp is (see getPublishedCourses). Still used
 // for directory ordering, for the no-Supabase research fallback, and as the
 // editorial set that bypasses the rounds threshold.
 export const CURATED_SLUGS = [
@@ -189,7 +189,7 @@ function allResearch(): Course[] {
 // Phase 2 thin-content gate: a DB-released course only builds a page once
 // this many rounds are posted to its leaderboard (course_stats.rounds_count).
 // Curated courses (hand-written editorial) bypass it. Override per deploy
-// with COURSE_ROUNDS_THRESHOLD; never below 1 — a zero-round auto page is
+// with COURSE_ROUNDS_THRESHOLD; never below 1 because a zero-round auto page is
 // exactly the thin-content bomb the plan forbids.
 export const ROUNDS_THRESHOLD = Math.max(
   1,
@@ -233,8 +233,8 @@ function mergeCourse(
 /** Every published course, directory order. DB values merged over research.
  *
  * Phase 2 gate (the DB release ramp, engine-spec §C): a page builds when the
- * DB has RELEASED the course — `released_courses` already enforces
- * release_at <= now() AND status = 'published' AND facts-complete — AND it
+ * DB has RELEASED the course; `released_courses` already enforces
+ * release_at <= now() AND status = 'published' AND facts-complete, AND it
  * clears the thin-content threshold: hand-written editorial (curated set) or
  * >= ROUNDS_THRESHOLD posted rounds. Filtering here excludes sub-threshold
  * courses from generateStaticParams AND sitemap.ts in one place, and

@@ -21,7 +21,7 @@ import {
 
 const TITLE = "What Is a Good Golf Score? (By Skill Level)";
 const DESCRIPTION =
-  "What counts as a good golf score for 18 holes, by skill level: breaking 100, 90, and 80 explained, what the average golfer really shoots, and good 9-hole scores — with a reference table.";
+  "What counts as a good golf score for 18 holes, by skill level: breaking 100, 90, and 80 explained, what the average golfer really shoots, and good 9-hole scores, with a reference table.";
 const PATH = "/guides/what-is-a-good-golf-score/";
 
 export const metadata: Metadata = {
@@ -33,11 +33,11 @@ export const metadata: Metadata = {
 
 const citations: Citation[] = [
   {
-    name: "USGA — World Handicap System and handicap statistics",
+    name: "USGA: World Handicap System and handicap statistics",
     url: "https://www.usga.org/handicapping.html",
   },
   {
-    name: "National Golf Foundation — golf participation and performance data",
+    name: "National Golf Foundation: golf participation and performance data",
     url: "https://www.ngf.org/",
   },
   {
@@ -49,19 +49,19 @@ const citations: Citation[] = [
 const faqs: Faq[] = [
   {
     q: "What is a good golf score for 18 holes?",
-    a: "For most recreational golfers, breaking 100 is the first real milestone, breaking 90 is a genuinely good score, and breaking 80 is excellent — near the level of a single-digit handicap. Those numbers are on a par-72 course: 90 is 18 over par, 100 is 28 over. A scratch golfer shoots around par (72), and a tour professional averages a few under.",
+    a: "For most recreational golfers, breaking 100 is the first real milestone, breaking 90 is a genuinely good score, and breaking 80 is excellent, near the level of a single-digit handicap. Those numbers are on a par-72 course: 90 is 18 over par, 100 is 28 over. A scratch golfer shoots around par (72), and a tour professional averages a few under.",
   },
   {
     q: "What does the average golfer shoot?",
-    a: "Most amateurs who do not keep a formal handicap shoot somewhere in the 90s to low 100s for 18 holes. Among golfers who do maintain a handicap, the average is lower — the average male Handicap Index sits in the low-to-mid teens and the average female index in the high 20s (USGA/World Handicap System data), which corresponds to rounds in the mid-80s to mid-90s on a typical course.",
+    a: "Most amateurs who do not keep a formal handicap shoot somewhere in the 90s to low 100s for 18 holes. Among golfers who do maintain a handicap, the average is lower. The average male Handicap Index sits in the low-to-mid teens and the average female index in the high 20s (USGA/World Handicap System data), which corresponds to rounds in the mid-80s to mid-90s on a typical course.",
   },
   {
     q: "What is the average golf score for 18 holes?",
-    a: "For golfers who keep a handicap, the average 18-hole score on a par-72 course is in the mid-80s to mid-90s. For the much larger group who do not track a handicap, the average is higher — typically in the 90s to low 100s. The average male Handicap Index is in the low-to-mid teens, which translates to rounds around 86 to 90 on a par-72 course of average difficulty.",
+    a: "For golfers who keep a handicap, the average 18-hole score on a par-72 course is in the mid-80s to mid-90s. For the much larger group who do not track a handicap, the average is higher, typically in the 90s to low 100s. The average male Handicap Index is in the low-to-mid teens, which translates to rounds around 86 to 90 on a par-72 course of average difficulty.",
   },
   {
     q: "Is breaking 100 in golf good?",
-    a: "Yes. Breaking 100 — shooting 99 or better for 18 holes — is a milestone a large share of recreational golfers never consistently reach. It works out to averaging a little over bogey (one over par) on every hole. Doing it reliably, not just once, is the mark of a solid recreational player.",
+    a: "Yes. Breaking 100, or shooting 99 or better for 18 holes, is a milestone a large share of recreational golfers never consistently reach. It works out to averaging a little over bogey (one over par) on every hole. Doing it reliably, not just once, is the mark of a solid recreational player.",
   },
   {
     q: "What is a good golf score for a beginner?",
@@ -73,11 +73,11 @@ const faqs: Faq[] = [
   },
   {
     q: "Is par a good score in golf?",
-    a: "Par is an excellent score. Shooting even par for 18 holes means you played at the level of a scratch golfer — a zero-handicap amateur. The vast majority of recreational golfers never shoot par for a full round. Even making par on a single hole is a good result for most players, since the average amateur scores above bogey on most holes.",
+    a: "Par is an excellent score. Shooting even par for 18 holes means you played at the level of a scratch golfer, or a zero-handicap amateur. The vast majority of recreational golfers never shoot par for a full round. Even making par on a single hole is a good result for most players, since the average amateur scores above bogey on most holes.",
   },
   {
     q: "What is a perfect golf score?",
-    a: "It depends on what you mean. Par (usually 72 for 18 holes) is the score a scratch golfer is expected to shoot. The theoretical lowest possible score is 18 — a hole-in-one on every hole — but no one has ever come close. The lowest competitive 18-hole round on record is 55, shot in a sanctioned professional event. In practice, anything under par is exceptional, and even par is rare for amateurs.",
+    a: "It depends on what you mean. Par (usually 72 for 18 holes) is the score a scratch golfer is expected to shoot. The theoretical lowest possible score is 18, which would mean a hole-in-one on every hole, but no one has ever come close. The lowest competitive 18-hole round on record is 55, shot in a sanctioned professional event. In practice, anything under par is exceptional, and even par is rare for amateurs.",
   },
   {
     q: "Is a 12 handicap in golf good?",
@@ -85,7 +85,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Is 88 a good golf score?",
-    a: "Yes. Shooting 88 on a par-72 course is 16 over par, which puts you solidly in the upper tier of recreational golfers. It is better than what most amateur golfers shoot and corresponds roughly to a Handicap Index in the mid-teens — around or slightly above average for golfers who track their scores. For context, breaking 90 is a milestone many recreational players work toward for years.",
+    a: "Yes. Shooting 88 on a par-72 course is 16 over par, which puts you solidly in the upper tier of recreational golfers. It is better than what most amateur golfers shoot and corresponds roughly to a Handicap Index in the mid-teens, around or slightly above average for golfers who track their scores. For context, breaking 90 is a milestone many recreational players work toward for years.",
   },
 ];
 
@@ -464,20 +464,17 @@ export default function Post() {
           <li>
             <Link href="/guides/how-to-keep-score-in-golf/">
               How to keep score in golf
-            </Link>{" "}
-            — the basics of scoring, from strokes to handicaps.
+            </Link>: the basics of scoring, from strokes to handicaps.
           </li>
           <li>
             <Link href="/guides/golf-scorecard-symbols-and-terms/">
               Golf scorecard symbols and terms explained
-            </Link>{" "}
-            — what the markings on a scorecard mean.
+            </Link>: what the markings on a scorecard mean.
           </li>
           <li>
             <Link href="/golf-stroke-counter/">
               Golf stroke counter apps
-            </Link>{" "}
-            — what separates a good one from a bad one.
+            </Link>: what separates a good one from a bad one.
           </li>
         </ul>
 
