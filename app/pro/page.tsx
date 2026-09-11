@@ -1,7 +1,18 @@
 import type { Metadata } from "next";
+import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import PrimaryCta from "@/components/PrimaryCta";
 import { APP_STORE_URL, og } from "@/lib/site";
+import proScreen from "@/assets/app-store/1.0.4/raw/pro.png";
+import seasonRecapScreen from "@/assets/app-store/1.0.4/raw/season-recap.png";
+import crewsScreen from "@/assets/app-store/1.0.4/raw/crews.png";
+import tripsScreen from "@/assets/app-store/1.0.4/raw/trips.png";
+import journalScreen from "@/assets/app-store/1.0.4/raw/journal.png";
+import ocrScreen from "@/assets/app-store/1.0.4/raw/ocr-fixture.png";
+import shotDetailsScreen from "@/assets/app-store/1.0.4/raw/shot-details.png";
+import fullHistoryScreen from "@/assets/pro-features/full-history.png";
+import goalsRecordsScreen from "@/assets/pro-features/goals-records.png";
+import coursePlaybookScreen from "@/assets/pro-features/course-playbook.png";
 import styles from "./pro.module.css";
 
 const TITLE = "SimplyStroke Pro: Remember More From Every Round";
@@ -26,50 +37,120 @@ const rows = [
   ["Private journals & scorecard scanning", false, true],
 ] as const;
 
-const featureGroups = [
+const proFeatures: Array<{
+  number: string;
+  eyebrow: string;
+  title: string;
+  body: string;
+  accent: string;
+  image: StaticImageData;
+  alt: string;
+}> = [
   {
     number: "01",
-    eyebrow: "Your season",
-    title: "See the story behind the scores.",
-    body: "Keep your complete history, separate 9-hole and 18-hole trends, personal records, and a shareable season recap. Free scoring never stops; Pro keeps every completed card within reach.",
-    accent: "42 rounds kept",
+    eyebrow: "Complete history",
+    title: "Every finished card stays within reach.",
+    body: "Open your full round archive, filter it by course or month, and jump back into any completed scorecard. Free scoring never stops; Pro removes the 10-round viewing window.",
+    accent: "Your complete scorecard archive",
+    image: fullHistoryScreen,
+    alt: "SimplyStroke Rounds screen showing a complete history of finished rounds",
   },
   {
     number: "02",
-    eyebrow: "Your courses",
-    title: "Return with a plan.",
-    body: "Course playbooks turn past rounds into hole averages, front-and-back patterns, personal bests, goals, and a clearly labeled best-ever composite card.",
-    accent: "Playbook ready",
+    eyebrow: "Season recap",
+    title: "See the story behind the scores.",
+    body: "Review your month, season, or all-time play with separate 9-hole and 18-hole views, then create a visual recap that is ready to share.",
+    accent: "Trends and a shareable recap",
+    image: seasonRecapScreen,
+    alt: "SimplyStroke Visual Season Recap screen with rounds, average, birdies, pars, and best round",
   },
   {
     number: "03",
-    eyebrow: "Your people",
-    title: "Keep the crew together.",
-    body: "Save regular groups, revisit shared results, and connect several rounds into one golf trip. One Pro organizer can invite friends who continue to play free.",
-    accent: "3 rounds · 4 golfers",
+    eyebrow: "Goals and records",
+    title: "Give the next round something to chase.",
+    body: "Set a scoring target and let SimplyStroke track it from rounds you already play. Personal records update automatically as your history grows.",
+    accent: "Targets, progress, and personal bests",
+    image: goalsRecordsScreen,
+    alt: "SimplyStroke Goals screen showing two completed goals and personal scoring records",
   },
   {
     number: "04",
-    eyebrow: "Your memory",
-    title: "Remember the shot, not just the number.",
-    body: "Add private round notes and photos. From More on iPhone or Apple Watch, optionally attach a club or dictated text to your latest stroke. SimplyStroke stores the returned text, not a raw voice recording.",
-    accent: "7 iron · pulled left",
+    eyebrow: "Course playbooks",
+    title: "Return to every course with a guide.",
+    body: "Each course builds its own playbook from your results. See hole averages, best and worst scores, personal records, challenges, and your best-ever composite card.",
+    accent: "A golf guide built from your rounds",
+    image: coursePlaybookScreen,
+    alt: "SimplyStroke Pinehurst No. 2 course playbook showing hole-by-hole averages, best scores, and worst scores",
   },
   {
     number: "05",
-    eyebrow: "Paper to history",
-    title: "Scan it. Check it. Keep it.",
-    body: "Photograph a paper scorecard and review the recognized course, date, player, scores, and par before anything is saved. Recognition runs on the iPhone and the source photo stays temporary.",
-    accent: "Draft · review every value",
+    eyebrow: "Saved crews",
+    title: "Keep your regular group together.",
+    body: "Save the people you play with, start the next group round faster, and revisit the results you made together. Friends can keep playing free when a Pro organizer hosts.",
+    accent: "Your regular foursome, ready to go",
+    image: crewsScreen,
+    alt: "SimplyStroke Saved Crews screen with a regular golf group",
   },
   {
     number: "06",
-    eyebrow: "Private by default",
-    title: "Your details stay yours.",
-    body: "Notes, photos, and shot details stay out of public cards, group scoreboards, recap emails, and shared images unless a future sharing action explicitly says otherwise.",
-    accent: "Only you",
+    eyebrow: "Golf trips",
+    title: "Put the whole trip on one card.",
+    body: "Connect several rounds into one trip, keep the crew and courses organized, and come back to the full weekend instead of a pile of separate scores.",
+    accent: "Several rounds, one trip",
+    image: tripsScreen,
+    alt: "SimplyStroke Golf Trips screen showing an upcoming multi-round golf trip",
+  },
+  {
+    number: "07",
+    eyebrow: "Private round journal",
+    title: "Remember more than the final number.",
+    body: "Keep private notes and photos with a finished round so the details worth remembering stay beside the scorecard that created them.",
+    accent: "Notes and photos only you can see",
+    image: journalScreen,
+    alt: "SimplyStroke Private Round Journal screen with a round note and golf photo",
+  },
+  {
+    number: "08",
+    eyebrow: "Paper scorecard scan",
+    title: "Scan it. Check it. Keep it.",
+    body: "Photograph a paper scorecard and review the recognized course, date, player, scores, and par before anything is saved. Recognition runs on the phone and the source photo stays temporary.",
+    accent: "Draft first, then you approve every value",
+    image: ocrScreen,
+    alt: "SimplyStroke Review Scorecard screen showing recognized values from a photographed paper scorecard",
+  },
+  {
+    number: "09",
+    eyebrow: "Shot details",
+    title: "Remember the shot, not just the stroke.",
+    body: "From More on the phone or Apple Watch, attach a club, lie, or private note to your latest stroke. Dictation returns text; SimplyStroke does not keep a raw voice recording.",
+    accent: "Club, lie, and a private note",
+    image: shotDetailsScreen,
+    alt: "SimplyStroke Shot Details screen showing club, lie, and private shot note fields",
   },
 ];
+
+function PhoneFrame({
+  image,
+  alt,
+  className = "",
+  priority = false,
+}: {
+  image: StaticImageData;
+  alt: string;
+  className?: string;
+  priority?: boolean;
+}) {
+  return (
+    <figure className={`${styles.phoneFrame} ${className}`}>
+      <span className={styles.phoneButtonTop} aria-hidden="true" />
+      <span className={styles.phoneButtonMiddle} aria-hidden="true" />
+      <span className={styles.phoneButtonSide} aria-hidden="true" />
+      <div className={styles.phoneScreen}>
+        <Image src={image} alt={alt} priority={priority} sizes="(max-width: 700px) 62vw, 290px" />
+      </div>
+    </figure>
+  );
+}
 
 export default function ProPage() {
   return (
@@ -105,28 +186,25 @@ export default function ProPage() {
             </p>
           </div>
 
-          <div className={styles.memoryStack} aria-label="Examples of SimplyStroke Pro memories">
-            <article className={`${styles.memoryCard} ${styles.memoryCardBack}`}>
-              <span>Trip 03</span>
-              <strong>Pinehurst weekend</strong>
-              <small>3 rounds · 4 golfers</small>
-            </article>
-            <article className={`${styles.memoryCard} ${styles.memoryCardMiddle}`}>
-              <span>Course playbook</span>
-              <strong>Hole 7</strong>
-              <small>Best 4 · Average 5.2</small>
-            </article>
-            <article className={styles.memoryCard}>
-              <div className={styles.cardTopline}>
-                <span>Round journal</span>
-                <b>Private</b>
-              </div>
-              <p className={styles.cardScore}>84</p>
-              <strong>Best back nine this season.</strong>
-              <small>7 iron · smooth tempo · pin high</small>
-              <div className={styles.cardRule} />
-              <em>October 12 · Mill Pond Golf</em>
-            </article>
+          <div className={styles.heroDevices} aria-label="Current SimplyStroke Pro app screens">
+            <PhoneFrame
+              image={seasonRecapScreen}
+              alt="SimplyStroke visual season recap"
+              className={styles.heroPhoneLeft}
+              priority
+            />
+            <PhoneFrame
+              image={proScreen}
+              alt="SimplyStroke Pro feature and plan screen"
+              className={styles.heroPhoneCenter}
+              priority
+            />
+            <PhoneFrame
+              image={ocrScreen}
+              alt="SimplyStroke paper scorecard review screen"
+              className={styles.heroPhoneRight}
+              priority
+            />
           </div>
         </div>
       </header>
@@ -172,24 +250,32 @@ export default function ProPage() {
 
       <section className={styles.featuresSection}>
         <div className={styles.sectionIntro}>
-          <p className={styles.kicker}>What Pro gives you</p>
-          <h2>More meaning without more work.</h2>
+          <p className={styles.kicker}>Inside SimplyStroke Pro</p>
+          <h2>Real features. Real app screens.</h2>
           <p>
-            Pro builds on the score you already entered. No swing sensors, no
-            manual stat sheet, and no handicap math pretending to know more than
-            the card does.
+            Every screen below comes from the current SimplyStroke app. Pro
+            builds on the scores you already entered, so there is no second stat
+            sheet to maintain.
           </p>
         </div>
-        <div className={styles.featureGrid}>
-          {featureGroups.map((feature) => (
-            <article className={styles.featureCard} key={feature.number}>
-              <div className={styles.featureMeta}>
-                <span>{feature.number}</span>
-                <p>{feature.eyebrow}</p>
+        <div className={styles.featureShowcases}>
+          {proFeatures.map((feature, index) => (
+            <article
+              className={`${styles.featureShowcase} ${index % 2 === 1 ? styles.featureShowcaseReverse : ""}`}
+              key={feature.number}
+            >
+              <div className={styles.featureCopy}>
+                <div className={styles.featureMeta}>
+                  <span>{feature.number}</span>
+                  <p>{feature.eyebrow}</p>
+                </div>
+                <h3>{feature.title}</h3>
+                <p>{feature.body}</p>
+                <strong>{feature.accent}</strong>
               </div>
-              <h3>{feature.title}</h3>
-              <p>{feature.body}</p>
-              <strong>{feature.accent}</strong>
+              <div className={styles.featureDeviceStage}>
+                <PhoneFrame image={feature.image} alt={feature.alt} />
+              </div>
             </article>
           ))}
         </div>
